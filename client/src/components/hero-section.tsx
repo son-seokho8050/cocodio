@@ -60,14 +60,14 @@ export default function HeroSection() {
             
             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl">
               <div className="flex items-center space-x-4">
-                <div className="text-3xl font-bold text-primary-600">320+</div>
-                <div className="text-sm text-gray-600">수강생<br />합격 실적</div>
+                <div className="text-3xl font-bold text-primary-600">17명</div>
+                <div className="text-sm text-gray-600">한양대 실기대회<br />지역 최다 수상</div>
               </div>
             </div>
             
             <div className="absolute -top-6 -right-6 bg-accent-500 rounded-xl p-4 text-white">
-              <div className="text-2xl font-bold">98%</div>
-              <div className="text-xs">만족도</div>
+              <div className="text-2xl font-bold">FOLLOW</div>
+              <div className="text-xs">시스템</div>
             </div>
           </div>
         </div>

@@ -10,8 +10,8 @@ export default function AboutSection() {
             왜 <span className="text-primary-600">코코미술학원</span>이 다를까요?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            일반적인 입시미술학원과 달리, 우리는 단순한 기법 전수가 아닌
-            체계적인 사고력 중심 교육을 통해 진정한 창작 능력을 기릅니다.
+            마산/김해 지역 최고의 실기대회 수상 실적을 자랑하는 코코만의 
+            FOLLOW 시스템과 사고력 중심 교육으로 진정한 창작 능력을 기릅니다.
           </p>
         </div>
 
@@ -25,38 +25,38 @@ export default function AboutSection() {
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">4단계 사고체계 교육법</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">FOLLOW 시스템 & 4단계 사고체계</h3>
             
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">1</div>
+                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">F</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">관찰과 분석</h4>
-                  <p className="text-gray-600">대상의 본질을 파악하고 구조적으로 이해하는 능력을 기릅니다.</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Follow (관찰과 분석)</h4>
+                  <p className="text-gray-600">대상의 본질을 파악하고 구조적으로 이해하는 능력을 체계적으로 기릅니다.</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">2</div>
+                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">O</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">창의적 해석</h4>
-                  <p className="text-gray-600">개인만의 독창적인 시각으로 대상을 재해석하는 방법을 학습합니다.</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Observe (창의적 해석)</h4>
+                  <p className="text-gray-600">개인만의 독창적인 시각으로 대상을 재해석하는 관점을 학습합니다.</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">3</div>
+                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">L</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">체계적 표현</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Learn (체계적 표현)</h4>
                   <p className="text-gray-600">논리적인 구성과 기법을 통해 아이디어를 완성도 있게 구현합니다.</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">4</div>
+                <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">W</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">성찰과 발전</h4>
-                  <p className="text-gray-600">작품을 객관적으로 평가하고 지속적으로 개선하는 능력을 키웁니다.</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Work (성찰과 발전)</h4>
+                  <p className="text-gray-600">작품을 객관적으로 평가하고 지속적으로 개선하는 실력을 키웁니다.</p>
                 </div>
               </div>
             </div>

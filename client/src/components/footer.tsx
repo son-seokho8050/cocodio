@@ -94,7 +94,7 @@ export default function Footer() {
                 <span className="mr-2">🕒</span>평일 10:00-22:00
               </p>
               <p className="flex items-center">
-                <span className="mr-2">📍</span>서울시 강남구 테헤란로 123
+                <span className="mr-2">📍</span>경남 마산/김해 지역
               </p>
             </div>
           </div>

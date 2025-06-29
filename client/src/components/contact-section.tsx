@@ -177,8 +177,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">주소</h4>
-                  <p className="text-gray-600">서울시 강남구 테헤란로 123, 2층 코코미술학원</p>
-                  <p className="text-sm text-gray-500">지하철 2호선 강남역 3번 출구 도보 5분</p>
+                  <p className="text-gray-600">경남 마산/김해 지역 코코미술학원</p>
+                  <p className="text-sm text-gray-500">마산점, 김해점 운영 중</p>
                 </div>
               </div>
               

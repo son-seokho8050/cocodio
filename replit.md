@@ -96,7 +96,13 @@ This is a web-based marketing and management platform for 코코미술학원 (Co
 
 ```
 Changelog:
-- June 29, 2025. Initial setup
+- June 29, 2025. Initial setup and complete website implementation
+- June 29, 2025. Enhanced with real academy data from Naver blogs
+  - Added FOLLOW system integration
+  - Updated with actual competition achievements (한양대 17명 수상 등)
+  - Added achievements section showcasing real results
+  - Updated location info to reflect Masan/Gimhae locations
+  - Enhanced testimonials with authentic feedback
 ```
 
 ## User Preferences

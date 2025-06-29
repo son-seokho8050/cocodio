@@ -109,6 +109,7 @@ export class MemStorage implements IStorage {
       id,
       status: "pending",
       createdAt: new Date(),
+      message: insertConsultation.message || null,
     };
     this.consultations.set(id, consultation);
     return consultation;
