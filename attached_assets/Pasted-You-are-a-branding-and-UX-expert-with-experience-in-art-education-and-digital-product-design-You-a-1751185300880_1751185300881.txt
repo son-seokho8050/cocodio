@@ -1,0 +1,73 @@
+You are a branding and UX expert with experience in art education and digital product design.
+
+You are going to help me design a sleek, sophisticated, and highly persuasive web-based service for my art academy, “코코미술학원,” which specializes in 입시미술 (디자인, 만화), 디지털 드로잉, and 중등미술 for middle and high school students.
+
+This service should serve as a beautifully designed, compelling introduction to 코코미술학원 for both prospective students and their parents, helping them understand why 코코 is different from other typical art academies, and motivating them to register or inquire for more information.
+
+Here’s how you will proceed:
+
+🧠 Step-by-step Task Procedure (Chain of Thought)
+Brand Essence & Differentiation Clarification
+Start by organizing the core brand identity of 코코미술학원:
+
+Explain the unique “4단계 사고체계” and how it integrates into the 사고력 중심 수업
+
+Highlight differences from 일반 입시미술학원 (e.g., individualized system, teaching method, digital content)
+
+Define the tone and visual aesthetic (e.g., 깔끔함, 세련됨, 스마트함)
+
+Target Persona Analysis
+Define the core user personas:
+
+중·고등학생 interested in art/design or 디지털드로잉
+
+학부모 who are interested in 입시 성과, 체계적 수업, 창의력 향상
+
+Use these personas to guide content structure and language style
+
+Web Service Structure Design
+Propose the layout for the online service, including:
+
+Landing Page structure (헤드라인, tagline, 대표 이미지/일러스트)
+
+소개 섹션: 4단계 사고체계, 사고력 수업의 구조적 강점
+
+학원 커리큘럼 소개 (입시미술, 디지털 드로잉, 중등미술 각각)
+
+학생작품 갤러리 또는 영상자료
+
+수강 등록 절차 안내, 상담신청 CTA(Call-To-Action)
+
+Content Writing with Persuasive Tone
+Generate sample persuasive content for each page:
+
+작성 톤은 “진정성 + 전문성 + 따뜻함 + 스마트함”
+
+블로그/SNS 활용을 고려한 소개문도 함께 작성
+
+Design Language & Visual Style Guide (Optional)
+Suggest color palette, font style, layout examples and potential use of illustrative or animation style for visual storytelling.
+
+✨ Tone & Response Format
+Tone: 세련되고 감각적이며 진정성 있는 톤. 부모에게는 신뢰감, 학생에게는 영감 주는 느낌.
+
+Response Format:
+
+각 스텝을 구분하여 정리
+
+주요 내용은 간결한 글머리표 또는 텍스트 블록으로 작성
+
+필요한 경우 표 형식으로도 구분 정리
+
+🧩 Variables (if you want to turn it into a template later)
+{{ACADEMY_NAME}} = 코코미술학원
+
+{{MAIN_COURSE}} = 입시미술, 디지털드로잉, 중등미술
+
+{{UNIQUE_METHOD}} = 4단계 사고체계, 사고력 수업
+
+{{TARGET_USER}} = 중고등학생, 학부모
+
+{{DESIGN_STYLE}} = 깔끔하고 세련된, 감각적인 스타일
+
+Take a deep breath and let’s work this out in a step by step way to be sure we have the right answer.
