@@ -1,13 +1,82 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { GraduationCap, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Admissions2022() {
   const admissionResults = [
+    // 서울/수도권 대학들을 상단에 배치
+    {
+      university: "중앙대학교",
+      department: "안성캠퍼스",
+      students: [
+        { name: "윤○정", grade: "명덕고", note: "시각디자인학과" }
+      ],
+      category: "서울/수도권",
+      color: "bg-blue-100 border-blue-300"
+    },
+    {
+      university: "단국대학교",
+      department: "죽전캠퍼스",
+      students: [
+        { name: "정○훈", grade: "용마고", note: "커뮤니케이션디자인학과" }
+      ],
+      category: "서울/수도권",
+      color: "bg-amber-100 border-amber-300"
+    },
+    {
+      university: "경희대학교",
+      department: "국제캠퍼스",
+      students: [
+        { name: "정○훈", grade: "용마고", note: "환경조경디자인학과" }
+      ],
+      category: "서울/수도권",
+      color: "bg-green-100 border-green-300"
+    },
+    {
+      university: "건국대학교",
+      department: "서울캠퍼스",
+      students: [
+        { name: "원○민", grade: "성지여고", note: "의상디자인학과" }
+      ],
+      category: "서울/수도권",
+      color: "bg-red-100 border-red-300"
+    },
+    {
+      university: "명지대학교",
+      department: "자연캠퍼스",
+      students: [
+        { name: "차○아", grade: "김해여고", note: "패션디자인학과" }
+      ],
+      category: "서울/수도권",
+      color: "bg-orange-100 border-orange-300"
+    },
+    {
+      university: "건국대학교",
+      department: "글로컬캠퍼스",
+      students: [
+        { name: "오○은", grade: "봉림고", note: "패션디자인학과" },
+        { name: "변○경", grade: "마여고", note: "시각영상학과" },
+        { name: "이○정", grade: "태봉고", note: "조형예술학과" },
+        { name: "고○민", grade: "명덕고", note: "조형예술학과" },
+        { name: "정○훈", grade: "용마고", note: "조형예술학과" }
+      ],
+      category: "서울/수도권",
+      color: "bg-lime-100 border-lime-300"
+    },
+    {
+      university: "경기대학교",
+      department: "수원캠퍼스",
+      students: [
+        { name: "고○지", grade: "명덕고", note: "디자인비즈학과" }
+      ],
+      category: "서울/수도권",
+      color: "bg-emerald-100 border-emerald-300"
+    },
+    // 세종권
     {
       university: "홍익대학교",
       department: "세종캠퍼스",
@@ -17,51 +86,49 @@ export default function Admissions2022() {
       category: "세종권",
       color: "bg-purple-100 border-purple-300"
     },
+    // 지역거점국립대
     {
-      university: "중앙대학교",
-      department: "안성캠퍼스",
+      university: "창원대학교",
+      department: "경남",
       students: [
-        { name: "윤○정", grade: "명덕고", note: "시각디자인학과" }
+        { name: "김○재", grade: "마여고", note: "시각디자인전공" },
+        { name: "홍○주", grade: "삼진고", note: "공예전공" }
       ],
-      category: "서울권",
+      category: "지역거점국립대",
+      color: "bg-orange-100 border-orange-300"
+    },
+    {
+      university: "울산대학교",
+      department: "울산",
+      students: [
+        { name: "홍○진", grade: "마산공고", note: "섬유디자인전공" },
+        { name: "조○근", grade: "남산고", note: "섬유디자인전공" },
+        { name: "백○주", grade: "남지고", note: "산업디자인전공" },
+        { name: "허○혁", grade: "창신고", note: "실내공간디자인전공" },
+        { name: "이○영", grade: "진영고", note: "미술학과" }
+      ],
+      category: "지역거점국립대",
       color: "bg-blue-100 border-blue-300"
     },
     {
-      university: "단국대학교",
-      department: "죽전캠퍼스",
+      university: "경북대학교",
+      department: "대구",
       students: [
-        { name: "정○훈", grade: "용마고", note: "커뮤니케이션디자인학과" }
+        { name: "문○은", grade: "문성고", note: "패션디자인학과" }
       ],
-      category: "서울권",
-      color: "bg-amber-100 border-amber-300"
+      category: "지역거점국립대",
+      color: "bg-purple-100 border-purple-300"
     },
     {
-      university: "경희대학교",
-      department: "국제캠퍼스",
+      university: "한밭대학교",
+      department: "대전",
       students: [
-        { name: "정○훈", grade: "용마고", note: "환경조경디자인학과" }
+        { name: "유○희", grade: "한일여고", note: "산업디자인학과" }
       ],
-      category: "서울권",
-      color: "bg-green-100 border-green-300"
+      category: "지역거점국립대",
+      color: "bg-indigo-100 border-indigo-300"
     },
-    {
-      university: "건국대학교",
-      department: "서울캠퍼스",
-      students: [
-        { name: "원○민", grade: "성지여고", note: "의상디자인학과" }
-      ],
-      category: "서울권",
-      color: "bg-red-100 border-red-300"
-    },
-    {
-      university: "명지대학교",
-      department: "자연캠퍼스",
-      students: [
-        { name: "차○아", grade: "김해여고", note: "패션디자인학과" }
-      ],
-      category: "서울권",
-      color: "bg-orange-100 border-orange-300"
-    },
+    // 지역사립대
     {
       university: "계명대학교",
       department: "대구",
@@ -139,119 +206,6 @@ export default function Admissions2022() {
       color: "bg-red-100 border-red-300"
     },
     {
-      university: "창원대학교",
-      department: "경남",
-      students: [
-        { name: "김○재", grade: "마여고", note: "시각디자인전공" },
-        { name: "홍○주", grade: "삼진고", note: "공예전공" }
-      ],
-      category: "지역거점국립대",
-      color: "bg-orange-100 border-orange-300"
-    },
-    {
-      university: "울산대학교",
-      department: "울산",
-      students: [
-        { name: "홍○진", grade: "마산공고", note: "섬유디자인전공" },
-        { name: "조○근", grade: "남산고", note: "섬유디자인전공" },
-        { name: "백○주", grade: "남지고", note: "산업디자인전공" },
-        { name: "허○혁", grade: "창신고", note: "실내공간디자인전공" },
-        { name: "이○영", grade: "진영고", note: "미술학과" }
-      ],
-      category: "지역거점국립대",
-      color: "bg-blue-100 border-blue-300"
-    },
-    {
-      university: "경북대학교",
-      department: "대구",
-      students: [
-        { name: "문○은", grade: "문성고", note: "패션디자인학과" }
-      ],
-      category: "지역거점국립대",
-      color: "bg-purple-100 border-purple-300"
-    },
-    {
-      university: "호서대학교",
-      department: "아산캠퍼스",
-      students: [
-        { name: "고○지", grade: "명덕고", note: "실내디자인학과" },
-        { name: "조○정", grade: "구암고", note: "실내디자인학과" }
-      ],
-      category: "지역사립대",
-      color: "bg-red-100 border-red-300"
-    },
-    {
-      university: "용인대학교",
-      department: "용인",
-      students: [
-        { name: "정○훈", grade: "용마고", note: "미디어디자인학과" }
-      ],
-      category: "지역사립대",
-      color: "bg-yellow-100 border-yellow-300"
-    },
-    {
-      university: "남서울대학교",
-      department: "천안",
-      students: [
-        { name: "김○영", grade: "합포고", note: "유리세라믹학과" }
-      ],
-      category: "지역사립대",
-      color: "bg-pink-100 border-pink-300"
-    },
-    {
-      university: "한밭대학교",
-      department: "대전",
-      students: [
-        { name: "유○희", grade: "한일여고", note: "산업디자인학과" }
-      ],
-      category: "지역거점국립대",
-      color: "bg-indigo-100 border-indigo-300"
-    },
-    {
-      university: "상명대학교",
-      department: "천안캠퍼스",
-      students: [
-        { name: "차○아", grade: "김해여고", note: "디자인학부" },
-        { name: "정○민", grade: "제일여고", note: "디자인학부" },
-        { name: "변○경", grade: "마여고", note: "디자인학부" },
-        { name: "양○윤", grade: "사파고", note: "디자인학부" },
-        { name: "정○훈", grade: "용마고", note: "디지털콘텐츠학과" }
-      ],
-      category: "지역사립대",
-      color: "bg-teal-100 border-teal-300"
-    },
-    {
-      university: "백석대학교",
-      department: "천안",
-      students: [
-        { name: "정○유", grade: "제일여고", note: "디자인영상학과" }
-      ],
-      category: "지역사립대",
-      color: "bg-cyan-100 border-cyan-300"
-    },
-    {
-      university: "건국대학교",
-      department: "글로컬캠퍼스",
-      students: [
-        { name: "오○은", grade: "봉림고", note: "패션디자인학과" },
-        { name: "변○경", grade: "마여고", note: "시각영상학과" },
-        { name: "이○정", grade: "태봉고", note: "조형예술학과" },
-        { name: "고○민", grade: "명덕고", note: "조형예술학과" },
-        { name: "정○훈", grade: "용마고", note: "조형예술학과" }
-      ],
-      category: "지역사립대",
-      color: "bg-lime-100 border-lime-300"
-    },
-    {
-      university: "경기대학교",
-      department: "수원캠퍼스",
-      students: [
-        { name: "고○지", grade: "명덕고", note: "디자인비즈학과" }
-      ],
-      category: "지역사립대",
-      color: "bg-emerald-100 border-emerald-300"
-    },
-    {
       university: "동아대학교",
       department: "부산",
       students: [
@@ -296,11 +250,61 @@ export default function Admissions2022() {
       ],
       category: "지역사립대",
       color: "bg-stone-100 border-stone-300"
+    },
+    {
+      university: "호서대학교",
+      department: "아산캠퍼스",
+      students: [
+        { name: "고○지", grade: "명덕고", note: "실내디자인학과" },
+        { name: "조○정", grade: "구암고", note: "실내디자인학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-red-100 border-red-300"
+    },
+    {
+      university: "용인대학교",
+      department: "용인",
+      students: [
+        { name: "정○훈", grade: "용마고", note: "미디어디자인학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-yellow-100 border-yellow-300"
+    },
+    {
+      university: "남서울대학교",
+      department: "천안",
+      students: [
+        { name: "김○영", grade: "합포고", note: "유리세라믹학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-pink-100 border-pink-300"
+    },
+    {
+      university: "상명대학교",
+      department: "천안캠퍼스",
+      students: [
+        { name: "차○아", grade: "김해여고", note: "디자인학부" },
+        { name: "정○민", grade: "제일여고", note: "디자인학부" },
+        { name: "변○경", grade: "마여고", note: "디자인학부" },
+        { name: "양○윤", grade: "사파고", note: "디자인학부" },
+        { name: "정○훈", grade: "용마고", note: "디지털콘텐츠학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-teal-100 border-teal-300"
+    },
+    {
+      university: "백석대학교",
+      department: "천안",
+      students: [
+        { name: "정○유", grade: "제일여고", note: "디자인영상학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-cyan-100 border-cyan-300"
     }
   ];
 
   const totalStudents = admissionResults.reduce((sum, uni) => sum + uni.students.length, 0);
-  const seoulStudents = admissionResults.filter(uni => uni.category === "서울권").reduce((sum, uni) => sum + uni.students.length, 0);
+  const seoulStudents = admissionResults.filter(uni => uni.category === "서울/수도권").reduce((sum, uni) => sum + uni.students.length, 0);
   const nationalStudents = admissionResults.filter(uni => uni.category === "지역거점국립대").reduce((sum, uni) => sum + uni.students.length, 0);
 
   return (
@@ -326,34 +330,43 @@ export default function Admissions2022() {
               <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
                 2022학년도 입시에서 이루어낸 우수한 성과를 확인하세요.
               </p>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{totalStudents}명</div>
-                  <div className="text-blue-200">총 합격자</div>
+              <div className="flex flex-col md:flex-row justify-center gap-8 text-center">
+                <div className="bg-white/10 rounded-lg p-6">
+                  <div className="text-3xl font-bold">{totalStudents}명</div>
+                  <div className="text-blue-100">총 합격자</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{seoulStudents}명</div>
-                  <div className="text-blue-200">서울권 대학</div>
+                <div className="bg-white/10 rounded-lg p-6">
+                  <div className="text-3xl font-bold">{seoulStudents}명</div>
+                  <div className="text-blue-100">서울/수도권</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{nationalStudents}명</div>
-                  <div className="text-blue-200">지역거점국립대</div>
+                <div className="bg-white/10 rounded-lg p-6">
+                  <div className="text-3xl font-bold">{nationalStudents}명</div>
+                  <div className="text-blue-100">국립대</div>
+                </div>
+                <div className="bg-white/10 rounded-lg p-6">
+                  <div className="text-3xl font-bold">25개교</div>
+                  <div className="text-blue-100">합격 대학</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Detailed Results */}
+        {/* Admissions Results */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              대학별 상세 합격자 명단
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                2022학년도 대학별 합격 현황
+              </h2>
+              <p className="text-xl text-gray-600">
+                우수한 교육 시스템으로 이루어낸 성과입니다.
+              </p>
+            </div>
             
-            <div className="space-y-8">
+            <div className="grid gap-8">
               {admissionResults.map((result, index) => (
-                <Card key={index} className={`${result.color}`}>
+                <Card key={index} className={`${result.color} border-2`}>
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
                       <div className="flex items-center">
