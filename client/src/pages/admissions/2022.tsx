@@ -37,7 +37,7 @@ export default function Admissions2022() {
     },
     {
       university: "경희대학교",
-      department: "환경조경디자인학과",
+      department: "국제캠퍼스",
       students: [
         { name: "정○훈", grade: "용마고", note: "환경조경디자인학과" }
       ],
@@ -46,7 +46,7 @@ export default function Admissions2022() {
     },
     {
       university: "건국대학교",
-      department: "의상디자인학과",
+      department: "서울캠퍼스",
       students: [
         { name: "원○민", grade: "성지여고", note: "의상디자인학과" }
       ],
@@ -55,7 +55,7 @@ export default function Admissions2022() {
     },
     {
       university: "명지대학교",
-      department: "패션디자인학과",
+      department: "자연캠퍼스",
       students: [
         { name: "차○아", grade: "김해여고", note: "패션디자인학과" }
       ],
@@ -64,7 +64,7 @@ export default function Admissions2022() {
     },
     {
       university: "계명대학교",
-      department: "디자인학부",
+      department: "대구",
       students: [
         { name: "공○란", grade: "남지고", note: "시각디자인" },
         { name: "조○정", grade: "구암고", note: "산업디자인" },
@@ -80,7 +80,7 @@ export default function Admissions2022() {
     },
     {
       university: "영남대학교",
-      department: "디자인학부",
+      department: "대구",
       students: [
         { name: "정○훈", grade: "용마고", note: "시각디자인" },
         { name: "정○유", grade: "제일여고", note: "시각디자인" },
@@ -95,7 +95,7 @@ export default function Admissions2022() {
     },
     {
       university: "대구대학교",
-      department: "디자인학부",
+      department: "대구",
       students: [
         { name: "공○란", grade: "남지고", note: "시각디자인" },
         { name: "백○주", grade: "남지고", note: "산업디자인" },
@@ -111,7 +111,7 @@ export default function Admissions2022() {
     },
     {
       university: "동서대학교",
-      department: "디자인학부",
+      department: "부산",
       students: [
         { name: "한○솔", grade: "명덕고", note: "디자인학과" },
         { name: "조○정", grade: "구암고", note: "디자인학과" },
@@ -127,7 +127,7 @@ export default function Admissions2022() {
     },
     {
       university: "동명대학교",
-      department: "시각디자인학과",
+      department: "부산",
       students: [
         { name: "곽○원", grade: "용마고", note: "시각디자인학과" },
         { name: "허○혁", grade: "창신고", note: "시각디자인학과" },
@@ -140,7 +140,7 @@ export default function Admissions2022() {
     },
     {
       university: "창원대학교",
-      department: "조형예술학과",
+      department: "경남",
       students: [
         { name: "김○재", grade: "마여고", note: "시각디자인전공" },
         { name: "홍○주", grade: "삼진고", note: "공예전공" }
@@ -150,7 +150,7 @@ export default function Admissions2022() {
     },
     {
       university: "울산대학교",
-      department: "산업디자인학과",
+      department: "울산",
       students: [
         { name: "홍○진", grade: "마산공고", note: "섬유디자인전공" },
         { name: "조○근", grade: "남산고", note: "섬유디자인전공" },
@@ -163,7 +163,7 @@ export default function Admissions2022() {
     },
     {
       university: "경북대학교",
-      department: "패션디자인학과",
+      department: "대구",
       students: [
         { name: "문○은", grade: "문성고", note: "패션디자인학과" }
       ],
