@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAdmissionsOpen, setIsAdmissionsOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -37,6 +39,34 @@ export default function Navigation() {
             >
               커리큘럼
             </button>
+            <div className="relative">
+              <button
+                onClick={() => setIsAdmissionsOpen(!isAdmissionsOpen)}
+                className="text-gray-700 hover:text-primary-600 transition-colors flex items-center"
+              >
+                합격자명단
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {isAdmissionsOpen && (
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[160px] z-50">
+                  <Link href="/admissions" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                    최근 3년간 통합
+                  </Link>
+                  <Link href="/admissions/2025" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                    2025학년도
+                  </Link>
+                  <Link href="/admissions/2024" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                    2024학년도
+                  </Link>
+                  <Link href="/admissions/2023" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                    2023학년도
+                  </Link>
+                  <Link href="/admissions/2022" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                    2022학년도
+                  </Link>
+                </div>
+              )}
+            </div>
             <button
               onClick={() => scrollToSection('portfolio')}
               className="text-gray-700 hover:text-primary-600 transition-colors"
