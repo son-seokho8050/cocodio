@@ -9,10 +9,7 @@ export default function AboutSection() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             왜 <span className="text-primary-600">코코미술학원</span>이 다를까요?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            마산/김해 지역 최고의 실기대회 수상 실적을 자랑하는 코코만의 
-            FOLLOW 시스템과 사고력 중심 교육으로 진정한 창작 능력을 기릅니다.
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">사고력 향상 'FOLLOW' 시스템을 통한 코코만의 특별한 커리큘럼, 합격까지 올인원</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
