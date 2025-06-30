@@ -126,6 +126,7 @@ Changelog:
   - Updated "클립스튜디오" to "클립스튜디오(웹툰)" to specify webtoon focus
   - Corrected "ASPRITE" to "ASEPRITE(픽셀아트)" with proper spelling and pixel art specification
   - Updated "스파인 2D" to "스파인2D(2.5D 게임캐릭터)" to specify 2.5D game character focus
+  - Changed "애니메이트CC" to "애니메이트CC/ 포토샵" to include Photoshop in animation curriculum
 ```
 
 ## User Preferences
