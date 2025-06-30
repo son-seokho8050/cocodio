@@ -28,7 +28,7 @@ export default function Admissions2022() {
     },
     {
       university: "단국대학교",
-      department: "커뮤니케이션디자인학과",
+      department: "죽전캠퍼스",
       students: [
         { name: "정○훈", grade: "용마고", note: "커뮤니케이션디자인학과" }
       ],
