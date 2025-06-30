@@ -112,6 +112,7 @@ Changelog:
   - Added animated achievement display cycling through university results every 3 seconds
   - Changed academy subtitle to "DESIGN/ COMICS/ DIGITAL DRAWING"
   - Navigation branding updated to "FOLLOW 시스템"
+  - Changed academy name to "미술학원 코코"
 ```
 
 ## User Preferences
