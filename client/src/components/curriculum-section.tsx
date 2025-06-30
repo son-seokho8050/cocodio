@@ -90,7 +90,7 @@ export default function CurriculumSection() {
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
-                  스파인 2D
+                  ASPRITE
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
