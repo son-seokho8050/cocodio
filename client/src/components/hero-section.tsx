@@ -43,7 +43,7 @@ export default function HeroSection() {
           <div className="animate-in slide-in-from-left duration-700">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
               재능의 출발점<br />
-              <span className="text-accent-500">코코미술학원</span>
+              <span className="text-accent-500">코코</span>
             </h1>
             <p className="text-xl mb-8 text-blue-100 leading-relaxed">
               4단계 사고체계를 통한 체계적 미술교육으로<br />

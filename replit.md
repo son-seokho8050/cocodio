@@ -113,6 +113,7 @@ Changelog:
   - Changed academy subtitle to "DESIGN/ COMICS/ DIGITAL DRAWING"
   - Navigation branding updated to "FOLLOW 시스템"
   - Changed academy name to "미술학원 코코"
+  - Simplified hero section title to just "코코"
 ```
 
 ## User Preferences
