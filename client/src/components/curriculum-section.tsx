@@ -86,7 +86,7 @@ export default function CurriculumSection() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
-                  Photoshop & Illustrator 마스터
+                  클립스튜디오
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
