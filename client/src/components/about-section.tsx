@@ -67,7 +67,7 @@ export default function AboutSection() {
               <GraduationCap className="h-8 w-8" />
             </div>
             <h4 className="text-xl font-semibold text-gray-900 mb-3">개인 성향별 맞춤 지도</h4>
-            <p className="text-gray-600">학생별 강점과 특성을 파악하여 1:1 맞춤형 커리큘럼을 제공합니다.</p>
+            <p className="text-gray-600">MBTI 성향별 개인 커리큘럼으로 강점과 특성을 파악하여 1:1 최적화된 수업을 제공합니다.</p>
           </Card>
           
           <Card className="text-center bg-gray-50 rounded-2xl p-8 card-hover">
