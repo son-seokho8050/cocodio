@@ -129,6 +129,7 @@ Changelog:
   - Changed "애니메이트CC" to "애니메이트CC/ 포토샵" to include Photoshop in animation curriculum
   - Removed "포트폴리오 완성 및 발표" from digital drawing curriculum to focus on software tools
   - Updated digital portfolio text to "학생개인별 빅테이터를 제공합니다." for consistent formatting
+  - Adjusted text line breaks to prevent "다." from wrapping to a 4th line, now displays in proper 4-line format
 ```
 
 ## User Preferences
