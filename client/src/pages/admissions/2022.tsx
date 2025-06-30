@@ -169,6 +169,133 @@ export default function Admissions2022() {
       ],
       category: "지역거점국립대",
       color: "bg-purple-100 border-purple-300"
+    },
+    {
+      university: "호서대학교",
+      department: "아산캠퍼스",
+      students: [
+        { name: "고○지", grade: "명덕고", note: "실내디자인학과" },
+        { name: "조○정", grade: "구암고", note: "실내디자인학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-red-100 border-red-300"
+    },
+    {
+      university: "용인대학교",
+      department: "용인",
+      students: [
+        { name: "정○훈", grade: "용마고", note: "미디어디자인학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-yellow-100 border-yellow-300"
+    },
+    {
+      university: "남서울대학교",
+      department: "천안",
+      students: [
+        { name: "김○영", grade: "합포고", note: "유리세라믹학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-pink-100 border-pink-300"
+    },
+    {
+      university: "한밭대학교",
+      department: "대전",
+      students: [
+        { name: "유○희", grade: "한일여고", note: "산업디자인학과" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-indigo-100 border-indigo-300"
+    },
+    {
+      university: "상명대학교",
+      department: "천안캠퍼스",
+      students: [
+        { name: "차○아", grade: "김해여고", note: "디자인학부" },
+        { name: "정○민", grade: "제일여고", note: "디자인학부" },
+        { name: "변○경", grade: "마여고", note: "디자인학부" },
+        { name: "양○윤", grade: "사파고", note: "디자인학부" },
+        { name: "정○훈", grade: "용마고", note: "디지털콘텐츠학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-teal-100 border-teal-300"
+    },
+    {
+      university: "백석대학교",
+      department: "천안",
+      students: [
+        { name: "정○유", grade: "제일여고", note: "디자인영상학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-cyan-100 border-cyan-300"
+    },
+    {
+      university: "건국대학교",
+      department: "글로컬캠퍼스",
+      students: [
+        { name: "오○은", grade: "봉림고", note: "패션디자인학과" },
+        { name: "변○경", grade: "마여고", note: "시각영상학과" },
+        { name: "이○정", grade: "태봉고", note: "조형예술학과" },
+        { name: "고○민", grade: "명덕고", note: "조형예술학과" },
+        { name: "정○훈", grade: "용마고", note: "조형예술학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-lime-100 border-lime-300"
+    },
+    {
+      university: "경기대학교",
+      department: "수원캠퍼스",
+      students: [
+        { name: "고○지", grade: "명덕고", note: "디자인비즈학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-emerald-100 border-emerald-300"
+    },
+    {
+      university: "동아대학교",
+      department: "부산",
+      students: [
+        { name: "박○은", grade: "대청고", note: "산업디자인학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-rose-100 border-rose-300"
+    },
+    {
+      university: "동의대학교",
+      department: "부산",
+      students: [
+        { name: "김○재", grade: "남지고", note: "시각디자인학과" },
+        { name: "박○원", grade: "태봉고", note: "시각디자인학과" },
+        { name: "김○하", grade: "내서여고", note: "산업디자인학과" },
+        { name: "이○빈", grade: "무학여고", note: "산업디자인학과" },
+        { name: "박○민", grade: "용마고", note: "공예학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-violet-100 border-violet-300"
+    },
+    {
+      university: "대구가톨릭대학교",
+      department: "대구",
+      students: [
+        { name: "홍○연", grade: "세화여고", note: "시각디자인학과" },
+        { name: "정○하", grade: "무학여고", note: "시각디자인학과" },
+        { name: "백○주", grade: "남지고", note: "산업디자인학과" },
+        { name: "문○은", grade: "문성고", note: "패션디자인학과" },
+        { name: "조○민", grade: "세화여고", note: "패션디자인학과" },
+        { name: "김○층", grade: "창원남고", note: "패션디자인학과" },
+        { name: "안○정", grade: "무학여고", note: "패션디자인학과" },
+        { name: "박○은", grade: "대청고", note: "디지털디자인학과" },
+        { name: "이○민", grade: "성민여고", note: "디지털디자인학과" },
+        { name: "박○영", grade: "삼진고", note: "디지털디자인학과" },
+        { name: "김○하", grade: "내서여고", note: "디지털디자인학과" },
+        { name: "이○림", grade: "사파고", note: "금속공예학과" },
+        { name: "이○영", grade: "진영고", note: "금속공예학과" },
+        { name: "임○윤", grade: "명덕고", note: "금속공예학과" },
+        { name: "조○정", grade: "구암고", note: "금속공예학과" },
+        { name: "채○진", grade: "무학여고", note: "금속공예학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-stone-100 border-stone-300"
     }
   ];
 
