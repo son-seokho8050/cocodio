@@ -14,7 +14,7 @@ export default function Admissions2022() {
       students: [
         { name: "김○아", grade: "진해여고 졸업", note: "디자인컨버전스학과" }
       ],
-      category: "서울권",
+      category: "세종권",
       color: "bg-purple-100 border-purple-300"
     },
     {
