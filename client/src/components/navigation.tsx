@@ -80,7 +80,7 @@ export default function Navigation() {
               onClick={() => scrollToSection('contact')}
               className="text-gray-700 hover:text-primary-600 transition-colors"
             >
-              상담문의
+              적성테스트
             </button>
           </div>
           
@@ -128,7 +128,7 @@ export default function Navigation() {
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-700 hover:text-primary-600 transition-colors text-left"
               >
-                상담문의
+                적성테스트
               </button>
             </div>
           </div>

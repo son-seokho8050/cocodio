@@ -114,6 +114,7 @@ Changelog:
   - Navigation branding updated to "FOLLOW 시스템"
   - Changed academy name to "미술학원 코코"
   - Simplified hero section title to just "코코"
+  - Changed "상담문의" navigation item to "적성테스트"
 ```
 
 ## User Preferences
