@@ -32,7 +32,7 @@ export default function AboutSection() {
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">F</div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Follow (관찰과 분석)</h4>
-                  <p className="text-gray-600">대상의 본질을 파악하고 구조적으로 이해하는 능력을 체계적으로 기릅니다.</p>
+                  <p className="text-gray-600">대상의 본질을 파악하고 구조적 이해 능력을 체계적으로 향상</p>
                 </div>
               </div>
               
