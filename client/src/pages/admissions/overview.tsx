@@ -74,17 +74,17 @@ export default function AdmissionsOverview() {
                 이루어낸 최근 3년간의 우수한 입시 결과를 확인하세요.
               </p>
               <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{totalStats.total}명</div>
-                  <div className="text-blue-200">최근 3년 총 합격자</div>
+                <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+                  <div className="text-4xl font-bold text-white mb-2">{totalStats.total}명</div>
+                  <div className="text-white/90">최근 3년 총 합격자</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{totalStats.seoul}명</div>
-                  <div className="text-blue-200">서울권 대학 합격</div>
+                <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+                  <div className="text-4xl font-bold text-white mb-2">{totalStats.seoul}명</div>
+                  <div className="text-white/90">서울권 대학 합격</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{totalStats.national}명</div>
-                  <div className="text-blue-200">지역거점국립대 합격</div>
+                <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+                  <div className="text-4xl font-bold text-white mb-2">{totalStats.national}명</div>
+                  <div className="text-white/90">지역거점국립대 합격</div>
                 </div>
               </div>
             </div>
@@ -99,64 +99,57 @@ export default function AdmissionsOverview() {
             </h2>
             
             <div className="grid lg:grid-cols-3 gap-8">
-              {yearlyStats.map((yearData, index) => {
-                const cardColors = [
-                  "bg-blue-100 border-blue-300",
-                  "bg-purple-100 border-purple-300", 
-                  "bg-green-100 border-green-300"
-                ];
-                return (
-                  <Card key={index} className={`card-hover ${cardColors[index]}`}>
-                    <CardHeader>
-                      <CardTitle className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-primary-600">
-                          {yearData.year}
-                        </span>
-                        <Badge variant="outline" className="text-lg px-3 py-1">
-                          {yearData.total}명
-                        </Badge>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
-                        {/* University breakdown */}
-                        <div className="space-y-2">
-                          {yearData.universities.map((uni, uniIndex) => (
-                            <div key={uniIndex} className="flex justify-between items-center">
-                              <span className="text-gray-700">{uni.name}</span>
-                              <Badge variant="secondary">{uni.count}명</Badge>
-                            </div>
-                          ))}
-                        </div>
-                        
-                        {/* Highlights */}
-                        <div className="border-t pt-4">
-                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                            <Star className="h-4 w-4 mr-2 text-yellow-500" />
-                            주요 성과
-                          </h4>
-                          <ul className="space-y-1">
-                            {yearData.highlights.map((highlight, hIndex) => (
-                              <li key={hIndex} className="text-sm text-gray-600 flex items-center">
-                                <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-2"></div>
-                                {highlight}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        {/* View Details Button */}
-                        <Link href={`/admissions/${yearData.year.slice(0, 4)}`}>
-                          <Button className="w-full mt-4" variant="outline">
-                            <Calendar className="mr-2 h-4 w-4" />
-                            상세 합격자 명단 보기
-                          </Button>
-                        </Link>
+              {yearlyStats.map((yearData, index) => (
+                <Card key={index} className="card-hover">
+                  <CardHeader>
+                    <CardTitle className="flex items-center justify-between">
+                      <span className="text-2xl font-bold text-primary-600">
+                        {yearData.year}
+                      </span>
+                      <Badge variant="outline" className="text-lg px-3 py-1">
+                        {yearData.total}명
+                      </Badge>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {/* University breakdown */}
+                      <div className="space-y-2">
+                        {yearData.universities.map((uni, uniIndex) => (
+                          <div key={uniIndex} className="flex justify-between items-center">
+                            <span className="text-gray-700">{uni.name}</span>
+                            <Badge variant="secondary">{uni.count}명</Badge>
+                          </div>
+                        ))}
                       </div>
-                    </CardContent>
+                      
+                      {/* Highlights */}
+                      <div className="border-t pt-4">
+                        <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                          <Star className="h-4 w-4 mr-2 text-yellow-500" />
+                          주요 성과
+                        </h4>
+                        <ul className="space-y-1">
+                          {yearData.highlights.map((highlight, hIndex) => (
+                            <li key={hIndex} className="text-sm text-gray-600 flex items-center">
+                              <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-2"></div>
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      {/* View Details Button */}
+                      <Link href={`/admissions/${yearData.year.slice(0, 4)}`}>
+                        <Button className="w-full mt-4" variant="outline">
+                          <Calendar className="mr-2 h-4 w-4" />
+                          상세 합격자 명단 보기
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
                   </Card>
-                );
-              })}
+              ))}
             </div>
           </div>
         </section>
