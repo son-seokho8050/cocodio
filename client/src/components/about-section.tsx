@@ -40,7 +40,7 @@ export default function AboutSection() {
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">O</div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Observe (창의적 해석)</h4>
-                  <p className="text-gray-600">개인만의 독창적인 시각으로 대상을 재해석하는 관점을 학습합니다.</p>
+                  <p className="text-gray-600">개인만의 독창적인 시각으로 대상을 재해석하는 관점을 학습</p>
                 </div>
               </div>
               
