@@ -91,7 +91,7 @@ export default function AboutSection() {
               <Trophy className="h-8 w-8" />
             </div>
             <h4 className="text-xl font-semibold text-gray-900 mb-3">검증된 합격</h4>
-            <p className="text-gray-600 tracking-wide leading-relaxed">주요 미대 입시에서 높은 합격률과 수상을 자랑하는 체계적인 입시 전략을 제공합니다.</p>
+            <p className="text-gray-600 tracking-wide leading-relaxed">주요 미대 입시에서 매년 높은 합격률과 수상을 자랑하는 체계적인 입시 전략을 제공합니다.</p>
           </Card>
         </div>
       </div>
