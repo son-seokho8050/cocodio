@@ -74,7 +74,7 @@ export default function AboutSection() {
             <div className="bg-purple-100 text-secondary-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Laptop className="h-8 w-8" />
             </div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-3">디지털 융합 교육</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-3">디지털 프로세스 폴리오</h4>
             <p className="text-gray-600">전통 미술과 디지털 아트를 결합한 미래형 교육 시스템을 운영합니다.</p>
           </Card>
           
