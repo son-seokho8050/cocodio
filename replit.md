@@ -140,6 +140,11 @@ Changelog:
   - Updated hero section to fetch achievements dynamically from /api/achievements endpoint
   - Maintained existing achievement rotation functionality with 3-second intervals
   - Enhanced system architecture to support data-driven achievement display
+- June 30, 2025. Comprehensive UI improvements for text readability
+  - Enhanced admissions pages (2022-2025) with improved card background colors for better text contrast
+  - Fixed admissions overview page hero section with consistent hero-gradient styling
+  - Improved typography consistency across pages matching homepage design standards
+  - Applied professional color schemes maintaining site's visual identity while ensuring accessibility
 ```
 
 ## User Preferences

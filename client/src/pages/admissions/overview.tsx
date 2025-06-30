@@ -63,14 +63,13 @@ export default function AdmissionsOverview() {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-16 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-accent-500/20"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section className="hero-gradient text-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
                 합격자 명단
               </h1>
-              <p className="text-xl text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
+              <p className="text-xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto">
                 코코미술학원의 체계적인 FOLLOW 시스템과 4단계 사고체계를 통해 
                 이루어낸 최근 3년간의 우수한 입시 결과를 확인하세요.
               </p>
