@@ -56,7 +56,7 @@ export default function AboutSection() {
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">W</div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Work (성찰과 발전)</h4>
-                  <p className="text-gray-600">작품을 객관적으로 평가하고 지속적으로 개선하는 실력을 키웁니다.</p>
+                  <p className="text-gray-600">작품의 객관적 평가, 지속적으로 개선하는 실력을 향상</p>
                 </div>
               </div>
             </div>
