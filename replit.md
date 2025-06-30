@@ -121,6 +121,7 @@ Changelog:
   - Updated hero section description to "여러분의 재능은 어떤 모양인가요?"
   - Changed digital drawing curriculum item from "Photoshop & Illustrator" to "클립스튜디오"
   - Added "ASPRITE" to digital drawing curriculum for pixel art and 2D animation
+  - Updated curriculum to include both "ASPRITE" and "스파인 2D" for comprehensive animation training
 ```
 
 ## User Preferences
