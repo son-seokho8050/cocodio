@@ -90,7 +90,7 @@ export default function CurriculumSection() {
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
-                  ASPRITE
+                  ASEPRITE(픽셀아트)
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
