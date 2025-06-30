@@ -99,57 +99,64 @@ export default function AdmissionsOverview() {
             </h2>
             
             <div className="grid lg:grid-cols-3 gap-8">
-              {yearlyStats.map((yearData, index) => (
-                <Card key={index} className="card-hover">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-primary-600">
-                        {yearData.year}
-                      </span>
-                      <Badge variant="outline" className="text-lg px-3 py-1">
-                        {yearData.total}명
-                      </Badge>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {/* University breakdown */}
-                      <div className="space-y-2">
-                        {yearData.universities.map((uni, uniIndex) => (
-                          <div key={uniIndex} className="flex justify-between items-center">
-                            <span className="text-gray-700">{uni.name}</span>
-                            <Badge variant="secondary">{uni.count}명</Badge>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      {/* Highlights */}
-                      <div className="border-t pt-4">
-                        <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                          <Star className="h-4 w-4 mr-2 text-yellow-500" />
-                          주요 성과
-                        </h4>
-                        <ul className="space-y-1">
-                          {yearData.highlights.map((highlight, hIndex) => (
-                            <li key={hIndex} className="text-sm text-gray-600 flex items-center">
-                              <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-2"></div>
-                              {highlight}
-                            </li>
+              {yearlyStats.map((yearData, index) => {
+                const cardColors = [
+                  "bg-blue-100 border-blue-300",
+                  "bg-purple-100 border-purple-300", 
+                  "bg-green-100 border-green-300"
+                ];
+                return (
+                  <Card key={index} className={`card-hover ${cardColors[index]}`}>
+                    <CardHeader>
+                      <CardTitle className="flex items-center justify-between">
+                        <span className="text-2xl font-bold text-primary-600">
+                          {yearData.year}
+                        </span>
+                        <Badge variant="outline" className="text-lg px-3 py-1">
+                          {yearData.total}명
+                        </Badge>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        {/* University breakdown */}
+                        <div className="space-y-2">
+                          {yearData.universities.map((uni, uniIndex) => (
+                            <div key={uniIndex} className="flex justify-between items-center">
+                              <span className="text-gray-700">{uni.name}</span>
+                              <Badge variant="secondary">{uni.count}명</Badge>
+                            </div>
                           ))}
-                        </ul>
+                        </div>
+                        
+                        {/* Highlights */}
+                        <div className="border-t pt-4">
+                          <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                            <Star className="h-4 w-4 mr-2 text-yellow-500" />
+                            주요 성과
+                          </h4>
+                          <ul className="space-y-1">
+                            {yearData.highlights.map((highlight, hIndex) => (
+                              <li key={hIndex} className="text-sm text-gray-600 flex items-center">
+                                <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-2"></div>
+                                {highlight}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        {/* View Details Button */}
+                        <Link href={`/admissions/${yearData.year.slice(0, 4)}`}>
+                          <Button className="w-full mt-4" variant="outline">
+                            <Calendar className="mr-2 h-4 w-4" />
+                            상세 합격자 명단 보기
+                          </Button>
+                        </Link>
                       </div>
-                      
-                      {/* View Details Button */}
-                      <Link href={`/admissions/${yearData.year.slice(0, 4)}`}>
-                        <Button className="w-full mt-4" variant="outline">
-                          <Calendar className="mr-2 h-4 w-4" />
-                          상세 합격자 명단 보기
-                        </Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
