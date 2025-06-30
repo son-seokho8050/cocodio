@@ -17,9 +17,7 @@ export default function CurriculumSection() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             COCO <span className="text-primary-600">ALL IN-ONE SYSTEM</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            학생의 목표와 수준에 맞는 세분화된 과정으로 체계적인 실력 향상을 도모합니다.
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">입시미술 그 한계를 넘어, 코코의 수업을 소개합니다.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
