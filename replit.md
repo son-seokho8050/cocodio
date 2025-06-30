@@ -122,6 +122,7 @@ Changelog:
   - Changed digital drawing curriculum item from "Photoshop & Illustrator" to "클립스튜디오"
   - Added "ASPRITE" to digital drawing curriculum for pixel art and 2D animation
   - Updated curriculum to include both "ASPRITE" and "스파인 2D" for comprehensive animation training
+  - Changed "웹툰 제작 실습" to "애니메이트CC" for professional animation software training
 ```
 
 ## User Preferences
