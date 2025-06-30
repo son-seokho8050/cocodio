@@ -89,8 +89,8 @@ export default function HeroSection() {
             </div>
             
             <div className="absolute -top-6 -right-6 bg-accent-500 rounded-xl p-4 text-white">
-              <div className="text-2xl font-bold">FOLLOW</div>
-              <div className="text-xs">시스템</div>
+              <div className="text-2xl font-bold text-center">FOLLOW</div>
+              <div className="text-xs">ALL IN-ONE SYSTEM</div>
             </div>
           </div>
         </div>
