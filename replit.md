@@ -103,6 +103,11 @@ Changelog:
   - Added achievements section showcasing real results
   - Updated location info to reflect Masan/Gimhae locations
   - Enhanced testimonials with authentic feedback
+- June 30, 2025. Navigation and structure updates
+  - Changed hero title to "재능의 출발점"
+  - Replaced "학생작품" with "FOLLOW수업" in navigation
+  - Added "합격자명단" dropdown with yearly admissions data
+  - Created comprehensive admissions results system (2022-2025)
 ```
 
 ## User Preferences
