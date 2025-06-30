@@ -12,7 +12,7 @@ export default function Admissions2022() {
       university: "홍익대학교",
       department: "디자인컨버전스학과",
       students: [
-        { name: "김○아", grade: "진해여고 졸업", note: "일반전형" }
+        { name: "김○아", grade: "진해여고 졸업", note: "디자인컨버전스학과" }
       ],
       category: "서울권",
       color: "bg-purple-100 border-purple-300"
@@ -21,7 +21,7 @@ export default function Admissions2022() {
       university: "중앙대학교",
       department: "시각디자인학과",
       students: [
-        { name: "윤○정", grade: "명덕고", note: "일반전형" }
+        { name: "윤○정", grade: "명덕고", note: "시각디자인학과" }
       ],
       category: "서울권",
       color: "bg-blue-100 border-blue-300"
@@ -30,7 +30,7 @@ export default function Admissions2022() {
       university: "단국대학교",
       department: "커뮤니케이션디자인학과",
       students: [
-        { name: "정○훈", grade: "용마고", note: "일반전형" }
+        { name: "정○훈", grade: "용마고", note: "커뮤니케이션디자인학과" }
       ],
       category: "서울권",
       color: "bg-amber-100 border-amber-300"
@@ -39,7 +39,7 @@ export default function Admissions2022() {
       university: "경희대학교",
       department: "환경조경디자인학과",
       students: [
-        { name: "정○훈", grade: "용마고", note: "일반전형" }
+        { name: "정○훈", grade: "용마고", note: "환경조경디자인학과" }
       ],
       category: "서울권",
       color: "bg-green-100 border-green-300"
@@ -48,7 +48,7 @@ export default function Admissions2022() {
       university: "건국대학교",
       department: "의상디자인학과",
       students: [
-        { name: "원○민", grade: "성지여고", note: "일반전형" }
+        { name: "원○민", grade: "성지여고", note: "의상디자인학과" }
       ],
       category: "서울권",
       color: "bg-red-100 border-red-300"
@@ -57,7 +57,7 @@ export default function Admissions2022() {
       university: "명지대학교",
       department: "패션디자인학과",
       students: [
-        { name: "차○아", grade: "김해여고", note: "일반전형" }
+        { name: "차○아", grade: "김해여고", note: "패션디자인학과" }
       ],
       category: "서울권",
       color: "bg-orange-100 border-orange-300"
@@ -129,11 +129,11 @@ export default function Admissions2022() {
       university: "동명대학교",
       department: "시각디자인학과",
       students: [
-        { name: "곽○원", grade: "용마고", note: "일반전형" },
-        { name: "허○혁", grade: "창신고", note: "일반전형" },
-        { name: "유○영", grade: "남지고", note: "일반전형" },
-        { name: "이○빈", grade: "무학여고", note: "일반전형" },
-        { name: "차○지", grade: "대암고", note: "일반전형" }
+        { name: "곽○원", grade: "용마고", note: "시각디자인학과" },
+        { name: "허○혁", grade: "창신고", note: "시각디자인학과" },
+        { name: "유○영", grade: "남지고", note: "시각디자인학과" },
+        { name: "이○빈", grade: "무학여고", note: "시각디자인학과" },
+        { name: "차○지", grade: "대암고", note: "시각디자인학과" }
       ],
       category: "지역사립대",
       color: "bg-red-100 border-red-300"
@@ -142,8 +142,8 @@ export default function Admissions2022() {
       university: "창원대학교",
       department: "조형예술학과",
       students: [
-        { name: "김○재", grade: "마여고", note: "시각디자인" },
-        { name: "홍○주", grade: "삼진고", note: "공예" }
+        { name: "김○재", grade: "마여고", note: "시각디자인전공" },
+        { name: "홍○주", grade: "삼진고", note: "공예전공" }
       ],
       category: "지역거점국립대",
       color: "bg-orange-100 border-orange-300"
@@ -152,10 +152,10 @@ export default function Admissions2022() {
       university: "울산대학교",
       department: "산업디자인학과",
       students: [
-        { name: "홍○진", grade: "마산공고", note: "섬유디자인" },
-        { name: "조○근", grade: "남산고", note: "섬유디자인" },
-        { name: "백○주", grade: "남지고", note: "산업디자인" },
-        { name: "허○혁", grade: "창신고", note: "실내공간디자인" },
+        { name: "홍○진", grade: "마산공고", note: "섬유디자인전공" },
+        { name: "조○근", grade: "남산고", note: "섬유디자인전공" },
+        { name: "백○주", grade: "남지고", note: "산업디자인전공" },
+        { name: "허○혁", grade: "창신고", note: "실내공간디자인전공" },
         { name: "이○영", grade: "진영고", note: "미술학과" }
       ],
       category: "지역거점국립대",
@@ -165,7 +165,7 @@ export default function Admissions2022() {
       university: "경북대학교",
       department: "패션디자인학과",
       students: [
-        { name: "문○은", grade: "문성고", note: "일반전형" }
+        { name: "문○은", grade: "문성고", note: "패션디자인학과" }
       ],
       category: "지역거점국립대",
       color: "bg-purple-100 border-purple-300"
