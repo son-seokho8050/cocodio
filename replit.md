@@ -117,6 +117,7 @@ Changelog:
   - Changed "상담문의" navigation item to "적성테스트"
   - Updated FOLLOW system badge to show "FOLLOW / ALL IN-ONE SYSTEM"
   - Changed curriculum section title to "COCO ALL IN-ONE SYSTEM"
+  - Enhanced text formatting with improved line breaks and spacing for better readability
 ```
 
 ## User Preferences
