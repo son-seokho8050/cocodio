@@ -34,7 +34,7 @@ export default function CurriculumSection() {
                 <GraduationCap className="text-primary-600 h-8 w-8 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">입시미술</h3>
               </div>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
                 디자인과 만화 전공을 위한 체계적인 입시 준비 과정으로,
                 포트폴리오 제작부터 실기시험 대비까지 완벽하게 준비합니다.
               </p>
@@ -80,7 +80,7 @@ export default function CurriculumSection() {
                 <Tablet className="text-secondary-600 h-8 w-8 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">디지털 드로잉</h3>
               </div>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
                 최신 디지털 도구를 활용한 현대적 아트 교육으로,
                 웹툰, 일러스트, 게임 아트 등 다양한 분야의 기초를 다집니다.
               </p>
@@ -126,7 +126,7 @@ export default function CurriculumSection() {
                 <Palette className="text-accent-600 h-8 w-8 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">중등미술</h3>
               </div>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
                 중학생을 위한 기초 미술 교육으로 창의성과 표현력을 기르며,
                 향후 입시 준비를 위한 탄탄한 기초를 마련합니다.
               </p>
