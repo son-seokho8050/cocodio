@@ -100,10 +100,7 @@ export default function CurriculumSection() {
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
                   애니메이트CC/ 포토샵
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
-                  <Check className="text-secondary-600 mr-2 h-4 w-4" />
-                  포트폴리오 완성 및 발표
-                </div>
+
               </div>
               
               <Button 

@@ -127,6 +127,7 @@ Changelog:
   - Corrected "ASPRITE" to "ASEPRITE(픽셀아트)" with proper spelling and pixel art specification
   - Updated "스파인 2D" to "스파인2D(2.5D 게임캐릭터)" to specify 2.5D game character focus
   - Changed "애니메이트CC" to "애니메이트CC/ 포토샵" to include Photoshop in animation curriculum
+  - Removed "포트폴리오 완성 및 발표" from digital drawing curriculum to focus on software tools
 ```
 
 ## User Preferences
