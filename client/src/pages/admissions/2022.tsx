@@ -19,7 +19,7 @@ export default function Admissions2022() {
     },
     {
       university: "중앙대학교",
-      department: "시각디자인학과",
+      department: "안성캠퍼스",
       students: [
         { name: "윤○정", grade: "명덕고", note: "시각디자인학과" }
       ],
