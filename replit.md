@@ -128,6 +128,7 @@ Changelog:
   - Updated "스파인 2D" to "스파인2D(2.5D 게임캐릭터)" to specify 2.5D game character focus
   - Changed "애니메이트CC" to "애니메이트CC/ 포토샵" to include Photoshop in animation curriculum
   - Removed "포트폴리오 완성 및 발표" from digital drawing curriculum to focus on software tools
+  - Updated digital portfolio text to "학생개인별 빅테이터를 제공합니다." for consistent formatting
 ```
 
 ## User Preferences
