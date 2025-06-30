@@ -74,7 +74,7 @@ export default function Navigation() {
               onClick={() => scrollToSection('portfolio')}
               className="text-gray-700 hover:text-primary-600 transition-colors"
             >
-              COCO ALL IN-ONE SYSTEM
+              FOLLOW 시스템
             </button>
             <button
               onClick={() => scrollToSection('contact')}
@@ -122,7 +122,7 @@ export default function Navigation() {
                 onClick={() => scrollToSection('portfolio')}
                 className="text-gray-700 hover:text-primary-600 transition-colors text-left"
               >
-                COCO ALL IN-ONE SYSTEM
+                FOLLOW 시스템
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
