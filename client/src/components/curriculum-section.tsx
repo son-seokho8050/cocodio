@@ -94,7 +94,7 @@ export default function CurriculumSection() {
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
-                  스파인 2D
+                  스파인2D(2.5D 게임캐릭터)
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
