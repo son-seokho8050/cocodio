@@ -39,16 +39,19 @@ export default function Navigation() {
             >
               커리큘럼
             </button>
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsAdmissionsOpen(true)}
+              onMouseLeave={() => setIsAdmissionsOpen(false)}
+            >
               <button
-                onClick={() => setIsAdmissionsOpen(!isAdmissionsOpen)}
                 className="text-gray-700 hover:text-primary-600 transition-colors flex items-center"
               >
                 합격자명단
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isAdmissionsOpen && (
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[160px] z-50">
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[160px] z-50 border">
                   <Link href="/admissions" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                     최근 3년간 통합
                   </Link>
