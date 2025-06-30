@@ -82,8 +82,7 @@ export default function AboutSection() {
             <p className="text-gray-600 tracking-wide leading-relaxed pl-[10px] pr-[10px]">
               디지털 프로그램을 활용하여,<br />
               목표대학에서 그림 스타일까지,<br />
-              학생개인별 빅테이터를<br />
-              제공합니다.
+              개인별 빅테이터를 제공합니다.
             </p>
           </Card>
           
