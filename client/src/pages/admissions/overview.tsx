@@ -63,8 +63,8 @@ export default function AdmissionsOverview() {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 relative">
-          <div className="absolute inset-0 bg-black/30"></div>
+        <section className="bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-16 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-accent-500/20"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-white drop-shadow-lg">
