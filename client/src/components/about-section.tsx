@@ -67,7 +67,7 @@ export default function AboutSection() {
               <GraduationCap className="h-8 w-8" />
             </div>
             <h4 className="text-xl font-semibold text-gray-900 mb-3">개인 성향별 맞춤 지도</h4>
-            <p className="text-gray-600">MBTI 성향별 개인 커리큘럼으로 강점과 특성을 파악하여 1:1 최적화된 수업을 제공합니다.</p>
+            <p className="text-gray-600 tracking-wide leading-relaxed">MBTI 성향별 개인 커리큘럼으로 강점과 특성을 파악하여 1:1 최적화된 수업을 제공합니다.</p>
           </Card>
           
           <Card className="text-center bg-gray-50 rounded-2xl p-8 card-hover">
@@ -75,7 +75,7 @@ export default function AboutSection() {
               <Laptop className="h-8 w-8" />
             </div>
             <h4 className="text-xl font-semibold text-gray-900 mb-3">디지털 프로세스 폴리오</h4>
-            <p className="text-gray-600">디지털 프로그램을 활용하여, 목표대학에서 그림 스타일까지, 학생 개인별 빅데이터를 제공합니다.</p>
+            <p className="text-gray-600 tracking-wide leading-relaxed">디지털 프로그램을 활용하여, 목표대학에서 그림 스타일까지, 학생 개인별 빅데이터를 제공합니다.</p>
           </Card>
           
           <Card className="text-center bg-gray-50 rounded-2xl p-8 card-hover">
@@ -83,7 +83,7 @@ export default function AboutSection() {
               <Trophy className="h-8 w-8" />
             </div>
             <h4 className="text-xl font-semibold text-gray-900 mb-3">검증된 합격 실적</h4>
-            <p className="text-gray-600">주요 미대 입시에서 높은 합격률과 수상을 자랑하는 체계적인 입시 전략을 제공합니다.</p>
+            <p className="text-gray-600 tracking-wide leading-relaxed">주요 미대 입시에서 높은 합격률과 수상을 자랑하는 체계적인 입시 전략을 제공합니다.</p>
           </Card>
         </div>
       </div>
