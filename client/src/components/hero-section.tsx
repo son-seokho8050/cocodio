@@ -46,9 +46,7 @@ export default function HeroSection() {
               <span className="text-accent-500">코코</span>
             </h1>
             <p className="text-xl mb-8 text-blue-100 leading-relaxed">
-              4단계 사고체계를 통한 체계적 미술교육으로<br />
-              창의력과 논리적 사고를 동시에 기르는<br />
-              차별화된 입시미술 전문학원입니다.
+              여러분의 재능은 어떤 모양인가요?
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button

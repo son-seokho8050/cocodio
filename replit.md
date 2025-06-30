@@ -118,6 +118,7 @@ Changelog:
   - Updated FOLLOW system badge to show "FOLLOW / ALL IN-ONE SYSTEM"
   - Changed curriculum section title to "COCO ALL IN-ONE SYSTEM"
   - Enhanced text formatting with improved line breaks and spacing for better readability
+  - Updated hero section description to "여러분의 재능은 어떤 모양인가요?"
 ```
 
 ## User Preferences
