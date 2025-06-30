@@ -22,7 +22,7 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-in slide-in-from-left duration-700">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              사고력이 시작되는 곳<br />
+              재능의 출발점<br />
               <span className="text-accent-500">코코미술학원</span>
             </h1>
             <p className="text-xl mb-8 text-blue-100 leading-relaxed">
