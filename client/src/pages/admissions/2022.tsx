@@ -9,81 +9,166 @@ import { Link } from "wouter";
 export default function Admissions2022() {
   const admissionResults = [
     {
-      university: "한양대학교",
-      department: "시각디자인학과",
-      students: [
-        { name: "김○○", grade: "재원생", note: "일반전형" },
-        { name: "이○○", grade: "재원생", note: "일반전형" },
-        { name: "박○○", grade: "재원생", note: "일반전형" },
-        { name: "최○○", grade: "재원생", note: "일반전형" }
-      ],
-      category: "서울권",
-      color: "bg-amber-100 border-amber-300"
-    },
-    {
-      university: "국민대학교",
-      department: "시각디자인학과",
-      students: [
-        { name: "송○○", grade: "재원생", note: "일반전형" },
-        { name: "한○○", grade: "재원생", note: "일반전형" },
-        { name: "조○○", grade: "재원생", note: "일반전형" }
-      ],
-      category: "서울권",
-      color: "bg-blue-100 border-blue-300"
-    },
-    {
       university: "홍익대학교",
-      department: "시각디자인학과",
+      department: "디자인컨버전스학과",
       students: [
-        { name: "오○○", grade: "재원생", note: "일반전형" },
-        { name: "문○○", grade: "재원생", note: "일반전형" },
-        { name: "배○○", grade: "재원생", note: "일반전형" }
+        { name: "김○아", grade: "진해여고 졸업", note: "일반전형" }
       ],
       category: "서울권",
       color: "bg-purple-100 border-purple-300"
     },
     {
-      university: "부산대학교",
-      department: "시각정보디자인학과",
+      university: "중앙대학교",
+      department: "시각디자인학과",
       students: [
-        { name: "권○○", grade: "재원생", note: "지역인재전형" },
-        { name: "노○○", grade: "재원생", note: "일반전형" },
-        { name: "도○○", grade: "재원생", note: "일반전형" },
-        { name: "라○○", grade: "재원생", note: "일반전형" }
+        { name: "윤○정", grade: "명덕고", note: "일반전형" }
       ],
-      category: "지역거점국립대",
+      category: "서울권",
+      color: "bg-blue-100 border-blue-300"
+    },
+    {
+      university: "단국대학교",
+      department: "커뮤니케이션디자인학과",
+      students: [
+        { name: "정○훈", grade: "용마고", note: "일반전형" }
+      ],
+      category: "서울권",
+      color: "bg-amber-100 border-amber-300"
+    },
+    {
+      university: "경희대학교",
+      department: "환경조경디자인학과",
+      students: [
+        { name: "정○훈", grade: "용마고", note: "일반전형" }
+      ],
+      category: "서울권",
       color: "bg-green-100 border-green-300"
     },
     {
-      university: "경성대학교",
-      department: "시각디자인학과",
+      university: "건국대학교",
+      department: "의상디자인학과",
       students: [
-        { name: "아○○", grade: "재원생", note: "일반전형" },
-        { name: "자○○", grade: "재원생", note: "일반전형" },
-        { name: "차○○", grade: "재원생", note: "일반전형" },
-        { name: "카○○", grade: "재원생", note: "일반전형" },
-        { name: "타○○", grade: "재원생", note: "일반전형" },
-        { name: "파○○", grade: "재원생", note: "일반전형" },
-        { name: "하○○", grade: "재원생", note: "일반전형" }
+        { name: "원○민", grade: "성지여고", note: "일반전형" }
       ],
-      category: "지역사립대",
+      category: "서울권",
+      color: "bg-red-100 border-red-300"
+    },
+    {
+      university: "명지대학교",
+      department: "패션디자인학과",
+      students: [
+        { name: "차○아", grade: "김해여고", note: "일반전형" }
+      ],
+      category: "서울권",
       color: "bg-orange-100 border-orange-300"
     },
     {
-      university: "동아대학교",
+      university: "계명대학교",
+      department: "디자인학부",
+      students: [
+        { name: "공○란", grade: "남지고", note: "시각디자인" },
+        { name: "조○정", grade: "구암고", note: "산업디자인" },
+        { name: "성○경", grade: "내서여고", note: "산업디자인" },
+        { name: "김○재", grade: "남지고", note: "텍스타일디자인" },
+        { name: "이○정", grade: "태봉고", note: "패션디자인" },
+        { name: "박○원", grade: "태봉고", note: "패션디자인" },
+        { name: "김○하", grade: "내서여고", note: "패션디자인" },
+        { name: "홍○진", grade: "마산공고", note: "패션디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-purple-100 border-purple-300"
+    },
+    {
+      university: "영남대학교",
+      department: "디자인학부",
+      students: [
+        { name: "정○훈", grade: "용마고", note: "시각디자인" },
+        { name: "정○유", grade: "제일여고", note: "시각디자인" },
+        { name: "변○경", grade: "마여고", note: "시각디자인" },
+        { name: "조○준", grade: "용마고", note: "산업디자인" },
+        { name: "박○영", grade: "삼진고", note: "산업디자인" },
+        { name: "박○은", grade: "대청고", note: "산업디자인" },
+        { name: "이○정", grade: "태봉고", note: "생활제품디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-blue-100 border-blue-300"
+    },
+    {
+      university: "대구대학교",
+      department: "디자인학부",
+      students: [
+        { name: "공○란", grade: "남지고", note: "시각디자인" },
+        { name: "백○주", grade: "남지고", note: "산업디자인" },
+        { name: "홍○진", grade: "마산공고", note: "실내건축디자인" },
+        { name: "유○희", grade: "무학여고", note: "실내건축디자인" },
+        { name: "박○민", grade: "창신고", note: "실내건축디자인" },
+        { name: "허○혁", grade: "창신고", note: "생활조형학과" },
+        { name: "채○진", grade: "제일여고", note: "생활조형학과" },
+        { name: "정○주", grade: "마산고", note: "생활조형학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-green-100 border-green-300"
+    },
+    {
+      university: "동서대학교",
+      department: "디자인학부",
+      students: [
+        { name: "한○솔", grade: "명덕고", note: "디자인학과" },
+        { name: "조○정", grade: "구암고", note: "디자인학과" },
+        { name: "이○현", grade: "삼진고", note: "디자인학과" },
+        { name: "이○림", grade: "사파고", note: "디자인학과" },
+        { name: "이○빈", grade: "중앙여고", note: "디자인학과" },
+        { name: "오○은", grade: "봉림고", note: "패션디자인학과" },
+        { name: "정○희", grade: "진해고", note: "패션디자인학과" },
+        { name: "김○승", grade: "창원남고", note: "패션디자인학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-amber-100 border-amber-300"
+    },
+    {
+      university: "동명대학교",
       department: "시각디자인학과",
       students: [
-        { name: "다○○", grade: "재원생", note: "일반전형" },
-        { name: "라○○", grade: "재원생", note: "일반전형" },
-        { name: "마○○", grade: "재원생", note: "일반전형" },
-        { name: "바○○", grade: "재원생", note: "일반전형" },
-        { name: "사○○", grade: "재원생", note: "일반전형" },
-        { name: "아○○", grade: "재원생", note: "일반전형" },
-        { name: "자○○", grade: "재원생", note: "일반전형" },
-        { name: "차○○", grade: "재원생", note: "일반전형" }
+        { name: "곽○원", grade: "용마고", note: "일반전형" },
+        { name: "허○혁", grade: "창신고", note: "일반전형" },
+        { name: "유○영", grade: "남지고", note: "일반전형" },
+        { name: "이○빈", grade: "무학여고", note: "일반전형" },
+        { name: "차○지", grade: "대암고", note: "일반전형" }
       ],
       category: "지역사립대",
       color: "bg-red-100 border-red-300"
+    },
+    {
+      university: "창원대학교",
+      department: "조형예술학과",
+      students: [
+        { name: "김○재", grade: "마여고", note: "시각디자인" },
+        { name: "홍○주", grade: "삼진고", note: "공예" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-orange-100 border-orange-300"
+    },
+    {
+      university: "울산대학교",
+      department: "산업디자인학과",
+      students: [
+        { name: "홍○진", grade: "마산공고", note: "섬유디자인" },
+        { name: "조○근", grade: "남산고", note: "섬유디자인" },
+        { name: "백○주", grade: "남지고", note: "산업디자인" },
+        { name: "허○혁", grade: "창신고", note: "실내공간디자인" },
+        { name: "이○영", grade: "진영고", note: "미술학과" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-blue-100 border-blue-300"
+    },
+    {
+      university: "경북대학교",
+      department: "패션디자인학과",
+      students: [
+        { name: "문○은", grade: "문성고", note: "일반전형" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-purple-100 border-purple-300"
     }
   ];
 
