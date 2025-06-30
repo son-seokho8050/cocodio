@@ -86,7 +86,7 @@ export default function CurriculumSection() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
-                  클립스튜디오
+                  클립스튜디오(웹툰)
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
