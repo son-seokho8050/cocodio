@@ -66,7 +66,7 @@ export default function AboutSection() {
             <div className="bg-primary-50 text-primary-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <GraduationCap className="h-8 w-8" />
             </div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-3">개별 맞춤 지도</h4>
+            <h4 className="text-xl font-semibold text-gray-900 mb-3">개인 성향별 맞춤 지도</h4>
             <p className="text-gray-600">학생별 강점과 특성을 파악하여 1:1 맞춤형 커리큘럼을 제공합니다.</p>
           </Card>
           
