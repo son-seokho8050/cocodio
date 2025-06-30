@@ -20,7 +20,7 @@ export default function Admissions2024() {
         { name: "강○○", grade: "재원생", note: "일반전형" }
       ],
       category: "서울권",
-      color: "bg-yellow-50 border-yellow-200"
+      color: "bg-amber-100 border-amber-300"
     },
     {
       university: "국민대학교",
@@ -33,7 +33,7 @@ export default function Admissions2024() {
         { name: "임○○", grade: "재원생", note: "일반전형" }
       ],
       category: "서울권",
-      color: "bg-blue-50 border-blue-200"
+      color: "bg-blue-100 border-blue-300"
     },
     {
       university: "홍익대학교",
@@ -45,7 +45,7 @@ export default function Admissions2024() {
         { name: "서○○", grade: "재원생", note: "일반전형" }
       ],
       category: "서울권",
-      color: "bg-purple-50 border-purple-200"
+      color: "bg-purple-100 border-purple-300"
     },
     {
       university: "부산대학교",
@@ -59,7 +59,7 @@ export default function Admissions2024() {
         { name: "바○○", grade: "재원생", note: "일반전형" }
       ],
       category: "지역거점국립대",
-      color: "bg-green-50 border-green-200"
+      color: "bg-green-100 border-green-300"
     },
     {
       university: "경성대학교",
@@ -75,7 +75,7 @@ export default function Admissions2024() {
         { name: "가○○", grade: "재원생", note: "일반전형" }
       ],
       category: "지역사립대",
-      color: "bg-orange-50 border-orange-200"
+      color: "bg-orange-100 border-orange-300"
     },
     {
       university: "동아대학교",
@@ -92,7 +92,7 @@ export default function Admissions2024() {
         { name: "카○○", grade: "재원생", note: "일반전형" }
       ],
       category: "지역사립대",
-      color: "bg-red-50 border-red-200"
+      color: "bg-red-100 border-red-300"
     }
   ];
 
