@@ -133,6 +133,7 @@ Changelog:
   - Changed "학생개인별" to "개인별" to fit text properly in 3 lines for better display
   - Updated "검증된 합격 실적" section text to 3-line format emphasizing entrance exam success rates and competition awards
   - Fixed hero section "학생작품 보기" button visibility by adding semi-transparent background
+  - Changed hero section button text from "학생작품 보기" to "FOLLOW 수업 보기" to align with FOLLOW system branding
 ```
 
 ## User Preferences

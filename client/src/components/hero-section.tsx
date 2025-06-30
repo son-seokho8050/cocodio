@@ -64,7 +64,7 @@ export default function HeroSection() {
                 size="lg"
               >
                 <Play className="mr-2 h-5 w-5" />
-                학생작품 보기
+                FOLLOW 수업 보기
               </Button>
             </div>
           </div>
