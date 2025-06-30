@@ -134,6 +134,12 @@ Changelog:
   - Updated "검증된 합격 실적" section text to 3-line format emphasizing entrance exam success rates and competition awards
   - Fixed hero section "학생작품 보기" button visibility by adding semi-transparent background
   - Changed hero section button text from "학생작품 보기" to "FOLLOW 수업 보기" to align with FOLLOW system branding
+- June 30, 2025. Database integration for achievements system
+  - Added achievements table to database schema with count, university, description, and displayOrder fields
+  - Migrated hardcoded achievements data to database storage with API endpoint
+  - Updated hero section to fetch achievements dynamically from /api/achievements endpoint
+  - Maintained existing achievement rotation functionality with 3-second intervals
+  - Enhanced system architecture to support data-driven achievement display
 ```
 
 ## User Preferences

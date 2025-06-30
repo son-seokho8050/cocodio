@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Calendar, Play } from "lucide-react";
+import type { Achievement } from "@shared/schema";
 
 export default function HeroSection() {
   const [currentAchievement, setCurrentAchievement] = useState(0);
 
-  const achievements = [
-    { count: "17명", university: "한양대", description: "실기대회<br />지역 최다 수상" },
-    { count: "23명", university: "홍익대", description: "미술대학<br />합격자 배출" },
-    { count: "15명", university: "국민대", description: "예술대학<br />입학 성공" },
-    { count: "19명", university: "서울시립대", description: "디자인학과<br />합격 달성" },
-    { count: "12명", university: "건국대", description: "예술디자인<br />학과 진학" }
-  ];
+  const { data: achievements = [], isLoading } = useQuery<Achievement[]>({
+    queryKey: ["/api/achievements"],
+  });
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentAchievement((prev) => (prev + 1) % achievements.length);
-    }, 3000);
+    if (achievements.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentAchievement((prev) => (prev + 1) % achievements.length);
+      }, 3000);
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+  }, [achievements.length]);
 
-  const achievement = achievements[currentAchievement];
+  const achievement = achievements.length > 0 ? achievements[currentAchievement] : null;
   const scrollToPortfolio = () => {
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
@@ -76,15 +76,29 @@ export default function HeroSection() {
               className="rounded-2xl shadow-2xl w-full"
             />
             
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl transition-all duration-500 ease-in-out">
-              <div className="flex items-center space-x-4">
-                <div className="text-3xl font-bold text-primary-600">{achievement.count}</div>
-                <div className="text-sm text-gray-600">
-                  <span className="font-semibold">{achievement.university}</span> 
-                  <span dangerouslySetInnerHTML={{ __html: ` ${achievement.description}` }} />
+            {!isLoading && (
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl transition-all duration-500 ease-in-out">
+                <div className="flex items-center space-x-4">
+                  {achievement ? (
+                    <>
+                      <div className="text-3xl font-bold text-primary-600">{achievement.count}</div>
+                      <div className="text-sm text-gray-600">
+                        <span className="font-semibold">{achievement.university}</span> 
+                        <span dangerouslySetInnerHTML={{ __html: ` ${achievement.description}` }} />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-3xl font-bold text-primary-600">17명</div>
+                      <div className="text-sm text-gray-600">
+                        <span className="font-semibold">한양대</span> 
+                        <span dangerouslySetInnerHTML={{ __html: " 실기대회<br />지역 최다 수상" }} />
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
-            </div>
+            )}
             
             <div className="absolute -top-6 -right-6 bg-accent-500 rounded-xl p-4 text-white">
               <div className="text-2xl font-bold text-center">FOLLOW</div>

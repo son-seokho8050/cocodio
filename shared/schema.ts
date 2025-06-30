@@ -28,6 +28,14 @@ export const portfolioItems = pgTable("portfolio_items", {
   imageUrl: text("image_url").notNull(),
 });
 
+export const achievements = pgTable("achievements", {
+  id: serial("id").primaryKey(),
+  count: text("count").notNull(),
+  university: text("university").notNull(),
+  description: text("description").notNull(),
+  displayOrder: integer("display_order").notNull().default(0),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -43,9 +51,17 @@ export const insertPortfolioItemSchema = createInsertSchema(portfolioItems).omit
   id: true,
 });
 
+export const insertAchievementSchema = createInsertSchema(achievements).omit({
+  id: true,
+}).extend({
+  displayOrder: z.number().default(0),
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertConsultation = z.infer<typeof insertConsultationSchema>;
 export type Consultation = typeof consultations.$inferSelect;
 export type InsertPortfolioItem = z.infer<typeof insertPortfolioItemSchema>;
 export type PortfolioItem = typeof portfolioItems.$inferSelect;
+export type InsertAchievement = z.infer<typeof insertAchievementSchema>;
+export type Achievement = typeof achievements.$inferSelect;

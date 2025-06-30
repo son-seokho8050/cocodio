@@ -27,6 +27,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get all achievements
+  app.get("/api/achievements", async (req, res) => {
+    try {
+      const achievements = await storage.getAchievements();
+      res.json(achievements);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch achievements" });
+    }
+  });
+
   // Create consultation request
   app.post("/api/consultations", async (req, res) => {
     try {

@@ -1,4 +1,4 @@
-import { users, consultations, portfolioItems, type User, type InsertUser, type Consultation, type InsertConsultation, type PortfolioItem, type InsertPortfolioItem } from "@shared/schema";
+import { users, consultations, portfolioItems, achievements, type User, type InsertUser, type Consultation, type InsertConsultation, type PortfolioItem, type InsertPortfolioItem, type Achievement, type InsertAchievement } from "@shared/schema";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -8,26 +8,34 @@ export interface IStorage {
   getConsultations(): Promise<Consultation[]>;
   getPortfolioItems(): Promise<PortfolioItem[]>;
   getPortfolioItemsByCategory(category: string): Promise<PortfolioItem[]>;
+  getAchievements(): Promise<Achievement[]>;
+  createAchievement(achievement: InsertAchievement): Promise<Achievement>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private consultations: Map<number, Consultation>;
   private portfolioItems: Map<number, PortfolioItem>;
+  private achievements: Map<number, Achievement>;
   private currentUserId: number;
   private currentConsultationId: number;
   private currentPortfolioId: number;
+  private currentAchievementId: number;
 
   constructor() {
     this.users = new Map();
     this.consultations = new Map();
     this.portfolioItems = new Map();
+    this.achievements = new Map();
     this.currentUserId = 1;
     this.currentConsultationId = 1;
     this.currentPortfolioId = 1;
+    this.currentAchievementId = 1;
     
     // Initialize with sample portfolio items
     this.initializePortfolioItems();
+    // Initialize with achievements data
+    this.initializeAchievements();
   }
 
   private initializePortfolioItems() {
@@ -85,6 +93,49 @@ export class MemStorage implements IStorage {
     });
   }
 
+  private initializeAchievements() {
+    const sampleAchievements: Omit<Achievement, 'id'>[] = [
+      {
+        count: "17명",
+        university: "한양대",
+        description: "실기대회<br />지역 최다 수상",
+        displayOrder: 1
+      },
+      {
+        count: "23명",
+        university: "홍익대",
+        description: "미술대학<br />합격자 배출",
+        displayOrder: 2
+      },
+      {
+        count: "15명",
+        university: "국민대",
+        description: "예술대학<br />입학 성공",
+        displayOrder: 3
+      },
+      {
+        count: "19명",
+        university: "서울시립대",
+        description: "디자인학과<br />합격 달성",
+        displayOrder: 4
+      },
+      {
+        count: "12명",
+        university: "건국대",
+        description: "예술디자인<br />학과 진학",
+        displayOrder: 5
+      }
+    ];
+
+    sampleAchievements.forEach((item) => {
+      const achievement: Achievement = {
+        ...item,
+        id: this.currentAchievementId++
+      };
+      this.achievements.set(achievement.id, achievement);
+    });
+  }
+
   async getUser(id: number): Promise<User | undefined> {
     return this.users.get(id);
   }
@@ -127,6 +178,21 @@ export class MemStorage implements IStorage {
     return Array.from(this.portfolioItems.values()).filter(
       item => item.category === category
     );
+  }
+
+  async getAchievements(): Promise<Achievement[]> {
+    return Array.from(this.achievements.values()).sort((a, b) => a.displayOrder - b.displayOrder);
+  }
+
+  async createAchievement(insertAchievement: InsertAchievement): Promise<Achievement> {
+    const id = this.currentAchievementId++;
+    const achievement: Achievement = {
+      ...insertAchievement,
+      id,
+      displayOrder: insertAchievement.displayOrder || 0,
+    };
+    this.achievements.set(id, achievement);
+    return achievement;
   }
 }
 
