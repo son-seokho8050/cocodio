@@ -109,6 +109,9 @@ Changelog:
   - Added "합격자명단" dropdown with yearly admissions data
   - Created comprehensive admissions results system (2022-2025)
   - Updated portfolio branding to "COCO ALL IN-ONE SYSTEM"
+  - Added animated achievement display cycling through university results every 3 seconds
+  - Changed academy subtitle to "DESIGN/ COMICS/ DIGITAL DRAWING"
+  - Navigation branding updated to "FOLLOW 시스템"
 ```
 
 ## User Preferences
