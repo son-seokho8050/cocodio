@@ -15,7 +15,7 @@ export default function CurriculumSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            체계적인 <span className="text-primary-600">커리큘럼</span>
+            COCO <span className="text-primary-600">ALL IN-ONE SYSTEM</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             학생의 목표와 수준에 맞는 세분화된 과정으로 체계적인 실력 향상을 도모합니다.
