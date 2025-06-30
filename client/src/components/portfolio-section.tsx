@@ -40,7 +40,7 @@ export default function PortfolioSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            COCO ALL <span className="text-primary-600">IN-ONE SYSTEM</span>
+            COCO ALL <span className="text-primary-600">ALL IN-ONE SYSTEM</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             COCO ALL IN-ONE SYSTEM을 통해 완성된 학생들의 우수한 작품들을 만나보세요.
