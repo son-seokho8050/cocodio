@@ -10,7 +10,7 @@ export default function Admissions2022() {
   const admissionResults = [
     {
       university: "홍익대학교",
-      department: "디자인컨버전스학과",
+      department: "세종캠퍼스",
       students: [
         { name: "김○아", grade: "진해여고 졸업", note: "디자인컨버전스학과" }
       ],
