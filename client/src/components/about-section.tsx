@@ -48,7 +48,7 @@ export default function AboutSection() {
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">L</div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Learn (체계적 표현)</h4>
-                  <p className="text-gray-600">논리적인 구성과 기법을 통해 아이디어를 완성도 있게 구현합니다.</p>
+                  <p className="text-gray-600">논리적인 구성과 기법을 통해 아이디어를 완성도 있게 구현</p>
                 </div>
               </div>
               
