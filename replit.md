@@ -108,6 +108,7 @@ Changelog:
   - Replaced "학생작품" with "FOLLOW수업" in navigation
   - Added "합격자명단" dropdown with yearly admissions data
   - Created comprehensive admissions results system (2022-2025)
+  - Updated portfolio branding to "COCO ALL IN-ONE SYSTEM"
 ```
 
 ## User Preferences
