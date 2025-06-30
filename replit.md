@@ -132,6 +132,7 @@ Changelog:
   - Adjusted text line breaks to prevent "다." from wrapping to a 4th line, now displays in proper 4-line format
   - Changed "학생개인별" to "개인별" to fit text properly in 3 lines for better display
   - Updated "검증된 합격 실적" section text to 3-line format emphasizing entrance exam success rates and competition awards
+  - Fixed hero section "학생작품 보기" button visibility by adding semi-transparent background
 ```
 
 ## User Preferences

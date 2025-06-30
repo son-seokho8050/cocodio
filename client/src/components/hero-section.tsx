@@ -60,7 +60,7 @@ export default function HeroSection() {
               <Button
                 onClick={scrollToPortfolio}
                 variant="outline"
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-primary-600"
+                className="border-2 border-white text-white bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-primary-600"
                 size="lg"
               >
                 <Play className="mr-2 h-5 w-5" />
