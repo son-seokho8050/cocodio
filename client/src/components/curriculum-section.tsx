@@ -44,19 +44,19 @@ export default function CurriculumSection() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-primary-600 mr-2 h-4 w-4" />
-                  기초 드로잉 & 색채 이론
+                  디자인/ 만화 실기
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-primary-600 mr-2 h-4 w-4" />
-                  포트폴리오 기획 및 제작
+                  입시미술 기초과정
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-primary-600 mr-2 h-4 w-4" />
-                  실기시험 실전 대비
+                  실전시험 실전대비
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-primary-600 mr-2 h-4 w-4" />
-                  개별 진로 상담 및 지도
+                  개별진로 상담 및 지도
                 </div>
               </div>
               
