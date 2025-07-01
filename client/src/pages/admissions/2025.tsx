@@ -1,109 +1,557 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Trophy, GraduationCap, Star, ArrowLeft } from "lucide-react";
+import { GraduationCap, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Admissions2025() {
   const admissionResults = [
+    // 숙명여대
     {
-      university: "한양대학교",
-      department: "시각디자인학과",
+      university: "숙명여자대학교",
+      department: "서울",
       students: [
-        { name: "김○○", grade: "재원생", note: "실기대회 금상" },
-        { name: "이○○", grade: "재원생", note: "실기대회 은상" },
-        { name: "박○○", grade: "재원생", note: "실기대회 동상" },
-        { name: "최○○", grade: "재원생", note: "실기대회 입상" },
-        { name: "정○○", grade: "재원생", note: "실기대회 입상" },
-        { name: "강○○", grade: "재원생", note: "실기대회 입상" },
-        { name: "윤○○", grade: "재원생", note: "실기대회 입상" },
-        { name: "장○○", grade: "재원생", note: "실기대회 입상" }
+        { name: "조○율", grade: "무학여고", note: "시각영상디자인" }
       ],
-      category: "서울권",
+      category: "서울/ 수도권",
+      color: "bg-pink-100 border-pink-300"
+    },
+    // 성신여대
+    {
+      university: "성신여자대학교",
+      department: "서울",
+      students: [
+        { name: "조○빈", grade: "경원고", note: "창의융합" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-purple-100 border-purple-300"
+    },
+    // 동덕여대
+    {
+      university: "동덕여자대학교",
+      department: "서울",
+      students: [
+        { name: "조○율", grade: "무학여고", note: "미디어디자인" }
+      ],
+      category: "서울/ 수도권",
       color: "bg-amber-100 border-amber-300"
     },
+    // 서경대
     {
-      university: "국민대학교",
-      department: "시각디자인학과",
+      university: "서경대학교",
+      department: "서울",
       students: [
-        { name: "송○○", grade: "재원생", note: "기초조형 실기대회 수상" },
-        { name: "한○○", grade: "재원생", note: "우수작품상" },
-        { name: "조○○", grade: "재원생", note: "특별상" },
-        { name: "신○○", grade: "재원생", note: "입상" },
-        { name: "임○○", grade: "재원생", note: "입상" },
-        { name: "홍○○", grade: "재원생", note: "입상" }
+        { name: "김○리", grade: "경남예술고", note: "VD비주얼디자인" }
       ],
-      category: "서울권",
+      category: "서울/ 수도권",
+      color: "bg-red-100 border-red-300"
+    },
+    // 서울과학기술대
+    {
+      university: "서울과학기술대학교",
+      department: "서울",
+      students: [
+        { name: "구○윤", grade: "명덕고", note: "도예" }
+      ],
+      category: "서울/ 수도권",
       color: "bg-blue-100 border-blue-300"
     },
+    // 한양대(에리카)
     {
-      university: "홍익대학교",
-      department: "시각디자인학과",
+      university: "한양대학교",
+      department: "에리카캠퍼스",
       students: [
-        { name: "오○○", grade: "재원생", note: "우수작품상" },
-        { name: "문○○", grade: "재원생", note: "특별상" },
-        { name: "배○○", grade: "재원생", note: "입상" },
-        { name: "서○○", grade: "재원생", note: "입상" },
-        { name: "남○○", grade: "재원생", note: "입상" }
+        { name: "박○빈", grade: "마여고", note: "디자인" },
+        { name: "구○임", grade: "칠원고", note: "디자인" }
       ],
-      category: "서울권",
-      color: "bg-purple-50 border-purple-200"
+      category: "서울/ 수도권",
+      color: "bg-indigo-100 border-indigo-300"
     },
+    // 경기대
     {
-      university: "부산대학교",
-      department: "시각정보디자인학과",
+      university: "경기대학교",
+      department: "수원",
       students: [
-        { name: "권○○", grade: "재원생", note: "지역인재전형" },
-        { name: "노○○", grade: "재원생", note: "일반전형" },
-        { name: "도○○", grade: "재원생", note: "일반전형" },
-        { name: "라○○", grade: "재원생", note: "일반전형" },
-        { name: "마○○", grade: "재원생", note: "일반전형" },
-        { name: "바○○", grade: "재원생", note: "일반전형" },
-        { name: "사○○", grade: "재원생", note: "일반전형" }
+        { name: "이○민", grade: "성지여고", note: "디자인비즈" },
+        { name: "서○우", grade: "제일고", note: "디자인비즈" }
       ],
-      category: "지역거점국립대",
+      category: "서울/ 수도권",
       color: "bg-green-100 border-green-300"
     },
+    // 인천대
     {
-      university: "경성대학교",
-      department: "시각디자인학과",
+      university: "인천대학교",
+      department: "인천",
       students: [
-        { name: "아○○", grade: "재원생", note: "실기대회 은상" },
-        { name: "자○○", grade: "재원생", note: "실기대회 특선" },
-        { name: "차○○", grade: "재원생", note: "우수작품상" },
-        { name: "카○○", grade: "재원생", note: "특별상" },
-        { name: "타○○", grade: "재원생", note: "입상" },
-        { name: "파○○", grade: "재원생", note: "입상" },
-        { name: "하○○", grade: "재원생", note: "입상" },
-        { name: "가○○", grade: "재원생", note: "입상" },
-        { name: "나○○", grade: "재원생", note: "입상" }
+        { name: "성○연", grade: "구암고", note: "디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-teal-100 border-teal-300"
+    },
+    // 건국대(글로컬)
+    {
+      university: "건국대학교",
+      department: "글로컬캠퍼스",
+      students: [
+        { name: "박○람", grade: "성지여고", note: "조형예술" },
+        { name: "이○민", grade: "성지여고", note: "조형예술" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-rose-100 border-rose-300"
+    },
+    // 홍익대(세종)
+    {
+      university: "홍익대학교",
+      department: "세종캠퍼스",
+      students: [
+        { name: "송○규", grade: "함안고", note: "디자인컨버전스" }
+      ],
+      category: "세종권",
+      color: "bg-emerald-100 border-emerald-300"
+    },
+    // 상명대(천안)
+    {
+      university: "상명대학교",
+      department: "천안캠퍼스",
+      students: [
+        { name: "정○아", grade: "구암고", note: "디자인학부" },
+        { name: "권○재", grade: "사파고", note: "디자인학부" },
+        { name: "이○해", grade: "제일고", note: "AI미디어컨텐츠" },
+        { name: "민○경", grade: "진해여고", note: "AI미디어컨텐츠" },
+        { name: "김○희", grade: "경원고", note: "AI미디어컨텐츠" },
+        { name: "조○빈", grade: "경원고", note: "자유전공" }
+      ],
+      category: "지역사립대",
+      color: "bg-stone-100 border-stone-300"
+    },
+    // 호서대
+    {
+      university: "호서대학교",
+      department: "아산캠퍼스",
+      students: [
+        { name: "박○용", grade: "김해고", note: "시각디자인" },
+        { name: "정○후", grade: "신월고", note: "디자인스쿨" },
+        { name: "김○안", grade: "진해여고", note: "디자인스쿨" },
+        { name: "유○정", grade: "세화여고", note: "디자인스쿨" }
+      ],
+      category: "지역사립대",
+      color: "bg-slate-100 border-slate-300"
+    },
+    // 한국전통대
+    {
+      university: "한국전통대학교",
+      department: "서울",
+      students: [
+        { name: "박○영", grade: "태봉고", note: "전통도예학과" }
+      ],
+      category: "지역사립대",
+      color: "bg-yellow-100 border-yellow-300"
+    },
+    // 공주대
+    {
+      university: "공주대학교",
+      department: "공주",
+      students: [
+        { name: "신○원", grade: "제일여고", note: "주얼리금속" },
+        { name: "서○우", grade: "제일고", note: "가구리빙" }
+      ],
+      category: "지역사립대",
+      color: "bg-neutral-100 border-neutral-300"
+    },
+    // 청주대
+    {
+      university: "청주대학교",
+      department: "청주",
+      students: [
+        { name: "이○해", grade: "제일고", note: "디지털미디어" }
+      ],
+      category: "지역사립대",
+      color: "bg-cyan-100 border-cyan-300"
+    },
+    // 남서울대
+    {
+      university: "남서울대학교",
+      department: "천안",
+      students: [
+        { name: "황○경", grade: "남지고", note: "영상예술디자인과" }
+      ],
+      category: "지역사립대",
+      color: "bg-gray-100 border-gray-300"
+    },
+    // 백석대
+    {
+      university: "백석대학교",
+      department: "천안",
+      students: [
+        { name: "이○은", grade: "삼진고", note: "디자인영상학부" }
+      ],
+      category: "지역사립대",
+      color: "bg-zinc-100 border-zinc-300"
+    },
+    // 서원대
+    {
+      university: "서원대학교",
+      department: "청주",
+      students: [
+        { name: "이○재", grade: "창신고", note: "디자인" }
       ],
       category: "지역사립대",
       color: "bg-orange-100 border-orange-300"
     },
+    // 세명대
     {
-      university: "동아대학교",
-      department: "시각디자인학과",
+      university: "세명대학교",
+      department: "제천",
       students: [
-        { name: "다○○", grade: "재원생", note: "실기대회 은상" },
-        { name: "라○○", grade: "재원생", note: "실기대회 동상" },
-        { name: "마○○", grade: "재원생", note: "우수작품상" },
-        { name: "바○○", grade: "재원생", note: "특별상" },
-        { name: "사○○", grade: "재원생", note: "입상" },
-        { name: "아○○", grade: "재원생", note: "입상" },
-        { name: "자○○", grade: "재원생", note: "입상" },
-        { name: "차○○", grade: "재원생", note: "입상" }
+        { name: "최○서", grade: "함안고", note: "시각디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-pink-100 border-pink-300"
+    },
+    // 한밭대
+    {
+      university: "한밭대학교",
+      department: "대전",
+      students: [
+        { name: "김○희", grade: "한일여고", note: "산업디자인" },
+        { name: "조○현", grade: "태봉고", note: "산업디자인" },
+        { name: "성○연", grade: "구암고", note: "산업디자인" },
+        { name: "하○린", grade: "중앙고", note: "산업디자인" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-lime-100 border-lime-300"
+    },
+    // 대전대
+    {
+      university: "대전대학교",
+      department: "대전",
+      students: [
+        { name: "최○인", grade: "제일고", note: "커뮤니케이션" }
+      ],
+      category: "지역사립대",
+      color: "bg-violet-100 border-violet-300"
+    },
+    // 한남대
+    {
+      university: "한남대학교",
+      department: "대전",
+      students: [
+        { name: "이○화", grade: "제일고", note: "미술교육" }
+      ],
+      category: "지역사립대",
+      color: "bg-green-100 border-green-300"
+    },
+    // 목원대
+    {
+      university: "목원대학교",
+      department: "대전",
+      students: [
+        { name: "권○재", grade: "사파고", note: "섬유패션" },
+        { name: "박○영", grade: "태봉고", note: "도자디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-amber-100 border-amber-300"
+    },
+    // 전주대
+    {
+      university: "전주대학교",
+      department: "전주",
+      students: [
+        { name: "이○재", grade: "창신고", note: "산업디자인" }
       ],
       category: "지역사립대",
       color: "bg-red-100 border-red-300"
+    },
+    // 경북대
+    {
+      university: "경북대학교",
+      department: "대구",
+      students: [
+        { name: "홍○민", grade: "마여고", note: "패션섬유" },
+        { name: "권○재", grade: "사파고", note: "패션섬유" },
+        { name: "정○후", grade: "신월고", note: "패션섬유" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-blue-100 border-blue-300"
+    },
+    // 계명대
+    {
+      university: "계명대학교",
+      department: "대구",
+      students: [
+        { name: "최○영", grade: "구암고", note: "웹툰" },
+        { name: "서○서", grade: "마여고", note: "텍스타일" },
+        { name: "정○원", grade: "마산고", note: "시각디자인" },
+        { name: "김○리", grade: "경남예술고", note: "시각디자인" },
+        { name: "김○원", grade: "사파고", note: "시각디자인" },
+        { name: "서○우", grade: "제일고", note: "산업디자인" },
+        { name: "김○현", grade: "경일고", note: "산업디자인" },
+        { name: "서○빈", grade: "성지여고", note: "공예디자인" },
+        { name: "윤○린", grade: "내서여고", note: "영상애니" }
+      ],
+      category: "지역사립대",
+      color: "bg-teal-100 border-teal-300"
+    },
+    // 대구대
+    {
+      university: "대구대학교",
+      department: "대구",
+      students: [
+        { name: "최○영", grade: "구암고", note: "웹툰애니" },
+        { name: "강○희", grade: "한일여고", note: "웹툰애니" },
+        { name: "표○민", grade: "구암고", note: "산업디자인" },
+        { name: "이○서", grade: "칠원고", note: "산업디자인" },
+        { name: "최○인", grade: "제일고", note: "시각디자인" },
+        { name: "김○희", grade: "경원고", note: "시각디자인" },
+        { name: "서○빈", grade: "성지여고", note: "시각디자인" },
+        { name: "안○민", grade: "삼진고", note: "패션디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-indigo-100 border-indigo-300"
+    },
+    // 경일대
+    {
+      university: "경일대학교",
+      department: "경산",
+      students: [
+        { name: "김○경", grade: "한일여고", note: "만화애니" }
+      ],
+      category: "지역사립대",
+      color: "bg-purple-100 border-purple-300"
+    },
+    // 대가대
+    {
+      university: "대가대학교",
+      department: "경산",
+      students: [
+        { name: "이○빈", grade: "태봉고", note: "금속주얼리" },
+        { name: "김○원", grade: "봉림고", note: "금속주얼리" },
+        { name: "최○서", grade: "함안고", note: "산업디자인" },
+        { name: "최○현", grade: "제일고", note: "산업디자인" },
+        { name: "김○영", grade: "구산고", note: "산업디자인" },
+        { name: "김○엽", grade: "신월고", note: "시각영상" },
+        { name: "임○준", grade: "중앙고", note: "시각영상" },
+        { name: "민○경", grade: "진해여고", note: "시각영상" },
+        { name: "정○후", grade: "신월고", note: "시각영상" },
+        { name: "정○정", grade: "세화여고", note: "시각영상" },
+        { name: "최○은", grade: "사파고", note: "시각영상" },
+        { name: "정○연", grade: "내서여고", note: "시각영상" },
+        { name: "백○우", grade: "용원고", note: "패션" },
+        { name: "안○민", grade: "삼진고", note: "패션" }
+      ],
+      category: "지역사립대",
+      color: "bg-rose-100 border-rose-300"
+    },
+    // 영남대
+    {
+      university: "영남대학교",
+      department: "대구",
+      students: [
+        { name: "최○석", grade: "명곡고", note: "산업디자인" },
+        { name: "서○희", grade: "마여고", note: "산업디자인" },
+        { name: "김○희", grade: "경원고", note: "시각디자인" },
+        { name: "김○훈", grade: "영운고", note: "시각디자인" },
+        { name: "김○원", grade: "사파고", note: "시각디자인" },
+        { name: "김○리", grade: "경남예술고", note: "시각디자인" },
+        { name: "민○경", grade: "진해여고", note: "시각디자인" },
+        { name: "황○민", grade: "봉림고", note: "생활제품" }
+      ],
+      category: "지역사립대",
+      color: "bg-emerald-100 border-emerald-300"
+    },
+    // 동국대(WISE)
+    {
+      university: "동국대학교",
+      department: "WISE캠퍼스",
+      students: [
+        { name: "김○영", grade: "내서여고", note: "시각디자인" },
+        { name: "이○빈", grade: "태봉고", note: "불교미술" },
+        { name: "노○준", grade: "창신고", note: "웹툰콘텐츠" }
+      ],
+      category: "지역사립대",
+      color: "bg-lime-100 border-lime-300"
+    },
+    // 울산대
+    {
+      university: "울산대학교",
+      department: "울산",
+      students: [
+        { name: "최○은", grade: "사파고", note: "디자인융합" },
+        { name: "이○민", grade: "문성고", note: "디자인융합" },
+        { name: "심○영", grade: "관광고", note: "디자인융합" },
+        { name: "최○현", grade: "제일고", note: "디자인융합" },
+        { name: "김○원", grade: "봉림고", note: "디자인융합" },
+        { name: "이○빈", grade: "태봉고", note: "예술학부" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-yellow-100 border-yellow-300"
+    },
+    // 부산대
+    {
+      university: "부산대학교",
+      department: "부산",
+      students: [
+        { name: "조○빈", grade: "경원고", note: "디자인앤테크놀로지" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-orange-100 border-orange-300"
+    },
+    // 창원대
+    {
+      university: "창원대학교",
+      department: "경남",
+      students: [
+        { name: "정○진", grade: "내서여고", note: "시각디자인" },
+        { name: "서○서", grade: "마여고", note: "제품환경" },
+        { name: "이○서", grade: "칠원고", note: "제품환경(장학생)" },
+        { name: "백○우", grade: "용원고", note: "공예" },
+        { name: "홍○민", grade: "마여고", note: "공예" },
+        { name: "신○미", grade: "마여고", note: "공예" },
+        { name: "황○윤", grade: "봉림고", note: "공예" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-green-100 border-green-300"
+    },
+    // 경상대
+    {
+      university: "경상대학교",
+      department: "경남",
+      students: [
+        { name: "이○화", grade: "제일고", note: "미술교육" },
+        { name: "하○민", grade: "함안고", note: "미술교육" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-red-100 border-red-300"
+    },
+    // 경남대
+    {
+      university: "경남대학교",
+      department: "창원",
+      students: [
+        { name: "강○희", grade: "합포고", note: "미술교육" },
+        { name: "박○빈", grade: "마여고", note: "미술교육" },
+        { name: "조○우", grade: "중앙고", note: "미술교육" },
+        { name: "이○화", grade: "제일고", note: "미술교육" },
+        { name: "윤○희", grade: "마여고", note: "웹툰디자인" },
+        { name: "곽○지", grade: "영산고", note: "웹툰디자인" },
+        { name: "정○원", grade: "마산고", note: "웹툰디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-zinc-100 border-zinc-300"
+    },
+    // 경성대
+    {
+      university: "경성대학교",
+      department: "부산",
+      students: [
+        { name: "임○준", grade: "중앙고", note: "산업디자인" },
+        { name: "서○우", grade: "제일고", note: "산업디자인" },
+        { name: "김○안", grade: "진해여고", note: "시각디자인" },
+        { name: "정○정", grade: "세화여고", note: "시각디자인" },
+        { name: "박○용", grade: "김해고", note: "시각디자인" },
+        { name: "황○민", grade: "봉림고", note: "금속공예" },
+        { name: "이○은", grade: "삼진고", note: "텍스타일디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-slate-100 border-slate-300"
+    },
+    // 동의대
+    {
+      university: "동의대학교",
+      department: "부산",
+      students: [
+        { name: "김○훈", grade: "영운고", note: "시각디자인" },
+        { name: "최○은", grade: "사파고", note: "시각디자인" },
+        { name: "이○화", grade: "제일고", note: "산업디자인" },
+        { name: "김○원", grade: "사파고", note: "산업디자인" },
+        { name: "이○민", grade: "문성고", note: "공예디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-gray-100 border-gray-300"
+    },
+    // 동명대
+    {
+      university: "동명대학교",
+      department: "부산",
+      students: [
+        { name: "심○영", grade: "관광고", note: "시각디자인" },
+        { name: "남○화", grade: "내서여고", note: "시각디자인" },
+        { name: "이○화", grade: "제일고", note: "시각디자인" },
+        { name: "이○해", grade: "제일고", note: "시각디자인" },
+        { name: "박○용", grade: "김해고", note: "시각디자인" },
+        { name: "정○진", grade: "내서여고", note: "시각디자인" },
+        { name: "최○영", grade: "구암고", note: "웹툰애니" },
+        { name: "김○경", grade: "한일여고", note: "웹툰애니" },
+        { name: "김○은", grade: "마여고", note: "웹툰애니" },
+        { name: "안○원", grade: "마여고", note: "웹툰애니" },
+        { name: "황○경", grade: "검정고시", note: "웹툰애니" }
+      ],
+      category: "지역사립대",
+      color: "bg-neutral-100 border-neutral-300"
+    },
+    // 동서대
+    {
+      university: "동서대학교",
+      department: "부산",
+      students: [
+        { name: "표○민", grade: "구암고", note: "디자인학부" },
+        { name: "조○새", grade: "마여고", note: "디자인학부" },
+        { name: "강○희", grade: "합포고", note: "디자인학부" },
+        { name: "김○현", grade: "경일고", note: "디자인학부" },
+        { name: "박○용", grade: "김해고", note: "디자인학부" },
+        { name: "김○엽", grade: "신월고", note: "디자인학부" },
+        { name: "유○정", grade: "세화여고", note: "디자인학부" },
+        { name: "김○희", grade: "한일여고", note: "디자인학부" },
+        { name: "이○해", grade: "제일고", note: "디자인학부" },
+        { name: "최○현", grade: "영운고", note: "디자인학부" },
+        { name: "민○경", grade: "진해여고", note: "영상애니메이션" },
+        { name: "이○해", grade: "제일고", note: "영상애니메이션" },
+        { name: "윤○현", grade: "영운고", note: "패션" },
+        { name: "안○민", grade: "삼진고", note: "패션" }
+      ],
+      category: "지역사립대",
+      color: "bg-blue-100 border-blue-300"
+    },
+    // 신라대
+    {
+      university: "신라대학교",
+      department: "부산",
+      students: [
+        { name: "남○화", grade: "내서여고", note: "시각디자인" },
+        { name: "정○진", grade: "내서여고", note: "시각디자인" }
+      ],
+      category: "지역사립대",
+      color: "bg-cyan-100 border-cyan-300"
+    },
+    // 영산대
+    {
+      university: "영산대학교",
+      department: "부산",
+      students: [
+        { name: "남○화", grade: "내서여고", note: "만화애니" },
+        { name: "김○이", grade: "구암고", note: "AI그래픽컨텐츠" }
+      ],
+      category: "지역사립대",
+      color: "bg-teal-100 border-teal-300"
+    },
+    // 예원예술대
+    {
+      university: "예원예술대학교",
+      department: "임실",
+      students: [
+        { name: "왕○윤", grade: "태봉고", note: "귀금속주얼리" }
+      ],
+      category: "지역사립대",
+      color: "bg-violet-100 border-violet-300"
     }
   ];
 
   const totalStudents = admissionResults.reduce((sum, uni) => sum + uni.students.length, 0);
-  const seoulStudents = admissionResults.filter(uni => uni.category === "서울권").reduce((sum, uni) => sum + uni.students.length, 0);
+  const seoulStudents = admissionResults.filter(uni => uni.category === "서울/ 수도권").reduce((sum, uni) => sum + uni.students.length, 0);
   const nationalStudents = admissionResults.filter(uni => uni.category === "지역거점국립대").reduce((sum, uni) => sum + uni.students.length, 0);
+  const totalUniversities = admissionResults.length;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -117,78 +565,58 @@ export default function Admissions2025() {
               <Link href="/admissions">
                 <Button variant="ghost" className="text-white hover:bg-white/20 mr-4">
                   <ArrowLeft className="h-5 w-5 mr-2" />
-                  합격자명단 메인
+                  합격자명단 메인으로
                 </Button>
               </Link>
             </div>
+            
             <div className="text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 2025학년도 합격자 명단
               </h1>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                코코미술학원 FOLLOW 시스템을 통해 이루어낸 
-                2025학년도 입시의 우수한 성과를 확인하세요.
+              <p className="text-xl text-primary-100 mb-8">
+                코코미술학원의 체계적인 교육으로 이루어낸 소중한 성과입니다
               </p>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{totalStudents}명</div>
-                  <div className="text-blue-200">총 합격자</div>
+              
+              {/* Statistics */}
+              <div className="grid md:grid-cols-4 gap-6 mt-12">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-white">{totalStudents}명</div>
+                  <div className="text-primary-100">총 합격자</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{seoulStudents}명</div>
-                  <div className="text-blue-200">서울권 대학</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-white">{totalUniversities}개</div>
+                  <div className="text-primary-100">합격 대학교</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-400 mb-2">{nationalStudents}명</div>
-                  <div className="text-blue-200">지역거점국립대</div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-white">{seoulStudents}명</div>
+                  <div className="text-primary-100">서울/수도권</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-white">{nationalStudents}명</div>
+                  <div className="text-primary-100">거점국립대</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Special Achievement Highlight */}
-        <section className="py-12 bg-yellow-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <Trophy className="h-16 w-16 text-yellow-600 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                🏆 2025학년도 특별 성과
-              </h2>
-              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <Card className="bg-white">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-yellow-600 mb-2">17명</div>
-                    <div className="text-gray-700">한양대학교 실기대회<br />지역 최다 수상</div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-white">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">2명</div>
-                    <div className="text-gray-700">삼육대학교<br />실기대회 수상</div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-white">
-                  <CardContent className="p-6 text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-2">95%</div>
-                    <div className="text-gray-700">전체 재원생<br />합격률</div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Detailed Results */}
+        {/* Admissions Results */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              대학별 상세 합격자 명단
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                대학별 합격 현황
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                2025학년도 입시에서 코코미술학원 학생들이 거둔 우수한 성과를 확인하세요.
+                체계적인 교육과 개별 맞춤 지도의 결실입니다.
+              </p>
+            </div>
             
-            <div className="space-y-8">
+            <div className="grid gap-6">
               {admissionResults.map((result, index) => (
-                <Card key={index} className={`${result.color}`}>
+                <Card key={index} className={`${result.color} transition-all duration-300 hover:shadow-lg border-2`}>
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -241,58 +669,14 @@ export default function Admissions2025() {
           </div>
         </section>
 
-        {/* Success Stories */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              2025학년도 성공 포인트
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Star className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                  <div className="text-xl font-bold text-gray-900 mb-2">체계적 관리</div>
-                  <div className="text-gray-600">FOLLOW 시스템을 통한<br />개별 맞춤형 지도</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Trophy className="h-12 w-12 text-primary-600 mx-auto mb-4" />
-                  <div className="text-xl font-bold text-gray-900 mb-2">실기대회 준비</div>
-                  <div className="text-gray-600">체계적인 실기대회<br />준비 프로그램</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <GraduationCap className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                  <div className="text-xl font-bold text-gray-900 mb-2">전략적 지원</div>
-                  <div className="text-gray-600">개별 성향 분석을 통한<br />전략적 입시 지도</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Star className="h-12 w-12 text-accent-600 mx-auto mb-4" />
-                  <div className="text-xl font-bold text-gray-900 mb-2">4단계 사고체계</div>
-                  <div className="text-gray-600">창의성과 논리적 사고<br />동시 개발</div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* Call to Action */}
         <section className="py-16 bg-primary-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              2026학년도에도 함께 성공하세요
+              2025학년도 성과를 이어가세요
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              검증된 FOLLOW 시스템과 개별 맞춤형 지도로 
-              여러분의 합격을 현실로 만들어 드립니다.
+              검증된 교육 시스템으로 여러분의 합격을 현실로 만들어 드립니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#contact">
