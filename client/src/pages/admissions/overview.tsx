@@ -215,9 +215,7 @@ export default function AdmissionsOverview() {
         {/* Call to Action */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              당신도 코코미술학원과 함께 꿈을 이루세요
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">재능의 출발점, 코코</h2>
             <p className="text-xl text-gray-600 mb-8">체계적인 FOLLOW 시스템과 개별 맞춤형 지도로 목표 대학 합격</p>
             <Link href="/#contact">
               <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4">
