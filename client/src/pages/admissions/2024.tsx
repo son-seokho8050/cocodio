@@ -316,7 +316,7 @@ export default function Admissions2024() {
         { name: "김○지", grade: "명덕고", note: "패션디자인" },
         { name: "박○은", grade: "무학여고", note: "패션디자인" },
         { name: "이○영", grade: "내서여고", note: "패션디자인" },
-        { name: "심○은", grade: "창원여고", note: "텍스타일" }
+        { name: "심○은", grade: "창원여고", note: "덱스타일" }
       ],
       category: "지역사립대",
       color: "bg-teal-100 border-teal-300"
