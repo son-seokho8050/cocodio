@@ -333,8 +333,48 @@ export default function Admissions2022() {
       <Navigation />
       <main className="pt-20">
         {/* Header */}
-        <section className="bg-gradient-to-br from-orange-600 to-red-800 text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-br from-orange-600 to-red-800 text-white py-16 relative overflow-hidden">
+          {/* Animated Background Graphics */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Large blur circles - orange/red theme */}
+            <div className="absolute top-20 left-10 w-72 h-72 bg-white/6 rounded-full blur-xl animate-glow-pulse"></div>
+            <div className="absolute top-40 right-20 w-96 h-96 bg-orange-300/12 rounded-full blur-lg animate-float-medium" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-32 left-1/4 w-80 h-80 bg-red-300/10 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-white/8 rounded-full blur-md animate-glow-pulse" style={{animationDelay: '3s'}}></div>
+            <div className="absolute bottom-20 right-10 w-68 h-68 bg-amber-300/8 rounded-full blur-xl animate-float-medium" style={{animationDelay: '4s'}}></div>
+            
+            {/* Additional massive graphics */}
+            <div className="absolute top-10 right-1/4 w-88 h-88 bg-yellow-300/9 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '6s'}}></div>
+            <div className="absolute bottom-10 left-1/3 w-84 h-84 bg-orange-300/8 rounded-full blur-2xl animate-glow-pulse" style={{animationDelay: '7s'}}></div>
+            <div className="absolute top-1/2 left-20 w-76 h-76 bg-red-300/10 rounded-full blur-xl animate-float-medium" style={{animationDelay: '8s'}}></div>
+            <div className="absolute top-0 left-1/2 w-72 h-72 bg-rose-300/7 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '10s'}}></div>
+            <div className="absolute bottom-0 right-1/2 w-88 h-88 bg-orange-300/6 rounded-full blur-2xl animate-glow-pulse" style={{animationDelay: '11s'}}></div>
+            <div className="absolute top-2/3 left-0 w-64 h-64 bg-amber-300/8 rounded-full blur-xl animate-float-medium" style={{animationDelay: '12s'}}></div>
+            <div className="absolute top-1/4 right-0 w-80 h-80 bg-red-300/7 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '13s'}}></div>
+            
+            {/* Medium floating elements */}
+            <div className="absolute top-32 left-1/2 w-48 h-48 bg-orange-300/6 rounded-full blur-lg animate-glow-pulse" style={{animationDelay: '14s'}}></div>
+            <div className="absolute bottom-48 right-1/4 w-56 h-56 bg-yellow-300/8 rounded-full blur-xl animate-float-medium" style={{animationDelay: '15s'}}></div>
+            <div className="absolute top-3/4 left-3/4 w-44 h-44 bg-amber-300/7 rounded-full blur-lg animate-float-slow" style={{animationDelay: '16s'}}></div>
+            
+            {/* Floating geometric shapes */}
+            <div className="absolute top-16 left-1/3 w-20 h-20 border-2 border-white/25 animate-float-fast"></div>
+            <div className="absolute bottom-40 left-16 w-16 h-16 bg-white/20 animate-glow-pulse" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-1/2 right-16 w-24 h-24 border-2 border-orange-300/20 rounded-full animate-float-slow" style={{animationDelay: '5s'}}></div>
+            <div className="absolute bottom-16 right-1/4 w-18 h-18 border-2 border-red-300/30 rotate-45 animate-float-fast" style={{animationDelay: '3s'}}></div>
+            <div className="absolute top-24 right-1/2 w-12 h-12 bg-amber-300/25 rounded-full animate-glow-pulse" style={{animationDelay: '4s'}}></div>
+            <div className="absolute bottom-1/3 left-1/2 w-20 h-20 border-2 border-yellow-300/25 rounded-full animate-float-medium" style={{animationDelay: '9s'}}></div>
+            
+            {/* Additional geometric patterns */}
+            <div className="absolute top-48 left-3/4 w-14 h-14 border border-orange-300/20 rotate-12 animate-float-fast" style={{animationDelay: '17s'}}></div>
+            <div className="absolute bottom-56 left-20 w-10 h-10 bg-red-300/25 rounded-full animate-glow-pulse" style={{animationDelay: '18s'}}></div>
+            <div className="absolute top-80 right-1/3 w-16 h-16 border-2 border-amber-300/25 animate-float-slow" style={{animationDelay: '19s'}}></div>
+            <div className="absolute bottom-24 left-2/3 w-22 h-22 border border-yellow-300/30 rounded-full animate-float-medium" style={{animationDelay: '20s'}}></div>
+            <div className="absolute top-12 left-12 w-8 h-8 bg-orange-300/30 rotate-45 animate-glow-pulse" style={{animationDelay: '21s'}}></div>
+            <div className="absolute bottom-12 right-12 w-12 h-12 border-2 border-red-300/20 rounded-full animate-float-fast" style={{animationDelay: '22s'}}></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex items-center mb-6">
               <Link href="/admissions">
                 <Button variant="ghost" className="text-white hover:bg-white/20 mr-4">
