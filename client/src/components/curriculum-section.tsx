@@ -20,7 +20,7 @@ export default function CurriculumSection() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">입시미술 그 한계를 넘어, 코코의 수업을 소개합니다.</p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
           {/* 입시미술 */}
           <Card className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
             <img
@@ -153,6 +153,53 @@ export default function CurriculumSection() {
               <Button 
                 onClick={scrollToContact}
                 className="w-full bg-accent-600 hover:bg-accent-600 text-white"
+              >
+                자세히 보기
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* SPACE */}
+          <Card className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+            <img
+              src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+              alt="Premium art education space"
+              className="w-full h-48 object-cover"
+            />
+            
+            <CardContent className="p-8">
+              <div className="flex items-center mb-4">
+                <GraduationCap className="text-purple-600 h-8 w-8 mr-3" />
+                <h3 className="text-2xl font-bold text-gray-900">SPACE</h3>
+              </div>
+              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
+                최상위 미대입시 전문 CLASS,<br />
+                엄선된 커리큘럼과 개별 맞춤 지도로<br />
+                최고 수준의 입시 결과를 달성
+              </p>
+              
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-sm text-gray-600">
+                  <Check className="text-purple-600 mr-2 h-4 w-4" />
+                  최상위권 미대 입시 전문
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <Check className="text-purple-600 mr-2 h-4 w-4" />
+                  개별 맞춤형 집중 지도
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <Check className="text-purple-600 mr-2 h-4 w-4" />
+                  프리미엄 소수정예 수업
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <Check className="text-purple-600 mr-2 h-4 w-4" />
+                  입시 전략 컨설팅
+                </div>
+              </div>
+              
+              <Button 
+                onClick={scrollToContact}
+                className="w-full bg-purple-600 hover:bg-purple-700 text-white"
               >
                 자세히 보기
               </Button>
