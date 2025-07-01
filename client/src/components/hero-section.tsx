@@ -89,7 +89,7 @@ export default function HeroSection() {
                     </>
                   ) : (
                     <>
-                      <div className="text-3xl font-bold text-primary-600">17명</div>
+                      <div className="text-3xl font-bold text-primary-600">합격</div>
                       <div className="text-sm text-gray-600">
                         <span className="font-semibold">한양대</span> 
                         <span dangerouslySetInnerHTML={{ __html: " 실기대회<br />지역 최다 수상" }} />

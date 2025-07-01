@@ -98,31 +98,31 @@ export class MemStorage implements IStorage {
   private initializeAchievements() {
     const sampleAchievements: Omit<Achievement, 'id'>[] = [
       {
-        count: "17명",
+        count: "합격",
         university: "한양대",
         description: "실기대회<br />지역 최다 수상",
         displayOrder: 1
       },
       {
-        count: "23명",
+        count: "합격",
         university: "홍익대",
         description: "미술대학<br />합격자 배출",
         displayOrder: 2
       },
       {
-        count: "15명",
+        count: "합격",
         university: "국민대",
         description: "예술대학<br />입학 성공",
         displayOrder: 3
       },
       {
-        count: "19명",
+        count: "합격",
         university: "서울시립대",
         description: "디자인학과<br />합격 달성",
         displayOrder: 4
       },
       {
-        count: "12명",
+        count: "합격",
         university: "건국대",
         description: "예술디자인<br />학과 진학",
         displayOrder: 5
