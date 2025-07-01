@@ -96,8 +96,8 @@ export default function AdmissionsOverview() {
                   <div className="text-white/90">인서울 대학 진학</div>
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
-                  <div className="text-4xl font-bold text-white mb-2">{totalStats.seoul}명</div>
-                  <div className="text-white/90">서울/수도권 대학 합격</div>
+                  <div className="text-4xl font-bold text-white mb-2">진로/ 적성</div>
+                  <div className="text-white/90">개별 맞춤 전공 선택</div>
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">{totalStats.national}명</div>
