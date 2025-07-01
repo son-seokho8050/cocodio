@@ -16,7 +16,7 @@ export default function Admissions2024() {
         { name: "하○영", grade: "중앙고", note: "디자인이노베이션" }
       ],
       category: "서울/ 수도권",
-      color: "bg-indigo-100 border-indigo-300"
+      color: "bg-gradient-to-br from-indigo-50 via-slate-50 to-white border-0 ring-1 ring-indigo-200/40 shadow-[0_4px_15px_rgba(99,102,241,0.06)] hover:shadow-[0_8px_25px_rgba(99,102,241,0.1)]"
     },
     // 상명대(서울)
     {
@@ -26,7 +26,7 @@ export default function Admissions2024() {
         { name: "김○지", grade: "내서여고", note: "생활예술" }
       ],
       category: "서울/ 수도권",
-      color: "bg-pink-100 border-pink-300"
+      color: "bg-gradient-to-br from-pink-50 via-slate-50 to-white border-0 ring-1 ring-pink-200/40 shadow-[0_4px_15px_rgba(236,72,153,0.06)] hover:shadow-[0_8px_25px_rgba(236,72,153,0.1)]"
     },
     // 서경대
     {
@@ -38,7 +38,7 @@ export default function Admissions2024() {
         { name: "이○빈", grade: "제일여고", note: "무대패션전공(1차합격)" }
       ],
       category: "서울/ 수도권",
-      color: "bg-red-100 border-red-300"
+      color: "bg-gradient-to-br from-red-50 via-slate-50 to-white border-0 ring-1 ring-red-200/40 shadow-[0_4px_15px_rgba(239,68,68,0.06)] hover:shadow-[0_8px_25px_rgba(239,68,68,0.1)]"
     },
     // 동덕여대
     {
@@ -49,7 +49,7 @@ export default function Admissions2024() {
         { name: "신○서", grade: "창원여고", note: "패션디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-amber-100 border-amber-300"
+      color: "bg-gradient-to-br from-amber-50 via-slate-50 to-white border-0 ring-1 ring-amber-200/40 shadow-[0_4px_15px_rgba(245,158,11,0.06)] hover:shadow-[0_8px_25px_rgba(245,158,11,0.1)]"
     },
     // 덕성여대
     {
@@ -59,7 +59,7 @@ export default function Admissions2024() {
         { name: "김○애", grade: "제일고", note: "아트앤디자인학부" }
       ],
       category: "서울/ 수도권",
-      color: "bg-green-100 border-green-300"
+      color: "bg-gradient-to-br from-green-50 via-slate-50 to-white border-0 ring-1 ring-green-200/40 shadow-[0_4px_15px_rgba(34,197,94,0.06)] hover:shadow-[0_8px_25px_rgba(34,197,94,0.1)]"
     },
     // 한성대
     {
@@ -69,7 +69,7 @@ export default function Admissions2024() {
         { name: "황○현", grade: "내서여고", note: "ICT디자인학부" }
       ],
       category: "서울/ 수도권",
-      color: "bg-orange-100 border-orange-300"
+      color: "bg-gradient-to-br from-orange-50 via-slate-50 to-white border-0 ring-1 ring-orange-200/40 shadow-[0_4px_15px_rgba(249,115,22,0.06)] hover:shadow-[0_8px_25px_rgba(249,115,22,0.1)]"
     },
     // 중앙대
     {
@@ -79,7 +79,7 @@ export default function Admissions2024() {
         { name: "조○세", grade: "마여고", note: "산업디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-blue-100 border-blue-300"
+      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
     },
     // 경희대(국제)
     {
@@ -89,7 +89,7 @@ export default function Admissions2024() {
         { name: "김○지", grade: "내서여고", note: "시각디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-purple-100 border-purple-300"
+      color: "bg-gradient-to-br from-purple-50 via-slate-50 to-white border-0 ring-1 ring-purple-200/40 shadow-[0_4px_15px_rgba(168,85,247,0.06)] hover:shadow-[0_8px_25px_rgba(168,85,247,0.1)]"
     },
     // 인하대
     {
@@ -99,7 +99,7 @@ export default function Admissions2024() {
         { name: "권○주", grade: "내서여고", note: "의류디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-cyan-100 border-cyan-300"
+      color: "bg-gradient-to-br from-cyan-50 via-slate-50 to-white border-0 ring-1 ring-cyan-200/40 shadow-[0_4px_15px_rgba(6,182,212,0.06)] hover:shadow-[0_8px_25px_rgba(6,182,212,0.1)]"
     },
     // 용인대
     {
@@ -110,7 +110,7 @@ export default function Admissions2024() {
         { name: "이○랑", grade: "제일고", note: "미디어디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-lime-100 border-lime-300"
+      color: "bg-gradient-to-br from-lime-50 via-slate-50 to-white border-0 ring-1 ring-lime-200/40 shadow-[0_4px_15px_rgba(132,204,22,0.06)] hover:shadow-[0_8px_25px_rgba(132,204,22,0.1)]"
     },
     // 단국대(죽전)
     {
@@ -122,7 +122,7 @@ export default function Admissions2024() {
         { name: "하○영", grade: "중앙고", note: "커뮤니케이션디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-violet-100 border-violet-300"
+      color: "bg-gradient-to-br from-violet-50 via-slate-50 to-white border-0 ring-1 ring-violet-200/40 shadow-[0_4px_15px_rgba(139,92,246,0.06)] hover:shadow-[0_8px_25px_rgba(139,92,246,0.1)]"
     },
     // 인천대
     {
@@ -132,7 +132,7 @@ export default function Admissions2024() {
         { name: "이○주", grade: "김해고", note: "디자인학부" }
       ],
       category: "서울/ 수도권",
-      color: "bg-teal-100 border-teal-300"
+      color: "bg-gradient-to-br from-teal-50 via-slate-50 to-white border-0 ring-1 ring-teal-200/40 shadow-[0_4px_15px_rgba(20,184,166,0.06)] hover:shadow-[0_8px_25px_rgba(20,184,166,0.1)]"
     },
     // 명지대
     {
@@ -144,7 +144,7 @@ export default function Admissions2024() {
         { name: "이○주", grade: "김해고", note: "디지털콘텐츠" }
       ],
       category: "서울/ 수도권",
-      color: "bg-yellow-100 border-yellow-300"
+      color: "bg-gradient-to-br from-yellow-50 via-slate-50 to-white border-0 ring-1 ring-yellow-200/40 shadow-[0_4px_15px_rgba(234,179,8,0.06)] hover:shadow-[0_8px_25px_rgba(234,179,8,0.1)]"
     },
     // 건국대(글로컬)
     {
@@ -154,7 +154,7 @@ export default function Admissions2024() {
         { name: "김○은", grade: "의령여고", note: "산업디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-rose-100 border-rose-300"
+      color: "bg-gradient-to-br from-rose-50 via-slate-50 to-white border-0 ring-1 ring-rose-200/40 shadow-[0_4px_15px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.1)]"
     },
     // 홍익대(세종)
     {
@@ -166,7 +166,7 @@ export default function Admissions2024() {
         { name: "이○주", grade: "김해고", note: "자율전공" }
       ],
       category: "세종권",
-      color: "bg-emerald-100 border-emerald-300"
+      color: "bg-gradient-to-br from-emerald-50 via-slate-50 to-white border-0 ring-1 ring-emerald-200/40 shadow-[0_4px_15px_rgba(16,185,129,0.06)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.1)]"
     },
     // 상명대(천안)
     {
@@ -180,7 +180,7 @@ export default function Admissions2024() {
         { name: "이○주", grade: "김해고", note: "디지털콘텐츠" }
       ],
       category: "지역사립대",
-      color: "bg-stone-100 border-stone-300"
+      color: "bg-gradient-to-br from-stone-50 via-slate-50 to-white border-0 ring-1 ring-stone-200/40 shadow-[0_4px_15px_rgba(120,113,108,0.06)] hover:shadow-[0_8px_25px_rgba(120,113,108,0.1)]"
     },
     // 청강대
     {
@@ -190,7 +190,7 @@ export default function Admissions2024() {
         { name: "박○민", grade: "마산고", note: "웹툰만화콘텐츠" }
       ],
       category: "지역사립대",
-      color: "bg-yellow-100 border-yellow-300"
+      color: "bg-gradient-to-br from-yellow-50 via-slate-50 to-white border-0 ring-1 ring-yellow-200/40 shadow-[0_4px_15px_rgba(234,179,8,0.06)] hover:shadow-[0_8px_25px_rgba(234,179,8,0.1)]"
     },
     // 백석대
     {
@@ -200,7 +200,7 @@ export default function Admissions2024() {
         { name: "연○현", grade: "세화여고", note: "디자인영상학부" }
       ],
       category: "지역사립대",
-      color: "bg-zinc-100 border-zinc-300"
+      color: "bg-gradient-to-br from-zinc-50 via-slate-50 to-white border-0 ring-1 ring-zinc-200/40 shadow-[0_4px_15px_rgba(113,113,122,0.06)] hover:shadow-[0_8px_25px_rgba(113,113,122,0.1)]"
     },
     // 호서대
     {
@@ -212,7 +212,7 @@ export default function Admissions2024() {
         { name: "김○애", grade: "제일고", note: "시각디자인" }
       ],
       category: "지역사립대",
-      color: "bg-slate-100 border-slate-300"
+      color: "bg-gradient-to-br from-slate-50 via-gray-50 to-white border-0 ring-1 ring-slate-200/40 shadow-[0_4px_15px_rgba(100,116,139,0.06)] hover:shadow-[0_8px_25px_rgba(100,116,139,0.1)]"
     },
     // 남서울대
     {
@@ -222,7 +222,7 @@ export default function Admissions2024() {
         { name: "강○민", grade: "창원고", note: "공간조형" }
       ],
       category: "지역사립대",
-      color: "bg-gray-100 border-gray-300"
+      color: "bg-gradient-to-br from-gray-50 via-slate-50 to-white border-0 ring-1 ring-gray-200/40 shadow-[0_4px_15px_rgba(107,114,128,0.06)] hover:shadow-[0_8px_25px_rgba(107,114,128,0.1)]"
     },
     // 공주대
     {
@@ -234,7 +234,7 @@ export default function Admissions2024() {
         { name: "최○은", grade: "가야고", note: "가구리빙디자인" }
       ],
       category: "지역사립대",
-      color: "bg-neutral-100 border-neutral-300"
+      color: "bg-gradient-to-br from-neutral-50 via-slate-50 to-white border-0 ring-1 ring-neutral-200/40 shadow-[0_4px_15px_rgba(115,115,115,0.06)] hover:shadow-[0_8px_25px_rgba(115,115,115,0.1)]"
     },
     // 청주대
     {
@@ -246,7 +246,7 @@ export default function Admissions2024() {
         { name: "박○빈", grade: "가야고", note: "공예디자인" }
       ],
       category: "지역사립대",
-      color: "bg-blue-100 border-blue-300"
+      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
     },
     // 목원대
     {
@@ -256,7 +256,7 @@ export default function Admissions2024() {
         { name: "강○민", grade: "창원고", note: "입체조형" }
       ],
       category: "지역사립대",
-      color: "bg-yellow-100 border-yellow-300"
+      color: "bg-gradient-to-br from-yellow-50 via-slate-50 to-white border-0 ring-1 ring-yellow-200/40 shadow-[0_4px_15px_rgba(234,179,8,0.06)] hover:shadow-[0_8px_25px_rgba(234,179,8,0.1)]"
     },
     // 한남대
     {
@@ -267,7 +267,7 @@ export default function Admissions2024() {
         { name: "염○헌", grade: "제일고", note: "미술교육학과" }
       ],
       category: "지역사립대",
-      color: "bg-green-100 border-green-300"
+      color: "bg-gradient-to-br from-green-50 via-slate-50 to-white border-0 ring-1 ring-green-200/40 shadow-[0_4px_15px_rgba(34,197,94,0.06)] hover:shadow-[0_8px_25px_rgba(34,197,94,0.1)]"
     },
     // 배재대
     {
@@ -278,7 +278,7 @@ export default function Admissions2024() {
         { name: "손○영", grade: "무학여고", note: "게임학과" }
       ],
       category: "지역사립대",
-      color: "bg-orange-100 border-orange-300"
+      color: "bg-gradient-to-br from-orange-50 via-slate-50 to-white border-0 ring-1 ring-orange-200/40 shadow-[0_4px_15px_rgba(249,115,22,0.06)] hover:shadow-[0_8px_25px_rgba(249,115,22,0.1)]"
     },
     // 동양대
     {
@@ -288,7 +288,7 @@ export default function Admissions2024() {
         { name: "엄○연", grade: "제일고", note: "게임학부" }
       ],
       category: "지역사립대",
-      color: "bg-pink-100 border-pink-300"
+      color: "bg-gradient-to-br from-pink-50 via-slate-50 to-white border-0 ring-1 ring-pink-200/40 shadow-[0_4px_15px_rgba(236,72,153,0.06)] hover:shadow-[0_8px_25px_rgba(236,72,153,0.1)]"
     },
     // 경북대
     {
@@ -300,7 +300,7 @@ export default function Admissions2024() {
         { name: "김○정", grade: "대암고", note: "패션디자인" }
       ],
       category: "지역거점국립대",
-      color: "bg-cyan-100 border-cyan-300"
+      color: "bg-gradient-to-br from-cyan-50 via-slate-50 to-white border-0 ring-1 ring-cyan-200/40 shadow-[0_4px_15px_rgba(6,182,212,0.06)] hover:shadow-[0_8px_25px_rgba(6,182,212,0.1)]"
     },
     // 계명대
     {
@@ -319,7 +319,7 @@ export default function Admissions2024() {
         { name: "심○은", grade: "창원여고", note: "덱스타일" }
       ],
       category: "지역사립대",
-      color: "bg-teal-100 border-teal-300"
+      color: "bg-gradient-to-br from-teal-50 via-slate-50 to-white border-0 ring-1 ring-teal-200/40 shadow-[0_4px_15px_rgba(20,184,166,0.06)] hover:shadow-[0_8px_25px_rgba(20,184,166,0.1)]"
     },
     // 영남대
     {
@@ -334,7 +334,7 @@ export default function Admissions2024() {
         { name: "이○환", grade: "마산고", note: "생활제품" }
       ],
       category: "지역사립대",
-      color: "bg-indigo-100 border-indigo-300"
+      color: "bg-gradient-to-br from-indigo-50 via-slate-50 to-white border-0 ring-1 ring-indigo-200/40 shadow-[0_4px_15px_rgba(99,102,241,0.06)] hover:shadow-[0_8px_25px_rgba(99,102,241,0.1)]"
     },
     // 울산대
     {
@@ -345,7 +345,7 @@ export default function Admissions2024() {
         { name: "강○민", grade: "창원고", note: "미술학부" }
       ],
       category: "지역거점국립대",
-      color: "bg-rose-100 border-rose-300"
+      color: "bg-gradient-to-br from-rose-50 via-slate-50 to-white border-0 ring-1 ring-rose-200/40 shadow-[0_4px_15px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.1)]"
     },
     // 경상대
     {
@@ -355,7 +355,7 @@ export default function Admissions2024() {
         { name: "김○욱", grade: "칠원고", note: "미술교육" }
       ],
       category: "지역거점국립대",
-      color: "bg-emerald-100 border-emerald-300"
+      color: "bg-gradient-to-br from-emerald-50 via-slate-50 to-white border-0 ring-1 ring-emerald-200/40 shadow-[0_4px_15px_rgba(16,185,129,0.06)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.1)]"
     },
     // 창원대
     {
@@ -380,7 +380,7 @@ export default function Admissions2024() {
         { name: "박○이", grade: "창원여고", note: "미술학과" }
       ],
       category: "지역거점국립대",
-      color: "bg-lime-100 border-lime-300"
+      color: "bg-gradient-to-br from-lime-50 via-slate-50 to-white border-0 ring-1 ring-lime-200/40 shadow-[0_4px_15px_rgba(132,204,22,0.06)] hover:shadow-[0_8px_25px_rgba(132,204,22,0.1)]"
     },
     // 동국대(WISE)
     {
@@ -390,7 +390,7 @@ export default function Admissions2024() {
         { name: "곽○지", grade: "명덕고", note: "시각디자인" }
       ],
       category: "지역사립대",
-      color: "bg-purple-100 border-purple-300"
+      color: "bg-gradient-to-br from-purple-50 via-slate-50 to-white border-0 ring-1 ring-purple-200/40 shadow-[0_4px_15px_rgba(168,85,247,0.06)] hover:shadow-[0_8px_25px_rgba(168,85,247,0.1)]"
     },
     // 동아대
     {
@@ -401,7 +401,7 @@ export default function Admissions2024() {
         { name: "홍○열", grade: "합포고", note: "현대미술" }
       ],
       category: "지역사립대",
-      color: "bg-blue-100 border-blue-300"
+      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
     },
     // 경성대
     {
@@ -416,7 +416,7 @@ export default function Admissions2024() {
         { name: "박○빈", grade: "가야고", note: "현대미술" }
       ],
       category: "지역사립대",
-      color: "bg-red-100 border-red-300"
+      color: "bg-gradient-to-br from-red-50 via-slate-50 to-white border-0 ring-1 ring-red-200/40 shadow-[0_4px_15px_rgba(239,68,68,0.06)] hover:shadow-[0_8px_25px_rgba(239,68,68,0.1)]"
     },
     // 동의대
     {
@@ -429,7 +429,7 @@ export default function Admissions2024() {
         { name: "심○채", grade: "무학여고", note: "공예디자인" }
       ],
       category: "지역사립대",
-      color: "bg-green-100 border-green-300"
+      color: "bg-gradient-to-br from-green-50 via-slate-50 to-white border-0 ring-1 ring-green-200/40 shadow-[0_4px_15px_rgba(34,197,94,0.06)] hover:shadow-[0_8px_25px_rgba(34,197,94,0.1)]"
     }
   ];
 
