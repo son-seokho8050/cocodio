@@ -57,16 +57,16 @@ export default function AdmissionsOverview() {
       year: "2022학년도",
       total: 89, 
       universities: [
-        { name: "동명대학교", count: 9, category: "지역사립대" },
-        { name: "계명대학교", count: 9, category: "지역사립대" },
-        { name: "창원대학교", count: 7, category: "지역거점국립대" },
-        { name: "동의대학교", count: 5, category: "지역사립대" },
-        { name: "경북대학교", count: 4, category: "지역거점국립대" },
-        { name: "홍익대학교", count: 3, category: "서울권" },
-        { name: "건국대학교", count: 2, category: "서울권" },
-        { name: "상명대학교", count: 2, category: "서울권" }
+        { name: "건국대학교", count: 1, category: "서울/ 수도권" },
+        { name: "중앙대학교", count: 1, category: "서울/ 수도권" },
+        { name: "경희대학교", count: 1, category: "서울/ 수도권" },
+        { name: "단국대학교", count: 1, category: "서울/ 수도권" },
+        { name: "명지대학교", count: 1, category: "서울/ 수도권" },
+        { name: "용인대학교", count: 1, category: "지역사립대" },
+        { name: "경기대학교", count: 1, category: "서울/ 수도권" },
+        { name: "홍익대학교", count: 1, category: "세종권" }
       ],
-      highlights: ["동명대 9명 최다 합격", "계명대 9명 합격", "창원대 7명 합격", "동의대 5명 합격"]
+      highlights: ["서울/수도권 우수대학 다수 합격", "홍익대 세종캠퍼스 합격", "전국 25개 대학 89명 합격", "안정적인 합격률 달성"]
     }
   ];
 
