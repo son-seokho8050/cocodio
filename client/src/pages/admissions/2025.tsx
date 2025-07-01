@@ -67,7 +67,7 @@ export default function Admissions2025() {
         { name: "서○우", grade: "제일고", note: "디자인비즈" }
       ],
       category: "서울/ 수도권",
-      color: "bg-green-100 border-green-300"
+      color: "bg-gradient-to-br from-green-50 via-slate-50 to-white border-0 ring-1 ring-green-200/40 shadow-[0_4px_15px_rgba(34,197,94,0.06)] hover:shadow-[0_8px_25px_rgba(34,197,94,0.1)]"
     },
     // 인천대
     {
@@ -77,7 +77,7 @@ export default function Admissions2025() {
         { name: "성○연", grade: "구암고", note: "디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-teal-100 border-teal-300"
+      color: "bg-gradient-to-br from-teal-50 via-slate-50 to-white border-0 ring-1 ring-teal-200/40 shadow-[0_4px_15px_rgba(20,184,166,0.06)] hover:shadow-[0_8px_25px_rgba(20,184,166,0.1)]"
     },
     // 한양대(에리카)
     {
@@ -88,7 +88,7 @@ export default function Admissions2025() {
         { name: "구○임", grade: "칠원고", note: "디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-indigo-100 border-indigo-300"
+      color: "bg-gradient-to-br from-indigo-50 via-slate-50 to-white border-0 ring-1 ring-indigo-200/40 shadow-[0_4px_15px_rgba(99,102,241,0.06)] hover:shadow-[0_8px_25px_rgba(99,102,241,0.1)]"
     },
     // 건국대(글로컬)
     {
@@ -99,7 +99,7 @@ export default function Admissions2025() {
         { name: "이○민", grade: "성지여고", note: "조형예술" }
       ],
       category: "서울/ 수도권",
-      color: "bg-rose-100 border-rose-300"
+      color: "bg-gradient-to-br from-rose-50 via-slate-50 to-white border-0 ring-1 ring-rose-200/40 shadow-[0_4px_15px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.1)]"
     },
     // 홍익대(세종)
     {
@@ -109,7 +109,7 @@ export default function Admissions2025() {
         { name: "송○규", grade: "함안고", note: "디자인컨버전스" }
       ],
       category: "세종권",
-      color: "bg-emerald-100 border-emerald-300"
+      color: "bg-gradient-to-br from-cyan-50 via-slate-50 to-white border-0 ring-1 ring-cyan-200/40 shadow-[0_4px_15px_rgba(6,182,212,0.06)] hover:shadow-[0_8px_25px_rgba(6,182,212,0.1)]"
     },
     // 예원예술대
     {
@@ -119,7 +119,7 @@ export default function Admissions2025() {
         { name: "왕○윤", grade: "태봉고", note: "귀금속주얼리" }
       ],
       category: "지역사립대",
-      color: "bg-violet-100 border-violet-300"
+      color: "bg-gradient-to-br from-purple-50 via-slate-50 to-white border-0 ring-1 ring-purple-200/40 shadow-[0_4px_15px_rgba(168,85,247,0.06)] hover:shadow-[0_8px_25px_rgba(168,85,247,0.1)]"
     },
     // 상명대(천안)
     {
@@ -134,7 +134,7 @@ export default function Admissions2025() {
         { name: "조○빈", grade: "경원고", note: "자유전공" }
       ],
       category: "지역사립대",
-      color: "bg-stone-100 border-stone-300"
+      color: "bg-gradient-to-br from-stone-50 via-slate-50 to-white border-0 ring-1 ring-stone-200/40 shadow-[0_4px_15px_rgba(120,113,108,0.06)] hover:shadow-[0_8px_25px_rgba(120,113,108,0.1)]"
     },
     // 백석대
     {
@@ -144,7 +144,7 @@ export default function Admissions2025() {
         { name: "이○은", grade: "삼진고", note: "디자인영상학부" }
       ],
       category: "지역사립대",
-      color: "bg-zinc-100 border-zinc-300"
+      color: "bg-gradient-to-br from-zinc-50 via-slate-50 to-white border-0 ring-1 ring-zinc-200/40 shadow-[0_4px_15px_rgba(113,113,122,0.06)] hover:shadow-[0_8px_25px_rgba(113,113,122,0.1)]"
     },
     // 공주대
     {
@@ -155,7 +155,7 @@ export default function Admissions2025() {
         { name: "서○우", grade: "제일고", note: "가구리빙" }
       ],
       category: "지역사립대",
-      color: "bg-neutral-100 border-neutral-300"
+      color: "bg-gradient-to-br from-neutral-50 via-slate-50 to-white border-0 ring-1 ring-neutral-200/40 shadow-[0_4px_15px_rgba(115,115,115,0.06)] hover:shadow-[0_8px_25px_rgba(115,115,115,0.1)]"
     },
     // 호서대
     {
@@ -168,7 +168,7 @@ export default function Admissions2025() {
         { name: "유○정", grade: "세화여고", note: "디자인스쿨" }
       ],
       category: "지역사립대",
-      color: "bg-slate-100 border-slate-300"
+      color: "bg-gradient-to-br from-slate-50 via-gray-50 to-white border-0 ring-1 ring-slate-200/40 shadow-[0_4px_15px_rgba(100,116,139,0.06)] hover:shadow-[0_8px_25px_rgba(100,116,139,0.1)]"
     },
     // 남서울대
     {
