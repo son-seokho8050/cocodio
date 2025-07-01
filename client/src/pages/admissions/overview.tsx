@@ -218,10 +218,7 @@ export default function AdmissionsOverview() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               당신도 코코미술학원과 함께 꿈을 이루세요
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              체계적인 FOLLOW 시스템과 개별 맞춤형 지도로 
-              목표하는 대학 합격의 꿈을 현실로 만들어 드립니다.
-            </p>
+            <p className="text-xl text-gray-600 mb-8">체계적인 FOLLOW 시스템과 개별 맞춤형 지도로 목표 대학 합격</p>
             <Link href="/#contact">
               <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4">
                 무료 상담 신청하기
