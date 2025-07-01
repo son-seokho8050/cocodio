@@ -1,4 +1,6 @@
 import { users, consultations, portfolioItems, achievements, type User, type InsertUser, type Consultation, type InsertConsultation, type PortfolioItem, type InsertPortfolioItem, type Achievement, type InsertAchievement } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -196,4 +198,67 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async createConsultation(insertConsultation: InsertConsultation): Promise<Consultation> {
+    const [consultation] = await db
+      .insert(consultations)
+      .values(insertConsultation)
+      .returning();
+    return consultation;
+  }
+
+  async getConsultations(): Promise<Consultation[]> {
+    return await db.select().from(consultations);
+  }
+
+  async getPortfolioItems(): Promise<PortfolioItem[]> {
+    // Return sample portfolio items for now since we're focusing on achievements
+    return [
+      {
+        id: 1,
+        title: "캐릭터 디자인 포트폴리오",
+        student: "김○○ 학생",
+        category: "character",
+        achievement: "지역 미술대회 수상",
+        imageUrl: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400"
+      }
+    ];
+  }
+
+  async getPortfolioItemsByCategory(category: string): Promise<PortfolioItem[]> {
+    const items = await this.getPortfolioItems();
+    return items.filter(item => item.category === category);
+  }
+
+  async getAchievements(): Promise<Achievement[]> {
+    return await db.select().from(achievements).orderBy(achievements.displayOrder);
+  }
+
+  async createAchievement(insertAchievement: InsertAchievement): Promise<Achievement> {
+    const [achievement] = await db
+      .insert(achievements)
+      .values(insertAchievement)
+      .returning();
+    return achievement;
+  }
+}
+
+export const storage = new DatabaseStorage();
