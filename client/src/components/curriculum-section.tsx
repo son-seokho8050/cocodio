@@ -34,7 +34,12 @@ export default function CurriculumSection() {
                 <GraduationCap className="text-primary-600 h-8 w-8 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">입시미술</h3>
               </div>
-              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">디자인과 만화 전공을 위한 체계적인 입시 준비 과정, 개인 성향별 커리큘럼으로 실기시험 대비까지 완벽하게</p>
+              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
+                디자인과 만화 전공을 위한<br />
+                체계적인 입시 준비 과정,<br />
+                개인 성향별 커리큘럼으로<br />
+                실기시험 대비까지 완벽하게
+              </p>
               
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-sm text-gray-600">
