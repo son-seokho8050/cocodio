@@ -82,7 +82,7 @@ export default function CurriculumSection() {
                 <GraduationCap className="text-purple-600 h-8 w-8 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">SPACE</h3>
               </div>
-              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
+              <p className="text-gray-600 mb-6 tracking-wide text-[14px]">
                 최상위 미대입시 전문 수업,<br />
                 서울대 출신 원장님의<br />
                 엄선된 커리큘럼과 개별 맞춤 지도로<br />
