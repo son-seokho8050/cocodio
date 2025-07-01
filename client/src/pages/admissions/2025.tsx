@@ -559,7 +559,7 @@ export default function Admissions2025() {
       
       <main className="pt-20">
         {/* Header */}
-        <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
+        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center mb-6">
               <Link href="/admissions">
@@ -604,19 +604,19 @@ export default function Admissions2025() {
               <div className="grid md:grid-cols-4 gap-6 mt-12">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-white">{totalStudents}명</div>
-                  <div className="text-primary-100">총 합격자</div>
+                  <div className="text-blue-100">총 합격자</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-white">{totalUniversities}개</div>
-                  <div className="text-primary-100">합격 대학교</div>
+                  <div className="text-blue-100">합격 대학교</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-white">{seoulStudents}명</div>
-                  <div className="text-primary-100">서울/수도권</div>
+                  <div className="text-blue-100">서울/수도권</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-white">{nationalStudents}명</div>
-                  <div className="text-primary-100">거점국립대</div>
+                  <div className="text-blue-100">거점국립대</div>
                 </div>
               </div>
             </div>
@@ -642,7 +642,7 @@ export default function Admissions2025() {
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <GraduationCap className="h-6 w-6 mr-3 text-primary-600" />
+                        <GraduationCap className="h-6 w-6 mr-3 text-blue-600" />
                         <div>
                           <div className="text-2xl font-bold text-gray-900">
                             {result.university}
@@ -692,7 +692,7 @@ export default function Admissions2025() {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-primary-50">
+        <section className="py-16 bg-blue-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               2025학년도 성과를 이어가세요
@@ -702,7 +702,7 @@ export default function Admissions2025() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#contact">
-                <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4">
                   무료 상담 신청하기
                 </Button>
               </Link>
