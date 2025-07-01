@@ -99,7 +99,7 @@ export default function Portfolio() {
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600 mb-3">
-                  작가: {item.student}
+                  고2 디자인 수업
                 </p>
                 {item.achievement && (
                   <div className="mt-4">
