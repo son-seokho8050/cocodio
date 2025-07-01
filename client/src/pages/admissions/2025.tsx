@@ -16,7 +16,7 @@ export default function Admissions2025() {
         { name: "구○윤", grade: "명덕고", note: "도예" }
       ],
       category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-blue-100 via-blue-50 to-white border-0 ring-2 ring-blue-300/80 shadow-[0_8px_25px_rgba(59,130,246,0.15)] hover:shadow-[0_12px_35px_rgba(59,130,246,0.25)]"
+      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
     },
     // 숙명여대
     {
@@ -26,7 +26,7 @@ export default function Admissions2025() {
         { name: "조○율", grade: "무학여고", note: "시각영상디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-pink-100 via-pink-50 to-white border-0 ring-2 ring-pink-300/80 shadow-[0_8px_25px_rgba(236,72,153,0.15)] hover:shadow-[0_12px_35px_rgba(236,72,153,0.25)]"
+      color: "bg-gradient-to-br from-pink-50 via-slate-50 to-white border-0 ring-1 ring-pink-200/40 shadow-[0_4px_15px_rgba(236,72,153,0.06)] hover:shadow-[0_8px_25px_rgba(236,72,153,0.1)]"
     },
     // 서경대
     {
@@ -36,7 +36,7 @@ export default function Admissions2025() {
         { name: "김○리", grade: "경남예술고", note: "VD비주얼디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-red-100 via-red-50 to-white border-0 ring-2 ring-red-300/80 shadow-[0_8px_25px_rgba(239,68,68,0.15)] hover:shadow-[0_12px_35px_rgba(239,68,68,0.25)]"
+      color: "bg-gradient-to-br from-violet-50 via-slate-50 to-white border-0 ring-1 ring-violet-200/40 shadow-[0_4px_15px_rgba(139,69,244,0.06)] hover:shadow-[0_8px_25px_rgba(139,69,244,0.1)]"
     },
     // 성신여대
     {
@@ -46,7 +46,7 @@ export default function Admissions2025() {
         { name: "조○빈", grade: "경원고", note: "창의융합" }
       ],
       category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-purple-100 via-purple-50 to-white border-0 ring-2 ring-purple-300/80 shadow-[0_8px_25px_rgba(147,51,234,0.15)] hover:shadow-[0_12px_35px_rgba(147,51,234,0.25)]"
+      color: "bg-gradient-to-br from-emerald-50 via-slate-50 to-white border-0 ring-1 ring-emerald-200/40 shadow-[0_4px_15px_rgba(16,185,129,0.06)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.1)]"
     },
     // 동덕여대
     {
@@ -56,7 +56,7 @@ export default function Admissions2025() {
         { name: "조○율", grade: "무학여고", note: "미디어디자인" }
       ],
       category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-amber-100 via-amber-50 to-white border-0 ring-2 ring-amber-300/80 shadow-[0_8px_25px_rgba(245,158,11,0.15)] hover:shadow-[0_12px_35px_rgba(245,158,11,0.25)]"
+      color: "bg-gradient-to-br from-amber-50 via-slate-50 to-white border-0 ring-1 ring-amber-200/40 shadow-[0_4px_15px_rgba(245,158,11,0.06)] hover:shadow-[0_8px_25px_rgba(245,158,11,0.1)]"
     },
     // 경기대
     {
