@@ -334,7 +334,7 @@ export default function Admissions2022() {
       
       <main className="pt-20">
         {/* Header */}
-        <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
+        <section className="bg-gradient-to-br from-orange-600 to-red-800 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center mb-6">
               <Link href="/admissions">
@@ -348,25 +348,25 @@ export default function Admissions2022() {
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
                 2022학년도 합격자 명단
               </h1>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
                 2022학년도 입시에서 이루어낸 우수한 성과를 확인하세요.
               </p>
               <div className="flex flex-col md:flex-row justify-center gap-8 text-center">
                 <div className="bg-white/10 rounded-lg p-6">
                   <div className="text-3xl font-bold">{totalStudents}명</div>
-                  <div className="text-blue-100">총 합격자</div>
+                  <div className="text-orange-100">총 합격자</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-6">
                   <div className="text-3xl font-bold">{seoulStudents}명</div>
-                  <div className="text-blue-100">서울/ 수도권</div>
+                  <div className="text-orange-100">서울/ 수도권</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-6">
                   <div className="text-3xl font-bold">{nationalStudents}명</div>
-                  <div className="text-blue-100">국립대</div>
+                  <div className="text-orange-100">국립대</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-6">
                   <div className="text-3xl font-bold">25개교</div>
-                  <div className="text-blue-100">합격 대학</div>
+                  <div className="text-orange-100">합격 대학</div>
                 </div>
               </div>
             </div>
