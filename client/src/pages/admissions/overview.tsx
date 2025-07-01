@@ -196,7 +196,7 @@ export default function AdmissionsOverview() {
               <Card className="text-center">
                 <CardContent className="p-6">
                   <Star className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">{totalStats.seoul}명</div>
+                  <div className="text-2xl font-bold text-gray-900 mb-2">인서울대학</div>
                   <div className="text-gray-600">서울/수도권 대학 합격</div>
                 </CardContent>
               </Card>
@@ -204,7 +204,7 @@ export default function AdmissionsOverview() {
               <Card className="text-center">
                 <CardContent className="p-6">
                   <Calendar className="h-12 w-12 text-accent-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">{totalStats.national}명</div>
+                  <div className="text-2xl font-bold text-gray-900 mb-2">연속합격</div>
                   <div className="text-gray-600">지역거점국립대 합격</div>
                 </CardContent>
               </Card>
