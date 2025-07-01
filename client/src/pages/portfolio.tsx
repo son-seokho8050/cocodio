@@ -104,7 +104,7 @@ export default function Portfolio() {
                 {item.achievement && (
                   <div className="mt-4">
                     <Badge variant="outline" className="text-primary-600 border-primary-600">
-                      🏆 {item.achievement}
+                      LP디자인
                     </Badge>
                   </div>
                 )}
