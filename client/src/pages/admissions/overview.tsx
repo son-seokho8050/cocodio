@@ -86,16 +86,16 @@ export default function AdmissionsOverview() {
         <section className="hero-gradient text-white py-20 relative overflow-hidden">
           {/* Animated Background Graphics */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-glow-pulse"></div>
-            <div className="absolute top-40 right-20 w-24 h-24 bg-blue-300/10 rounded-full blur-lg animate-float-medium" style={{animationDelay: '2s'}}></div>
-            <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-purple-300/8 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-white/8 rounded-full blur-md animate-glow-pulse" style={{animationDelay: '3s'}}></div>
-            <div className="absolute bottom-20 right-10 w-28 h-28 bg-cyan-300/6 rounded-full blur-xl animate-float-medium" style={{animationDelay: '4s'}}></div>
+            <div className="absolute top-20 left-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-glow-pulse"></div>
+            <div className="absolute top-40 right-20 w-36 h-36 bg-blue-300/10 rounded-full blur-lg animate-float-medium" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-32 left-1/4 w-60 h-60 bg-purple-300/8 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-white/8 rounded-full blur-md animate-glow-pulse" style={{animationDelay: '3s'}}></div>
+            <div className="absolute bottom-20 right-10 w-44 h-44 bg-cyan-300/6 rounded-full blur-xl animate-float-medium" style={{animationDelay: '4s'}}></div>
             
             {/* Floating geometric shapes */}
-            <div className="absolute top-16 left-1/3 w-6 h-6 border border-white/20 animate-float-fast"></div>
-            <div className="absolute bottom-40 left-16 w-4 h-4 bg-white/15 animate-glow-pulse" style={{animationDelay: '2s'}}></div>
-            <div className="absolute top-1/2 right-16 w-8 h-8 border-2 border-blue-300/15 rounded-full animate-float-slow" style={{animationDelay: '5s'}}></div>
+            <div className="absolute top-16 left-1/3 w-12 h-12 border-2 border-white/20 animate-float-fast"></div>
+            <div className="absolute bottom-40 left-16 w-8 h-8 bg-white/15 animate-glow-pulse" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-1/2 right-16 w-16 h-16 border-2 border-blue-300/15 rounded-full animate-float-slow" style={{animationDelay: '5s'}}></div>
           </div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
