@@ -576,22 +576,57 @@ export default function Admissions2025() {
               </h1>
               
               {/* 2024년 수상 실적 배너 */}
-              <div className="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 border-2 border-yellow-400/50 rounded-xl px-8 py-6 mb-8 mx-auto max-w-5xl shadow-lg">
-                <div className="text-center mb-4">
-                  <h3 className="text-2xl font-bold text-yellow-300 mb-2">🏆 2024년 주요 수상 실적 🏆</h3>
-                </div>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center border border-yellow-300/30">
-                    <div className="text-yellow-300 text-xl font-bold mb-2">🥇 대상</div>
-                    <div className="text-white font-semibold text-sm">전국고등학생미술실기대회</div>
+              <div className="relative overflow-hidden bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 border border-amber-200/50 rounded-2xl p-8 mb-8 mx-auto max-w-6xl shadow-2xl">
+                {/* 배경 장식 */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-300/20 to-amber-400/20 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-300/20 to-yellow-400/20 rounded-full translate-y-12 -translate-x-12"></div>
+                
+                <div className="relative z-10">
+                  <div className="text-center mb-8">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full mb-4 shadow-lg">
+                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 2L3 7v11a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V7l-7-5zM6 16v-4h8v4H6z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <h3 className="text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-2">
+                      2024년 주요 수상 실적
+                    </h3>
+                    <p className="text-gray-600 text-lg">검증된 실력으로 이루어낸 성과</p>
                   </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center border border-yellow-300/30">
-                    <div className="text-yellow-300 text-xl font-bold mb-2">🏅 최우수상</div>
-                    <div className="text-white font-semibold text-sm">한국미술교육학회 실기대회</div>
-                  </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center border border-yellow-300/30">
-                    <div className="text-yellow-300 text-xl font-bold mb-2">🥇 금상</div>
-                    <div className="text-white font-semibold text-sm">경남미술실기대회</div>
+                  
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-amber-400/5 rounded-xl group-hover:from-yellow-400/10 group-hover:to-amber-400/10 transition-all duration-300"></div>
+                      <div className="relative z-10">
+                        <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                          <span className="text-white text-xl font-bold">1st</span>
+                        </div>
+                        <div className="text-amber-600 text-xl font-bold mb-2">대상</div>
+                        <div className="text-gray-700 font-medium text-sm leading-relaxed">전국고등학생<br/>미술실기대회</div>
+                      </div>
+                    </div>
+                    
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-amber-400/5 rounded-xl group-hover:from-orange-400/10 group-hover:to-amber-400/10 transition-all duration-300"></div>
+                      <div className="relative z-10">
+                        <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                          <span className="text-white text-lg font-bold">★</span>
+                        </div>
+                        <div className="text-orange-600 text-xl font-bold mb-2">최우수상</div>
+                        <div className="text-gray-700 font-medium text-sm leading-relaxed">한국미술교육학회<br/>실기대회</div>
+                      </div>
+                    </div>
+                    
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-yellow-400/5 rounded-xl group-hover:from-amber-400/10 group-hover:to-yellow-400/10 transition-all duration-300"></div>
+                      <div className="relative z-10">
+                        <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+                          <span className="text-white text-xl font-bold">🏅</span>
+                        </div>
+                        <div className="text-amber-600 text-xl font-bold mb-2">금상</div>
+                        <div className="text-gray-700 font-medium text-sm leading-relaxed">경남미술실기대회</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
