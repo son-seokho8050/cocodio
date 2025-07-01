@@ -438,7 +438,6 @@ export default function Admissions2024() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
       <main className="pt-20">
         {/* Header */}
         <section className="bg-gradient-to-br from-green-600 to-emerald-800 text-white py-16">
@@ -483,7 +482,7 @@ export default function Admissions2024() {
                         <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🏵️</span>
                         </div>
-                        <div className="text-yellow-600 text-lg font-bold mb-1">5명 수상</div>
+                        <div className="text-yellow-600 text-lg font-bold mb-1">지역최다 5명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">경희대</div>
                       </div>
                     </div>
@@ -646,7 +645,6 @@ export default function Admissions2024() {
           </div>
         </section>
       </main>
-      
       <Footer />
     </div>
   );
