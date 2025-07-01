@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "wouter";
 import type { PortfolioItem } from "@shared/schema";
 
 export default function PortfolioSection() {
@@ -101,9 +102,11 @@ export default function PortfolioSection() {
         )}
 
         <div className="text-center mt-12">
-          <Button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3">
-            더 많은 작품 보기
-          </Button>
+          <Link href="/portfolio">
+            <Button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3">
+              더 많은 작품 보기
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
