@@ -21,7 +21,7 @@ export default function AdmissionsOverview() {
         { name: "인천대학교", count: 1, category: "서울/ 수도권" },
         { name: "한양대학교(에리카)", count: 2, category: "서울/ 수도권" }
       ],
-      highlights: ["한양대 17명 실기대회 수상", "서울/수도권 우수대학 다수 합격", "전국 44개 대학 151명 합격", "우수한 지역 확산"]
+      highlights: ["한양대 17명 실기대회 수상", "서울과기대·숙명여대 합격", "전국 44개 대학 151명 합격", "한양대에리카·경기대 복수 합격"]
     },
     {
       year: "2024학년도",
@@ -36,7 +36,7 @@ export default function AdmissionsOverview() {
         { name: "중앙대학교", count: 1, category: "서울/ 수도권" },
         { name: "경희대학교", count: 1, category: "서울/ 수도권" }
       ],
-      highlights: ["서경대 3명 합격", "동덕여대 2명 합격", "서울/수도권 우수대학 다수 합격", "전국 34개 대학 99명 합격"]
+      highlights: ["한양대 실기대회 수상 실적", "서경대 3명·동덕여대 2명 합격", "세종대·중앙대·경희대 합격", "전국 34개 대학 99명 합격"]
     },
     {
       year: "2023학년도", 
@@ -51,7 +51,7 @@ export default function AdmissionsOverview() {
         { name: "한성대학교", count: 1, category: "서울/ 수도권" },
         { name: "서울예술대학교", count: 1, category: "서울/ 수도권" }
       ],
-      highlights: ["성신여대 2명 합격", "서울/수도권 우수대학 다수 합격", "전국 38개 대학 127명 합격", "안정적인 합격률 유지"]
+      highlights: ["한양대 실기대회 연속 수상", "성신여대 2명 합격", "국민대·서울여대 합격", "전국 38개 대학 127명 합격"]
     },
     {
       year: "2022학년도",
@@ -66,7 +66,7 @@ export default function AdmissionsOverview() {
         { name: "경기대학교", count: 1, category: "서울/ 수도권" },
         { name: "홍익대학교", count: 1, category: "세종권" }
       ],
-      highlights: ["서울/수도권 우수대학 다수 합격", "홍익대 세종캠퍼스 합격", "전국 25개 대학 89명 합격", "안정적인 합격률 달성"]
+      highlights: ["한양대 실기대회 첫 수상 기록", "건국대·중앙대·경희대 합격", "홍익대 세종캠퍼스 합격", "전국 25개 대학 89명 합격"]
     }
   ];
 
