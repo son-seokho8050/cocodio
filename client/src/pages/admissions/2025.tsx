@@ -576,21 +576,22 @@ export default function Admissions2025() {
               </h1>
               
               {/* 2024년 수상 실적 배너 */}
-              <div className="bg-white/15 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 mx-auto max-w-4xl">
-                <div className="flex flex-wrap justify-center items-center gap-4 text-white">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
-                    <span className="text-lg font-semibold">2024년 전국고등학생미술실기대회 대상</span>
+              <div className="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 border-2 border-yellow-400/50 rounded-xl px-8 py-6 mb-8 mx-auto max-w-5xl shadow-lg">
+                <div className="text-center mb-4">
+                  <h3 className="text-2xl font-bold text-yellow-300 mb-2">🏆 2024년 주요 수상 실적 🏆</h3>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center border border-yellow-300/30">
+                    <div className="text-yellow-300 text-xl font-bold mb-2">🥇 대상</div>
+                    <div className="text-white font-semibold text-sm">전국고등학생미술실기대회</div>
                   </div>
-                  <div className="hidden md:block text-white/70">|</div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
-                    <span className="text-lg font-semibold">한국미술교육학회 실기대회 최우수상</span>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center border border-yellow-300/30">
+                    <div className="text-yellow-300 text-xl font-bold mb-2">🏅 최우수상</div>
+                    <div className="text-white font-semibold text-sm">한국미술교육학회 실기대회</div>
                   </div>
-                  <div className="hidden md:block text-white/70">|</div>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
-                    <span className="text-lg font-semibold">경남미술실기대회 금상</span>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 text-center border border-yellow-300/30">
+                    <div className="text-yellow-300 text-xl font-bold mb-2">🥇 금상</div>
+                    <div className="text-white font-semibold text-sm">경남미술실기대회</div>
                   </div>
                 </div>
               </div>
