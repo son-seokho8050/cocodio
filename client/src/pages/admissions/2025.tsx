@@ -555,8 +555,32 @@ export default function Admissions2025() {
       <Navigation />
       <main className="pt-20">
         {/* Header */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 relative overflow-hidden">
+          {/* Animated Background Graphics */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-20 left-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-glow-pulse"></div>
+            <div className="absolute top-40 right-20 w-80 h-80 bg-blue-300/10 rounded-full blur-lg animate-float-medium" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-32 left-1/4 w-60 h-60 bg-purple-300/8 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-white/8 rounded-full blur-md animate-glow-pulse" style={{animationDelay: '3s'}}></div>
+            <div className="absolute bottom-20 right-10 w-44 h-44 bg-cyan-300/6 rounded-full blur-xl animate-float-medium" style={{animationDelay: '4s'}}></div>
+            
+            {/* Additional large graphics */}
+            <div className="absolute top-10 right-1/4 w-52 h-52 bg-indigo-300/7 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '6s'}}></div>
+            <div className="absolute bottom-10 left-1/3 w-56 h-56 bg-pink-300/6 rounded-full blur-2xl animate-glow-pulse" style={{animationDelay: '7s'}}></div>
+            <div className="absolute top-1/2 left-20 w-40 h-40 bg-emerald-300/8 rounded-full blur-xl animate-float-medium" style={{animationDelay: '8s'}}></div>
+            
+            {/* Floating geometric shapes */}
+            <div className="absolute top-16 left-1/3 w-12 h-12 border-2 border-white/20 animate-float-fast"></div>
+            <div className="absolute bottom-40 left-16 w-8 h-8 bg-white/15 animate-glow-pulse" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-1/2 right-16 w-16 h-16 border-2 border-blue-300/15 rounded-full animate-float-slow" style={{animationDelay: '5s'}}></div>
+            
+            {/* Additional geometric elements */}
+            <div className="absolute bottom-16 right-1/4 w-10 h-10 border border-purple-300/25 rotate-45 animate-float-fast" style={{animationDelay: '3s'}}></div>
+            <div className="absolute top-24 right-1/2 w-6 h-6 bg-yellow-300/20 rounded-full animate-glow-pulse" style={{animationDelay: '4s'}}></div>
+            <div className="absolute bottom-1/3 left-1/2 w-14 h-14 border-2 border-teal-300/20 rounded-full animate-float-medium" style={{animationDelay: '9s'}}></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="flex items-center mb-6">
               <Link href="/admissions">
                 <Button variant="ghost" className="text-white hover:bg-white/20 mr-4">
