@@ -517,7 +517,7 @@ export default function Admissions2023() {
                       </svg>
                     </div>
                     <h3 className="text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-2">
-                      2024년 주요 수상 실적
+                      2022년 주요 수상 실적
                     </h3>
                     <p className="text-gray-600 text-lg">검증된 실력으로 이루어낸 성과</p>
                   </div>
