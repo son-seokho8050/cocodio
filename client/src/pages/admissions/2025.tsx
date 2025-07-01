@@ -16,7 +16,7 @@ export default function Admissions2025() {
         { name: "구○윤", grade: "명덕고", note: "도예" }
       ],
       category: "서울/ 수도권",
-      color: "bg-blue-100 border-blue-300"
+      color: "bg-gradient-to-br from-slate-50/80 via-white/90 to-blue-50/60 backdrop-blur-sm border-0 ring-1 ring-slate-200/50 shadow-[0_4px_20px_rgba(59,130,246,0.08)]"
     },
     // 숙명여대
     {
