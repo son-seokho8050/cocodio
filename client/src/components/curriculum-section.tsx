@@ -188,7 +188,7 @@ export default function CurriculumSection() {
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-accent-600 mr-2 h-4 w-4" />
-                  기초 드로잉 & 색채 감각 기르기
+                  기초 드로잉 & 색채 감각
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-accent-600 mr-2 h-4 w-4" />
