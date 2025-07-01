@@ -87,7 +87,7 @@ export default function AdmissionsOverview() {
           {/* Animated Background Graphics */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-20 left-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-glow-pulse"></div>
-            <div className="absolute top-40 right-20 w-72 h-72 bg-blue-300/10 rounded-full blur-lg animate-float-medium" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-40 right-20 w-96 h-96 bg-blue-300/15 rounded-full blur-lg animate-float-medium" style={{animationDelay: '2s'}}></div>
             <div className="absolute bottom-32 left-1/4 w-60 h-60 bg-purple-300/8 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '1s'}}></div>
             <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-white/8 rounded-full blur-md animate-glow-pulse" style={{animationDelay: '3s'}}></div>
             <div className="absolute bottom-20 right-10 w-44 h-44 bg-cyan-300/6 rounded-full blur-xl animate-float-medium" style={{animationDelay: '4s'}}></div>
