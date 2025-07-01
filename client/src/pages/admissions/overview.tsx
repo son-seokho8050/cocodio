@@ -66,7 +66,7 @@ export default function AdmissionsOverview() {
         { name: "경기대학교", count: 1, category: "서울/ 수도권" },
         { name: "홍익대학교", count: 1, category: "세종권" }
       ],
-      highlights: ["한양대 실기대회 첫 수상 기록", "건국대·중앙대·경희대 합격", "홍익대 세종캠퍼스 합격", "전국 25개 대학 89명 합격"]
+      highlights: ["한양대 및 실기대회 지역최다수상", "건국대·중앙대·경희대 합격", "홍익대 세종캠퍼스 합격", "전국 25개 대학 89명 합격"]
     }
   ];
 
