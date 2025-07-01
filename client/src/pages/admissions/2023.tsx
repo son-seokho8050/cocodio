@@ -503,10 +503,11 @@ export default function Admissions2023() {
               </h1>
               
               {/* 2024년 수상 실적 배너 */}
-              <div className="relative overflow-hidden bg-gradient-to-r from-purple-50 via-violet-50 to-fuchsia-50 border border-purple-200/50 rounded-2xl p-8 mb-8 mx-auto max-w-6xl shadow-2xl">
-                {/* 배경 장식 */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-300/20 to-violet-400/20 rounded-full -translate-y-16 translate-x-16"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-fuchsia-300/20 to-purple-400/20 rounded-full translate-y-12 -translate-x-12"></div>
+              <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-violet-50/30 border border-white/20 backdrop-blur-sm rounded-3xl p-8 mb-8 mx-auto max-w-6xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-slate-200/50">
+                {/* 배경 패턴 */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(139,69,244,0.05)_1px,_transparent_0)] bg-[size:24px_24px]"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-400/5 to-violet-300/10 rounded-full blur-3xl -translate-y-32 translate-x-32"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-fuchsia-400/5 to-purple-500/10 rounded-full blur-3xl translate-y-24 -translate-x-24"></div>
                 
                 <div className="relative z-10">
                   <div className="text-center mb-8">
@@ -522,8 +523,8 @@ export default function Admissions2023() {
                   </div>
                   
                   <div className="grid md:grid-cols-4 gap-4">
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <div className="absolute inset-0 bg-gradient-to-br from-rose-400/5 to-pink-400/5 rounded-xl group-hover:from-rose-400/10 group-hover:to-pink-400/10 transition-all duration-300"></div>
+                    <div className="group relative bg-white/90 backdrop-blur-md rounded-2xl p-5 text-center border border-white/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 ring-1 ring-slate-200/30">
+                      <div className="absolute inset-0 bg-gradient-to-br from-rose-400/5 to-pink-400/5 rounded-2xl group-hover:from-rose-400/10 group-hover:to-pink-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🏆</span>
@@ -533,8 +534,8 @@ export default function Admissions2023() {
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/5 to-blue-400/5 rounded-xl group-hover:from-indigo-400/10 group-hover:to-blue-400/10 transition-all duration-300"></div>
+                    <div className="group relative bg-white/90 backdrop-blur-md rounded-2xl p-5 text-center border border-white/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 ring-1 ring-slate-200/30">
+                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/5 to-blue-400/5 rounded-2xl group-hover:from-indigo-400/10 group-hover:to-blue-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🎖️</span>
@@ -544,8 +545,8 @@ export default function Admissions2023() {
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-amber-400/5 rounded-xl group-hover:from-yellow-400/10 group-hover:to-amber-400/10 transition-all duration-300"></div>
+                    <div className="group relative bg-white/90 backdrop-blur-md rounded-2xl p-5 text-center border border-white/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 ring-1 ring-slate-200/30">
+                      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-amber-400/5 rounded-2xl group-hover:from-yellow-400/10 group-hover:to-amber-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🏵️</span>
@@ -555,8 +556,8 @@ export default function Admissions2023() {
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-purple-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5 rounded-xl group-hover:from-green-400/10 group-hover:to-emerald-400/10 transition-all duration-300"></div>
+                    <div className="group relative bg-white/90 backdrop-blur-md rounded-2xl p-5 text-center border border-white/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 ring-1 ring-slate-200/30">
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5 rounded-2xl group-hover:from-green-400/10 group-hover:to-emerald-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🥈</span>

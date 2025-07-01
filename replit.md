@@ -170,6 +170,12 @@ Changelog:
   - Processed all authentic data from uploaded 2025 합격자명단 maintaining accurate student information and specialized programs
   - Notable achievements include 부산대 디자인앤테크놀로지, 창원대 장학생, and comprehensive coverage of regional universities
   - Applied consistent formatting with proper campus location identification and "서울/ 수도권" categorization standards
+- July 1, 2025. Complete visual design system upgrade across all admissions pages
+  - Implemented year-specific color coding: 2025 (blue), 2024 (green), 2023 (purple), 2022 (orange)
+  - Upgraded card sections from basic colored backgrounds to sophisticated glassmorphism design
+  - Applied modern design features: backdrop-blur effects, radial dot patterns, large blur gradients, refined shadows
+  - Enhanced all award cards with consistent rounded-2xl styling, ring borders, and smooth hover transitions
+  - Maintained authentic content while significantly improving visual appeal and user experience
 ```
 
 ## User Preferences
