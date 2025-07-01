@@ -44,7 +44,7 @@ export default function Portfolio() {
                   <span>홈으로</span>
                 </Button>
               </Link>
-              <h1 className="text-3xl font-bold text-gray-900">학생 작품 갤러리</h1>
+              <h1 className="text-3xl font-bold text-gray-900">FOLLOW 수업 갤러리</h1>
             </div>
             <div className="text-sm text-gray-500">
               전체 {filteredItems.length}개 작품
@@ -52,7 +52,6 @@ export default function Portfolio() {
           </div>
         </div>
       </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Category Filter */}
         <div className="mb-8">
