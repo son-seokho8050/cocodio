@@ -572,26 +572,26 @@ export default function Admissions2025() {
               </h1>
               
               {/* 2024년 수상 실적 배너 */}
-              <div className="relative overflow-hidden bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 border border-amber-200/50 rounded-2xl p-8 mb-8 mx-auto max-w-6xl shadow-2xl">
+              <div className="relative overflow-hidden bg-gradient-to-r from-blue-50 via-sky-50 to-cyan-50 border border-blue-200/50 rounded-2xl p-8 mb-8 mx-auto max-w-6xl shadow-2xl">
                 {/* 배경 장식 */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-300/20 to-amber-400/20 rounded-full -translate-y-16 translate-x-16"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-orange-300/20 to-yellow-400/20 rounded-full translate-y-12 -translate-x-12"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-300/20 to-sky-400/20 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-300/20 to-blue-400/20 rounded-full translate-y-12 -translate-x-12"></div>
                 
                 <div className="relative z-10">
                   <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full mb-4 shadow-lg">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-400 to-sky-500 rounded-full mb-4 shadow-lg">
                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 2L3 7v11a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V7l-7-5zM6 16v-4h8v4H6z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <h3 className="text-3xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent mb-2">
+                    <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-sky-600 bg-clip-text text-transparent mb-2">
                       2024년 주요 수상 실적
                     </h3>
                     <p className="text-gray-600 text-lg">검증된 실력으로 이루어낸 성과</p>
                   </div>
                   
                   <div className="grid md:grid-cols-4 gap-4">
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-bronze-400/5 to-amber-400/5 rounded-xl group-hover:from-bronze-400/10 group-hover:to-amber-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
@@ -602,18 +602,18 @@ export default function Admissions2025() {
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-cyan-400/5 rounded-xl group-hover:from-blue-400/10 group-hover:to-cyan-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🏅</span>
                         </div>
-                        <div className="text-blue-600 text-lg font-bold mb-1">지역최다 15명 수상</div>
+                        <div className="text-blue-600 text-lg font-bold mb-1">15명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">동덕여대</div>
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5 rounded-xl group-hover:from-green-400/10 group-hover:to-emerald-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
@@ -624,7 +624,7 @@ export default function Admissions2025() {
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-violet-400/5 rounded-xl group-hover:from-purple-400/10 group-hover:to-violet-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
@@ -635,18 +635,18 @@ export default function Admissions2025() {
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-rose-400/5 to-pink-400/5 rounded-xl group-hover:from-rose-400/10 group-hover:to-pink-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🏆</span>
                         </div>
-                        <div className="text-rose-600 text-lg font-bold mb-1">지역최다 24명 수상</div>
+                        <div className="text-rose-600 text-lg font-bold mb-1">24명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">건국대 글로컬</div>
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/5 to-blue-400/5 rounded-xl group-hover:from-indigo-400/10 group-hover:to-blue-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
@@ -657,18 +657,18 @@ export default function Admissions2025() {
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-amber-400/5 rounded-xl group-hover:from-yellow-400/10 group-hover:to-amber-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🏵️</span>
                         </div>
-                        <div className="text-yellow-600 text-lg font-bold mb-1">지역최다 5명 수상</div>
+                        <div className="text-yellow-600 text-lg font-bold mb-1">5명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">경희대</div>
                       </div>
                     </div>
                     
-                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-amber-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 text-center border border-blue-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div className="absolute inset-0 bg-gradient-to-br from-teal-400/5 to-cyan-400/5 rounded-xl group-hover:from-teal-400/10 group-hover:to-cyan-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
