@@ -121,7 +121,7 @@ export default function Portfolio() {
               </svg>
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
-              선택한 카테고리에 작품이 없습니다
+              도슨트 발표
             </h3>
             <p className="text-gray-500">
               다른 카테고리를 선택해보세요.
