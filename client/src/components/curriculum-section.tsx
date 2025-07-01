@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Tablet, Palette, Check } from "lucide-react";
 import spaceImage from "@assets/2025 (2)_1751374843932.jpg";
+import digitalDrawingImage from "@assets/KakaoTalk_20230823_211315322_1751375132860.png";
 
 export default function CurriculumSection() {
   const scrollToContact = () => {
@@ -122,8 +123,8 @@ export default function CurriculumSection() {
           {/* 디지털 드로잉 */}
           <Card className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
             <img
-              src="https://images.unsplash.com/photo-1609621838510-5ad474b7d25d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
-              alt="Digital art creation workspace"
+              src={digitalDrawingImage}
+              alt="COCODIO Animation Studio digital drawing"
               className="w-full h-48 object-cover"
             />
             
