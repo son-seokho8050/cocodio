@@ -487,7 +487,7 @@ export default function Admissions2023() {
       
       <main className="pt-20">
         {/* Header */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+        <section className="bg-gradient-to-br from-purple-600 to-violet-800 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center mb-6">
               <Link href="/admissions">
@@ -614,7 +614,7 @@ export default function Admissions2023() {
                 </div>
               </div>
               
-              <p className="text-xl text-blue-100 mb-8">
+              <p className="text-xl text-purple-100 mb-8">
                 코코미술학원의 체계적인 교육으로 이루어낸 소중한 성과입니다
               </p>
             </div>
