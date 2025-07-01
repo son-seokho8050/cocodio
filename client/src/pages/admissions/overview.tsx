@@ -10,42 +10,67 @@ export default function AdmissionsOverview() {
   const yearlyStats = [
     {
       year: "2025학년도",
-      total: 43,
+      total: 151,
       universities: [
-        { name: "한양대학교", count: 8, category: "서울권" },
-        { name: "국민대학교", count: 6, category: "서울권" },
-        { name: "홍익대학교", count: 5, category: "서울권" },
-        { name: "부산대학교", count: 7, category: "지역거점국립대" },
-        { name: "경성대학교", count: 9, category: "지역사립대" },
-        { name: "동아대학교", count: 8, category: "지역사립대" }
+        { name: "숙명여자대학교", count: 1, category: "서울권" },
+        { name: "성신여자대학교", count: 1, category: "서울권" },
+        { name: "서울과학기술대학교", count: 1, category: "서울권" },
+        { name: "동덕여자대학교", count: 1, category: "서울권" },
+        { name: "경기대학교", count: 2, category: "서울권" },
+        { name: "한양대학교(에리카)", count: 2, category: "서울권" },
+        { name: "한밭대학교", count: 4, category: "지역거점국립대" },
+        { name: "경북대학교", count: 3, category: "지역거점국립대" },
+        { name: "부산대학교", count: 2, category: "지역거점국립대" },
+        { name: "창원대학교", count: 6, category: "지역거점국립대" }
       ],
-      highlights: ["한양대 17명 실기대회 수상", "서울권 대학 19명 합격", "지역거점국립대 7명 합격"]
+      highlights: ["한양대 17명 실기대회 수상", "서울/수도권 대학 13명 합격", "지역거점국립대 34명 합격", "창원대 장학생 다수 배출"]
     },
     {
       year: "2024학년도",
-      total: 38,
+      total: 99,
       universities: [
-        { name: "한양대학교", count: 6, category: "서울권" },
-        { name: "국민대학교", count: 5, category: "서울권" },
-        { name: "홍익대학교", count: 4, category: "서울권" },
-        { name: "부산대학교", count: 6, category: "지역거점국립대" },
-        { name: "경성대학교", count: 8, category: "지역사립대" },
-        { name: "동아대학교", count: 9, category: "지역사립대" }
+        { name: "세종대학교", count: 2, category: "서울권" },
+        { name: "상명대학교", count: 3, category: "서울권" },
+        { name: "서경대학교", count: 4, category: "서울권" },
+        { name: "건국대학교", count: 3, category: "서울권" },
+        { name: "홍익대학교", count: 2, category: "서울권" },
+        { name: "부산대학교", count: 5, category: "지역거점국립대" },
+        { name: "경북대학교", count: 4, category: "지역거점국립대" },
+        { name: "창원대학교", count: 8, category: "지역거점국립대" },
+        { name: "한밭대학교", count: 3, category: "지역거점국립대" }
       ],
-      highlights: ["서울권 대학 15명 합격", "지역거점국립대 6명 합격", "전체 합격률 95%"]
+      highlights: ["서울/수도권 대학 25명 합격", "지역거점국립대 27명 합격", "창원대 최다 합격 8명", "전체 합격률 95%"]
     },
     {
-      year: "2023학년도",
-      total: 35,
+      year: "2023학년도", 
+      total: 127,
       universities: [
-        { name: "한양대학교", count: 5, category: "서울권" },
         { name: "국민대학교", count: 4, category: "서울권" },
-        { name: "홍익대학교", count: 3, category: "서울권" },
-        { name: "부산대학교", count: 5, category: "지역거점국립대" },
-        { name: "경성대학교", count: 9, category: "지역사립대" },
-        { name: "동아대학교", count: 9, category: "지역사립대" }
+        { name: "서울여자대학교", count: 3, category: "서울권" },
+        { name: "성신여자대학교", count: 2, category: "서울권" },
+        { name: "건국대학교", count: 3, category: "서울권" },
+        { name: "홍익대학교", count: 2, category: "서울권" },
+        { name: "부산대학교", count: 6, category: "지역거점국립대" },
+        { name: "경북대학교", count: 5, category: "지역거점국립대" },
+        { name: "창원대학교", count: 7, category: "지역거점국립대" },
+        { name: "한밭대학교", count: 4, category: "지역거점국립대" }
       ],
-      highlights: ["서울권 대학 12명 합격", "지역거점국립대 5명 합격", "장학생 3명 배출"]
+      highlights: ["서울/수도권 대학 25명 합격", "지역거점국립대 28명 합격", "국민대 최다 합격 4명", "장학생 3명 배출"]
+    },
+    {
+      year: "2022학년도",
+      total: 89, 
+      universities: [
+        { name: "홍익대학교", count: 3, category: "서울권" },
+        { name: "건국대학교", count: 2, category: "서울권" },
+        { name: "상명대학교", count: 2, category: "서울권" },
+        { name: "단국대학교", count: 2, category: "서울권" },
+        { name: "부산대학교", count: 4, category: "지역거점국립대" },
+        { name: "경북대학교", count: 3, category: "지역거점국립대" },
+        { name: "창원대학교", count: 5, category: "지역거점국립대" },
+        { name: "한밭대학교", count: 3, category: "지역거점국립대" }
+      ],
+      highlights: ["서울/수도권 대학 15명 합격", "지역거점국립대 20명 합격", "창원대 최다 합격 5명", "홍익대 3명 합격"]
     }
   ];
 
@@ -71,16 +96,16 @@ export default function AdmissionsOverview() {
               </h1>
               <p className="text-xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto">
                 코코미술학원의 체계적인 FOLLOW 시스템과 4단계 사고체계를 통해 
-                이루어낸 최근 3년간의 우수한 입시 결과를 확인하세요.
+                이루어낸 최근 4년간의 우수한 입시 결과를 확인하세요.
               </p>
               <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">{totalStats.total}명</div>
-                  <div className="text-white/90">최근 3년 총 합격자</div>
+                  <div className="text-white/90">최근 4년 총 합격자</div>
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">{totalStats.seoul}명</div>
-                  <div className="text-white/90">서울권 대학 합격</div>
+                  <div className="text-white/90">서울/수도권 대학 합격</div>
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">{totalStats.national}명</div>
@@ -98,7 +123,7 @@ export default function AdmissionsOverview() {
               연도별 합격 현황
             </h2>
             
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {yearlyStats.map((yearData, index) => (
                 <Card key={index} className="card-hover">
                   <CardHeader>
@@ -181,15 +206,15 @@ export default function AdmissionsOverview() {
               <Card className="text-center">
                 <CardContent className="p-6">
                   <Star className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">46명</div>
-                  <div className="text-gray-600">서울권 대학 합격</div>
+                  <div className="text-2xl font-bold text-gray-900 mb-2">{totalStats.seoul}명</div>
+                  <div className="text-gray-600">서울/수도권 대학 합격</div>
                 </CardContent>
               </Card>
               
               <Card className="text-center">
                 <CardContent className="p-6">
                   <Calendar className="h-12 w-12 text-accent-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">18명</div>
+                  <div className="text-2xl font-bold text-gray-900 mb-2">{totalStats.national}명</div>
                   <div className="text-gray-600">지역거점국립대 합격</div>
                 </CardContent>
               </Card>
