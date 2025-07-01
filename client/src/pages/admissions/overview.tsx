@@ -89,10 +89,7 @@ export default function AdmissionsOverview() {
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
                 합격자 명단
               </h1>
-              <p className="text-xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto">
-                코코미술학원의 체계적인 FOLLOW 시스템과 4단계 사고체계를 통해 
-                이루어낸 최근 4년간의 우수한 입시 결과를 확인하세요.
-              </p>
+              <p className="text-xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto">개인 성향별 체계적인 FOLLOW 시스템과 4단계 사고체계를 통한 증명된 결과</p>
               <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">{totalStats.total}명</div>
