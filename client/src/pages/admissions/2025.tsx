@@ -653,7 +653,7 @@ export default function Admissions2025() {
                         <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🎖️</span>
                         </div>
-                        <div className="text-indigo-600 text-lg font-bold mb-1">11명 수상</div>
+                        <div className="text-indigo-600 text-lg font-bold mb-1">지역최다 11명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">한양대</div>
                       </div>
                     </div>
