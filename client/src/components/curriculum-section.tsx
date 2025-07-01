@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Tablet, Palette, Check } from "lucide-react";
+import spaceImage from "@assets/2025 (2)_1751374843932.jpg";
 
 export default function CurriculumSection() {
   const scrollToContact = () => {
@@ -72,7 +73,7 @@ export default function CurriculumSection() {
           {/* SPACE */}
           <Card className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
             <img
-              src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+              src={spaceImage}
               alt="SPACE premium art education class"
               className="w-full h-48 object-cover"
             />
