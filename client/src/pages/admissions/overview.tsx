@@ -12,46 +12,46 @@ export default function AdmissionsOverview() {
       year: "2025학년도",
       total: 151,
       universities: [
-        { name: "대가대학교", count: 14, category: "지역사립대" },
-        { name: "동명대학교", count: 11, category: "지역사립대" },
-        { name: "계명대학교", count: 9, category: "지역사립대" },
-        { name: "경성대학교", count: 9, category: "지역사립대" },
-        { name: "창원대학교", count: 7, category: "지역거점국립대" },
-        { name: "부산대학교", count: 4, category: "지역거점국립대" },
-        { name: "경북대학교", count: 4, category: "지역거점국립대" },
-        { name: "한밭대학교", count: 4, category: "지역거점국립대" }
+        { name: "서울과학기술대학교", count: 1, category: "서울/ 수도권" },
+        { name: "숙명여자대학교", count: 1, category: "서울/ 수도권" },
+        { name: "서경대학교", count: 1, category: "서울/ 수도권" },
+        { name: "성신여자대학교", count: 1, category: "서울/ 수도권" },
+        { name: "동덕여자대학교", count: 1, category: "서울/ 수도권" },
+        { name: "경기대학교", count: 2, category: "서울/ 수도권" },
+        { name: "인천대학교", count: 1, category: "서울/ 수도권" },
+        { name: "한양대학교(에리카)", count: 2, category: "서울/ 수도권" }
       ],
-      highlights: ["한양대 17명 실기대회 수상", "대가대 14명 최다 합격", "동명대 11명 합격", "지역거점국립대 다수 합격"]
+      highlights: ["한양대 17명 실기대회 수상", "서울/수도권 우수대학 다수 합격", "전국 44개 대학 151명 합격", "우수한 지역 확산"]
     },
     {
       year: "2024학년도",
       total: 99,
       universities: [
-        { name: "창원대학교", count: 16, category: "지역거점국립대" },
-        { name: "계명대학교", count: 10, category: "지역사립대" },
-        { name: "경성대학교", count: 9, category: "지역사립대" },
-        { name: "경북대학교", count: 4, category: "지역거점국립대" },
-        { name: "동의대학교", count: 4, category: "지역사립대" },
-        { name: "세종대학교", count: 2, category: "서울권" },
-        { name: "상명대학교", count: 3, category: "서울권" },
-        { name: "서경대학교", count: 4, category: "서울권" }
+        { name: "세종대학교", count: 1, category: "서울/ 수도권" },
+        { name: "상명대학교", count: 1, category: "서울/ 수도권" },
+        { name: "서경대학교", count: 3, category: "서울/ 수도권" },
+        { name: "동덕여자대학교", count: 2, category: "서울/ 수도권" },
+        { name: "덕성여자대학교", count: 1, category: "서울/ 수도권" },
+        { name: "한성대학교", count: 1, category: "서울/ 수도권" },
+        { name: "중앙대학교", count: 1, category: "서울/ 수도권" },
+        { name: "경희대학교", count: 1, category: "서울/ 수도권" }
       ],
-      highlights: ["창원대 16명 최다 합격", "계명대 10명 합격", "경성대 9명 합격", "지역거점국립대 다수 합격"]
+      highlights: ["서경대 3명 합격", "동덕여대 2명 합격", "서울/수도권 우수대학 다수 합격", "전국 34개 대학 99명 합격"]
     },
     {
       year: "2023학년도", 
       total: 127,
       universities: [
-        { name: "계명대학교", count: 12, category: "지역사립대" },
-        { name: "창원대학교", count: 9, category: "지역거점국립대" },
-        { name: "경성대학교", count: 9, category: "지역사립대" },
-        { name: "동의대학교", count: 9, category: "지역사립대" },
-        { name: "동명대학교", count: 8, category: "지역사립대" },
-        { name: "경북대학교", count: 4, category: "지역거점국립대" },
-        { name: "국민대학교", count: 4, category: "서울권" },
-        { name: "서울여자대학교", count: 3, category: "서울권" }
+        { name: "국민대학교", count: 1, category: "서울/ 수도권" },
+        { name: "서울여자대학교", count: 1, category: "서울/ 수도권" },
+        { name: "성신여자대학교", count: 2, category: "서울/ 수도권" },
+        { name: "동덕여자대학교", count: 1, category: "서울/ 수도권" },
+        { name: "덕성여자대학교", count: 1, category: "서울/ 수도권" },
+        { name: "삼육대학교", count: 1, category: "서울/ 수도권" },
+        { name: "한성대학교", count: 1, category: "서울/ 수도권" },
+        { name: "서울예술대학교", count: 1, category: "서울/ 수도권" }
       ],
-      highlights: ["계명대 12명 최다 합격", "창원대 9명 합격", "경성대 9명 합격", "동의대 9명 합격"]
+      highlights: ["성신여대 2명 합격", "서울/수도권 우수대학 다수 합격", "전국 38개 대학 127명 합격", "안정적인 합격률 유지"]
     },
     {
       year: "2022학년도",
