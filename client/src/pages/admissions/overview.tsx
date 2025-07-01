@@ -93,7 +93,7 @@ export default function AdmissionsOverview() {
               <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">{totalStats.total}명</div>
-                  <div className="text-white/90">최근 4년 총 합격자</div>
+                  <div className="text-white/90">인서울 대학 진학</div>
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">{totalStats.seoul}명</div>
