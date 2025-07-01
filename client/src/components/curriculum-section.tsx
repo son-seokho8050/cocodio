@@ -179,7 +179,7 @@ export default function CurriculumSection() {
                 <Palette className="text-accent-600 h-8 w-8 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900">중등미술</h3>
               </div>
-              <p className="text-gray-600 mb-6 tracking-wide text-[14px]">
+              <p className="text-gray-600 mb-6 tracking-wide text-[14px] ml-[-6px] mr-[-6px]">
                 중학생을 위한 기초 미술 교육,<br />
                 평면에서 입체까지,<br />
                 창의성과 표현력을 탄탄하게
