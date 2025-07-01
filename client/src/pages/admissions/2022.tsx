@@ -331,7 +331,6 @@ export default function Admissions2022() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
       <main className="pt-20">
         {/* Header */}
         <section className="bg-gradient-to-br from-orange-600 to-red-800 text-white py-16">
@@ -380,9 +379,7 @@ export default function Admissions2022() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 2022학년도 대학별 합격 현황
               </h2>
-              <p className="text-xl text-gray-600">
-                우수한 교육 시스템으로 이루어낸 성과입니다.
-              </p>
+              <p className="text-xl text-gray-600">2022학년도 합격을 진심으로 축하합니다.</p>
             </div>
             
             <div className="grid gap-8">
@@ -464,7 +461,6 @@ export default function Admissions2022() {
           </div>
         </section>
       </main>
-      
       <Footer />
     </div>
   );
