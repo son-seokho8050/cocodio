@@ -179,48 +179,7 @@ export default function AdmissionsOverview() {
           </div>
         </section>
 
-        {/* Achievement Highlights */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              코코미술학원만의 차별화된 성과
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Trophy className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">95%+</div>
-                  <div className="text-gray-600">평균 합격률</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Users className="h-12 w-12 text-primary-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">17명</div>
-                  <div className="text-gray-600">한양대 실기대회 수상</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Star className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">{totalStats.seoul}명</div>
-                  <div className="text-gray-600">서울/수도권 대학 합격</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Calendar className="h-12 w-12 text-accent-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">{totalStats.national}명</div>
-                  <div className="text-gray-600">지역거점국립대 합격</div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+
 
         {/* Call to Action */}
         <section className="py-16 bg-gray-50">
