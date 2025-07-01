@@ -363,7 +363,7 @@ export default function Admissions2023() {
     // 창원대
     {
       university: "창원대학교",
-      department: "경남",
+      department: "경기",
       students: [
         { name: "유○현", grade: "마여고", note: "시각디자인" },
         { name: "권○현", grade: "명덕고", note: "산업디자인" },

@@ -151,6 +151,11 @@ Changelog:
   - Complete dataset now includes 83 students across 25 universities with proper geographic classification
   - Enhanced accuracy by showing campus locations while maintaining specific department info in student badges
   - Campus updates: 홍익대(세종), 중앙대(안성), 단국대(죽전), 경희대(국제), 건국대(서울/글로컬), 명지대(자연), 상명대(천안), 호서대(아산), 경기대(수원) 등
+- July 1, 2025. 2023 admissions page university ordering update
+  - Reordered 38 universities in 2023 admissions page according to specific sequence starting with 국민대학교-서울여자대학교-성신여자대학교
+  - Maintained all authentic student data and university information throughout reordering
+  - Updated 창원대학교 campus location from "경남" to "경기" for accuracy
+  - Preserved consistent "서울/ 수도권" formatting and campus location accuracy
 ```
 
 ## User Preferences
