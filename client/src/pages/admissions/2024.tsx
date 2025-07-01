@@ -558,10 +558,7 @@ export default function Admissions2024() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 대학별 합격 현황
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                2024학년도 입시에서 코코미술학원 학생들이 거둔 우수한 성과를 확인하세요.
-                체계적인 교육과 개별 맞춤 지도의 결실입니다.
-              </p>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">2024학년도 합격을 진심으로 축하합니다.</p>
             </div>
             
             <div className="grid gap-6">
