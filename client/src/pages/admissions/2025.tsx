@@ -610,7 +610,7 @@ export default function Admissions2025() {
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-cyan-400/5 rounded-xl group-hover:from-blue-400/10 group-hover:to-cyan-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
-                          <span className="text-white text-xs font-bold">15</span>
+                          <span className="text-white text-sm font-bold">🏅</span>
                         </div>
                         <div className="text-blue-600 text-lg font-bold mb-1">15명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">동덕여대</div>
@@ -621,7 +621,7 @@ export default function Admissions2025() {
                       <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-400/5 rounded-xl group-hover:from-green-400/10 group-hover:to-emerald-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
-                          <span className="text-white text-sm font-bold">📝</span>
+                          <span className="text-white text-sm font-bold">🥈</span>
                         </div>
                         <div className="text-green-600 text-lg font-bold mb-1">장려상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">계명대</div>
@@ -632,7 +632,7 @@ export default function Admissions2025() {
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-violet-400/5 rounded-xl group-hover:from-purple-400/10 group-hover:to-violet-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-violet-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
-                          <span className="text-white text-xs font-bold">5</span>
+                          <span className="text-white text-sm font-bold">🥇</span>
                         </div>
                         <div className="text-purple-600 text-lg font-bold mb-1">5명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">계명대</div>
@@ -643,7 +643,7 @@ export default function Admissions2025() {
                       <div className="absolute inset-0 bg-gradient-to-br from-rose-400/5 to-pink-400/5 rounded-xl group-hover:from-rose-400/10 group-hover:to-pink-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
-                          <span className="text-white text-xs font-bold">24</span>
+                          <span className="text-white text-sm font-bold">🏆</span>
                         </div>
                         <div className="text-rose-600 text-lg font-bold mb-1">24명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">건국대 글로컬</div>
@@ -654,7 +654,7 @@ export default function Admissions2025() {
                       <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/5 to-blue-400/5 rounded-xl group-hover:from-indigo-400/10 group-hover:to-blue-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
-                          <span className="text-white text-xs font-bold">11</span>
+                          <span className="text-white text-sm font-bold">🎖️</span>
                         </div>
                         <div className="text-indigo-600 text-lg font-bold mb-1">11명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">한양대</div>
@@ -665,7 +665,7 @@ export default function Admissions2025() {
                       <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/5 to-amber-400/5 rounded-xl group-hover:from-yellow-400/10 group-hover:to-amber-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
-                          <span className="text-white text-xs font-bold">5</span>
+                          <span className="text-white text-sm font-bold">🏵️</span>
                         </div>
                         <div className="text-yellow-600 text-lg font-bold mb-1">5명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">경희대</div>
@@ -676,7 +676,7 @@ export default function Admissions2025() {
                       <div className="absolute inset-0 bg-gradient-to-br from-teal-400/5 to-cyan-400/5 rounded-xl group-hover:from-teal-400/10 group-hover:to-cyan-400/10 transition-all duration-300"></div>
                       <div className="relative z-10">
                         <div className="w-10 h-10 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
-                          <span className="text-white text-sm font-bold">🏢</span>
+                          <span className="text-white text-sm font-bold">🎗️</span>
                         </div>
                         <div className="text-teal-600 text-lg font-bold mb-1">코엑스상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">대구가톨릭대</div>
