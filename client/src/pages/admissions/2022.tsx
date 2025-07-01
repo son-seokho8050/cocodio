@@ -15,7 +15,7 @@ export default function Admissions2022() {
       students: [
         { name: "윤○정", grade: "명덕고", note: "시각디자인학과" }
       ],
-      category: "서울/수도권",
+      category: "서울/ 수도권",
       color: "bg-blue-100 border-blue-300"
     },
     {
@@ -24,7 +24,7 @@ export default function Admissions2022() {
       students: [
         { name: "정○훈", grade: "용마고", note: "커뮤니케이션디자인학과" }
       ],
-      category: "서울/수도권",
+      category: "서울/ 수도권",
       color: "bg-amber-100 border-amber-300"
     },
     {
@@ -33,7 +33,7 @@ export default function Admissions2022() {
       students: [
         { name: "정○훈", grade: "용마고", note: "환경조경디자인학과" }
       ],
-      category: "서울/수도권",
+      category: "서울/ 수도권",
       color: "bg-green-100 border-green-300"
     },
     {
@@ -42,7 +42,7 @@ export default function Admissions2022() {
       students: [
         { name: "원○민", grade: "성지여고", note: "의상디자인학과" }
       ],
-      category: "서울/수도권",
+      category: "서울/ 수도권",
       color: "bg-red-100 border-red-300"
     },
     {
@@ -51,7 +51,7 @@ export default function Admissions2022() {
       students: [
         { name: "차○아", grade: "김해여고", note: "패션디자인학과" }
       ],
-      category: "서울/수도권",
+      category: "서울/ 수도권",
       color: "bg-orange-100 border-orange-300"
     },
     {
@@ -64,7 +64,7 @@ export default function Admissions2022() {
         { name: "고○민", grade: "명덕고", note: "조형예술학과" },
         { name: "정○훈", grade: "용마고", note: "조형예술학과" }
       ],
-      category: "서울/수도권",
+      category: "서울/ 수도권",
       color: "bg-lime-100 border-lime-300"
     },
     {
@@ -73,7 +73,7 @@ export default function Admissions2022() {
       students: [
         { name: "고○지", grade: "명덕고", note: "디자인비즈학과" }
       ],
-      category: "서울/수도권",
+      category: "서울/ 수도권",
       color: "bg-emerald-100 border-emerald-300"
     },
     // 세종권
@@ -304,7 +304,7 @@ export default function Admissions2022() {
   ];
 
   const totalStudents = admissionResults.reduce((sum, uni) => sum + uni.students.length, 0);
-  const seoulStudents = admissionResults.filter(uni => uni.category === "서울/수도권").reduce((sum, uni) => sum + uni.students.length, 0);
+  const seoulStudents = admissionResults.filter(uni => uni.category === "서울/ 수도권").reduce((sum, uni) => sum + uni.students.length, 0);
   const nationalStudents = admissionResults.filter(uni => uni.category === "지역거점국립대").reduce((sum, uni) => sum + uni.students.length, 0);
 
   return (
@@ -337,7 +337,7 @@ export default function Admissions2022() {
                 </div>
                 <div className="bg-white/10 rounded-lg p-6">
                   <div className="text-3xl font-bold">{seoulStudents}명</div>
-                  <div className="text-blue-100">서울/수도권</div>
+                  <div className="text-blue-100">서울/ 수도권</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-6">
                   <div className="text-3xl font-bold">{nationalStudents}명</div>
