@@ -4,6 +4,7 @@ import { GraduationCap, Tablet, Palette, Check } from "lucide-react";
 import spaceImage from "@assets/2025 (2)_1751374843932.jpg";
 import digitalDrawingImage from "@assets/KakaoTalk_20230823_211315322_1751375132860.png";
 import artExamImage from "@assets/KakaoTalk_20230518_185117628_06_1751375534431.jpg";
+import middleSchoolArtImage from "@assets/doma 사본_1751375955014.png";
 
 export default function CurriculumSection() {
   const scrollToContact = () => {
@@ -172,8 +173,8 @@ export default function CurriculumSection() {
           {/* 중등미술 */}
           <Card className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
             <img
-              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
-              alt="Middle school art education"
+              src={middleSchoolArtImage}
+              alt="COCODIO middle school art character"
               className="w-full h-48 object-cover"
             />
             
