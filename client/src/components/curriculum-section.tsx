@@ -130,7 +130,7 @@ export default function CurriculumSection() {
                 <Tablet className="text-secondary-600 h-8 w-8 mr-3" />
                 <h3 className="text-2xl font-bold text-gray-900 ml-[-9px] mr-[-9px]">디지털 드로잉</h3>
               </div>
-              <p className="text-gray-600 mb-6 tracking-wide text-[14px]">
+              <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
                 현직 애니메이터 실기원장님과 함께,<br />
                 웹툰, 일러스트, 게임 그래픽 등<br />
                 다양한 분야를 제대로
