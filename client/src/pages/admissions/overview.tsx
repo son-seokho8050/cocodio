@@ -101,7 +101,7 @@ export default function AdmissionsOverview() {
                 </div>
                 <div className="text-center bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
                   <div className="text-4xl font-bold text-white mb-2">수상</div>
-                  <div className="text-white/90">지역거점국립대 합격</div>
+                  <div className="text-white/90">주요미대 실기대회</div>
                 </div>
               </div>
             </div>
