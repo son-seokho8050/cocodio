@@ -16,6 +16,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/admissions" component={AdmissionsOverview} />
+      <Route path="/admissions/overview" component={AdmissionsOverview} />
       <Route path="/admissions/2025" component={Admissions2025} />
       <Route path="/admissions/2024" component={Admissions2024} />
       <Route path="/admissions/2023" component={Admissions2023} />
