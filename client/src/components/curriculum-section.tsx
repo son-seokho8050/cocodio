@@ -72,8 +72,8 @@ export default function CurriculumSection() {
           {/* SPACE */}
           <Card className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
             <img
-              src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
-              alt="Premium art education space"
+              src="/attached_assets/2025 (2)_1751374843932.jpg"
+              alt="SPACE premium art education class"
               className="w-full h-48 object-cover"
             />
             
