@@ -548,10 +548,7 @@ export default function Admissions2025() {
     }
   ];
 
-  const totalStudents = admissionResults.reduce((sum, uni) => sum + uni.students.length, 0);
-  const seoulStudents = admissionResults.filter(uni => uni.category === "서울/ 수도권").reduce((sum, uni) => sum + uni.students.length, 0);
-  const nationalStudents = admissionResults.filter(uni => uni.category === "지역거점국립대").reduce((sum, uni) => sum + uni.students.length, 0);
-  const totalUniversities = admissionResults.length;
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -685,27 +682,9 @@ export default function Admissions2025() {
                 </div>
               </div>
               
-              <p className="text-xl text-primary-100 mb-8">실전에 강한 COCO ALL IN-ONE SYSTEM 'FOLLOW'</p>
-              
-              {/* Statistics */}
-              <div className="grid md:grid-cols-4 gap-6 mt-12">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-white">{totalStudents}명</div>
-                  <div className="text-blue-100">총 합격자</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-white">{totalUniversities}개</div>
-                  <div className="text-blue-100">합격 대학교</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-white">{seoulStudents}명</div>
-                  <div className="text-blue-100">서울/수도권</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-white">{nationalStudents}명</div>
-                  <div className="text-blue-100">거점국립대</div>
-                </div>
-              </div>
+              <p className="text-xl text-blue-100 mb-8">
+                코코미술학원의 체계적인 교육으로 이루어낸 소중한 성과입니다
+              </p>
             </div>
           </div>
         </section>
