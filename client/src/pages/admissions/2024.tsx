@@ -8,16 +8,6 @@ import { Link } from "wouter";
 
 export default function Admissions2024() {
   const admissionResults = [
-    // 중앙대
-    {
-      university: "중앙대학교",
-      department: "안성캠퍼스",
-      students: [
-        { name: "조○세", grade: "마여고", note: "산업디자인" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-blue-100 border-blue-300"
-    },
     // 세종대
     {
       university: "세종대학교",
@@ -28,16 +18,6 @@ export default function Admissions2024() {
       category: "서울/ 수도권",
       color: "bg-indigo-100 border-indigo-300"
     },
-    // 경희대(국제)
-    {
-      university: "경희대학교",
-      department: "국제캠퍼스",
-      students: [
-        { name: "김○지", grade: "내서여고", note: "시각디자인" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-purple-100 border-purple-300"
-    },
     // 상명대(서울)
     {
       university: "상명대학교",
@@ -47,57 +27,6 @@ export default function Admissions2024() {
       ],
       category: "서울/ 수도권",
       color: "bg-pink-100 border-pink-300"
-    },
-    // 인하대
-    {
-      university: "인하대학교",
-      department: "인천",
-      students: [
-        { name: "권○주", grade: "내서여고", note: "의류디자인" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-cyan-100 border-cyan-300"
-    },
-    // 인천대
-    {
-      university: "인천대학교",
-      department: "인천",
-      students: [
-        { name: "이○주", grade: "김해고", note: "디자인학부" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-teal-100 border-teal-300"
-    },
-    // 덕성여대
-    {
-      university: "덕성여자대학교",
-      department: "서울",
-      students: [
-        { name: "김○애", grade: "제일고", note: "아트앤디자인학부" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-green-100 border-green-300"
-    },
-    // 동덕여대
-    {
-      university: "동덕여자대학교",
-      department: "서울",
-      students: [
-        { name: "조○아", grade: "제일여고", note: "디지털공예" },
-        { name: "신○서", grade: "창원여고", note: "패션디자인" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-amber-100 border-amber-300"
-    },
-    // 한성대
-    {
-      university: "한성대학교",
-      department: "서울",
-      students: [
-        { name: "황○현", grade: "내서여고", note: "ICT디자인학부" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-orange-100 border-orange-300"
     },
     // 서경대
     {
@@ -111,6 +40,78 @@ export default function Admissions2024() {
       category: "서울/ 수도권",
       color: "bg-red-100 border-red-300"
     },
+    // 동덕여대
+    {
+      university: "동덕여자대학교",
+      department: "서울",
+      students: [
+        { name: "조○아", grade: "제일여고", note: "디지털공예" },
+        { name: "신○서", grade: "창원여고", note: "패션디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-amber-100 border-amber-300"
+    },
+    // 덕성여대
+    {
+      university: "덕성여자대학교",
+      department: "서울",
+      students: [
+        { name: "김○애", grade: "제일고", note: "아트앤디자인학부" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-green-100 border-green-300"
+    },
+    // 한성대
+    {
+      university: "한성대학교",
+      department: "서울",
+      students: [
+        { name: "황○현", grade: "내서여고", note: "ICT디자인학부" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-orange-100 border-orange-300"
+    },
+    // 중앙대
+    {
+      university: "중앙대학교",
+      department: "안성캠퍼스",
+      students: [
+        { name: "조○세", grade: "마여고", note: "산업디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-blue-100 border-blue-300"
+    },
+    // 경희대(국제)
+    {
+      university: "경희대학교",
+      department: "국제캠퍼스",
+      students: [
+        { name: "김○지", grade: "내서여고", note: "시각디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-purple-100 border-purple-300"
+    },
+    // 인하대
+    {
+      university: "인하대학교",
+      department: "인천",
+      students: [
+        { name: "권○주", grade: "내서여고", note: "의류디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-cyan-100 border-cyan-300"
+    },
+    // 용인대
+    {
+      university: "용인대학교",
+      department: "용인",
+      students: [
+        { name: "이○민", grade: "명덕고", note: "미디어디자인" },
+        { name: "이○랑", grade: "제일고", note: "미디어디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-lime-100 border-lime-300"
+    },
     // 단국대(죽전)
     {
       university: "단국대학교",
@@ -122,6 +123,16 @@ export default function Admissions2024() {
       ],
       category: "서울/ 수도권",
       color: "bg-violet-100 border-violet-300"
+    },
+    // 인천대
+    {
+      university: "인천대학교",
+      department: "인천",
+      students: [
+        { name: "이○주", grade: "김해고", note: "디자인학부" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-teal-100 border-teal-300"
     },
     // 명지대
     {
@@ -144,17 +155,6 @@ export default function Admissions2024() {
       ],
       category: "서울/ 수도권",
       color: "bg-rose-100 border-rose-300"
-    },
-    // 용인대
-    {
-      university: "용인대학교",
-      department: "용인",
-      students: [
-        { name: "이○민", grade: "명덕고", note: "미디어디자인" },
-        { name: "이○랑", grade: "제일고", note: "미디어디자인" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-lime-100 border-lime-300"
     },
     // 홍익대(세종)
     {
@@ -182,6 +182,26 @@ export default function Admissions2024() {
       category: "지역사립대",
       color: "bg-stone-100 border-stone-300"
     },
+    // 청강대
+    {
+      university: "청강대학교",
+      department: "경기",
+      students: [
+        { name: "박○민", grade: "마산고", note: "웹툰만화콘텐츠" }
+      ],
+      category: "지역사립대",
+      color: "bg-yellow-100 border-yellow-300"
+    },
+    // 백석대
+    {
+      university: "백석대학교",
+      department: "천안",
+      students: [
+        { name: "연○현", grade: "세화여고", note: "디자인영상학부" }
+      ],
+      category: "지역사립대",
+      color: "bg-zinc-100 border-zinc-300"
+    },
     // 호서대
     {
       university: "호서대학교",
@@ -203,16 +223,6 @@ export default function Admissions2024() {
       ],
       category: "지역사립대",
       color: "bg-gray-100 border-gray-300"
-    },
-    // 백석대
-    {
-      university: "백석대학교",
-      department: "천안",
-      students: [
-        { name: "연○현", grade: "세화여고", note: "디자인영상학부" }
-      ],
-      category: "지역사립대",
-      color: "bg-zinc-100 border-zinc-300"
     },
     // 공주대
     {
@@ -238,6 +248,16 @@ export default function Admissions2024() {
       category: "지역사립대",
       color: "bg-blue-100 border-blue-300"
     },
+    // 목원대
+    {
+      university: "목원대학교",
+      department: "대전",
+      students: [
+        { name: "강○민", grade: "창원고", note: "입체조형" }
+      ],
+      category: "지역사립대",
+      color: "bg-yellow-100 border-yellow-300"
+    },
     // 한남대
     {
       university: "한남대학교",
@@ -248,16 +268,6 @@ export default function Admissions2024() {
       ],
       category: "지역사립대",
       color: "bg-green-100 border-green-300"
-    },
-    // 목원대
-    {
-      university: "목원대학교",
-      department: "대전",
-      students: [
-        { name: "강○민", grade: "창원고", note: "입체조형" }
-      ],
-      category: "지역사립대",
-      color: "bg-yellow-100 border-yellow-300"
     },
     // 배재대
     {
@@ -279,16 +289,6 @@ export default function Admissions2024() {
       ],
       category: "지역사립대",
       color: "bg-pink-100 border-pink-300"
-    },
-    // 동국대(WISE)
-    {
-      university: "동국대학교",
-      department: "WISE캠퍼스",
-      students: [
-        { name: "곽○지", grade: "명덕고", note: "시각디자인" }
-      ],
-      category: "지역사립대",
-      color: "bg-purple-100 border-purple-300"
     },
     // 경북대
     {
@@ -347,6 +347,16 @@ export default function Admissions2024() {
       category: "지역거점국립대",
       color: "bg-rose-100 border-rose-300"
     },
+    // 경상대
+    {
+      university: "경상대학교",
+      department: "경남",
+      students: [
+        { name: "김○욱", grade: "칠원고", note: "미술교육" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-emerald-100 border-emerald-300"
+    },
     // 창원대
     {
       university: "창원대학교",
@@ -372,15 +382,26 @@ export default function Admissions2024() {
       category: "지역거점국립대",
       color: "bg-lime-100 border-lime-300"
     },
-    // 경상대
+    // 동국대(WISE)
     {
-      university: "경상대학교",
-      department: "경남",
+      university: "동국대학교",
+      department: "WISE캠퍼스",
       students: [
-        { name: "김○욱", grade: "칠원고", note: "미술교육" }
+        { name: "곽○지", grade: "명덕고", note: "시각디자인" }
       ],
-      category: "지역거점국립대",
-      color: "bg-emerald-100 border-emerald-300"
+      category: "지역사립대",
+      color: "bg-purple-100 border-purple-300"
+    },
+    // 동아대
+    {
+      university: "동아대학교",
+      department: "부산",
+      students: [
+        { name: "이○환", grade: "마산고", note: "목조형" },
+        { name: "홍○열", grade: "합포고", note: "현대미술" }
+      ],
+      category: "지역사립대",
+      color: "bg-blue-100 border-blue-300"
     },
     // 경성대
     {
@@ -397,17 +418,6 @@ export default function Admissions2024() {
       category: "지역사립대",
       color: "bg-red-100 border-red-300"
     },
-    // 동아대
-    {
-      university: "동아대학교",
-      department: "부산",
-      students: [
-        { name: "이○환", grade: "마산고", note: "목조형" },
-        { name: "홍○열", grade: "합포고", note: "현대미술" }
-      ],
-      category: "지역사립대",
-      color: "bg-blue-100 border-blue-300"
-    },
     // 동의대
     {
       university: "동의대학교",
@@ -420,16 +430,6 @@ export default function Admissions2024() {
       ],
       category: "지역사립대",
       color: "bg-green-100 border-green-300"
-    },
-    // 청강대
-    {
-      university: "청강대학교",
-      department: "경기",
-      students: [
-        { name: "박○민", grade: "마산고", note: "웹툰만화콘텐츠" }
-      ],
-      category: "지역사립대",
-      color: "bg-yellow-100 border-yellow-300"
     }
   ];
 
