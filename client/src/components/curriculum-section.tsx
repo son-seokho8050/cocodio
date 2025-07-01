@@ -146,7 +146,7 @@ export default function CurriculumSection() {
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
                   ASEPRITE(픽셀아트)
                 </div>
-                <div className="flex items-center text-sm text-gray-600">
+                <div className="flex items-center text-gray-600 ml-[0px] mr-[0px] text-[12px]">
                   <Check className="text-secondary-600 mr-2 h-4 w-4" />
                   스파인2D(2.5D게임캐릭터)
                 </div>
