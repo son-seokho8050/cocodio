@@ -144,7 +144,7 @@ export default function AdmissionsOverview() {
                         </h4>
                         <ul className="space-y-1">
                           {yearData.highlights.map((highlight, hIndex) => (
-                            <li key={hIndex} className="text-sm text-gray-600 flex items-center">
+                            <li key={hIndex} className="text-xs text-gray-600 flex items-center">
                               <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-2"></div>
                               {highlight}
                             </li>
