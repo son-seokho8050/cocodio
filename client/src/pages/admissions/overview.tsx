@@ -23,7 +23,7 @@ export default function AdmissionsOverview() {
         { name: "부산대학교", count: 2, category: "지역거점국립대" },
         { name: "창원대학교", count: 6, category: "지역거점국립대" }
       ],
-      highlights: ["한양대 17명 실기대회 수상", "서울/수도권 대학 13명 합격", "지역거점국립대 34명 합격", "창원대 장학생 다수 배출"]
+      highlights: ["한양대 17명 실기대회 수상", "서울/수도권 대학 20명 합격", "지역거점국립대 118명 합격", "창원대 9명 합격"]
     },
     {
       year: "2024학년도",
@@ -39,7 +39,7 @@ export default function AdmissionsOverview() {
         { name: "창원대학교", count: 8, category: "지역거점국립대" },
         { name: "한밭대학교", count: 3, category: "지역거점국립대" }
       ],
-      highlights: ["서울/수도권 대학 25명 합격", "지역거점국립대 27명 합격", "창원대 최다 합격 8명", "전체 합격률 95%"]
+      highlights: ["서울/수도권 대학 31명 합격", "지역거점국립대 48명 합격", "창원대 16명 합격", "전체 합격률 95%"]
     },
     {
       year: "2023학년도", 
@@ -55,7 +55,7 @@ export default function AdmissionsOverview() {
         { name: "창원대학교", count: 7, category: "지역거점국립대" },
         { name: "한밭대학교", count: 4, category: "지역거점국립대" }
       ],
-      highlights: ["서울/수도권 대학 25명 합격", "지역거점국립대 28명 합격", "국민대 최다 합격 4명", "장학생 3명 배출"]
+      highlights: ["서울/수도권 대학 29명 합격", "지역거점국립대 89명 합격", "창원대 9명 합격", "국민대 4명 합격"]
     },
     {
       year: "2022학년도",
@@ -70,7 +70,7 @@ export default function AdmissionsOverview() {
         { name: "창원대학교", count: 5, category: "지역거점국립대" },
         { name: "한밭대학교", count: 3, category: "지역거점국립대" }
       ],
-      highlights: ["서울/수도권 대학 15명 합격", "지역거점국립대 20명 합격", "창원대 최다 합격 5명", "홍익대 3명 합격"]
+      highlights: ["서울/수도권 대학 21명 합격", "지역거점국립대 69명 합격", "창원대 7명 합격", "홍익대 3명 합격"]
     }
   ];
 
