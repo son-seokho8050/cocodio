@@ -188,6 +188,13 @@ Changelog:
   - Applied different animation delays (1s-22s) and speeds (float-slow, float-medium, float-fast, glow-pulse) for natural movement
   - Enhanced visual hierarchy using z-index layering while maintaining text readability
   - Database integration for achievements system with real admissions data from uploaded files replacing mock data
+- July 1, 2025. SPACE curriculum section addition and content refinement
+  - Added new SPACE section as premium "최상위 미대입시 전문 CLASS" positioned second in curriculum order
+  - Reorganized curriculum cards to display: 입시미술 → SPACE → 디지털 드로잉 → 중등미술 in single row layout
+  - Updated SPACE description to emphasize "서울대 출신 원장님의 엄선된 커리큘럼과 개별 맞춤 지도"
+  - Refined curriculum content formatting for consistency: 4-5 line descriptions with proper line breaks
+  - Updated digital drawing section to "현직 애니메이터 원장님" and adjusted spacing in technical terms
+  - Streamlined middle school art curriculum items for concise presentation
 ```
 
 ## User Preferences

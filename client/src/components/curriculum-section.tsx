@@ -196,7 +196,7 @@ export default function CurriculumSection() {
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-accent-600 mr-2 h-4 w-4" />
-                  창의적 발상과 표현력 향상
+                  창의적 발상/ 표현력
                 </div>
                 <div className="flex items-center text-sm text-gray-600">
                   <Check className="text-accent-600 mr-2 h-4 w-4" />
