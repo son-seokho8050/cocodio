@@ -34,8 +34,8 @@ export default function Admissions2024() {
       department: "서울",
       students: [
         { name: "채○성", grade: "율하고", note: "VD비주얼디자인" },
-        { name: "정○수", grade: "내서여고", note: "무대패션전공" },
-        { name: "이○빈", grade: "제일여고", note: "무대패션전공" }
+        { name: "정○수", grade: "내서여고", note: "무대패션전공(1차합격)" },
+        { name: "이○빈", grade: "제일여고", note: "무대패션전공(1차합격)" }
       ],
       category: "서울/ 수도권",
       color: "bg-red-100 border-red-300"
