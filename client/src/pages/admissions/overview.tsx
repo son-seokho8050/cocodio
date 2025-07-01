@@ -189,7 +189,7 @@ export default function AdmissionsOverview() {
                 <CardContent className="p-6">
                   <Users className="h-12 w-12 text-primary-600 mx-auto mb-4" />
                   <div className="text-2xl font-bold text-gray-900 mb-2">지역최다 수상</div>
-                  <div className="text-gray-600">한양대 실기대회 수상</div>
+                  <div className="text-gray-600">주요 실기대회</div>
                 </CardContent>
               </Card>
               
