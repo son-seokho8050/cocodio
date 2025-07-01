@@ -545,9 +545,7 @@ export default function Admissions2024() {
                 </div>
               </div>
               
-              <p className="text-xl text-green-100 mb-8">
-                코코미술학원의 체계적인 교육으로 이루어낸 소중한 성과입니다
-              </p>
+              <p className="text-xl text-green-100 mb-8">실전에 더욱 강한 COCO ALL IN-ONE SYSTEM 'FOLLOW'</p>
 
             </div>
           </div>
