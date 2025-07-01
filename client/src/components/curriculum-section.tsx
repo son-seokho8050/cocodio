@@ -83,9 +83,10 @@ export default function CurriculumSection() {
                 <h3 className="text-2xl font-bold text-gray-900">SPACE</h3>
               </div>
               <p className="text-gray-600 mb-6 tracking-wide leading-relaxed">
-                최상위 미대입시 전문 CLASS,<br />
-                엄선된 커리큘럼과 개별 맞춤 지도로<br />
-                최고 수준의 입시 결과를 달성
+                최상위 미대입시 전문 수업,<br />
+                서울대 출신 원장님의<br />
+                엄선된 커리큘럼과 개별 맞춤지도로<br />
+                최고 수준의 입시결과 달성
               </p>
               
               <div className="space-y-3 mb-6">
