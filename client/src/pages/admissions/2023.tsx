@@ -539,7 +539,7 @@ export default function Admissions2023() {
                         <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full mx-auto mb-3 flex items-center justify-center shadow-lg">
                           <span className="text-white text-sm font-bold">🎖️</span>
                         </div>
-                        <div className="text-indigo-600 text-lg font-bold mb-1">10명 수상</div>
+                        <div className="text-indigo-600 text-lg font-bold mb-1">지역최다 10명 수상</div>
                         <div className="text-gray-700 font-medium text-xs leading-relaxed">한양대</div>
                       </div>
                     </div>
@@ -583,9 +583,7 @@ export default function Admissions2023() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 2023학년도 대학별 합격 현황
               </h2>
-              <p className="text-xl text-gray-600">
-                우수한 교육 시스템으로 이루어낸 성과입니다.
-              </p>
+              <p className="text-xl text-gray-600">2023학년도 합격을 진심으로 축하합니다.</p>
             </div>
             
             <div className="grid gap-8">
