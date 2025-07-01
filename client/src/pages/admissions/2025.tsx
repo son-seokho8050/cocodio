@@ -556,7 +556,6 @@ export default function Admissions2025() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
       <main className="pt-20">
         {/* Header */}
         <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
@@ -686,9 +685,7 @@ export default function Admissions2025() {
                 </div>
               </div>
               
-              <p className="text-xl text-primary-100 mb-8">
-                코코미술학원의 체계적인 교육으로 이루어낸 소중한 성과입니다
-              </p>
+              <p className="text-xl text-primary-100 mb-8">실전에 강한 COCO ALL IN-ONE SYSTEM 'FOLLOW'</p>
               
               {/* Statistics */}
               <div className="grid md:grid-cols-4 gap-6 mt-12">
@@ -805,7 +802,6 @@ export default function Admissions2025() {
           </div>
         </section>
       </main>
-      
       <Footer />
     </div>
   );
