@@ -571,9 +571,30 @@ export default function Admissions2025() {
             </div>
             
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 2025학년도 합격자 명단
               </h1>
+              
+              {/* 2024년 수상 실적 배너 */}
+              <div className="bg-white/15 backdrop-blur-sm rounded-lg px-6 py-4 mb-6 mx-auto max-w-4xl">
+                <div className="flex flex-wrap justify-center items-center gap-4 text-white">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
+                    <span className="text-lg font-semibold">2024년 전국고등학생미술실기대회 대상</span>
+                  </div>
+                  <div className="hidden md:block text-white/70">|</div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
+                    <span className="text-lg font-semibold">한국미술교육학회 실기대회 최우수상</span>
+                  </div>
+                  <div className="hidden md:block text-white/70">|</div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mr-2"></div>
+                    <span className="text-lg font-semibold">경남미술실기대회 금상</span>
+                  </div>
+                </div>
+              </div>
+              
               <p className="text-xl text-primary-100 mb-8">
                 코코미술학원의 체계적인 교육으로 이루어낸 소중한 성과입니다
               </p>
