@@ -603,7 +603,7 @@ export default function Admissions2024() {
             </div>
             
             <div className="grid gap-6">
-              {admissionResults.slice(0, 10).map((result, index) => (
+              {admissionResults.map((result, index) => (
                 <Card key={index} className={`${result.color} transition-all duration-300 hover:shadow-lg border-2`}>
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
