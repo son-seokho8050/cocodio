@@ -100,7 +100,7 @@ export default function HeroSection() {
               </div>
             )}
             
-            <div className="absolute -top-6 -right-6 bg-accent-500 rounded-xl p-4 text-white">
+            <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 text-white shadow-lg">
               <div className="text-2xl font-bold text-center">FOLLOW</div>
               <div className="text-xs text-center">ALL IN-ONE SYSTEM</div>
             </div>
