@@ -102,7 +102,7 @@ export default function AchievementsSection() {
               왜 많은 학생들이 코코미술학원을 선택할까요?
             </h3>
             <p className="text-lg text-gray-600 mb-6">
-              단순한 그림 실력이 아닌, <strong>사고력과 창의성</strong>을 동시에 기르는 
+              <strong>사고력과 창의성</strong>을 동시에 기르는 
               차별화된 교육 시스템으로 학생들의 진정한 성장을 이끌어냅니다.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-center">
