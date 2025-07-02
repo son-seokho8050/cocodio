@@ -38,7 +38,9 @@ export default function Footer() {
                 <Youtube className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="https://blog.naver.com/coco2238050"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Blog"
               >
