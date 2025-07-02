@@ -57,7 +57,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            상담 문의 & <span className="text-primary-600">적성테스트 신청</span>
+            무료체험수업 & <span className="text-primary-600">적성테스트 신청</span>
           </h2>
           <p className="text-xl text-gray-600">
             궁금한 점이 있으시면 언제든 문의해 주세요. 전문 상담사가 친절히 안내해 드립니다.
