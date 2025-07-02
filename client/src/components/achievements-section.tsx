@@ -112,7 +112,7 @@ export default function AchievementsSection() {
               </div>
               <div>
                 <div className="text-3xl font-bold text-secondary-600 mb-2">FOLLOW</div>
-                <div className="text-sm text-gray-600">차별화된<br />교육 시스템</div>
+                <div className="text-sm text-gray-600">차별화된<br />올인원 교육 시스템</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-accent-600 mb-2">5개</div>
