@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Users, Trophy, Star } from "lucide-react";
-import { Link } from "wouter";
 
 export default function PortfolioSection() {
   const portfolioCards = [
@@ -10,7 +9,7 @@ export default function PortfolioSection() {
       description: "학생들의 창작 과정과 결과물을 확인해보세요",
       icon: <Users className="h-8 w-8" />,
       color: "bg-blue-500",
-      link: "/gallery",
+      link: "https://blog.naver.com/coco2238050",
       stats: "100+ 작품"
     },
     {
@@ -19,7 +18,7 @@ export default function PortfolioSection() {
       description: "코코미술학원의 자랑스러운 합격 실적을 확인하세요",
       icon: <Trophy className="h-8 w-8" />,
       color: "bg-green-500",
-      link: "/admissions",
+      link: "https://blog.naver.com/cocodioart",
       stats: "200+ 합격생"
     },
     {
@@ -28,7 +27,7 @@ export default function PortfolioSection() {
       description: "나에게 맞는 미술 분야를 찾아보세요",
       icon: <Star className="h-8 w-8" />,
       color: "bg-purple-500",
-      link: "/aptitude-test",
+      link: "https://www.instagram.com/cocodio_design_ani",
       stats: "1:1 맞춤 분석"
     }
   ];
@@ -47,7 +46,7 @@ export default function PortfolioSection() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {portfolioCards.map((card) => (
-            <Link href={card.link} key={card.id}>
+            <a href={card.link} key={card.id} target="_blank" rel="noopener noreferrer">
               <Card className="group cursor-pointer bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <CardContent className="p-8 text-center">
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${card.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -74,7 +73,7 @@ export default function PortfolioSection() {
                   </div>
                 </CardContent>
               </Card>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
