@@ -15,7 +15,7 @@ export default function PortfolioSection() {
     {
       id: 2,
       title: "중등미술 FOLLOW",
-      description: "코코미술학원의 자랑스러운 합격 실적을 확인하세요",
+      description: "입체/ 평면, 중등특화수업",
       icon: <Trophy className="h-8 w-8" />,
       color: "bg-green-500",
       link: "https://blog.naver.com/cocodioart",
