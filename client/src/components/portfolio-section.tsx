@@ -59,11 +59,7 @@ export default function PortfolioSection() {
                     {card.description}
                   </p>
                   
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-500">
-                      {card.stats}
-                    </span>
-                    
+                  <div className="flex items-center justify-end">
                     <div className="flex items-center text-primary-600 group-hover:text-primary-700 transition-colors">
                       <span className="text-sm font-medium mr-2">자세히 보기</span>
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
