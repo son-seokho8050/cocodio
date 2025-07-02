@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 export default function Home() {
   const scrollToContact = () => {
@@ -39,7 +39,7 @@ export default function Home() {
           className="group"
         >
           <Button className="w-14 h-14 rounded-full bg-blue-500 hover:bg-blue-600 text-white shadow-lg relative">
-            <MessageCircle className="h-6 w-6" />
+            <BookOpen className="h-6 w-6" />
             <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
               창원점 블로그
             </div>
@@ -53,7 +53,7 @@ export default function Home() {
           className="group"
         >
           <Button className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-lg relative">
-            <MessageCircle className="h-6 w-6" />
+            <BookOpen className="h-6 w-6" />
             <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
               김해점 블로그
             </div>
@@ -67,7 +67,7 @@ export default function Home() {
           className="group"
         >
           <Button className="w-14 h-14 rounded-full bg-accent-500 hover:bg-accent-600 text-white shadow-lg relative">
-            <MessageCircle className="h-6 w-6" />
+            <BookOpen className="h-6 w-6" />
             <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
               마산점 블로그
             </div>
