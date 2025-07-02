@@ -114,9 +114,7 @@ export default function CurriculumSection() {
               <Button 
                 onClick={scrollToContact}
                 className="w-full bg-purple-600 hover:bg-purple-700 text-white"
-              >
-                자세히 보기
-              </Button>
+              >신청</Button>
             </CardContent>
           </Card>
 
