@@ -55,7 +55,7 @@ export default function HeroSection() {
                 size="lg"
               >
                 <Calendar className="mr-2 h-5 w-5" />
-                무료 상담 예약
+                무료체험수업 신청
               </Button>
               <Button
                 onClick={scrollToPortfolio}
