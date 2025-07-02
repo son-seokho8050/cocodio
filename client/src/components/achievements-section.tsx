@@ -108,7 +108,7 @@ export default function AchievementsSection() {
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl font-bold text-primary-600 mb-2">수시합격</div>
-                <div className="text-sm text-gray-600">한양대 실기대회<br />지역 최다 수상</div>
+                <div className="text-sm text-gray-600">매년 94%이상<br />높은 수시합격률</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-secondary-600 mb-2">FOLLOW</div>
