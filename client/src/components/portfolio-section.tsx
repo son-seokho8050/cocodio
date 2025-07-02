@@ -6,7 +6,7 @@ export default function PortfolioSection() {
     {
       id: 1,
       title: "디자인/ 만화 FOLLOW",
-      description: "학생들의 창작 과정과 결과물을 확인해보세요",
+      description: "디자인/ 만화/ 디지털드로잉",
       icon: <Users className="h-8 w-8" />,
       color: "bg-blue-500",
       link: "https://blog.naver.com/coco2238050",
