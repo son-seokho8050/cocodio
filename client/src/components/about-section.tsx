@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Laptop, Trophy } from "lucide-react";
 
+import ___________2_ from "@assets/제목 없는 디자인 (2).png";
+
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-white">
@@ -15,7 +17,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+              src={___________2_}
               alt="Students collaborating on art projects"
               className="rounded-2xl shadow-lg w-full"
             />
