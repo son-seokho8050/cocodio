@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
-import Portfolio from "@/pages/portfolio";
 import AdmissionsOverview from "@/pages/admissions/overview";
 import Admissions2025 from "@/pages/admissions/2025";
 import Admissions2024 from "@/pages/admissions/2024";
@@ -16,7 +15,6 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/portfolio" component={Portfolio} />
       <Route path="/admissions" component={AdmissionsOverview} />
       <Route path="/admissions/overview" component={AdmissionsOverview} />
       <Route path="/admissions/2025" component={Admissions2025} />
