@@ -67,7 +67,7 @@ export default function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">무료 상담 신청</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">무료 체험수업 신청</h3>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
