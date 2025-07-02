@@ -188,7 +188,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">연락처</h4>
-                  <p className="text-gray-600">02-1234-5678</p>
+                  <p className="text-gray-600">010.4472.2028</p>
                   <p className="text-sm text-gray-500">평일 10:00-22:00, 토요일 09:00-18:00</p>
                 </div>
               </div>
