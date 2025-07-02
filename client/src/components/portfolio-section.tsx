@@ -33,7 +33,7 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -45,7 +45,7 @@ export default function PortfolioSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {portfolioCards.map((card) => (
             <a href={card.link} key={card.id} target="_blank" rel="noopener noreferrer">
-              <Card className="group cursor-pointer bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <Card className="group cursor-pointer bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-white/20">
                 <CardContent className="p-8 text-center">
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${card.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {card.icon}
