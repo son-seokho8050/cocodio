@@ -71,8 +71,8 @@ export default function HeroSection() {
           
           <div className="relative animate-in slide-in-from-right duration-700">
             <img
-              src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-              alt="Art students working in modern studio"
+              src="/attached_assets/제목 없는 디자인 (1)_1751449262582.png"
+              alt="Happy art students celebrating achievements"
               className="rounded-2xl shadow-2xl w-full"
             />
             
