@@ -24,7 +24,7 @@ export default function PortfolioSection() {
     {
       id: 3,
       title: "인스타그램 FOLLOW",
-      description: "나에게 맞는 미술 분야를 찾아보세요",
+      description: "학생들의 성장과정, 생생하게",
       icon: <Star className="h-8 w-8" />,
       color: "bg-purple-500",
       link: "https://www.instagram.com/cocodio_design_ani",
