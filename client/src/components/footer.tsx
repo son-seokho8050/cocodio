@@ -66,9 +66,7 @@ export default function Footer() {
                 <button
                   onClick={() => scrollToSection('portfolio')}
                   className="hover:text-white transition-colors text-left"
-                >
-                  학생작품
-                </button>
+                >합격자명단</button>
               </li>
               <li>
                 <button
