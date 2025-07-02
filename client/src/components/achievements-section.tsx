@@ -5,7 +5,7 @@ export default function AchievementsSection() {
   const achievements = [
     {
       icon: Trophy,
-      title: "2025 실기대회 수상실적",
+      title: "2025 실기대회 수상",
       stats: [
         "한양대 17명 지역 최다 수상",
         "국민대 기초조형 실기대회 수상",
