@@ -39,9 +39,7 @@ export default function PortfolioSection() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             COCODIO <span className="text-primary-600">ALL IN-ONE SYSTEM</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            코코미술학원의 다양한 서비스를 탐색해보세요
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">코코의 차별화된 FOLLOW 수업을 경험하세요.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
