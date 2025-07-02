@@ -85,16 +85,16 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">문의 정보</h4>
             <div className="space-y-2 text-gray-300">
               <p className="flex items-center">
-                <span className="mr-2">📞</span>02-1234-5678
+                <span className="mr-2">📞</span>010.4472.2028
               </p>
               <p className="flex items-center">
-                <span className="mr-2">✉️</span>info@cocoart.kr
+                <span className="mr-2">✉️</span>COCO2238050@NAVER.COM
               </p>
               <p className="flex items-center">
-                <span className="mr-2">🕒</span>평일 10:00-22:00
+                <span className="mr-2">🕒</span>평일 13:00-23:00, 토/일 12:00-18:00
               </p>
               <p className="flex items-center">
-                <span className="mr-2">📍</span>경남 마산/김해 지역
+                <span className="mr-2">📍</span>마산/김해/창원 지역
               </p>
             </div>
           </div>
