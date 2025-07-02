@@ -94,7 +94,7 @@ export default function Footer() {
                 <span className="mr-2">🕒</span>평일 13:00-23:00, 토/일 12:00-18:00
               </p>
               <p className="flex items-center">
-                <span className="mr-2">📍</span>마산/김해/창원 지역
+                <span className="mr-2">📍</span>마산/김해 지역
               </p>
             </div>
           </div>
