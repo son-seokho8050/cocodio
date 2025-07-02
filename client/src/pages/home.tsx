@@ -30,15 +30,49 @@ export default function Home() {
       <ContactSection />
       <Footer />
       
-      {/* Floating Action Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button
-          onClick={scrollToContact}
-          className="w-14 h-14 rounded-full bg-accent-500 hover:bg-accent-600 text-white shadow-lg"
-          size="icon"
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a
+          href="https://blog.naver.com/kkhead12345"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group"
         >
-          <MessageCircle className="h-6 w-6" />
-        </Button>
+          <Button className="w-14 h-14 rounded-full bg-blue-500 hover:bg-blue-600 text-white shadow-lg relative">
+            <MessageCircle className="h-6 w-6" />
+            <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+              창원점 블로그
+            </div>
+          </Button>
+        </a>
+        
+        <a
+          href="https://blog.naver.com/cocodioart"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <Button className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-lg relative">
+            <MessageCircle className="h-6 w-6" />
+            <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+              김해점 블로그
+            </div>
+          </Button>
+        </a>
+        
+        <a
+          href="https://blog.naver.com/coco2238050"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <Button className="w-14 h-14 rounded-full bg-accent-500 hover:bg-accent-600 text-white shadow-lg relative">
+            <MessageCircle className="h-6 w-6" />
+            <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+              마산점 블로그
+            </div>
+          </Button>
+        </a>
       </div>
     </div>
   );
