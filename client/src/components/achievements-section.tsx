@@ -116,7 +116,7 @@ export default function AchievementsSection() {
               </div>
               <div>
                 <div className="text-3xl font-bold text-accent-600 mb-2">수상실적</div>
-                <div className="text-sm text-gray-600">주요 대학<br />실기대회 수상</div>
+                <div className="text-sm text-gray-600">주요 대학<br />실기대회 최다 수상</div>
               </div>
             </div>
           </div>
