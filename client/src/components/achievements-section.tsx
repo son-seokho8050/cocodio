@@ -64,9 +64,7 @@ export default function AchievementsSection() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             검증된 <span className="text-primary-600">실력과 성과</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            마산/김해 지역에서 가장 많은 실기대회 수상 실적을 보유한 코코미술학원의 차별화된 성과입니다.
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">마산/김해 지역에서 최상의 실기대회 수상 실적을 달성한 코코의 차별화된 성과입니다.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
