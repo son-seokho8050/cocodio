@@ -199,7 +199,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">이메일</h4>
-                  <p className="text-gray-600">info@cocoart.kr</p>
+                  <p className="text-gray-600">COCO2238050@NAVER.COM</p>
                   <p className="text-sm text-gray-500">24시간 문의 접수 가능</p>
                 </div>
               </div>
