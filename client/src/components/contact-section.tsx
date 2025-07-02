@@ -177,7 +177,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">주소</h4>
-                  <p className="text-gray-600">경남 마산/김해 지역 코코미술학원</p>
+                  <p className="text-gray-600">[마산] 창원시 마산 합포구 고운로 235, 유진빌딩 4층/ [김해] 경남 김해시 경상남도 김해시 내외중앙로 74, 밝은메디컬센터 10층</p>
                   <p className="text-sm text-gray-500">마산점, 김해점 운영 중</p>
                 </div>
               </div>
