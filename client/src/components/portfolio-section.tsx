@@ -5,7 +5,7 @@ export default function PortfolioSection() {
   const portfolioCards = [
     {
       id: 1,
-      title: "FOLLOW 수업 갤러리",
+      title: "디자인/ 만화 FOLLOW",
       description: "학생들의 창작 과정과 결과물을 확인해보세요",
       icon: <Users className="h-8 w-8" />,
       color: "bg-blue-500",
@@ -14,7 +14,7 @@ export default function PortfolioSection() {
     },
     {
       id: 2,
-      title: "합격자 명단",
+      title: "중등미술 FOLLOW",
       description: "코코미술학원의 자랑스러운 합격 실적을 확인하세요",
       icon: <Trophy className="h-8 w-8" />,
       color: "bg-green-500",
@@ -23,7 +23,7 @@ export default function PortfolioSection() {
     },
     {
       id: 3,
-      title: "적성 테스트",
+      title: "인스타그램 FOLLOW",
       description: "나에게 맞는 미술 분야를 찾아보세요",
       icon: <Star className="h-8 w-8" />,
       color: "bg-purple-500",
