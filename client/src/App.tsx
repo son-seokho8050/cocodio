@@ -10,11 +10,13 @@ import Admissions2025 from "@/pages/admissions/2025";
 import Admissions2024 from "@/pages/admissions/2024";
 import Admissions2023 from "@/pages/admissions/2023";
 import Admissions2022 from "@/pages/admissions/2022";
+import AdminConsultations from "@/pages/admin/consultations";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/admin/consultations" component={AdminConsultations} />
       <Route path="/admissions" component={AdmissionsOverview} />
       <Route path="/admissions/overview" component={AdmissionsOverview} />
       <Route path="/admissions/2025" component={Admissions2025} />
