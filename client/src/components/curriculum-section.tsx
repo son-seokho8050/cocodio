@@ -160,9 +160,7 @@ export default function CurriculumSection() {
               <Button 
                 onClick={scrollToContact}
                 className="w-full bg-secondary-600 hover:bg-secondary-700 text-white"
-              >
-                자세히 보기
-              </Button>
+              >신청하기</Button>
             </CardContent>
           </Card>
 
@@ -207,9 +205,7 @@ export default function CurriculumSection() {
               <Button 
                 onClick={scrollToContact}
                 className="w-full bg-accent-600 hover:bg-accent-600 text-white"
-              >
-                자세히 보기
-              </Button>
+              >신청하기</Button>
             </CardContent>
           </Card>
         </div>
