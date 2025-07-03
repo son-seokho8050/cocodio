@@ -118,6 +118,27 @@ export default function Navigation() {
               >
                 커리큘럼
               </button>
+              
+              {/* Mobile Admissions Menu */}
+              <div className="border-l-2 border-primary-200 pl-4 space-y-2">
+                <div className="text-gray-900 font-medium text-sm">합격자명단</div>
+                <Link href="/admissions" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
+                  최근 3년간 통합
+                </Link>
+                <Link href="/admissions/2025" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
+                  2025학년도
+                </Link>
+                <Link href="/admissions/2024" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
+                  2024학년도
+                </Link>
+                <Link href="/admissions/2023" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
+                  2023학년도
+                </Link>
+                <Link href="/admissions/2022" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
+                  2022학년도
+                </Link>
+              </div>
+              
               <button
                 onClick={() => scrollToSection('portfolio')}
                 className="text-gray-700 hover:text-primary-600 transition-colors text-left"
