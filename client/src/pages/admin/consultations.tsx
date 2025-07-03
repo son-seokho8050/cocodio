@@ -1,15 +1,37 @@
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Calendar, Phone, Mail, User, BookOpen, MessageSquare } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, Mail, User, BookOpen, MessageSquare, LogOut } from "lucide-react";
 import { Link } from "wouter";
 import type { Consultation } from "@shared/schema";
+import AdminAuth from "@/components/admin-auth";
 
 export default function AdminConsultations() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+  useEffect(() => {
+    const authStatus = localStorage.getItem("adminAuth");
+    if (authStatus === "true") {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   const { data: consultations = [], isLoading } = useQuery<Consultation[]>({
     queryKey: ["/api/consultations"],
+    enabled: isAuthenticated, // 인증된 경우에만 데이터 로드
   });
+
+  const handleLogout = () => {
+    localStorage.removeItem("adminAuth");
+    setIsAuthenticated(false);
+  };
+
+  // 인증되지 않은 경우 로그인 화면 표시
+  if (!isAuthenticated) {
+    return <AdminAuth onAuthenticated={() => setIsAuthenticated(true)} />;
+  }
 
   const formatDate = (date: Date) => {
     return date.toLocaleDateString('ko-KR', {
@@ -62,8 +84,19 @@ export default function AdminConsultations() {
               </Link>
               <h1 className="text-3xl font-bold text-gray-900">상담 신청 관리</h1>
             </div>
-            <div className="text-sm text-gray-500">
-              총 {consultations.length}건의 상담 신청
+            <div className="flex items-center space-x-4">
+              <div className="text-sm text-gray-500">
+                총 {consultations.length}건의 상담 신청
+              </div>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={handleLogout}
+                className="flex items-center space-x-2 text-red-600 border-red-200 hover:bg-red-50"
+              >
+                <LogOut className="h-4 w-4" />
+                <span>로그아웃</span>
+              </Button>
             </div>
           </div>
         </div>
