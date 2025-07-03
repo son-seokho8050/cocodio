@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertConsultationSchema } from "@shared/schema";
+import { sendConsultationNotification } from "./email";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -42,6 +43,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertConsultationSchema.parse(req.body);
       const consultation = await storage.createConsultation(validatedData);
+      
+      // 이메일 알림 발송 (백그라운드에서 실행)
+      sendConsultationNotification({
+        studentName: consultation.studentName,
+        grade: consultation.grade,
+        phone: consultation.phone,
+        course: consultation.course,
+        message: consultation.message ?? undefined,
+        createdAt: consultation.createdAt,
+      }).catch(error => {
+        console.error('이메일 발송 실패:', error);
+      });
+      
       res.status(201).json(consultation);
     } catch (error) {
       if (error instanceof z.ZodError) {
