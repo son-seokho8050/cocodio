@@ -3,61 +3,61 @@ import { ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import all gallery images
-import gallery1 from "@assets/2025 (2)_1751374843932.jpg";
-import gallery2 from "@assets/KakaoTalk_20230518_185117628_06_1751375534431.jpg";
-import gallery3 from "@assets/KakaoTalk_20230823_211315322_1751375132860.png";
-import gallery4 from "@assets/doma 사본_1751375955014.png";
-import gallery5 from "@assets/image_1751374882492.png";
-import gallery6 from "@assets/image_1751374911726.png";
-import gallery7 from "@assets/image_1751449306245.png";
-import gallery8 from "@assets/image_1751449346775.png";
-import gallery9 from "@assets/제목 없는 디자인 (1)_1751449262582.png";
+import gallery1 from "@assets/플라워수업_1751517815348.jpg";
+import gallery2 from "@assets/KakaoTalk_20250323_155758059_01_1751517815348.jpg";
+import gallery3 from "@assets/LP디자인도슨트 (1)_1751517815349.jpg";
+import gallery4 from "@assets/LP디자인도슨트 (2)_1751517815349.jpg";
+import gallery5 from "@assets/LP디자인도슨트 (4)_1751517815349.jpg";
+import gallery6 from "@assets/강당평가_1751517815349.jpg";
+import gallery7 from "@assets/벽꾸미기 아이디어_1751517815350.jpg";
+import gallery8 from "@assets/애니반 시연회_1751517815350.jpg";
+import gallery9 from "@assets/자화상PPT_1751517815350.jpg";
 
 const galleryImages = [
   {
     src: gallery1,
-    title: "학생 작품 전시회",
-    description: "2025년 우수 작품 전시"
+    title: "플라워 아트 수업",
+    description: "창의적인 꽃꽂이와 드로잉 수업"
   },
   {
     src: gallery2,
-    title: "미술 수업 현장",
-    description: "집중된 분위기 속 창작 활동"
+    title: "작품 평가 시간",
+    description: "학생들과 함께하는 작품 평가 활동"
   },
   {
     src: gallery3,
-    title: "디지털 아트 수업",
-    description: "최신 디지털 기법 교육"
+    title: "LP 디자인 도슨트",
+    description: "디자인 이론과 실무 특강"
   },
   {
     src: gallery4,
-    title: "포트폴리오 제작",
-    description: "개인별 맞춤 포트폴리오 완성"
+    title: "문화예술 특강",
+    description: "예술가와 함께하는 특별 강의"
   },
   {
     src: gallery5,
-    title: "실기 대회 준비",
-    description: "대학 입시 실기 집중 훈련"
+    title: "아트 갤러리 견학",
+    description: "학생들과 함께하는 갤러리 투어"
   },
   {
     src: gallery6,
-    title: "웹툰 제작 수업",
-    description: "창의적인 스토리텔링 교육"
+    title: "강당 작품 평가회",
+    description: "대규모 작품 발표 및 평가 시간"
   },
   {
     src: gallery7,
-    title: "졸업 작품 발표",
-    description: "학습 성과 발표회"
+    title: "아이디어 스케치",
+    description: "창의적 아이디어 발굴 수업"
   },
   {
     src: gallery8,
-    title: "특별 워크샵",
-    description: "전문가 초청 특강"
+    title: "애니메이션 시연회",
+    description: "디지털 애니메이션 제작 발표"
   },
   {
     src: gallery9,
-    title: "수상작 전시",
-    description: "각종 대회 수상작 전시"
+    title: "자화상 작품 발표",
+    description: "학생들의 자화상 작품 프레젠테이션"
   }
 ];
 
