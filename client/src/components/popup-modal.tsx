@@ -25,6 +25,7 @@ export default function PopupModal({
 }: PopupModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [imageDimensions, setImageDimensions] = useState<{width: number, height: number} | null>(null);
 
   useEffect(() => {
     // 개발/테스트용: localStorage 확인 없이 항상 팝업 표시
@@ -57,6 +58,38 @@ export default function PopupModal({
     }
   };
 
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    setImageDimensions({
+      width: img.naturalWidth,
+      height: img.naturalHeight
+    });
+  };
+
+  const getModalStyle = () => {
+    if (!imageDimensions) return {};
+    
+    const { width, height } = imageDimensions;
+    const aspectRatio = width / height;
+    
+    // 화면 크기에 맞춰 최적화
+    const maxWidth = Math.min(600, window.innerWidth * 0.9);
+    const maxHeight = window.innerHeight * 0.8;
+    
+    let finalWidth = maxWidth;
+    let finalHeight = finalWidth / aspectRatio;
+    
+    if (finalHeight > maxHeight) {
+      finalHeight = maxHeight;
+      finalWidth = finalHeight * aspectRatio;
+    }
+    
+    return {
+      width: `${finalWidth}px`,
+      maxWidth: 'none'
+    };
+  };
+
   if (!isVisible) return null;
 
   return (
@@ -67,9 +100,10 @@ export default function PopupModal({
       onClick={handleBackdropClick}
     >
       <div 
-        className={`relative bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] overflow-auto transform transition-all duration-300 ${
+        className={`relative bg-white rounded-2xl shadow-2xl mx-4 transform transition-all duration-300 ${
           isAnimating ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         }`}
+        style={getModalStyle()}
         onClick={(e) => e.stopPropagation()}
       >
         {/* 닫기 버튼 */}
@@ -83,12 +117,13 @@ export default function PopupModal({
         </Button>
 
         {/* 이미지 */}
-        <div className="relative overflow-hidden rounded-t-2xl bg-gray-50">
+        <div className="relative overflow-hidden rounded-t-2xl">
           <img 
             src={imageUrl}
             alt={title}
-            className="w-full h-auto max-h-80 object-contain"
+            className="w-full h-auto object-contain"
             loading="lazy"
+            onLoad={handleImageLoad}
           />
         </div>
 
