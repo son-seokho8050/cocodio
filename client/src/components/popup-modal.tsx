@@ -12,6 +12,7 @@ interface PopupModalProps {
   linkUrl?: string;
   linkText?: string;
   delay?: number; // 팝업이 나타나는 지연 시간 (초)
+  isLarge?: boolean; // 큰 크기로 표시할지 여부
 }
 
 export default function PopupModal({ 
@@ -21,7 +22,8 @@ export default function PopupModal({
   description, 
   linkUrl, 
   linkText = "자세히 보기",
-  delay = 0 
+  delay = 0,
+  isLarge = false
 }: PopupModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -72,9 +74,13 @@ export default function PopupModal({
     const { width, height } = imageDimensions;
     const aspectRatio = width / height;
     
-    // 더 작은 크기로 조정
-    const maxWidth = Math.min(400, window.innerWidth * 0.85);
-    const maxHeight = window.innerHeight * 0.7;
+    // 원장님 팝업은 더 크게, 나머지는 기본 크기
+    const maxWidth = isLarge 
+      ? Math.min(550, window.innerWidth * 0.9) 
+      : Math.min(400, window.innerWidth * 0.85);
+    const maxHeight = isLarge 
+      ? window.innerHeight * 0.8 
+      : window.innerHeight * 0.7;
     
     let finalWidth = maxWidth;
     let finalHeight = finalWidth / aspectRatio;
@@ -143,7 +149,8 @@ export function PopupManager() {
       description: '서울대 출신 원장님의 체계적인 미대입시 전문 교육을 경험해보세요.',
       linkUrl: 'https://blog.naver.com/coco2238050',
       linkText: '원장님 스토리 보기',
-      delay: 3 // 3초 후 표시
+      delay: 3, // 3초 후 표시
+      isLarge: true // 큰 크기로 표시
     },
     {
       id: 'popup2', 
