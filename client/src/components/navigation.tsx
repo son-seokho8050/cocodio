@@ -39,12 +39,7 @@ export default function Navigation() {
             >
               커리큘럼
             </button>
-            <button
-              onClick={() => scrollToSection('gallery')}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
-            >
-              갤러리
-            </button>
+
             <div 
               className="relative"
               onMouseEnter={() => setIsAdmissionsOpen(true)}
