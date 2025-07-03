@@ -67,7 +67,7 @@ export default function PopupModal({
       onClick={handleBackdropClick}
     >
       <div 
-        className={`relative bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 ${
+        className={`relative bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] overflow-auto transform transition-all duration-300 ${
           isAnimating ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         }`}
         onClick={(e) => e.stopPropagation()}
@@ -83,11 +83,11 @@ export default function PopupModal({
         </Button>
 
         {/* 이미지 */}
-        <div className="relative overflow-hidden rounded-t-2xl">
+        <div className="relative overflow-hidden rounded-t-2xl bg-gray-50">
           <img 
             src={imageUrl}
             alt={title}
-            className="w-full h-64 object-cover"
+            className="w-full h-auto max-h-80 object-contain"
             loading="lazy"
           />
         </div>
