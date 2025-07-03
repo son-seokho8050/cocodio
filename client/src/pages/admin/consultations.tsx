@@ -33,8 +33,12 @@ export default function AdminConsultations() {
     return <AdminAuth onAuthenticated={() => setIsAuthenticated(true)} />;
   }
 
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('ko-KR', {
+  const formatDate = (date: Date | string) => {
+    const dateObj = typeof date === 'string' ? new Date(date) : date;
+    if (!dateObj || isNaN(dateObj.getTime())) {
+      return '날짜 정보 없음';
+    }
+    return dateObj.toLocaleDateString('ko-KR', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
