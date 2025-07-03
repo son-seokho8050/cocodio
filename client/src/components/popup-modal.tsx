@@ -128,7 +128,8 @@ export default function PopupModal({
             src={imageUrl}
             alt={title}
             className="w-full h-auto object-contain rounded-2xl"
-            loading="lazy"
+            loading="eager"
+            decoding="async"
             onLoad={handleImageLoad}
           />
         </div>

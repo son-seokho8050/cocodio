@@ -74,9 +74,10 @@ export default function HeroSection() {
               src="/student-celebration.png"
               alt="코코미술학원 합격자들이 기쁨의 환호를 하며 함께 축하하는 모습 - 미대입시 성공 사례"
               className="rounded-2xl shadow-2xl w-full"
-              loading="lazy"
-              width="800"
-              height="600"
+              loading="eager"
+              width="600"
+              height="450"
+              decoding="async"
             />
             
             {!isLoading && (

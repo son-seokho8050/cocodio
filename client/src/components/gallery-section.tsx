@@ -105,6 +105,8 @@ export default function GallerySection() {
                   src={image.src}
                   alt={image.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               
