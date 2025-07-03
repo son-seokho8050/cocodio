@@ -25,17 +25,18 @@ export default function PopupModal({
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    // 이미 이 팝업을 본 적이 있는지 확인
-    const hasSeenPopup = localStorage.getItem(`popup-${id}-seen`);
+    // 개발/테스트용: localStorage 확인 없이 항상 팝업 표시
+    // 실제 운영시에는 아래 주석 처리된 코드를 사용하세요
     
-    if (!hasSeenPopup) {
+    // const hasSeenPopup = localStorage.getItem(`popup-${id}-seen`);
+    // if (!hasSeenPopup) {
       const timer = setTimeout(() => {
         setIsVisible(true);
         setTimeout(() => setIsAnimating(true), 100);
       }, delay * 1000);
 
       return () => clearTimeout(timer);
-    }
+    // }
   }, [id, delay]);
 
   const handleClose = () => {
