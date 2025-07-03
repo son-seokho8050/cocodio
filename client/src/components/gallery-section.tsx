@@ -52,7 +52,7 @@ const galleryImages = [
   {
     src: gallery8,
     title: "애니메이션 강연회",
-    description: "디지털 애니메이션 제작 발표"
+    description: "디지털 애니메이션 실무강연"
   },
   {
     src: gallery9,
