@@ -1,4 +1,5 @@
 import { Instagram, Youtube, BookOpen } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -105,7 +106,14 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 코코미술학원. All rights reserved.</p>
+          <div className="flex justify-between items-center">
+            <p>&copy; 2024 코코미술학원. All rights reserved.</p>
+            <Link href="/admin/consultations">
+              <button className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+                관리자
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
