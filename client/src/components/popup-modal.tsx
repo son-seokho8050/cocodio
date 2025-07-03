@@ -128,21 +128,21 @@ export function PopupManager() {
   const popups = [
     {
       id: 'popup1',
-      title: '새로운 소식',
-      imageUrl: '/popup-image-1.jpg', // 여기에 실제 이미지 경로를 넣어주세요
-      description: '코코미술학원의 새로운 소식을 확인해보세요.',
+      title: '재능의 출발점 - 원장님 소개',
+      imageUrl: '@assets/제목 없음 (210 x 60 cm) (60 x 175 cm)_1751522974588.jpg',
+      description: '서울대 출신 원장님의 체계적인 미대입시 전문 교육을 경험해보세요.',
       linkUrl: 'https://blog.naver.com/coco2238050',
-      linkText: '블로그 보기',
-      delay: 2 // 2초 후 표시
+      linkText: '원장님 스토리 보기',
+      delay: 3 // 3초 후 표시
     },
     {
       id: 'popup2', 
-      title: '특별 이벤트',
-      imageUrl: '/popup-image-2.jpg', // 여기에 실제 이미지 경로를 넣어주세요
-      description: '지금 상담 신청하시면 특별 혜택을 드립니다.',
-      linkUrl: '#contact',
-      linkText: '상담 신청',
-      delay: 5 // 5초 후 표시
+      title: '2025 미대실기대회 수상 소식',
+      imageUrl: '@assets/2025 (3)_1751522974589.jpg',
+      description: '한양대 17명, 경희대 10명 등 주요대학 실기대회에서 최다 수상! 코코의 실력을 확인해보세요.',
+      linkUrl: '/admissions/2025',
+      linkText: '합격 실적 보기',
+      delay: 6 // 6초 후 표시
     }
   ];
 
