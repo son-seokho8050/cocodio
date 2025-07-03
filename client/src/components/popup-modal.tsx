@@ -117,45 +117,17 @@ export default function PopupModal({
         </Button>
 
         {/* 이미지 */}
-        <div className="relative overflow-hidden rounded-t-2xl">
+        <div className="relative overflow-hidden rounded-2xl">
           <img 
             src={imageUrl}
             alt={title}
-            className="w-full h-auto object-contain"
+            className="w-full h-auto object-contain rounded-2xl"
             loading="lazy"
             onLoad={handleImageLoad}
           />
         </div>
 
-        {/* 콘텐츠 */}
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
-          
-          {description && (
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              {description}
-            </p>
-          )}
 
-          <div className="flex gap-3">
-            {linkUrl && (
-              <Button 
-                onClick={() => window.open(linkUrl, '_blank')}
-                className="flex-1 bg-primary-600 hover:bg-primary-700 text-white"
-              >
-                {linkText}
-              </Button>
-            )}
-            
-            <Button 
-              onClick={handleClose}
-              variant="outline"
-              className="flex-1"
-            >
-              닫기
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   );
