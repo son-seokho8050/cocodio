@@ -42,7 +42,7 @@ const galleryImages = [
   {
     src: gallery6,
     title: "강당 작품 평가회",
-    description: "대규모 작품 발표 및 평가 시간"
+    description: "대규모 작품 발표 및 실전 현장평가"
   },
   {
     src: gallery7,
