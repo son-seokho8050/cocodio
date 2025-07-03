@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import ChatWidget from "@/components/chat-widget";
+import { PopupManager } from "@/components/popup-modal";
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
 
@@ -80,6 +81,9 @@ export default function Home() {
       
       {/* 실시간 채팅 위젯 */}
       <ChatWidget />
+      
+      {/* 팝업 매니저 */}
+      <PopupManager />
     </div>
   );
 }
