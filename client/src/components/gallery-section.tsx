@@ -31,7 +31,7 @@ const galleryImages = [
   },
   {
     src: gallery4,
-    title: "문화예술 특강",
+    title: "LP 디자인 도슨트",
     description: "예술가와 함께하는 특별 강의"
   },
   {
