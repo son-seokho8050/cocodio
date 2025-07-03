@@ -41,9 +41,9 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-[20px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-in slide-in-from-left duration-700">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              재능의 출발점<br />
-              <span className="text-accent-500">코코</span>
+            <h1 className="font-bold mb-6 leading-tight">
+              <div className="text-2xl lg:text-3xl font-medium text-white/90 mb-2">재능의 출발점</div>
+              <div className="text-6xl lg:text-8xl font-black text-accent-500">코코</div>
             </h1>
             <p className="text-xl mb-8 text-blue-100 leading-relaxed">
               여러분의 재능은 어떤 모양인가요?
