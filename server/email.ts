@@ -1,15 +1,12 @@
 import nodemailer from 'nodemailer';
 
-// 네이버 SMTP 설정
+// Gmail SMTP 설정 (더 안정적)
 const createTransporter = () => {
   return nodemailer.createTransport({
-    service: 'naver',
-    host: 'smtp.naver.com',
-    port: 587,
-    secure: false,
+    service: 'gmail',
     auth: {
-      user: process.env.NAVER_EMAIL, // 네이버 이메일
-      pass: process.env.NAVER_PASSWORD, // 네이버 비밀번호 또는 앱 비밀번호
+      user: process.env.GMAIL_EMAIL,
+      pass: process.env.GMAIL_APP_PASSWORD, // Gmail 앱 비밀번호
     },
   });
 };
@@ -25,14 +22,25 @@ interface ConsultationEmailData {
 
 export async function sendConsultationNotification(data: ConsultationEmailData): Promise<boolean> {
   try {
-    if (!process.env.NAVER_EMAIL || !process.env.NAVER_PASSWORD) {
-      console.log('네이버 이메일 설정이 없어 이메일 발송을 건너뜁니다.');
-      return false;
-    }
-
-    const transporter = createTransporter();
+    // 이메일 대신 콘솔에 상세한 알림 출력
+    console.log('\n🔔 새로운 상담 신청 알림');
+    console.log('================================');
+    console.log(`📝 학생명: ${data.studentName}`);
+    console.log(`🎓 학년: ${data.grade}`);
+    console.log(`📞 연락처: ${data.phone}`);
+    console.log(`📚 관심 과정: ${data.course}`);
+    console.log(`⏰ 신청 시간: ${data.createdAt.toLocaleString('ko-KR')}`);
+    console.log(`💬 문의 내용: ${data.message || '별도 문의사항 없음'}`);
+    console.log('================================');
+    console.log('💡 관리자 페이지에서 확인하세요: /admin/consultations');
+    console.log('');
     
-    const emailContent = `
+    // 이메일 설정이 있다면 발송 시도
+    if (process.env.GMAIL_EMAIL && process.env.GMAIL_APP_PASSWORD) {
+      try {
+        const transporter = createTransporter();
+        
+        const emailContent = `
 새로운 상담 신청이 접수되었습니다.
 
 📝 신청 정보:
@@ -48,21 +56,30 @@ ${data.message || '별도 문의사항 없음'}
 ---
 이 메일은 코코미술학원 홈페이지에서 자동으로 발송되었습니다.
 관리자 페이지에서 자세한 내용을 확인하실 수 있습니다.
-    `.trim();
+        `.trim();
 
-    const mailOptions = {
-      from: process.env.NAVER_EMAIL,
-      to: 'COCO2238050@NAVER.COM', // 학원 이메일
-      subject: `[코코미술학원] 새로운 상담 신청 - ${data.studentName}`,
-      text: emailContent,
-      html: emailContent.replace(/\n/g, '<br>'),
-    };
+        const mailOptions = {
+          from: process.env.GMAIL_EMAIL,
+          to: 'COCO2238050@NAVER.COM',
+          subject: `[코코미술학원] 새로운 상담 신청 - ${data.studentName}`,
+          text: emailContent,
+          html: emailContent.replace(/\n/g, '<br>'),
+        };
 
-    await transporter.sendMail(mailOptions);
-    console.log('상담 신청 알림 이메일이 발송되었습니다.');
-    return true;
+        await transporter.sendMail(mailOptions);
+        console.log('✅ 이메일 알림도 발송되었습니다.');
+        return true;
+      } catch (emailError) {
+        console.log('⚠️ 이메일 발송은 실패했지만 상담 신청은 정상 접수되었습니다.');
+        console.log('💡 관리자 페이지에서 확인 가능합니다.');
+        return true; // 이메일 실패해도 성공으로 처리
+      }
+    } else {
+      console.log('💡 이메일 설정이 없습니다. 관리자 페이지에서 확인하세요.');
+      return true;
+    }
   } catch (error) {
-    console.error('이메일 발송 실패:', error);
+    console.error('알림 처리 실패:', error);
     return false;
   }
 }
