@@ -41,13 +41,13 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-in slide-in-from-left duration-700">
-            <h1 className="mb-8 leading-tight">
-              <div className="text-lg lg:text-xl font-light text-white/75 mb-2 tracking-wide">재능의 출발점</div>
-              <div className="text-5xl lg:text-7xl font-black text-accent-500 mb-4">코코</div>
-              <div className="text-xl lg:text-2xl font-medium text-blue-100 leading-relaxed">
+            <div className="mb-8">
+              <div className="text-sm lg:text-base font-light text-white/70 mb-1 tracking-widest uppercase">재능의 출발점</div>
+              <h1 className="text-6xl lg:text-8xl font-black text-accent-500 mb-3 leading-none">코코</h1>
+              <p className="text-lg lg:text-xl font-normal text-blue-100 leading-relaxed">
                 여러분의 재능은 어떤 모양인가요?
-              </div>
-            </h1>
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={scrollToContact}
