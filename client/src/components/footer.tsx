@@ -105,12 +105,14 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <div className="flex justify-between items-center">
+        <div className="border-t border-gray-700 pt-8">
+          <div className="text-center text-gray-400 mb-4">
             <p>&copy; 2024 코코미술학원. All rights reserved.</p>
+          </div>
+          <div className="text-center">
             <Link href="/admin/consultations">
-              <button className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
-                관리자
+              <button className="text-sm text-gray-400 hover:text-white transition-colors bg-gray-800 px-4 py-2 rounded">
+                📊 관리자 모드
               </button>
             </Link>
           </div>
