@@ -88,7 +88,7 @@ export default function GallerySection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">코코디오 갤러리</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            코코미술학원의 생생한 교육 현장과
+            코코미술학원의 특별한 교육 현장과
             <br />
             학생들의 창작 활동을 만나보세요
           </p>
