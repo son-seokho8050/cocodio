@@ -212,4 +212,5 @@ Changelog:
 
 ```
 Preferred communication style: Simple, everyday language.
+Critical requirement: Always provide accurate information from the start. Incorrect technical information is unacceptable.
 ```
