@@ -101,7 +101,7 @@ export default function PopupModal({
   return (
     <div 
       className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-300 ${
-        isAnimating ? 'bg-black/50 backdrop-blur-sm' : 'bg-transparent'
+        isAnimating ? 'bg-black/30' : 'bg-transparent'
       }`}
       onClick={handleBackdropClick}
     >
