@@ -15,6 +15,7 @@ import { apiRequest } from "@/lib/queryClient";
 export default function ContactSection() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const [selectedCampus, setSelectedCampus] = useState<'masan' | 'gimhae'>('masan');
 
   const form = useForm<InsertConsultation>({
     resolver: zodResolver(insertConsultationSchema),
@@ -206,17 +207,55 @@ export default function ContactSection() {
             </div>
 
             {/* Interactive Map */}
-            <div className="rounded-lg h-64 overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.8842669!2d128.5614!3d35.2281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDEzJzQxLjIiTiAxMjjCsDMzJzQxLjAiRQ!5e0!3m2!1sko!2skr!4v1620000000000!5m2!1sko!2skr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="코코미술학원 위치"
-              />
+            <div className="space-y-4">
+              <div className="flex space-x-2">
+                <button 
+                  onClick={() => setSelectedCampus('masan')}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    selectedCampus === 'masan' 
+                      ? 'bg-primary-600 text-white' 
+                      : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                  }`}
+                >
+                  마산 캠퍼스
+                </button>
+                <button 
+                  onClick={() => setSelectedCampus('gimhae')}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    selectedCampus === 'gimhae' 
+                      ? 'bg-primary-600 text-white' 
+                      : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                  }`}
+                >
+                  김해 캠퍼스
+                </button>
+              </div>
+              
+              <div className="rounded-lg h-64 overflow-hidden shadow-lg">
+                {selectedCampus === 'masan' ? (
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.123456789!2d128.5765!3d35.2143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z6rOg7Jq064Spams1MzUsIOuplOyynOy9lOuEvOw6ku2YuSwg7LC97JuQ7IucLCDqsr3sgZHrgqjrj4Qg64yA7ZWc66-86rWt!5e0!3m2!1sko!2skr!4v1620000000000!5m2!1sko!2skr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="코코미술학원 마산 캠퍼스 - 마산 합포구 고운로 235, 유진빌딩 4층"
+                  />
+                ) : (
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.987654321!2d128.8890!3d35.2280!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z64K065OE7LWk7KSR7JWZ66GcIDc0LCDquYDtlbTsi5wg7KO86rK97YyM!5e0!3m2!1sko!2skr!4v1620000000001!5m2!1sko!2skr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="코코미술학원 김해 캠퍼스 - 김해시 내외중앙로 74, 밝은메디컬센터 10층"
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>
