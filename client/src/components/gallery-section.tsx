@@ -51,7 +51,7 @@ const galleryImages = [
   },
   {
     src: gallery8,
-    title: "애니메이션 시연회",
+    title: "애니메이션 강연회",
     description: "디지털 애니메이션 제작 발표"
   },
   {
