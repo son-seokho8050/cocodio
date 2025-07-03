@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# 사이트맵 위치
+Sitemap: https://sketch-sage-magmaart2238050.replit.app/sitemap.xml
+
+# 검색엔진 최적화
+Crawl-delay: 1
+
+# 특정 페이지 차단 (관리자 페이지)
+Disallow: /admin/

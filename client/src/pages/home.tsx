@@ -8,6 +8,7 @@ import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import ChatWidget from "@/components/chat-widget";
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
 
@@ -76,6 +77,9 @@ export default function Home() {
           </Button>
         </a>
       </div>
+      
+      {/* 실시간 채팅 위젯 */}
+      <ChatWidget />
     </div>
   );
 }

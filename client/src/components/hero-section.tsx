@@ -72,8 +72,11 @@ export default function HeroSection() {
           <div className="relative animate-in slide-in-from-right duration-700">
             <img
               src="/student-celebration.png"
-              alt="Happy art students celebrating achievements"
+              alt="코코미술학원 합격자들이 기쁨의 환호를 하며 함께 축하하는 모습 - 미대입시 성공 사례"
               className="rounded-2xl shadow-2xl w-full"
+              loading="lazy"
+              width="800"
+              height="600"
             />
             
             {!isLoading && (
