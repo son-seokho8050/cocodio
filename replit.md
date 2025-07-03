@@ -205,6 +205,7 @@ Changelog:
   - Changed contact section branding to "무료체험수업" for better accessibility
   - Applied year-specific color themes and glassmorphism effects across admissions pages
   - Website ready for production deployment with all authentic data integrated
+  - Project renamed to "cocodio" for deployment at cocodio.replit.app domain
 ```
 
 ## User Preferences
