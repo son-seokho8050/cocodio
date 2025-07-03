@@ -17,7 +17,7 @@ const galleryImages = [
   {
     src: gallery1,
     title: "플라워 아트 수업",
-    description: "창의적인 꽃꽂이와 드로잉 수업"
+    description: "실물을 활용한 컬러체험"
   },
   {
     src: gallery2,
