@@ -21,7 +21,7 @@ const galleryImages = [
   },
   {
     src: gallery2,
-    title: "작품 평가 시간",
+    title: "월간 현장평가",
     description: "학생들과 함께하는 작품 평가 활동"
   },
   {
