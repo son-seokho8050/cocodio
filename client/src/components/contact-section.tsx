@@ -162,7 +162,7 @@ export default function ContactSection() {
                 className="w-full bg-primary-600 hover:bg-primary-700 text-white py-4 text-lg font-semibold"
               >
                 <Send className="mr-2 h-5 w-5" />
-                {submitConsultation.isPending ? "신청 중..." : "상담 신청하기"}
+                {submitConsultation.isPending ? "신청 중..." : "신청하기"}
               </Button>
             </form>
           </div>
