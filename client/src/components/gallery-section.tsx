@@ -32,7 +32,7 @@ const galleryImages = [
   {
     src: gallery4,
     title: "LP 디자인 도슨트",
-    description: "예술가와 함께하는 특별 강의"
+    description: "자기 작품 도슨트"
   },
   {
     src: gallery5,
