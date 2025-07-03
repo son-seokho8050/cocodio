@@ -72,9 +72,9 @@ export default function PopupModal({
     const { width, height } = imageDimensions;
     const aspectRatio = width / height;
     
-    // 화면 크기에 맞춰 최적화
-    const maxWidth = Math.min(600, window.innerWidth * 0.9);
-    const maxHeight = window.innerHeight * 0.8;
+    // 더 작은 크기로 조정
+    const maxWidth = Math.min(400, window.innerWidth * 0.85);
+    const maxHeight = window.innerHeight * 0.7;
     
     let finalWidth = maxWidth;
     let finalHeight = finalWidth / aspectRatio;
