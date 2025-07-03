@@ -119,12 +119,7 @@ export default function Navigation() {
               >
                 커리큘럼
               </button>
-              <button
-                onClick={() => scrollToSection('gallery')}
-                className="text-gray-700 hover:text-primary-600 transition-colors text-left"
-              >
-                갤러리
-              </button>
+              
               
               {/* Mobile Admissions Menu */}
               <div className="border-l-2 border-primary-200 pl-4 space-y-2">

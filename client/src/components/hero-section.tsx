@@ -38,7 +38,7 @@ export default function HeroSection() {
 
   return (
     <section className="hero-gradient text-white pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-[20px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-in slide-in-from-left duration-700">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
