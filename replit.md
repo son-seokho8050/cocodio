@@ -216,6 +216,14 @@ Changelog:
   - Removed blur effects from popup backgrounds per user preference
   - Comprehensive performance optimization for mobile and desktop platforms
   - Successfully deployed production-ready website with all S-level features integrated
+- July 3, 2025. Video popup system and enhanced user control features
+  - Extended popup system to support both image and video content with dynamic type detection
+  - Added 2025 코코 여름방학 특강 video popup (12sec delay) with native video controls
+  - Implemented "오늘 그만보기" (Don't show today) functionality for each popup individually
+  - Optimized button sizing and positioning for better UX and accessibility
+  - Final popup system: 원장님 소개 (image, 3s) → 실기대회 수상 (image, 6s) → 여름방학 특강 (video, 12s)
+  - Enhanced localStorage management for daily popup preferences
+  - Completed comprehensive multimedia popup system ready for production deployment
 ```
 
 ## User Preferences
