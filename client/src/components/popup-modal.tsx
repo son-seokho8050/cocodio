@@ -146,9 +146,9 @@ export default function PopupModal({
           onClick={handleDontShowToday}
           variant="ghost"
           size="sm"
-          className="absolute bottom-3 right-3 z-10 text-xs px-3 py-1 bg-black/80 text-white hover:bg-black/90 rounded-full"
+          className="absolute bottom-2 right-2 z-10 text-[10px] px-2 py-0.5 bg-black/70 text-white hover:bg-black/80 rounded text-nowrap h-auto min-h-0"
         >
-          오늘 하루 그만보기
+          오늘 그만보기
         </Button>
 
         {/* 미디어 콘텐츠 */}
