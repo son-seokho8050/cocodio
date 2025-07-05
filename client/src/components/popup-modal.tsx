@@ -7,27 +7,31 @@ import contestImage from "@assets/2025 (3)_1751522974589.jpg";
 interface PopupModalProps {
   id: string;
   title: string;
-  imageUrl: string;
+  imageUrl?: string;
+  videoUrl?: string;
   description?: string;
   linkUrl?: string;
   linkText?: string;
   delay?: number; // 팝업이 나타나는 지연 시간 (초)
   isLarge?: boolean; // 큰 크기로 표시할지 여부
+  type?: 'image' | 'video'; // 미디어 타입
 }
 
 export default function PopupModal({ 
   id, 
   title, 
   imageUrl, 
+  videoUrl,
   description, 
   linkUrl, 
   linkText = "자세히 보기",
   delay = 0,
-  isLarge = false
+  isLarge = false,
+  type = 'image'
 }: PopupModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [imageDimensions, setImageDimensions] = useState<{width: number, height: number} | null>(null);
+  const [mediaDimensions, setMediaDimensions] = useState<{width: number, height: number} | null>(null);
 
   useEffect(() => {
     // 개발/테스트용: localStorage 확인 없이 항상 팝업 표시
@@ -62,16 +66,24 @@ export default function PopupModal({
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.currentTarget;
-    setImageDimensions({
+    setMediaDimensions({
       width: img.naturalWidth,
       height: img.naturalHeight
     });
   };
 
+  const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget;
+    setMediaDimensions({
+      width: video.videoWidth,
+      height: video.videoHeight
+    });
+  };
+
   const getModalStyle = () => {
-    if (!imageDimensions) return {};
+    if (!mediaDimensions) return {};
     
-    const { width, height } = imageDimensions;
+    const { width, height } = mediaDimensions;
     const aspectRatio = width / height;
     
     // 원장님 팝업은 더 크게, 나머지는 기본 크기
@@ -122,16 +134,27 @@ export default function PopupModal({
           <X className="h-4 w-4" />
         </Button>
 
-        {/* 이미지 */}
+        {/* 미디어 콘텐츠 */}
         <div className="relative overflow-hidden rounded-2xl">
-          <img 
-            src={imageUrl}
-            alt={title}
-            className="w-full h-auto object-contain rounded-2xl"
-            loading="eager"
-            decoding="async"
-            onLoad={handleImageLoad}
-          />
+          {type === 'video' && videoUrl ? (
+            <video 
+              src={videoUrl}
+              className="w-full h-auto object-contain rounded-2xl"
+              controls
+              autoPlay={false}
+              muted
+              onLoadedMetadata={handleVideoLoad}
+            />
+          ) : (
+            <img 
+              src={imageUrl || ''}
+              alt={title}
+              className="w-full h-auto object-contain rounded-2xl"
+              loading="eager"
+              decoding="async"
+              onLoad={handleImageLoad}
+            />
+          )}
         </div>
 
 
@@ -147,6 +170,7 @@ export function PopupManager() {
       id: 'popup1',
       title: '재능의 출발점 - 원장님 소개',
       imageUrl: directorImage,
+      type: 'image' as const,
       description: '서울대 출신 원장님의 체계적인 미대입시 전문 교육을 경험해보세요.',
       linkUrl: 'https://blog.naver.com/coco2238050',
       linkText: '원장님 스토리 보기',
@@ -157,11 +181,22 @@ export function PopupManager() {
       id: 'popup2', 
       title: '2025 미대실기대회 수상 소식',
       imageUrl: contestImage,
+      type: 'image' as const,
       description: '한양대 17명, 경희대 10명 등 주요대학 실기대회에서 최다 수상! 코코의 실력을 확인해보세요.',
       linkUrl: '/admissions/2025',
       linkText: '합격 실적 보기',
       delay: 6 // 6초 후 표시
     }
+    // 동영상 팝업 예시:
+    // {
+    //   id: 'popup3',
+    //   title: '코코 미술학원 소개 영상',
+    //   videoUrl: '/path/to/video.mp4',
+    //   type: 'video' as const,
+    //   description: '코코미술학원의 교육 과정과 학생들의 모습을 영상으로 만나보세요.',
+    //   delay: 10,
+    //   isLarge: true
+    // }
   ];
 
   return (
