@@ -34,21 +34,28 @@ export default function PopupModal({
   const [mediaDimensions, setMediaDimensions] = useState<{width: number, height: number} | null>(null);
 
   useEffect(() => {
-    // 개발/테스트용: localStorage 확인 없이 항상 팝업 표시
-    // 실제 운영시에는 아래 주석 처리된 코드를 사용하세요
+    // 오늘 하루 동안 이 팝업을 본 적이 있는지 확인
+    const today = new Date().toDateString();
+    const hasSeenToday = localStorage.getItem(`popup-${id}-seen`) === today;
     
-    // const hasSeenPopup = localStorage.getItem(`popup-${id}-seen`);
-    // if (!hasSeenPopup) {
+    if (!hasSeenToday) {
       const timer = setTimeout(() => {
         setIsVisible(true);
         setTimeout(() => setIsAnimating(true), 100);
       }, delay * 1000);
 
       return () => clearTimeout(timer);
-    // }
+    }
   }, [id, delay]);
 
   const handleClose = () => {
+    setIsAnimating(false);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 300);
+  };
+
+  const handleDontShowToday = () => {
     setIsAnimating(false);
     setTimeout(() => {
       setIsVisible(false);
@@ -132,6 +139,16 @@ export default function PopupModal({
           className="absolute top-3 right-3 z-10 rounded-full w-8 h-8 p-0 bg-white/80 hover:bg-white"
         >
           <X className="h-4 w-4" />
+        </Button>
+
+        {/* 오늘 하루 그만보기 버튼 */}
+        <Button
+          onClick={handleDontShowToday}
+          variant="ghost"
+          size="sm"
+          className="absolute bottom-3 right-3 z-10 text-xs px-3 py-1 bg-black/80 text-white hover:bg-black/90 rounded-full"
+        >
+          오늘 하루 그만보기
         </Button>
 
         {/* 미디어 콘텐츠 */}
