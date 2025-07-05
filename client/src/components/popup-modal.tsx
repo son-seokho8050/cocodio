@@ -186,17 +186,16 @@ export function PopupManager() {
       linkUrl: '/admissions/2025',
       linkText: '합격 실적 보기',
       delay: 6 // 6초 후 표시
+    },
+    {
+      id: 'popup3',
+      title: '2025 코코 여름방학 특강',
+      videoUrl: '/coco-summer-special.mp4',
+      type: 'video' as const,
+      description: '코코미술학원의 특별한 여름방학 특강 프로그램을 영상으로 만나보세요.',
+      delay: 12, // 12초 후 표시
+      isLarge: true
     }
-    // 동영상 팝업 예시:
-    // {
-    //   id: 'popup3',
-    //   title: '코코 미술학원 소개 영상',
-    //   videoUrl: '/path/to/video.mp4',
-    //   type: 'video' as const,
-    //   description: '코코미술학원의 교육 과정과 학생들의 모습을 영상으로 만나보세요.',
-    //   delay: 10,
-    //   isLarge: true
-    // }
   ];
 
   return (
