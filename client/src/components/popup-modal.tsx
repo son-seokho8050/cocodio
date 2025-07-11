@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import directorImage from "@assets/제목 없음 (210 x 60 cm) (60 x 175 cm)_1751522974588.jpg";
 import contestImage from "@assets/20.jpg";
+import contestImageNew from "@assets/20.jpg";
 
 interface PopupModalProps {
   id: string;
@@ -197,7 +198,7 @@ export function PopupManager() {
     {
       id: 'popup2', 
       title: '2025 미대실기대회 수상 소식',
-      imageUrl: contestImage,
+      imageUrl: contestImageNew,
       type: 'image' as const,
       description: '한양대 17명, 경희대 10명 등 주요대학 실기대회에서 최다 수상! 코코의 실력을 확인해보세요.',
       linkUrl: '/admissions/2025',
