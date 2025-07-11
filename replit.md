@@ -223,6 +223,7 @@ Changelog:
   - Optimized button sizing and positioning for better UX and accessibility
   - Final popup system: 원장님 소개 (image, 3s) → 실기대회 수상 (image, 6s) → 여름방학 특강 (video, 12s)
   - Enhanced localStorage management for daily popup preferences
+  - Updated contest popup with new detailed 2025 university achievement image showing gold-themed awards
   - Completed comprehensive multimedia popup system ready for production deployment
 ```
 
