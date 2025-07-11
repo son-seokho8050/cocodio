@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import directorImage from "@assets/제목 없음 (210 x 60 cm) (60 x 175 cm)_1751522974588.jpg";
-import contestImage from "@assets/2025 (3)_1751522974589.jpg";
+import contestImage from "@assets/20.jpg";
 
 interface PopupModalProps {
   id: string;
