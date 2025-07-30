@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import directorImage from "@assets/제목 없음 (210 x 60 cm) (60 x 175 cm)_1751522974588.jpg";
 import contestImage from "@assets/20.jpg";
-import contestImageNew from "@assets/20.jpg";
+import contestImageNew from "@assets/2025 (3)_1753875076059.jpg";
 
 interface PopupModalProps {
   id: string;
