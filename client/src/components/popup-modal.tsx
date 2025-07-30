@@ -94,13 +94,21 @@ export default function PopupModal({
     const { width, height } = mediaDimensions;
     const aspectRatio = width / height;
     
-    // 원장님 팝업은 더 크게, 나머지는 기본 크기
-    const maxWidth = isLarge 
-      ? Math.min(550, window.innerWidth * 0.9) 
-      : Math.min(400, window.innerWidth * 0.85);
-    const maxHeight = isLarge 
-      ? window.innerHeight * 0.8 
-      : window.innerHeight * 0.7;
+    // 모바일과 데스크톱 구분
+    const isMobile = window.innerWidth <= 768;
+    
+    // 모바일에서는 더 작게, 데스크톱에서는 기존 크기 유지
+    const maxWidth = isMobile 
+      ? Math.min(320, window.innerWidth * 0.9)  // 모바일에서 더 작게
+      : isLarge 
+        ? Math.min(550, window.innerWidth * 0.9) 
+        : Math.min(400, window.innerWidth * 0.85);
+        
+    const maxHeight = isMobile
+      ? window.innerHeight * 0.6  // 모바일에서 더 작게
+      : isLarge 
+        ? window.innerHeight * 0.8 
+        : window.innerHeight * 0.7;
     
     let finalWidth = maxWidth;
     let finalHeight = finalWidth / aspectRatio;
@@ -132,22 +140,22 @@ export default function PopupModal({
         style={getModalStyle()}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* 닫기 버튼 */}
+        {/* 닫기 버튼 - 모바일 최적화 */}
         <Button
           onClick={handleClose}
           variant="ghost"
           size="sm"
-          className="absolute top-3 right-3 z-10 rounded-full w-8 h-8 p-0 bg-white/80 hover:bg-white"
+          className="absolute top-3 right-3 z-10 rounded-full w-8 h-8 p-0 bg-white/80 hover:bg-white touch-manipulation"
         >
           <X className="h-4 w-4" />
         </Button>
 
-        {/* 오늘 하루 그만보기 버튼 */}
+        {/* 오늘 하루 그만보기 버튼 - 모바일 최적화 */}
         <Button
           onClick={handleDontShowToday}
           variant="ghost"
           size="sm"
-          className="absolute bottom-2 right-2 z-10 text-[10px] px-2 py-0.5 bg-black/70 text-white hover:bg-black/80 rounded text-nowrap h-auto min-h-0"
+          className="absolute bottom-2 right-2 z-10 text-[10px] px-2 py-0.5 bg-black/70 text-white hover:bg-black/80 rounded text-nowrap h-auto min-h-0 touch-manipulation min-w-[44px] min-h-[30px]"
         >
           오늘 그만보기
         </Button>
