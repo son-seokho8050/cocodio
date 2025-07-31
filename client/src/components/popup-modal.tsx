@@ -102,19 +102,23 @@ export default function PopupModal({
     // 좌우 배치일 때는 더 작은 크기 사용
     const isPositioned = position === 'left' || position === 'right';
     
+    // 강사 프로필 팝업들(popup1, popup2)은 20% 더 크게 표시
+    const isTeacherProfile = id === 'popup1' || id === 'popup2';
+    const sizeMultiplier = isTeacherProfile ? 1.2 : 1.0;
+    
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
-      ? Math.min(280, window.innerWidth * 0.85)  // 모바일에서 더 작게
+      ? Math.min(280 * sizeMultiplier, window.innerWidth * 0.9)  // 모바일에서 더 작게
       : isPositioned
-        ? Math.min(350, window.innerWidth * 0.4)  // 좌우 배치시 작게
+        ? Math.min(350 * sizeMultiplier, window.innerWidth * 0.48)  // 좌우 배치시 크기 증가
         : isLarge 
           ? Math.min(550, window.innerWidth * 0.9) 
           : Math.min(400, window.innerWidth * 0.85);
         
     const maxHeight = isMobile
-      ? window.innerHeight * 0.5  // 모바일에서 더 작게
+      ? window.innerHeight * 0.6 * sizeMultiplier  // 모바일에서 높이도 증가
       : isPositioned
-        ? window.innerHeight * 0.6  // 좌우 배치시 작게
+        ? window.innerHeight * 0.7 * sizeMultiplier  // 좌우 배치시 높이 증가
         : isLarge 
           ? window.innerHeight * 0.8 
           : window.innerHeight * 0.7;
