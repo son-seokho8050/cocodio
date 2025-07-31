@@ -174,7 +174,7 @@ export default function PopupModal({
         </Button>
 
         {/* 미디어 콘텐츠 */}
-        <div className="relative overflow-hidden rounded-2xl">
+        <div className="relative overflow-hidden rounded-2xl" style={{ backgroundColor: 'transparent' }}>
           {type === 'video' && videoUrl ? (
             <video 
               src={videoUrl}
@@ -191,6 +191,13 @@ export default function PopupModal({
               src={imageUrl || ''}
               alt={title}
               className="w-full h-auto object-contain rounded-2xl"
+              style={{ 
+                filter: 'brightness(1) contrast(1)', 
+                imageRendering: 'auto',
+                opacity: 1,
+                colorAdjust: 'exact',
+                WebkitColorAdjust: 'exact'
+              } as React.CSSProperties}
               loading="eager"
               decoding="async"
               onLoad={handleImageLoad}
