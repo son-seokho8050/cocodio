@@ -180,8 +180,10 @@ export default function PopupModal({
               src={videoUrl}
               className="w-full h-auto object-contain rounded-2xl"
               controls
-              autoPlay={false}
+              autoPlay={true}
               muted
+              loop
+              playsInline
               onLoadedMetadata={handleVideoLoad}
             />
           ) : (
@@ -242,7 +244,7 @@ export function PopupManager() {
     {
       id: 'popup4',
       title: '2025 코코 여름방학 특강',
-      videoUrl: '/assets/COCODIO의 사본_1751698559152.mp4',
+      videoUrl: '/attached_assets/COCODIO의 사본_1751698559152.mp4',
       type: 'video' as const,
       description: '코코미술학원의 특별한 여름방학 특강 프로그램을 영상으로 만나보세요.',
       delay: 12, // 12초 후 표시
