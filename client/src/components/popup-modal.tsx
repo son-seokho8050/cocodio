@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import directorImage from "@assets/제목 없음 (210 x 60 cm) (60 x 175 cm)_1751522974588.jpg";
-import contestImage from "@assets/20.jpg";
-import contestImageNew from "@assets/2025 (3)_1753875076059.jpg";
+import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
+import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
+import contestImageNew from "@assets/de93278a-83e6-4b40-a51c-3d284d41f1d6_1753939388248.jpg";
 
 interface PopupModalProps {
   id: string;
@@ -194,29 +194,40 @@ export function PopupManager() {
   const popups = [
     {
       id: 'popup1',
-      title: '재능의 출발점 - 원장님 소개',
-      imageUrl: directorImage,
+      title: '총원장 유영범 소개',
+      imageUrl: directorYoungBeom,
       type: 'image' as const,
-      description: '서울대 출신 원장님의 체계적인 미대입시 전문 교육을 경험해보세요.',
+      description: '서울대 출신 총원장의 체계적인 미대입시 전문 교육과 풍부한 경험을 만나보세요.',
       linkUrl: 'https://blog.naver.com/coco2238050',
       linkText: '원장님 스토리 보기',
       delay: 3, // 3초 후 표시
       isLarge: true // 큰 크기로 표시
     },
     {
-      id: 'popup2', 
+      id: 'popup2',
+      title: '말랑T X 유준석 강사 소개',
+      imageUrl: directorJunSeok,
+      type: 'image' as const,
+      description: '디지털 드로잉과 만화/애니메이션 전문 강사의 창의적인 교육을 경험해보세요.',
+      linkUrl: 'https://blog.naver.com/cocodioart',
+      linkText: '강사 포트폴리오 보기',
+      delay: 3, // 동시에 표시
+      isLarge: true
+    },
+    {
+      id: 'popup3', 
       title: '2025 미대실기대회 수상 소식',
       imageUrl: contestImageNew,
       type: 'image' as const,
-      description: '한양대 17명, 경희대 10명 등 주요대학 실기대회에서 최다 수상! 코코의 실력을 확인해보세요.',
+      description: '건국대글로컬 50명 등 주요대학 실기대회에서 최다 수상! 코코의 실력을 확인해보세요.',
       linkUrl: '/admissions/2025',
       linkText: '합격 실적 보기',
       delay: 6 // 6초 후 표시
     },
     {
-      id: 'popup3',
+      id: 'popup4',
       title: '2025 코코 여름방학 특강',
-      videoUrl: '/coco-summer-special.mp4',
+      videoUrl: '/assets/COCODIO의 사본_1751698559152.mp4',
       type: 'video' as const,
       description: '코코미술학원의 특별한 여름방학 특강 프로그램을 영상으로 만나보세요.',
       delay: 12, // 12초 후 표시
