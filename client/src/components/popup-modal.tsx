@@ -135,8 +135,16 @@ export default function PopupModal({
 
   if (!isVisible) return null;
 
-  // 강사 프로필 팝업들 중 왼쪽(popup1)이 우선 선택되도록 z-index 설정
-  const zIndex = (id === 'popup1' && (position === 'left' || position === 'right')) ? 'z-[10000]' : 'z-[9999]';
+  // z-index 계층 설정:
+  // - 강사 프로필: popup1(왼쪽) > popup2(오른쪽)
+  // - 나중 팝업들: popup3, popup4 > 강사 프로필들
+  const getZIndex = () => {
+    if (id === 'popup3' || id === 'popup4') return 'z-[10002]'; // 수상자, 동영상 팝업 최상위
+    if (id === 'popup1') return 'z-[10001]'; // 총원장 유영범 (왼쪽) 우선
+    if (id === 'popup2') return 'z-[10000]'; // 말랑T 유준석 (오른쪽)
+    return 'z-[9999]'; // 기본값
+  };
+  const zIndex = getZIndex();
 
   return (
     <div 
