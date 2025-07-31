@@ -104,7 +104,9 @@ export default function PopupModal({
     
     // 강사 프로필 팝업들(popup1, popup2)은 44% 더 크게 표시 (20% + 20%)
     const isTeacherProfile = id === 'popup1' || id === 'popup2';
-    const sizeMultiplier = isTeacherProfile ? 1.44 : 1.0;
+    // 수상자 팝업(popup3)은 2배 크게 표시
+    const isContestPopup = id === 'popup3';
+    const sizeMultiplier = isTeacherProfile ? 1.44 : isContestPopup ? 2.0 : 1.0;
     
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
@@ -112,16 +114,16 @@ export default function PopupModal({
       : isPositioned
         ? Math.min(350 * sizeMultiplier, window.innerWidth * 0.48)  // 좌우 배치시 크기 증가
         : isLarge 
-          ? Math.min(550, window.innerWidth * 0.9) 
-          : Math.min(400, window.innerWidth * 0.85);
+          ? Math.min(550 * sizeMultiplier, window.innerWidth * 0.9) 
+          : Math.min(400 * sizeMultiplier, window.innerWidth * 0.85);
         
     const maxHeight = isMobile
       ? window.innerHeight * 0.6 * sizeMultiplier  // 모바일에서 높이도 증가
       : isPositioned
         ? window.innerHeight * 0.7 * sizeMultiplier  // 좌우 배치시 높이 증가
         : isLarge 
-          ? window.innerHeight * 0.8 
-          : window.innerHeight * 0.7;
+          ? window.innerHeight * 0.8 * sizeMultiplier 
+          : window.innerHeight * 0.7 * sizeMultiplier;
     
     let finalWidth = maxWidth;
     let finalHeight = finalWidth / aspectRatio;
