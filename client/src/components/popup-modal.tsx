@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
 import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
-import contestImageNew from "@assets/de93278a-83e6-4b40-a51c-3d284d41f1d6_1753939388248.jpg";
+import contestImageReal from "@assets/2025 (3)_1753875076059.jpg";
 
 interface PopupModalProps {
   id: string;
@@ -232,7 +232,7 @@ export function PopupManager() {
     {
       id: 'popup3', 
       title: '2025 미대실기대회 수상 소식',
-      imageUrl: contestImageNew,
+      imageUrl: contestImageReal,
       type: 'image' as const,
       description: '건국대글로컬 50명 등 주요대학 실기대회에서 최다 수상! 코코의 실력을 확인해보세요.',
       linkUrl: '/admissions/2025',
