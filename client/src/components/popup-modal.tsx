@@ -155,8 +155,8 @@ export default function PopupModal({
       className={`fixed inset-0 ${zIndex} flex transition-all duration-300 ${
         isAnimating ? 'bg-black/30' : 'bg-transparent'
       } ${
-        position === 'left' ? 'items-center justify-start pl-4' :
-        position === 'right' ? 'items-center justify-end pr-4' :
+        position === 'left' ? 'items-center justify-center translate-x-[15%]' :
+        position === 'right' ? 'items-center justify-center -translate-x-[15%]' :
         'items-center justify-center'
       }`}
       onClick={handleBackdropClick}
