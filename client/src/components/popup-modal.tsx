@@ -16,6 +16,7 @@ interface PopupModalProps {
   delay?: number; // 팝업이 나타나는 지연 시간 (초)
   isLarge?: boolean; // 큰 크기로 표시할지 여부
   type?: 'image' | 'video'; // 미디어 타입
+  position?: 'center' | 'left' | 'right'; // 팝업 위치
 }
 
 export default function PopupModal({ 
@@ -28,7 +29,8 @@ export default function PopupModal({
   linkText = "자세히 보기",
   delay = 0,
   isLarge = false,
-  type = 'image'
+  type = 'image',
+  position = 'center'
 }: PopupModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -97,18 +99,25 @@ export default function PopupModal({
     // 모바일과 데스크톱 구분
     const isMobile = window.innerWidth <= 768;
     
-    // 모바일에서는 더 작게, 데스크톱에서는 기존 크기 유지
+    // 좌우 배치일 때는 더 작은 크기 사용
+    const isPositioned = position === 'left' || position === 'right';
+    
+    // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
-      ? Math.min(320, window.innerWidth * 0.9)  // 모바일에서 더 작게
-      : isLarge 
-        ? Math.min(550, window.innerWidth * 0.9) 
-        : Math.min(400, window.innerWidth * 0.85);
+      ? Math.min(280, window.innerWidth * 0.85)  // 모바일에서 더 작게
+      : isPositioned
+        ? Math.min(350, window.innerWidth * 0.4)  // 좌우 배치시 작게
+        : isLarge 
+          ? Math.min(550, window.innerWidth * 0.9) 
+          : Math.min(400, window.innerWidth * 0.85);
         
     const maxHeight = isMobile
-      ? window.innerHeight * 0.6  // 모바일에서 더 작게
-      : isLarge 
-        ? window.innerHeight * 0.8 
-        : window.innerHeight * 0.7;
+      ? window.innerHeight * 0.5  // 모바일에서 더 작게
+      : isPositioned
+        ? window.innerHeight * 0.6  // 좌우 배치시 작게
+        : isLarge 
+          ? window.innerHeight * 0.8 
+          : window.innerHeight * 0.7;
     
     let finalWidth = maxWidth;
     let finalHeight = finalWidth / aspectRatio;
@@ -128,8 +137,12 @@ export default function PopupModal({
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-300 ${
+      className={`fixed inset-0 z-[9999] flex transition-all duration-300 ${
         isAnimating ? 'bg-black/30' : 'bg-transparent'
+      } ${
+        position === 'left' ? 'items-center justify-start pl-4' :
+        position === 'right' ? 'items-center justify-end pr-4' :
+        'items-center justify-center'
       }`}
       onClick={handleBackdropClick}
     >
@@ -201,7 +214,8 @@ export function PopupManager() {
       linkUrl: 'https://blog.naver.com/coco2238050',
       linkText: '원장님 스토리 보기',
       delay: 3, // 3초 후 표시
-      isLarge: true // 큰 크기로 표시
+      isLarge: true, // 큰 크기로 표시
+      position: 'left' as const // 화면 왼쪽에 배치
     },
     {
       id: 'popup2',
@@ -212,7 +226,8 @@ export function PopupManager() {
       linkUrl: 'https://blog.naver.com/cocodioart',
       linkText: '강사 포트폴리오 보기',
       delay: 3, // 동시에 표시
-      isLarge: true
+      isLarge: true,
+      position: 'right' as const // 화면 오른쪽에 배치
     },
     {
       id: 'popup3', 
