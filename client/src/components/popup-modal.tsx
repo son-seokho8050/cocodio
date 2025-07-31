@@ -135,8 +135,8 @@ export default function PopupModal({
 
   if (!isVisible) return null;
 
-  // 총원장 유영범 팝업(popup1)이 더 높은 z-index를 가지도록 설정
-  const zIndex = id === 'popup1' ? 'z-[10000]' : 'z-[9999]';
+  // 강사 프로필 팝업들 중 왼쪽(popup1)이 우선 선택되도록 z-index 설정
+  const zIndex = (id === 'popup1' && (position === 'left' || position === 'right')) ? 'z-[10000]' : 'z-[9999]';
 
   return (
     <div 
