@@ -135,9 +135,12 @@ export default function PopupModal({
 
   if (!isVisible) return null;
 
+  // 총원장 유영범 팝업(popup1)이 더 높은 z-index를 가지도록 설정
+  const zIndex = id === 'popup1' ? 'z-[10000]' : 'z-[9999]';
+
   return (
     <div 
-      className={`fixed inset-0 z-[9999] flex transition-all duration-300 ${
+      className={`fixed inset-0 ${zIndex} flex transition-all duration-300 ${
         isAnimating ? 'bg-black/30' : 'bg-transparent'
       } ${
         position === 'left' ? 'items-center justify-start pl-4' :
