@@ -209,6 +209,7 @@ export default function PopupModal({
               className="w-full h-auto object-contain rounded-2xl"
               controls
               autoPlay={true}
+              muted
               loop
               playsInline
               onLoadedMetadata={handleVideoLoad}
@@ -289,7 +290,7 @@ export function PopupManager() {
       videoUrl: '/attached_assets/Purple, White and Black Modern Animated Business Advertising Mobile Video_1754481387483.mp4',
       type: 'video' as const,
       description: '코코미술학원의 전문적인 교육 프로그램과 특별한 교육 환경을 영상으로 만나보세요.',
-      delay: 10, // 10초 후 표시
+      delay: 8, // 8초 후 표시 (수상자 팝업 2초 후)
       isLarge: true
     }
   ];
