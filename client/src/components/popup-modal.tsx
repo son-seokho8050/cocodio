@@ -106,7 +106,9 @@ export default function PopupModal({
     const isTeacherProfile = id === 'popup1' || id === 'popup2';
     // 수상자 팝업(popup3)은 2배 크게 표시
     const isContestPopup = id === 'popup3';
-    const sizeMultiplier = isTeacherProfile ? 2.16 : isContestPopup ? 2.0 : 1.0;
+    // 영상 팝업(popup4)은 1.5배 크게 표시
+    const isVideoPopup = id === 'popup4';
+    const sizeMultiplier = isTeacherProfile ? 2.16 : isContestPopup ? 2.0 : isVideoPopup ? 1.5 : 1.0;
     
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
