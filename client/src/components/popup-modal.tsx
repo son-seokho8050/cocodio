@@ -198,7 +198,6 @@ export default function PopupModal({
               className="w-full h-auto object-contain rounded-2xl"
               controls
               autoPlay={true}
-              muted
               loop
               playsInline
               onLoadedMetadata={handleVideoLoad}
