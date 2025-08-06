@@ -102,11 +102,11 @@ export default function PopupModal({
     // 좌우 배치일 때는 더 작은 크기 사용
     const isPositioned = position === 'left' || position === 'right';
     
-    // 강사 프로필 팝업들(popup1, popup2)은 44% 더 크게 표시 (20% + 20%)
+    // 강사 프로필 팝업들(popup1, popup2)은 116% 더 크게 표시 (1.44 × 1.5 = 2.16)
     const isTeacherProfile = id === 'popup1' || id === 'popup2';
     // 수상자 팝업(popup3)은 2배 크게 표시
     const isContestPopup = id === 'popup3';
-    const sizeMultiplier = isTeacherProfile ? 1.44 : isContestPopup ? 2.0 : 1.0;
+    const sizeMultiplier = isTeacherProfile ? 2.16 : isContestPopup ? 2.0 : 1.0;
     
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
