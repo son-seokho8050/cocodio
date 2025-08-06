@@ -265,6 +265,15 @@ export function PopupManager() {
       linkText: '합격 실적 보기',
       delay: 6, // 6초 후 표시
       isLarge: true // 2배 크기로 표시
+    },
+    {
+      id: 'popup4',
+      title: '코코미술학원 홍보영상',
+      videoUrl: '/attached_assets/Purple, White and Black Modern Animated Business Advertising Mobile Video_1754481387483.mp4',
+      type: 'video' as const,
+      description: '코코미술학원의 전문적인 교육 프로그램과 특별한 교육 환경을 영상으로 만나보세요.',
+      delay: 10, // 10초 후 표시
+      isLarge: true
     }
   ];
 
