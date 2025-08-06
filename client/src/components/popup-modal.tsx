@@ -265,15 +265,6 @@ export function PopupManager() {
       linkText: '합격 실적 보기',
       delay: 6, // 6초 후 표시
       isLarge: true // 2배 크기로 표시
-    },
-    {
-      id: 'popup4',
-      title: '2025 코코 여름방학 특강',
-      videoUrl: '/attached_assets/COCODIO의 사본_1751698559152.mp4',
-      type: 'video' as const,
-      description: '코코미술학원의 특별한 여름방학 특강 프로그램을 영상으로 만나보세요.',
-      delay: 12, // 12초 후 표시
-      isLarge: true
     }
   ];
 
