@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
@@ -35,6 +35,7 @@ export default function PopupModal({
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [mediaDimensions, setMediaDimensions] = useState<{width: number, height: number} | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // 오늘 하루 동안 이 팝업을 본 적이 있는지 확인
@@ -88,6 +89,13 @@ export default function PopupModal({
       width: video.videoWidth,
       height: video.videoHeight
     });
+    
+    // 자동재생 강제 실행
+    setTimeout(() => {
+      video.play().catch(error => {
+        console.log('자동재생이 차단되었습니다. 사용자가 수동으로 재생할 수 있습니다.', error);
+      });
+    }, 500);
   };
 
   const getModalStyle = () => {
@@ -196,6 +204,7 @@ export default function PopupModal({
         <div className="relative overflow-hidden rounded-2xl" style={{ backgroundColor: 'transparent' }}>
           {type === 'video' && videoUrl ? (
             <video 
+              ref={videoRef}
               src={videoUrl}
               className="w-full h-auto object-contain rounded-2xl"
               controls
@@ -203,6 +212,13 @@ export default function PopupModal({
               loop
               playsInline
               onLoadedMetadata={handleVideoLoad}
+              onCanPlay={() => {
+                if (videoRef.current) {
+                  videoRef.current.play().catch(error => {
+                    console.log('자동재생이 차단되었습니다:', error);
+                  });
+                }
+              }}
             />
           ) : (
             <img 
