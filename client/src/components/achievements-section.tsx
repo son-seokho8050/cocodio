@@ -51,7 +51,7 @@ export default function AchievementsSection() {
     },
     {
       icon: Award,
-      title: "지역 최고 실력",
+      title: "검증된 실기력",
       stats: [
         "마산/김해 지역 대표 학원",
         "검증된 합격 실적",
