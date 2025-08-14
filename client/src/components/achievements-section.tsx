@@ -7,6 +7,7 @@ export default function AchievementsSection() {
       icon: Trophy,
       title: "2025 실기대회 수상",
       stats: [
+        "동덕여대 2년연속 동상 수상",
         "국민대 기초조형 2명 수상",
         "건국대글로컬 지역최다 50명",
         "계명대 장려상4명·최다25명",
@@ -15,6 +16,7 @@ export default function AchievementsSection() {
         "영남대 장려상2명·최다7명",
         "동아대 은상/동상 수상",
         "경성대 은상/특선 수상",
+        "청강대 칸만화 2명 수상",
         "동서대 장려상 4명 수상",
         "동명대 한국미술협회상 수상",
         "삼육대 다수 수상",
