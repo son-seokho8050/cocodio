@@ -287,7 +287,7 @@ export function PopupManager() {
     {
       id: 'popup4',
       title: '코코미술학원 홍보영상',
-      videoUrl: '/attached_assets/Purple, White and Black Modern Animated Business Advertising Mobile Video_1754481387483.mp4',
+      videoUrl: '/attached_assets/Purple, White and Black Modern Animated Business Advertising Mobile Video_1755158960285.mp4',
       type: 'video' as const,
       description: '코코미술학원의 전문적인 교육 프로그램과 특별한 교육 환경을 영상으로 만나보세요.',
       delay: 8, // 8초 후 표시 (수상자 팝업 2초 후)
