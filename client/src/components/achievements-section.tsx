@@ -90,7 +90,7 @@ export default function AchievementsSection() {
                   </h3>
                   <ul className="space-y-2">
                     {achievement.stats.map((stat, statIndex) => (
-                      <li key={statIndex} className="text-sm text-gray-600 flex items-center ml-[-12px] mr-[-12px]">
+                      <li key={statIndex} className="text-sm text-gray-600 flex items-center justify-center text-center ml-[-12px] mr-[-12px]">
                         <div className={`w-2 h-2 ${achievement.color.replace('text-', 'bg-')} rounded-full mr-3 flex-shrink-0`}></div>
                         {stat}
                       </li>
