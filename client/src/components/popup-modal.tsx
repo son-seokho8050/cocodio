@@ -283,8 +283,8 @@ export default function PopupModal({
           )}
         </div>
 
-        {/* 설명과 링크 버튼 */}
-        {(description || linkUrl) && (
+        {/* 설명과 링크 버튼 - 전시회 팝업(popup5)에만 표시 */}
+        {id === 'popup5' && (description || linkUrl) && (
           <div className="p-6 bg-white rounded-b-2xl">
             {description && (
               <p className="text-sm text-gray-700 mb-4 text-center leading-relaxed whitespace-pre-line">
