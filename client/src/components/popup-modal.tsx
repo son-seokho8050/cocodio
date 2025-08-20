@@ -364,7 +364,7 @@ export function PopupManager() {
       imageUrl: '/attached_assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg',
       type: 'image' as const,
       description: '창동 상상갤러리에서 개최되는 학생 작품 전시회에 여러분을 초대합니다.\n8월 21일~26일, 오전 11시~오후 7시, 입장료 무료!',
-      linkUrl: 'tel:010-4472-2028',
+      linkUrl: 'https://blog.naver.com/cocodioart/223977188171',
       linkText: '전시회 문의하기',
       delay: 5, // 5초 후 표시 (테스트용)
       isLarge: true
