@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
 import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
 import contestImage2025 from "@assets/제목 없음 (60 x 80 cm)_1755159094713.jpg";
+import exhibitionPoster from "@assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg";
 
 interface PopupModalProps {
   id: string;
@@ -291,6 +292,17 @@ export function PopupManager() {
       type: 'video' as const,
       description: '코코미술학원의 전문적인 교육 프로그램과 특별한 교육 환경을 영상으로 만나보세요.',
       delay: 8, // 8초 후 표시 (수상자 팝업 2초 후)
+      isLarge: true
+    },
+    {
+      id: 'popup5',
+      title: 'ART STUDENT EXHIBITION 2025',
+      imageUrl: exhibitionPoster,
+      type: 'image' as const,
+      description: '창동 상상갤러리에서 개최되는 학생 작품 전시회에 여러분을 초대합니다. 8월 21일~26일, 오전 11시~오후 7시, 입장료 무료!',
+      linkUrl: 'tel:010-4472-2028',
+      linkText: '전시회 문의하기',
+      delay: 10, // 10초 후 표시
       isLarge: true
     }
   ];
