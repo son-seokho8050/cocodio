@@ -43,8 +43,12 @@ export default function PopupModal({
     const today = new Date().toDateString();
     const hasSeenToday = localStorage.getItem(`popup-${id}-seen`) === today;
     
+    console.log(`Popup ${id}: hasSeenToday = ${hasSeenToday}, delay = ${delay}`);
+    
     if (!hasSeenToday) {
+      console.log(`Setting timer for popup ${id} with ${delay} seconds delay`);
       const timer = setTimeout(() => {
+        console.log(`Showing popup ${id}`);
         setIsVisible(true);
         setTimeout(() => setIsAnimating(true), 100);
       }, delay * 1000);
@@ -302,7 +306,7 @@ export function PopupManager() {
       description: '창동 상상갤러리에서 개최되는 학생 작품 전시회에 여러분을 초대합니다. 8월 21일~26일, 오전 11시~오후 7시, 입장료 무료!',
       linkUrl: 'tel:010-4472-2028',
       linkText: '전시회 문의하기',
-      delay: 10, // 10초 후 표시
+      delay: 5, // 5초 후 표시 (테스트용)
       isLarge: true
     }
   ];
