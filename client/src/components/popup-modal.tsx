@@ -319,9 +319,7 @@ export function PopupManager() {
       title: '총원장 유영범 소개',
       imageUrl: directorYoungBeom,
       type: 'image' as const,
-      description: '서울대 출신 총원장의 체계적인 미대입시 전문 교육과 풍부한 경험을 만나보세요.',
       linkUrl: 'https://blog.naver.com/coco2238050',
-      linkText: '원장님 스토리 보기',
       delay: 3, // 3초 후 표시
       isLarge: true, // 큰 크기로 표시
       position: 'left' as const // 화면 왼쪽에 배치
@@ -331,9 +329,7 @@ export function PopupManager() {
       title: '말랑T X 유준석 강사 소개',
       imageUrl: directorJunSeok,
       type: 'image' as const,
-      description: '디지털 드로잉과 만화/애니메이션 전문 강사의 창의적인 교육을 경험해보세요.',
       linkUrl: 'https://blog.naver.com/cocodioart',
-      linkText: '강사 포트폴리오 보기',
       delay: 3, // 동시에 표시
       isLarge: true,
       position: 'right' as const // 화면 오른쪽에 배치
@@ -343,9 +339,7 @@ export function PopupManager() {
       title: '2025 미대실기대회 수상 소식',
       imageUrl: contestImage2025,
       type: 'image' as const,
-      description: '재능의 출발점! 2025 미대실기대회에서 경희대 지역최다 10명, 건국대글로컬 지역최다 50명, 한양대 지역최다 17명 등 최다 수상 달성!',
       linkUrl: '/admissions/2025',
-      linkText: '합격 실적 보기',
       delay: 6, // 6초 후 표시
       isLarge: true // 2배 크기로 표시
     },
@@ -354,7 +348,6 @@ export function PopupManager() {
       title: '코코미술학원 홍보영상',
       videoUrl: '/attached_assets/Purple, White and Black Modern Animated Business Advertising Mobile Video_1755158960285.mp4',
       type: 'video' as const,
-      description: '코코미술학원의 전문적인 교육 프로그램과 특별한 교육 환경을 영상으로 만나보세요.',
       delay: 8, // 8초 후 표시 (수상자 팝업 2초 후)
       isLarge: true
     },
