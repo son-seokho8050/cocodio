@@ -229,6 +229,35 @@ export default function PopupModal({
                 }
               }}
             />
+          ) : linkUrl ? (
+            <a 
+              href={linkUrl} 
+              target={linkUrl.startsWith('http') ? '_blank' : '_self'}
+              rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="block cursor-pointer"
+            >
+              <img 
+                src={imageUrl || ''}
+                alt={title}
+                className="w-full h-auto object-contain rounded-2xl hover:opacity-90 transition-opacity"
+                style={{ 
+                  filter: 'brightness(1) contrast(1)', 
+                  imageRendering: 'auto',
+                  opacity: 1,
+                  colorAdjust: 'exact',
+                  WebkitColorAdjust: 'exact'
+                } as React.CSSProperties}
+                loading="eager"
+                decoding="async"
+                onLoad={(e) => {
+                  console.log(`Image loaded for ${id}:`, imageUrl);
+                  handleImageLoad(e);
+                }}
+                onError={(e) => {
+                  console.error(`Image failed to load for ${id}:`, imageUrl);
+                }}
+              />
+            </a>
           ) : (
             <img 
               src={imageUrl || ''}
