@@ -160,6 +160,7 @@ export default function PopupModal({
   // - 강사 프로필: popup1(왼쪽) > popup2(오른쪽)
   // - 나중 팝업들: popup3, popup4 > 강사 프로필들
   const getZIndex = () => {
+    if (id === 'popup5') return 'z-[10003]'; // 전시회 팝업 최상위
     if (id === 'popup3' || id === 'popup4') return 'z-[10002]'; // 수상자, 동영상 팝업 최상위
     if (id === 'popup1') return 'z-[10001]'; // 총원장 유영범 (왼쪽) 우선
     if (id === 'popup2') return 'z-[10000]'; // 말랑T 유준석 (오른쪽)
@@ -240,7 +241,13 @@ export default function PopupModal({
               } as React.CSSProperties}
               loading="eager"
               decoding="async"
-              onLoad={handleImageLoad}
+              onLoad={(e) => {
+                console.log(`Image loaded for ${id}:`, imageUrl);
+                handleImageLoad(e);
+              }}
+              onError={(e) => {
+                console.error(`Image failed to load for ${id}:`, imageUrl);
+              }}
             />
           )}
         </div>
@@ -301,7 +308,7 @@ export function PopupManager() {
     {
       id: 'popup5',
       title: 'ART STUDENT EXHIBITION 2025',
-      imageUrl: exhibitionPoster,
+      imageUrl: '/attached_assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg',
       type: 'image' as const,
       description: '창동 상상갤러리에서 개최되는 학생 작품 전시회에 여러분을 초대합니다. 8월 21일~26일, 오전 11시~오후 7시, 입장료 무료!',
       linkUrl: 'tel:010-4472-2028',
