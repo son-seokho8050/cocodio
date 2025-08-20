@@ -283,6 +283,28 @@ export default function PopupModal({
           )}
         </div>
 
+        {/* 설명과 링크 버튼 */}
+        {(description || linkUrl) && (
+          <div className="p-6 bg-white rounded-b-2xl">
+            {description && (
+              <p className="text-sm text-gray-700 mb-4 text-center leading-relaxed">
+                {description}
+              </p>
+            )}
+            {linkUrl && linkText && (
+              <div className="text-center">
+                <a
+                  href={linkUrl}
+                  target={linkUrl.startsWith('http') ? '_blank' : '_self'}
+                  rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="inline-flex items-center justify-center px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors touch-manipulation min-h-[44px]"
+                >
+                  {linkText}
+                </a>
+              </div>
+            )}
+          </div>
+        )}
 
       </div>
     </div>
