@@ -121,7 +121,9 @@ export default function PopupModal({
     const isContestPopup = id === 'popup3';
     // 영상 팝업(popup4)은 1.2배 크게 표시 (닫기 버튼 접근성 개선)
     const isVideoPopup = id === 'popup4';
-    const sizeMultiplier = isTeacherProfile ? 2.16 : isContestPopup ? 1.3 : isVideoPopup ? 1.2 : 1.0;
+    // 전시회 팝업(popup5)은 1.8배 크게 표시 (글자 가독성 개선)
+    const isExhibitionPopup = id === 'popup5';
+    const sizeMultiplier = isTeacherProfile ? 2.16 : isContestPopup ? 1.3 : isVideoPopup ? 1.2 : isExhibitionPopup ? 1.8 : 1.0;
     
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
