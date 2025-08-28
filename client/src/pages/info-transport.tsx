@@ -28,15 +28,6 @@ export default function InfoTransport() {
                 />
               </div>
 
-              <div className="flex justify-center items-center">
-                <p className="text-lg text-gray-600 text-center">
-                  안전하고 신뢰할 수 있는 차량운행 서비스로<br />
-                  학생들의 안전한 등하원을 책임집니다.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                   <Clock className="h-5 w-5 text-amber-600 mr-2" />
@@ -56,7 +47,9 @@ export default function InfoTransport() {
                   </p>
                 </div>
               </div>
+            </div>
 
+            <div className="mb-8">
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">이용 안내</h3>
                 <div className="space-y-3 text-gray-700">
