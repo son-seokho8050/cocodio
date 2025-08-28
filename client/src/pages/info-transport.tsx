@@ -28,46 +28,11 @@ export default function InfoTransport() {
                 />
               </div>
 
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">운행 지역</h3>
-                  <ul className="space-y-3 text-gray-700">
-                    <li className="flex items-center">
-                      <MapPin className="h-4 w-4 text-green-600 mr-3" />
-                      마산전 지역
-                    </li>
-                    <li className="flex items-center">
-                      <MapPin className="h-4 w-4 text-green-600 mr-3" />
-                      함안전 지역
-                    </li>
-                    <li className="flex items-center">
-                      <MapPin className="h-4 w-4 text-green-600 mr-3" />
-                      남지, 군북 기타지역
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">서비스 특징</h3>
-                  <ul className="space-y-3 text-gray-700">
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      안전한 등하원 서비스
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      정해진 시간과 장소 운행
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      학부모 안심 서비스
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                      안전한 차량과 숙련된 운전자
-                    </li>
-                  </ul>
-                </div>
+              <div className="flex justify-center items-center">
+                <p className="text-lg text-gray-600 text-center">
+                  안전하고 신뢰할 수 있는 차량운행 서비스로<br />
+                  학생들의 안전한 등하원을 책임집니다.
+                </p>
               </div>
             </div>
 
