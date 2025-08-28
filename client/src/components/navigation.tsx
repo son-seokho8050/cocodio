@@ -91,10 +91,10 @@ export default function Navigation() {
             </button>
           </div>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <Button 
               onClick={scrollToContact}
-              className="bg-primary-600 hover:bg-primary-700 text-white"
+              className="bg-primary-600 hover:bg-primary-700 text-white ml-4"
             >
               상담신청
             </Button>
