@@ -38,6 +38,7 @@ export default function InfoTransport() {
                     <div>
                       <p className="font-medium">등원 운행</p>
                       <p className="text-xs text-gray-600">오후 시간대 (수업 시작 전)</p>
+                      <p className="text-xs text-gray-500 mt-1">함안, 내서, 중리 방면</p>
                     </div>
                     <div>
                       <p className="font-medium">하원 운행</p>
