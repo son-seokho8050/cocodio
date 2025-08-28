@@ -85,19 +85,12 @@ export default function InfoTuition() {
                   개인별 맞춤 상담을 통해 최적의 과정과 교습비를 안내해드리겠습니다.
                 </p>
                 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex justify-center">
                   <div className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-primary-600" />
                     <div>
                       <p className="font-medium text-gray-900">마산점</p>
                       <p className="text-gray-600">010-4472-2028</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-green-600" />
-                    <div>
-                      <p className="font-medium text-gray-900">김해점</p>
-                      <p className="text-gray-600">010-3158-2028</p>
                     </div>
                   </div>
                 </div>
