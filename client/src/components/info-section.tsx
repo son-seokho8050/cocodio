@@ -1,4 +1,4 @@
-import { Clock, MapPin, Phone, Mail, Car, Bus, CreditCard, Shield, ArrowRight } from "lucide-react";
+import { Clock, MapPin, Phone, Mail, Car, Bus, CreditCard, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function InfoSection() {
@@ -58,7 +58,7 @@ export default function InfoSection() {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="p-3 bg-yellow-100 rounded-lg">
-                    <Shield className="h-6 w-6 text-yellow-600" />
+                    <Bus className="h-6 w-6 text-yellow-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">안전귀가 차량운행</h3>
                 </div>
