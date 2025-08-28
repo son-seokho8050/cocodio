@@ -23,7 +23,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors cursor-pointer">COCODIO</Link>
-            <div className="hidden md:block ml-2 text-sm text-gray-500">DESIGN/ COMICS/ DIGITAL DRAWING</div>
+            <div className="hidden md:block ml-2 text-xs text-gray-500">DESIGN/ COMICS/ DIGITAL DRAWING</div>
           </div>
           
           <div className="hidden md:flex space-x-8">
