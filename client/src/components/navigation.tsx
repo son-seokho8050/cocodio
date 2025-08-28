@@ -21,12 +21,12 @@ export default function Navigation() {
     <nav className="bg-white shadow-lg fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <div className="flex items-center min-w-0">
             <Link href="/" className="text-3xl font-bold text-primary-600 hover:text-primary-700 transition-colors cursor-pointer">COCODIO</Link>
-            <div className="hidden md:block ml-2 text-xs text-gray-500">DESIGN/ COMICS/ DIGITAL DRAWING</div>
+            <div className="hidden md:block ml-2 text-xs text-gray-500 whitespace-nowrap">DESIGN/ COMICS/ DIGITAL DRAWING</div>
           </div>
           
-          <div className="hidden md:flex space-x-8 ml-8">
+          <div className="hidden md:flex space-x-6 flex-1 justify-center ml-12">
             <button
               onClick={() => scrollToSection('about')}
               className="text-gray-700 hover:text-primary-600 transition-colors"
@@ -91,10 +91,10 @@ export default function Navigation() {
             </button>
           </div>
           
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center">
             <Button 
               onClick={scrollToContact}
-              className="bg-primary-600 hover:bg-primary-700 text-white ml-4"
+              className="bg-primary-600 hover:bg-primary-700 text-white"
             >
               상담신청
             </Button>
