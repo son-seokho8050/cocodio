@@ -32,10 +32,7 @@ export default function InfoTuition() {
                       <span className="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
                       소수정예 클래스 운영
                     </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
-                      전문 강사진 1:1 지도
-                    </li>
+
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
                       재료비 별도 (개별 구매)
