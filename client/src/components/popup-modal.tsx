@@ -283,28 +283,7 @@ export default function PopupModal({
           )}
         </div>
 
-        {/* 설명과 링크 버튼 - 전시회 팝업(popup5)에만 표시 */}
-        {id === 'popup5' && (description || linkUrl) && (
-          <div className="p-6 bg-white rounded-b-2xl">
-            {description && (
-              <p className="text-sm text-gray-700 mb-4 text-center leading-relaxed whitespace-pre-line">
-                {description}
-              </p>
-            )}
-            {linkUrl && linkText && (
-              <div className="text-center">
-                <a
-                  href={linkUrl}
-                  target={linkUrl.startsWith('http') ? '_blank' : '_self'}
-                  rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="inline-flex items-center justify-center px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors touch-manipulation min-h-[44px]"
-                >
-                  {linkText}
-                </a>
-              </div>
-            )}
-          </div>
-        )}
+
 
       </div>
     </div>
@@ -351,17 +330,7 @@ export function PopupManager() {
       delay: 8, // 8초 후 표시 (수상자 팝업 2초 후)
       isLarge: true
     },
-    {
-      id: 'popup5',
-      title: 'ART STUDENT EXHIBITION 2025',
-      imageUrl: '/attached_assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg',
-      type: 'image' as const,
-      description: '창동 상상갤러리에서 개최되는 학생 작품 전시회에 여러분을 초대합니다.\n8월 21일~26일, 오전 11시~오후 7시, 입장료 무료!',
-      linkUrl: 'https://blog.naver.com/cocodioart/223977188171',
-      linkText: '전시회 문의하기',
-      delay: 5, // 5초 후 표시 (테스트용)
-      isLarge: true
-    }
+
   ];
 
   return (
