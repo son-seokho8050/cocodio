@@ -26,16 +26,16 @@ export default function Navigation() {
             <div className="hidden md:block ml-2 text-xs text-gray-500 whitespace-nowrap">DESIGN/ COMICS/ DIGITAL DRAWING</div>
           </div>
           
-          <div className="hidden md:flex space-x-6 flex-1 justify-center ml-12">
+          <div className="hidden md:flex items-center space-x-6 flex-1 justify-center ml-12">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors py-1"
             >
               학원소개
             </button>
             <button
               onClick={() => scrollToSection('curriculum')}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors py-1"
             >
               커리큘럼
             </button>
@@ -46,7 +46,7 @@ export default function Navigation() {
               onMouseLeave={() => setIsAdmissionsOpen(false)}
             >
               <button
-                className="text-gray-700 hover:text-primary-600 transition-colors flex items-center"
+                className="text-gray-700 hover:text-primary-600 transition-colors flex items-center py-1"
               >
                 합격자명단
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -73,19 +73,19 @@ export default function Navigation() {
             </div>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors py-1"
             >
               FOLLOW 시스템
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors py-1"
             >
               적성테스트
             </button>
             <button
               onClick={() => scrollToSection('info')}
-              className="text-gray-700 hover:text-primary-600 transition-colors"
+              className="text-gray-700 hover:text-primary-600 transition-colors py-1"
             >
               안내
             </button>
