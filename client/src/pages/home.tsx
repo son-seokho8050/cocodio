@@ -6,6 +6,7 @@ import AchievementsSection from "@/components/achievements-section";
 import CurriculumSection from "@/components/curriculum-section";
 import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
+import InfoSection from "@/components/info-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import ChatWidget from "@/components/chat-widget";
@@ -31,6 +32,7 @@ export default function Home() {
       <CurriculumSection />
       <PortfolioSection />
       <TestimonialsSection />
+      <InfoSection />
       <ContactSection />
       <Footer />
       

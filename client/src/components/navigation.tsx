@@ -83,6 +83,12 @@ export default function Navigation() {
             >
               적성테스트
             </button>
+            <button
+              onClick={() => scrollToSection('info')}
+              className="text-gray-700 hover:text-primary-600 transition-colors"
+            >
+              안내
+            </button>
           </div>
           
           <div className="flex items-center space-x-4">
@@ -152,6 +158,12 @@ export default function Navigation() {
                 className="text-gray-700 hover:text-primary-600 transition-colors text-left"
               >
                 적성테스트
+              </button>
+              <button
+                onClick={() => scrollToSection('info')}
+                className="text-gray-700 hover:text-primary-600 transition-colors text-left"
+              >
+                안내
               </button>
             </div>
           </div>
