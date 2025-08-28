@@ -91,7 +91,7 @@ export default function Navigation() {
             </button>
           </div>
           
-          <div className="flex items-center">
+          <div className="flex items-center ml-8">
             <Button 
               onClick={scrollToContact}
               className="bg-primary-600 hover:bg-primary-700 text-white"
