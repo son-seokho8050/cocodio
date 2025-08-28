@@ -82,7 +82,6 @@ export default function InfoTuition() {
               <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">상담 및 문의</h3>
                 <p className="text-gray-700 mb-6">
-                  정확한 수강료는 학생의 목표, 현재 수준, 선택 과정에 따라 달라질 수 있습니다. 
                   개인별 맞춤 상담을 통해 최적의 과정과 교습비를 안내해드리겠습니다.
                 </p>
                 
