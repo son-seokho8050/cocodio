@@ -26,16 +26,16 @@ export default function Navigation() {
             <div className="hidden md:block ml-2 text-xs text-gray-500 whitespace-nowrap">DESIGN/ COMICS/ DIGITAL DRAWING</div>
           </div>
           
-          <div className="hidden md:flex items-center space-x-6 flex-1 justify-center ml-12">
+          <div className="hidden md:flex items-center space-x-4 flex-1 justify-center ml-8">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-gray-700 hover:text-primary-600 transition-colors leading-none"
+              className="text-sm text-gray-700 hover:text-primary-600 transition-colors leading-none whitespace-nowrap"
             >
               학원소개
             </button>
             <button
               onClick={() => scrollToSection('curriculum')}
-              className="text-gray-700 hover:text-primary-600 transition-colors leading-none"
+              className="text-sm text-gray-700 hover:text-primary-600 transition-colors leading-none whitespace-nowrap"
             >
               커리큘럼
             </button>
@@ -46,10 +46,10 @@ export default function Navigation() {
               onMouseLeave={() => setIsAdmissionsOpen(false)}
             >
               <button
-                className="text-gray-700 hover:text-primary-600 transition-colors flex items-center leading-none"
+                className="text-sm text-gray-700 hover:text-primary-600 transition-colors flex items-center leading-none whitespace-nowrap"
               >
                 합격자명단
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className="ml-1 h-3 w-3" />
               </button>
               {isAdmissionsOpen && (
                 <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[160px] z-50 border">
@@ -73,28 +73,28 @@ export default function Navigation() {
             </div>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-gray-700 hover:text-primary-600 transition-colors leading-none"
+              className="text-sm text-gray-700 hover:text-primary-600 transition-colors leading-none whitespace-nowrap"
             >
               FOLLOW 시스템
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-gray-700 hover:text-primary-600 transition-colors leading-none"
+              className="text-sm text-gray-700 hover:text-primary-600 transition-colors leading-none whitespace-nowrap"
             >
               적성테스트
             </button>
             <button
               onClick={() => scrollToSection('info')}
-              className="text-gray-700 hover:text-primary-600 transition-colors leading-none"
+              className="text-sm text-gray-700 hover:text-primary-600 transition-colors leading-none whitespace-nowrap"
             >
               안내
             </button>
           </div>
           
-          <div className="flex items-center ml-8">
+          <div className="flex items-center ml-6">
             <Button 
               onClick={scrollToContact}
-              className="bg-primary-600 hover:bg-primary-700 text-white"
+              className="bg-primary-600 hover:bg-primary-700 text-white text-sm px-4 py-2"
             >
               상담신청
             </Button>
