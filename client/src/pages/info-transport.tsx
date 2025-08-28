@@ -19,56 +19,56 @@ export default function InfoTransport() {
 
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="p-8">
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="flex justify-center">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="md:col-span-2 flex justify-center">
                 <img 
                   src="/assets/safe-transport.png" 
                   alt="안전귀가 차량운행" 
-                  className="w-full max-w-md h-auto rounded-lg shadow-lg"
+                  className="w-full max-w-lg h-auto rounded-lg shadow-lg"
                 />
               </div>
 
-              <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                  <Clock className="h-5 w-5 text-amber-600 mr-2" />
-                  운행 시간
-                </h3>
-                <div className="space-y-3 text-gray-700">
-                  <div>
-                    <p className="font-medium">등원 운행</p>
-                    <p className="text-sm">오후 시간대 (수업 시작 전)</p>
+              <div className="space-y-4">
+                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <Clock className="h-4 w-4 text-amber-600 mr-2" />
+                    운행 시간
+                  </h3>
+                  <div className="space-y-2 text-sm text-gray-700">
+                    <div>
+                      <p className="font-medium">등원 운행</p>
+                      <p className="text-xs">오후 시간대</p>
+                    </div>
+                    <div>
+                      <p className="font-medium">하원 운행</p>
+                      <p className="text-xs">수업 종료 후</p>
+                    </div>
+                    <p className="text-xs text-amber-700 bg-amber-100 rounded p-1">
+                      지역별 상황에 따라 조정
+                    </p>
                   </div>
-                  <div>
-                    <p className="font-medium">하원 운행</p>
-                    <p className="text-sm">수업 종료 후 (저녁 시간대)</p>
-                  </div>
-                  <p className="text-sm text-amber-700 bg-amber-100 rounded p-2">
-                    정확한 시간은 지역별 상황에 따라 조정됩니다.
-                  </p>
                 </div>
-              </div>
-            </div>
 
-            <div className="mb-8">
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">이용 안내</h3>
-                <div className="space-y-3 text-gray-700">
-                  <p className="flex items-start">
-                    <span className="w-6 h-6 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
-                    상담 시 거주 지역 확인
-                  </p>
-                  <p className="flex items-start">
-                    <span className="w-6 h-6 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
-                    차량 운행 가능 여부 안내
-                  </p>
-                  <p className="flex items-start">
-                    <span className="w-6 h-6 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</span>
-                    운행 시간 및 정류장 안내
-                  </p>
-                  <p className="flex items-start">
-                    <span className="w-6 h-6 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</span>
-                    안전 귀가 서비스 시작
-                  </p>
+                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-4">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">이용 안내</h3>
+                  <div className="space-y-2 text-sm text-gray-700">
+                    <p className="flex items-center">
+                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">1</span>
+                      지역 확인
+                    </p>
+                    <p className="flex items-center">
+                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">2</span>
+                      운행 가능성 안내
+                    </p>
+                    <p className="flex items-center">
+                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">3</span>
+                      시간 및 정류장 안내
+                    </p>
+                    <p className="flex items-center">
+                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">4</span>
+                      서비스 시작
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
