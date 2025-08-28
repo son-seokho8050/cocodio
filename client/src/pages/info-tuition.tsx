@@ -69,9 +69,7 @@ export default function InfoTuition() {
                   alt="교습비 계시표" 
                   className="w-full h-auto rounded-lg shadow-lg mb-6"
                 />
-                <p className="text-sm text-gray-500 text-center">
-                  * 상기 금액은 참고용이며, 정확한 교습비는 상담을 통해 안내해드립니다.
-                </p>
+
               </div>
             </div>
 
