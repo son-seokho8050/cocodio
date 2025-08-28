@@ -76,56 +76,7 @@ export default function InfoTransport() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-6 mb-8">
-              <div className="flex items-start">
-                <AlertCircle className="h-5 w-5 text-orange-600 mr-3 mt-0.5" />
-                <div>
-                  <h3 className="text-lg font-semibold text-orange-900 mb-2">중요 안내사항</h3>
-                  <ul className="text-orange-800 space-y-1 text-sm">
-                    <li>• 차량 운행은 지역별 수요에 따라 운영됩니다.</li>
-                    <li>• 정확한 운행 지역과 시간은 상담 시 개별 안내됩니다.</li>
-                    <li>• 기상 상황이나 특별한 사정으로 운행이 어려울 수 있습니다.</li>
-                    <li>• 차량 이용료는 별도 문의 바랍니다.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
 
-            <div className="border-t pt-8">
-              <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">차량 운행 문의</h3>
-                <p className="text-gray-700 mb-6">
-                  안전귀가 차량 서비스에 대한 자세한 사항은 각 캠퍼스로 문의해주세요.
-                </p>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-primary-600" />
-                    <div>
-                      <p className="font-medium text-gray-900">마산점</p>
-                      <p className="text-gray-600">010-4472-2028</p>
-                      <p className="text-sm text-gray-500">마산전 지역, 함안전 지역 운행</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-green-600" />
-                    <div>
-                      <p className="font-medium text-gray-900">김해점</p>
-                      <p className="text-gray-600">010-3158-2028</p>
-                      <p className="text-sm text-gray-500">김해 및 주변 지역 운행</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 flex justify-center">
-                  <Link href="/#contact">
-                    <Button className="bg-primary-600 hover:bg-primary-700">
-                      상담 신청하기
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
