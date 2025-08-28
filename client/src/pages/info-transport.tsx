@@ -28,45 +28,47 @@ export default function InfoTransport() {
                 />
               </div>
 
-              <div className="space-y-4">
-                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+              <div className="flex flex-col h-full justify-between">
+                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-lg p-6 flex-1 mb-4">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                     <Clock className="h-4 w-4 text-amber-600 mr-2" />
                     운행 시간
                   </h3>
-                  <div className="space-y-2 text-sm text-gray-700">
+                  <div className="space-y-4 text-sm text-gray-700">
                     <div>
                       <p className="font-medium">등원 운행</p>
-                      <p className="text-xs">오후 시간대</p>
+                      <p className="text-xs text-gray-600">오후 시간대 (수업 시작 전)</p>
                     </div>
                     <div>
                       <p className="font-medium">하원 운행</p>
-                      <p className="text-xs">수업 종료 후</p>
+                      <p className="text-xs text-gray-600">수업 종료 후 (저녁 시간대)</p>
                     </div>
-                    <p className="text-xs text-amber-700 bg-amber-100 rounded p-1">
-                      지역별 상황에 따라 조정
-                    </p>
+                    <div className="mt-4">
+                      <p className="text-xs text-amber-700 bg-amber-100 rounded p-2">
+                        정확한 시간은 지역별 상황에 따라 조정됩니다.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">이용 안내</h3>
-                  <div className="space-y-2 text-sm text-gray-700">
+                <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-6 flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">이용 안내</h3>
+                  <div className="space-y-3 text-sm text-gray-700">
                     <p className="flex items-center">
-                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">1</span>
-                      지역 확인
+                      <span className="w-5 h-5 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
+                      상담 시 거주 지역 확인
                     </p>
                     <p className="flex items-center">
-                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">2</span>
-                      운행 가능성 안내
+                      <span className="w-5 h-5 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">2</span>
+                      차량 운행 가능 여부 안내
                     </p>
                     <p className="flex items-center">
-                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">3</span>
-                      시간 및 정류장 안내
+                      <span className="w-5 h-5 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">3</span>
+                      운행 시간 및 정류장 안내
                     </p>
                     <p className="flex items-center">
-                      <span className="w-4 h-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">4</span>
-                      서비스 시작
+                      <span className="w-5 h-5 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">4</span>
+                      안전 귀가 서비스 시작
                     </p>
                   </div>
                 </div>
