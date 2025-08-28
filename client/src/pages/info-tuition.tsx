@@ -73,24 +73,7 @@ export default function InfoTuition() {
               </div>
             </div>
 
-            <div className="border-t pt-8">
-              <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">상담 및 문의</h3>
-                <p className="text-gray-700 mb-6">
-                  개인별 맞춤 상담을 통해 최적의 과정과 교습비를 안내해드리겠습니다.
-                </p>
-                
 
-
-                <div className="mt-6 flex justify-center">
-                  <Link href="/#contact">
-                    <Button className="bg-primary-600 hover:bg-primary-700">
-                      온라인 상담 신청하기
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
