@@ -11,6 +11,8 @@ import Admissions2024 from "@/pages/admissions/2024";
 import Admissions2023 from "@/pages/admissions/2023";
 import Admissions2022 from "@/pages/admissions/2022";
 import AdminConsultations from "@/pages/admin/consultations";
+import InfoTuition from "@/pages/info-tuition";
+import InfoTransport from "@/pages/info-transport";
 
 function Router() {
   return (
@@ -23,6 +25,8 @@ function Router() {
       <Route path="/admissions/2024" component={Admissions2024} />
       <Route path="/admissions/2023" component={Admissions2023} />
       <Route path="/admissions/2022" component={Admissions2022} />
+      <Route path="/info/tuition" component={InfoTuition} />
+      <Route path="/info/transport" component={InfoTransport} />
       <Route component={NotFound} />
     </Switch>
   );
