@@ -26,7 +26,7 @@ export default function Navigation() {
             <div className="hidden md:block ml-2 text-xs text-gray-500 whitespace-nowrap">DESIGN/ COMICS/ DIGITAL DRAWING</div>
           </div>
           
-          <div className="hidden md:flex items-center space-x-4 flex-1 justify-center ml-8">
+          <div className="hidden md:flex items-center space-x-5 flex-1 justify-center ml-8">
             <button
               onClick={() => scrollToSection('about')}
               className="text-sm text-gray-700 hover:text-primary-600 transition-colors leading-none whitespace-nowrap"
