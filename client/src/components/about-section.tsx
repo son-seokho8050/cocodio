@@ -30,7 +30,7 @@ export default function AboutSection() {
               <div className="flex items-start space-x-4">
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">F</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Follow (관찰과 분석)</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Focus (집중)</h4>
                   <p className="text-gray-600">대상의 본질을 파악하고 구조적 이해 능력을 체계적으로 향상</p>
                 </div>
               </div>
@@ -38,7 +38,7 @@ export default function AboutSection() {
               <div className="flex items-start space-x-4">
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">O</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Observe (창의적 해석)</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Observe (관찰)</h4>
                   <p className="text-gray-600">개인만의 독창적인 시각으로 대상을 재해석하는 관점을 학습</p>
                 </div>
               </div>
@@ -46,7 +46,7 @@ export default function AboutSection() {
               <div className="flex items-start space-x-4">
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">L</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Learn (체계적 표현)</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Lead (학습 유도)</h4>
                   <p className="text-gray-600">논리적인 구성과 기법을 통해 아이디어를 완성도 있게 구현</p>
                 </div>
               </div>
@@ -54,7 +54,7 @@ export default function AboutSection() {
               <div className="flex items-start space-x-4">
                 <div className="bg-primary-50 text-primary-600 rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">W</div>
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Work (성찰과 발전)</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Win (발전)</h4>
                   <p className="text-gray-600">작품의 객관적 평가, 지속적으로 개선하는 실력을 향상</p>
                 </div>
               </div>
