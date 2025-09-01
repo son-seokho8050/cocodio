@@ -91,15 +91,10 @@ export default function InfoSection() {
             </div>
             
             <div className="mt-6 space-y-3">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="flex justify-center">
                 <Link href="/info/transport">
-                  <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium py-3 px-4 rounded-md text-center transition-all duration-200 transform hover:scale-105 shadow-sm">
+                  <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium py-3 px-6 rounded-md text-center transition-all duration-200 transform hover:scale-105 shadow-sm">
                     마산코코
-                  </button>
-                </Link>
-                <Link href="/info/transport/gimhae">
-                  <button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-medium py-3 px-4 rounded-md text-center transition-all duration-200 transform hover:scale-105 shadow-sm">
-                    김해코코
                   </button>
                 </Link>
               </div>
