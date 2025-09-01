@@ -23,8 +23,7 @@ export default function InfoTuitionGimhae() {
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">등록번호</h3>
-                  <p className="text-lg font-medium text-gray-800">제 3323호</p>
+                  <p className="text-lg font-semibold text-gray-900">등록번호 제 3323호</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6">
