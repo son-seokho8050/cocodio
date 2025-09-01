@@ -63,9 +63,7 @@ export default function InfoSection() {
                 </div>
               </div>
               
-              <div className="mt-4 text-amber-700 font-medium text-sm group-hover:text-amber-800">
-                자세히 보기 →
-              </div>
+
             </div>
           </Link>
 
