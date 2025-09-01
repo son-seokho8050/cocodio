@@ -23,22 +23,8 @@ export default function InfoTuition() {
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">수강료 특징</h3>
-                  <ul className="space-y-3 text-gray-700">
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
-                      개인별 맞춤형 커리큘럼
-                    </li>
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
-                      소수정예 클래스 운영
-                    </li>
-
-                    <li className="flex items-center">
-                      <span className="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
-                      재료비 별도 (개별 구매)
-                    </li>
-                  </ul>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">등록번호</h3>
+                  <p className="text-lg font-medium text-gray-800">제 3323호</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6">
