@@ -1,6 +1,7 @@
 import { ArrowLeft, Phone, Mail } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import tuitionImageGimhae from "@assets/KakaoTalk_20250901_164406492_1756712722429.jpg";
 
 export default function InfoTuitionGimhae() {
   return (
@@ -65,7 +66,7 @@ export default function InfoTuitionGimhae() {
 
               <div className="flex flex-col justify-center">
                 <img 
-                  src="@assets/KakaoTalk_20250901_164406492_1756712722429.jpg" 
+                  src={tuitionImageGimhae} 
                   alt="교습비 계시표" 
                   className="w-full h-auto rounded-lg shadow-lg mb-6"
                 />
