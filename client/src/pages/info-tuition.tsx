@@ -56,25 +56,7 @@ export default function InfoTuition() {
                   className="w-full h-auto rounded-lg shadow-lg mb-6"
                 />
                 
-                <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-gray-900 text-center mb-4">지점별 상담 문의</h4>
-                  <div className="grid grid-cols-2 gap-3">
-                    <a 
-                      href="tel:010-4472-2028"
-                      className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-3 px-4 rounded-lg text-center transition-all duration-200 transform hover:scale-105 shadow-md"
-                    >
-                      <div className="text-sm">마산점</div>
-                      <div className="text-xs opacity-90">010-4472-2028</div>
-                    </a>
-                    <a 
-                      href="tel:010-3158-2028"
-                      className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-3 px-4 rounded-lg text-center transition-all duration-200 transform hover:scale-105 shadow-md"
-                    >
-                      <div className="text-sm">김해점</div>
-                      <div className="text-xs opacity-90">010-3158-2028</div>
-                    </a>
-                  </div>
-                </div>
+
               </div>
             </div>
 
