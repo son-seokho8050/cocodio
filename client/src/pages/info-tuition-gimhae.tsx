@@ -65,23 +65,10 @@ export default function InfoTuitionGimhae() {
 
               <div className="flex flex-col justify-center">
                 <img 
-                  src="/assets/tuition-fee.jpg" 
+                  src="@assets/KakaoTalk_20250901_164406492_1756712722429.jpg" 
                   alt="교습비 계시표" 
                   className="w-full h-auto rounded-lg shadow-lg mb-6"
                 />
-                
-                <div className="space-y-3">
-                  <h4 className="text-lg font-semibold text-gray-900 text-center mb-4">김해코코 상담 문의</h4>
-                  <div className="flex justify-center">
-                    <a 
-                      href="tel:010-3158-2028"
-                      className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium py-3 px-6 rounded-lg text-center transition-all duration-200 transform hover:scale-105 shadow-md"
-                    >
-                      <div className="text-sm">김해코코</div>
-                      <div className="text-xs opacity-90">010-3158-2028</div>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
 

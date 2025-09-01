@@ -65,7 +65,7 @@ export default function InfoTuition() {
 
               <div className="flex flex-col justify-center">
                 <img 
-                  src="/assets/tuition-fee.jpg" 
+                  src="@assets/image_1756712256582.png" 
                   alt="교습비 계시표" 
                   className="w-full h-auto rounded-lg shadow-lg mb-6"
                 />
