@@ -48,22 +48,18 @@ export default function InfoSection() {
               
               <div className="mt-6 space-y-3">
                 <div className="grid grid-cols-2 gap-2">
-                  <a 
-                    href="tel:010-4472-2028"
-                    className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-xs font-medium py-2 px-3 rounded-md text-center transition-all duration-200 transform hover:scale-105 shadow-sm"
+                  <button 
+                    className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium py-3 px-4 rounded-md text-center transition-all duration-200 transform hover:scale-105 shadow-sm"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <div className="text-xs">마산점</div>
-                    <div className="text-xs opacity-90">010-4472-2028</div>
-                  </a>
-                  <a 
-                    href="tel:010-3158-2028"
-                    className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-xs font-medium py-2 px-3 rounded-md text-center transition-all duration-200 transform hover:scale-105 shadow-sm"
+                    마산코코
+                  </button>
+                  <button 
+                    className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-sm font-medium py-3 px-4 rounded-md text-center transition-all duration-200 transform hover:scale-105 shadow-sm"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <div className="text-xs">김해점</div>
-                    <div className="text-xs opacity-90">010-3158-2028</div>
-                  </a>
+                    김해코코
+                  </button>
                 </div>
               </div>
               
