@@ -96,7 +96,7 @@ export default function Navigation() {
               onClick={scrollToContact}
               className="bg-primary-600 hover:bg-primary-700 text-white text-sm px-4 py-2"
             >
-              상담신청
+              기초소양 COVA
             </Button>
             <Button
               variant="ghost"
