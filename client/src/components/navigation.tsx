@@ -97,7 +97,7 @@ export default function Navigation() {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button className="bg-primary-600 hover:bg-primary-700 text-white text-sm px-4 py-2">
+              <Button className="bg-gradient-to-r from-blue-500 to-yellow-400 hover:from-blue-600 hover:to-yellow-500 text-white text-sm px-4 py-2">
                 기초소양 COVA
               </Button>
             </a>
