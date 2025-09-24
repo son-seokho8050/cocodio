@@ -92,12 +92,15 @@ export default function Navigation() {
           </div>
           
           <div className="flex items-center ml-6">
-            <Button 
-              onClick={scrollToContact}
-              className="bg-primary-600 hover:bg-primary-700 text-white text-sm px-4 py-2"
+            <a 
+              href="https://cova-studio-magmaart2238050.replit.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              기초소양 COVA
-            </Button>
+              <Button className="bg-primary-600 hover:bg-primary-700 text-white text-sm px-4 py-2">
+                기초소양 COVA
+              </Button>
+            </a>
             <Button
               variant="ghost"
               size="icon"
