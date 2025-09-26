@@ -322,14 +322,6 @@ export function PopupManager() {
       delay: 6, // 6초 후 표시
       isLarge: true // 2배 크기로 표시
     },
-    {
-      id: 'popup4',
-      title: '코코미술학원 홍보영상',
-      videoUrl: '/attached_assets/Purple, White and Black Modern Animated Business Advertising Mobile Video_1755158960285.mp4',
-      type: 'video' as const,
-      delay: 8, // 8초 후 표시 (수상자 팝업 2초 후)
-      isLarge: true
-    },
 
   ];
 
