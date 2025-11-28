@@ -454,7 +454,7 @@ export default function Admissions2026() {
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 shadow-lg shadow-purple-500/25 mb-6 animate-bounce hover:animate-spin transition-all duration-300 cursor-pointer">
                 <GraduationCap className="w-10 h-10 text-white" />
               </div>
-              <h1 className={`text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent mb-4 transition-all duration-700 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{animationDelay: '0.2s'}}>
+              <h1 className={`text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent mb-4 transition-all duration-700 whitespace-nowrap ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{animationDelay: '0.2s'}}>
                 2026학년도 합격자 명단
               </h1>
               <p className={`text-lg text-slate-600 mb-4 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`} style={{animationDelay: '0.4s'}}>
@@ -493,29 +493,30 @@ export default function Admissions2026() {
                     <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2M6.5 12.5L7.32 15.68L10.5 16.5L7.32 17.32L6.5 20.5L5.68 17.32L2.5 16.5L5.68 15.68L6.5 12.5M17.5 3.5L18.32 6.68L21.5 7.5L18.32 8.32L17.5 11.5L16.68 8.32L13.5 7.5L16.68 6.68L17.5 3.5Z"/>
                   </svg>
                 </div>
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-2">
+                <h3 className="text-xl md:text-3xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-2 whitespace-nowrap">
                   2025년 주요미대실기대회 수상 실적
                 </h3>
-                <p className="text-gray-600 text-lg">검증된 실력으로 이루어낸 성과</p>
+                <p className="text-gray-600 text-sm md:text-lg">검증된 실력으로 이루어낸 성과</p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
                 {awardsList.map((award, idx) => (
                   <div 
                     key={idx}
                     onClick={() => setClickedAward(clickedAward === idx ? null : idx)}
-                    className={`group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm cursor-pointer transition-all duration-500 
-                      ${clickedAward === idx ? 'scale-110 shadow-xl bg-gradient-to-br from-orange-100 to-amber-100 ring-2 ring-orange-400' : 'hover:shadow-lg hover:-translate-y-2 hover:scale-105'}
+                    className={`group relative bg-white/90 backdrop-blur-md rounded-xl p-3 md:p-4 text-center border border-orange-100 shadow-sm cursor-pointer transition-all duration-500 
+                      ${clickedAward === idx ? 'scale-105 md:scale-110 shadow-xl bg-gradient-to-br from-orange-100 to-amber-100 ring-2 ring-orange-400' : 'hover:shadow-lg hover:-translate-y-2 hover:scale-105'}
                       ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                     style={{
                       animationDelay: `${0.5 + idx * 0.1}s`,
-                      transitionDelay: `${idx * 50}ms`
+                      transitionDelay: `${idx * 50}ms`,
+                      wordBreak: 'keep-all'
                     }}
                   >
                     <div className={`absolute inset-0 rounded-xl bg-gradient-to-br from-orange-400/0 to-amber-400/0 group-hover:from-orange-400/10 group-hover:to-amber-400/10 transition-all duration-300 ${clickedAward === idx ? 'from-orange-400/20 to-amber-400/20' : ''}`}></div>
-                    <div className="relative z-10 flex items-center justify-center gap-2">
-                      {clickedAward === idx && <Trophy className="w-4 h-4 text-orange-500 animate-bounce" />}
-                      <span className={`text-orange-600 text-sm font-bold transition-all duration-300 ${clickedAward === idx ? 'text-orange-700' : ''}`}>{award}</span>
+                    <div className="relative z-10 flex items-center justify-center gap-1 md:gap-2">
+                      {clickedAward === idx && <Trophy className="w-3 h-3 md:w-4 md:h-4 text-orange-500 animate-bounce flex-shrink-0" />}
+                      <span className={`text-orange-600 text-xs md:text-sm font-bold transition-all duration-300 whitespace-nowrap ${clickedAward === idx ? 'text-orange-700' : ''}`}>{award}</span>
                     </div>
                     {clickedAward === idx && (
                       <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-500 rounded-full animate-ping"></div>
