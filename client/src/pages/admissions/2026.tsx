@@ -1,12 +1,20 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { GraduationCap, ArrowLeft } from "lucide-react";
+import { GraduationCap, ArrowLeft, Sparkles, Trophy, Star } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Admissions2026() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [clickedAward, setClickedAward] = useState<number | null>(null);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
   const admissionResults = [
     {
       university: "동덕여자대학교",
@@ -387,46 +395,90 @@ export default function Admissions2026() {
 
   const totalStudents = admissionResults.reduce((sum, result) => sum + result.students.length, 0);
 
+  const awardsList = [
+    "경희대 10명 수상", "동덕여대 동상 수상", "국민대 2명 수상", "동덕여대 2년연속 동상",
+    "건대글로컬 50명 수상", "계명대 장려상 4명 수상", "동아대 은상 동상", "한양대 17명 수상",
+    "경성대 은상 수상", "청강대 특/입선 수상", "삼육대 전원수상", "영남대 장려상 2명",
+    "동명대 한국미협상", "한성대 5명 수상", "동서대 장려상 4명"
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
       <Navigation />
       
-      <main className="pt-24 pb-16">
+      {/* Animated Background Particles */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-96 h-96 bg-violet-300/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-40 left-1/4 w-80 h-80 bg-indigo-300/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-20 right-1/3 w-64 h-64 bg-pink-300/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '3s'}}></div>
+        
+        {/* Floating Stars */}
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-bounce"
+            style={{
+              left: `${10 + (i * 7)}%`,
+              top: `${15 + (i % 3) * 25}%`,
+              animationDelay: `${i * 0.3}s`,
+              animationDuration: `${2 + (i % 3)}s`
+            }}
+          >
+            <Sparkles className={`w-${3 + (i % 2)} h-${3 + (i % 2)} text-purple-300/40`} />
+          </div>
+        ))}
+      </div>
+      
+      <main className="pt-24 pb-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className={`mb-12 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Link href="/admissions">
-              <Button variant="ghost" className="mb-6 text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all duration-200">
+              <Button variant="ghost" className="mb-6 text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 transition-all duration-200 hover:scale-105">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 전체 합격자 명단
               </Button>
             </Link>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 shadow-lg shadow-purple-500/25 mb-6">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 shadow-lg shadow-purple-500/25 mb-6 animate-bounce hover:animate-spin transition-all duration-300 cursor-pointer">
                 <GraduationCap className="w-10 h-10 text-white" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+              <h1 className={`text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent mb-4 transition-all duration-700 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{animationDelay: '0.2s'}}>
                 2026학년도 합격자 명단
               </h1>
-              <p className="text-lg text-slate-600 mb-4">
+              <p className={`text-lg text-slate-600 mb-4 transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`} style={{animationDelay: '0.4s'}}>
                 코코미술학원 학생들의 대학 합격 현황입니다
               </p>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-violet-100 text-purple-700 font-semibold">
-                <span className="text-2xl">{totalStudents}</span>
+              <div className={`inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-100 to-violet-100 text-purple-700 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 cursor-pointer group ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                <Trophy className="w-5 h-5 group-hover:animate-bounce" />
+                <span className="text-2xl font-bold">{totalStudents}</span>
                 <span>명 합격</span>
+                <Sparkles className="w-5 h-5 group-hover:animate-spin" />
               </div>
             </div>
           </div>
 
           {/* 2025년 주요 수상 실적 배너 */}
-          <div className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50/30 border border-orange-200/30 backdrop-blur-sm rounded-3xl p-8 mb-12 mx-auto max-w-6xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-orange-200/50">
+          <div className={`relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50/30 border border-orange-200/30 backdrop-blur-sm rounded-3xl p-8 mb-12 mx-auto max-w-6xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-orange-200/50 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{animationDelay: '0.3s'}}>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(249,115,22,0.05)_1px,_transparent_0)] bg-[size:24px_24px]"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-400/5 to-amber-300/10 rounded-full blur-3xl -translate-y-32 translate-x-32"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-amber-400/5 to-orange-500/10 rounded-full blur-3xl translate-y-24 -translate-x-24"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-400/10 to-amber-300/15 rounded-full blur-3xl -translate-y-32 translate-x-32 animate-pulse"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-amber-400/10 to-orange-500/15 rounded-full blur-3xl translate-y-24 -translate-x-24 animate-pulse" style={{animationDelay: '1s'}}></div>
+            
+            {/* Floating Trophy Icons */}
+            <div className="absolute top-4 left-8 animate-bounce" style={{animationDuration: '2s'}}>
+              <Trophy className="w-6 h-6 text-orange-300/60" />
+            </div>
+            <div className="absolute top-8 right-12 animate-bounce" style={{animationDuration: '2.5s', animationDelay: '0.5s'}}>
+              <Star className="w-5 h-5 text-amber-300/60" />
+            </div>
+            <div className="absolute bottom-12 left-16 animate-bounce" style={{animationDuration: '3s', animationDelay: '1s'}}>
+              <Sparkles className="w-5 h-5 text-orange-300/60" />
+            </div>
             
             <div className="relative z-10">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full mb-4 shadow-lg">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full mb-4 shadow-lg animate-pulse hover:animate-spin transition-all duration-300 cursor-pointer hover:scale-110">
                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2M6.5 12.5L7.32 15.68L10.5 16.5L7.32 17.32L6.5 20.5L5.68 17.32L2.5 16.5L5.68 15.68L6.5 12.5M17.5 3.5L18.32 6.68L21.5 7.5L18.32 8.32L17.5 11.5L16.68 8.32L13.5 7.5L16.68 6.68L17.5 3.5Z"/>
                   </svg>
@@ -438,51 +490,28 @@ export default function Admissions2026() {
               </div>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">경희대 10명 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">동덕여대 동상 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">국민대 2명 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">동덕여대 2년연속 동상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">건대글로컬 50명 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">계명대 장려상 4명 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">동아대 은상 동상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">한양대 17명 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">경성대 은상 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">청강대 특/입선 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">삼육대 전원수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">영남대 장려상 2명</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">동명대 한국미협상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">한성대 5명 수상</div>
-                </div>
-                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-                  <div className="text-orange-600 text-sm font-bold">동서대 장려상 4명</div>
-                </div>
+                {awardsList.map((award, idx) => (
+                  <div 
+                    key={idx}
+                    onClick={() => setClickedAward(clickedAward === idx ? null : idx)}
+                    className={`group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm cursor-pointer transition-all duration-500 
+                      ${clickedAward === idx ? 'scale-110 shadow-xl bg-gradient-to-br from-orange-100 to-amber-100 ring-2 ring-orange-400' : 'hover:shadow-lg hover:-translate-y-2 hover:scale-105'}
+                      ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                    style={{
+                      animationDelay: `${0.5 + idx * 0.1}s`,
+                      transitionDelay: `${idx * 50}ms`
+                    }}
+                  >
+                    <div className={`absolute inset-0 rounded-xl bg-gradient-to-br from-orange-400/0 to-amber-400/0 group-hover:from-orange-400/10 group-hover:to-amber-400/10 transition-all duration-300 ${clickedAward === idx ? 'from-orange-400/20 to-amber-400/20' : ''}`}></div>
+                    <div className="relative z-10 flex items-center justify-center gap-2">
+                      {clickedAward === idx && <Trophy className="w-4 h-4 text-orange-500 animate-bounce" />}
+                      <span className={`text-orange-600 text-sm font-bold transition-all duration-300 ${clickedAward === idx ? 'text-orange-700' : ''}`}>{award}</span>
+                    </div>
+                    {clickedAward === idx && (
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-500 rounded-full animate-ping"></div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -491,34 +520,55 @@ export default function Admissions2026() {
             {admissionResults.map((result, index) => (
               <Card 
                 key={index} 
-                className={`${result.color} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 break-inside-avoid mb-6`}
+                className={`${result.color} backdrop-blur-sm transition-all duration-500 break-inside-avoid mb-6 cursor-pointer group
+                  ${hoveredCard === index ? 'scale-[1.02] -translate-y-2 shadow-2xl z-10' : 'hover:-translate-y-1'}
+                  ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{
+                  transitionDelay: `${(index % 6) * 100}ms`
+                }}
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
                 data-testid={`card-admission-${index}`}
               >
-                <CardHeader className="pb-3">
+                {/* Glow effect on hover */}
+                <div className={`absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400/0 to-violet-400/0 transition-all duration-500 ${hoveredCard === index ? 'from-purple-400/5 to-violet-400/10' : ''}`}></div>
+                
+                {/* Sparkle indicator for hovered card */}
+                {hoveredCard === index && (
+                  <div className="absolute -top-2 -right-2 z-20">
+                    <Sparkles className="w-6 h-6 text-purple-500 animate-spin" />
+                  </div>
+                )}
+                
+                <CardHeader className="pb-3 relative z-10">
                   <div className="flex items-start justify-between">
                     <div>
-                      <CardTitle className="text-lg font-bold text-slate-800 mb-1">
+                      <CardTitle className={`text-lg font-bold text-slate-800 mb-1 transition-all duration-300 ${hoveredCard === index ? 'text-purple-700' : ''}`}>
                         {result.university}
                       </CardTitle>
                       <p className="text-sm text-slate-500">{result.department}</p>
                     </div>
                     <Badge 
                       variant="secondary" 
-                      className="bg-white/60 text-slate-600 border-0 text-xs"
+                      className={`bg-white/60 text-slate-600 border-0 text-xs transition-all duration-300 ${hoveredCard === index ? 'bg-purple-100 text-purple-700 scale-110' : ''}`}
                     >
                       {result.category}
                     </Badge>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="relative z-10">
                   <div className="space-y-2">
                     {result.students.map((student, studentIndex) => (
                       <div 
                         key={studentIndex}
-                        className="flex items-center justify-between py-2 px-3 rounded-lg bg-white/40 hover:bg-white/60 transition-colors"
+                        className={`flex items-center justify-between py-2 px-3 rounded-lg bg-white/40 transition-all duration-300 group/student
+                          ${hoveredCard === index ? 'hover:bg-white/80 hover:shadow-md hover:scale-[1.02]' : 'hover:bg-white/60'}`}
+                        style={{
+                          transitionDelay: `${studentIndex * 50}ms`
+                        }}
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center shadow-sm">
+                          <div className={`w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-violet-500 flex items-center justify-center shadow-sm transition-all duration-300 ${hoveredCard === index ? 'group-hover/student:scale-110 group-hover/student:shadow-lg' : ''}`}>
                             <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                             </svg>
@@ -528,13 +578,16 @@ export default function Admissions2026() {
                             <p className="text-xs text-slate-500">{student.grade}</p>
                           </div>
                         </div>
-                        <Badge className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 text-purple-700 border-0 text-xs font-medium">
+                        <Badge className={`bg-gradient-to-r from-purple-500/10 to-violet-500/10 text-purple-700 border-0 text-xs font-medium transition-all duration-300 ${hoveredCard === index ? 'group-hover/student:from-purple-500/20 group-hover/student:to-violet-500/20 group-hover/student:scale-105' : ''}`}>
                           {student.note}
                         </Badge>
                       </div>
                     ))}
                   </div>
                 </CardContent>
+                
+                {/* Bottom shine effect */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 via-violet-500 to-indigo-400 rounded-b-xl transition-all duration-500 ${hoveredCard === index ? 'opacity-100' : 'opacity-0'}`}></div>
               </Card>
             ))}
           </div>
