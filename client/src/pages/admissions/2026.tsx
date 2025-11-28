@@ -418,6 +418,75 @@ export default function Admissions2026() {
             </div>
           </div>
 
+          {/* 2025년 주요 수상 실적 배너 */}
+          <div className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50/30 border border-orange-200/30 backdrop-blur-sm rounded-3xl p-8 mb-12 mx-auto max-w-6xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-orange-200/50">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(249,115,22,0.05)_1px,_transparent_0)] bg-[size:24px_24px]"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-400/5 to-amber-300/10 rounded-full blur-3xl -translate-y-32 translate-x-32"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-amber-400/5 to-orange-500/10 rounded-full blur-3xl translate-y-24 -translate-x-24"></div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-400 to-amber-500 rounded-full mb-4 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2M6.5 12.5L7.32 15.68L10.5 16.5L7.32 17.32L6.5 20.5L5.68 17.32L2.5 16.5L5.68 15.68L6.5 12.5M17.5 3.5L18.32 6.68L21.5 7.5L18.32 8.32L17.5 11.5L16.68 8.32L13.5 7.5L16.68 6.68L17.5 3.5Z"/>
+                  </svg>
+                </div>
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-2">
+                  2025년 주요미대실기대회 수상 실적
+                </h3>
+                <p className="text-gray-600 text-lg">검증된 실력으로 이루어낸 성과</p>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">경희대 10명 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">동덕여대 동상 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">국민대 2명 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">동덕여대 2년연속 동상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">건대글로컬 50명 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">계명대 장려상 4명 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">동아대 은상 동상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">한양대 17명 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">경성대 은상 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">청강대 특/입선 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">삼육대 전원수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">영남대 장려상 2명</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">동명대 한국미협상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">한성대 5명 수상</div>
+                </div>
+                <div className="group relative bg-white/90 backdrop-blur-md rounded-xl p-4 text-center border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="text-orange-600 text-sm font-bold">동서대 장려상 4명</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-0">
             {admissionResults.map((result, index) => (
               <Card 
