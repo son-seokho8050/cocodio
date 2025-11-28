@@ -534,7 +534,7 @@ export default function Admissions2026() {
               <div className="relative">
                 <video
                   ref={videoRef}
-                  src="/videos/admissions-2026.mp4"
+                  src="/videos/admissions-2026-compressed.mp4"
                   className="w-full h-auto"
                   autoPlay
                   loop
