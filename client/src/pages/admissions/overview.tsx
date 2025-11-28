@@ -18,8 +18,8 @@ export default function AdmissionsOverview() {
         { name: "삼육대학교", count: 1, category: "서울/ 수도권" },
         { name: "용인대학교", count: 2, category: "서울/ 수도권" },
         { name: "수원대학교", count: 1, category: "서울/ 수도권" },
-        { name: "경북대학교", count: 2, category: "지역거점국립대" },
-        { name: "창원대학교", count: 23, category: "지역거점국립대" }
+        { name: "상명대학교(천안)", count: 4, category: "지역사립대" },
+        { name: "한밭대학교", count: 3, category: "지역거점국립대" }
       ],
       highlights: ["동덕여대·인하대·단국대 합격", "창원대 23명 대거 합격", "계명대 20명 지역최다 합격", "영남대 20명 지역최다 합격"]
     },
