@@ -56,6 +56,9 @@ export default function Navigation() {
                   <Link href="/admissions" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                     최근 3년간 통합
                   </Link>
+                  <Link href="/admissions/2026" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                    2026학년도
+                  </Link>
                   <Link href="/admissions/2025" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                     2025학년도
                   </Link>
@@ -135,6 +138,9 @@ export default function Navigation() {
                 <div className="text-gray-900 font-medium text-sm">합격자명단</div>
                 <Link href="/admissions" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
                   최근 3년간 통합
+                </Link>
+                <Link href="/admissions/2026" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
+                  2026학년도
                 </Link>
                 <Link href="/admissions/2025" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
                   2025학년도

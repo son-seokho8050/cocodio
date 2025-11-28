@@ -9,6 +9,21 @@ import { Link } from "wouter";
 export default function AdmissionsOverview() {
   const yearlyStats = [
     {
+      year: "2026학년도",
+      total: 134,
+      universities: [
+        { name: "동덕여자대학교", count: 3, category: "서울/ 수도권" },
+        { name: "인하대학교", count: 1, category: "서울/ 수도권" },
+        { name: "단국대학교", count: 1, category: "서울/ 수도권" },
+        { name: "삼육대학교", count: 1, category: "서울/ 수도권" },
+        { name: "용인대학교", count: 2, category: "서울/ 수도권" },
+        { name: "수원대학교", count: 1, category: "서울/ 수도권" },
+        { name: "경북대학교", count: 2, category: "지역거점국립대" },
+        { name: "창원대학교", count: 23, category: "지역거점국립대" }
+      ],
+      highlights: ["동덕여대·인하대·단국대 합격", "창원대 23명 대거 합격", "경북대 섬유패션디자인 합격", "전국 29개 대학 134명 합격"]
+    },
+    {
       year: "2025학년도",
       total: 151,
       universities: [
