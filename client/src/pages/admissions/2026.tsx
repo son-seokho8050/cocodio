@@ -418,11 +418,11 @@ export default function Admissions2026() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-0">
             {admissionResults.map((result, index) => (
               <Card 
                 key={index} 
-                className={`${result.color} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1`}
+                className={`${result.color} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 break-inside-avoid mb-6`}
                 data-testid={`card-admission-${index}`}
               >
                 <CardHeader className="pb-3">
