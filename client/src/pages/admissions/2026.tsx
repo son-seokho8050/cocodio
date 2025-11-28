@@ -6,6 +6,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { GraduationCap, ArrowLeft, Sparkles, Trophy, Star, Play, Volume2 } from "lucide-react";
 import { Link } from "wouter";
+import admissionsVideo2026 from "@assets/admissions-2026-compressed.mp4";
 
 export default function Admissions2026() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -534,7 +535,7 @@ export default function Admissions2026() {
               <div className="relative">
                 <video
                   ref={videoRef}
-                  src="/videos/admissions-2026-compressed.mp4"
+                  src={admissionsVideo2026}
                   className="w-full h-auto"
                   autoPlay
                   loop
