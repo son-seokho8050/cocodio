@@ -1,20 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { GraduationCap, ArrowLeft, Sparkles, Trophy, Star } from "lucide-react";
+import { GraduationCap, ArrowLeft, Sparkles, Trophy, Star, Play, Volume2 } from "lucide-react";
 import { Link } from "wouter";
+import admissionsVideo2026 from "@assets/2026미대수시합격자 (1)_1764307978524.mp4";
 
 export default function Admissions2026() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [clickedAward, setClickedAward] = useState<number | null>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const handleUnmute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      setIsMuted(false);
+    }
+  };
   const admissionResults = [
     {
       university: "동덕여자대학교",
@@ -512,6 +522,71 @@ export default function Admissions2026() {
                     )}
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 2026학년도 합격자 홍보 영상 */}
+          <div className={`relative mb-12 mx-auto max-w-4xl transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{animationDelay: '0.5s'}}>
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-br from-purple-900 via-violet-900 to-indigo-900">
+              {/* Decorative elements */}
+              <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 right-0 w-40 h-40 bg-violet-500/20 rounded-full blur-3xl"></div>
+              
+              {/* Video container */}
+              <div className="relative">
+                <video
+                  ref={videoRef}
+                  src={admissionsVideo2026}
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted={isMuted}
+                  playsInline
+                  onCanPlay={() => {
+                    if (videoRef.current) {
+                      videoRef.current.play().catch(error => {
+                        console.log('자동재생이 차단되었습니다:', error);
+                      });
+                    }
+                  }}
+                />
+                
+                {/* Sound button overlay */}
+                {isMuted && (
+                  <button
+                    onClick={handleUnmute}
+                    className="absolute bottom-4 right-4 flex items-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-purple-700 font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 animate-pulse"
+                  >
+                    <Volume2 className="w-5 h-5" />
+                    <span className="text-sm">소리 켜기</span>
+                  </button>
+                )}
+                
+                {/* Play indicator */}
+                <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-red-500/90 text-white text-xs font-bold rounded-full">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <span>LIVE</span>
+                </div>
+              </div>
+              
+              {/* Video title bar */}
+              <div className="bg-gradient-to-r from-purple-600 to-violet-600 px-6 py-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                      <Play className="w-5 h-5 text-white fill-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-lg">2026학년도 미대수시 합격자 발표</h3>
+                      <p className="text-purple-200 text-sm">코코미술학원 합격 소식</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex items-center gap-2">
+                    <Sparkles className="w-5 h-5 text-yellow-300 animate-spin" />
+                    <span className="text-white/80 text-sm">축하합니다!</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
