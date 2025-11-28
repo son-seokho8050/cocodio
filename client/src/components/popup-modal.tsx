@@ -3,8 +3,9 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
 import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
-import contestImage2025 from "@assets/제목 없음 (60 x 80 cm)_1755159094713.jpg";
 import exhibitionPoster from "@assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg";
+import awards2025Image from "@assets/2 (4)_1764307355547.png";
+import admissions2026Image from "@assets/마산 김해 미술학원_ 2025 동덕여대 실기대회 2년 연속 동상 수상, 총 28명 수상_1764307355547.png";
 
 interface PopupModalProps {
   id: string;
@@ -117,13 +118,13 @@ export default function PopupModal({
     
     // 강사 프로필 팝업들(popup1, popup2)은 기존 대비 15% 축소 (2.16 × 0.85 = 1.836)
     const isTeacherProfile = id === 'popup1' || id === 'popup2';
-    // 수상자 팝업(popup3)은 1.3배 크게 표시 (닫기 버튼 접근성 개선)
-    const isContestPopup = id === 'popup3';
+    // 2025 수상 실적 팝업(popup-awards-2025)과 2026 합격자 팝업(popup-admissions-2026)
+    const isNewAnnouncementPopup = id === 'popup-awards-2025' || id === 'popup-admissions-2026';
     // 영상 팝업(popup4)은 1.2배 크게 표시 (닫기 버튼 접근성 개선)
     const isVideoPopup = id === 'popup4';
     // 전시회 팝업(popup5)은 1.8배 크게 표시 (글자 가독성 개선)
     const isExhibitionPopup = id === 'popup5';
-    const sizeMultiplier = isTeacherProfile ? 1.836 : isContestPopup ? 1.3 : isVideoPopup ? 1.2 : isExhibitionPopup ? 1.8 : 1.0;
+    const sizeMultiplier = isTeacherProfile ? 1.836 : isNewAnnouncementPopup ? 1.5 : isVideoPopup ? 1.2 : isExhibitionPopup ? 1.8 : 1.0;
     
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
@@ -160,24 +161,40 @@ export default function PopupModal({
 
   // z-index 계층 설정:
   // - 강사 프로필: popup1(왼쪽) > popup2(오른쪽)
-  // - 나중 팝업들: popup3, popup4 > 강사 프로필들
+  // - 나중 팝업들: 새 공지 팝업들 > 강사 프로필들
   const getZIndex = () => {
     if (id === 'popup5') return 'z-[10003]'; // 전시회 팝업 최상위
-    if (id === 'popup3' || id === 'popup4') return 'z-[10002]'; // 수상자, 동영상 팝업 최상위
-    if (id === 'popup1') return 'z-[10001]'; // 총원장 유영범 (왼쪽) 우선
-    if (id === 'popup2') return 'z-[10000]'; // 말랑T 유준석 (오른쪽)
-    return 'z-[9999]'; // 기본값
+    if (id === 'popup-awards-2025') return 'z-[10002]'; // 2025 수상 실적 팝업
+    if (id === 'popup-admissions-2026') return 'z-[10001]'; // 2026 합격자 팝업
+    if (id === 'popup1') return 'z-[10000]'; // 총원장 유영범 (왼쪽)
+    if (id === 'popup2') return 'z-[9999]'; // 말랑T 유준석 (오른쪽)
+    return 'z-[9998]'; // 기본값
   };
   const zIndex = getZIndex();
+
+  // 모바일 여부 체크
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  
+  // 새 공지 팝업들의 모바일 위치 조정
+  const getMobilePosition = () => {
+    if (!isMobile) return '';
+    if (id === 'popup-awards-2025') return 'translate-y-[-20%]'; // 위로
+    if (id === 'popup-admissions-2026') return 'translate-y-[20%]'; // 아래로
+    if (id === 'popup1') return 'translate-y-[-15%]'; // 위로
+    if (id === 'popup2') return 'translate-y-[15%]'; // 아래로
+    return '';
+  };
 
   return (
     <div 
       className={`fixed inset-0 ${zIndex} flex transition-all duration-300 ${
         isAnimating ? 'bg-black/30' : 'bg-transparent'
       } ${
-        position === 'left' ? 'items-center justify-center translate-x-[15%]' :
-        position === 'right' ? 'items-center justify-center -translate-x-[15%]' :
-        'items-center justify-center'
+        isMobile 
+          ? `items-center justify-center ${getMobilePosition()}`
+          : position === 'left' ? 'items-center justify-center translate-x-[15%]' :
+            position === 'right' ? 'items-center justify-center -translate-x-[15%]' :
+            'items-center justify-center'
       }`}
       onClick={handleBackdropClick}
     >
@@ -314,15 +331,25 @@ export function PopupManager() {
       position: 'right' as const // 화면 오른쪽에 배치
     },
     {
-      id: 'popup3', 
-      title: '2025 미대실기대회 수상 소식',
-      imageUrl: contestImage2025,
+      id: 'popup-awards-2025', 
+      title: '2025 주요미대실기대회 수상 실적',
+      imageUrl: awards2025Image,
       type: 'image' as const,
-      linkUrl: '/admissions/2025',
+      linkUrl: '/admissions/2026',
       delay: 6, // 6초 후 표시
-      isLarge: true // 2배 크기로 표시
+      isLarge: true,
+      position: 'left' as const // 화면 왼쪽에 배치
     },
-
+    {
+      id: 'popup-admissions-2026', 
+      title: '2026학년도 미대수시 합격',
+      imageUrl: admissions2026Image,
+      type: 'image' as const,
+      linkUrl: '/admissions/2026',
+      delay: 6, // 6초 후 동시에 표시
+      isLarge: true,
+      position: 'right' as const // 화면 오른쪽에 배치
+    },
   ];
 
   return (
