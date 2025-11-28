@@ -451,9 +451,6 @@ export default function Admissions2026() {
             </Link>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 shadow-lg shadow-purple-500/25 mb-6 animate-bounce hover:animate-spin transition-all duration-300 cursor-pointer">
-                <GraduationCap className="w-10 h-10 text-white" />
-              </div>
               <h1 className={`text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 bg-clip-text text-transparent mb-4 transition-all duration-700 whitespace-nowrap ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{animationDelay: '0.2s'}}>
                 2026학년도 합격자 명단
               </h1>
