@@ -281,6 +281,16 @@ export default function Admissions2026() {
       color: "bg-gradient-to-br from-yellow-50 via-slate-50 to-white border-0 ring-1 ring-yellow-200/40 shadow-[0_4px_15px_rgba(234,179,8,0.06)] hover:shadow-[0_8px_25px_rgba(234,179,8,0.1)]"
     },
     {
+      university: "명지대학교 자연",
+      department: "용인",
+      students: [
+        { name: "박○희", grade: "내서여고", note: "인더스트리얼" },
+        { name: "정○아", grade: "구암고", note: "인더스트리얼" }
+      ],
+      category: "수도권사립대",
+      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
+    },
+    {
       university: "울산대학교",
       department: "울산",
       students: [
