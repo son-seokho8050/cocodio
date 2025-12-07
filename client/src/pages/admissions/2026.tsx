@@ -315,22 +315,32 @@ export default function Admissions2026() {
       color: "bg-gradient-to-br from-red-50 via-slate-50 to-white border-0 ring-1 ring-red-200/40 shadow-[0_4px_15px_rgba(239,68,68,0.06)] hover:shadow-[0_8px_25px_rgba(239,68,68,0.1)]"
     },
     {
-      university: "동명대학교",
-      department: "부산",
+      university: "계명대학교",
+      department: "대구",
       students: [
-        { name: "이○성", grade: "합포고", note: "시각디자인" },
-        { name: "김○우", grade: "중앙고", note: "시각디자인" },
-        { name: "박○준", grade: "제일고", note: "시각디자인" },
-        { name: "안○준", grade: "사파고", note: "시각디자인" },
-        { name: "김○진", grade: "제일고", note: "시각디자인" },
-        { name: "추○준", grade: "경원고", note: "시각디자인" },
-        { name: "한○진", grade: "무학여고", note: "웹툰애니메이션" },
-        { name: "김○행", grade: "마산여고", note: "웹툰애니메이션" },
-        { name: "오○은", grade: "가포고", note: "웹툰애니메이션" },
-        { name: "김○나", grade: "중앙여고", note: "웹툰애니메이션" }
+        { name: "윤○현", grade: "영운고", note: "패션" },
+        { name: "정○희", grade: "창원여고", note: "패션" },
+        { name: "이○연", grade: "제일여고", note: "패션" },
+        { name: "이○", grade: "경원고", note: "영상애니메이션" },
+        { name: "황○미", grade: "마여고", note: "웹툰" },
+        { name: "김○진", grade: "부산예고", note: "시각" },
+        { name: "안○진", grade: "제일고", note: "시각" },
+        { name: "양○정", grade: "마여고", note: "시각" },
+        { name: "이○우", grade: "제일여고", note: "시각" },
+        { name: "이○은", grade: "삼진고", note: "텍스타일" },
+        { name: "민○웅", grade: "합포고", note: "텍스타일" },
+        { name: "배○진", grade: "검정고시", note: "산업" },
+        { name: "박○석", grade: "창원남고", note: "산업" },
+        { name: "차○호", grade: "문성고", note: "산업" },
+        { name: "홍○의", grade: "무학여고", note: "산업" },
+        { name: "조○진", grade: "제일여고", note: "산업" },
+        { name: "추○룡", grade: "합포고", note: "산업" },
+        { name: "문○재", grade: "합포고", note: "산업" },
+        { name: "이○후", grade: "가포고", note: "산업" },
+        { name: "임○결", grade: "문성고", note: "산업" }
       ],
       category: "지역사립대",
-      color: "bg-gradient-to-br from-neutral-50 via-slate-50 to-white border-0 ring-1 ring-neutral-200/40 shadow-[0_4px_15px_rgba(115,115,115,0.06)] hover:shadow-[0_8px_25px_rgba(115,115,115,0.1)]"
+      color: "bg-gradient-to-br from-teal-50 via-slate-50 to-white border-0 ring-1 ring-teal-200/40 shadow-[0_4px_15px_rgba(20,184,166,0.06)] hover:shadow-[0_8px_25px_rgba(20,184,166,0.1)]"
     },
     {
       university: "대구가톨릭대학교",
@@ -375,32 +385,22 @@ export default function Admissions2026() {
       color: "bg-gradient-to-br from-purple-50 via-slate-50 to-white border-0 ring-1 ring-purple-200/40 shadow-[0_4px_15px_rgba(168,85,247,0.06)] hover:shadow-[0_8px_25px_rgba(168,85,247,0.1)]"
     },
     {
-      university: "계명대학교",
-      department: "대구",
+      university: "동명대학교",
+      department: "부산",
       students: [
-        { name: "윤○현", grade: "영운고", note: "패션" },
-        { name: "정○희", grade: "창원여고", note: "패션" },
-        { name: "이○연", grade: "제일여고", note: "패션" },
-        { name: "이○", grade: "경원고", note: "영상애니메이션" },
-        { name: "황○미", grade: "마여고", note: "웹툰" },
-        { name: "김○진", grade: "부산예고", note: "시각" },
-        { name: "안○진", grade: "제일고", note: "시각" },
-        { name: "양○정", grade: "마여고", note: "시각" },
-        { name: "이○우", grade: "제일여고", note: "시각" },
-        { name: "이○은", grade: "삼진고", note: "텍스타일" },
-        { name: "민○웅", grade: "합포고", note: "텍스타일" },
-        { name: "배○진", grade: "검정고시", note: "산업" },
-        { name: "박○석", grade: "창원남고", note: "산업" },
-        { name: "차○호", grade: "문성고", note: "산업" },
-        { name: "홍○의", grade: "무학여고", note: "산업" },
-        { name: "조○진", grade: "제일여고", note: "산업" },
-        { name: "추○룡", grade: "합포고", note: "산업" },
-        { name: "문○재", grade: "합포고", note: "산업" },
-        { name: "이○후", grade: "가포고", note: "산업" },
-        { name: "임○결", grade: "문성고", note: "산업" }
+        { name: "이○성", grade: "합포고", note: "시각디자인" },
+        { name: "김○우", grade: "중앙고", note: "시각디자인" },
+        { name: "박○준", grade: "제일고", note: "시각디자인" },
+        { name: "안○준", grade: "사파고", note: "시각디자인" },
+        { name: "김○진", grade: "제일고", note: "시각디자인" },
+        { name: "추○준", grade: "경원고", note: "시각디자인" },
+        { name: "한○진", grade: "무학여고", note: "웹툰애니메이션" },
+        { name: "김○행", grade: "마산여고", note: "웹툰애니메이션" },
+        { name: "오○은", grade: "가포고", note: "웹툰애니메이션" },
+        { name: "김○나", grade: "중앙여고", note: "웹툰애니메이션" }
       ],
       category: "지역사립대",
-      color: "bg-gradient-to-br from-teal-50 via-slate-50 to-white border-0 ring-1 ring-teal-200/40 shadow-[0_4px_15px_rgba(20,184,166,0.06)] hover:shadow-[0_8px_25px_rgba(20,184,166,0.1)]"
+      color: "bg-gradient-to-br from-neutral-50 via-slate-50 to-white border-0 ring-1 ring-neutral-200/40 shadow-[0_4px_15px_rgba(115,115,115,0.06)] hover:shadow-[0_8px_25px_rgba(115,115,115,0.1)]"
     },
     {
       university: "영산대학교",
