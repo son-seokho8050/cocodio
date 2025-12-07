@@ -600,7 +600,7 @@ export default function Admissions2026() {
             </div>
           </div>
 
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {admissionResults.map((result, index) => (
               <Card 
                 key={index} 
