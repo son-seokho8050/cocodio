@@ -6,7 +6,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { GraduationCap, ArrowLeft, Sparkles, Trophy, Star, Play, Volume2 } from "lucide-react";
 import { Link } from "wouter";
-import admissionsVideo2026 from "@assets/admissions-2026-compressed.mp4";
+import admissionsVideo2026 from "@assets/2026미대수시합격자_(2)_1765777863775.mp4";
 
 export default function Admissions2026() {
   const [isLoaded, setIsLoaded] = useState(false);
