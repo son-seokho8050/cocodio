@@ -56,6 +56,106 @@ export default function Admissions2026() {
       color: "bg-gradient-to-br from-green-50 via-slate-50 to-white border-0 ring-1 ring-green-200/40 shadow-[0_4px_15px_rgba(34,197,94,0.06)] hover:shadow-[0_8px_25px_rgba(34,197,94,0.1)]"
     },
     {
+      university: "동덕여자대학교",
+      department: "서울",
+      students: [
+        { name: "배○예", grade: "검정고시", note: "시각실내" },
+        { name: "서○서", grade: "마여고", note: "패션" },
+        { name: "윤○현", grade: "영운고", note: "패션" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-pink-50 via-slate-50 to-white border-0 ring-1 ring-pink-200/40 shadow-[0_4px_15px_rgba(236,72,153,0.06)] hover:shadow-[0_8px_25px_rgba(236,72,153,0.1)]"
+    },
+    {
+      university: "삼육대학교",
+      department: "서울",
+      students: [
+        { name: "심○주", grade: "율하고", note: "아트앤디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-emerald-50 via-slate-50 to-white border-0 ring-1 ring-emerald-200/40 shadow-[0_4px_15px_rgba(16,185,129,0.06)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.1)]"
+    },
+    {
+      university: "인하대학교",
+      department: "인천",
+      students: [
+        { name: "정○아", grade: "구암고", note: "의류" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
+    },
+    {
+      university: "경북대학교",
+      department: "대구",
+      students: [
+        { name: "박○희", grade: "내서여고", note: "디자인학과" },
+        { name: "이○원", grade: "진영고", note: "섬유패션디자인" },
+        { name: "이○주", grade: "삼진고", note: "섬유패션디자인" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
+    },
+    {
+      university: "목원대학교",
+      department: "대전",
+      students: [
+        { name: "김○지", grade: "합포고", note: "섬유패션" }
+      ],
+      category: "지역사립대",
+      color: "bg-gradient-to-br from-orange-50 via-slate-50 to-white border-0 ring-1 ring-orange-200/40 shadow-[0_4px_15px_rgba(249,115,22,0.06)] hover:shadow-[0_8px_25px_rgba(249,115,22,0.1)]"
+    },
+    {
+      university: "한밭대학교",
+      department: "대전",
+      students: [
+        { name: "박○희", grade: "내서여고", note: "시각영상" },
+        { name: "김○지", grade: "마여고", note: "산업" },
+        { name: "김○", grade: "제일여고", note: "산업" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-gradient-to-br from-lime-50 via-slate-50 to-white border-0 ring-1 ring-lime-200/40 shadow-[0_4px_15px_rgba(132,204,22,0.06)] hover:shadow-[0_8px_25px_rgba(132,204,22,0.1)]"
+    },
+    {
+      university: "중부대학교",
+      department: "충남",
+      students: [
+        { name: "김○행", grade: "마산여고", note: "만화애니과" }
+      ],
+      category: "지역사립대",
+      color: "bg-gradient-to-br from-purple-50 via-slate-50 to-white border-0 ring-1 ring-purple-200/40 shadow-[0_4px_15px_rgba(168,85,247,0.06)] hover:shadow-[0_8px_25px_rgba(168,85,247,0.1)]"
+    },
+    {
+      university: "남서울대학교",
+      department: "천안",
+      students: [
+        { name: "천○영", grade: "마여고", note: "공간조형" },
+        { name: "민○웅", grade: "합포고", note: "공간조형" },
+        { name: "김○현", grade: "중앙여고", note: "시각미디어" }
+      ],
+      category: "지역사립대",
+      color: "bg-gradient-to-br from-cyan-50 via-slate-50 to-white border-0 ring-1 ring-cyan-200/40 shadow-[0_4px_15px_rgba(6,182,212,0.06)] hover:shadow-[0_8px_25px_rgba(6,182,212,0.1)]"
+    },
+    {
+      university: "수원대학교",
+      department: "수원",
+      students: [
+        { name: "이○원", grade: "경일고", note: "패션디자인" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-indigo-50 via-slate-50 to-white border-0 ring-1 ring-indigo-200/40 shadow-[0_4px_15px_rgba(99,102,241,0.06)] hover:shadow-[0_8px_25px_rgba(99,102,241,0.1)]"
+    },
+    {
+      university: "호서대학교",
+      department: "아산캠퍼스",
+      students: [
+        { name: "김○지", grade: "진해여고", note: "디자인스쿨" },
+        { name: "윤○주", grade: "삼진고", note: "디자인스쿨" },
+        { name: "홍○의", grade: "무학여고", note: "디자인스쿨" }
+      ],
+      category: "지역사립대",
+      color: "bg-gradient-to-br from-rose-50 via-slate-50 to-white border-0 ring-1 ring-rose-200/40 shadow-[0_4px_15px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.1)]"
+    },
+    {
       university: "인천대학교",
       department: "인천",
       students: [
@@ -110,106 +210,6 @@ export default function Admissions2026() {
       ],
       category: "지역사립대",
       color: "bg-gradient-to-br from-rose-50 via-slate-50 to-white border-0 ring-1 ring-rose-200/40 shadow-[0_4px_15px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.1)]"
-    },
-    {
-      university: "수원대학교",
-      department: "수원",
-      students: [
-        { name: "이○원", grade: "경일고", note: "패션디자인" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-indigo-50 via-slate-50 to-white border-0 ring-1 ring-indigo-200/40 shadow-[0_4px_15px_rgba(99,102,241,0.06)] hover:shadow-[0_8px_25px_rgba(99,102,241,0.1)]"
-    },
-    {
-      university: "호서대학교",
-      department: "아산캠퍼스",
-      students: [
-        { name: "김○지", grade: "진해여고", note: "디자인스쿨" },
-        { name: "윤○주", grade: "삼진고", note: "디자인스쿨" },
-        { name: "홍○의", grade: "무학여고", note: "디자인스쿨" }
-      ],
-      category: "지역사립대",
-      color: "bg-gradient-to-br from-rose-50 via-slate-50 to-white border-0 ring-1 ring-rose-200/40 shadow-[0_4px_15px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.1)]"
-    },
-    {
-      university: "남서울대학교",
-      department: "천안",
-      students: [
-        { name: "천○영", grade: "마여고", note: "공간조형" },
-        { name: "민○웅", grade: "합포고", note: "공간조형" },
-        { name: "김○현", grade: "중앙여고", note: "시각미디어" }
-      ],
-      category: "지역사립대",
-      color: "bg-gradient-to-br from-cyan-50 via-slate-50 to-white border-0 ring-1 ring-cyan-200/40 shadow-[0_4px_15px_rgba(6,182,212,0.06)] hover:shadow-[0_8px_25px_rgba(6,182,212,0.1)]"
-    },
-    {
-      university: "중부대학교",
-      department: "충남",
-      students: [
-        { name: "김○행", grade: "마산여고", note: "만화애니과" }
-      ],
-      category: "지역사립대",
-      color: "bg-gradient-to-br from-purple-50 via-slate-50 to-white border-0 ring-1 ring-purple-200/40 shadow-[0_4px_15px_rgba(168,85,247,0.06)] hover:shadow-[0_8px_25px_rgba(168,85,247,0.1)]"
-    },
-    {
-      university: "한밭대학교",
-      department: "대전",
-      students: [
-        { name: "박○희", grade: "내서여고", note: "시각영상" },
-        { name: "김○지", grade: "마여고", note: "산업" },
-        { name: "김○", grade: "제일여고", note: "산업" }
-      ],
-      category: "지역거점국립대",
-      color: "bg-gradient-to-br from-lime-50 via-slate-50 to-white border-0 ring-1 ring-lime-200/40 shadow-[0_4px_15px_rgba(132,204,22,0.06)] hover:shadow-[0_8px_25px_rgba(132,204,22,0.1)]"
-    },
-    {
-      university: "목원대학교",
-      department: "대전",
-      students: [
-        { name: "김○지", grade: "합포고", note: "섬유패션" }
-      ],
-      category: "지역사립대",
-      color: "bg-gradient-to-br from-orange-50 via-slate-50 to-white border-0 ring-1 ring-orange-200/40 shadow-[0_4px_15px_rgba(249,115,22,0.06)] hover:shadow-[0_8px_25px_rgba(249,115,22,0.1)]"
-    },
-    {
-      university: "경북대학교",
-      department: "대구",
-      students: [
-        { name: "박○희", grade: "내서여고", note: "디자인학과" },
-        { name: "이○원", grade: "진영고", note: "섬유패션디자인" },
-        { name: "이○주", grade: "삼진고", note: "섬유패션디자인" }
-      ],
-      category: "지역거점국립대",
-      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
-    },
-    {
-      university: "동덕여자대학교",
-      department: "서울",
-      students: [
-        { name: "배○예", grade: "검정고시", note: "시각실내" },
-        { name: "서○서", grade: "마여고", note: "패션" },
-        { name: "윤○현", grade: "영운고", note: "패션" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-pink-50 via-slate-50 to-white border-0 ring-1 ring-pink-200/40 shadow-[0_4px_15px_rgba(236,72,153,0.06)] hover:shadow-[0_8px_25px_rgba(236,72,153,0.1)]"
-    },
-    {
-      university: "삼육대학교",
-      department: "서울",
-      students: [
-        { name: "심○주", grade: "율하고", note: "아트앤디자인" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-emerald-50 via-slate-50 to-white border-0 ring-1 ring-emerald-200/40 shadow-[0_4px_15px_rgba(16,185,129,0.06)] hover:shadow-[0_8px_25px_rgba(16,185,129,0.1)]"
-    },
-    {
-      university: "인하대학교",
-      department: "인천",
-      students: [
-        { name: "정○아", grade: "구암고", note: "의류" }
-      ],
-      category: "서울/ 수도권",
-      color: "bg-gradient-to-br from-blue-50 via-slate-50 to-white border-0 ring-1 ring-blue-200/40 shadow-[0_4px_15px_rgba(59,130,246,0.06)] hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]"
     },
     {
       university: "단국대학교",
