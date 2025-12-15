@@ -27,6 +27,64 @@ export default function Admissions2026() {
   };
   const admissionResults = [
     {
+      university: "홍익대학교",
+      department: "서울",
+      students: [
+        { name: "황○서", grade: "중앙고", note: "미술대학자율전공" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-red-50 via-slate-50 to-white border-0 ring-1 ring-red-200/40 shadow-[0_4px_15px_rgba(239,68,68,0.06)] hover:shadow-[0_8px_25px_rgba(239,68,68,0.1)]"
+    },
+    {
+      university: "홍익대학교 세종",
+      department: "세종",
+      students: [
+        { name: "최○호", grade: "마산고", note: "디자인컨버젼스학부" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-red-50 via-slate-50 to-white border-0 ring-1 ring-red-200/40 shadow-[0_4px_15px_rgba(239,68,68,0.06)] hover:shadow-[0_8px_25px_rgba(239,68,68,0.1)]"
+    },
+    {
+      university: "건국대학교 글로컬",
+      department: "충주",
+      students: [
+        { name: "성○빈", grade: "성지여고", note: "실내디자인" },
+        { name: "조○진", grade: "제일여고", note: "디자인조형자유전공" },
+        { name: "김○나", grade: "중앙여고", note: "디자인조형자유전공" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-green-50 via-slate-50 to-white border-0 ring-1 ring-green-200/40 shadow-[0_4px_15px_rgba(34,197,94,0.06)] hover:shadow-[0_8px_25px_rgba(34,197,94,0.1)]"
+    },
+    {
+      university: "인천대학교",
+      department: "인천",
+      students: [
+        { name: "양○정", grade: "마여고", note: "디자인학부" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-sky-50 via-slate-50 to-white border-0 ring-1 ring-sky-200/40 shadow-[0_4px_15px_rgba(14,165,233,0.06)] hover:shadow-[0_8px_25px_rgba(14,165,233,0.1)]"
+    },
+    {
+      university: "공주대학교",
+      department: "공주",
+      students: [
+        { name: "이○후", grade: "가포고", note: "가구리빙" },
+        { name: "박○연", grade: "무학여고", note: "가구리빙" },
+        { name: "김○연", grade: "무학여고", note: "도자문화" }
+      ],
+      category: "지역거점국립대",
+      color: "bg-gradient-to-br from-amber-50 via-slate-50 to-white border-0 ring-1 ring-amber-200/40 shadow-[0_4px_15px_rgba(245,158,11,0.06)] hover:shadow-[0_8px_25px_rgba(245,158,11,0.1)]"
+    },
+    {
+      university: "계원예술대학교",
+      department: "의왕",
+      students: [
+        { name: "최○은", grade: "제일여고", note: "실내건축" }
+      ],
+      category: "서울/ 수도권",
+      color: "bg-gradient-to-br from-fuchsia-50 via-slate-50 to-white border-0 ring-1 ring-fuchsia-200/40 shadow-[0_4px_15px_rgba(217,70,239,0.06)] hover:shadow-[0_8px_25px_rgba(217,70,239,0.1)]"
+    },
+    {
       university: "동덕여자대학교",
       department: "서울",
       students: [
@@ -160,6 +218,7 @@ export default function Admissions2026() {
       university: "경북대학교",
       department: "대구",
       students: [
+        { name: "박○희", grade: "내서여고", note: "디자인학과" },
         { name: "이○원", grade: "진영고", note: "섬유패션디자인" },
         { name: "이○주", grade: "삼진고", note: "섬유패션디자인" }
       ],
