@@ -12,16 +12,16 @@ export default function AdmissionsOverview() {
       year: "2026학년도",
       total: 134,
       universities: [
+        { name: "홍익대학교", count: 1, category: "서울/ 수도권" },
         { name: "동덕여자대학교", count: 3, category: "서울/ 수도권" },
         { name: "인하대학교", count: 1, category: "서울/ 수도권" },
         { name: "단국대학교", count: 1, category: "서울/ 수도권" },
         { name: "삼육대학교", count: 1, category: "서울/ 수도권" },
         { name: "용인대학교", count: 2, category: "서울/ 수도권" },
         { name: "수원대학교", count: 1, category: "서울/ 수도권" },
-        { name: "상명대학교(천안)", count: 4, category: "지역사립대" },
-        { name: "한밭대학교", count: 3, category: "지역거점국립대" }
+        { name: "건국대학교 글로컬", count: 3, category: "서울/ 수도권" }
       ],
-      highlights: ["동덕여대·인하대·단국대 합격", "창원대 23명 대거 합격", "계명대 20명 지역최다 합격", "영남대 20명 지역최다 합격"]
+      highlights: ["홍익대·동덕여대·인하대 합격", "창원대 23명 대거 합격", "계명대 20명 지역최다 합격", "영남대 20명 지역최다 합격"]
     },
     {
       year: "2025학년도",
