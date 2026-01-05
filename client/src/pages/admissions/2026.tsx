@@ -188,7 +188,8 @@ export default function Admissions2026() {
       university: "단국대학교",
       department: "죽전캠퍼스",
       students: [
-        { name: "정○아", grade: "구암고", note: "패션디자인" }
+        { name: "정○아", grade: "구암고", note: "패션디자인" },
+        { name: "최○호", grade: "마산고", note: "커뮤니케이션" }
       ],
       category: "서울/ 수도권",
       color: "bg-gradient-to-br from-violet-50 via-slate-50 to-white border-0 ring-1 ring-violet-200/40 shadow-[0_4px_15px_rgba(139,69,244,0.06)] hover:shadow-[0_8px_25px_rgba(139,69,244,0.1)]"
