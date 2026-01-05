@@ -185,33 +185,6 @@ export default function Admissions2026() {
       color: "bg-gradient-to-br from-fuchsia-50 via-slate-50 to-white border-0 ring-1 ring-fuchsia-200/40 shadow-[0_4px_15px_rgba(217,70,239,0.06)] hover:shadow-[0_8px_25px_rgba(217,70,239,0.1)]"
     },
     {
-      university: "대구대학교",
-      department: "대구",
-      students: [
-        { name: "이○원", grade: "경일고", note: "패션" },
-        { name: "임○은", grade: "의령여고", note: "패션" },
-        { name: "김○지", grade: "진해여고", note: "시각" },
-        { name: "최○경", grade: "영운고", note: "시각" },
-        { name: "추○준", grade: "경원고", note: "시각" },
-        { name: "김○령", grade: "한일여고", note: "시각" },
-        { name: "이○빈", grade: "구암고", note: "시각" },
-        { name: "진○빈", grade: "함안고", note: "시각" },
-        { name: "김○윤", grade: "마산고", note: "시각" },
-        { name: "류○준", grade: "경일고", note: "시각" },
-        { name: "차○호", grade: "문성고", note: "산업" },
-        { name: "김○우", grade: "중앙고", note: "산업" },
-        { name: "이○현", grade: "용마고", note: "산업" },
-        { name: "윤○빈", grade: "가포고", note: "산업" },
-        { name: "조○린", grade: "태봉고", note: "실내건축" },
-        { name: "정○인", grade: "검정고시", note: "게임학과" },
-        { name: "한○진", grade: "무학여고", note: "웹툰영상애니" },
-        { name: "김○행", grade: "마산여고", note: "웹툰영상애니" },
-        { name: "오○은", grade: "가포고", note: "웹툰영상애니" }
-      ],
-      category: "지역사립대",
-      color: "bg-gradient-to-br from-rose-50 via-slate-50 to-white border-0 ring-1 ring-rose-200/40 shadow-[0_4px_15px_rgba(244,63,94,0.06)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.1)]"
-    },
-    {
       university: "단국대학교",
       department: "죽전캠퍼스",
       students: [
