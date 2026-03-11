@@ -221,10 +221,21 @@ export default function Admissions2026() {
         { name: "윤○빈", grade: "가포고", note: "디자인학부" },
         { name: "이○은", grade: "삼진고", note: "디자인학부" },
         { name: "손○은", grade: "봉림고", note: "무대미술" },
-        { name: "이○정", grade: "명곡고", note: "AI디자인" }
+        { name: "이○정", grade: "명곡고", note: "AI디자인" },
+        { name: "이○율", grade: "성지여고", note: "AI디자인" },
+        { name: "윤○리", grade: "마여고", note: "디자인학부" }
       ],
       category: "지역사립대",
       color: "bg-gradient-to-br from-amber-50 via-slate-50 to-white border-0 ring-1 ring-amber-200/40 shadow-[0_4px_15px_rgba(245,158,11,0.06)] hover:shadow-[0_8px_25px_rgba(245,158,11,0.1)]"
+    },
+    {
+      university: "백석대학교",
+      department: "천안",
+      students: [
+        { name: "박○웅", grade: "용마고", note: "디자인영상학부" }
+      ],
+      category: "지역사립대",
+      color: "bg-gradient-to-br from-cyan-50 via-slate-50 to-white border-0 ring-1 ring-cyan-200/40 shadow-[0_4px_15px_rgba(6,182,212,0.06)] hover:shadow-[0_8px_25px_rgba(6,182,212,0.1)]"
     },
     {
       university: "영남대학교",
