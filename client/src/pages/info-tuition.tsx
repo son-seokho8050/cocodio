@@ -1,9 +1,19 @@
-import { ArrowLeft, Phone, Mail } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, X } from "lucide-react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import tuitionImage from "@assets/image_1756712256582.png";
+import masanImg from "@assets/마산코코_1773204169516.jpg";
+import manhwaImg from "@assets/만화코코_1773204265868.jpg";
+import ipsiImg from "@assets/입시코코_1773204265868.jpg";
+
+const tuitionImages = [
+  { src: masanImg, label: "마산코코 교습비 계시표" },
+  { src: manhwaImg, label: "만화코코 교습비 계시표" },
+  { src: ipsiImg, label: "입시코코 교습비 계시표" },
+];
 
 export default function InfoTuition() {
+  const [modalImg, setModalImg] = useState<{ src: string; label: string } | null>(null);
+
   return (
     <div className="min-h-screen bg-gray-50 pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -27,6 +37,7 @@ export default function InfoTuition() {
                   <div className="space-y-2 text-sm text-gray-700">
                     <p>마산코코 등록번호 제 718호</p>
                     <p>입시코코 등록번호 제 1569호</p>
+                    <p>만화코코 등록번호 제 2335호</p>
                   </div>
                 </div>
 
@@ -53,21 +64,58 @@ export default function InfoTuition() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center">
-                <img 
-                  src={tuitionImage} 
-                  alt="교습비 계시표" 
-                  className="w-full h-auto rounded-lg shadow-lg mb-6"
-                />
-                
-
+              <div className="flex flex-col gap-4">
+                <p className="text-sm font-medium text-gray-500">교습비 계시표 (클릭하면 크게 볼 수 있어요)</p>
+                <div className="grid grid-cols-3 gap-3">
+                  {tuitionImages.map((img) => (
+                    <button
+                      key={img.label}
+                      onClick={() => setModalImg(img)}
+                      className="rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.label}
+                        className="w-full h-auto object-cover"
+                      />
+                      <div className="bg-gray-50 py-1 px-2 text-center">
+                        <span className="text-xs text-gray-600 font-medium leading-tight block">{img.label}</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
+
+      {modalImg && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setModalImg(null)}
+        >
+          <div
+            className="relative max-w-2xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setModalImg(null)}
+              className="absolute top-3 right-3 z-10 bg-white rounded-full p-1 shadow hover:bg-gray-100 transition-colors"
+            >
+              <X className="h-5 w-5 text-gray-700" />
+            </button>
+            <img
+              src={modalImg.src}
+              alt={modalImg.label}
+              className="w-full h-auto"
+            />
+            <div className="p-3 text-center text-sm font-medium text-gray-700 bg-gray-50">
+              {modalImg.label}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
