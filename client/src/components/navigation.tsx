@@ -40,6 +40,7 @@ export default function Navigation() {
               커리큘럼
             </button>
 
+            {/* 합격자명단 - 비활성화 (다시 지시 전까지)
             <div 
               className="relative"
               onMouseEnter={() => setIsAdmissionsOpen(true)}
@@ -74,6 +75,7 @@ export default function Navigation() {
                 </div>
               )}
             </div>
+            */}
             <button
               onClick={() => scrollToSection('portfolio')}
               className="text-sm text-gray-700 hover:text-primary-600 transition-colors leading-none whitespace-nowrap"
@@ -133,7 +135,7 @@ export default function Navigation() {
               </button>
               
               
-              {/* Mobile Admissions Menu */}
+              {/* 모바일 합격자명단 - 비활성화 (다시 지시 전까지)
               <div className="border-l-2 border-primary-200 pl-4 space-y-2">
                 <div className="text-gray-900 font-medium text-sm">합격자명단</div>
                 <Link href="/admissions" className="block text-gray-600 hover:text-primary-600 transition-colors text-sm">
@@ -155,6 +157,7 @@ export default function Navigation() {
                   2022학년도
                 </Link>
               </div>
+              */}
               
               <button
                 onClick={() => scrollToSection('portfolio')}
