@@ -97,12 +97,42 @@ export default function AchievementsSection() {
           <h2 className="text-3xl lg:text-4xl font-black tracking-widest text-gray-900 mb-12">RESPECTFUL</h2>
           <div className="flex flex-wrap justify-center gap-10">
             {[
-              { name: "DIETER RAMS", url: "https://cocodiolab-rams.netlify.app/" },
-              { name: "ZAHA HADID", url: "https://cocodiolab-zaha.netlify.app/" },
-              { name: "JEAN NOUVEL", url: "https://cocodiolab-nouvel.netlify.app/" },
-              { name: "JONY IVE", url: "https://cocodio-ive.netlify.app/" },
-              { name: "KARIM RASHID", url: "https://cocodiolab-karim.netlify.app/" },
-              { name: "CHRIS BANGLE", url: "https://cocodiolab-bangle.netlify.app/" },
+              {
+                name: "DIETER RAMS",
+                url: "https://cocodiolab-rams.netlify.app/",
+                bg: "radial-gradient(circle at 32% 32%, #f5f5f5, #c9c9c9 45%, #8a8a8a 72%, #3a3a3a)",
+                shadow: "0 8px 28px rgba(0,0,0,0.22), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.18)",
+              },
+              {
+                name: "ZAHA HADID",
+                url: "https://cocodiolab-zaha.netlify.app/",
+                bg: "radial-gradient(circle at 32% 32%, #ffffff, #d4cfe8 42%, #8b7db5 70%, #3d2f72)",
+                shadow: "0 8px 28px rgba(61,47,114,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
+              },
+              {
+                name: "JEAN NOUVEL",
+                url: "https://cocodiolab-nouvel.netlify.app/",
+                bg: "radial-gradient(circle at 32% 32%, #ffffff, #c8ddd4 42%, #6fa38e 70%, #2a5c4a)",
+                shadow: "0 8px 28px rgba(42,92,74,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
+              },
+              {
+                name: "JONY IVE",
+                url: "https://cocodio-ive.netlify.app/",
+                bg: "radial-gradient(circle at 32% 32%, #ffffff, #ccd8e8 42%, #7096b8 70%, #1e3f5e)",
+                shadow: "0 8px 28px rgba(30,63,94,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
+              },
+              {
+                name: "KARIM RASHID",
+                url: "https://cocodiolab-karim.netlify.app/",
+                bg: "radial-gradient(circle at 32% 32%, #ffffff, #e8ccd8 42%, #b87090 70%, #6e1f40)",
+                shadow: "0 8px 28px rgba(110,31,64,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
+              },
+              {
+                name: "CHRIS BANGLE",
+                url: "https://cocodiolab-bangle.netlify.app/",
+                bg: "radial-gradient(circle at 32% 32%, #ffffff, #e4d8c8 42%, #b89870 70%, #5e3a1e)",
+                shadow: "0 8px 28px rgba(94,58,30,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
+              },
             ].map((item) => (
               <a
                 key={item.name}
@@ -112,13 +142,10 @@ export default function AchievementsSection() {
                 className="flex flex-col items-center gap-3 group"
               >
                 <div
-                  className="w-20 h-20 rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:shadow-2xl"
-                  style={{
-                    background: "radial-gradient(circle at 35% 35%, #ffffff, #c8d8f0 40%, #7a9cc8 70%, #3b5f8a)",
-                    boxShadow: "0 8px 24px rgba(59,95,138,0.35), inset 0 -4px 10px rgba(0,0,0,0.15), inset 0 4px 8px rgba(255,255,255,0.6)",
-                  }}
+                  className="w-20 h-20 rounded-full transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: item.bg, boxShadow: item.shadow }}
                 />
-                <span className="text-xs font-bold tracking-widest text-gray-700 group-hover:text-primary-600 transition-colors">
+                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-gray-900 transition-colors">
                   {item.name}
                 </span>
               </a>
