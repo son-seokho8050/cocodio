@@ -93,7 +93,7 @@ export default function AchievementsSection() {
         </div>
 
         {/* RESPECTFUL Section */}
-        <div className="mt-20 text-center">
+        <div className="mt-32 mb-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-black tracking-widest text-gray-900 mb-12">RESPECTFUL</h2>
           <div className="flex flex-wrap justify-center gap-10">
             {[
@@ -154,7 +154,7 @@ export default function AchievementsSection() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-32">
           <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               왜 많은 학생들이 코코미술학원을 선택할까요?
