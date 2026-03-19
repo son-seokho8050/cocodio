@@ -1,27 +1,41 @@
 import { useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Calendar, Play } from "lucide-react";
-import type { Achievement } from "@shared/schema";
+
+const seoulMetroUniversities = [
+  "서울대학교", "홍익대학교", "국민대학교", "이화여자대학교", "중앙대학교",
+  "경희대학교", "한양대학교", "건국대학교", "서울여자대학교", "동덕여자대학교",
+  "성신여자대학교", "덕성여자대학교", "단국대학교", "세종대학교", "상명대학교",
+  "한성대학교", "서경대학교", "삼육대학교", "명지대학교", "숙명여자대학교",
+  "서울과학기술대학교", "인하대학교", "인천대학교", "경기대학교", "수원대학교",
+  "용인대학교", "한양대(에리카)", "계원예술대학교",
+];
+
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export default function HeroSection() {
-  const [currentAchievement, setCurrentAchievement] = useState(0);
-
-  const { data: achievements = [], isLoading } = useQuery<Achievement[]>({
-    queryKey: ["/api/achievements"],
-  });
+  const [index, setIndex] = useState(0);
+  const [list] = useState(() => shuffle(seoulMetroUniversities));
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    if (achievements.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentAchievement((prev) => (prev + 1) % achievements.length);
-      }, 3000);
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % list.length);
+        setVisible(true);
+      }, 300);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [list.length]);
 
-      return () => clearInterval(interval);
-    }
-  }, [achievements.length]);
-
-  const achievement = achievements.length > 0 ? achievements[currentAchievement] : null;
   const scrollToPortfolio = () => {
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
@@ -80,29 +94,18 @@ export default function HeroSection() {
               decoding="async"
             />
             
-            {!isLoading && (
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl transition-all duration-500 ease-in-out">
-                <div className="flex items-center space-x-4">
-                  {achievement ? (
-                    <>
-                      <div className="text-3xl font-bold text-primary-600">{achievement.count}</div>
-                      <div className="text-sm text-gray-600">
-                        <span className="font-semibold">{achievement.university}</span> 
-                        <span dangerouslySetInnerHTML={{ __html: ` ${achievement.description}` }} />
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="text-3xl font-bold text-primary-600">합격</div>
-                      <div className="text-sm text-gray-600">
-                        <span className="font-semibold">한양대</span> 
-                        <span dangerouslySetInnerHTML={{ __html: " 실기대회<br />지역 최다 수상" }} />
-                      </div>
-                    </>
-                  )}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl px-5 py-4 shadow-xl min-w-[170px]">
+              <div className="flex items-center space-x-3">
+                <div className="text-2xl font-black text-primary-600 shrink-0">합격</div>
+                <div
+                  className="text-sm font-bold text-gray-800 leading-tight transition-all duration-300"
+                  style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(6px)' }}
+                >
+                  {list[index]}
                 </div>
               </div>
-            )}
+              <div className="text-[10px] text-gray-400 mt-1 tracking-wide">인서울·수도권 미대</div>
+            </div>
             
             <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 text-white shadow-lg">
               <div className="text-2xl font-bold text-center">FOLLOW</div>
