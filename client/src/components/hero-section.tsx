@@ -95,14 +95,11 @@ export default function HeroSection() {
             />
             
             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl px-5 py-4 shadow-xl min-w-[170px]">
-              <div className="flex items-center space-x-3">
-                <div className="text-2xl font-black text-primary-600 shrink-0">합격</div>
-                <div
-                  className="text-sm font-bold text-gray-800 leading-tight transition-all duration-300"
-                  style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(6px)' }}
-                >
-                  {list[index]}
-                </div>
+              <div
+                className="text-2xl font-black text-primary-600 leading-tight transition-all duration-300"
+                style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(6px)' }}
+              >
+                {list[index]}
               </div>
               <div className="text-[10px] text-gray-400 mt-1 tracking-wide">인서울·수도권 미대</div>
             </div>
