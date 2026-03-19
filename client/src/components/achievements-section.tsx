@@ -7,7 +7,10 @@ export default function AchievementsSection() {
       icon: Trophy,
       title: "인터랙티브 웹 이론수업",
       stats: [
-        "학생들이 직접적이고 능동적으로 상호작용 가능한 인터랙티브 웹 수업을통해 이론을 실제 경험하는 코코만의 이론수업"
+        "학생들이 직접적이고 능동적으로",
+        "상호작용 가능한 인터랙티브",
+        "웹 수업을 통해 이론을 실제 경험하는",
+        "코코만의 이론수업"
       ],
       color: "text-yellow-600",
       bgColor: "bg-yellow-50"
