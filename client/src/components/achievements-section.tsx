@@ -92,6 +92,40 @@ export default function AchievementsSection() {
           })}
         </div>
 
+        {/* RESPECTFUL Section */}
+        <div className="mt-20 text-center">
+          <h2 className="text-3xl lg:text-4xl font-black tracking-widest text-gray-900 mb-12">RESPECTFUL</h2>
+          <div className="flex flex-wrap justify-center gap-10">
+            {[
+              { name: "DIETER RAMS", url: "https://cocodiolab-rams.netlify.app/" },
+              { name: "ZAHA HADID", url: "https://cocodiolab-zaha.netlify.app/" },
+              { name: "JEAN NOUVEL", url: "https://cocodiolab-nouvel.netlify.app/" },
+              { name: "JONY IVE", url: "https://cocodio-ive.netlify.app/" },
+              { name: "KARIM RASHID", url: "https://cocodiolab-karim.netlify.app/" },
+              { name: "CHRIS BANGLE", url: "https://cocodiolab-bangle.netlify.app/" },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 group"
+              >
+                <div
+                  className="w-20 h-20 rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:shadow-2xl"
+                  style={{
+                    background: "radial-gradient(circle at 35% 35%, #ffffff, #c8d8f0 40%, #7a9cc8 70%, #3b5f8a)",
+                    boxShadow: "0 8px 24px rgba(59,95,138,0.35), inset 0 -4px 10px rgba(0,0,0,0.15), inset 0 4px 8px rgba(255,255,255,0.6)",
+                  }}
+                />
+                <span className="text-xs font-bold tracking-widest text-gray-700 group-hover:text-primary-600 transition-colors">
+                  {item.name}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
