@@ -1,183 +1,106 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Users, Target, Award } from "lucide-react";
 
+const glassCard = {
+  background: 'rgba(255,255,255,0.05)',
+  backdropFilter: 'blur(20px)',
+  WebkitBackdropFilter: 'blur(20px)',
+  border: '1px solid rgba(255,255,255,0.10)',
+  boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+} as const;
+
+const achievements = [
+  {
+    icon: Trophy,
+    title: "인터랙티브 웹 이론수업",
+    stats: [
+      "학생들이 직접적이고 능동적으로",
+      "상호작용 가능한 인터랙티브",
+      "웹 수업을 통해 이론을 실제 경험하는",
+      "코코만의 이론수업"
+    ],
+    accent: "#F59E0B",
+  },
+  {
+    icon: Users,
+    title: "FOLLOW 시스템",
+    stats: [
+      "개별 맞춤형 진도 관리",
+      "체계적 사고력 훈련",
+      "창의성과 논리적 사고 병행",
+      "실전 중심 실기 연습",
+      "지속적 피드백 시스템"
+    ],
+    accent: "#A78BFA",
+  },
+  {
+    icon: Target,
+    title: "전문 과정 운영",
+    stats: [
+      "입시미술 (디자인/만화)",
+      "웹툰·일러스트 전문반",
+      "디지털 드로잉",
+      "중등미술 기초반",
+      "개별 포트폴리오 완성"
+    ],
+    accent: "#06B6D4",
+  },
+  {
+    icon: Award,
+    title: "검증된 실기력",
+    stats: [
+      "마산/김해 지역 대표 학원",
+      "검증된 합격 실적",
+      "경험 많은 전문 강사진",
+      "체계적 커리큘럼 운영",
+      "학생 개별 성향 분석"
+    ],
+    accent: "#34D399",
+  }
+];
+
 export default function AchievementsSection() {
-  const achievements = [
-    {
-      icon: Trophy,
-      title: "인터랙티브 웹 이론수업",
-      stats: [
-        "학생들이 직접적이고 능동적으로",
-        "상호작용 가능한 인터랙티브",
-        "웹 수업을 통해 이론을 실제 경험하는",
-        "코코만의 이론수업"
-      ],
-      color: "text-yellow-600",
-      bgColor: "bg-yellow-50"
-    },
-    {
-      icon: Users,
-      title: "FOLLOW 시스템",
-      stats: [
-        "개별 맞춤형 진도 관리",
-        "체계적 사고력 훈련",
-        "창의성과 논리적 사고 병행",
-        "실전 중심 실기 연습",
-        "지속적 피드백 시스템"
-      ],
-      color: "text-primary-600",
-      bgColor: "bg-primary-50"
-    },
-    {
-      icon: Target,
-      title: "전문 과정 운영",
-      stats: [
-        "입시미술 (디자인/만화)",
-        "웹툰·일러스트 전문반",
-        "디지털 드로잉",
-        "중등미술 기초반",
-        "개별 포트폴리오 완성"
-      ],
-      color: "text-secondary-600",
-      bgColor: "bg-purple-50"
-    },
-    {
-      icon: Award,
-      title: "검증된 실기력",
-      stats: [
-        "마산/김해 지역 대표 학원",
-        "검증된 합격 실적",
-        "경험 많은 전문 강사진",
-        "체계적 커리큘럼 운영",
-        "학생 개별 성향 분석"
-      ],
-      color: "text-accent-600",
-      bgColor: "bg-orange-50"
-    }
-  ];
-
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20" style={{ background: 'transparent' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            검증된 <span className="text-primary-600">실력과 성과</span>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.95)' }}>
+            코코만의{' '}
+            <span style={{
+              background: 'linear-gradient(135deg, #A78BFA 0%, #06B6D4 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
+              특별한 교육
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">마산/김해/ 창원 지역에서 최상의 실기대회 수상 실적을 달성한 코코의 차별화된 성과입니다.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {achievements.map((achievement, index) => {
-            const IconComponent = achievement.icon;
-            return (
-              <Card key={index} className="bg-white rounded-2xl shadow-lg card-hover">
-                <CardContent className="p-8">
-                  <div className={`${achievement.bgColor} ${achievement.color} rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6`}>
-                    <IconComponent className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                    {achievement.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {achievement.stats.map((stat, statIndex) => (
-                      <li key={statIndex} className="text-sm text-gray-600 flex items-center justify-center text-center ml-[-12px] mr-[-12px]">
-                        <div className={`w-2 h-2 ${achievement.color.replace('text-', 'bg-')} rounded-full mr-3 flex-shrink-0`}></div>
-                        {stat}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-
-        {/* RESPECTFUL Section */}
-        <div className="mt-32 mb-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-black tracking-widest text-gray-900 mb-12">RESPECTFUL</h2>
-          <div className="flex flex-wrap justify-center gap-10">
-            {[
-              {
-                name: "DIETER RAMS",
-                url: "https://cocodiolab-rams.netlify.app/",
-                bg: "radial-gradient(circle at 32% 32%, #f5f5f5, #c9c9c9 45%, #8a8a8a 72%, #3a3a3a)",
-                shadow: "0 8px 28px rgba(0,0,0,0.22), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.18)",
-              },
-              {
-                name: "ZAHA HADID",
-                url: "https://cocodiolab-zaha.netlify.app/",
-                bg: "radial-gradient(circle at 32% 32%, #ffffff, #d4cfe8 42%, #8b7db5 70%, #3d2f72)",
-                shadow: "0 8px 28px rgba(61,47,114,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
-              },
-              {
-                name: "JEAN NOUVEL",
-                url: "https://cocodiolab-nouvel.netlify.app/",
-                bg: "radial-gradient(circle at 32% 32%, #ffffff, #c8ddd4 42%, #6fa38e 70%, #2a5c4a)",
-                shadow: "0 8px 28px rgba(42,92,74,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
-              },
-              {
-                name: "JONY IVE",
-                url: "https://cocodio-ive.netlify.app/",
-                bg: "radial-gradient(circle at 32% 32%, #ffffff, #ccd8e8 42%, #7096b8 70%, #1e3f5e)",
-                shadow: "0 8px 28px rgba(30,63,94,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
-              },
-              {
-                name: "KARIM RASHID",
-                url: "https://cocodiolab-karim.netlify.app/",
-                bg: "radial-gradient(circle at 32% 32%, #ffffff, #e8ccd8 42%, #b87090 70%, #6e1f40)",
-                shadow: "0 8px 28px rgba(110,31,64,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
-              },
-              {
-                name: "CHRIS BANGLE",
-                url: "https://cocodiolab-bangle.netlify.app/",
-                bg: "radial-gradient(circle at 32% 32%, #ffffff, #e4d8c8 42%, #b89870 70%, #5e3a1e)",
-                shadow: "0 8px 28px rgba(94,58,30,0.28), inset 0 4px 10px rgba(255,255,255,0.55), inset 0 -4px 8px rgba(0,0,0,0.15)",
-              },
-            ].map((item) => (
-              <a
-                key={item.name}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 group"
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {achievements.map(({ icon: Icon, title, stats, accent }) => (
+            <div
+              key={title}
+              className="rounded-3xl p-7 card-hover"
+              style={glassCard}
+            >
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
+                style={{ background: `${accent}18`, border: `1px solid ${accent}40` }}
               >
-                <div
-                  className="w-20 h-20 rounded-full transition-transform duration-300 group-hover:scale-110"
-                  style={{ background: item.bg, boxShadow: item.shadow }}
-                />
-                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-gray-900 transition-colors">
-                  {item.name}
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-32">
-          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              왜 많은 학생들이 코코미술학원을 선택할까요?
-            </h3>
-            <p className="text-lg text-gray-600 mb-6">
-              <strong>사고력과 창의성</strong>을 동시에 기르는 
-              차별화된 교육 시스템으로 학생들의 진정한 성장을 이끌어냅니다.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-primary-600 mb-2">수시합격</div>
-                <div className="text-sm text-gray-600">매년 94%이상<br />높은 수시합격률</div>
+                <Icon className="h-7 w-7" style={{ color: accent }} />
               </div>
-              <div>
-                <div className="text-3xl font-bold text-secondary-600 mb-2">FOLLOW</div>
-                <div className="text-sm text-gray-600">차별화된<br />올인원 교육 시스템</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-accent-600 mb-2">수상실적</div>
-                <div className="text-sm text-gray-600">주요 대학<br />실기대회 최다 수상</div>
-              </div>
+              <h3 className="text-lg font-bold mb-4" style={{ color: 'rgba(255,255,255,0.9)' }}>{title}</h3>
+              <ul className="space-y-2">
+                {stats.map((s, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                    <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: accent }} />
+                    {s}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
