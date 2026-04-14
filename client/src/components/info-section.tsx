@@ -19,28 +19,28 @@ export default function InfoSection() {
 
           {/* 교습비 */}
           <div className="glass-card p-8">
-            <div className="flex items-center gap-3 mb-6" style={{ position: 'relative', zIndex: 3 }}>
-              <div className="p-3 rounded-xl relative overflow-hidden" style={{ background: 'rgba(139,92,246,0.28)', border: '1px solid rgba(139,92,246,0.44)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)' }}>
-                <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.30) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 rounded-xl relative overflow-hidden" style={{ background: 'rgba(139,92,246,0.18)', border: '1px solid rgba(139,92,246,0.30)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.55)' }}>
+                <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.45) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
                 <CreditCard className="h-6 w-6" style={{ color: '#8B5CF6', position:'relative', zIndex:2 }} />
               </div>
-              <h3 className="text-xl font-bold" style={{ color: 'rgba(255,255,255,0.92)' }}>교습비 안내</h3>
+              <h3 className="text-xl font-bold" style={{ color: 'rgba(10,10,30,0.90)' }}>교습비 안내</h3>
             </div>
 
-            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)', position: 'relative', zIndex: 3 }}>
+            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.58)' }}>
               체계적인 커리큘럼과 개인별 맞춤 지도를 위한 교습비 안내입니다.
             </p>
 
-            <div className="space-y-2 mb-7" style={{ position: 'relative', zIndex: 3 }}>
+            <div className="space-y-2 mb-7">
               {['개인별 맞춤형 커리큘럼', '소수정예 클래스 운영', '상담을 통한 맞춤 안내'].map(item => (
-                <div key={item} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                <div key={item} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(10,10,30,0.62)' }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#8B5CF6', flexShrink: 0 }} />
                   {item}
                 </div>
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-3" style={{ position: 'relative', zIndex: 3 }}>
+            <div className="grid grid-cols-2 gap-3">
               <Link href="/info/tuition">
                 <button className="btn-gradient w-full py-3 text-sm" style={{ borderRadius: '0.875rem' }}>
                   마산코코
@@ -60,28 +60,28 @@ export default function InfoSection() {
 
           {/* 차량운행 */}
           <div className="glass-card p-8">
-            <div className="flex items-center gap-3 mb-6" style={{ position: 'relative', zIndex: 3 }}>
-              <div className="p-3 rounded-xl relative overflow-hidden" style={{ background: 'rgba(6,182,212,0.28)', border: '1px solid rgba(6,182,212,0.44)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)' }}>
-                <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.30) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 rounded-xl relative overflow-hidden" style={{ background: 'rgba(6,182,212,0.16)', border: '1px solid rgba(6,182,212,0.28)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.55)' }}>
+                <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.45) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
                 <Bus className="h-6 w-6" style={{ color: '#06B6D4', position:'relative', zIndex:2 }} />
               </div>
-              <h3 className="text-xl font-bold" style={{ color: 'rgba(255,255,255,0.92)' }}>안전귀가 차량운행</h3>
+              <h3 className="text-xl font-bold" style={{ color: 'rgba(10,10,30,0.90)' }}>안전귀가 차량운행</h3>
             </div>
 
-            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.60)', position: 'relative', zIndex: 3 }}>
+            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.58)' }}>
               학생들의 안전한 귀가를 위한 차량운행 서비스를 제공합니다.
             </p>
 
-            <div className="space-y-2 mb-7" style={{ position: 'relative', zIndex: 3 }}>
+            <div className="space-y-2 mb-7">
               {['마산전, 함안전 지역 운행', '안전한 등하원 서비스', '학부모 안심 서비스'].map(item => (
-                <div key={item} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.65)' }}>
+                <div key={item} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(10,10,30,0.62)' }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#06B6D4', flexShrink: 0 }} />
                   {item}
                 </div>
               ))}
             </div>
 
-            <div className="flex justify-center" style={{ position: 'relative', zIndex: 3 }}>
+            <div className="flex justify-center">
               <Link href="/info/transport">
                 <button className="btn-gradient px-10 py-3 text-sm" style={{
                   borderRadius: '0.875rem',

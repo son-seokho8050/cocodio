@@ -132,56 +132,43 @@
   ══════════════════════════════════════════════════════ */
 
   /* ══════════════════════════════════════════════════════════
-     glass-card  ─  다크 배경 위 진짜 유리 패널
+     glass-card  ─  레퍼런스 정확 구현 (7e2bfb61 / 31b090f6)
      ══════════════════════════════════════════════════════════
-     핵심:
-     · 배경이 어두우면 카드도 어두워야 진짜 유리
-     · backdrop-filter만 쓰면 배경 blur가 하얗게 보임 → 제거
-     · 대신 어두운 rgba로 배경 비침을 제어
-     · 상단 글로시 ::before 만이 밝음 → 이것이 유리의 증거
-     · 우측 edge 스페큘러 선 → 유리판 절단면
-     · 콘텐츠는 반드시 z-index: 2 이상 (글로시 위에)
+     레퍼런스 분석:
+     · 배경: 다크 네이비 (#070A18)
+     · 카드: 밝은 흰색 frosted glass (거의 불투명, 우유 유리)
+     · 카드 안 텍스트: 어두운 색 (다크 네이비)
+     · 카드가 어두운 배경 위에 밝게 떠있는 대비 효과
+     · 상단 inset glow = 유리 표면 광택
+     · 강한 box-shadow = 카드가 떠있는 깊이감
   ══════════════════════════════════════════════════════════ */
   .glass-card {
     position: relative;
-    /*
-      rgba(255,255,255,0.10) = 90% 투명
-      → 어두운 배경(#070A18 + 보라 블롭)이 강하게 비침
-      → 카드가 어둡게 보임 = 진짜 유리
-      backdrop-filter는 제거: blur+saturate가 배경을 하얗게 만들기 때문
-    */
-    background: rgba(255,255,255,0.10);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
     border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.95);
     box-shadow:
-      0 8px 40px  rgba(0,0,0,0.55),
-      0 2px 10px  rgba(0,0,0,0.35),
-      inset 0 1.5px 0 rgba(255,255,255,0.80),   /* 상단 절단면 빛 */
-      inset 0 -1px 0 rgba(255,255,255,0.06);
+      0 32px 72px rgba(0,0,10,0.55),
+      0 12px 28px rgba(0,0,10,0.30),
+      0 3px 8px   rgba(0,0,10,0.18),
+      inset 0 1.5px 0 rgba(255,255,255,1);
     transition: transform 0.28s cubic-bezier(.22,.68,0,1.20),
                 box-shadow 0.28s ease;
     overflow: hidden;
   }
 
-  /*
-    상단 글로시 스윕
-    카드 전체가 어두운 상태에서 상단만 밝게 빛남
-    = "유리 표면이 빛을 반사하는 것" 처럼 보임
-    z-index: 1 — 콘텐츠(z-index:2)는 이 위에 렌더링됨
-  */
+  /* 상단 미세 글로시 — 흰 카드 위에 살짝 더 밝은 상단 광택 */
   .glass-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 50%;
+    height: 40%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.68) 0%,     /* 최상단: 매우 밝음 */
-      rgba(255,255,255,0.35) 12%,
-      rgba(255,255,255,0.10) 40%,
-      rgba(255,255,255,0.02) 70%,
+      rgba(255,255,255,0.55) 0%,
+      rgba(255,255,255,0.18) 30%,
       rgba(255,255,255,0)    100%
     );
     border-radius: 24px 24px 0 0;
@@ -189,17 +176,17 @@
     z-index: 1;
   }
 
-  /* 우측 스페큘러 선 */
+  /* 우측 edge 스페큘러 — 유리판 절단면 */
   .glass-card::after {
     content: '';
     position: absolute;
-    top: 4%; right: 0;
-    width: 1.5px;
-    height: 55%;
+    top: 5%; right: 0;
+    width: 1px;
+    height: 50%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.65) 0%,
-      rgba(255,255,255,0.18) 45%,
+      rgba(255,255,255,1)    0%,
+      rgba(255,255,255,0.30) 50%,
       rgba(255,255,255,0)    100%
     );
     pointer-events: none;
@@ -213,13 +200,13 @@
   }
 
   .glass-card:hover {
-    transform: translateY(-8px) scale(1.012);
+    transform: translateY(-6px) scale(1.010);
     box-shadow:
-      0 24px 64px rgba(0,0,0,0.65),
-      0 8px 20px  rgba(0,0,0,0.40),
-      inset 0 1.5px 0 rgba(255,255,255,0.85),
-      inset 0 -1px 0 rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.28);
+      0 40px 88px rgba(0,0,10,0.62),
+      0 16px 36px rgba(0,0,10,0.36),
+      0 4px 12px  rgba(0,0,10,0.20),
+      inset 0 1.5px 0 rgba(255,255,255,1);
+    border-color: rgba(255,255,255,1);
   }
 
   /*

@@ -7,37 +7,37 @@ import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { insertConsultationSchema, type InsertConsultation } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 
-/* ── Input & Label styles — 반투명 유리 카드 위 (dark bg 비침) ── */
+/* ── Input & Label styles — 흰 frosted glass 카드 위 (다크 텍스트) ── */
 const inputStyle: React.CSSProperties = {
-  background: 'rgba(255,255,255,0.12)',
-  border: '1px solid rgba(255,255,255,0.22)',
-  color: 'rgba(255,255,255,0.90)',
+  background: 'rgba(10,10,30,0.06)',
+  border: '1px solid rgba(10,10,30,0.15)',
+  color: 'rgba(10,10,30,0.88)',
   borderRadius: '0.875rem',
   padding: '0.65rem 0.9rem',
   width: '100%',
   outline: 'none',
   fontSize: '0.875rem',
-  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15)',
+  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.80)',
   transition: 'border-color 0.2s, box-shadow 0.2s, background 0.2s',
 };
 const labelStyle: React.CSSProperties = {
   display: 'block',
   marginBottom: '0.4rem',
   fontSize: '0.78rem',
-  color: 'rgba(255,255,255,0.55)',
+  color: 'rgba(10,10,30,0.50)',
   fontWeight: 700,
   letterSpacing: '0.04em',
   textTransform: 'uppercase',
 };
 const onFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  e.currentTarget.style.borderColor = 'rgba(139,92,246,0.70)';
-  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.25), inset 0 1px 0 rgba(255,255,255,0.20)';
-  e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
+  e.currentTarget.style.borderColor = 'rgba(139,92,246,0.55)';
+  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.18), inset 0 1px 0 rgba(255,255,255,0.80)';
+  e.currentTarget.style.background = 'rgba(139,92,246,0.06)';
 };
 const onBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)';
-  e.currentTarget.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,0.15)';
-  e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
+  e.currentTarget.style.borderColor = 'rgba(10,10,30,0.15)';
+  e.currentTarget.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,0.80)';
+  e.currentTarget.style.background = 'rgba(10,10,30,0.06)';
 };
 
 export default function ContactSection() {
@@ -78,10 +78,10 @@ export default function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-16">
 
-          {/* Form — white glass card */}
+          {/* Form — white frosted glass card */}
           <div className="glass-card p-8">
-            <h3 className="text-lg font-bold mb-6" style={{ color: 'rgba(255,255,255,0.92)' }}>무료 체험수업 신청</h3>
-            <form onSubmit={form.handleSubmit((d) => submitConsultation.mutate(d))} className="space-y-5" style={{ position: 'relative', zIndex: 3 }}>
+            <h3 className="text-lg font-bold mb-6" style={{ color: 'rgba(10,10,30,0.90)' }}>무료 체험수업 신청</h3>
+            <form onSubmit={form.handleSubmit((d) => submitConsultation.mutate(d))} className="space-y-5">
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -141,24 +141,24 @@ export default function ContactSection() {
 
             <div className="space-y-4 mb-8">
               {[
-                { icon: MapPin, title: '주소', color: '#8B5CF6', lines: ['[마산] 마산 합포구 고운로 235, 유진빌딩 4층', '[김해] 김해시 내외중앙로 74, 밝은메디컬센터 10층'] },
-                { icon: Phone, title: '연락처', color: '#06B6D4', lines: ['010.4472.2028', '평일 13:00-23:00, 토/일요일 12:00-18:00'] },
-                { icon: Mail, title: '이메일', color: '#EC4899', lines: ['COCO2238050@NAVER.COM', '24시간 문의 접수 가능'] },
-              ].map(({ icon: Icon, title, color, lines }) => (
+                { icon: MapPin, title: '주소', color: '#8B5CF6', rgb: '139,92,246', lines: ['[마산] 마산 합포구 고운로 235, 유진빌딩 4층', '[김해] 김해시 내외중앙로 74, 밝은메디컬센터 10층'] },
+                { icon: Phone, title: '연락처', color: '#06B6D4', rgb: '6,182,212', lines: ['010.4472.2028', '평일 13:00-23:00, 토/일요일 12:00-18:00'] },
+                { icon: Mail, title: '이메일', color: '#EC4899', rgb: '236,72,153', lines: ['COCO2238050@NAVER.COM', '24시간 문의 접수 가능'] },
+              ].map(({ icon: Icon, title, color, rgb, lines }) => (
                 <div key={title} className="glass-card flex items-start gap-4 p-5">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 relative overflow-hidden"
                     style={{
-                      background: `rgba(${color === '#8B5CF6' ? '139,92,246' : color === '#06B6D4' ? '6,182,212' : '236,72,153'},0.28)`,
-                      border: `1px solid ${color}44`,
-                      boxShadow: `inset 0 1px 0 rgba(255,255,255,0.35)`,
+                      background: `rgba(${rgb},0.18)`,
+                      border: `1px solid rgba(${rgb},0.28)`,
+                      boxShadow: `inset 0 1px 0 rgba(255,255,255,0.55)`,
                     }}>
-                    <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.30) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
+                    <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.45) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
                     <Icon className="h-5 w-5" style={{ color, position:'relative', zIndex:2 }} />
                   </div>
-                  <div style={{ position: 'relative', zIndex: 3 }}>
-                    <h4 className="font-bold text-sm mb-1" style={{ color: 'rgba(255,255,255,0.90)' }}>{title}</h4>
+                  <div>
+                    <h4 className="font-bold text-sm mb-1" style={{ color: 'rgba(10,10,30,0.88)' }}>{title}</h4>
                     {lines.map((l, i) => (
-                      <p key={i} className="text-sm" style={{ color: i === 0 ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.46)' }}>{l}</p>
+                      <p key={i} className="text-sm" style={{ color: i === 0 ? 'rgba(10,10,30,0.70)' : 'rgba(10,10,30,0.48)' }}>{l}</p>
                     ))}
                   </div>
                 </div>
@@ -167,15 +167,15 @@ export default function ContactSection() {
 
             {/* Map */}
             <div className="glass-card overflow-hidden">
-              <div className="flex" style={{ position: 'relative', zIndex: 3 }}>
+              <div className="flex">
                 {(['masan', 'gimhae'] as const).map((campus) => (
                   <button key={campus} onClick={() => setSelectedCampus(campus)}
                     className="flex-1 py-3 text-sm font-bold transition-all"
                     style={{
                       background: selectedCampus === campus
-                        ? 'linear-gradient(135deg, rgba(139,92,246,0.12), rgba(6,182,212,0.12))'
+                        ? 'linear-gradient(135deg, rgba(139,92,246,0.10), rgba(6,182,212,0.10))'
                         : 'transparent',
-                      color: selectedCampus === campus ? '#C4B5FD' : 'rgba(255,255,255,0.38)',
+                      color: selectedCampus === campus ? '#7C3AED' : 'rgba(10,10,30,0.38)',
                       borderBottom: selectedCampus === campus ? '2.5px solid #8B5CF6' : '2.5px solid transparent',
                     }}>
                     {campus === 'masan' ? '마산 캠퍼스' : '김해 캠퍼스'}

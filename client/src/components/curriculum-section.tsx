@@ -31,6 +31,13 @@ const courses = [
   },
 ];
 
+const colorRgb: Record<string, string> = {
+  '#8B5CF6': '139,92,246',
+  '#06B6D4': '6,182,212',
+  '#34D399': '52,211,153',
+  '#F59E0B': '245,158,11',
+};
+
 export default function CurriculumSection() {
   const scrollToContact = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 
@@ -53,7 +60,7 @@ export default function CurriculumSection() {
               <div className="relative overflow-hidden" style={{ height: '180px', flexShrink: 0 }}>
                 <img src={image} alt={alt} className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%, rgba(0,0,0,0.10) 100%)'
+                  background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 40%, rgba(0,0,0,0.08) 100%)'
                 }} />
               </div>
 
@@ -61,23 +68,23 @@ export default function CurriculumSection() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 relative overflow-hidden"
                     style={{
-                      background: `rgba(${color === '#8B5CF6' ? '139,92,246' : color === '#06B6D4' ? '6,182,212' : color === '#34D399' ? '52,211,153' : '245,158,11'},0.28)`,
-                      border: `1px solid ${color}44`,
-                      boxShadow: `inset 0 1px 0 rgba(255,255,255,0.35)`,
+                      background: `rgba(${colorRgb[color]},0.18)`,
+                      border: `1px solid rgba(${colorRgb[color]},0.30)`,
+                      boxShadow: `inset 0 1px 0 rgba(255,255,255,0.60)`,
                     }}>
-                    <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.32) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
+                    <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.45) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
                     <Icon className="h-5 w-5" style={{ color, position:'relative', zIndex:2 }} />
                   </div>
-                  <h3 className="text-lg font-bold" style={{ color: 'rgba(255,255,255,0.92)' }}>{title}</h3>
+                  <h3 className="text-lg font-bold" style={{ color: 'rgba(10,10,30,0.90)' }}>{title}</h3>
                 </div>
 
-                <p className="mb-5 text-sm leading-relaxed whitespace-pre-line" style={{ color: 'rgba(255,255,255,0.60)' }}>
+                <p className="mb-5 text-sm leading-relaxed whitespace-pre-line" style={{ color: 'rgba(10,10,30,0.58)' }}>
                   {desc}
                 </p>
 
                 <div className="space-y-2 mb-6 flex-1">
                   {checks.map((c) => (
-                    <div key={c} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.68)' }}>
+                    <div key={c} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(10,10,30,0.65)' }}>
                       <Check className="h-4 w-4 flex-shrink-0" style={{ color }} />
                       {c}
                     </div>

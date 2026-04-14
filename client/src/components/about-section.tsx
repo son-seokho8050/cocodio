@@ -14,24 +14,24 @@ const cards = [
     title: '개인 성향별 맞춤 지도',
     desc: 'MBTI 성향별 개인 커리큘럼으로\n강점과 특성을 파악하여\n1:1 최적화된 수업을 제공합니다.',
     color: '#8B5CF6',
-    iconBg: 'rgba(139,92,246,0.30)',
-    iconBorder: 'rgba(139,92,246,0.50)',
+    iconBg: 'rgba(139,92,246,0.18)',
+    iconBorder: 'rgba(139,92,246,0.35)',
   },
   {
     icon: Laptop,
     title: '디지털 프로세스 폴리오',
     desc: '디지털 프로그램을 활용하여,\n목표대학에서 그림 스타일까지,\n개인별 빅데이터를 제공합니다.',
     color: '#06B6D4',
-    iconBg: 'rgba(6,182,212,0.28)',
-    iconBorder: 'rgba(6,182,212,0.48)',
+    iconBg: 'rgba(6,182,212,0.16)',
+    iconBorder: 'rgba(6,182,212,0.32)',
   },
   {
     icon: Trophy,
     title: '검증된 합격',
     desc: '주요 미대 입시의 높은 합격률과,\n실기대회 수상을 자랑하는,\n체계적인 입시 전략을 제공합니다.',
     color: '#EC4899',
-    iconBg: 'rgba(236,72,153,0.26)',
-    iconBorder: 'rgba(236,72,153,0.46)',
+    iconBg: 'rgba(236,72,153,0.15)',
+    iconBorder: 'rgba(236,72,153,0.30)',
   },
 ];
 
@@ -88,52 +88,46 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/*
-          ─── 반투명 유리 카드 3종 ───
-          glass-card = rgba(255,255,255,0.18) → 다크 네이비 배경이 비침
-          텍스트 = 흰색/밝은 색 (투명 카드 위 가독성)
-          아이콘 박스 = 컬러 반투명 유리 (파스텔 채색 + 흰 글로시)
-        */}
+        {/* 흰 frosted glass 카드 3종 — 레퍼런스 정확 구현 */}
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map(({ icon: Icon, title, desc, color, iconBg, iconBorder }) => (
             <div key={title} className="glass-card p-9 text-center flex flex-col items-center">
 
-              {/* 아이콘 박스 — 컬러 반투명 유리 */}
+              {/* 아이콘 박스 — 파스텔 컬러, 흰 카드 위에서 색상 돋보임 */}
               <div
                 className="icon-box mb-6"
                 style={{
                   background: iconBg,
                   border: `1px solid ${iconBorder}`,
-                  boxShadow: `0 4px 20px ${color}30, inset 0 1px 0 rgba(255,255,255,0.40)`,
+                  boxShadow: `0 4px 16px ${color}22, inset 0 1px 0 rgba(255,255,255,0.60)`,
                 }}
               >
-                {/* 아이콘 박스 상단 글로시 (인라인 — ::before 보완) */}
                 <div
                   style={{
                     position: 'absolute', inset: 0,
                     borderRadius: 'inherit',
-                    background: 'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 55%)',
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0) 55%)',
                     pointerEvents: 'none',
                   }}
                 />
                 <Icon
                   className="h-8 w-8"
-                  style={{ color, filter: `drop-shadow(0 2px 6px ${color}66)`, position: 'relative', zIndex: 2 }}
+                  style={{ color, filter: `drop-shadow(0 2px 6px ${color}55)`, position: 'relative', zIndex: 2 }}
                 />
               </div>
 
-              {/* 타이틀 — 흰색 (반투명 카드 위) */}
+              {/* 타이틀 — 다크 네이비 (흰 카드 위) */}
               <h4
                 className="text-lg font-bold mb-3 leading-snug"
-                style={{ color: 'rgba(255,255,255,0.95)' }}
+                style={{ color: 'rgba(10,10,30,0.90)' }}
               >
                 {title}
               </h4>
 
-              {/* 본문 — 밝은 회색 */}
+              {/* 본문 — 어두운 회색 */}
               <p
                 className="text-sm leading-relaxed whitespace-pre-line"
-                style={{ color: 'rgba(255,255,255,0.62)' }}
+                style={{ color: 'rgba(10,10,30,0.58)' }}
               >
                 {desc}
               </p>

@@ -24,6 +24,12 @@ const testimonials = [
   }
 ];
 
+const colorRgb: Record<string, string> = {
+  '#8B5CF6': '139,92,246',
+  '#06B6D4': '6,182,212',
+  '#EC4899': '236,72,153',
+};
+
 export default function TestimonialsSection() {
   return (
     <section className="py-20">
@@ -44,24 +50,24 @@ export default function TestimonialsSection() {
                   <Star key={i} className="h-5 w-5 fill-current" style={{ color: '#F59E0B' }} />
                 ))}
               </div>
-              <p className="mb-6 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.68)' }}>
+              <p className="mb-6 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.62)' }}>
                 "{t.content}"
               </p>
               <div className="flex items-center gap-3">
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 relative overflow-hidden"
                   style={{
-                    background: `rgba(${t.color === '#8B5CF6' ? '139,92,246' : t.color === '#06B6D4' ? '6,182,212' : '236,72,153'},0.28)`,
-                    border: `1px solid ${t.color}44`,
-                    boxShadow: `inset 0 1px 0 rgba(255,255,255,0.35)`,
+                    background: `rgba(${colorRgb[t.color]},0.18)`,
+                    border: `1px solid rgba(${colorRgb[t.color]},0.30)`,
+                    boxShadow: `inset 0 1px 0 rgba(255,255,255,0.55)`,
                   }}
                 >
-                  <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.30) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
+                  <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.45) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
                   <User className="h-6 w-6" style={{ color: t.color, position:'relative', zIndex:2 }} />
                 </div>
                 <div>
-                  <div className="font-semibold text-sm" style={{ color: 'rgba(255,255,255,0.92)' }}>{t.name}</div>
-                  <div className="text-xs" style={{ color: 'rgba(255,255,255,0.48)' }}>{t.role}</div>
+                  <div className="font-semibold text-sm" style={{ color: 'rgba(10,10,30,0.88)' }}>{t.name}</div>
+                  <div className="text-xs" style={{ color: 'rgba(10,10,30,0.50)' }}>{t.role}</div>
                 </div>
               </div>
             </div>
