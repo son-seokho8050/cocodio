@@ -365,73 +365,92 @@
   }
 
   /*
-    ── btn-hero-primary — 히어로 전용 유리 글라스 버튼 ──
-    dce4 Primary Button 레퍼런스 정확 구현:
-    · 단일 반투명 보라 — 배경이 투과됨
-    · 왼쪽 유리 엣지 스페큘러
-    · 부드러운 캐스트 섀도
-    · 자연스러운 상단 글로시 (~44%)
+    ── btn-hero-primary — 레퍼런스 정밀 분석 기반 재구현 ──
+    5가지 물리 요소:
+    1. 좌측 엣지 스페큘러 (강)   — inset 12px 0 28px
+    2. 우측 엣지 스페큘러 (60%)  — inset -10px 0 18px  ← 이전 완전 누락
+    3. 구면형 글로시 (좌상단 집중) — radial-gradient ::before
+    4. 유리 두께 내벽             — inset 0 -3px 10px 어두운 하단
+    5. 캐스틱 투과 빛             — 좌우 오프셋 밝은 보라 광점
   */
   .btn-hero-primary {
-    background: rgba(145, 82, 255, 0.62);
-    backdrop-filter: blur(14px) saturate(200%);
-    -webkit-backdrop-filter: blur(14px) saturate(200%);
-    color: rgba(255,255,255,0.96);
+    background: rgba(148, 88, 250, 0.68);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    color: rgba(255,255,255,0.97);
     font-weight: 600;
     border-radius: 9999px;
     position: relative;
     overflow: hidden;
-    border: 1.5px solid rgba(255,255,255,0.68);
+    border: 1.5px solid rgba(255,255,255,0.62);
     box-shadow:
-      0 20px 52px rgba(100,40,230,0.40),
-      0 6px 18px  rgba(100,40,230,0.22),
-      inset 0 1.5px 0 rgba(255,255,255,0.92),
-      inset 3px 0 14px rgba(255,255,255,0.38);
+      /* ── 외부: 캐스틱 — 유리 투과 보라 광점 ── */
+      -38px 26px 32px rgba(195,155,255,0.52),
+       38px 26px 32px rgba(195,155,255,0.36),
+         0  18px 45px rgba(110,50,220,0.18),
+      /* ── 내부: 유리 물리 ── */
+      inset  0    2px  0   rgba(255,255,255,0.92),
+      inset  12px 0    28px rgba(255,255,255,0.62),
+      inset -10px 0    18px rgba(255,255,255,0.35),
+      inset  0   -3px  10px rgba(80,20,180,0.42);
     transition: transform 0.18s ease, box-shadow 0.18s ease;
     letter-spacing: 0.01em;
   }
+
+  /* 구면 반사 글로시 — 좌상단 집중, 우하단으로 소멸 */
   .btn-hero-primary::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 48%;
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,0.44) 0%,
-      rgba(255,255,255,0.16) 38%,
-      rgba(255,255,255,0)    100%
+    inset: 0;
+    background: radial-gradient(
+      ellipse 80% 55% at 28% 0%,
+      rgba(255,255,255,0.52) 0%,
+      rgba(255,255,255,0.22) 35%,
+      rgba(255,255,255,0)    65%
     );
-    border-radius: 9999px 9999px 0 0;
+    border-radius: inherit;
     pointer-events: none;
     z-index: 2;
   }
+
+  /* 상단 중앙 보조 스페큘러 도트 */
   .btn-hero-primary::after {
     content: '';
     position: absolute;
-    top: 8%; left: 18%;
-    width: 20%; height: 22%;
+    top: 6%; left: 50%;
+    transform: translateX(-50%);
+    width: 28%; height: 18%;
     background: radial-gradient(
       ellipse,
-      rgba(255,255,255,0.40) 0%,
+      rgba(255,255,255,0.30) 0%,
       rgba(255,255,255,0) 100%
     );
     pointer-events: none;
     z-index: 2;
   }
+
   .btn-hero-primary:hover {
     transform: translateY(-3px);
     box-shadow:
-      0 28px 64px rgba(100,40,230,0.54),
-      0 10px 28px rgba(100,40,230,0.30),
-      inset 0 1.5px 0 rgba(255,255,255,0.96),
-      inset 3px 0 14px rgba(255,255,255,0.48);
+      -42px 30px 38px rgba(195,155,255,0.64),
+       42px 30px 38px rgba(195,155,255,0.46),
+          0 22px 55px rgba(110,50,220,0.25),
+      inset  0    2px  0   rgba(255,255,255,0.96),
+      inset  12px 0    28px rgba(255,255,255,0.70),
+      inset -10px 0    18px rgba(255,255,255,0.42),
+      inset  0   -3px  10px rgba(80,20,180,0.48);
   }
+
   .btn-hero-primary:active {
     transform: translateY(2px);
     box-shadow:
-      0 6px 20px rgba(100,40,230,0.30),
-      inset 0 1.5px 0 rgba(255,255,255,0.85),
-      inset 3px 0 14px rgba(255,255,255,0.30);
+      -20px 14px 18px rgba(195,155,255,0.34),
+       20px 14px 18px rgba(195,155,255,0.22),
+          0  8px 22px rgba(110,50,220,0.18),
+      inset  0    2px  0   rgba(255,255,255,0.85),
+      inset  12px 0    24px rgba(255,255,255,0.50),
+      inset -10px 0    14px rgba(255,255,255,0.28),
+      inset  0   -3px  8px  rgba(80,20,180,0.35);
   }
 
   /* ── Teal glass gem ──────────────────────────────────── */
