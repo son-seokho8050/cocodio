@@ -23,6 +23,7 @@ export default function HeroSection() {
   const [index, setIndex] = useState(0);
   const [list] = useState(() => shuffle(seoulMetroUniversities));
   const [visible, setVisible] = useState(true);
+  const [btnHovered, setBtnHovered] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -59,9 +60,77 @@ export default function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={() => scrollTo('contact')} className="btn-hero-primary flex items-center justify-center gap-2 px-8 py-4 text-lg">
-                <Calendar className="h-5 w-5" /> 무료체험수업 신청
-              </button>
+              {/* 무료체험수업 신청 — 다층 유리 글라스 버튼 */}
+              <div style={{ position: 'relative', display: 'inline-flex' }}>
+                {/* 캐스틱: 유리를 투과한 빛이 배경에 좌우 광점으로 맺힘 */}
+                <div aria-hidden="true" style={{
+                  position: 'absolute',
+                  bottom: '-12px',
+                  left: '-6%', right: '-6%',
+                  height: '20px',
+                  background: 'radial-gradient(ellipse at 22% 50%, rgba(195,155,255,0.70) 0%, transparent 55%), radial-gradient(ellipse at 78% 50%, rgba(195,155,255,0.52) 0%, transparent 55%)',
+                  filter: 'blur(6px)',
+                  pointerEvents: 'none',
+                }} />
+
+                <button
+                  onClick={() => scrollTo('contact')}
+                  onMouseEnter={() => setBtnHovered(true)}
+                  onMouseLeave={() => setBtnHovered(false)}
+                  style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    borderRadius: '9999px',
+                    border: '1.5px solid rgba(255,255,255,0.62)',
+                    padding: '1rem 2rem',
+                    fontSize: '1.125rem',
+                    fontWeight: 600,
+                    color: 'rgba(255,255,255,0.97)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    cursor: 'pointer',
+                    background: 'none',
+                    outline: 'none',
+                    letterSpacing: '0.01em',
+                    transform: btnHovered ? 'translateY(-3px)' : 'translateY(0)',
+                    transition: 'transform 0.18s ease',
+                  }}
+                >
+                  {/* L1: 유리 바디 — 반투명 보라, 배경 투과 */}
+                  <span aria-hidden="true" style={{
+                    position: 'absolute', inset: 0, borderRadius: '9999px',
+                    background: 'rgba(145, 85, 252, 0.68)',
+                    backdropFilter: 'blur(14px) saturate(180%)',
+                    WebkitBackdropFilter: 'blur(14px) saturate(180%)',
+                  }} />
+                  {/* L2: 좌측 엣지 스페큘러 — 유리 곡면이 광원 정면으로 받는 밝은 크레센트 */}
+                  <span aria-hidden="true" style={{
+                    position: 'absolute', inset: 0, borderRadius: '9999px',
+                    background: 'radial-gradient(ellipse 40% 100% at 0% 50%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.22) 42%, transparent 70%)',
+                  }} />
+                  {/* L3: 우측 엣지 스페큘러 — 좌측의 약 55% */}
+                  <span aria-hidden="true" style={{
+                    position: 'absolute', inset: 0, borderRadius: '9999px',
+                    background: 'radial-gradient(ellipse 34% 100% at 100% 50%, rgba(255,255,255,0.44) 0%, rgba(255,255,255,0.10) 42%, transparent 70%)',
+                  }} />
+                  {/* L4: 구면 상단 글로시 — 좌상단 집중, 우하단 소멸 */}
+                  <span aria-hidden="true" style={{
+                    position: 'absolute', inset: 0, borderRadius: '9999px',
+                    background: 'radial-gradient(ellipse 88% 54% at 26% -10%, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.24) 34%, transparent 60%)',
+                  }} />
+                  {/* L5: 하단 내벽 — 유리 두께감, 어두운 rim */}
+                  <span aria-hidden="true" style={{
+                    position: 'absolute', inset: 0, borderRadius: '9999px',
+                    background: 'linear-gradient(to top, rgba(55,8,155,0.42) 0%, rgba(55,8,155,0.14) 20%, transparent 38%)',
+                  }} />
+                  {/* 콘텐츠 */}
+                  <span style={{ position: 'relative', zIndex: 10, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Calendar className="h-5 w-5" /> 무료체험수업 신청
+                  </span>
+                </button>
+              </div>
               <button
                 onClick={() => scrollTo('portfolio')}
                 className="btn-glass flex items-center justify-center gap-2 px-8 py-4 text-lg"
