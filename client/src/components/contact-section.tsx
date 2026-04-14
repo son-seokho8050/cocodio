@@ -7,37 +7,37 @@ import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { insertConsultationSchema, type InsertConsultation } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 
-/* ── Input & Label styles inside white glass card ─────── */
+/* ── Input & Label styles — 반투명 유리 카드 위 (dark bg 비침) ── */
 const inputStyle: React.CSSProperties = {
-  background: 'rgba(248,248,255,0.85)',
-  border: '1.5px solid rgba(200,200,220,0.55)',
-  color: 'rgba(0,0,0,0.82)',
+  background: 'rgba(255,255,255,0.12)',
+  border: '1px solid rgba(255,255,255,0.22)',
+  color: 'rgba(255,255,255,0.90)',
   borderRadius: '0.875rem',
   padding: '0.65rem 0.9rem',
   width: '100%',
   outline: 'none',
   fontSize: '0.875rem',
-  boxShadow: 'inset 0 1px 4px rgba(0,0,0,0.07)',
+  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15)',
   transition: 'border-color 0.2s, box-shadow 0.2s, background 0.2s',
 };
 const labelStyle: React.CSSProperties = {
   display: 'block',
   marginBottom: '0.4rem',
   fontSize: '0.78rem',
-  color: 'rgba(0,0,0,0.52)',
+  color: 'rgba(255,255,255,0.55)',
   fontWeight: 700,
   letterSpacing: '0.04em',
   textTransform: 'uppercase',
 };
 const onFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  e.currentTarget.style.borderColor = 'rgba(139,92,246,0.60)';
-  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.14), inset 0 1px 4px rgba(0,0,0,0.07)';
-  e.currentTarget.style.background = 'rgba(255,255,255,0.96)';
+  e.currentTarget.style.borderColor = 'rgba(139,92,246,0.70)';
+  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.25), inset 0 1px 0 rgba(255,255,255,0.20)';
+  e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
 };
 const onBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  e.currentTarget.style.borderColor = 'rgba(200,200,220,0.55)';
-  e.currentTarget.style.boxShadow = 'inset 0 1px 4px rgba(0,0,0,0.07)';
-  e.currentTarget.style.background = 'rgba(248,248,255,0.85)';
+  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.22)';
+  e.currentTarget.style.boxShadow = 'inset 0 1px 0 rgba(255,255,255,0.15)';
+  e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
 };
 
 export default function ContactSection() {
@@ -80,7 +80,7 @@ export default function ContactSection() {
 
           {/* Form — white glass card */}
           <div className="glass-card p-8">
-            <h3 className="text-lg font-bold mb-6" style={{ color: 'rgba(0,0,0,0.85)' }}>무료 체험수업 신청</h3>
+            <h3 className="text-lg font-bold mb-6" style={{ color: 'rgba(255,255,255,0.92)' }}>무료 체험수업 신청</h3>
             <form onSubmit={form.handleSubmit((d) => submitConsultation.mutate(d))} className="space-y-5" style={{ position: 'relative', zIndex: 3 }}>
 
               <div className="grid md:grid-cols-2 gap-4">
@@ -146,14 +146,19 @@ export default function ContactSection() {
                 { icon: Mail, title: '이메일', color: '#EC4899', lines: ['COCO2238050@NAVER.COM', '24시간 문의 접수 가능'] },
               ].map(({ icon: Icon, title, color, lines }) => (
                 <div key={title} className="glass-card flex items-start gap-4 p-5">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${color}18, ${color}38)`, border: `1px solid ${color}28` }}>
-                    <Icon className="h-5 w-5" style={{ color }} />
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 relative overflow-hidden"
+                    style={{
+                      background: `rgba(${color === '#8B5CF6' ? '139,92,246' : color === '#06B6D4' ? '6,182,212' : '236,72,153'},0.28)`,
+                      border: `1px solid ${color}44`,
+                      boxShadow: `inset 0 1px 0 rgba(255,255,255,0.35)`,
+                    }}>
+                    <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.30) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
+                    <Icon className="h-5 w-5" style={{ color, position:'relative', zIndex:2 }} />
                   </div>
                   <div style={{ position: 'relative', zIndex: 3 }}>
-                    <h4 className="font-bold text-sm mb-1" style={{ color: 'rgba(0,0,0,0.82)' }}>{title}</h4>
+                    <h4 className="font-bold text-sm mb-1" style={{ color: 'rgba(255,255,255,0.90)' }}>{title}</h4>
                     {lines.map((l, i) => (
-                      <p key={i} className="text-sm" style={{ color: i === 0 ? 'rgba(0,0,0,0.65)' : 'rgba(0,0,0,0.42)' }}>{l}</p>
+                      <p key={i} className="text-sm" style={{ color: i === 0 ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.46)' }}>{l}</p>
                     ))}
                   </div>
                 </div>
@@ -170,7 +175,7 @@ export default function ContactSection() {
                       background: selectedCampus === campus
                         ? 'linear-gradient(135deg, rgba(139,92,246,0.12), rgba(6,182,212,0.12))'
                         : 'transparent',
-                      color: selectedCampus === campus ? '#7C3AED' : 'rgba(0,0,0,0.40)',
+                      color: selectedCampus === campus ? '#C4B5FD' : 'rgba(255,255,255,0.38)',
                       borderBottom: selectedCampus === campus ? '2.5px solid #8B5CF6' : '2.5px solid transparent',
                     }}>
                     {campus === 'masan' ? '마산 캠퍼스' : '김해 캠퍼스'}

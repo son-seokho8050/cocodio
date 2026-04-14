@@ -132,63 +132,45 @@
   ══════════════════════════════════════════════════════ */
 
   /* ══════════════════════════════════════════════════════════
-     glass-card  —  레퍼런스 이미지 정밀 재현
-     ──────────────────────────────────────────────────────────
-     광학적 근거:
-     · 판유리는 거의 무색투명하나 실제론 약간 푸른/회색 틴트
-     · 빛이 닿는 상단부 볼록면 = 강한 흰색 하이라이트
-     · 유리 상단 모서리 = 1-2px 매우 밝은 선
-     · 유리 아래쪽 = 매우 미미한 그림자 경계선
-     · 전체 카드 = 아래로 드리워진 넓고 부드러운 그림자
+     glass-card  ─  진짜 반투명 유리 패널 (Liquid Glass)
+     ══════════════════════════════════════════════════════════
+     핵심 원칙:
+     · background 알파 = 0.18  →  다크 네이비 배경이 비침
+     · backdrop-filter blur = 배경을 흐리게 굴절시켜 "유리 너머" 표현
+     · ::before = 상단 45%에 강한 흰 글로시 스윕 (볼록면 빛 반사)
+     · ::after  = 우측 edge 스페큘러 선 (유리판 절단면 광)
+     · border   = 얇은 흰 테두리 (유리 가장자리 빛 산란)
+     · box-shadow = 카드 밑 부드러운 그림자 + inset 상단 밝은 선
   ══════════════════════════════════════════════════════════ */
   .glass-card {
     position: relative;
-    /*
-      0.96 opacity: 레퍼런스의 순백 카드에 가장 근접.
-      backdrop-filter로 배경의 색감이 아주 미묘하게 비침.
-    */
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    background: rgba(255,255,255,0.18);   /* 진짜 반투명: 배경이 비침 */
+    backdrop-filter: blur(36px) saturate(220%) brightness(1.08);
+    -webkit-backdrop-filter: blur(36px) saturate(220%) brightness(1.08);
     border-radius: 24px;
-    /*
-      테두리:
-      - 상단 1.5px = 밝은 유리 절단면 (최고 밝음)
-      - 좌우/하단 = 투명에 가까운 미세 경계
-      실제 값: border는 균일하게 주고 inset shadow로 상단 강조
-    */
-    border: 1px solid rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.28);
     box-shadow:
-      0 2px 8px   rgba(0,0,0,0.06),    /* 가장 가까운 섬세한 그림자 */
-      0 8px 24px  rgba(0,0,0,0.10),    /* 중간 플로팅 그림자 */
-      0 20px 48px rgba(0,0,0,0.14),    /* 넓게 퍼지는 원거리 그림자 */
-      0 40px 80px rgba(0,0,0,0.08),    /* 다크bg 위에서 더 깊은 그림자 */
-      inset 0 1.5px 0 rgba(255,255,255,1.00),   /* 유리 상단 절단면 */
-      inset 0 -0.5px 0 rgba(0,0,0,0.05);        /* 하단 미세 경계 */
-    transition: transform 0.30s cubic-bezier(.22,.68,0,1.20),
-                box-shadow 0.30s ease;
+      0 8px 32px  rgba(0,0,0,0.40),
+      0 2px 8px   rgba(0,0,0,0.28),
+      inset 0 1.5px 0 rgba(255,255,255,0.88),   /* 상단 절단면 빛 */
+      inset 0 -1px 0 rgba(255,255,255,0.08);    /* 하단 미세 반사 */
+    transition: transform 0.28s cubic-bezier(.22,.68,0,1.20),
+                box-shadow 0.28s ease;
     overflow: hidden;
   }
 
-  /*
-    볼록 유리 글로시 스윕
-    ─────────────────────────────────────────────────────────
-    레퍼런스 분석:
-    · 카드 상단 약 40%가 미세하게 더 밝음 (유리 볼록면)
-    · 최상단 모서리에서 시작해 점진적으로 투명해짐
-    · 너무 강하면 플라스틱처럼 보임 — 섬세하게 조절
-  */
+  /* 상단 볼록 글로시 스윕 — 투명 배경 위에서 극적으로 보임 */
   .glass-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 42%;
+    height: 48%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.80) 0%,     /* 최상단: 거의 순백 */
-      rgba(255,255,255,0.45) 12%,    /* 상단 주 하이라이트 */
-      rgba(255,255,255,0.18) 38%,    /* 중간부 감쇠 */
-      rgba(255,255,255,0.05) 72%,
+      rgba(255,255,255,0.72) 0%,     /* 최상단 순백 하이라이트 */
+      rgba(255,255,255,0.40) 15%,
+      rgba(255,255,255,0.14) 42%,
+      rgba(255,255,255,0.03) 72%,
       rgba(255,255,255,0)    100%
     );
     border-radius: 24px 24px 0 0;
@@ -196,20 +178,17 @@
     z-index: 3;
   }
 
-  /*
-    우측 모서리 스페큘러 하이라이트
-    유리판의 우측 절단면이 조명을 반사하는 효과
-  */
+  /* 우측 스페큘러 선 — 유리판 측면 절단면 반사 */
   .glass-card::after {
     content: '';
     position: absolute;
-    top: 6%; right: 0;
+    top: 5%; right: 0;
     width: 1.5px;
-    height: 50%;
+    height: 52%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.65) 0%,
-      rgba(255,255,255,0.20) 40%,
+      rgba(255,255,255,0.72) 0%,
+      rgba(255,255,255,0.22) 40%,
       rgba(255,255,255,0)    100%
     );
     pointer-events: none;
@@ -217,14 +196,13 @@
   }
 
   .glass-card:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-10px) scale(1.015);
     box-shadow:
-      0 4px 12px  rgba(0,0,0,0.08),
-      0 12px 32px rgba(0,0,0,0.14),
-      0 28px 60px rgba(0,0,0,0.18),
-      0 56px 100px rgba(0,0,0,0.12),
-      inset 0 1.5px 0 rgba(255,255,255,1.00),
-      inset 0 -0.5px 0 rgba(0,0,0,0.05);
+      0 20px 56px rgba(0,0,0,0.52),
+      0 6px 16px  rgba(0,0,0,0.30),
+      inset 0 1.5px 0 rgba(255,255,255,0.90),
+      inset 0 -1px 0 rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.40);
   }
 
   /*

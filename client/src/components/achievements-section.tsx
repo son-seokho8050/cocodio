@@ -42,15 +42,20 @@ export default function AchievementsSection() {
           {achievements.map(({ icon: Icon, title, stats, color }) => (
             <div key={title} className="glass-card p-7">
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-                style={{ background: `linear-gradient(135deg, ${color}20, ${color}44)`, border: `1px solid ${color}28` }}
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden"
+                style={{
+                  background: `rgba(${color === '#8B5CF6' ? '139,92,246' : color === '#06B6D4' ? '6,182,212' : color === '#34D399' ? '52,211,153' : color === '#F59E0B' ? '245,158,11' : '236,72,153'},0.28)`,
+                  border: `1px solid ${color}44`,
+                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.38), 0 4px 16px ${color}22`,
+                }}
               >
-                <Icon className="h-7 w-7" style={{ color }} />
+                <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.35) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
+                <Icon className="h-7 w-7" style={{ color, position:'relative', zIndex:2, filter:`drop-shadow(0 2px 4px ${color}55)` }} />
               </div>
-              <h3 className="text-base font-bold mb-4" style={{ color: 'rgba(0,0,0,0.85)' }}>{title}</h3>
+              <h3 className="text-base font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>{title}</h3>
               <ul className="space-y-2">
                 {stats.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,0,0,0.54)' }}>
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.62)' }}>
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
                     {s}
                   </li>
