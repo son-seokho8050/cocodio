@@ -59,7 +59,7 @@ export default function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={() => scrollTo('contact')} className="btn-gradient flex items-center justify-center gap-2 px-8 py-4 text-lg">
+              <button onClick={() => scrollTo('contact')} className="btn-hero-primary flex items-center justify-center gap-2 px-8 py-4 text-lg">
                 <Calendar className="h-5 w-5" /> 무료체험수업 신청
               </button>
               <button
