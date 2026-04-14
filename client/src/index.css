@@ -126,34 +126,110 @@
       inset 0 1px 0 rgba(255,255,255,1);
   }
 
-  /* ── Floating glass card (7e2bfb61 style — white, physical)  */
+  /* ══════════════════════════════════════════════════════
+     GLASS CARD SYSTEM  — dce4 / 7e2bfb61 / 31b090f6 refs
+     3 variants: white-panel / transparent-glass / vivid-glass
+  ══════════════════════════════════════════════════════ */
+
+  /* ── WHITE PANEL  (7e2bfb61 style — floats off dark bg) ─ */
   .glass-card {
     position: relative;
-    /* Near-opaque white — makes cards "pop" off dark bg */
-    background: rgba(255,255,255,0.90);
-    backdrop-filter: blur(40px) saturate(120%);
-    -webkit-backdrop-filter: blur(40px) saturate(120%);
+    /*
+      82% white = slightly transparent so dark bg shows as
+      a cool tint through the glass — not fully opaque
+    */
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(48px) saturate(160%);
+    -webkit-backdrop-filter: blur(48px) saturate(160%);
     border-radius: 24px;
-    /* Strong multi-layer floating shadow */
+    /*
+      Glass edge: very bright 1.5px top-rim (like real glass edge),
+      thin colored rim from the ambient bg showing through sides
+    */
+    border: 1px solid rgba(255,255,255,0.68);
     box-shadow:
-      0 40px 80px rgba(0,0,0,0.52),
-      0 16px 32px rgba(0,0,0,0.28),
-      0 4px 10px  rgba(0,0,0,0.16),
-      inset 0 1px 0 rgba(255,255,255,1); /* hard top-edge shine */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+      0 40px 80px rgba(0,0,0,0.55),    /* deep floating shadow */
+      0 16px 32px rgba(0,0,0,0.30),
+      0 4px 10px  rgba(0,0,0,0.18),
+      inset 0 1.5px 0 rgba(255,255,255,1.0),  /* hard bright top rim */
+      inset 0 -1px 0 rgba(0,0,0,0.04);        /* subtle bottom rim */
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
     overflow: hidden;
   }
 
-  /* Top gloss sweep (convex glass catching light) */
+  /*
+    GLOSS SWEEP — the convex glass surface catching light.
+    In dce4: top ~45% of card is noticeably brighter/whiter.
+    Two-zone: very bright at top edge → fades → transparent.
+  */
   .glass-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 42%;
+    height: 46%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.58) 0%,
-      rgba(255,255,255,0.18) 35%,
+      rgba(255,255,255,0.72) 0%,    /* near-white at very top */
+      rgba(255,255,255,0.38) 20%,   /* bright mid-highlight */
+      rgba(255,255,255,0.12) 55%,
+      rgba(255,255,255,0)    100%
+    );
+    border-radius: 24px 24px 0 0;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Right-edge subtle specular (glass catches side light) */
+  .glass-card::after {
+    content: '';
+    position: absolute;
+    top: 8%; right: 0;
+    width: 1px;
+    height: 55%;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.60) 0%,
+      rgba(255,255,255,0.15) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+      0 60px 100px rgba(0,0,0,0.62),
+      0 24px 48px rgba(0,0,0,0.35),
+      0 8px 20px  rgba(0,0,0,0.20),
+      inset 0 1.5px 0 rgba(255,255,255,1.0),
+      inset 0 -1px 0 rgba(0,0,0,0.04);
+  }
+
+  /* ── TRANSPARENT GLASS (dce4 main frosted panel style) ── */
+  .glass-frosted {
+    position: relative;
+    background: rgba(255,255,255,0.28);  /* very see-through */
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.50);
+    box-shadow:
+      0 24px 56px rgba(0,0,0,0.40),
+      0 8px 20px  rgba(0,0,0,0.20),
+      inset 0 1.5px 0 rgba(255,255,255,0.90),
+      inset 0 -1px 0 rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .glass-frosted::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 48%;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.55) 0%,
+      rgba(255,255,255,0.15) 40%,
       rgba(255,255,255,0)    100%
     );
     border-radius: 24px 24px 0 0;
@@ -161,38 +237,69 @@
     z-index: 2;
   }
 
-  /* Subtle bottom-edge inner shadow for physical depth */
-  .glass-card::after {
+  /* ── VIVID / COLORFUL GLASS (dce4 bottom-right card) ──── */
+  /*
+    Holographic iridescent gradient fill with glass gloss on top.
+    Like an oil-slick or soap-bubble captured in a card shape.
+  */
+  .glass-card-vivid {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(255,148,196,0.72) 0%,     /* warm pink */
+      rgba(176,106,255,0.70) 38%,    /* purple */
+      rgba(88,195,245,0.72) 75%,     /* sky blue */
+      rgba(100,240,200,0.65) 100%    /* teal */
+    );
+    backdrop-filter: blur(28px) saturate(220%);
+    -webkit-backdrop-filter: blur(28px) saturate(220%);
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.48);
+    box-shadow:
+      0 28px 64px rgba(0,0,0,0.50),
+      0 10px 28px rgba(0,0,0,0.28),
+      inset 0 1.5px 0 rgba(255,255,255,0.80),
+      inset 0 -1px 0 rgba(0,0,0,0.10);
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+  /* Strong gloss on colorful glass */
+  .glass-card-vivid::before {
     content: '';
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: rgba(0,0,0,0.06);
-    border-radius: 0 0 24px 24px;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.62) 0%,
+      rgba(255,255,255,0.22) 28%,
+      rgba(255,255,255,0.05) 60%,
+      rgba(255,255,255,0)    100%
+    );
+    border-radius: 22px 22px 0 0;
     pointer-events: none;
     z-index: 2;
   }
-
-  /* Hover: rise further off surface */
-  .glass-card:hover {
-    transform: translateY(-10px);
+  .glass-card-vivid:hover {
+    transform: translateY(-8px);
     box-shadow:
-      0 60px 100px rgba(0,0,0,0.60),
-      0 24px 48px rgba(0,0,0,0.34),
-      0 8px 20px  rgba(0,0,0,0.20),
-      inset 0 1px 0 rgba(255,255,255,1);
+      0 48px 88px rgba(0,0,0,0.58),
+      0 18px 40px rgba(0,0,0,0.32),
+      inset 0 1.5px 0 rgba(255,255,255,0.85),
+      inset 0 -1px 0 rgba(0,0,0,0.10);
   }
 
   /* ── Strong glass (hero overlays) ────────────────────── */
   .glass-strong {
-    background: rgba(255,255,255,0.94);
-    backdrop-filter: blur(48px) saturate(130%);
-    -webkit-backdrop-filter: blur(48px) saturate(130%);
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(48px) saturate(140%);
+    -webkit-backdrop-filter: blur(48px) saturate(140%);
     border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.72);
     box-shadow:
       0 48px 96px rgba(0,0,0,0.55),
       0 20px 40px rgba(0,0,0,0.30),
-      inset 0 1px 0 rgba(255,255,255,1);
+      inset 0 1.5px 0 rgba(255,255,255,1);
   }
 
   /* ── Navigation (dark glass — 31b090f6 top bar) ─────── */
@@ -204,89 +311,183 @@
     box-shadow: 0 2px 24px rgba(0,0,0,0.50);
   }
 
-  /* ═══════════════════════════════════════════════════════
-     3-D GEL BUTTONS  (dce4 Liquid Glass UI Kit reference)
-     Key: top-half gloss + bottom solid-color "depth edge"
-  ═══════════════════════════════════════════════════════ */
+  /* ═══════════════════════════════════════════════════════════
+     LIQUID GLASS BUTTONS  — dce4 reference (exact reproduction)
+
+     PRIMARY (purple):  translucent colored glass gem
+     SECONDARY (teal):  translucent teal glass gem
+     OUTLINE:           frosted clear glass pill
+
+     Key physics of the dce4 button look:
+     1. Base = SEMI-TRANSPARENT colored glass (not opaque paint)
+        → backdrop-filter shows bg through the color
+     2. Top 50%: very bright gloss (light hitting convex surface)
+     3. Bottom: solid-color "thickness" edge for 3-D depth
+     4. Perimeter: thin white glass-rim border
+     5. Under: colored glow (light passing through tinted glass)
+  ═══════════════════════════════════════════════════════════ */
   .btn-gradient {
-    /* Purple gel capsule */
-    background: linear-gradient(180deg,
-      #C4B5FD 0%,      /* light top */
-      #8B5CF6 48%,     /* mid purple */
-      #6D28D9 100%     /* deep base */
+    /*
+      PURPLE GLASS GEM
+      rgba instead of hex = semi-transparent → actual glass tint
+    */
+    background: linear-gradient(
+      160deg,
+      rgba(216,204,255,0.92) 0%,   /* near-white lavender at top */
+      rgba(155,100,255,0.88) 22%,  /* bright purple */
+      rgba(120,64,240,0.86) 58%,   /* mid-dark purple */
+      rgba(90,28,210,0.92) 100%    /* deep violet base */
     );
+    backdrop-filter: blur(8px) saturate(200%);
+    -webkit-backdrop-filter: blur(8px) saturate(200%);
     color: #fff;
     font-weight: 700;
-    border: none;
     border-radius: 9999px;
     position: relative;
     overflow: hidden;
-    /* 3-D: solid bottom edge + glow */
+    /*
+      Glass perimeter rim: bright top-left (lit) + dim right-bottom (shadow)
+    */
+    border: 1px solid rgba(255,255,255,0.45);
     box-shadow:
-      0 6px 0 #4C1D95,                    /* "thickness" */
-      0 12px 32px rgba(109,40,217,0.65),  /* purple glow */
-      inset 0 -2px 4px rgba(0,0,0,0.22), /* bottom inner shadow */
-      inset 0 1px 0 rgba(255,255,255,0.30); /* top inner rim */
+      0 8px 0 rgba(55,5,160,0.68),           /* solid 3-D thickness */
+      0 16px 40px rgba(110,40,230,0.62),     /* colored light glow */
+      inset 0 2px 0 rgba(255,255,255,0.78),  /* super-bright top rim */
+      inset 0 -2px 0 rgba(30,0,120,0.38);    /* dark bottom rim */
     transition: transform 0.12s ease, box-shadow 0.12s ease;
     letter-spacing: 0.01em;
   }
 
-  /* Top-half gloss: convex surface highlight */
+  /*
+    GLASS GLOSS — the defining characteristic of dce4 buttons.
+    Top ~50% is dramatically lighter (convex glass catching light).
+    Very bright at the very top edge, fades to fully transparent.
+  */
   .btn-gradient::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 52%;
+    height: 54%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.48) 0%,
+      rgba(255,255,255,0.70) 0%,    /* very bright at top */
+      rgba(255,255,255,0.40) 18%,   /* still bright */
+      rgba(255,255,255,0.12) 50%,   /* fading */
       rgba(255,255,255,0)    100%
     );
     border-radius: 9999px 9999px 0 0;
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
   }
 
-  /* Pressed state */
-  .btn-gradient:active {
-    transform: translateY(5px);
-    box-shadow:
-      0 1px 0 #4C1D95,
-      0 4px 12px rgba(109,40,217,0.45),
-      inset 0 -2px 4px rgba(0,0,0,0.22),
-      inset 0 1px 0 rgba(255,255,255,0.30);
+  /* Tiny specular dot at top-center (glass catches direct light) */
+  .btn-gradient::after {
+    content: '';
+    position: absolute;
+    top: 12%; left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 14%;
+    background: radial-gradient(
+      ellipse,
+      rgba(255,255,255,0.55) 0%,
+      rgba(255,255,255,0) 100%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 2;
   }
+
   .btn-gradient:hover {
     transform: translateY(-3px);
     box-shadow:
-      0 9px 0 #4C1D95,
-      0 18px 44px rgba(109,40,217,0.78),
-      inset 0 -2px 4px rgba(0,0,0,0.22),
-      inset 0 1px 0 rgba(255,255,255,0.30);
+      0 11px 0 rgba(55,5,160,0.72),
+      0 22px 50px rgba(110,40,230,0.78),
+      inset 0 2px 0 rgba(255,255,255,0.82),
+      inset 0 -2px 0 rgba(30,0,120,0.40);
+  }
+  .btn-gradient:active {
+    transform: translateY(6px);
+    box-shadow:
+      0 2px 0 rgba(55,5,160,0.72),
+      0 6px 16px rgba(110,40,230,0.48),
+      inset 0 2px 0 rgba(255,255,255,0.75),
+      inset 0 -2px 0 rgba(30,0,120,0.40);
   }
 
-  /* ── Glass outline button (dark bg context) ─────────── */
+  /* ── TEAL GLASS GEM (Secondary button variant) ───────── */
+  .btn-teal {
+    background: linear-gradient(
+      160deg,
+      rgba(184,244,255,0.92) 0%,   /* near-white cyan */
+      rgba(34,200,230,0.88) 22%,   /* bright teal */
+      rgba(6,168,210,0.86) 58%,    /* mid teal */
+      rgba(4,120,160,0.92) 100%    /* deep base */
+    );
+    backdrop-filter: blur(8px) saturate(200%);
+    -webkit-backdrop-filter: blur(8px) saturate(200%);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 9999px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.42);
+    box-shadow:
+      0 8px 0 rgba(3,80,120,0.65),
+      0 16px 40px rgba(6,160,210,0.58),
+      inset 0 2px 0 rgba(255,255,255,0.75),
+      inset 0 -2px 0 rgba(2,50,90,0.35);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    letter-spacing: 0.01em;
+  }
+  .btn-teal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 54%;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.68) 0%,
+      rgba(255,255,255,0.35) 20%,
+      rgba(255,255,255,0.10) 52%,
+      rgba(255,255,255,0)    100%
+    );
+    border-radius: 9999px 9999px 0 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .btn-teal:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 11px 0 rgba(3,80,120,0.70),
+      0 22px 50px rgba(6,160,210,0.72),
+      inset 0 2px 0 rgba(255,255,255,0.80),
+      inset 0 -2px 0 rgba(2,50,90,0.38);
+  }
+
+  /* ── FROSTED CLEAR GLASS button (outline / ghost) ────── */
   .btn-glass {
-    background: rgba(255,255,255,0.10);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.30);
-    color: rgba(255,255,255,0.90);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.92);
     border-radius: 9999px;
     font-weight: 600;
+    position: relative;
+    overflow: hidden;
     box-shadow:
       0 4px 20px rgba(0,0,0,0.28),
-      inset 0 1px 0 rgba(255,255,255,0.25);
+      inset 0 1.5px 0 rgba(255,255,255,0.35),
+      inset 0 -1px 0 rgba(0,0,0,0.15);
     transition: all 0.22s ease;
     letter-spacing: 0.01em;
   }
-
-  /* Top-half gloss on glass btn */
   .btn-glass::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 50%;
+    height: 52%;
     background: linear-gradient(
       180deg,
       rgba(255,255,255,0.18) 0%,
@@ -294,10 +495,6 @@
     );
     border-radius: 9999px 9999px 0 0;
     pointer-events: none;
-  }
-  .btn-glass {
-    position: relative;
-    overflow: hidden;
   }
   .btn-glass:hover {
     background: rgba(255,255,255,0.18);
