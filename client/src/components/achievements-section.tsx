@@ -29,11 +29,11 @@ const achievements = [
 
 export default function AchievementsSection() {
   return (
-    <section className="py-20" style={{ background: 'rgba(255,255,255,0.18)' }}>
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(0,0,0,0.85)' }}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>
             코코만의 <span className="gradient-text">특별한 교육</span>
           </h2>
         </div>
@@ -43,14 +43,14 @@ export default function AchievementsSection() {
             <div key={title} className="glass-card p-7">
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-                style={{ background: `linear-gradient(135deg, ${color}22, ${color}44)`, border: `1px solid ${color}33` }}
+                style={{ background: `linear-gradient(135deg, ${color}20, ${color}44)`, border: `1px solid ${color}28` }}
               >
                 <Icon className="h-7 w-7" style={{ color }} />
               </div>
-              <h3 className="text-base font-bold mb-4" style={{ color: 'rgba(0,0,0,0.82)' }}>{title}</h3>
+              <h3 className="text-base font-bold mb-4" style={{ color: 'rgba(0,0,0,0.85)' }}>{title}</h3>
               <ul className="space-y-2">
                 {stats.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,0,0,0.52)' }}>
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,0,0,0.54)' }}>
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
                     {s}
                   </li>

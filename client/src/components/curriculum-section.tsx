@@ -39,41 +39,40 @@ export default function CurriculumSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(0,0,0,0.85)' }}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>
             COCO <span className="gradient-text">ALL IN-ONE SYSTEM</span>
           </h2>
-          <p style={{ color: 'rgba(0,0,0,0.55)', fontSize: '1.1rem' }}>
+          <p style={{ color: 'rgba(255,255,255,0.50)', fontSize: '1.1rem' }}>
             입시미술 그 한계를 넘어, 코코의 수업을 소개합니다.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-7">
           {courses.map(({ image, alt, icon: Icon, title, desc, checks, color }) => (
-            <div key={title} className="glass-card overflow-hidden">
-              <div className="relative overflow-hidden" style={{ height: '180px' }}>
+            <div key={title} className="glass-card overflow-hidden flex flex-col">
+              <div className="relative overflow-hidden" style={{ height: '180px', flexShrink: 0 }}>
                 <img src={image} alt={alt} className="w-full h-full object-cover" />
-                {/* Glossy overlay on image */}
                 <div className="absolute inset-0" style={{
-                  background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 40%, rgba(0,0,0,0.15) 100%)'
+                  background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%, rgba(0,0,0,0.10) 100%)'
                 }} />
               </div>
 
-              <div className="p-7 relative z-10">
+              <div className="p-7 flex flex-col flex-1" style={{ position: 'relative', zIndex: 3 }}>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${color}25, ${color}45)`, border: `1px solid ${color}35` }}>
+                    style={{ background: `linear-gradient(135deg, ${color}20, ${color}42)`, border: `1px solid ${color}30` }}>
                     <Icon className="h-5 w-5" style={{ color }} />
                   </div>
-                  <h3 className="text-lg font-bold" style={{ color: 'rgba(0,0,0,0.85)' }}>{title}</h3>
+                  <h3 className="text-lg font-bold" style={{ color: 'rgba(0,0,0,0.88)' }}>{title}</h3>
                 </div>
 
-                <p className="mb-5 text-sm leading-relaxed whitespace-pre-line" style={{ color: 'rgba(0,0,0,0.52)' }}>
+                <p className="mb-5 text-sm leading-relaxed whitespace-pre-line" style={{ color: 'rgba(0,0,0,0.54)' }}>
                   {desc}
                 </p>
 
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2 mb-6 flex-1">
                   {checks.map((c) => (
-                    <div key={c} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(0,0,0,0.60)' }}>
+                    <div key={c} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(0,0,0,0.62)' }}>
                       <Check className="h-4 w-4 flex-shrink-0" style={{ color }} />
                       {c}
                     </div>
@@ -82,8 +81,8 @@ export default function CurriculumSection() {
 
                 <button
                   onClick={scrollToContact}
-                  className="btn-gradient w-full py-3 text-sm"
-                  style={{ borderRadius: '0.875rem', background: `linear-gradient(135deg, ${color}, ${color}CC)` }}
+                  className="btn-gradient w-full py-3 text-sm mt-auto"
+                  style={{ borderRadius: '0.875rem' }}
                 >
                   신청하기
                 </button>

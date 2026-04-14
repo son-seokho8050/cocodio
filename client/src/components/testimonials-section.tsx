@@ -30,10 +30,10 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(0,0,0,0.85)' }}>
-            학부모 & 학생 <span className="gradient-text">후기</span>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>
+            학부모 &amp; 학생 <span className="gradient-text">후기</span>
           </h2>
-          <p style={{ color: 'rgba(0,0,0,0.52)' }}>실제 수강생들의 생생한 경험담을 들어보세요.</p>
+          <p style={{ color: 'rgba(255,255,255,0.50)' }}>실제 수강생들의 생생한 경험담을 들어보세요.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -44,18 +44,18 @@ export default function TestimonialsSection() {
                   <Star key={i} className="h-5 w-5 fill-current" style={{ color: '#F59E0B' }} />
                 ))}
               </div>
-              <p className="mb-6 text-sm leading-relaxed" style={{ color: 'rgba(0,0,0,0.62)' }}>
+              <p className="mb-6 text-sm leading-relaxed" style={{ color: 'rgba(0,0,0,0.58)' }}>
                 "{t.content}"
               </p>
               <div className="flex items-center gap-3">
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ background: `linear-gradient(135deg, ${t.color}22, ${t.color}44)`, border: `1px solid ${t.color}33` }}
+                  style={{ background: `linear-gradient(135deg, ${t.color}18, ${t.color}38)`, border: `1px solid ${t.color}28` }}
                 >
                   <User className="h-6 w-6" style={{ color: t.color }} />
                 </div>
                 <div>
-                  <div className="font-semibold text-sm" style={{ color: 'rgba(0,0,0,0.82)' }}>{t.name}</div>
+                  <div className="font-semibold text-sm" style={{ color: 'rgba(0,0,0,0.85)' }}>{t.name}</div>
                   <div className="text-xs" style={{ color: 'rgba(0,0,0,0.45)' }}>{t.role}</div>
                 </div>
               </div>

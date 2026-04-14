@@ -23,33 +23,30 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
-          {/* Logo */}
           <div className="flex items-center min-w-0 gap-2">
             <Link href="/" className="text-2xl font-black tracking-tight cursor-pointer gradient-text">
               COCODIO
             </Link>
-            <span className="hidden md:block text-[10px] tracking-widest" style={{ color: 'rgba(0,0,0,0.38)' }}>
+            <span className="hidden md:block text-[10px] tracking-widest" style={{ color: 'rgba(255,255,255,0.28)' }}>
               DESIGN / COMICS / DIGITAL
             </span>
           </div>
 
-          {/* Desktop nav */}
           <div className="hidden md:flex items-center space-x-6 flex-1 justify-center ml-8">
             {navLinks.map(({ label, id }) => (
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className="text-sm font-medium transition-all duration-200 whitespace-nowrap hover:opacity-100"
-                style={{ color: 'rgba(0,0,0,0.58)' }}
-                onMouseEnter={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.88)')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(0,0,0,0.58)')}
+                className="text-sm font-medium transition-all duration-200 whitespace-nowrap"
+                style={{ color: 'rgba(255,255,255,0.58)' }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.95)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.58)')}
               >
                 {label}
               </button>
             ))}
           </div>
 
-          {/* CTA + mobile toggle */}
           <div className="flex items-center gap-3 ml-4">
             <a href="https://cova-studio-magmaart2238050.replit.app" target="_blank" rel="noopener noreferrer">
               <button className="btn-gradient text-white text-sm px-5 py-2">
@@ -59,9 +56,9 @@ export default function Navigation() {
             <button
               className="md:hidden p-2 rounded-xl"
               style={{
-                background: 'rgba(255,255,255,0.45)',
-                border: '1px solid rgba(255,255,255,0.65)',
-                color: 'rgba(0,0,0,0.7)',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.16)',
+                color: 'rgba(255,255,255,0.80)',
               }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -70,16 +67,15 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4" style={{ borderTop: '1px solid rgba(0,0,0,0.08)' }}>
+          <div className="md:hidden py-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <div className="flex flex-col space-y-3">
               {navLinks.map(({ label, id }) => (
                 <button
                   key={id}
                   onClick={() => scrollToSection(id)}
                   className="text-left text-sm py-1 font-medium"
-                  style={{ color: 'rgba(0,0,0,0.65)' }}
+                  style={{ color: 'rgba(255,255,255,0.70)' }}
                 >
                   {label}
                 </button>

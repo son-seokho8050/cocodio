@@ -20,10 +20,10 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(0,0,0,0.85)' }}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>
             왜 <span className="gradient-text">코코미술학원</span>이 다를까요?
           </h2>
-          <p style={{ color: 'rgba(0,0,0,0.55)', fontSize: '1.1rem' }}>
+          <p style={{ color: 'rgba(255,255,255,0.52)', fontSize: '1.1rem' }}>
             사고력 향상 'FOLLOW' 시스템을 통한 코코만의 특별한 커리큘럼, 합격까지 올인원
           </p>
         </div>
@@ -34,26 +34,32 @@ export default function AboutSection() {
               src={___________2_}
               alt="Students collaborating"
               className="rounded-3xl w-full"
-              style={{ boxShadow: '0 20px 60px rgba(139,92,246,0.18), 0 4px 20px rgba(0,0,0,0.10)' }}
+              style={{ boxShadow: '0 32px 64px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.30)' }}
             />
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-8" style={{ color: 'rgba(0,0,0,0.85)' }}>
-              FOLLOW 시스템 & 4단계 사고체계
+            <h3 className="text-2xl font-bold mb-8" style={{ color: 'rgba(255,255,255,0.92)' }}>
+              FOLLOW 시스템 &amp; 4단계 사고체계
             </h3>
             <div className="space-y-5">
               {steps.map(({ letter, label, desc, color }) => (
                 <div key={letter} className="flex items-start gap-4">
                   <div
-                    className="glass-card w-12 h-12 rounded-full flex items-center justify-center font-black text-lg flex-shrink-0 text-white"
-                    style={{ background: `linear-gradient(135deg, ${color}, ${color}99)`, minWidth: '3rem' }}
+                    className="w-12 h-12 rounded-full flex items-center justify-center font-black text-lg flex-shrink-0 text-white"
+                    style={{
+                      background: `linear-gradient(180deg, ${color}DD 0%, ${color} 100%)`,
+                      boxShadow: `0 6px 0 ${color}66, 0 10px 24px ${color}55`,
+                      minWidth: '3rem',
+                      position: 'relative',
+                      overflow: 'hidden',
+                    }}
                   >
                     {letter}
                   </div>
                   <div>
-                    <h4 className="text-base font-semibold mb-1" style={{ color: 'rgba(0,0,0,0.82)' }}>{label}</h4>
-                    <p style={{ color: 'rgba(0,0,0,0.52)', fontSize: '0.875rem', lineHeight: 1.6 }}>{desc}</p>
+                    <h4 className="text-base font-semibold mb-1" style={{ color: 'rgba(255,255,255,0.88)' }}>{label}</h4>
+                    <p style={{ color: 'rgba(255,255,255,0.50)', fontSize: '0.875rem', lineHeight: 1.6 }}>{desc}</p>
                   </div>
                 </div>
               ))}
@@ -66,7 +72,7 @@ export default function AboutSection() {
             <div key={title} className="glass-card p-8 text-center">
               <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
-                style={{ background: `linear-gradient(135deg, ${color}22, ${color}44)`, border: `1px solid ${color}33` }}
+                style={{ background: `linear-gradient(135deg, ${color}20, ${color}44)`, border: `1px solid ${color}28` }}
               >
                 <Icon className="h-8 w-8" style={{ color }} />
               </div>
