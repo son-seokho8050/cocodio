@@ -83,11 +83,12 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="gallery" className="py-24" style={{ background: 'var(--color-surface)' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">코코디오 갤러리</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="section-badge mx-auto w-fit mb-4">갤러리</div>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--text-heading)' }}>코코디오 갤러리</h2>
+          <p className="text-lg max-w-3xl mx-auto" style={{ color: 'var(--text-body)' }}>
             코코미술학원의 특별한 교육 현장과 학생들의 창작 활동을 만나보세요
           </p>
         </div>

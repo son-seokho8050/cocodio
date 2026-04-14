@@ -5,66 +5,57 @@ const achievements = [
     icon: Trophy,
     title: "인터랙티브 웹 이론수업",
     stats: ["학생들이 직접적이고 능동적으로", "상호작용 가능한 인터랙티브", "웹 수업을 통해 이론을 실제 경험하는", "코코만의 이론수업"],
-    color: '#F59E0B',
+    color: '#6EC9A3',
   },
   {
     icon: Users,
     title: "FOLLOW 시스템",
     stats: ["개별 맞춤형 진도 관리", "체계적 사고력 훈련", "창의성과 논리적 사고 병행", "실전 중심 실기 연습", "지속적 피드백 시스템"],
-    color: '#8B5CF6',
+    color: '#00CFCC',
   },
   {
     icon: Target,
     title: "전문 과정 운영",
     stats: ["입시미술 (디자인/만화)", "웹툰·일러스트 전문반", "디지털 드로잉", "중등미술 기초반", "개별 포트폴리오 완성"],
-    color: '#06B6D4',
+    color: '#52AE8A',
   },
   {
     icon: Award,
     title: "검증된 실기력",
     stats: ["마산/김해 지역 대표 학원", "검증된 합격 실적", "경험 많은 전문 강사진", "체계적 커리큘럼 운영", "학생 개별 성향 분석"],
-    color: '#34D399',
+    color: '#A4DECA',
   },
 ];
 
-const colorRgb: Record<string, string> = {
-  '#8B5CF6': '139,92,246',
-  '#06B6D4': '6,182,212',
-  '#34D399': '52,211,153',
-  '#F59E0B': '245,158,11',
-  '#EC4899': '236,72,153',
-};
-
 export default function AchievementsSection() {
   return (
-    <section className="py-20">
+    <section className="py-24" style={{ background: 'var(--color-bg)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
+          <div className="section-badge mx-auto w-fit mb-4">코코의 특별함</div>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'var(--text-heading)' }}>
             코코만의 특별한 교육
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {achievements.map(({ icon: Icon, title, stats, color }) => (
-            <div key={title} className="glass-card p-7">
+            <div key={title} className="ui-card p-6">
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 relative overflow-hidden"
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                 style={{
-                  background: `rgba(${colorRgb[color]},0.18)`,
-                  border: `1px solid rgba(${colorRgb[color]},0.28)`,
-                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.60), 0 4px 16px rgba(${colorRgb[color]},0.15)`,
+                  background: `${color}18`,
+                  border: `1px solid ${color}35`,
                 }}
               >
-                <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,rgba(255,255,255,0.45) 0%,rgba(255,255,255,0) 55%)', borderRadius:'inherit', pointerEvents:'none' }} />
-                <Icon className="h-7 w-7" style={{ color, position:'relative', zIndex:2, filter:`drop-shadow(0 2px 4px rgba(${colorRgb[color]},0.40))` }} />
+                <Icon className="h-6 w-6" style={{ color }} />
               </div>
-              <h3 className="text-base font-bold mb-4" style={{ color: 'rgba(10,10,30,0.90)' }}>{title}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-sm font-bold mb-3" style={{ color: 'var(--text-heading)' }}>{title}</h3>
+              <ul className="space-y-1.5">
                 {stats.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(10,10,30,0.82)' }}>
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
+                  <li key={i} className="flex items-start gap-2 text-xs" style={{ color: 'var(--text-body)' }}>
+                    <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: color }} />
                     {s}
                   </li>
                 ))}

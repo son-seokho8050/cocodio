@@ -6,17 +6,15 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: 'rgba(168,152,144,0.45)',
-      backdropFilter: 'blur(20px)',
-      borderTop: '1px solid rgba(255,255,255,0.50)',
-      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.60)',
+      background: '#F5F5F7',
+      borderTop: '1px solid var(--color-border)',
     }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
 
           <div>
-            <div className="text-2xl font-black mb-4 gradient-text">코코미술학원</div>
-            <p className="mb-4 text-sm leading-relaxed" style={{ color: '#4A4A6A' }}>
+            <div className="text-2xl font-black mb-3 gradient-text">코코미술학원</div>
+            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'var(--text-body)' }}>
               사고력 중심의 체계적 미술교육으로<br />창의적인 인재를 기릅니다.
             </p>
             <div className="flex space-x-3">
@@ -25,15 +23,29 @@ export default function Footer() {
                 { href: "https://www.youtube.com/@cocodio5693", Icon: Youtube, label: "YouTube" },
                 { href: "https://blog.naver.com/coco2238050", Icon: BookOpen, label: "Blog" },
               ].map(({ href, Icon, label }) => (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
                   className="w-9 h-9 rounded-xl flex items-center justify-center transition-all"
                   style={{
-                    background: 'rgba(255,255,255,0.35)',
-                    border: '1px solid rgba(255,255,255,0.60)',
-                    color: '#4A4A6A',
+                    background: '#FFFFFF',
+                    border: '1px solid var(--color-border)',
+                    color: 'var(--text-subtle)',
+                    boxShadow: 'var(--el-1)',
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.color = '#7C3AED'; e.currentTarget.style.background = 'rgba(139,92,246,0.15)'; e.currentTarget.style.borderColor = 'rgba(139,92,246,0.40)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = '#4A4A6A'; e.currentTarget.style.background = 'rgba(255,255,255,0.35)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.60)'; }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.color = 'var(--color-primary-dark)';
+                    e.currentTarget.style.borderColor = 'var(--color-primary)';
+                    e.currentTarget.style.background = 'rgba(110,201,163,0.10)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.color = 'var(--text-subtle)';
+                    e.currentTarget.style.borderColor = 'var(--color-border)';
+                    e.currentTarget.style.background = '#FFFFFF';
+                  }}
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -42,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-4" style={{ color: '#1A1A2E' }}>빠른 링크</h4>
+            <h4 className="text-sm font-bold mb-4" style={{ color: 'var(--text-heading)' }}>빠른 링크</h4>
             <ul className="space-y-2">
               {[
                 { label: '학원소개', id: 'about' },
@@ -51,11 +63,12 @@ export default function Footer() {
                 { label: '상담문의', id: 'contact' },
               ].map(({ label, id }) => (
                 <li key={id}>
-                  <button onClick={() => scrollToSection(id)}
+                  <button
+                    onClick={() => scrollToSection(id)}
                     className="text-sm text-left transition-colors"
-                    style={{ color: '#4A4A6A' }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#7C3AED')}
-                    onMouseLeave={e => (e.currentTarget.style.color = '#4A4A6A')}
+                    style={{ color: 'var(--text-body)' }}
+                    onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary-dark)')}
+                    onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-body)')}
                   >
                     {label}
                   </button>
@@ -65,8 +78,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold mb-4" style={{ color: '#1A1A2E' }}>문의 정보</h4>
-            <div className="space-y-2 text-sm" style={{ color: '#4A4A6A' }}>
+            <h4 className="text-sm font-bold mb-4" style={{ color: 'var(--text-heading)' }}>문의 정보</h4>
+            <div className="space-y-2 text-sm" style={{ color: 'var(--text-body)' }}>
               <p>📞 010.4472.2028</p>
               <p>✉️ COCO2238050@NAVER.COM</p>
               <p>🕒 평일 13:00-23:00, 토/일 12:00-18:00</p>
@@ -75,16 +88,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.45)', paddingTop: '1.5rem' }}>
-          <div className="text-center text-sm mb-3" style={{ color: '#4A4A6A' }}>
+        <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
+          <div className="text-center text-sm mb-3" style={{ color: 'var(--text-subtle)' }}>
             &copy; 2024 코코미술학원. All rights reserved.
           </div>
           <div className="text-center">
             <Link href="/admin/consultations">
-              <button className="text-xs px-4 py-2 rounded-xl transition-all"
-                style={{ color: '#4A4A6A', background: 'rgba(255,255,255,0.30)', border: '1px solid rgba(255,255,255,0.50)' }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#7C3AED')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#4A4A6A')}
+              <button
+                className="text-xs px-4 py-2 rounded-xl transition-all"
+                style={{
+                  color: 'var(--text-subtle)',
+                  background: '#FFFFFF',
+                  border: '1px solid var(--color-border)',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary-dark)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-subtle)')}
               >
                 📊 관리자 모드
               </button>

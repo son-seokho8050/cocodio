@@ -75,7 +75,8 @@ export default function ChatWidget() {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-primary-600 hover:bg-primary-700 text-white shadow-lg"
+          className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full text-white shadow-lg"
+          style={{ background: 'var(--color-primary)', boxShadow: '0 4px 16px rgba(110,201,163,0.45)' }}
           aria-label="실시간 상담 채팅 열기"
         >
           <MessageCircle className="h-6 w-6" />
@@ -86,7 +87,7 @@ export default function ChatWidget() {
       {isOpen && (
         <div className="fixed bottom-6 left-6 z-50 w-80 h-96 bg-white rounded-lg shadow-2xl border">
           {/* 헤더 */}
-          <div className="bg-primary-600 text-white p-4 rounded-t-lg flex justify-between items-center">
+          <div className="text-white p-4 rounded-t-lg flex justify-between items-center" style={{ background: 'var(--color-primary-dark)' }}>
             <div>
               <h3 className="font-semibold">실시간 상담</h3>
               <p className="text-xs text-primary-100">코코미술학원</p>
@@ -110,11 +111,11 @@ export default function ChatWidget() {
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
-                    message.sender === 'user'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 text-gray-800'
-                  }`}
+                  className={`max-w-xs px-3 py-2 rounded-lg text-sm`}
+                  style={message.sender === 'user'
+                    ? { background: 'var(--color-primary)', color: '#fff' }
+                    : { background: '#F0F0F2', color: 'var(--text-heading)' }
+                  }
                 >
                   {message.text}
                 </div>

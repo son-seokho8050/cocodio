@@ -16,7 +16,7 @@ Critical requirement: Always provide accurate information from the start. Incorr
 - **Styling**: Tailwind CSS with shadcn/ui and Radix UI primitives
 - **State Management**: TanStack Query
 - **Forms**: React Hook Form with Zod validation
-- **Design System**: "new-york" style variant for shadcn/ui, Noto Sans KR (Korean), Inter (English) fonts, custom academy branding colors (blue, purple, orange), mobile-first responsive design.
+- **Design System**: "new-york" style variant for shadcn/ui, Noto Sans KR (Korean), Inter (English) fonts. **Product UI Styleguide** — clean soft matte design: off-white background (#EDEEF0), mint sage green primary (#6EC9A3), white surface cards (#FFFFFF), teal focus ring (#00CFCC). 5-level elevation shadow system (--el-1 to --el-5). Component classes: .ui-card (elevated white), .btn-primary (solid mint pill), .btn-secondary (outline pill), .section-badge (mint pill label). Mobile-first responsive design. No glass morphism — clean matte surfaces with soft box shadows.
 
 ### Backend
 - **Runtime**: Node.js with Express.js
