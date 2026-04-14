@@ -76,15 +76,15 @@ export default function Footer() {
         </div>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.45)', paddingTop: '1.5rem' }}>
-          <div className="text-center text-sm mb-3" style={{ color: '#8888A8' }}>
+          <div className="text-center text-sm mb-3" style={{ color: '#4A4A6A' }}>
             &copy; 2024 코코미술학원. All rights reserved.
           </div>
           <div className="text-center">
             <Link href="/admin/consultations">
               <button className="text-xs px-4 py-2 rounded-xl transition-all"
-                style={{ color: '#8888A8', background: 'rgba(255,255,255,0.30)', border: '1px solid rgba(255,255,255,0.50)' }}
+                style={{ color: '#4A4A6A', background: 'rgba(255,255,255,0.30)', border: '1px solid rgba(255,255,255,0.50)' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#7C3AED')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#8888A8')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#4A4A6A')}
               >
                 📊 관리자 모드
               </button>

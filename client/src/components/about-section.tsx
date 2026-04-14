@@ -44,7 +44,7 @@ export default function AboutSection() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             왜 코코미술학원이 다를까요?
           </h2>
-          <p style={{ color: '#8888A8', fontSize: '1.1rem' }}>
+          <p style={{ color: '#4A4A6A', fontSize: '1.1rem' }}>
             사고력 향상 'FOLLOW' 시스템을 통한 코코만의 특별한 커리큘럼, 합격까지 올인원
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h4 className="text-base font-semibold mb-1" style={{ color: '#1A1A2E' }}>{label}</h4>
-                    <p style={{ color: '#8888A8', fontSize: '0.875rem', lineHeight: 1.6 }}>{desc}</p>
+                    <p style={{ color: '#4A4A6A', fontSize: '0.875rem', lineHeight: 1.6 }}>{desc}</p>
                   </div>
                 </div>
               ))}
@@ -127,7 +127,7 @@ export default function AboutSection() {
               {/* 본문 — 어두운 회색 */}
               <p
                 className="text-sm leading-relaxed whitespace-pre-line"
-                style={{ color: 'rgba(10,10,30,0.58)' }}
+                style={{ color: 'rgba(10,10,30,0.82)' }}
               >
                 {desc}
               </p>

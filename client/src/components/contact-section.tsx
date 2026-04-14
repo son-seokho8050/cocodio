@@ -24,7 +24,7 @@ const labelStyle: React.CSSProperties = {
   display: 'block',
   marginBottom: '0.4rem',
   fontSize: '0.78rem',
-  color: 'rgba(10,10,30,0.50)',
+  color: 'rgba(10,10,30,0.78)',
   fontWeight: 700,
   letterSpacing: '0.04em',
   textTransform: 'uppercase',
@@ -70,7 +70,7 @@ export default function ContactSection() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             무료체험수업 &amp; 적성테스트 신청
           </h2>
-          <p style={{ color: '#8888A8', fontSize: '1.05rem' }}>
+          <p style={{ color: '#4A4A6A', fontSize: '1.05rem' }}>
             궁금한 점이 있으시면 언제든 문의해 주세요. 전문 상담사가 친절히 안내해 드립니다.
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-bold text-sm mb-1" style={{ color: 'rgba(10,10,30,0.88)' }}>{title}</h4>
                     {lines.map((l, i) => (
-                      <p key={i} className="text-sm" style={{ color: i === 0 ? 'rgba(10,10,30,0.70)' : 'rgba(10,10,30,0.48)' }}>{l}</p>
+                      <p key={i} className="text-sm" style={{ color: i === 0 ? 'rgba(10,10,30,0.70)' : 'rgba(10,10,30,0.75)' }}>{l}</p>
                     ))}
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function ContactSection() {
                       background: selectedCampus === campus
                         ? 'linear-gradient(135deg, rgba(139,92,246,0.10), rgba(6,182,212,0.10))'
                         : 'transparent',
-                      color: selectedCampus === campus ? '#7C3AED' : 'rgba(10,10,30,0.38)',
+                      color: selectedCampus === campus ? '#7C3AED' : 'rgba(10,10,30,0.60)',
                       borderBottom: selectedCampus === campus ? '2.5px solid #8B5CF6' : '2.5px solid transparent',
                     }}>
                     {campus === 'masan' ? '마산 캠퍼스' : '김해 캠퍼스'}

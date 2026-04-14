@@ -63,7 +63,7 @@ export default function AchievementsSection() {
               <h3 className="text-base font-bold mb-4" style={{ color: 'rgba(10,10,30,0.90)' }}>{title}</h3>
               <ul className="space-y-2">
                 {stats.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(10,10,30,0.58)' }}>
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(10,10,30,0.82)' }}>
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
                     {s}
                   </li>

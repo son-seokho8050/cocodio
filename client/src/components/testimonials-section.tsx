@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             학부모 &amp; 학생 후기
           </h2>
-          <p style={{ color: '#8888A8' }}>실제 수강생들의 생생한 경험담을 들어보세요.</p>
+          <p style={{ color: '#4A4A6A' }}>실제 수강생들의 생생한 경험담을 들어보세요.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
                   <Star key={i} className="h-5 w-5 fill-current" style={{ color: '#F59E0B' }} />
                 ))}
               </div>
-              <p className="mb-6 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.62)' }}>
+              <p className="mb-6 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.85)' }}>
                 "{t.content}"
               </p>
               <div className="flex items-center gap-3">
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div>
                   <div className="font-semibold text-sm" style={{ color: 'rgba(10,10,30,0.88)' }}>{t.name}</div>
-                  <div className="text-xs" style={{ color: 'rgba(10,10,30,0.50)' }}>{t.role}</div>
+                  <div className="text-xs" style={{ color: 'rgba(10,10,30,0.78)' }}>{t.role}</div>
                 </div>
               </div>
             </div>

@@ -49,7 +49,7 @@ export default function CurriculumSection() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             COCO ALL IN-ONE SYSTEM
           </h2>
-          <p style={{ color: '#8888A8', fontSize: '1.1rem' }}>
+          <p style={{ color: '#4A4A6A', fontSize: '1.1rem' }}>
             입시미술 그 한계를 넘어, 코코의 수업을 소개합니다.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function CurriculumSection() {
                   <h3 className="text-lg font-bold" style={{ color: 'rgba(10,10,30,0.90)' }}>{title}</h3>
                 </div>
 
-                <p className="mb-5 text-sm leading-relaxed whitespace-pre-line" style={{ color: 'rgba(10,10,30,0.58)' }}>
+                <p className="mb-5 text-sm leading-relaxed whitespace-pre-line" style={{ color: 'rgba(10,10,30,0.82)' }}>
                   {desc}
                 </p>
 

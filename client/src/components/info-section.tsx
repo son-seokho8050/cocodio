@@ -10,7 +10,7 @@ export default function InfoSection() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             안내
           </h2>
-          <p style={{ color: '#8888A8', fontSize: '1.05rem' }}>
+          <p style={{ color: '#4A4A6A', fontSize: '1.05rem' }}>
             코코미술학원 교습비 및 차량운행 안내
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function InfoSection() {
               <h3 className="text-xl font-bold" style={{ color: 'rgba(10,10,30,0.90)' }}>교습비 안내</h3>
             </div>
 
-            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.58)' }}>
+            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.82)' }}>
               체계적인 커리큘럼과 개인별 맞춤 지도를 위한 교습비 안내입니다.
             </p>
 
@@ -68,7 +68,7 @@ export default function InfoSection() {
               <h3 className="text-xl font-bold" style={{ color: 'rgba(10,10,30,0.90)' }}>안전귀가 차량운행</h3>
             </div>
 
-            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.58)' }}>
+            <p className="mb-5 text-sm leading-relaxed" style={{ color: 'rgba(10,10,30,0.82)' }}>
               학생들의 안전한 귀가를 위한 차량운행 서비스를 제공합니다.
             </p>
 

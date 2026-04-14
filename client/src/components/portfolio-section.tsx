@@ -14,7 +14,7 @@ export default function PortfolioSection() {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             COCODIO ALL IN-ONE SYSTEM
           </h2>
-          <p style={{ color: '#8888A8', fontSize: '1.1rem' }}>
+          <p style={{ color: '#4A4A6A', fontSize: '1.1rem' }}>
             코코의 차별화된 FOLLOW 수업을 경험하세요.
           </p>
         </div>

@@ -48,7 +48,7 @@ export default function HeroSection() {
           {/* Left */}
           <div className="animate-in slide-in-from-left duration-700">
             <div className="mb-8">
-              <div className="text-sm font-light mb-1 tracking-widest uppercase" style={{ color: '#8888A8' }}>
+              <div className="text-sm font-light mb-1 tracking-widest uppercase" style={{ color: '#4A4A6A' }}>
                 재능의 출발점
               </div>
               <h1 className="text-6xl lg:text-8xl font-black mb-3 leading-none" style={{ color: '#1A1A2E' }}>
@@ -98,7 +98,7 @@ export default function HeroSection() {
               >
                 {list[index]}
               </div>
-              <div className="text-[10px] mt-1 tracking-wide" style={{ color: '#8888A8' }}>
+              <div className="text-[10px] mt-1 tracking-wide" style={{ color: '#4A4A6A' }}>
                 인서울·수도권 미대
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function HeroSection() {
               className="glass-card-vivid absolute -top-6 -right-6 p-4"
             >
               <div className="text-xl font-bold text-center" style={{ color: '#1A1A2E' }}>FOLLOW</div>
-              <div className="text-xs text-center" style={{ color: '#8888A8' }}>ALL IN-ONE SYSTEM</div>
+              <div className="text-xs text-center" style={{ color: '#4A4A6A' }}>ALL IN-ONE SYSTEM</div>
             </div>
           </div>
         </div>
