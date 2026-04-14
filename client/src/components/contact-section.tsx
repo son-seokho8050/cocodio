@@ -67,11 +67,11 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             무료체험수업 &amp;{' '}
             <span className="gradient-text">적성테스트 신청</span>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.50)', fontSize: '1.05rem' }}>
+          <p style={{ color: '#8888A8', fontSize: '1.05rem' }}>
             궁금한 점이 있으시면 언제든 문의해 주세요. 전문 상담사가 친절히 안내해 드립니다.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function ContactSection() {
 
           {/* Info */}
           <div>
-            <h3 className="text-lg font-bold mb-6" style={{ color: 'rgba(255,255,255,0.88)' }}>학원 정보</h3>
+            <h3 className="text-lg font-bold mb-6" style={{ color: '#1A1A2E' }}>학원 정보</h3>
 
             <div className="space-y-4 mb-8">
               {[

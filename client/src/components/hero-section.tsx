@@ -39,30 +39,22 @@ export default function HeroSection() {
 
   return (
     <section
-      className="text-white pt-16 relative overflow-hidden"
-      style={{ background: 'linear-gradient(140deg, #0F0A1E 0%, #1A0B3B 40%, #0A1628 70%, #071520 100%)', minHeight: '100vh', display: 'flex', alignItems: 'center' }}
+      className="pt-16 relative overflow-hidden"
+      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}
     >
-      {/* Ambient blobs */}
-      <div className="absolute top-16 left-8 w-[500px] h-[500px] rounded-full pointer-events-none animate-float-slow"
-        style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.28) 0%, transparent 70%)', filter: 'blur(60px)' }} />
-      <div className="absolute bottom-12 right-8 w-[400px] h-[400px] rounded-full pointer-events-none animate-float-medium"
-        style={{ background: 'radial-gradient(circle, rgba(6,182,212,0.22) 0%, transparent 70%)', filter: 'blur(50px)' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full pointer-events-none animate-glow-pulse"
-        style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.12) 0%, transparent 70%)', filter: 'blur(40px)' }} />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left */}
           <div className="animate-in slide-in-from-left duration-700">
             <div className="mb-8">
-              <div className="text-sm font-light mb-1 tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              <div className="text-sm font-light mb-1 tracking-widest uppercase" style={{ color: '#8888A8' }}>
                 재능의 출발점
               </div>
               <h1 className="text-6xl lg:text-8xl font-black mb-3 leading-none gradient-text">
                 코코
               </h1>
-              <p className="text-lg lg:text-xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              <p className="text-lg lg:text-xl leading-relaxed" style={{ color: '#4A4A6A' }}>
                 여러분의 재능은 어떤 모양인가요?
               </p>
             </div>
@@ -70,8 +62,10 @@ export default function HeroSection() {
               <button onClick={() => scrollTo('contact')} className="btn-gradient flex items-center justify-center gap-2 px-8 py-4 text-lg">
                 <Calendar className="h-5 w-5" /> 무료체험수업 신청
               </button>
-              <button onClick={() => scrollTo('portfolio')} className="flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold rounded-full"
-                style={{ background: 'rgba(255,255,255,0.10)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.22)', color: 'white' }}>
+              <button
+                onClick={() => scrollTo('portfolio')}
+                className="btn-glass flex items-center justify-center gap-2 px-8 py-4 text-lg"
+              >
                 <Play className="h-5 w-5" /> FOLLOW 수업 보기
               </button>
             </div>
@@ -80,37 +74,41 @@ export default function HeroSection() {
           {/* Right */}
           <div className="relative animate-in slide-in-from-right duration-700">
             <div className="relative">
-              {/* Image glow */}
-              <div className="absolute inset-0 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.3), rgba(6,182,212,0.2))', filter: 'blur(20px)', transform: 'scale(0.95) translateY(8px)' }} />
+              <div className="absolute inset-0 rounded-3xl" style={{
+                background: 'linear-gradient(135deg, rgba(139,92,246,0.18), rgba(6,182,212,0.12))',
+                filter: 'blur(24px)',
+                transform: 'scale(0.95) translateY(10px)'
+              }} />
               <img
                 src="/student-celebration.png"
                 alt="코코미술학원 합격자들"
                 className="relative rounded-3xl w-full"
-                style={{ boxShadow: '0 0 60px rgba(139,92,246,0.25), 0 30px 60px rgba(0,0,0,0.4)' }}
+                style={{ boxShadow: '0 24px 56px rgba(0,0,0,0.16), 0 8px 20px rgba(0,0,0,0.10)' }}
                 loading="eager" width="600" height="450"
               />
             </div>
 
             {/* University glass badge */}
-            <div className="glass-card absolute -bottom-6 -left-6 px-5 py-4 min-w-[170px]"
-              style={{ background: 'rgba(255,255,255,0.12)', border: 'none' }}>
-              {/* Override ::before ::after for dark hero context */}
+            <div
+              className="glass-card absolute -bottom-6 -left-6 px-5 py-4 min-w-[170px]"
+            >
               <div
                 className="text-xl font-black leading-tight transition-all duration-300 gradient-text"
                 style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(8px)' }}
               >
                 {list[index]}
               </div>
-              <div className="text-[10px] mt-1 tracking-wide" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              <div className="text-[10px] mt-1 tracking-wide" style={{ color: '#8888A8' }}>
                 인서울·수도권 미대
               </div>
             </div>
 
             {/* FOLLOW badge */}
-            <div className="absolute -top-6 -right-6 p-4 text-white rounded-2xl"
-              style={{ background: 'rgba(139,92,246,0.18)', backdropFilter: 'blur(16px)', border: '1px solid rgba(167,139,250,0.40)', boxShadow: '0 0 30px rgba(139,92,246,0.25)' }}>
-              <div className="text-xl font-bold text-center">FOLLOW</div>
-              <div className="text-xs text-center" style={{ color: 'rgba(255,255,255,0.55)' }}>ALL IN-ONE SYSTEM</div>
+            <div
+              className="glass-card absolute -top-6 -right-6 p-4"
+            >
+              <div className="text-xl font-bold text-center gradient-text">FOLLOW</div>
+              <div className="text-xs text-center" style={{ color: '#8888A8' }}>ALL IN-ONE SYSTEM</div>
             </div>
           </div>
         </div>

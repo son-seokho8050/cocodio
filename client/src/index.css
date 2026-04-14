@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(230, 50%, 6%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(230, 20%, 15%);
-  --muted-foreground: hsl(230, 10%, 60%);
-  --popover: rgba(255,255,255,0.95);
+  --background: hsl(20, 15%, 88%);
+  --foreground: hsl(240, 30%, 12%);
+  --muted: hsl(20, 10%, 82%);
+  --muted-foreground: hsl(240, 10%, 40%);
+  --popover: rgba(255,255,255,0.92);
   --popover-foreground: hsl(240, 20%, 10%);
-  --card: rgba(255,255,255,0.90);
-  --card-foreground: hsl(240, 20%, 8%);
-  --border: rgba(255,255,255,0.12);
-  --input: rgba(255,255,255,0.90);
+  --card: rgba(255,255,255,0.28);
+  --card-foreground: hsl(240, 30%, 12%);
+  --border: rgba(255,255,255,0.60);
+  --input: rgba(255,255,255,0.55);
   --primary: hsl(262, 83%, 62%);
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(185, 80%, 45%);
@@ -25,11 +25,9 @@
   --radius: 1.25rem;
 
   --purple: #8B5CF6;
-  --purple-light: #B09FFF;
   --teal: #06B6D4;
   --pink: #EC4899;
 
-  --primary-50: rgba(139,92,246,0.10);
   --primary-500: #8B5CF6;
   --primary-600: #7C3AED;
   --primary-700: #6D28D9;
@@ -37,10 +35,12 @@
   --secondary-600: #0891B2;
   --accent-500: #8B5CF6;
   --accent-600: #7C3AED;
-  --gray-50: rgba(255,255,255,0.04);
-  --gray-100: rgba(255,255,255,0.08);
-  --gray-600: rgba(255,255,255,0.55);
-  --gray-900: rgba(255,255,255,0.92);
+
+  /* Text colors — dark on warm light bg */
+  --text-heading: #1A1A2E;
+  --text-body: #4A4A6A;
+  --text-subtle: #8888A8;
+  --text-faint: #AAAAC0;
 }
 
 /* ── Animations ─────────────────────────────────────────── */
@@ -63,10 +63,6 @@
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50%  { opacity: 0.9; transform: scale(1.15); }
 }
-@keyframes shimmer-slide {
-  0%   { transform: translateX(-100%) rotate(30deg); }
-  100% { transform: translateX(300%) rotate(30deg); }
-}
 @keyframes university-scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -86,89 +82,70 @@
     @apply antialiased;
     font-family: 'Noto Sans KR', 'Inter', sans-serif;
 
-    /* ── Dark navy base — high-contrast minimalism (7e2bfb61 / 31b090f6) */
-    background-color: #070A18;
-    color: rgba(255,255,255,0.90);
-
-    /* Subtle deep-color ambient wash */
-    background-image:
-      radial-gradient(ellipse 65% 55% at 8%  10%, rgba(88,28,220,0.28)  0%, transparent 58%),
-      radial-gradient(ellipse 50% 45% at 92% 85%, rgba(6,60,180,0.20)   0%, transparent 58%),
-      radial-gradient(ellipse 45% 40% at 55% 50%, rgba(30,10,60,0.14)   0%, transparent 65%),
-      radial-gradient(ellipse 35% 30% at 80% 18%, rgba(20,80,140,0.15)  0%, transparent 52%);
+    /*
+      ── dce4 레퍼런스 배경 ──
+      왼쪽 상단에서 빛이 와서 오른쪽 하단으로 갈수록 어두워지는
+      따뜻한 로즈-그레이 표면 조명 효과
+    */
+    background-color: #C8BCB8;
+    background-image: radial-gradient(
+      ellipse 110% 90% at 8% 0%,
+      #F2ECE8 0%,    /* 상단 좌측: 밝은 따뜻한 흰빛 */
+      #DDD0CA 30%,   /* 중상: 따뜻한 로즈그레이 */
+      #C4B4AE 60%,   /* 중간: 중간 채도 */
+      #AE9E98 85%,   /* 하단: 어두워짐 */
+      #9A8880 100%   /* 하단 우측 코너: 가장 어두운 */
+    );
     background-attachment: fixed;
+    color: #1A1A2E;
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Sans KR', sans-serif;
-    color: rgba(255,255,255,0.92);
+    color: #1A1A2E;
   }
 }
 
 /* ══════════════════════════════════════════════════════════
-   LIQUID GLASS — REFERENCE-ACCURATE SYSTEM
-   Sources: dce4 (buttons), 7e2bfb61 / 31b090f6 (cards/bg)
+   LIQUID GLASS SYSTEM — dce4 레퍼런스 정확 구현
 ══════════════════════════════════════════════════════════ */
 @layer components {
 
-  /* ── Main glass panel (31b090f6 style) ───────────────── */
-  .glass {
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(32px) saturate(130%);
-    -webkit-backdrop-filter: blur(32px) saturate(130%);
-    border-radius: 20px;
-    border: none;
-    box-shadow:
-      0 32px 72px rgba(0,0,0,0.48),
-      0 12px 28px rgba(0,0,0,0.28),
-      0 3px 8px  rgba(0,0,0,0.16),
-      inset 0 1px 0 rgba(255,255,255,1);
-  }
-
-  /* ══════════════════════════════════════════════════════
-     GLASS CARD SYSTEM  — dce4 / 7e2bfb61 / 31b090f6 refs
-     3 variants: white-panel / transparent-glass / vivid-glass
-  ══════════════════════════════════════════════════════ */
-
-  /* ══════════════════════════════════════════════════════════
-     glass-card  ─  레퍼런스 정확 구현 (7e2bfb61 / 31b090f6)
-     ══════════════════════════════════════════════════════════
-     레퍼런스 분석:
-     · 배경: 다크 네이비 (#070A18)
-     · 카드: 밝은 흰색 frosted glass (거의 불투명, 우유 유리)
-     · 카드 안 텍스트: 어두운 색 (다크 네이비)
-     · 카드가 어두운 배경 위에 밝게 떠있는 대비 효과
-     · 상단 inset glow = 유리 표면 광택
-     · 강한 box-shadow = 카드가 떠있는 깊이감
-  ══════════════════════════════════════════════════════════ */
+  /*
+    ── glass-card — dce4 메인 프로스티드 패널 ──
+    · rgba(255,255,255,0.28): 배경이 선명하게 비침
+    · blur(18px): 배경 흐릿하게 → 프로스티드 느낌
+    · 밝은 흰 테두리: 유리판 엣지
+    · 상단 inset 밝은 선: 유리 상단 반사
+    · 약한 그림자: 부드러운 떠있는 느낌
+  */
   .glass-card {
     position: relative;
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(24px) saturate(150%);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(18px) saturate(110%);
+    -webkit-backdrop-filter: blur(18px) saturate(110%);
     border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.95);
+    border: 1px solid rgba(255,255,255,0.65);
     box-shadow:
-      0 32px 72px rgba(0,0,10,0.55),
-      0 12px 28px rgba(0,0,10,0.30),
-      0 3px 8px   rgba(0,0,10,0.18),
-      inset 0 1.5px 0 rgba(255,255,255,1);
+      0 8px 32px rgba(0,0,0,0.10),
+      0 2px 8px  rgba(0,0,0,0.06),
+      inset 0 1.5px 0 rgba(255,255,255,0.95);
     transition: transform 0.28s cubic-bezier(.22,.68,0,1.20),
                 box-shadow 0.28s ease;
     overflow: hidden;
   }
 
-  /* 상단 미세 글로시 — 흰 카드 위에 살짝 더 밝은 상단 광택 */
+  /* 상단 얇은 글로시 — 유리 표면 빛 반사 */
   .glass-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 40%;
+    height: 42%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.55) 0%,
-      rgba(255,255,255,0.18) 30%,
+      rgba(255,255,255,0.50) 0%,
+      rgba(255,255,255,0.15) 35%,
       rgba(255,255,255,0)    100%
     );
     border-radius: 24px 24px 0 0;
@@ -176,43 +153,38 @@
     z-index: 1;
   }
 
-  /* 우측 edge 스페큘러 — 유리판 절단면 */
+  /* 우측 엣지 스페큘러 */
   .glass-card::after {
     content: '';
     position: absolute;
     top: 5%; right: 0;
     width: 1px;
-    height: 50%;
+    height: 48%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,1)    0%,
-      rgba(255,255,255,0.30) 50%,
+      rgba(255,255,255,0.90) 0%,
+      rgba(255,255,255,0.20) 55%,
       rgba(255,255,255,0)    100%
     );
     pointer-events: none;
     z-index: 1;
   }
 
-  /* 카드 내부 콘텐츠 — 글로시 위에 올라와야 함 */
   .glass-card > * {
     position: relative;
     z-index: 2;
   }
 
   .glass-card:hover {
-    transform: translateY(-6px) scale(1.010);
+    transform: translateY(-5px) scale(1.008);
     box-shadow:
-      0 40px 88px rgba(0,0,10,0.62),
-      0 16px 36px rgba(0,0,10,0.36),
-      0 4px 12px  rgba(0,0,10,0.20),
-      inset 0 1.5px 0 rgba(255,255,255,1);
-    border-color: rgba(255,255,255,1);
+      0 16px 48px rgba(0,0,0,0.14),
+      0 4px 12px  rgba(0,0,0,0.08),
+      inset 0 1.5px 0 rgba(255,255,255,0.98);
+    border-color: rgba(255,255,255,0.82);
   }
 
-  /*
-    아이콘 컨테이너 — 레퍼런스의 파스텔 컬러 아이콘 박스
-    컬러별 CSS 변수로 제어
-  */
+  /* ── 아이콘 박스 ─────────────────────────────────────── */
   .icon-box {
     width: 64px;
     height: 64px;
@@ -231,144 +203,59 @@
     height: 50%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.45) 0%,
+      rgba(255,255,255,0.50) 0%,
       rgba(255,255,255,0) 100%
     );
     border-radius: 18px 18px 0 0;
     pointer-events: none;
   }
 
-  /* ── TRANSPARENT GLASS (dce4 main frosted panel style) ── */
-  .glass-frosted {
-    position: relative;
-    background: rgba(255,255,255,0.28);  /* very see-through */
-    backdrop-filter: blur(32px) saturate(200%);
-    -webkit-backdrop-filter: blur(32px) saturate(200%);
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.50);
-    box-shadow:
-      0 24px 56px rgba(0,0,0,0.40),
-      0 8px 20px  rgba(0,0,0,0.20),
-      inset 0 1.5px 0 rgba(255,255,255,0.90),
-      inset 0 -1px 0 rgba(0,0,0,0.08);
-    overflow: hidden;
-  }
-  .glass-frosted::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 48%;
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,0.55) 0%,
-      rgba(255,255,255,0.15) 40%,
-      rgba(255,255,255,0)    100%
-    );
-    border-radius: 24px 24px 0 0;
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  /* ── VIVID / COLORFUL GLASS (dce4 bottom-right card) ──── */
-  /*
-    Holographic iridescent gradient fill with glass gloss on top.
-    Like an oil-slick or soap-bubble captured in a card shape.
-  */
-  .glass-card-vivid {
-    position: relative;
-    background: linear-gradient(
-      135deg,
-      rgba(255,148,196,0.72) 0%,     /* warm pink */
-      rgba(176,106,255,0.70) 38%,    /* purple */
-      rgba(88,195,245,0.72) 75%,     /* sky blue */
-      rgba(100,240,200,0.65) 100%    /* teal */
-    );
-    backdrop-filter: blur(28px) saturate(220%);
-    -webkit-backdrop-filter: blur(28px) saturate(220%);
-    border-radius: 22px;
-    border: 1px solid rgba(255,255,255,0.48);
-    box-shadow:
-      0 28px 64px rgba(0,0,0,0.50),
-      0 10px 28px rgba(0,0,0,0.28),
-      inset 0 1.5px 0 rgba(255,255,255,0.80),
-      inset 0 -1px 0 rgba(0,0,0,0.10);
-    overflow: hidden;
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
-  }
-  /* Strong gloss on colorful glass */
-  .glass-card-vivid::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 50%;
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,0.62) 0%,
-      rgba(255,255,255,0.22) 28%,
-      rgba(255,255,255,0.05) 60%,
-      rgba(255,255,255,0)    100%
-    );
-    border-radius: 22px 22px 0 0;
-    pointer-events: none;
-    z-index: 2;
-  }
-  .glass-card-vivid:hover {
-    transform: translateY(-8px);
-    box-shadow:
-      0 48px 88px rgba(0,0,0,0.58),
-      0 18px 40px rgba(0,0,0,0.32),
-      inset 0 1.5px 0 rgba(255,255,255,0.85),
-      inset 0 -1px 0 rgba(0,0,0,0.10);
-  }
-
-  /* ── Strong glass (hero overlays) ────────────────────── */
-  .glass-strong {
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(48px) saturate(140%);
-    -webkit-backdrop-filter: blur(48px) saturate(140%);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.72);
-    box-shadow:
-      0 48px 96px rgba(0,0,0,0.55),
-      0 20px 40px rgba(0,0,0,0.30),
-      inset 0 1.5px 0 rgba(255,255,255,1);
-  }
-
-  /* ── Navigation (dark glass — 31b090f6 top bar) ─────── */
+  /* ── Navigation glass (빛 왼쪽 상단 배경 위 frosted) ── */
   .glass-nav {
-    background: rgba(7,10,24,0.80);
-    backdrop-filter: blur(28px) saturate(160%);
-    -webkit-backdrop-filter: blur(28px) saturate(160%);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 2px 24px rgba(0,0,0,0.50);
+    background: rgba(242,236,232,0.75);
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    border-bottom: 1px solid rgba(255,255,255,0.60);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
   }
+
+  /* ── Hero glass 오버레이 패널 ────────────────────────── */
+  .glass-strong {
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.70);
+    box-shadow:
+      0 8px 32px rgba(0,0,0,0.10),
+      inset 0 1.5px 0 rgba(255,255,255,0.95);
+  }
+
+  /* ── Gradient text ───────────────────────────────────── */
+  .gradient-text {
+    background: linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Card hover util ─────────────────────────────────── */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover:hover { transform: translateY(-8px); }
 
   /* ═══════════════════════════════════════════════════════════
-     LIQUID GLASS BUTTONS  — dce4 reference (exact reproduction)
-
-     PRIMARY (purple):  translucent colored glass gem
-     SECONDARY (teal):  translucent teal glass gem
-     OUTLINE:           frosted clear glass pill
-
-     Key physics of the dce4 button look:
-     1. Base = SEMI-TRANSPARENT colored glass (not opaque paint)
-        → backdrop-filter shows bg through the color
-     2. Top 50%: very bright gloss (light hitting convex surface)
-     3. Bottom: solid-color "thickness" edge for 3-D depth
-     4. Perimeter: thin white glass-rim border
-     5. Under: colored glow (light passing through tinted glass)
+     LIQUID GLASS BUTTONS — dce4 정확 구현
+     보라 글래스 젬 (Primary), 틸 글래스 젬 (Secondary)
   ═══════════════════════════════════════════════════════════ */
   .btn-gradient {
-    /*
-      PURPLE GLASS GEM
-      rgba instead of hex = semi-transparent → actual glass tint
-    */
     background: linear-gradient(
       160deg,
-      rgba(216,204,255,0.92) 0%,   /* near-white lavender at top */
-      rgba(155,100,255,0.88) 22%,  /* bright purple */
-      rgba(120,64,240,0.86) 58%,   /* mid-dark purple */
-      rgba(90,28,210,0.92) 100%    /* deep violet base */
+      rgba(216,204,255,0.92) 0%,
+      rgba(155,100,255,0.88) 22%,
+      rgba(120,64,240,0.86) 58%,
+      rgba(90,28,210,0.92) 100%
     );
     backdrop-filter: blur(8px) saturate(200%);
     -webkit-backdrop-filter: blur(8px) saturate(200%);
@@ -377,24 +264,15 @@
     border-radius: 9999px;
     position: relative;
     overflow: hidden;
-    /*
-      Glass perimeter rim: bright top-left (lit) + dim right-bottom (shadow)
-    */
     border: 1px solid rgba(255,255,255,0.45);
     box-shadow:
-      0 8px 0 rgba(55,5,160,0.68),           /* solid 3-D thickness */
-      0 16px 40px rgba(110,40,230,0.62),     /* colored light glow */
-      inset 0 2px 0 rgba(255,255,255,0.78),  /* super-bright top rim */
-      inset 0 -2px 0 rgba(30,0,120,0.38);    /* dark bottom rim */
+      0 8px 0 rgba(55,5,160,0.68),
+      0 16px 40px rgba(110,40,230,0.50),
+      inset 0 2px 0 rgba(255,255,255,0.78),
+      inset 0 -2px 0 rgba(30,0,120,0.38);
     transition: transform 0.12s ease, box-shadow 0.12s ease;
     letter-spacing: 0.01em;
   }
-
-  /*
-    GLASS GLOSS — the defining characteristic of dce4 buttons.
-    Top ~50% is dramatically lighter (convex glass catching light).
-    Very bright at the very top edge, fades to fully transparent.
-  */
   .btn-gradient::before {
     content: '';
     position: absolute;
@@ -402,39 +280,31 @@
     height: 54%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.70) 0%,    /* very bright at top */
-      rgba(255,255,255,0.40) 18%,   /* still bright */
-      rgba(255,255,255,0.12) 50%,   /* fading */
+      rgba(255,255,255,0.70) 0%,
+      rgba(255,255,255,0.40) 18%,
+      rgba(255,255,255,0.12) 50%,
       rgba(255,255,255,0)    100%
     );
     border-radius: 9999px 9999px 0 0;
     pointer-events: none;
     z-index: 2;
   }
-
-  /* Tiny specular dot at top-center (glass catches direct light) */
   .btn-gradient::after {
     content: '';
     position: absolute;
     top: 12%; left: 50%;
     transform: translateX(-50%);
-    width: 30%;
-    height: 14%;
-    background: radial-gradient(
-      ellipse,
-      rgba(255,255,255,0.55) 0%,
-      rgba(255,255,255,0) 100%
-    );
+    width: 30%; height: 14%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 2;
   }
-
   .btn-gradient:hover {
     transform: translateY(-3px);
     box-shadow:
       0 11px 0 rgba(55,5,160,0.72),
-      0 22px 50px rgba(110,40,230,0.78),
+      0 22px 50px rgba(110,40,230,0.65),
       inset 0 2px 0 rgba(255,255,255,0.82),
       inset 0 -2px 0 rgba(30,0,120,0.40);
   }
@@ -442,19 +312,19 @@
     transform: translateY(6px);
     box-shadow:
       0 2px 0 rgba(55,5,160,0.72),
-      0 6px 16px rgba(110,40,230,0.48),
+      0 6px 16px rgba(110,40,230,0.40),
       inset 0 2px 0 rgba(255,255,255,0.75),
       inset 0 -2px 0 rgba(30,0,120,0.40);
   }
 
-  /* ── TEAL GLASS GEM (Secondary button variant) ───────── */
+  /* ── Teal glass gem ──────────────────────────────────── */
   .btn-teal {
     background: linear-gradient(
       160deg,
-      rgba(184,244,255,0.92) 0%,   /* near-white cyan */
-      rgba(34,200,230,0.88) 22%,   /* bright teal */
-      rgba(6,168,210,0.86) 58%,    /* mid teal */
-      rgba(4,120,160,0.92) 100%    /* deep base */
+      rgba(184,244,255,0.92) 0%,
+      rgba(34,200,230,0.88) 22%,
+      rgba(6,168,210,0.86)  58%,
+      rgba(4,120,160,0.92)  100%
     );
     backdrop-filter: blur(8px) saturate(200%);
     -webkit-backdrop-filter: blur(8px) saturate(200%);
@@ -466,7 +336,7 @@
     border: 1px solid rgba(255,255,255,0.42);
     box-shadow:
       0 8px 0 rgba(3,80,120,0.65),
-      0 16px 40px rgba(6,160,210,0.58),
+      0 16px 40px rgba(6,160,210,0.45),
       inset 0 2px 0 rgba(255,255,255,0.75),
       inset 0 -2px 0 rgba(2,50,90,0.35);
     transition: transform 0.12s ease, box-shadow 0.12s ease;
@@ -492,26 +362,25 @@
     transform: translateY(-3px);
     box-shadow:
       0 11px 0 rgba(3,80,120,0.70),
-      0 22px 50px rgba(6,160,210,0.72),
+      0 22px 50px rgba(6,160,210,0.60),
       inset 0 2px 0 rgba(255,255,255,0.80),
       inset 0 -2px 0 rgba(2,50,90,0.38);
   }
 
-  /* ── FROSTED CLEAR GLASS button (outline / ghost) ────── */
+  /* ── Glass outline button (밝은 배경 위) ─────────────── */
   .btn-glass {
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid rgba(255,255,255,0.35);
-    color: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.32);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.65);
+    color: #1A1A2E;
     border-radius: 9999px;
     font-weight: 600;
     position: relative;
     overflow: hidden;
     box-shadow:
-      0 4px 20px rgba(0,0,0,0.28),
-      inset 0 1.5px 0 rgba(255,255,255,0.35),
-      inset 0 -1px 0 rgba(0,0,0,0.15);
+      0 4px 16px rgba(0,0,0,0.10),
+      inset 0 1.5px 0 rgba(255,255,255,0.90);
     transition: all 0.22s ease;
     letter-spacing: 0.01em;
   }
@@ -520,65 +389,17 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 52%;
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,0.18) 0%,
-      rgba(255,255,255,0)    100%
-    );
+    background: linear-gradient(180deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0) 100%);
     border-radius: 9999px 9999px 0 0;
     pointer-events: none;
   }
   .btn-glass:hover {
-    background: rgba(255,255,255,0.18);
-    border-color: rgba(255,255,255,0.50);
+    background: rgba(255,255,255,0.48);
+    border-color: rgba(255,255,255,0.85);
     box-shadow:
-      0 8px 32px rgba(0,0,0,0.38),
-      inset 0 1px 0 rgba(255,255,255,0.40);
+      0 8px 24px rgba(0,0,0,0.13),
+      inset 0 1.5px 0 rgba(255,255,255,0.95);
     transform: translateY(-2px);
-  }
-
-  /* ── Hero (very dark dramatic) ──────────────────────── */
-  .hero-gradient {
-    background: linear-gradient(140deg, #0F0A1E 0%, #1A0B3B 40%, #0A1628 70%, #071520 100%);
-  }
-
-  /* ── Section band (very subtle) ─────────────────────── */
-  .section-glass {
-    background: rgba(255,255,255,0.03);
-  }
-
-  /* ── Gradient text ───────────────────────────────────── */
-  .gradient-text {
-    background: linear-gradient(135deg, #A78BFA 0%, #38BDF8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* ── Card-hover util ─────────────────────────────────── */
-  .card-hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .card-hover:hover { transform: translateY(-8px); }
-
-  /* ── Glass input (for forms on dark bg) ──────────────── */
-  .input-glass {
-    background: rgba(255,255,255,0.92) !important;
-    border: 1.5px solid rgba(255,255,255,0.70) !important;
-    color: rgba(0,0,0,0.82) !important;
-    border-radius: 0.875rem !important;
-    box-shadow:
-      0 4px 16px rgba(0,0,0,0.18),
-      inset 0 1px 3px rgba(0,0,0,0.06) !important;
-  }
-  .input-glass::placeholder { color: rgba(0,0,0,0.35) !important; }
-  .input-glass:focus {
-    border-color: rgba(139,92,246,0.60) !important;
-    box-shadow:
-      0 0 0 3px rgba(139,92,246,0.18),
-      0 4px 16px rgba(0,0,0,0.18),
-      inset 0 1px 3px rgba(0,0,0,0.06) !important;
-    outline: none !important;
   }
 }
 
@@ -590,7 +411,6 @@
   .text-secondary-600 { color: var(--secondary-600); }
   .text-accent-500  { color: var(--accent-500); }
   .text-accent-600  { color: var(--accent-600); }
-  .bg-primary-50    { background-color: var(--primary-50); }
   .bg-primary-500   { background-color: var(--primary-500); }
   .bg-primary-600   { background-color: var(--primary-600); }
   .bg-primary-700   { background-color: var(--primary-700); }

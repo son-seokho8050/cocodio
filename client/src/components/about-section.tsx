@@ -41,10 +41,10 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             왜 <span className="gradient-text">코코미술학원</span>이 다를까요?
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.52)', fontSize: '1.1rem' }}>
+          <p style={{ color: '#8888A8', fontSize: '1.1rem' }}>
             사고력 향상 'FOLLOW' 시스템을 통한 코코만의 특별한 커리큘럼, 합격까지 올인원
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function AboutSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-8" style={{ color: 'rgba(255,255,255,0.92)' }}>
+            <h3 className="text-2xl font-bold mb-8" style={{ color: '#1A1A2E' }}>
               FOLLOW 시스템 &amp; 4단계 사고체계
             </h3>
             <div className="space-y-5">
@@ -79,8 +79,8 @@ export default function AboutSection() {
                     {letter}
                   </div>
                   <div>
-                    <h4 className="text-base font-semibold mb-1" style={{ color: 'rgba(255,255,255,0.88)' }}>{label}</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.50)', fontSize: '0.875rem', lineHeight: 1.6 }}>{desc}</p>
+                    <h4 className="text-base font-semibold mb-1" style={{ color: '#1A1A2E' }}>{label}</h4>
+                    <p style={{ color: '#8888A8', fontSize: '0.875rem', lineHeight: 1.6 }}>{desc}</p>
                   </div>
                 </div>
               ))}

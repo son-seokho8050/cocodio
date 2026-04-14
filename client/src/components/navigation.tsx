@@ -27,7 +27,7 @@ export default function Navigation() {
             <Link href="/" className="text-2xl font-black tracking-tight cursor-pointer gradient-text">
               COCODIO
             </Link>
-            <span className="hidden md:block text-[10px] tracking-widest" style={{ color: 'rgba(255,255,255,0.28)' }}>
+            <span className="hidden md:block text-[10px] tracking-widest" style={{ color: '#AAAAC0' }}>
               DESIGN / COMICS / DIGITAL
             </span>
           </div>
@@ -38,9 +38,9 @@ export default function Navigation() {
                 key={id}
                 onClick={() => scrollToSection(id)}
                 className="text-sm font-medium transition-all duration-200 whitespace-nowrap"
-                style={{ color: 'rgba(255,255,255,0.58)' }}
-                onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.95)')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.58)')}
+                style={{ color: '#4A4A6A' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#1A1A2E')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#4A4A6A')}
               >
                 {label}
               </button>
@@ -56,9 +56,9 @@ export default function Navigation() {
             <button
               className="md:hidden p-2 rounded-xl"
               style={{
-                background: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.16)',
-                color: 'rgba(255,255,255,0.80)',
+                background: 'rgba(255,255,255,0.35)',
+                border: '1px solid rgba(255,255,255,0.65)',
+                color: '#1A1A2E',
               }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -68,14 +68,14 @@ export default function Navigation() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+          <div className="md:hidden py-4" style={{ borderTop: '1px solid rgba(255,255,255,0.50)' }}>
             <div className="flex flex-col space-y-3">
               {navLinks.map(({ label, id }) => (
                 <button
                   key={id}
                   onClick={() => scrollToSection(id)}
                   className="text-left text-sm py-1 font-medium"
-                  style={{ color: 'rgba(255,255,255,0.70)' }}
+                  style={{ color: '#4A4A6A' }}
                 >
                   {label}
                 </button>

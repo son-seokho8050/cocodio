@@ -11,10 +11,10 @@ export default function PortfolioSection() {
     <section id="portfolio" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.92)' }}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
             COCODIO <span className="gradient-text">ALL IN-ONE SYSTEM</span>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.50)', fontSize: '1.1rem' }}>
+          <p style={{ color: '#8888A8', fontSize: '1.1rem' }}>
             코코의 차별화된 FOLLOW 수업을 경험하세요.
           </p>
         </div>
