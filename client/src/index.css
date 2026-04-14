@@ -114,23 +114,23 @@
 
   /*
     ── glass-card — dce4 메인 프로스티드 패널 ──
-    · rgba(255,255,255,0.28): 배경이 선명하게 비침
-    · blur(18px): 배경 흐릿하게 → 프로스티드 느낌
+    · rgba(255,255,255,0.52): 배경이 비치되 충분히 밝음 (dce4 패널 수준)
+    · blur(20px): 배경 흐릿하게 → 프로스티드 느낌
     · 밝은 흰 테두리: 유리판 엣지
     · 상단 inset 밝은 선: 유리 상단 반사
     · 약한 그림자: 부드러운 떠있는 느낌
   */
   .glass-card {
     position: relative;
-    background: rgba(255,255,255,0.28);
-    backdrop-filter: blur(18px) saturate(110%);
-    -webkit-backdrop-filter: blur(18px) saturate(110%);
+    background: rgba(255,255,255,0.52);
+    backdrop-filter: blur(20px) saturate(130%);
+    -webkit-backdrop-filter: blur(20px) saturate(130%);
     border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.75);
     box-shadow:
       0 8px 32px rgba(0,0,0,0.10),
       0 2px 8px  rgba(0,0,0,0.06),
-      inset 0 1.5px 0 rgba(255,255,255,0.95);
+      inset 0 1.5px 0 rgba(255,255,255,0.98);
     transition: transform 0.28s cubic-bezier(.22,.68,0,1.20),
                 box-shadow 0.28s ease;
     overflow: hidden;
@@ -367,38 +367,29 @@
       inset 0 -2px 0 rgba(2,50,90,0.38);
   }
 
-  /* ── Glass outline button (밝은 배경 위) ─────────────── */
+  /*
+    ── Glass outline button — dce4 "Upgrade plan" 스타일 ──
+    흰 frosted 필, 다크 텍스트, 단순 구조
+  */
   .btn-glass {
-    background: rgba(255,255,255,0.32);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.62);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.80);
     color: #1A1A2E;
     border-radius: 9999px;
     font-weight: 600;
-    position: relative;
-    overflow: hidden;
     box-shadow:
-      0 4px 16px rgba(0,0,0,0.10),
-      inset 0 1.5px 0 rgba(255,255,255,0.90);
+      0 2px 12px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,1);
     transition: all 0.22s ease;
     letter-spacing: 0.01em;
   }
-  .btn-glass::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 52%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0) 100%);
-    border-radius: 9999px 9999px 0 0;
-    pointer-events: none;
-  }
   .btn-glass:hover {
-    background: rgba(255,255,255,0.48);
-    border-color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.80);
     box-shadow:
-      0 8px 24px rgba(0,0,0,0.13),
-      inset 0 1.5px 0 rgba(255,255,255,0.95);
+      0 4px 20px rgba(0,0,0,0.12),
+      inset 0 1px 0 rgba(255,255,255,1);
     transform: translateY(-2px);
   }
 }

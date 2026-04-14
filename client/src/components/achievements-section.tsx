@@ -42,7 +42,7 @@ export default function AchievementsSection() {
 
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
-            코코만의 <span className="gradient-text">특별한 교육</span>
+            코코만의 특별한 교육
           </h2>
         </div>
 

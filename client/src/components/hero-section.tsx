@@ -51,7 +51,7 @@ export default function HeroSection() {
               <div className="text-sm font-light mb-1 tracking-widest uppercase" style={{ color: '#8888A8' }}>
                 재능의 출발점
               </div>
-              <h1 className="text-6xl lg:text-8xl font-black mb-3 leading-none gradient-text">
+              <h1 className="text-6xl lg:text-8xl font-black mb-3 leading-none" style={{ color: '#1A1A2E' }}>
                 코코
               </h1>
               <p className="text-lg lg:text-xl leading-relaxed" style={{ color: '#4A4A6A' }}>
@@ -93,8 +93,8 @@ export default function HeroSection() {
               className="glass-card absolute -bottom-6 -left-6 px-5 py-4 min-w-[170px]"
             >
               <div
-                className="text-xl font-black leading-tight transition-all duration-300 gradient-text"
-                style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(8px)' }}
+                className="text-xl font-black leading-tight transition-all duration-300"
+                style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(8px)', color: '#1A1A2E' }}
               >
                 {list[index]}
               </div>
@@ -107,7 +107,7 @@ export default function HeroSection() {
             <div
               className="glass-card absolute -top-6 -right-6 p-4"
             >
-              <div className="text-xl font-bold text-center gradient-text">FOLLOW</div>
+              <div className="text-xl font-bold text-center" style={{ color: '#1A1A2E' }}>FOLLOW</div>
               <div className="text-xs text-center" style={{ color: '#8888A8' }}>ALL IN-ONE SYSTEM</div>
             </div>
           </div>

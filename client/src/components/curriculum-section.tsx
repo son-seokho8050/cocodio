@@ -47,7 +47,7 @@ export default function CurriculumSection() {
 
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
-            COCO <span className="gradient-text">ALL IN-ONE SYSTEM</span>
+            COCO ALL IN-ONE SYSTEM
           </h2>
           <p style={{ color: '#8888A8', fontSize: '1.1rem' }}>
             입시미술 그 한계를 넘어, 코코의 수업을 소개합니다.

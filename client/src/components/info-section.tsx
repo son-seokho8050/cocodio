@@ -8,7 +8,7 @@ export default function InfoSection() {
 
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
-            <span className="gradient-text">안내</span>
+            안내
           </h2>
           <p style={{ color: '#8888A8', fontSize: '1.05rem' }}>
             코코미술학원 교습비 및 차량운행 안내

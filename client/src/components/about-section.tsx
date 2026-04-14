@@ -42,7 +42,7 @@ export default function AboutSection() {
 
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
-            왜 <span className="gradient-text">코코미술학원</span>이 다를까요?
+            왜 코코미술학원이 다를까요?
           </h2>
           <p style={{ color: '#8888A8', fontSize: '1.1rem' }}>
             사고력 향상 'FOLLOW' 시스템을 통한 코코만의 특별한 커리큘럼, 합격까지 올인원

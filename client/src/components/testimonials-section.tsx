@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
 
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#1A1A2E' }}>
-            학부모 &amp; 학생 <span className="gradient-text">후기</span>
+            학부모 &amp; 학생 후기
           </h2>
           <p style={{ color: '#8888A8' }}>실제 수강생들의 생생한 경험담을 들어보세요.</p>
         </div>
