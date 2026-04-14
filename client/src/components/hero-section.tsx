@@ -105,7 +105,7 @@ export default function HeroSection() {
 
             {/* FOLLOW badge */}
             <div
-              className="glass-card absolute -top-6 -right-6 p-4"
+              className="glass-card-vivid absolute -top-6 -right-6 p-4"
             >
               <div className="text-xl font-bold text-center" style={{ color: '#1A1A2E' }}>FOLLOW</div>
               <div className="text-xs text-center" style={{ color: '#8888A8' }}>ALL IN-ONE SYSTEM</div>

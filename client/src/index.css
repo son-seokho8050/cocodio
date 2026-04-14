@@ -113,39 +113,35 @@
 @layer components {
 
   /*
-    ── glass-card — dce4 메인 프로스티드 패널 ──
-    · rgba(255,255,255,0.52): 배경이 비치되 충분히 밝음 (dce4 패널 수준)
-    · blur(20px): 배경 흐릿하게 → 프로스티드 느낌
-    · 밝은 흰 테두리: 유리판 엣지
-    · 상단 inset 밝은 선: 유리 상단 반사
-    · 약한 그림자: 부드러운 떠있는 느낌
+    ── glass-card — dce4 프로스티드 패널 (배경이 비쳐야 함) ──
+    dce4 레퍼런스: 따뜻한 배경이 유리 통해 선명하게 보임
+    → rgba(255,255,255,0.32) 수준이 맞음
   */
   .glass-card {
     position: relative;
-    background: rgba(255,255,255,0.52);
-    backdrop-filter: blur(20px) saturate(130%);
-    -webkit-backdrop-filter: blur(20px) saturate(130%);
+    background: rgba(255,255,255,0.32);
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
     border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.70);
     box-shadow:
       0 8px 32px rgba(0,0,0,0.10),
       0 2px 8px  rgba(0,0,0,0.06),
-      inset 0 1.5px 0 rgba(255,255,255,0.98);
+      inset 0 1.5px 0 rgba(255,255,255,0.95);
     transition: transform 0.28s cubic-bezier(.22,.68,0,1.20),
                 box-shadow 0.28s ease;
     overflow: hidden;
   }
 
-  /* 상단 얇은 글로시 — 유리 표면 빛 반사 */
   .glass-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 42%;
+    height: 40%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.50) 0%,
-      rgba(255,255,255,0.15) 35%,
+      rgba(255,255,255,0.55) 0%,
+      rgba(255,255,255,0.18) 40%,
       rgba(255,255,255,0)    100%
     );
     border-radius: 24px 24px 0 0;
@@ -153,17 +149,16 @@
     z-index: 1;
   }
 
-  /* 우측 엣지 스페큘러 */
   .glass-card::after {
     content: '';
     position: absolute;
     top: 5%; right: 0;
     width: 1px;
-    height: 48%;
+    height: 45%;
     background: linear-gradient(
       180deg,
-      rgba(255,255,255,0.90) 0%,
-      rgba(255,255,255,0.20) 55%,
+      rgba(255,255,255,0.85) 0%,
+      rgba(255,255,255,0.15) 60%,
       rgba(255,255,255,0)    100%
     );
     pointer-events: none;
@@ -178,10 +173,61 @@
   .glass-card:hover {
     transform: translateY(-5px) scale(1.008);
     box-shadow:
-      0 16px 48px rgba(0,0,0,0.14),
-      0 4px 12px  rgba(0,0,0,0.08),
+      0 16px 48px rgba(0,0,0,0.13),
+      0 4px 12px  rgba(0,0,0,0.07),
       inset 0 1.5px 0 rgba(255,255,255,0.98);
-    border-color: rgba(255,255,255,0.82);
+    border-color: rgba(255,255,255,0.85);
+  }
+
+  /*
+    ── glass-card-vivid — dce4 이리데선트 홀로그래픽 카드 ──
+    레퍼런스 우측 하단: 핑크→라벤더→파랑 그라디언트
+    텍스트: 다크 블랙 (#1A1A2E)
+  */
+  .glass-card-vivid {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba(255,160,130,0.58) 0%,
+      rgba(200,140,255,0.60) 40%,
+      rgba(140,180,255,0.58) 75%,
+      rgba(120,210,230,0.55) 100%
+    );
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow:
+      0 8px 32px rgba(0,0,0,0.12),
+      0 2px 8px  rgba(0,0,0,0.06),
+      inset 0 1.5px 0 rgba(255,255,255,0.85);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    overflow: hidden;
+  }
+  .glass-card-vivid::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.45) 0%,
+      rgba(255,255,255,0.12) 40%,
+      rgba(255,255,255,0)    100%
+    );
+    border-radius: 24px 24px 0 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .glass-card-vivid > * {
+    position: relative;
+    z-index: 2;
+  }
+  .glass-card-vivid:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 16px 48px rgba(0,0,0,0.16),
+      inset 0 1.5px 0 rgba(255,255,255,0.90);
   }
 
   /* ── 아이콘 박스 ─────────────────────────────────────── */

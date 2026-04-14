@@ -91,7 +91,7 @@ export default function AboutSection() {
         {/* 흰 frosted glass 카드 3종 — 레퍼런스 정확 구현 */}
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map(({ icon: Icon, title, desc, color, iconBg, iconBorder }) => (
-            <div key={title} className="glass-card p-9 text-center flex flex-col items-center">
+            <div key={title} className="glass-card-vivid p-9 text-center flex flex-col items-center">
 
               {/* 아이콘 박스 — 파스텔 컬러, 흰 카드 위에서 색상 돋보임 */}
               <div
