@@ -9,9 +9,33 @@ const steps = [
 ];
 
 const cards = [
-  { icon: GraduationCap, title: '개인 성향별 맞춤 지도', desc: 'MBTI 성향별 개인 커리큘럼으로\n강점과 특성을 파악하여\n1:1 최적화된 수업을 제공합니다.', color: '#8B5CF6' },
-  { icon: Laptop, title: '디지털 프로세스 폴리오', desc: '디지털 프로그램을 활용하여,\n목표대학에서 그림 스타일까지,\n개인별 빅데이터를 제공합니다.', color: '#06B6D4' },
-  { icon: Trophy, title: '검증된 합격', desc: '주요 미대 입시의 높은 합격률과,\n실기대회 수상을 자랑하는,\n체계적인 입시 전략을 제공합니다.', color: '#EC4899' },
+  {
+    icon: GraduationCap,
+    title: '개인 성향별 맞춤 지도',
+    desc: 'MBTI 성향별 개인 커리큘럼으로\n강점과 특성을 파악하여\n1:1 최적화된 수업을 제공합니다.',
+    color: '#8B5CF6',
+    /* 파스텔 보라 — 레퍼런스 카드1 */
+    iconBg: 'rgba(139,92,246,0.14)',
+    iconGlow: 'rgba(139,92,246,0.22)',
+  },
+  {
+    icon: Laptop,
+    title: '디지털 프로세스 폴리오',
+    desc: '디지털 프로그램을 활용하여,\n목표대학에서 그림 스타일까지,\n개인별 빅데이터를 제공합니다.',
+    color: '#06B6D4',
+    /* 파스텔 시안 — 레퍼런스 카드2 */
+    iconBg: 'rgba(6,182,212,0.13)',
+    iconGlow: 'rgba(6,182,212,0.20)',
+  },
+  {
+    icon: Trophy,
+    title: '검증된 합격',
+    desc: '주요 미대 입시의 높은 합격률과,\n실기대회 수상을 자랑하는,\n체계적인 입시 전략을 제공합니다.',
+    color: '#EC4899',
+    /* 파스텔 핑크 — 레퍼런스 카드3 */
+    iconBg: 'rgba(236,72,153,0.12)',
+    iconGlow: 'rgba(236,72,153,0.20)',
+  },
 ];
 
 export default function AboutSection() {
@@ -67,22 +91,51 @@ export default function AboutSection() {
           </div>
         </div>
 
+        {/* ─── 3-card feature grid ─── */}
+        {/*
+          레퍼런스 구현:
+          · 카드 = glass-card (96% 화이트, 볼록 글로시, 넓은 소프트 쉐도우)
+          · 아이콘 박스 = icon-box class + 파스텔 컬러 bg
+          · 아이콘 위에 섬세한 글로시 레이어 (::before)
+          · 텍스트 = 중앙 정렬, 타이틀 진한 다크, 본문 회색
+        */}
         <div className="grid md:grid-cols-3 gap-8">
-          {cards.map(({ icon: Icon, title, desc, color }) => (
-            <div key={title} className="glass-card p-8 text-center">
+          {cards.map(({ icon: Icon, title, desc, color, iconBg, iconGlow }) => (
+            <div key={title} className="glass-card p-9 text-center flex flex-col items-center">
+
+              {/* 아이콘 컨테이너 — 레퍼런스 파스텔 박스 */}
               <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
-                style={{ background: `linear-gradient(135deg, ${color}20, ${color}44)`, border: `1px solid ${color}28` }}
+                className="icon-box mb-6"
+                style={{
+                  background: `radial-gradient(ellipse at 50% 30%, ${iconGlow} 0%, ${iconBg} 100%)`,
+                  boxShadow: `0 4px 16px ${color}18, inset 0 1px 0 rgba(255,255,255,0.70)`,
+                }}
               >
-                <Icon className="h-8 w-8" style={{ color }} />
+                <Icon
+                  className="h-8 w-8"
+                  style={{ color, filter: `drop-shadow(0 2px 4px ${color}44)` }}
+                />
               </div>
-              <h4 className="text-lg font-bold mb-3" style={{ color: 'rgba(0,0,0,0.82)' }}>{title}</h4>
-              <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'rgba(0,0,0,0.52)' }}>
+
+              {/* 타이틀 */}
+              <h4
+                className="text-lg font-bold mb-3 leading-snug"
+                style={{ color: 'rgba(20,20,30,0.88)' }}
+              >
+                {title}
+              </h4>
+
+              {/* 본문 */}
+              <p
+                className="text-sm leading-relaxed whitespace-pre-line"
+                style={{ color: 'rgba(60,60,80,0.58)' }}
+              >
                 {desc}
               </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
