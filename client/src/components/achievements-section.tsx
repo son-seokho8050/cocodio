@@ -1,100 +1,57 @@
 import { Trophy, Users, Target, Award } from "lucide-react";
 
-const glassCard = {
-  background: 'rgba(255,255,255,0.05)',
-  backdropFilter: 'blur(20px)',
-  WebkitBackdropFilter: 'blur(20px)',
-  border: '1px solid rgba(255,255,255,0.10)',
-  boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
-} as const;
-
 const achievements = [
   {
     icon: Trophy,
     title: "인터랙티브 웹 이론수업",
-    stats: [
-      "학생들이 직접적이고 능동적으로",
-      "상호작용 가능한 인터랙티브",
-      "웹 수업을 통해 이론을 실제 경험하는",
-      "코코만의 이론수업"
-    ],
-    accent: "#F59E0B",
+    stats: ["학생들이 직접적이고 능동적으로", "상호작용 가능한 인터랙티브", "웹 수업을 통해 이론을 실제 경험하는", "코코만의 이론수업"],
+    color: '#F59E0B',
   },
   {
     icon: Users,
     title: "FOLLOW 시스템",
-    stats: [
-      "개별 맞춤형 진도 관리",
-      "체계적 사고력 훈련",
-      "창의성과 논리적 사고 병행",
-      "실전 중심 실기 연습",
-      "지속적 피드백 시스템"
-    ],
-    accent: "#A78BFA",
+    stats: ["개별 맞춤형 진도 관리", "체계적 사고력 훈련", "창의성과 논리적 사고 병행", "실전 중심 실기 연습", "지속적 피드백 시스템"],
+    color: '#8B5CF6',
   },
   {
     icon: Target,
     title: "전문 과정 운영",
-    stats: [
-      "입시미술 (디자인/만화)",
-      "웹툰·일러스트 전문반",
-      "디지털 드로잉",
-      "중등미술 기초반",
-      "개별 포트폴리오 완성"
-    ],
-    accent: "#06B6D4",
+    stats: ["입시미술 (디자인/만화)", "웹툰·일러스트 전문반", "디지털 드로잉", "중등미술 기초반", "개별 포트폴리오 완성"],
+    color: '#06B6D4',
   },
   {
     icon: Award,
     title: "검증된 실기력",
-    stats: [
-      "마산/김해 지역 대표 학원",
-      "검증된 합격 실적",
-      "경험 많은 전문 강사진",
-      "체계적 커리큘럼 운영",
-      "학생 개별 성향 분석"
-    ],
-    accent: "#34D399",
-  }
+    stats: ["마산/김해 지역 대표 학원", "검증된 합격 실적", "경험 많은 전문 강사진", "체계적 커리큘럼 운영", "학생 개별 성향 분석"],
+    color: '#34D399',
+  },
 ];
 
 export default function AchievementsSection() {
   return (
-    <section className="py-20" style={{ background: 'transparent' }}>
+    <section className="py-20" style={{ background: 'rgba(255,255,255,0.18)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(255,255,255,0.95)' }}>
-            코코만의{' '}
-            <span style={{
-              background: 'linear-gradient(135deg, #A78BFA 0%, #06B6D4 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
-              특별한 교육
-            </span>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'rgba(0,0,0,0.85)' }}>
+            코코만의 <span className="gradient-text">특별한 교육</span>
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {achievements.map(({ icon: Icon, title, stats, accent }) => (
-            <div
-              key={title}
-              className="rounded-3xl p-7 card-hover"
-              style={glassCard}
-            >
+          {achievements.map(({ icon: Icon, title, stats, color }) => (
+            <div key={title} className="glass-card p-7">
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
-                style={{ background: `${accent}18`, border: `1px solid ${accent}40` }}
+                style={{ background: `linear-gradient(135deg, ${color}22, ${color}44)`, border: `1px solid ${color}33` }}
               >
-                <Icon className="h-7 w-7" style={{ color: accent }} />
+                <Icon className="h-7 w-7" style={{ color }} />
               </div>
-              <h3 className="text-lg font-bold mb-4" style={{ color: 'rgba(255,255,255,0.9)' }}>{title}</h3>
+              <h3 className="text-base font-bold mb-4" style={{ color: 'rgba(0,0,0,0.82)' }}>{title}</h3>
               <ul className="space-y-2">
                 {stats.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                    <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: accent }} />
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(0,0,0,0.52)' }}>
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
                     {s}
                   </li>
                 ))}
