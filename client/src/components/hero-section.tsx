@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Calendar, Play } from "lucide-react";
+import heroBg from "@assets/optimized/hero-cocodio.webp";
 
 const seoulMetroUniversities = [
   "서울대학교", "홍익대학교", "국민대학교", "이화여자대학교", "중앙대학교",
@@ -40,19 +41,21 @@ export default function HeroSection() {
   return (
     <section
       className="pt-16 relative overflow-hidden"
-      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'transparent' }}
+      style={{
+        minHeight: '100vh',
+        aspectRatio: '4 / 5',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      {/* 배경 민트 accent 원 — 소프트 */}
+      {/* 콘텐츠 가독성을 위한 소프트 워시 */}
       <div aria-hidden="true" style={{
-        position: 'absolute', top: '-80px', right: '-80px',
-        width: '500px', height: '500px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(110,201,163,0.12) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-      <div aria-hidden="true" style={{
-        position: 'absolute', bottom: '-60px', left: '-60px',
-        width: '400px', height: '400px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(0,207,204,0.08) 0%, transparent 70%)',
+        position: 'absolute', inset: 0,
+        background: 'rgba(255,255,255,0.25)',
         pointerEvents: 'none',
       }} />
 

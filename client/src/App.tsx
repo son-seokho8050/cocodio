@@ -16,7 +16,6 @@ import InfoTuition from "@/pages/info-tuition";
 import InfoTransport from "@/pages/info-transport";
 import InfoTuitionGimhae from "@/pages/info-tuition-gimhae";
 import InfoTransportGimhae from "@/pages/info-transport-gimhae";
-import bgImage from "@assets/optimized/bg-pink-hills.webp";
 
 function Router() {
   return (
@@ -43,44 +42,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div style={{ position: "relative", minHeight: "100vh" }}>
-          {/* Background image — proportional scale to width, fill color block below */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 0,
-              backgroundColor: "#C49188",
-              backgroundImage: `url(${bgImage})`,
-              backgroundSize: "100% auto",
-              backgroundPosition: "top center",
-              backgroundRepeat: "no-repeat",
-              pointerEvents: "none",
-            }}
-          />
-          {/* Light wash for readability */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 1,
-              backgroundColor: "rgba(255, 255, 255, 0.18)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ position: "relative", zIndex: 2 }}>
-            <Toaster />
-            <Router />
-          </div>
-        </div>
+        <Toaster />
+        <Router />
       </TooltipProvider>
     </QueryClientProvider>
   );
