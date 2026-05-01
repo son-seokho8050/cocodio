@@ -37,7 +37,7 @@ function extractYouTubeId(input: string): string {
 }
 
 function youtubeThumb(id: string) {
-  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
 }
 
 function VideoCard({
@@ -196,7 +196,7 @@ function VideoModal({
         >
           {ytId ? (
             <iframe
-              src={`https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`}
+              src={`https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&vq=hd720&hd=1`}
               title={slot.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
