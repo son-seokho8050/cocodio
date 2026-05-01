@@ -107,11 +107,12 @@
   body {
     @apply antialiased;
     font-family: 'Noto Sans KR', 'Inter', sans-serif;
-    background-color: var(--color-bg);
+    background-color: transparent;
     color: var(--text-heading);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
+  html { background-color: var(--color-bg); }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Sans KR', sans-serif;

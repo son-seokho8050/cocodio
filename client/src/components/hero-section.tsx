@@ -40,7 +40,7 @@ export default function HeroSection() {
   return (
     <section
       className="pt-16 relative overflow-hidden"
-      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'var(--color-bg)' }}
+      style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'transparent' }}
     >
       {/* 배경 민트 accent 원 — 소프트 */}
       <div aria-hidden="true" style={{

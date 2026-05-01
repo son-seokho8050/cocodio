@@ -8,7 +8,7 @@ import { insertConsultationSchema, type InsertConsultation } from "@shared/schem
 import { apiRequest } from "@/lib/queryClient";
 
 const inputStyle: React.CSSProperties = {
-  background: 'var(--color-bg)',
+  background: 'transparent',
   border: '1px solid var(--color-border)',
   color: 'var(--text-heading)',
   borderRadius: '10px',
@@ -60,7 +60,7 @@ export default function ContactSection() {
   });
 
   return (
-    <section id="contact" className="py-24" style={{ background: 'var(--color-bg)' }}>
+    <section id="contact" className="py-24" style={{ background: 'transparent' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">

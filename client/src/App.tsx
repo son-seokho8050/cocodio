@@ -16,6 +16,7 @@ import InfoTuition from "@/pages/info-tuition";
 import InfoTransport from "@/pages/info-transport";
 import InfoTuitionGimhae from "@/pages/info-tuition-gimhae";
 import InfoTransportGimhae from "@/pages/info-transport-gimhae";
+import bgImage from "@assets/제목_없는_디자인_1777609314473.png";
 
 function Router() {
   return (
@@ -42,6 +43,30 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: -1,
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: -1,
+            backgroundColor: "rgba(255, 255, 255, 0.55)",
+            pointerEvents: "none",
+          }}
+        />
         <Toaster />
         <Router />
       </TooltipProvider>

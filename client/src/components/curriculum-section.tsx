@@ -35,7 +35,7 @@ export default function CurriculumSection() {
   const scrollToContact = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="curriculum" className="py-24" style={{ background: 'var(--color-bg)' }}>
+    <section id="curriculum" className="py-24" style={{ background: 'transparent' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
