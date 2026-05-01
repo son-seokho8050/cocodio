@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Play } from "lucide-react";
+import { Play, X } from "lucide-react";
 
 type VideoSlot = {
   src?: string;
@@ -9,16 +9,22 @@ type VideoSlot = {
 };
 
 const slots: VideoSlot[] = [
-  { title: "수업 현장", caption: "실제 수업의 생생한 모습" },
-  { title: "학생 작품", caption: "완성된 작품과 제작 과정" },
-  { title: "특강 & 이벤트", caption: "특별 프로그램 하이라이트" },
+  { title: "색채 이론 송", caption: "어려운 색상환·보색을 노래로" },
+  { title: "구도 & 원근법 송", caption: "공간감의 원리를 멜로디로" },
+  { title: "명암 & 질감 송", caption: "빛과 재질 표현을 리듬으로" },
 ];
 
-function LazyVideo({ slot, idx }: { slot: VideoSlot; idx: number }) {
+function VideoCard({
+  slot,
+  idx,
+  onOpen,
+}: {
+  slot: VideoSlot;
+  idx: number;
+  onOpen: () => void;
+}) {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [inView, setInView] = useState(false);
-  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const el = wrapperRef.current;
@@ -39,71 +45,52 @@ function LazyVideo({ slot, idx }: { slot: VideoSlot; idx: number }) {
     return () => io.disconnect();
   }, []);
 
-  const togglePlay = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) {
-      v.play();
-      setPlaying(true);
-    } else {
-      v.pause();
-      setPlaying(false);
-    }
-  };
-
   return (
     <div
       ref={wrapperRef}
-      className="glass-frost group relative overflow-hidden cursor-pointer"
-      style={{ padding: 0, borderRadius: "24px" }}
-      onClick={togglePlay}
+      className="glass-frost group relative overflow-hidden cursor-pointer transition-transform hover:-translate-y-1"
+      style={{ padding: 0, borderRadius: "20px" }}
+      onClick={onOpen}
+      data-testid={`video-card-${idx}`}
     >
-      <div className="aspect-[4/5] overflow-hidden relative bg-black">
-        {slot.src && inView ? (
-          <video
-            ref={videoRef}
-            src={slot.src}
-            poster={slot.poster}
-            preload="metadata"
-            playsInline
-            muted
-            loop
+      <div className="aspect-video overflow-hidden relative bg-black">
+        {slot.src && inView && slot.poster ? (
+          <img
+            src={slot.poster}
+            alt={slot.title}
             className="w-full h-full object-cover"
-            onPlay={() => setPlaying(true)}
-            onPause={() => setPlaying(false)}
+            loading="lazy"
           />
         ) : (
           <div
             className="w-full h-full flex items-center justify-center"
             style={{
               background:
-                "linear-gradient(135deg, rgba(199,121,101,0.18) 0%, rgba(60,30,40,0.45) 100%)",
+                "linear-gradient(135deg, rgba(199,121,101,0.20) 0%, rgba(60,30,40,0.50) 100%)",
             }}
           >
-            <div className="text-white/55 text-sm font-medium tracking-widest uppercase">
-              Video {idx + 1}
+            <div className="text-white/55 text-xs font-medium tracking-widest uppercase">
+              MV {idx + 1}
             </div>
           </div>
         )}
 
-        {/* Play 버튼 (영상이 정지 중일 때) */}
-        {slot.src && !playing && (
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div
-              className="w-16 h-16 rounded-full flex items-center justify-center shadow-xl transition-transform group-hover:scale-110"
-              style={{ background: "rgba(255,255,255,0.92)" }}
-            >
-              <Play className="h-7 w-7 ml-1" style={{ color: "#1A1A1A" }} fill="#1A1A1A" />
-            </div>
+        {/* Play 버튼 오버레이 */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div
+            className="w-16 h-16 rounded-full flex items-center justify-center shadow-xl transition-transform group-hover:scale-110"
+            style={{ background: "rgba(255,255,255,0.92)" }}
+          >
+            <Play className="h-7 w-7 ml-1" style={{ color: "#1A1A1A" }} fill="#1A1A1A" />
           </div>
-        )}
+        </div>
 
-        {/* 타이틀 오버레이 (항상 표시) */}
+        {/* 타이틀 오버레이 */}
         <div
-          className="absolute inset-x-0 bottom-0 px-5 pt-12 pb-5 pointer-events-none"
+          className="absolute inset-x-0 bottom-0 px-5 pt-12 pb-4 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.30) 80%, rgba(0,0,0,0) 100%)",
           }}
         >
           <h3
@@ -124,35 +111,131 @@ function LazyVideo({ slot, idx }: { slot: VideoSlot; idx: number }) {
   );
 }
 
+function VideoModal({
+  slot,
+  onClose,
+}: {
+  slot: VideoSlot;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(8px)" }}
+      onClick={onClose}
+      data-testid="video-modal"
+    >
+      <button
+        className="absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center transition-transform hover:scale-110"
+        style={{
+          background: "rgba(0,0,0,0.7)",
+          border: "1.5px solid rgba(255,255,255,0.85)",
+          color: "#FFFFFF",
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+        aria-label="Close"
+        data-testid="button-close-modal"
+      >
+        <X className="h-6 w-6" />
+      </button>
+
+      <div
+        className="relative w-full max-w-5xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div
+          className="w-full aspect-video overflow-hidden bg-black shadow-2xl"
+          style={{ borderRadius: "16px" }}
+        >
+          {slot.src ? (
+            <video
+              src={slot.src}
+              poster={slot.poster}
+              controls
+              autoPlay
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-contain bg-black"
+            />
+          ) : (
+            <div
+              className="w-full h-full flex flex-col items-center justify-center text-center px-6"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(199,121,101,0.25) 0%, rgba(60,30,40,0.6) 100%)",
+              }}
+            >
+              <div className="text-white/55 text-xs font-medium tracking-widest uppercase mb-3">
+                Coming Soon
+              </div>
+              <div className="text-white text-2xl font-bold mb-2">{slot.title}</div>
+              <div className="text-white/70 text-sm">{slot.caption}</div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function VideoShowcaseSection() {
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
+
   return (
     <section id="videos" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 gap-6">
           <div>
-            <div className="section-badge-coral w-fit mb-4">코코 영상</div>
+            <div className="section-badge-coral w-fit mb-4">코코 뮤직비디오</div>
             <h2
               className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]"
               style={{ color: "#ffffff" }}
             >
-              Live Studio
+              Theory in Music
             </h2>
           </div>
           <p
-            className="lg:max-w-sm lg:text-right"
+            className="lg:max-w-md lg:text-right"
             style={{ color: "var(--text-body)", fontSize: "1rem", lineHeight: 1.7 }}
           >
-            수업 현장과 학생들의 생생한 작업 과정을<br />
-            영상으로 만나보세요
+            책과 글로만 배우던 어려운 미술 이론을<br />
+            코코는 노래로 재구성해 뮤직비디오로 전합니다
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {slots.map((slot, idx) => (
-            <LazyVideo key={idx} slot={slot} idx={idx} />
+            <VideoCard
+              key={idx}
+              slot={slot}
+              idx={idx}
+              onOpen={() => setOpenIdx(idx)}
+            />
           ))}
         </div>
       </div>
+
+      {openIdx !== null && (
+        <VideoModal
+          slot={slots[openIdx]}
+          onClose={() => setOpenIdx(null)}
+        />
+      )}
     </section>
   );
 }
