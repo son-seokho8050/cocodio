@@ -124,6 +124,15 @@
     background-color: var(--color-bg);
     overflow-x: hidden;
   }
+
+  /* 모바일 전용: 한글 단어 단위 줄바꿈 (문장이 글자 중간에서 끊기지 않도록) */
+  @media (max-width: 1023px) {
+    body {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      line-break: strict;
+    }
+  }
   /* Page backdrop — 핑크 사막 사진 (히어로 아래 모든 섹션 공통 배경, JS에서 inline bg 주입) */
   .page-backdrop {
     position: fixed;
