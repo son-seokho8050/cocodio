@@ -40,45 +40,45 @@ export default function HeroSection() {
 
   const card = (
     <div
-      className="ui-card p-5 sm:p-6 lg:p-7"
+      className="ui-card p-3.5 sm:p-5 lg:p-7"
       style={{
         backdropFilter: 'blur(16px) saturate(1.4)',
         background: 'rgba(255,255,255,0.88)',
         boxShadow: '0 20px 60px -10px rgba(0,0,0,0.18)',
       }}
     >
-      <div className="section-badge mb-3 inline-flex">재능의 출발점</div>
+      <div className="section-badge mb-2 sm:mb-3 inline-flex">재능의 출발점</div>
       <p
-        className="text-lg sm:text-xl lg:text-2xl font-bold leading-snug mb-4"
+        className="text-sm sm:text-lg lg:text-2xl font-bold leading-snug mb-2.5 sm:mb-4"
         style={{ color: 'var(--text-heading)' }}
       >
         여러분의 재능은<br /> 어떤 모양인가요?
       </p>
 
-      <div className="flex flex-col gap-2 mb-4">
+      <div className="flex flex-col gap-1.5 sm:gap-2 mb-2.5 sm:mb-4">
         <button
           onClick={() => scrollTo('contact')}
-          className="btn-primary flex items-center justify-center gap-2 px-5 py-3 text-sm w-full"
+          className="btn-primary flex items-center justify-center gap-2 px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm w-full"
         >
-          <Calendar className="h-4 w-4" /> 무료체험수업 신청
+          <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> 무료체험수업 신청
         </button>
         <button
           onClick={() => scrollTo('portfolio')}
-          className="btn-ghost flex items-center justify-center gap-2 px-5 py-3 text-sm w-full"
+          className="btn-ghost flex items-center justify-center gap-2 px-3 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm w-full"
         >
-          <Play className="h-4 w-4" /> FOLLOW 수업 보기
+          <Play className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> FOLLOW 수업 보기
         </button>
       </div>
 
       <div
-        className="rounded-xl px-4 py-3"
+        className="rounded-lg sm:rounded-xl px-3 py-2 sm:px-4 sm:py-3"
         style={{ background: 'rgba(0,0,0,0.04)' }}
       >
-        <div className="text-[10px] tracking-wide mb-1" style={{ color: 'var(--text-subtle)' }}>
+        <div className="text-[10px] tracking-wide mb-0.5 sm:mb-1" style={{ color: 'var(--text-subtle)' }}>
           인서울·수도권 미대 합격
         </div>
         <div
-          className="text-base font-black leading-tight transition-all duration-300"
+          className="text-xs sm:text-base font-black leading-tight transition-all duration-300"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? 'translateY(0)' : 'translateY(4px)',
@@ -93,18 +93,18 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* === 모바일 (lg 미만) — 이미지 위 + 카드 자연흐름 아래 === */}
-      <section className="lg:hidden pt-16 relative">
-        <div
-          className="w-full"
-          style={{
-            aspectRatio: '4 / 3',
-            backgroundImage: `url(${heroBg})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="px-4 -mt-8 pb-10 relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      {/* === 모바일 (lg 미만) — 풀스크린 이미지 + 카드 하단 오버레이 === */}
+      <section
+        className="lg:hidden pt-16 relative overflow-hidden"
+        style={{
+          minHeight: '100vh',
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute left-4 right-4 bottom-5 sm:bottom-8 z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
           {card}
         </div>
       </section>
