@@ -67,7 +67,7 @@ export default function AchievementsSection() {
             <div className="text-[11px] uppercase tracking-[0.2em] mb-3 font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
               {main.tag}
             </div>
-            <h3 className="text-3xl lg:text-5xl font-bold leading-[1.1] mb-8 tracking-tight">
+            <h3 className="text-3xl lg:text-5xl font-bold leading-[1.1] mb-8 tracking-tight" style={{ color: '#FFFFFF' }}>
               {main.title}
             </h3>
 
