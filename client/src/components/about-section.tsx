@@ -38,7 +38,7 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 gap-6">
           <div>
             <div className="section-badge-coral w-fit mb-4">학원소개</div>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: 'var(--text-heading)' }}>
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-[#ffffff]" style={{ color: 'var(--text-heading)' }}>
               Differentiation
             </h2>
           </div>
