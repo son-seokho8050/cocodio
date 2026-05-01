@@ -1,4 +1,4 @@
-import { Trophy, Users, Target, Award, ArrowUpRight } from "lucide-react";
+import { Trophy, Users, Target, Award } from "lucide-react";
 
 const achievements = [
   {
@@ -80,12 +80,6 @@ export default function AchievementsSection() {
               ))}
             </div>
 
-            <div className="flex items-center justify-between mt-10 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}>
-              <span className="text-xs uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.55)' }}>코코 핵심 시스템</span>
-              <button className="pill-arrow">
-                <ArrowUpRight className="h-4 w-4" />
-              </button>
-            </div>
           </div>
 
           {/* 우측 3개 작은 글래스 카드 스택 */}

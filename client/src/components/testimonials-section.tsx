@@ -1,4 +1,4 @@
-import { Star, User, Quote, ArrowRight } from "lucide-react";
+import { Star, User, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -62,22 +62,17 @@ export default function TestimonialsSection() {
               "{featured.content}"
             </p>
 
-            <div className="flex items-center justify-between pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}>
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.15)' }}
-                >
-                  <User className="h-5 w-5" style={{ color: '#FFF' }} />
-                </div>
-                <div>
-                  <div className="font-semibold text-base">{featured.name}</div>
-                  <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{featured.role}</div>
-                </div>
+            <div className="flex items-center gap-3 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}>
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center"
+                style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.15)' }}
+              >
+                <User className="h-5 w-5" style={{ color: '#FFF' }} />
               </div>
-              <button className="pill-arrow" aria-label="더 읽기">
-                <ArrowRight className="h-4 w-4" />
-              </button>
+              <div>
+                <div className="font-semibold text-base">{featured.name}</div>
+                <div className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.55)' }}>{featured.role}</div>
+              </div>
             </div>
           </div>
 
@@ -134,11 +129,8 @@ export default function TestimonialsSection() {
             <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-body)' }}>
               "{sub[1].content}"
             </p>
-            <div className="flex items-center justify-between pt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+            <div className="pt-3" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
               <div className="text-xs font-semibold" style={{ color: 'var(--text-heading)' }}>{sub[1].name}</div>
-              <button className="pill-arrow light" style={{ width: 30, height: 30 }}>
-                <ArrowRight className="h-3 w-3" />
-              </button>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import { GraduationCap, Laptop, Trophy, ArrowUpRight, ArrowRight } from "lucide-react";
+import { GraduationCap, Laptop, Trophy } from "lucide-react";
 import aboutImg from "@assets/제목 없는 디자인 (2).png";
 
 const steps = [
@@ -119,17 +119,9 @@ export default function AboutSection() {
                 style={{ borderRadius: '18px', aspectRatio: '4/3', objectFit: 'cover' }}
               />
             </div>
-            <div className="px-7 pb-7 flex items-end justify-between">
-              <div>
-                <div className="text-xs font-semibold tracking-wide" style={{ color: 'var(--text-heading)' }}>Coco Art Studio</div>
-                <div className="text-[11px]" style={{ color: 'var(--text-subtle)' }}>Masan · Gimhae</div>
-              </div>
-              <button className="pill-arrow-wide" style={{ background: '#1A1A1A', color: '#FFF' }}>
-                <span className="text-xs font-semibold">Discover</span>
-                <span className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#FFF' }}>
-                  <ArrowRight className="h-3.5 w-3.5" style={{ color: '#1A1A1A' }} />
-                </span>
-              </button>
+            <div className="px-7 pb-7">
+              <div className="text-xs font-semibold tracking-wide" style={{ color: 'var(--text-heading)' }}>Coco Art Studio</div>
+              <div className="text-[11px]" style={{ color: 'var(--text-subtle)' }}>Masan · Gimhae</div>
             </div>
           </div>
 
@@ -138,15 +130,9 @@ export default function AboutSection() {
             className="ink-card p-6 lg:absolute lg:bottom-0 lg:left-8 lg:w-[340px] lg:z-30"
             style={{ borderRadius: '20px' }}
           >
-            <div className="flex items-start justify-between mb-3">
-              <div>
-                <div className="text-2xl font-bold leading-tight">검증된 합격</div>
-                <div className="text-[11px] mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>By Coco Academy</div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}>
-              <span className="text-[11px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.55)' }}>실적 보기</span>
-              <span className="text-sm font-medium">Discover →</span>
+            <div>
+              <div className="text-2xl font-bold leading-tight">검증된 합격</div>
+              <div className="text-[11px] mt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>By Coco Academy</div>
             </div>
           </div>
         </div>
@@ -178,20 +164,10 @@ export default function AboutSection() {
                 <h4 className="text-xl font-bold mb-3" style={{ color: isInk ? '#FFFFFF' : 'var(--text-heading)' }}>
                   {title}
                 </h4>
-                <p className="text-sm leading-relaxed whitespace-pre-line mb-6 flex-1"
+                <p className="text-sm leading-relaxed whitespace-pre-line flex-1"
                    style={{ color: isInk ? 'rgba(255,255,255,0.75)' : 'var(--text-body)' }}>
                   {desc}
                 </p>
-                <div className="flex items-center justify-between pt-4"
-                     style={{ borderTop: isInk ? '1px solid rgba(255,255,255,0.10)' : '1px solid rgba(0,0,0,0.06)' }}>
-                  <span className="text-xs uppercase tracking-widest font-semibold"
-                        style={{ color: isInk ? 'rgba(255,255,255,0.55)' : 'var(--text-subtle)' }}>
-                    Learn more
-                  </span>
-                  <button className={`pill-arrow ${isInk ? '' : 'light'}`} style={{ width: 36, height: 36 }}>
-                    <ArrowUpRight className="h-4 w-4" />
-                  </button>
-                </div>
               </div>
             );
           })}
