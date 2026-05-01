@@ -39,7 +39,7 @@ export default function AboutSection() {
           <div>
             <div className="section-badge-coral w-fit mb-4">학원소개</div>
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: 'var(--text-heading)' }}>
-              왜 코코미술학원이<br />다를까요?
+              Differentiation
             </h2>
           </div>
           <p className="lg:max-w-sm lg:text-right" style={{ color: 'var(--text-body)', fontSize: '1rem', lineHeight: 1.7 }}>

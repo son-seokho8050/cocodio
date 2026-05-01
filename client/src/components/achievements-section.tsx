@@ -40,7 +40,7 @@ export default function AchievementsSection() {
           <div>
             <div className="section-badge-coral mb-4">코코의 특별함</div>
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: 'var(--text-heading)' }}>
-              코코만의<br />특별한 교육
+              Specialness
             </h2>
           </div>
           <p className="text-base lg:text-right max-w-md" style={{ color: 'var(--text-body)' }}>

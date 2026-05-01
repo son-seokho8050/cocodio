@@ -89,7 +89,7 @@ export default function GallerySection() {
           <div>
             <div className="section-badge-coral mb-4">갤러리</div>
             <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: 'var(--text-heading)' }}>
-              코코디오 갤러리
+              COCODIO Gallery
             </h2>
           </div>
           <p className="text-base lg:text-right max-w-md" style={{ color: 'var(--text-body)' }}>

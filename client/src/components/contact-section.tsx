@@ -67,7 +67,7 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <div className="section-badge-coral mx-auto w-fit mb-4">상담 신청</div>
           <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight" style={{ color: 'var(--text-heading)' }}>
-            무료체험수업<br />&amp; 적성테스트 신청
+            Talent Test
           </h2>
           <p style={{ color: 'var(--text-body)', fontSize: '1.05rem' }}>
             궁금한 점이 있으시면 언제든 문의해 주세요. 전문 상담사가 친절히 안내해 드립니다.

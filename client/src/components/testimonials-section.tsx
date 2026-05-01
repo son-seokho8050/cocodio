@@ -33,7 +33,7 @@ export default function TestimonialsSection() {
           <div>
             <div className="section-badge-coral mb-4">수강생 후기</div>
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: 'var(--text-heading)' }}>
-              학부모 &amp; 학생<br />Real Voices
+              Real Voices
             </h2>
           </div>
           <p className="text-base lg:text-right max-w-md" style={{ color: 'var(--text-body)' }}>
