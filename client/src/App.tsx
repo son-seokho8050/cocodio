@@ -44,7 +44,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div style={{ position: "relative", minHeight: "100vh" }}>
-          {/* Background image — full image stretched across entire page */}
+          {/* Background image — proportional scale to width, fill color block below */}
           <div
             aria-hidden="true"
             style={{
@@ -54,9 +54,10 @@ function App() {
               right: 0,
               bottom: 0,
               zIndex: 0,
+              backgroundColor: "#C49188",
               backgroundImage: `url(${bgImage})`,
-              backgroundSize: "100% 100%",
-              backgroundPosition: "center",
+              backgroundSize: "100% auto",
+              backgroundPosition: "top center",
               backgroundRepeat: "no-repeat",
               pointerEvents: "none",
             }}
