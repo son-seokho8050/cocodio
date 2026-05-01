@@ -53,36 +53,36 @@ export default function AboutSection() {
 
           {/* 좌측 큰 글래스 카드 — FOLLOW 시스템 */}
           <div
-            className="glass-frost p-8 lg:p-10 lg:absolute lg:top-0 lg:left-0 lg:w-[62%] lg:z-10 mb-6 lg:mb-0"
+            className="glass-frost p-8 lg:p-10 lg:absolute lg:top-0 lg:left-0 lg:w-[58%] lg:z-10 mb-6 lg:mb-0"
             style={{ borderRadius: '28px' }}
           >
-            <div className="flex items-start justify-between mb-8">
-              <div>
+            <div className="flex items-start justify-between mb-8 gap-4">
+              <div className="flex-1 min-w-0">
                 <div className="text-[11px] uppercase tracking-[0.18em] font-semibold mb-2" style={{ color: 'var(--color-coral-deep)' }}>
-                  Coco Method · Since 2010
+                  Coco Method
                 </div>
-                <h3 className="text-2xl lg:text-4xl font-bold tracking-tight leading-tight" style={{ color: 'var(--text-heading)' }}>
+                <h3 className="text-2xl lg:text-[2rem] font-bold tracking-tight leading-tight" style={{ color: 'var(--text-heading)' }}>
                   4단계 사고체계로<br />그림을 바꿉니다
                 </h3>
               </div>
-              <div className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full"
+              <div className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full flex-shrink-0"
                    style={{ background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(199,121,101,0.25)' }}>
                 <span className="text-xs font-bold tracking-wider" style={{ color: 'var(--color-coral-deep)' }}>FOLLOW</span>
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-5">
+            <div className="space-y-4">
               {steps.map(({ letter, label, desc, color }) => (
-                <div key={letter} className="flex items-start gap-3">
+                <div key={letter} className="flex items-start gap-4">
                   <div
                     className="w-11 h-11 rounded-full flex items-center justify-center font-black text-sm flex-shrink-0 text-white"
                     style={{ background: color, boxShadow: `0 6px 14px ${color}45` }}
                   >
                     {letter}
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="text-sm font-semibold mb-1" style={{ color: 'var(--text-heading)' }}>{label}</h4>
-                    <p style={{ color: 'var(--text-body)', fontSize: '0.8rem', lineHeight: 1.55 }}>{desc}</p>
+                    <p style={{ color: 'var(--text-body)', fontSize: '0.85rem', lineHeight: 1.6, wordBreak: 'keep-all' }}>{desc}</p>
                   </div>
                 </div>
               ))}
