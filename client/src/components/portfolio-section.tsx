@@ -19,7 +19,7 @@ export default function PortfolioSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">FOLLOW 시스템</div>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: 'var(--text-heading)' }}>
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
               COCODIO ALL<br />IN-ONE SYSTEM
             </h2>
           </div>

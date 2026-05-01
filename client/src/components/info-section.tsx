@@ -8,7 +8,7 @@ export default function InfoSection() {
 
         <div className="text-center mb-16">
           <div className="section-badge-coral mx-auto w-fit mb-4">안내</div>
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight" style={{ color: 'var(--text-heading)' }}>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight" style={{ color: '#ffffff' }}>
             Information
           </h2>
           <p style={{ color: 'var(--text-body)', fontSize: '1.05rem' }}>
