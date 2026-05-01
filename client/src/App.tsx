@@ -43,34 +43,41 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {/* Background image — fills entire viewport */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: -2,
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: "100% 100%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "fixed",
-            pointerEvents: "none",
-          }}
-        />
-        {/* Light wash for readability */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: -1,
-            backgroundColor: "rgba(255, 255, 255, 0.18)",
-            pointerEvents: "none",
-          }}
-        />
-        <Toaster />
-        <Router />
+        <div style={{ position: "relative", minHeight: "100vh" }}>
+          {/* Background image — spans entire document height, scrolls with page */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: -2,
+              backgroundImage: `url(${bgImage})`,
+              backgroundSize: "100% 100%",
+              backgroundPosition: "top center",
+              backgroundRepeat: "no-repeat",
+              pointerEvents: "none",
+            }}
+          />
+          {/* Light wash for readability */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: -1,
+              backgroundColor: "rgba(255, 255, 255, 0.18)",
+              pointerEvents: "none",
+            }}
+          />
+          <Toaster />
+          <Router />
+        </div>
       </TooltipProvider>
     </QueryClientProvider>
   );
