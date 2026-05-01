@@ -53,7 +53,7 @@ export default function AboutSection() {
 
           {/* 좌측 큰 글래스 카드 — FOLLOW 시스템 */}
           <div
-            className="glass-frost p-8 lg:p-10 lg:absolute lg:top-0 lg:left-0 lg:w-[60%] lg:z-10 mb-6 lg:mb-0"
+            className="glass-frost p-8 lg:pt-10 lg:px-10 lg:pb-28 lg:absolute lg:top-0 lg:left-0 lg:w-[60%] lg:z-10 mb-6 lg:mb-0"
             style={{ borderRadius: '28px' }}
           >
             <div className="flex items-start justify-between mb-8 gap-4">
@@ -125,9 +125,9 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* 작은 다크 레퍼런스 카드 — 글래스 카드 위에 겹쳐 띄움 */}
+          {/* 작은 다크 레퍼런스 카드 — 글래스 카드 하단 패딩 영역에 자연스럽게 얹음 */}
           <div
-            className="ink-card p-6 lg:absolute lg:bottom-20 lg:left-12 lg:w-[300px] lg:z-30"
+            className="ink-card p-5 lg:absolute lg:bottom-4 lg:left-10 lg:w-[280px] lg:z-30"
             style={{ borderRadius: '20px' }}
           >
             <div>
