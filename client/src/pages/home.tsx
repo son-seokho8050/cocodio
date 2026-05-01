@@ -13,6 +13,7 @@ import ChatWidget from "@/components/chat-widget";
 import { PopupManager } from "@/components/popup-modal";
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
+import pinkDesertBg from "@assets/optimized/pink-desert-bg.webp";
 
 export default function Home() {
   const scrollToContact = () => {
@@ -23,7 +24,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <div
+        className="page-backdrop"
+        style={{ backgroundImage: `url(${pinkDesertBg})` }}
+        aria-hidden="true"
+      />
       <Navigation />
       <HeroSection />
       <AboutSection />

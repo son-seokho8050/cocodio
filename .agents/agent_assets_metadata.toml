@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "ba9Vu5x2cyOTFnTaYD0lF"
+uri = "file://attached_assets/generated_images/pink-desert-bg.png"
+type = "image"
+title = "pink desert backdrop"

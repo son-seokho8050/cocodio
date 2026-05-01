@@ -120,12 +120,24 @@
     -webkit-font-smoothing: antialiased;
   }
   html {
-    background:
-      radial-gradient(circle at 0% 0%, rgba(232, 181, 168, 0.12) 0%, transparent 40%),
-      radial-gradient(circle at 100% 30%, rgba(245, 221, 212, 0.18) 0%, transparent 50%),
-      radial-gradient(circle at 50% 100%, rgba(232, 181, 168, 0.08) 0%, transparent 45%),
-      var(--color-bg);
-    background-attachment: fixed;
+    background-color: var(--color-bg);
+  }
+  /* Page backdrop — 핑크 사막 사진 (히어로 아래 모든 섹션 공통 배경, JS에서 inline bg 주입) */
+  .page-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .page-backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgba(251, 244, 242, 0.20) 0%,
+      rgba(251, 244, 242, 0.55) 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {

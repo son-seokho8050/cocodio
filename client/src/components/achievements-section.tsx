@@ -1,17 +1,17 @@
-import { Trophy, Users, Target, Award } from "lucide-react";
+import { Trophy, Users, Target, Award, ArrowUpRight } from "lucide-react";
 
 const achievements = [
-  {
-    icon: Trophy,
-    tag: "Interactive",
-    title: "인터랙티브 웹 이론수업",
-    stats: ["학생들이 직접적이고 능동적으로", "상호작용 가능한 인터랙티브", "웹 수업을 통해 이론을 실제 경험하는", "코코만의 이론수업"],
-  },
   {
     icon: Users,
     tag: "System",
     title: "FOLLOW 시스템",
     stats: ["개별 맞춤형 진도 관리", "체계적 사고력 훈련", "창의성과 논리적 사고 병행", "실전 중심 실기 연습", "지속적 피드백 시스템"],
+  },
+  {
+    icon: Trophy,
+    tag: "Interactive",
+    title: "인터랙티브 웹 이론수업",
+    stats: ["학생들이 직접적이고 능동적으로", "상호작용 가능한 인터랙티브", "웹 수업을 통해 이론을 실제 경험하는", "코코만의 이론수업"],
   },
   {
     icon: Target,
@@ -28,6 +28,10 @@ const achievements = [
 ];
 
 export default function AchievementsSection() {
+  const main = achievements[0]; // FOLLOW 시스템 = 메인 피처
+  const sats = achievements.slice(1);
+  const MainIcon = main.icon;
+
   return (
     <section className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +39,7 @@ export default function AchievementsSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">코코의 특별함</div>
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: 'var(--text-heading)' }}>
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: 'var(--text-heading)' }}>
               코코만의<br />특별한 교육
             </h2>
           </div>
@@ -45,53 +49,72 @@ export default function AchievementsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {achievements.map(({ icon: Icon, tag, title, stats }, idx) => {
-            const isInk = idx === 1; // 두번째 카드 = 다크 강조
-            return (
+        {/* === 비대칭 무드보드: 좌측 큰 다크 카드 + 우측 3개 작은 카드 === */}
+        <div className="grid lg:grid-cols-12 gap-6">
+
+          {/* 좌측 메인 다크 피처 카드 */}
+          <div className="lg:col-span-7 ink-card p-9 lg:p-11 flex flex-col" style={{ borderRadius: '28px' }}>
+            <div className="flex items-start justify-between mb-10">
               <div
-                key={title}
-                className={`${isInk ? 'ink-card' : 'glass-frost'} p-7 relative`}
-                style={isInk ? { transform: 'translateY(-16px)' } : {}}
+                className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.15)' }}
               >
-                <div className="flex items-center justify-between mb-6">
+                <MainIcon className="h-7 w-7" style={{ color: '#FFF' }} />
+              </div>
+              <div className="text-xs font-mono" style={{ color: 'rgba(255,255,255,0.40)' }}>/01</div>
+            </div>
+
+            <div className="text-[11px] uppercase tracking-[0.2em] mb-3 font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
+              {main.tag}
+            </div>
+            <h3 className="text-3xl lg:text-5xl font-bold leading-[1.1] mb-8 tracking-tight">
+              {main.title}
+            </h3>
+
+            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-auto">
+              {main.stats.map((s, i) => (
+                <div key={i} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'var(--color-coral)' }} />
+                  <span className="leading-relaxed">{s}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center justify-between mt-10 pt-6" style={{ borderTop: '1px solid rgba(255,255,255,0.10)' }}>
+              <span className="text-xs uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.55)' }}>코코 핵심 시스템</span>
+              <button className="pill-arrow">
+                <ArrowUpRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* 우측 3개 작은 글래스 카드 스택 */}
+          <div className="lg:col-span-5 grid gap-5">
+            {sats.map(({ icon: Icon, tag, title, stats }, idx) => (
+              <div key={title} className="glass-frost p-6" style={{ borderRadius: '22px' }}>
+                <div className="flex items-start justify-between mb-4">
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center"
-                    style={{
-                      background: isInk ? 'rgba(255,255,255,0.10)' : 'rgba(232,181,168,0.20)',
-                      border: isInk ? '1px solid rgba(255,255,255,0.15)' : '1px solid rgba(232,181,168,0.40)',
-                    }}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ background: 'rgba(232,181,168,0.20)', border: '1px solid rgba(232,181,168,0.40)' }}
                   >
-                    <Icon className="h-5 w-5" style={{ color: isInk ? '#FFFFFF' : 'var(--color-coral-deep)' }} />
+                    <Icon className="h-4 w-4" style={{ color: 'var(--color-coral-deep)' }} />
                   </div>
-                  <span className="text-xs font-mono"
-                        style={{ color: isInk ? 'rgba(255,255,255,0.40)' : 'var(--text-faint)' }}>
-                    /0{idx + 1}
-                  </span>
+                  <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>/0{idx + 2}</span>
                 </div>
 
-                <div className="text-xs uppercase tracking-widest mb-2 font-semibold"
-                     style={{ color: isInk ? 'rgba(255,255,255,0.55)' : 'var(--color-coral-deep)' }}>
+                <div className="text-[10px] uppercase tracking-[0.18em] mb-1.5 font-semibold" style={{ color: 'var(--color-coral-deep)' }}>
                   {tag}
                 </div>
-                <h3 className="text-lg font-bold mb-5 leading-tight"
-                    style={{ color: isInk ? '#FFFFFF' : 'var(--text-heading)' }}>
+                <h3 className="text-base font-bold mb-3 leading-tight" style={{ color: 'var(--text-heading)' }}>
                   {title}
                 </h3>
-
-                <ul className="space-y-2">
-                  {stats.map((s, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs leading-relaxed"
-                        style={{ color: isInk ? 'rgba(255,255,255,0.75)' : 'var(--text-body)' }}>
-                      <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0"
-                            style={{ background: isInk ? 'rgba(255,255,255,0.55)' : 'var(--color-coral-deep)' }} />
-                      {s}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-xs leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                  {stats.slice(0, 2).join(' · ')}
+                </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
