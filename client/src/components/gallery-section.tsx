@@ -96,8 +96,8 @@ export default function GallerySection() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Gallery Grid — 모바일 3x3 / 태블릿 2열 / 데스크톱 3열 */}
+        <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-6">
           {galleryImages.map((image, index) => (
             <div
               key={index}
@@ -105,7 +105,7 @@ export default function GallerySection() {
               style={{ padding: 0 }}
               onClick={() => openModal(index)}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-square md:aspect-[4/3] overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.title}
@@ -114,10 +114,10 @@ export default function GallerySection() {
                   decoding="async"
                 />
               </div>
-              
-              {/* 항상 보이는 하단 다크 백드롭 + 타이틀 */}
+
+              {/* 하단 타이틀 — 태블릿/데스크톱에서만 노출 (모바일은 썸네일만) */}
               <div
-                className="absolute inset-x-0 bottom-0 px-5 pt-14 pb-5 pointer-events-none"
+                className="hidden md:block absolute inset-x-0 bottom-0 px-5 pt-14 pb-5 pointer-events-none"
                 style={{
                   background:
                     'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0) 100%)',
@@ -137,8 +137,8 @@ export default function GallerySection() {
                 </p>
               </div>
 
-              {/* 호버 시 확대 아이콘 */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* 호버 시 확대 아이콘 (데스크톱) */}
+              <div className="hidden lg:block absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)' }}>
                   <Maximize2 className="h-4 w-4 text-white" />
                 </div>
