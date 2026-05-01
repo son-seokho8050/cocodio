@@ -115,20 +115,6 @@ export default function HeroSection() {
               {list[index]}
             </div>
           </div>
-
-          {/* 통계 */}
-          <div className="flex justify-between gap-2">
-            {[
-              { num: '20+', label: '합격 대학' },
-              { num: '95%', label: '재등록률' },
-              { num: '4단계', label: 'FOLLOW' },
-            ].map(({ num, label }) => (
-              <div key={label} className="text-center flex-1">
-                <div className="text-base font-black leading-tight" style={{ color: 'var(--color-primary-dark)' }}>{num}</div>
-                <div className="text-[10px] mt-0.5" style={{ color: 'var(--text-subtle)' }}>{label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
