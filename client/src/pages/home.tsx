@@ -52,7 +52,12 @@ export default function Home() {
           rel="noopener noreferrer"
           className="group"
         >
-          <Button className="w-14 h-14 rounded-full bg-accent-500 hover:bg-accent-600 text-white shadow-lg relative">
+          <Button
+            className="w-14 h-14 rounded-full text-white shadow-lg relative transition-colors"
+            style={{ backgroundColor: '#C77965' }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#A85B48')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#C77965')}
+          >
             <BookOpen className="h-6 w-6" />
             <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
               마산점 블로그
