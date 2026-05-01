@@ -3,7 +3,7 @@ import { Link } from "wouter";
 
 export default function InfoSection() {
   return (
-    <section id="info" className="py-24 relative">
+    <section id="info" className="py-14 sm:py-20 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
@@ -74,7 +74,7 @@ export default function InfoSection() {
           </div>
 
           {/* 차량운행 — 다크 카드 */}
-          <div className="ink-card p-8 flex flex-col" style={{ transform: 'translateY(12px)' }}>
+          <div className="ink-card p-8 flex flex-col lg:translate-y-3">
             <div className="flex items-start justify-between mb-6">
               <div
                 className="p-3 rounded-2xl"

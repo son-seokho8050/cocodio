@@ -31,14 +31,14 @@ const cards = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-14 sm:py-20 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 섹션 헤더 — 좌측 정렬, 미니멀 */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 gap-6">
           <div>
             <div className="section-badge-coral w-fit mb-4">학원소개</div>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
               Differentiation
             </h2>
           </div>
@@ -49,7 +49,7 @@ export default function AboutSection() {
         </div>
 
         {/* === 무드보드 무브: 3카드 겹친 플로팅 컴포지션 === */}
-        <div className="relative mb-32 lg:min-h-[560px]">
+        <div className="relative mb-16 lg:mb-32 lg:min-h-[560px]">
 
           {/* 좌측 큰 글래스 카드 — FOLLOW 시스템 */}
           <div
@@ -127,7 +127,7 @@ export default function AboutSection() {
 
           {/* 작은 다크 레퍼런스 카드 — 글래스 카드 하단 패딩 영역에 자연스럽게 얹음 */}
           <div
-            className="ink-card p-5 lg:absolute lg:bottom-4 lg:left-10 lg:w-[280px] lg:z-30"
+            className="ink-card p-5 mt-6 lg:mt-0 lg:absolute lg:bottom-4 lg:left-10 lg:w-[280px] lg:z-30"
             style={{ borderRadius: '20px' }}
           >
             <div>
@@ -144,8 +144,7 @@ export default function AboutSection() {
             return (
               <div
                 key={title}
-                className={`${isInk ? 'ink-card' : 'glass-frost'} p-8 flex flex-col relative`}
-                style={isInk ? { transform: 'translateY(-12px)' } : {}}
+                className={`${isInk ? 'ink-card lg:-translate-y-3' : 'glass-frost'} p-8 flex flex-col relative`}
               >
                 <div className="flex items-start justify-between mb-6">
                   <div

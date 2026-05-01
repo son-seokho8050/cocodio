@@ -26,13 +26,13 @@ export default function TestimonialsSection() {
   const sub = [testimonials[0], testimonials[2]];
 
   return (
-    <section className="py-24 relative">
+    <section className="py-14 sm:py-20 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">수강생 후기</div>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
               Real Voices
             </h2>
           </div>
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
 
           {/* 좌측 톨 다크 피처 카드 — 학생 후기 */}
           <div
-            className="ink-card p-9 lg:p-11 lg:absolute lg:top-0 lg:left-0 lg:w-[58%] lg:z-10 mb-6 lg:mb-0"
+            className="ink-card p-6 sm:p-8 lg:p-11 lg:absolute lg:top-0 lg:left-0 lg:w-[58%] lg:z-10 mb-6 lg:mb-0"
             style={{ borderRadius: '28px', minHeight: '440px' }}
           >
             <div className="flex items-start justify-between mb-8">
@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
 
           {/* 우측 하단: 두번째 학부모 후기 — 화이트 작은 카드 */}
           <div
-            className="lg:absolute lg:bottom-0 lg:right-16 lg:w-[40%] lg:z-30"
+            className="mt-6 lg:mt-0 lg:absolute lg:bottom-0 lg:right-16 lg:w-[40%] lg:z-30"
             style={{
               background: '#FFFFFF',
               borderRadius: '22px',

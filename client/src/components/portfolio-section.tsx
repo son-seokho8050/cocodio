@@ -13,13 +13,13 @@ export default function PortfolioSection() {
   const Small1Icon = small[1].icon;
 
   return (
-    <section id="portfolio" className="py-24 relative">
+    <section id="portfolio" className="py-14 sm:py-20 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">FOLLOW 시스템</div>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
               COCODIO ALL<br />IN-ONE SYSTEM
             </h2>
           </div>
@@ -39,12 +39,11 @@ export default function PortfolioSection() {
             className="block lg:absolute lg:top-0 lg:left-0 lg:w-[55%] lg:z-10 mb-6 lg:mb-0 group"
           >
             <div
-              className="p-9 lg:p-11 flex flex-col h-full"
+              className="p-6 sm:p-8 lg:p-11 flex flex-col h-full lg:min-h-[480px]"
               style={{
                 background: '#FFFFFF',
                 borderRadius: '28px',
                 boxShadow: '0 30px 70px -20px rgba(199,121,101,0.30)',
-                minHeight: '480px',
               }}
             >
               <div className="flex items-start justify-between mb-10">
@@ -120,7 +119,7 @@ export default function PortfolioSection() {
             href={small[1].link}
             target="_blank"
             rel="noopener noreferrer"
-            className="block lg:absolute lg:bottom-0 lg:right-12 lg:w-[38%] lg:z-30"
+            className="block mt-6 lg:mt-0 lg:absolute lg:bottom-0 lg:right-12 lg:w-[38%] lg:z-30"
           >
             <div className="glass-frost p-7" style={{ borderRadius: '22px' }}>
               <div className="flex items-start justify-between mb-6">

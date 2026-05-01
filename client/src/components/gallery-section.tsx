@@ -82,7 +82,7 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="gallery" className="py-24 relative">
+    <section id="gallery" className="py-14 sm:py-20 lg:py-24 relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>

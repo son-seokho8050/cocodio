@@ -31,7 +31,7 @@ export default function CurriculumSection() {
   const scrollToContact = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="curriculum" className="py-24 relative">
+    <section id="curriculum" className="py-14 sm:py-20 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
@@ -52,8 +52,7 @@ export default function CurriculumSection() {
             return (
               <div
                 key={title}
-                className={`${isInk ? 'ink-card' : 'glass-frost'} overflow-hidden flex flex-col`}
-                style={isInk ? { transform: 'translateY(-16px)' } : {}}
+                className={`${isInk ? 'ink-card lg:-translate-y-4' : 'glass-frost'} overflow-hidden flex flex-col`}
               >
                 <div className="relative overflow-hidden" style={{ height: '180px', flexShrink: 0 }}>
                   <img src={image} alt={alt} className="w-full h-full object-cover" />
