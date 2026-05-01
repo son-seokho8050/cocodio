@@ -138,32 +138,32 @@ export default function AboutSection() {
         </div>
 
         {/* 특징 카드 3종 — 다크/라이트 믹스 (그리드 유지) */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-3 sm:gap-6">
           {cards.map(({ icon: Icon, title, desc, variant }, idx) => {
             const isInk = variant === 'ink';
             return (
               <div
                 key={title}
-                className={`${isInk ? 'ink-card lg:-translate-y-3' : 'glass-frost'} p-8 flex flex-col relative`}
+                className={`${isInk ? 'ink-card lg:-translate-y-3' : 'glass-frost'} p-5 sm:p-6 lg:p-8 flex flex-col relative`}
               >
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex items-start justify-between mb-3 sm:mb-5 lg:mb-6">
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                    className="w-11 h-11 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center"
                     style={{
                       background: isInk ? 'rgba(255,255,255,0.10)' : 'rgba(232,181,168,0.20)',
                       border: isInk ? '1px solid rgba(255,255,255,0.15)' : '1px solid rgba(232,181,168,0.40)',
                     }}
                   >
-                    <Icon className="h-6 w-6" style={{ color: isInk ? '#FFFFFF' : 'var(--color-coral-deep)' }} />
+                    <Icon className="h-5 w-5 lg:h-6 lg:w-6" style={{ color: isInk ? '#FFFFFF' : 'var(--color-coral-deep)' }} />
                   </div>
                   <span className="text-xs font-mono opacity-50" style={{ color: isInk ? 'rgba(255,255,255,0.6)' : 'var(--text-subtle)' }}>
                     0{idx + 1}
                   </span>
                 </div>
-                <h4 className="text-xl font-bold mb-3" style={{ color: isInk ? '#FFFFFF' : 'var(--text-heading)' }}>
+                <h4 className="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3" style={{ color: isInk ? '#FFFFFF' : 'var(--text-heading)' }}>
                   {title}
                 </h4>
-                <p className="text-sm leading-relaxed whitespace-pre-line flex-1"
+                <p className="text-xs sm:text-sm leading-relaxed whitespace-pre-line flex-1"
                    style={{ color: isInk ? 'rgba(255,255,255,0.75)' : 'var(--text-body)' }}>
                   {desc}
                 </p>

@@ -46,7 +46,7 @@ export default function CurriculumSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {courses.map(({ image, alt, icon: Icon, title, tag, desc, checks }, idx) => {
             const isInk = idx === 1; // SPACE = 다크 강조 카드
             return (
@@ -54,10 +54,10 @@ export default function CurriculumSection() {
                 key={title}
                 className={`${isInk ? 'ink-card lg:-translate-y-4' : 'glass-frost'} overflow-hidden flex flex-col`}
               >
-                <div className="relative overflow-hidden" style={{ height: '180px', flexShrink: 0 }}>
+                <div className="relative overflow-hidden h-32 sm:h-40 lg:h-[180px] flex-shrink-0">
                   <img src={image} alt={alt} className="w-full h-full object-cover" />
                   {/* 태그 배지 */}
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold tracking-wide"
+                  <div className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold tracking-wide"
                        style={{
                          background: 'rgba(255,255,255,0.85)',
                          backdropFilter: 'blur(8px)',
@@ -66,39 +66,39 @@ export default function CurriculumSection() {
                     {tag}
                   </div>
                   {isInk && (
-                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest"
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold tracking-widest"
                          style={{ background: 'var(--color-ink)', color: '#FFFFFF' }}>
                       ★ TOP
                     </div>
                   )}
                 </div>
 
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-3 mb-4">
+                <div className="p-4 sm:p-5 lg:p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 lg:mb-4">
                     <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                      className="w-8 h-8 lg:w-9 lg:h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                       style={{
                         background: isInk ? 'rgba(255,255,255,0.10)' : 'rgba(232,181,168,0.20)',
                         border: isInk ? '1px solid rgba(255,255,255,0.15)' : '1px solid rgba(232,181,168,0.40)',
                       }}
                     >
-                      <Icon className="h-5 w-5" style={{ color: isInk ? '#FFFFFF' : 'var(--color-coral-deep)' }} />
+                      <Icon className="h-4 w-4 lg:h-5 lg:w-5" style={{ color: isInk ? '#FFFFFF' : 'var(--color-coral-deep)' }} />
                     </div>
-                    <h3 className="text-lg font-bold" style={{ color: isInk ? '#FFFFFF' : 'var(--text-heading)' }}>
+                    <h3 className="text-base sm:text-lg font-bold" style={{ color: isInk ? '#FFFFFF' : 'var(--text-heading)' }}>
                       {title}
                     </h3>
                   </div>
 
-                  <p className="mb-4 text-sm leading-relaxed whitespace-pre-line"
+                  <p className="mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed whitespace-pre-line"
                      style={{ color: isInk ? 'rgba(255,255,255,0.75)' : 'var(--text-body)' }}>
                     {desc}
                   </p>
 
-                  <div className="space-y-2 mb-6 flex-1">
+                  <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6 flex-1">
                     {checks.map((c) => (
-                      <div key={c} className="flex items-center gap-2 text-sm"
+                      <div key={c} className="flex items-center gap-2 text-xs sm:text-sm"
                            style={{ color: isInk ? 'rgba(255,255,255,0.85)' : 'var(--text-body)' }}>
-                        <Check className="h-3.5 w-3.5 flex-shrink-0"
+                        <Check className="h-3 w-3 sm:h-3.5 sm:w-3.5 flex-shrink-0"
                                style={{ color: isInk ? '#FFFFFF' : 'var(--color-coral-deep)' }} />
                         {c}
                       </div>

@@ -83,23 +83,23 @@ export default function AchievementsSection() {
           </div>
 
           {/* 우측 3개 작은 글래스 카드 스택 */}
-          <div className="lg:col-span-5 grid gap-5">
+          <div className="lg:col-span-5 grid gap-3 sm:gap-5">
             {sats.map(({ icon: Icon, tag, title, stats }, idx) => (
-              <div key={title} className="glass-frost p-6" style={{ borderRadius: '22px' }}>
-                <div className="flex items-start justify-between mb-4">
+              <div key={title} className="glass-frost p-4 sm:p-6" style={{ borderRadius: '22px' }}>
+                <div className="flex items-start justify-between mb-2 sm:mb-4">
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center"
                     style={{ background: 'rgba(232,181,168,0.20)', border: '1px solid rgba(232,181,168,0.40)' }}
                   >
                     <Icon className="h-4 w-4" style={{ color: 'var(--color-coral-deep)' }} />
                   </div>
-                  <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>/0{idx + 2}</span>
+                  <span className="text-[10px] sm:text-xs font-mono" style={{ color: 'var(--text-faint)' }}>/0{idx + 2}</span>
                 </div>
 
-                <div className="text-[10px] uppercase tracking-[0.18em] mb-1.5 font-semibold" style={{ color: 'var(--color-coral-deep)' }}>
+                <div className="text-[10px] uppercase tracking-[0.18em] mb-1 sm:mb-1.5 font-semibold" style={{ color: 'var(--color-coral-deep)' }}>
                   {tag}
                 </div>
-                <h3 className="text-base font-bold mb-3 leading-tight" style={{ color: 'var(--text-heading)' }}>
+                <h3 className="text-sm sm:text-base font-bold mb-1.5 sm:mb-3 leading-tight" style={{ color: 'var(--text-heading)' }}>
                   {title}
                 </h3>
                 <div className="text-xs leading-relaxed" style={{ color: 'var(--text-body)' }}>
