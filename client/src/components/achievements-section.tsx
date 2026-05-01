@@ -110,6 +110,67 @@ export default function AchievementsSection() {
           </div>
 
         </div>
+
+        {/* === RESPECTFUL — 영감을 주는 디자이너 === */}
+        <div className="mt-24">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 gap-3">
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.25em] mb-3 font-semibold" style={{ color: 'var(--color-coral)' }}>
+                Inspiration
+              </div>
+              <h3
+                className="text-3xl lg:text-5xl font-bold tracking-tight leading-[1.05]"
+                style={{ color: '#ffffff' }}
+              >
+                RESPECTFUL
+              </h3>
+            </div>
+            <p
+              className="lg:max-w-md lg:text-right"
+              style={{ color: 'var(--text-body)', fontSize: '0.95rem', lineHeight: 1.7 }}
+            >
+              코코가 존경하는 세계적 디자이너 6인을<br />
+              직접 제작한 헌정 페이지로 만나보세요
+            </p>
+          </div>
+
+          <div className="grid grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+            {[
+              { name: "DIETER RAMS", url: "https://cocodiolab-rams.netlify.app/" },
+              { name: "ZAHA HADID", url: "https://cocodiolab-zaha.netlify.app/" },
+              { name: "JEAN NOUVEL", url: "https://cocodiolab-nouvel.netlify.app/" },
+              { name: "JONY IVE", url: "https://cocodio-ive.netlify.app/" },
+              { name: "KARIM RASHID", url: "https://cocodiolab-karim.netlify.app/" },
+              { name: "CHRIS BANGLE", url: "https://cocodiolab-bangle.netlify.app/" },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 group"
+                data-testid={`link-designer-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <div
+                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-full transition-all duration-300 group-hover:scale-110"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 32% 30%, #ffffff 0%, #f4d8cc 25%, #c77965 60%, #6a2e2a 100%)",
+                    boxShadow:
+                      "0 10px 28px rgba(199,121,101,0.45), inset 0 -6px 12px rgba(0,0,0,0.25), inset 0 4px 10px rgba(255,255,255,0.55)",
+                  }}
+                />
+                <span
+                  className="text-[10px] lg:text-xs font-bold tracking-[0.15em] text-center transition-colors"
+                  style={{ color: 'rgba(255,255,255,0.85)' }}
+                >
+                  {item.name}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
