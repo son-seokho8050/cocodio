@@ -38,9 +38,16 @@
   --color-primary-dark: #52AE8A;   /* 호버용 */
   --color-primary-light:#A4DECA;   /* 연 민트 */
   --color-surface:      #FFFFFF;   /* 카드 배경 */
-  --color-bg:           #EDEEF0;   /* 페이지 배경 */
+  --color-bg:           #FBF4F2;   /* 페이지 배경 (웜 코랄 페일) */
   --color-border:       #E2E2E6;   /* 구분선 */
   --color-focus:        #00CFCC;   /* 포커스 링 (틸) */
+
+  /* ── Coral / Pink Accent (참조 이미지 톤) ── */
+  --color-coral:        #E8B5A8;   /* 코랄 핑크 */
+  --color-coral-soft:   #F5DDD4;   /* 연 코랄 */
+  --color-coral-deep:   #C77965;   /* 진 코랄 */
+  --color-ink:          #1A1A1A;   /* 다크 카드 배경 */
+  --color-ink-soft:     #2A2A2A;   /* 다크 카드 호버 */
 
   /* ── Text ── */
   --text-heading: #1A1A1A;
@@ -112,7 +119,14 @@
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
-  html { background-color: var(--color-bg); }
+  html {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(232, 181, 168, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 100% 30%, rgba(245, 221, 212, 0.18) 0%, transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(232, 181, 168, 0.08) 0%, transparent 45%),
+      var(--color-bg);
+    background-attachment: fixed;
+  }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Sans KR', sans-serif;
@@ -448,6 +462,136 @@
       var(--color-border) 80%,
       transparent 100%
     );
+  }
+
+  /* ─────────────────────────────────────────────────────
+     FROSTED GLASS CARDS (참조 이미지 스타일)
+  ───────────────────────────────────────────────────── */
+  .glass-frost {
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border-radius: var(--r-lg);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 12px 40px -8px rgba(199, 121, 101, 0.15),
+      0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .glass-frost:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 50px -10px rgba(199, 121, 101, 0.22),
+      0 6px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  /* 다크 카드 — 검정 솔리드, 화이트 텍스트 */
+  .ink-card {
+    background: var(--color-ink);
+    color: #FFFFFF;
+    border-radius: var(--r-lg);
+    box-shadow:
+      0 16px 40px -8px rgba(0, 0, 0, 0.30),
+      0 4px 12px rgba(0, 0, 0, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .ink-card:hover {
+    background: var(--color-ink-soft);
+    transform: translateY(-4px);
+    box-shadow:
+      0 24px 60px -10px rgba(0, 0, 0, 0.40),
+      0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Pill 화살표 원형 버튼 */
+  .pill-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    background: var(--color-ink);
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    flex-shrink: 0;
+  }
+  .pill-arrow:hover {
+    background: var(--color-coral-deep);
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px rgba(199, 121, 101, 0.40);
+  }
+  .pill-arrow.light {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--color-ink);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  }
+  .pill-arrow.light:hover {
+    background: var(--color-ink);
+    color: #FFFFFF;
+  }
+
+  /* 와이드 pill 화살표 (텍스트 + 아이콘) */
+  .pill-arrow-wide {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 6px 6px 20px;
+    border-radius: 9999px;
+    background: var(--color-ink);
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  }
+  .pill-arrow-wide:hover {
+    background: var(--color-coral-deep);
+    box-shadow: 0 6px 18px rgba(199, 121, 101, 0.40);
+  }
+  .pill-arrow-wide .arrow-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.18);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 코랄 액센트 섹션 배지 */
+  .section-badge-coral {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border-radius: var(--r-pill);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(232, 181, 168, 0.20);
+    color: var(--color-coral-deep);
+    border: 1px solid rgba(232, 181, 168, 0.40);
+    margin-bottom: 12px;
+  }
+
+  /* 큰 디스플레이 숫자/텍스트 (참조 이미지의 'Jan 2025' 스타일) */
+  .display-num {
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--text-heading);
+  }
+  .display-num-ghost {
+    color: rgba(26, 26, 26, 0.18);
   }
 
   /* ─────────────────────────────────────────────────────

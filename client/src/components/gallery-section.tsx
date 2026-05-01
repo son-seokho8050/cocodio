@@ -83,13 +83,17 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="gallery" className="py-24" style={{ background: 'var(--color-surface)' }}>
+    <section id="gallery" className="py-24 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <div className="section-badge mx-auto w-fit mb-4">갤러리</div>
-          <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--text-heading)' }}>코코디오 갤러리</h2>
-          <p className="text-lg max-w-3xl mx-auto" style={{ color: 'var(--text-body)' }}>
-            코코미술학원의 특별한 교육 현장과 학생들의 창작 활동을 만나보세요
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+          <div>
+            <div className="section-badge-coral mb-4">갤러리</div>
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: 'var(--text-heading)' }}>
+              코코디오 갤러리
+            </h2>
+          </div>
+          <p className="text-base lg:text-right max-w-md" style={{ color: 'var(--text-body)' }}>
+            코코미술학원의 특별한 교육 현장과<br />학생들의 창작 활동을 만나보세요
           </p>
         </div>
 
@@ -98,7 +102,8 @@ export default function GallerySection() {
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="glass-frost group relative overflow-hidden cursor-pointer"
+              style={{ padding: 0 }}
               onClick={() => openModal(index)}
             >
               <div className="aspect-[4/3] overflow-hidden">

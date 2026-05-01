@@ -3,38 +3,39 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send, ArrowUpRight } from "lucide-react";
 import { insertConsultationSchema, type InsertConsultation } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 
 const inputStyle: React.CSSProperties = {
-  background: 'transparent',
-  border: '1px solid var(--color-border)',
+  background: 'rgba(255,255,255,0.6)',
+  border: '1px solid rgba(0,0,0,0.08)',
   color: 'var(--text-heading)',
-  borderRadius: '10px',
-  padding: '0.65rem 0.9rem',
+  borderRadius: '12px',
+  padding: '0.75rem 1rem',
   width: '100%',
   outline: 'none',
   fontSize: '0.875rem',
-  boxShadow: 'inset 2px 2px 4px rgba(0,0,0,0.06), inset -1px -1px 2px rgba(255,255,255,0.80)',
-  transition: 'border-color 0.2s, box-shadow 0.2s',
+  transition: 'border-color 0.2s, box-shadow 0.2s, background 0.2s',
 };
 const labelStyle: React.CSSProperties = {
   display: 'block',
   marginBottom: '0.4rem',
-  fontSize: '0.75rem',
-  color: 'var(--text-subtle)',
-  fontWeight: 600,
-  letterSpacing: '0.04em',
+  fontSize: '0.7rem',
+  color: 'var(--color-coral-deep)',
+  fontWeight: 700,
+  letterSpacing: '0.08em',
   textTransform: 'uppercase',
 };
 const onFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  e.currentTarget.style.borderColor = 'var(--color-focus)';
-  e.currentTarget.style.boxShadow = '0 0 0 2px rgba(0,207,204,0.20), inset 2px 2px 4px rgba(0,0,0,0.06)';
+  e.currentTarget.style.borderColor = 'var(--color-coral-deep)';
+  e.currentTarget.style.background = 'rgba(255,255,255,0.85)';
+  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(232,181,168,0.25)';
 };
 const onBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-  e.currentTarget.style.borderColor = 'var(--color-border)';
-  e.currentTarget.style.boxShadow = 'inset 2px 2px 4px rgba(0,0,0,0.06), inset -1px -1px 2px rgba(255,255,255,0.80)';
+  e.currentTarget.style.borderColor = 'rgba(0,0,0,0.08)';
+  e.currentTarget.style.background = 'rgba(255,255,255,0.6)';
+  e.currentTarget.style.boxShadow = 'none';
 };
 
 export default function ContactSection() {
@@ -60,24 +61,35 @@ export default function ContactSection() {
   });
 
   return (
-    <section id="contact" className="py-24" style={{ background: 'transparent' }}>
+    <section id="contact" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
-          <div className="section-badge mx-auto w-fit mb-4">상담 신청</div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: 'var(--text-heading)' }}>
-            무료체험수업 &amp; 적성테스트 신청
+          <div className="section-badge-coral mx-auto w-fit mb-4">상담 신청</div>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight" style={{ color: 'var(--text-heading)' }}>
+            무료체험수업<br />&amp; 적성테스트 신청
           </h2>
           <p style={{ color: 'var(--text-body)', fontSize: '1.05rem' }}>
             궁금한 점이 있으시면 언제든 문의해 주세요. 전문 상담사가 친절히 안내해 드립니다.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
 
           {/* Form */}
-          <div className="ui-card p-8">
-            <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-heading)' }}>무료 체험수업 신청</h3>
+          <div className="glass-frost p-8">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <div className="text-xs uppercase tracking-widest mb-1 font-semibold"
+                     style={{ color: 'var(--color-coral-deep)' }}>
+                  Free Trial
+                </div>
+                <h3 className="text-xl font-bold" style={{ color: 'var(--text-heading)' }}>
+                  무료 체험수업 신청
+                </h3>
+              </div>
+              <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>/01</span>
+            </div>
             <form onSubmit={form.handleSubmit((d) => submitConsultation.mutate(d))} className="space-y-5">
 
               <div className="grid md:grid-cols-2 gap-4">
@@ -126,63 +138,80 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={submitConsultation.isPending}
-                className="btn-primary w-full py-3.5 text-base flex items-center justify-center gap-2"
+                className="pill-arrow-wide w-full justify-between py-3"
                 style={{ opacity: submitConsultation.isPending ? 0.7 : 1 }}
               >
-                <Send className="h-5 w-5" />
-                {submitConsultation.isPending ? "신청 중..." : "신청하기"}
+                <span className="flex items-center gap-2">
+                  <Send className="h-4 w-4" />
+                  {submitConsultation.isPending ? "신청 중..." : "신청하기"}
+                </span>
+                <span className="arrow-circle">
+                  <ArrowUpRight className="h-4 w-4" />
+                </span>
               </button>
             </form>
           </div>
 
           {/* Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-6" style={{ color: 'var(--text-heading)' }}>학원 정보</h3>
-
-            <div className="space-y-3 mb-8">
-              {[
-                {
-                  icon: MapPin, title: '주소', color: '#6EC9A3',
-                  lines: ['[마산] 마산 합포구 고운로 235, 유진빌딩 4층', '[김해] 김해시 내외중앙로 74, 밝은메디컬센터 10층'],
-                },
-                {
-                  icon: Phone, title: '연락처', color: '#00CFCC',
-                  lines: ['010.4472.2028', '평일 13:00-23:00, 토/일요일 12:00-18:00'],
-                },
-                {
-                  icon: Mail, title: '이메일', color: '#52AE8A',
-                  lines: ['COCO2238050@NAVER.COM', '24시간 문의 접수 가능'],
-                },
-              ].map(({ icon: Icon, title, color, lines }) => (
-                <div key={title} className="ui-card-flat flex items-start gap-4 p-4">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${color}18`, border: `1px solid ${color}30` }}
-                  >
-                    <Icon className="h-5 w-5" style={{ color }} />
+          <div className="space-y-6">
+            <div className="ink-card p-7">
+              <div className="flex items-center justify-between mb-5">
+                <div>
+                  <div className="text-xs uppercase tracking-widest mb-1 font-semibold"
+                       style={{ color: 'rgba(255,255,255,0.55)' }}>
+                    Contact Info
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-1" style={{ color: 'var(--text-heading)' }}>{title}</h4>
-                    {lines.map((l, i) => (
-                      <p key={i} className="text-sm" style={{ color: 'var(--text-body)' }}>{l}</p>
-                    ))}
-                  </div>
+                  <h3 className="text-xl font-bold text-white">학원 정보</h3>
                 </div>
-              ))}
+                <span className="text-xs font-mono" style={{ color: 'rgba(255,255,255,0.40)' }}>/02</span>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    icon: MapPin, title: '주소',
+                    lines: ['[마산] 마산 합포구 고운로 235, 유진빌딩 4층', '[김해] 김해시 내외중앙로 74, 밝은메디컬센터 10층'],
+                  },
+                  {
+                    icon: Phone, title: '연락처',
+                    lines: ['010.4472.2028', '평일 13:00-23:00, 토/일요일 12:00-18:00'],
+                  },
+                  {
+                    icon: Mail, title: '이메일',
+                    lines: ['COCO2238050@NAVER.COM', '24시간 문의 접수 가능'],
+                  },
+                ].map(({ icon: Icon, title, lines }) => (
+                  <div key={title} className="flex items-start gap-3 pt-4"
+                       style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.15)' }}
+                    >
+                      <Icon className="h-4 w-4 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1 text-white">{title}</h4>
+                      {lines.map((l, i) => (
+                        <p key={i} className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.70)' }}>{l}</p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Map */}
-            <div className="ui-card overflow-hidden">
-              <div className="flex" style={{ borderBottom: '1px solid var(--color-border)' }}>
+            <div className="glass-frost overflow-hidden">
+              <div className="flex" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
                 {(['masan', 'gimhae'] as const).map((campus) => (
                   <button
                     key={campus}
                     onClick={() => setSelectedCampus(campus)}
                     className="flex-1 py-3 text-sm font-semibold transition-all"
                     style={{
-                      background: selectedCampus === campus ? 'rgba(110,201,163,0.10)' : 'transparent',
-                      color: selectedCampus === campus ? 'var(--color-primary-dark)' : 'var(--text-subtle)',
-                      borderBottom: selectedCampus === campus ? '2px solid var(--color-primary)' : '2px solid transparent',
+                      background: selectedCampus === campus ? 'rgba(232,181,168,0.20)' : 'transparent',
+                      color: selectedCampus === campus ? 'var(--color-coral-deep)' : 'var(--text-subtle)',
+                      borderBottom: selectedCampus === campus ? '2px solid var(--color-coral-deep)' : '2px solid transparent',
                     }}
                   >
                     {campus === 'masan' ? '마산 캠퍼스' : '김해 캠퍼스'}
