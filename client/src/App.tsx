@@ -44,7 +44,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div style={{ position: "relative", minHeight: "100vh" }}>
-          {/* Background image — spans entire document height, scrolls with page */}
+          {/* Background: image at top (natural ratio) + matching fill color below */}
           <div
             aria-hidden="true"
             style={{
@@ -53,9 +53,10 @@ function App() {
               left: 0,
               right: 0,
               bottom: 0,
-              zIndex: -2,
+              zIndex: 0,
+              backgroundColor: "#A37E69",
               backgroundImage: `url(${bgImage})`,
-              backgroundSize: "100% 100%",
+              backgroundSize: "100% auto",
               backgroundPosition: "top center",
               backgroundRepeat: "no-repeat",
               pointerEvents: "none",
@@ -70,13 +71,15 @@ function App() {
               left: 0,
               right: 0,
               bottom: 0,
-              zIndex: -1,
+              zIndex: 1,
               backgroundColor: "rgba(255, 255, 255, 0.18)",
               pointerEvents: "none",
             }}
           />
-          <Toaster />
-          <Router />
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <Toaster />
+            <Router />
+          </div>
         </div>
       </TooltipProvider>
     </QueryClientProvider>
