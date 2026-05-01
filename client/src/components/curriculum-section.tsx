@@ -37,7 +37,7 @@ export default function CurriculumSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">커리큘럼</div>
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: '#ffffff', textShadow: '0 2px 14px rgba(60,30,40,0.45), 0 1px 2px rgba(0,0,0,0.25)' }}>
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: '#ffffff' }}>
               COCO ALL<br />IN-ONE SYSTEM
             </h2>
           </div>

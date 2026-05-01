@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">수강생 후기</div>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff', textShadow: '0 2px 14px rgba(60,30,40,0.45), 0 1px 2px rgba(0,0,0,0.25)' }}>
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
               Real Voices
             </h2>
           </div>
