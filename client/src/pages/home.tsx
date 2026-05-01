@@ -3,6 +3,7 @@ import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import GallerySection from "@/components/gallery-section";
 import AchievementsSection from "@/components/achievements-section";
+import VideoShowcaseSection from "@/components/video-showcase-section";
 import CurriculumSection from "@/components/curriculum-section";
 import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
@@ -35,6 +36,7 @@ export default function Home() {
       <AboutSection />
       <GallerySection />
       <AchievementsSection />
+      <VideoShowcaseSection />
       <CurriculumSection />
       <PortfolioSection />
       <TestimonialsSection />
