@@ -43,24 +43,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {/* Layer 1: Blurred cover backdrop — fills viewport with no empty bars */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: -3,
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "fixed",
-            filter: "blur(40px) saturate(1.1)",
-            transform: "scale(1.1)",
-            pointerEvents: "none",
-          }}
-        />
-        {/* Layer 2: Full image (contain) — shows entire artwork */}
+        {/* Background image — fills entire viewport */}
         <div
           aria-hidden="true"
           style={{
@@ -68,14 +51,14 @@ function App() {
             inset: 0,
             zIndex: -2,
             backgroundImage: `url(${bgImage})`,
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundAttachment: "fixed",
             pointerEvents: "none",
           }}
         />
-        {/* Layer 3: Light wash for readability — keeps colors visible */}
+        {/* Light wash for readability */}
         <div
           aria-hidden="true"
           style={{
