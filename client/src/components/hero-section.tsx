@@ -44,119 +44,90 @@ export default function HeroSection() {
       style={{
         minHeight: '100vh',
         aspectRatio: '4 / 5',
-        display: 'flex',
-        alignItems: 'center',
         backgroundImage: `url(${heroBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* 콘텐츠 가독성을 위한 소프트 워시 */}
-      <div aria-hidden="true" style={{
-        position: 'absolute', inset: 0,
-        background: 'rgba(255,255,255,0.25)',
-        pointerEvents: 'none',
-      }} />
+      {/* 콘텐츠 오버레이 — 화면 첫 뷰에서 보이는 우측 상단에 고정 */}
+      <div
+        className="absolute right-4 lg:right-8 xl:right-16 animate-in fade-in slide-in-from-right-4 duration-700"
+        style={{
+          top: '120px',
+          width: 'calc(100% - 2rem)',
+          maxWidth: '380px',
+        }}
+      >
+        <div
+          className="ui-card p-6 lg:p-7"
+          style={{
+            backdropFilter: 'blur(16px) saturate(1.4)',
+            background: 'rgba(255,255,255,0.78)',
+            boxShadow: '0 20px 60px -10px rgba(0,0,0,0.18)',
+          }}
+        >
+          {/* Section badge */}
+          <div className="section-badge mb-4 inline-flex">
+            재능의 출발점
+          </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Tagline */}
+          <p
+            className="text-xl lg:text-2xl font-bold leading-snug mb-5"
+            style={{ color: 'var(--text-heading)' }}
+          >
+            여러분의 재능은<br /> 어떤 모양인가요?
+          </p>
 
-          {/* Left */}
-          <div className="animate-in slide-in-from-left duration-700">
+          {/* CTAs */}
+          <div className="flex flex-col gap-2.5 mb-5">
+            <button
+              onClick={() => scrollTo('contact')}
+              className="btn-primary flex items-center justify-center gap-2 px-6 py-3.5 text-sm w-full"
+            >
+              <Calendar className="h-4 w-4" /> 무료체험수업 신청
+            </button>
+            <button
+              onClick={() => scrollTo('portfolio')}
+              className="btn-ghost flex items-center justify-center gap-2 px-6 py-3.5 text-sm w-full"
+            >
+              <Play className="h-4 w-4" /> FOLLOW 수업 보기
+            </button>
+          </div>
 
-            {/* Section badge */}
-            <div className="section-badge mb-6">
-              재능의 출발점
+          {/* 합격대학 rotating */}
+          <div
+            className="rounded-xl px-4 py-3 mb-4"
+            style={{ background: 'rgba(0,0,0,0.04)' }}
+          >
+            <div className="text-[10px] tracking-wide mb-1" style={{ color: 'var(--text-subtle)' }}>
+              인서울·수도권 미대 합격
             </div>
-
-            <h1 className="text-6xl lg:text-8xl font-black mb-4 leading-none" style={{ color: 'var(--text-heading)' }}>
-              코코
-            </h1>
-            <p className="text-lg lg:text-xl leading-relaxed mb-10" style={{ color: 'var(--text-body)' }}>
-              여러분의 재능은 어떤 모양인가요?
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => scrollTo('contact')}
-                className="btn-primary flex items-center justify-center gap-2 px-8 py-4 text-base"
-              >
-                <Calendar className="h-5 w-5" /> 무료체험수업 신청
-              </button>
-              <button
-                onClick={() => scrollTo('portfolio')}
-                className="btn-ghost flex items-center justify-center gap-2 px-8 py-4 text-base"
-              >
-                <Play className="h-5 w-5" /> FOLLOW 수업 보기
-              </button>
-            </div>
-
-            {/* 통계 — 작은 수치 카드들 */}
-            <div className="flex gap-6 mt-12">
-              {[
-                { num: '20+', label: '합격 대학' },
-                { num: '95%', label: '재등록률' },
-                { num: '4단계', label: 'FOLLOW 시스템' },
-              ].map(({ num, label }) => (
-                <div key={label}>
-                  <div className="text-2xl font-black" style={{ color: 'var(--color-primary-dark)' }}>{num}</div>
-                  <div className="text-xs mt-0.5" style={{ color: 'var(--text-subtle)' }}>{label}</div>
-                </div>
-              ))}
+            <div
+              className="text-base font-black leading-tight transition-all duration-300"
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(4px)',
+                color: 'var(--text-heading)',
+              }}
+            >
+              {list[index]}
             </div>
           </div>
 
-          {/* Right */}
-          <div className="relative animate-in slide-in-from-right duration-700">
-            <div className="relative">
-              {/* 이미지 배경 민트 glow */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                borderRadius: '24px',
-                background: 'rgba(110,201,163,0.08)',
-                filter: 'blur(20px)',
-                transform: 'scale(0.96) translateY(12px)',
-              }} />
-              <img
-                src="/student-celebration.png"
-                alt="코코미술학원 합격자들"
-                className="relative w-full"
-                style={{
-                  borderRadius: '24px',
-                  boxShadow: 'var(--el-4)',
-                }}
-                loading="eager" width="600" height="450"
-              />
-            </div>
-
-            {/* 합격 대학 badge — Level 2 카드 */}
-            <div
-              className="ui-card absolute -bottom-6 -left-6 px-5 py-4"
-              style={{ minWidth: '170px' }}
-            >
-              <div
-                className="text-lg font-black leading-tight transition-all duration-300"
-                style={{
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateY(0)' : 'translateY(6px)',
-                  color: 'var(--text-heading)',
-                }}
-              >
-                {list[index]}
+          {/* 통계 */}
+          <div className="flex justify-between gap-2">
+            {[
+              { num: '20+', label: '합격 대학' },
+              { num: '95%', label: '재등록률' },
+              { num: '4단계', label: 'FOLLOW' },
+            ].map(({ num, label }) => (
+              <div key={label} className="text-center flex-1">
+                <div className="text-base font-black leading-tight" style={{ color: 'var(--color-primary-dark)' }}>{num}</div>
+                <div className="text-[10px] mt-0.5" style={{ color: 'var(--text-subtle)' }}>{label}</div>
               </div>
-              <div className="text-[10px] mt-1 tracking-wide" style={{ color: 'var(--text-subtle)' }}>
-                인서울·수도권 미대
-              </div>
-            </div>
-
-            {/* FOLLOW badge — accent 카드 */}
-            <div
-              className="ui-card-accent absolute -top-6 -right-6 p-4"
-            >
-              <div className="text-lg font-black text-center" style={{ color: 'var(--color-primary-dark)' }}>FOLLOW</div>
-              <div className="text-xs text-center mt-0.5" style={{ color: 'var(--text-subtle)' }}>ALL IN-ONE SYSTEM</div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
