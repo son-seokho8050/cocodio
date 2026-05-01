@@ -53,21 +53,21 @@ export default function AchievementsSection() {
         <div className="grid lg:grid-cols-12 gap-6">
 
           {/* 좌측 메인 다크 피처 카드 */}
-          <div className="lg:col-span-7 ink-card p-6 sm:p-8 lg:p-11 flex flex-col" style={{ borderRadius: '28px' }}>
-            <div className="flex items-start justify-between mb-10">
+          <div className="lg:col-span-7 ink-card p-5 sm:p-8 lg:p-11 flex flex-col" style={{ borderRadius: '28px' }}>
+            <div className="flex items-start justify-between mb-4 sm:mb-8 lg:mb-10">
               <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center"
+                className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center"
                 style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.15)' }}
               >
-                <MainIcon className="h-7 w-7" style={{ color: '#FFF' }} />
+                <MainIcon className="h-5 w-5 sm:h-7 sm:w-7" style={{ color: '#FFF' }} />
               </div>
               <div className="text-xs font-mono" style={{ color: 'rgba(255,255,255,0.40)' }}>/01</div>
             </div>
 
-            <div className="text-[11px] uppercase tracking-[0.2em] mb-3 font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            <div className="text-[11px] uppercase tracking-[0.2em] mb-2 sm:mb-3 font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
               {main.tag}
             </div>
-            <h3 className="text-3xl lg:text-5xl font-bold leading-[1.1] mb-8 tracking-tight" style={{ color: '#FFFFFF' }}>
+            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.1] mb-4 sm:mb-8 tracking-tight" style={{ color: '#FFFFFF' }}>
               {main.title}
             </h3>
 
@@ -112,7 +112,7 @@ export default function AchievementsSection() {
         </div>
 
         {/* === RESPECTFUL — 영감을 주는 디자이너 === */}
-        <div className="mt-24">
+        <div className="mt-12 sm:mt-16 lg:mt-24">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 gap-3">
             <div>
               <div className="text-[11px] uppercase tracking-[0.25em] mb-3 font-semibold" style={{ color: 'var(--color-coral)' }}>
@@ -134,7 +134,7 @@ export default function AchievementsSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+          <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6 lg:gap-8">
             {[
               {
                 name: "DIETER RAMS",

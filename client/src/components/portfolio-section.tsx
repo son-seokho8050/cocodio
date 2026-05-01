@@ -39,7 +39,7 @@ export default function PortfolioSection() {
             className="block lg:absolute lg:top-0 lg:left-0 lg:w-[55%] lg:z-10 mb-6 lg:mb-0 group"
           >
             <div
-              className="p-6 sm:p-8 lg:p-11 flex flex-col h-full lg:min-h-[480px]"
+              className="p-5 sm:p-8 lg:p-11 flex flex-col h-full lg:min-h-[480px]"
               style={{
                 background: '#FFFFFF',
                 borderRadius: '28px',

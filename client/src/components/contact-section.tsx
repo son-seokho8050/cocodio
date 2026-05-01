@@ -74,11 +74,11 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-5 sm:gap-8">
 
           {/* Form */}
-          <div className="glass-frost p-8">
-            <div className="flex items-center justify-between mb-6">
+          <div className="glass-frost p-5 sm:p-8">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
               <div>
                 <div className="text-xs uppercase tracking-widest mb-1 font-semibold"
                      style={{ color: 'var(--color-coral-deep)' }}>
@@ -153,9 +153,9 @@ export default function ContactSection() {
           </div>
 
           {/* Info */}
-          <div className="space-y-6">
-            <div className="ink-card p-7">
-              <div className="flex items-center justify-between mb-5">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="ink-card p-5 sm:p-7">
+              <div className="flex items-center justify-between mb-4 sm:mb-5">
                 <div>
                   <div className="text-xs uppercase tracking-widest mb-1 font-semibold"
                        style={{ color: 'rgba(255,255,255,0.55)' }}>

@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
 
           {/* 좌측 톨 다크 피처 카드 — 학생 후기 */}
           <div
-            className="ink-card p-6 sm:p-8 lg:p-11 lg:absolute lg:top-0 lg:left-0 lg:w-[58%] lg:z-10 mb-6 lg:mb-0"
+            className="ink-card p-5 sm:p-8 lg:p-11 lg:absolute lg:top-0 lg:left-0 lg:w-[58%] lg:z-10 mb-6 lg:mb-0"
             style={{ borderRadius: '28px', minHeight: '440px' }}
           >
             <div className="flex items-start justify-between mb-8">
