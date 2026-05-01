@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Play, X } from "lucide-react";
 
 type VideoSlot = {
+  youtubeId?: string;
   src?: string;
   poster?: string;
   title: string;
@@ -13,6 +14,19 @@ const slots: VideoSlot[] = [
   { title: "구도 & 원근법 송", caption: "공간감의 원리를 멜로디로" },
   { title: "명암 & 질감 송", caption: "빛과 재질 표현을 리듬으로" },
 ];
+
+function extractYouTubeId(input: string): string {
+  if (!input) return "";
+  if (/^[\w-]{11}$/.test(input)) return input;
+  const m = input.match(
+    /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|v\/)|youtu\.be\/)([\w-]{11})/
+  );
+  return m ? m[1] : input;
+}
+
+function youtubeThumb(id: string) {
+  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+}
 
 function VideoCard({
   slot,
@@ -45,6 +59,10 @@ function VideoCard({
     return () => io.disconnect();
   }, []);
 
+  const ytId = slot.youtubeId ? extractYouTubeId(slot.youtubeId) : "";
+  const thumb = slot.poster || (ytId ? youtubeThumb(ytId) : "");
+  const hasMedia = !!(slot.src || ytId);
+
   return (
     <div
       ref={wrapperRef}
@@ -54,9 +72,9 @@ function VideoCard({
       data-testid={`video-card-${idx}`}
     >
       <div className="aspect-video overflow-hidden relative bg-black">
-        {slot.src && inView && slot.poster ? (
+        {hasMedia && inView && thumb ? (
           <img
-            src={slot.poster}
+            src={thumb}
             alt={slot.title}
             className="w-full h-full object-cover"
             loading="lazy"
@@ -130,6 +148,8 @@ function VideoModal({
     };
   }, [onClose]);
 
+  const ytId = slot.youtubeId ? extractYouTubeId(slot.youtubeId) : "";
+
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4"
@@ -162,7 +182,16 @@ function VideoModal({
           className="w-full aspect-video overflow-hidden bg-black shadow-2xl"
           style={{ borderRadius: "16px" }}
         >
-          {slot.src ? (
+          {ytId ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`}
+              title={slot.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+              style={{ border: 0 }}
+            />
+          ) : slot.src ? (
             <video
               src={slot.src}
               poster={slot.poster}
