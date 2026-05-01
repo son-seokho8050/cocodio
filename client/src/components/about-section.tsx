@@ -53,7 +53,7 @@ export default function AboutSection() {
 
           {/* 좌측 큰 글래스 카드 — FOLLOW 시스템 */}
           <div
-            className="glass-frost p-8 lg:p-10 lg:absolute lg:top-0 lg:left-0 lg:w-[58%] lg:z-10 mb-6 lg:mb-0"
+            className="glass-frost p-8 lg:p-10 lg:absolute lg:top-0 lg:left-0 lg:w-[60%] lg:z-10 mb-6 lg:mb-0"
             style={{ borderRadius: '28px' }}
           >
             <div className="flex items-start justify-between mb-8 gap-4">
@@ -71,7 +71,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 lg:pr-[10%]">
               {steps.map(({ letter, label, desc, color }) => (
                 <div key={letter} className="flex items-start gap-4">
                   <div
@@ -87,18 +87,11 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-
-            <div className="flex items-center justify-between mt-8 pt-6" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-              <div className="text-xs" style={{ color: 'var(--text-subtle)' }}>Click here for more info.</div>
-              <button className="pill-arrow light" aria-label="더 보기">
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
           </div>
 
           {/* 우측 톨 화이트 카드 — 학생 사진 + 디스플레이 텍스트 */}
           <div
-            className="lg:absolute lg:top-12 lg:right-0 lg:w-[42%] lg:z-20 mb-6 lg:mb-0"
+            className="lg:absolute lg:top-24 lg:right-0 lg:w-[44%] lg:z-20 mb-6 lg:mb-0"
             style={{
               background: '#FFFFFF',
               borderRadius: '28px',
