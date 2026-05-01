@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 // Import all gallery images
 import gallery1 from "@assets/플라워수업_1751517815348.jpg";
@@ -116,14 +115,18 @@ export default function GallerySection() {
                 />
               </div>
               
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-lg font-semibold mb-2">{image.title}</h3>
-                  <p className="text-sm text-gray-200">{image.description}</p>
+              {/* 항상 보이는 하단 그라디언트 + 타이틀 */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent pointer-events-none">
+                <div className="p-5 text-white">
+                  <h3 className="text-base lg:text-lg font-semibold mb-1 drop-shadow">{image.title}</h3>
+                  <p className="text-xs lg:text-sm text-white/85 drop-shadow">{image.description}</p>
                 </div>
-                <div className="absolute top-4 right-4">
-                  <Maximize2 className="h-6 w-6 text-white" />
+              </div>
+
+              {/* 호버 시 확대 아이콘 */}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)' }}>
+                  <Maximize2 className="h-4 w-4 text-white" />
                 </div>
               </div>
             </div>
@@ -135,33 +138,33 @@ export default function GallerySection() {
           <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
             <div className="relative max-w-4xl max-h-[90vh] w-full">
               {/* Close Button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
+              <button
+                aria-label="닫기"
+                className="absolute -top-3 -right-3 lg:-top-5 lg:-right-5 z-20 w-11 h-11 rounded-full flex items-center justify-center text-white shadow-lg transition-transform hover:scale-110"
+                style={{ background: '#1A1A1A', border: '2px solid #FFFFFF' }}
                 onClick={closeModal}
               >
-                <X className="h-6 w-6" />
-              </Button>
+                <X className="h-5 w-5" />
+              </button>
 
               {/* Navigation Buttons */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20"
+              <button
+                aria-label="이전"
+                className="absolute left-2 lg:-left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full flex items-center justify-center text-white shadow-lg transition-transform hover:scale-110"
+                style={{ background: 'rgba(26,26,26,0.85)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.4)' }}
                 onClick={prevImage}
               >
-                <ChevronLeft className="h-8 w-8" />
-              </Button>
-              
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20"
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+
+              <button
+                aria-label="다음"
+                className="absolute right-2 lg:-right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full flex items-center justify-center text-white shadow-lg transition-transform hover:scale-110"
+                style={{ background: 'rgba(26,26,26,0.85)', backdropFilter: 'blur(6px)', border: '1px solid rgba(255,255,255,0.4)' }}
                 onClick={nextImage}
               >
-                <ChevronRight className="h-8 w-8" />
-              </Button>
+                <ChevronRight className="h-6 w-6" />
+              </button>
 
               {/* Image */}
               <div className="bg-white rounded-lg overflow-hidden">
