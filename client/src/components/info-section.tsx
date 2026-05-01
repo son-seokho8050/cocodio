@@ -3,10 +3,10 @@ import { Link } from "wouter";
 
 export default function InfoSection() {
   return (
-    <section id="info" className="py-14 sm:py-20 lg:py-24 relative">
+    <section id="info" className="py-10 sm:py-16 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
           <div className="section-badge-coral mx-auto w-fit mb-4">안내</div>
           <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight" style={{ color: '#ffffff' }}>
             Information

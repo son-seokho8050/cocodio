@@ -82,9 +82,9 @@ export default function GallerySection() {
   };
 
   return (
-    <section id="gallery" className="py-14 sm:py-20 lg:py-24 relative">
+    <section id="gallery" className="py-10 sm:py-16 lg:py-24 relative">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 sm:mb-14 lg:mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">갤러리</div>
             <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: '#ffffff' }}>

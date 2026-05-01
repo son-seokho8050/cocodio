@@ -238,7 +238,7 @@ export default function VideoShowcaseSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="videos" className="py-14 sm:py-20 lg:py-24 relative">
+    <section id="videos" className="py-10 sm:py-16 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14 gap-6">
           <div>

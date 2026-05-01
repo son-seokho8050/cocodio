@@ -118,9 +118,11 @@
     color: var(--text-heading);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   html {
     background-color: var(--color-bg);
+    overflow-x: hidden;
   }
   /* Page backdrop — 핑크 사막 사진 (히어로 아래 모든 섹션 공통 배경, JS에서 inline bg 주입) */
   .page-backdrop {

@@ -31,7 +31,7 @@ const cards = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-14 sm:py-20 lg:py-24 relative">
+    <section id="about" className="py-10 sm:py-16 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 섹션 헤더 — 좌측 정렬, 미니멀 */}
@@ -49,7 +49,7 @@ export default function AboutSection() {
         </div>
 
         {/* === 무드보드 무브: 3카드 겹친 플로팅 컴포지션 === */}
-        <div className="relative mb-16 lg:mb-32 lg:min-h-[560px]">
+        <div className="relative mb-10 sm:mb-14 lg:mb-32 lg:min-h-[560px]">
 
           {/* 좌측 큰 글래스 카드 — FOLLOW 시스템 */}
           <div

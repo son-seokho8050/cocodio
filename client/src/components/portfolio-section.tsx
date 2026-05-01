@@ -13,10 +13,10 @@ export default function PortfolioSection() {
   const Small1Icon = small[1].icon;
 
   return (
-    <section id="portfolio" className="py-14 sm:py-20 lg:py-24 relative">
+    <section id="portfolio" className="py-10 sm:py-16 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 sm:mb-14 lg:mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">FOLLOW 시스템</div>
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight leading-[1.05]" style={{ color: '#ffffff' }}>
