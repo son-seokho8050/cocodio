@@ -6,8 +6,10 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: '#F5F5F7',
-      borderTop: '1px solid var(--color-border)',
+      background: 'rgba(255,255,255,0.55)',
+      backdropFilter: 'blur(24px) saturate(1.4)',
+      WebkitBackdropFilter: 'blur(24px) saturate(1.4)',
+      borderTop: '1px solid rgba(255,255,255,0.55)',
     }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">

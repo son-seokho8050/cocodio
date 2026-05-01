@@ -16,7 +16,7 @@ import InfoTuition from "@/pages/info-tuition";
 import InfoTransport from "@/pages/info-transport";
 import InfoTuitionGimhae from "@/pages/info-tuition-gimhae";
 import InfoTransportGimhae from "@/pages/info-transport-gimhae";
-import bgImage from "@assets/제목_없는_디자인_1777609314473.png";
+import bgImage from "@assets/optimized/bg-pink-hills.webp";
 
 function Router() {
   return (
@@ -43,27 +43,46 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        {/* Layer 1: Blurred cover backdrop — fills viewport with no empty bars */}
         <div
           aria-hidden="true"
           style={{
             position: "fixed",
             inset: 0,
-            zIndex: -1,
+            zIndex: -3,
             backgroundImage: `url(${bgImage})`,
             backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+            filter: "blur(40px) saturate(1.1)",
+            transform: "scale(1.1)",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Layer 2: Full image (contain) — shows entire artwork */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: -2,
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: "contain",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundAttachment: "fixed",
             pointerEvents: "none",
           }}
         />
+        {/* Layer 3: Light wash for readability — keeps colors visible */}
         <div
           aria-hidden="true"
           style={{
             position: "fixed",
             inset: 0,
             zIndex: -1,
-            backgroundColor: "rgba(255, 255, 255, 0.55)",
+            backgroundColor: "rgba(255, 255, 255, 0.18)",
             pointerEvents: "none",
           }}
         />

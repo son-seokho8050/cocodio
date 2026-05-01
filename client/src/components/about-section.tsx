@@ -31,7 +31,7 @@ const cards = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24" style={{ background: 'var(--color-surface)' }}>
+    <section id="about" className="py-24" style={{ background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(24px) saturate(1.4)', WebkitBackdropFilter: 'blur(24px) saturate(1.4)', borderTop: '1px solid rgba(255,255,255,0.55)', borderBottom: '1px solid rgba(255,255,255,0.55)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16">
