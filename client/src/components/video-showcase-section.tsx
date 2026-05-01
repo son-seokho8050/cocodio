@@ -10,9 +10,21 @@ type VideoSlot = {
 };
 
 const slots: VideoSlot[] = [
-  { title: "색채 이론 송", caption: "어려운 색상환·보색을 노래로" },
-  { title: "구도 & 원근법 송", caption: "공간감의 원리를 멜로디로" },
-  { title: "명암 & 질감 송", caption: "빛과 재질 표현을 리듬으로" },
+  {
+    youtubeId: "KKUSSVxHNjo",
+    title: "톤 (Tone)",
+    caption: "명도의 단계, 톤의 원리를 노래로",
+  },
+  {
+    youtubeId: "SjpCAe5-w6s",
+    title: "채도 (Chroma)",
+    caption: "색의 맑고 탁함, 채도를 멜로디로",
+  },
+  {
+    youtubeId: "0C-9MKaTQfc",
+    title: "뷰어 & 메이커",
+    caption: "보는 눈과 만드는 손의 균형",
+  },
 ];
 
 function extractYouTubeId(input: string): string {
