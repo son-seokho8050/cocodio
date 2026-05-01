@@ -87,7 +87,7 @@ export default function GallerySection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-6">
           <div>
             <div className="section-badge-coral mb-4">갤러리</div>
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: '#ffffff' }}>
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight" style={{ color: '#ffffff', textShadow: '0 2px 14px rgba(60,30,40,0.45), 0 1px 2px rgba(0,0,0,0.25)' }}>
               COCODIO Gallery
             </h2>
           </div>
@@ -115,12 +115,26 @@ export default function GallerySection() {
                 />
               </div>
               
-              {/* 항상 보이는 하단 그라디언트 + 타이틀 */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent pointer-events-none">
-                <div className="p-5 text-white">
-                  <h3 className="text-base lg:text-lg font-semibold mb-1 drop-shadow">{image.title}</h3>
-                  <p className="text-xs lg:text-sm text-white/85 drop-shadow">{image.description}</p>
-                </div>
+              {/* 항상 보이는 하단 다크 백드롭 + 타이틀 */}
+              <div
+                className="absolute inset-x-0 bottom-0 px-5 pt-14 pb-5 pointer-events-none"
+                style={{
+                  background:
+                    'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 45%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0) 100%)',
+                }}
+              >
+                <h3
+                  className="text-base lg:text-lg font-bold mb-1 leading-tight"
+                  style={{ color: '#FFFFFF', textShadow: '0 2px 6px rgba(0,0,0,0.85)' }}
+                >
+                  {image.title}
+                </h3>
+                <p
+                  className="text-xs lg:text-sm"
+                  style={{ color: 'rgba(255,255,255,0.92)', textShadow: '0 1px 4px rgba(0,0,0,0.85)' }}
+                >
+                  {image.description}
+                </p>
               </div>
 
               {/* 호버 시 확대 아이콘 */}

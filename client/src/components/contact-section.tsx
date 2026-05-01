@@ -66,7 +66,7 @@ export default function ContactSection() {
 
         <div className="text-center mb-16">
           <div className="section-badge-coral mx-auto w-fit mb-4">상담 신청</div>
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight" style={{ color: '#ffffff' }}>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 tracking-tight" style={{ color: '#ffffff', textShadow: '0 2px 14px rgba(60,30,40,0.45), 0 1px 2px rgba(0,0,0,0.25)' }}>
             Talent Test
           </h2>
           <p style={{ color: 'var(--text-body)', fontSize: '1.05rem' }}>
