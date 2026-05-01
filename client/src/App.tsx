@@ -43,44 +43,33 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div style={{ position: "relative", minHeight: "100vh" }}>
-          {/* Background: image at top (natural ratio) + matching fill color below */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 0,
-              backgroundColor: "#A37E69",
-              backgroundImage: `url(${bgImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center center",
-              backgroundRepeat: "no-repeat",
-              pointerEvents: "none",
-            }}
-          />
-          {/* Light wash for readability */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 1,
-              backgroundColor: "rgba(255, 255, 255, 0.18)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ position: "relative", zIndex: 2 }}>
-            <Toaster />
-            <Router />
-          </div>
-        </div>
+        {/* Background image — fixed in viewport, content scrolls over it */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: -2,
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Light wash for readability */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: -1,
+            backgroundColor: "rgba(255, 255, 255, 0.20)",
+            pointerEvents: "none",
+          }}
+        />
+        <Toaster />
+        <Router />
       </TooltipProvider>
     </QueryClientProvider>
   );
