@@ -49,7 +49,7 @@ export default function AboutSection() {
         </div>
 
         {/* === 무드보드 무브: 3카드 겹친 플로팅 컴포지션 === */}
-        <div className="relative mb-32 lg:min-h-[640px]">
+        <div className="relative mb-32 lg:min-h-[560px]">
 
           {/* 좌측 큰 글래스 카드 — FOLLOW 시스템 */}
           <div
@@ -125,9 +125,9 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* 작은 다크 레퍼런스 카드 — 좌하단 */}
+          {/* 작은 다크 레퍼런스 카드 — 글래스 카드 위에 겹쳐 띄움 */}
           <div
-            className="ink-card p-6 lg:absolute lg:bottom-0 lg:left-8 lg:w-[340px] lg:z-30"
+            className="ink-card p-6 lg:absolute lg:bottom-20 lg:left-12 lg:w-[300px] lg:z-30"
             style={{ borderRadius: '20px' }}
           >
             <div>
