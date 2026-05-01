@@ -140,43 +140,43 @@ export default function AchievementsSection() {
                 name: "DIETER RAMS",
                 url: "https://cocodiolab-rams.netlify.app/",
                 gradient:
-                  "radial-gradient(circle at 32% 30%, #ffffff 0%, #e8ecef 22%, #9aa4ad 58%, #2f3640 100%)",
-                glow: "rgba(154,164,173,0.45)",
+                  "radial-gradient(circle at 35% 32%, #faf6f2 0%, #e8ddd3 35%, #b8a99c 75%, #7a6a5c 100%)",
+                glow: "rgba(184,169,156,0.35)",
               },
               {
                 name: "ZAHA HADID",
                 url: "https://cocodiolab-zaha.netlify.app/",
                 gradient:
-                  "radial-gradient(circle at 32% 30%, #ffffff 0%, #f5cdd6 20%, #c8366f 58%, #4a0d28 100%)",
-                glow: "rgba(200,54,111,0.50)",
+                  "radial-gradient(circle at 35% 32%, #f8ece6 0%, #e2bfb3 35%, #a86a5e 75%, #5a2f2a 100%)",
+                glow: "rgba(168,106,94,0.35)",
               },
               {
                 name: "JEAN NOUVEL",
                 url: "https://cocodiolab-nouvel.netlify.app/",
                 gradient:
-                  "radial-gradient(circle at 32% 30%, #ffffff 0%, #c9d8d2 20%, #2f6b5e 58%, #0c2620 100%)",
-                glow: "rgba(47,107,94,0.45)",
+                  "radial-gradient(circle at 35% 32%, #f1ede5 0%, #c9c3b0 35%, #7e7a66 75%, #3d3a2e 100%)",
+                glow: "rgba(126,122,102,0.35)",
               },
               {
                 name: "JONY IVE",
                 url: "https://cocodio-ive.netlify.app/",
                 gradient:
-                  "radial-gradient(circle at 32% 30%, #ffffff 0%, #fbecd9 22%, #d4a574 58%, #6b4423 100%)",
-                glow: "rgba(212,165,116,0.50)",
+                  "radial-gradient(circle at 35% 32%, #fbf6f0 0%, #ecd9c8 35%, #c69a82 75%, #6b4538 100%)",
+                glow: "rgba(198,154,130,0.35)",
               },
               {
                 name: "KARIM RASHID",
                 url: "https://cocodiolab-karim.netlify.app/",
                 gradient:
-                  "radial-gradient(circle at 32% 30%, #ffffff 0%, #f5d0e8 20%, #d63384 58%, #5a0e3a 100%)",
-                glow: "rgba(214,51,132,0.55)",
+                  "radial-gradient(circle at 35% 32%, #f9eef0 0%, #e4c3c8 35%, #a86d77 75%, #4d2730 100%)",
+                glow: "rgba(168,109,119,0.35)",
               },
               {
                 name: "CHRIS BANGLE",
                 url: "https://cocodiolab-bangle.netlify.app/",
                 gradient:
-                  "radial-gradient(circle at 32% 30%, #ffffff 0%, #c8d6e8 20%, #2c5fa3 58%, #0a1d3d 100%)",
-                glow: "rgba(44,95,163,0.50)",
+                  "radial-gradient(circle at 35% 32%, #ede9e6 0%, #b8b1ad 35%, #6a615c 75%, #2a2522 100%)",
+                glow: "rgba(106,97,92,0.35)",
               },
             ].map((item) => (
               <a
@@ -191,7 +191,7 @@ export default function AchievementsSection() {
                   className="w-16 h-16 lg:w-20 lg:h-20 rounded-full transition-all duration-300 group-hover:scale-110"
                   style={{
                     background: item.gradient,
-                    boxShadow: `0 10px 28px ${item.glow}, inset 0 -6px 12px rgba(0,0,0,0.25), inset 0 4px 10px rgba(255,255,255,0.55)`,
+                    boxShadow: `0 8px 22px ${item.glow}, inset 0 -3px 8px rgba(0,0,0,0.12), inset 0 3px 7px rgba(255,255,255,0.40)`,
                   }}
                 />
                 <span
