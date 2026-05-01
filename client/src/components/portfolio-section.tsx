@@ -106,7 +106,7 @@ export default function PortfolioSection() {
               <div className="text-[11px] uppercase tracking-[0.2em] mb-2 font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>
                 {small[0].label}
               </div>
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-tight">
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-tight" style={{ color: '#FFFFFF' }}>
                 {small[0].title}
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
