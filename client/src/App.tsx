@@ -51,7 +51,7 @@ function App() {
             inset: 0,
             zIndex: -2,
             backgroundImage: `url(${bgImage})`,
-            backgroundSize: "cover",
+            backgroundSize: "100% 100%",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundAttachment: "fixed",
