@@ -56,8 +56,8 @@ function App() {
               zIndex: 0,
               backgroundColor: "#A37E69",
               backgroundImage: `url(${bgImage})`,
-              backgroundSize: "100% auto",
-              backgroundPosition: "top center",
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
               backgroundRepeat: "no-repeat",
               pointerEvents: "none",
             }}
