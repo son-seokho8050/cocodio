@@ -118,11 +118,11 @@
     color: var(--text-heading);
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   html {
     background-color: var(--color-bg);
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* 모바일 전용: 한글 단어 단위 줄바꿈 (문장이 글자 중간에서 끊기지 않도록) */
