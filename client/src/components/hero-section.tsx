@@ -128,22 +128,25 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* === 데스크톱 (lg 이상) — 기존 절대위치 오버레이 그대로 === */}
+      {/* === 데스크톱 (lg 이상) — 비디오 배경 + 카드 sticky 스크롤 === */}
       <section
-        className="hidden lg:block pt-16 relative overflow-hidden"
+        className="hidden lg:block pt-16 relative"
         style={{
           minHeight: '100vh',
           aspectRatio: '4 / 5',
         }}
       >
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <HeroVideo />
         </div>
-        <div
-          className="absolute right-8 xl:right-16 z-10 animate-in fade-in slide-in-from-right-4 duration-700"
-          style={{ top: '120px', width: '380px', maxWidth: '380px' }}
-        >
-          {card}
+        {/* 우측 카드 컬럼 — 섹션 전체 높이를 차지, 내부 카드는 sticky로 스크롤 따라옴 */}
+        <div className="absolute right-8 xl:right-16 top-0 bottom-0 z-10 w-[380px] max-w-[380px] pointer-events-none">
+          <div
+            className="sticky animate-in fade-in slide-in-from-right-4 duration-700 pointer-events-auto"
+            style={{ top: '120px' }}
+          >
+            {card}
+          </div>
         </div>
       </section>
     </>
