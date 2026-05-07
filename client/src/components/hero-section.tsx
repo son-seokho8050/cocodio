@@ -1,6 +1,28 @@
 import { useState, useEffect } from "react";
 import { Calendar, Play } from "lucide-react";
-import heroBg from "@assets/optimized/hero-cocodio.webp";
+
+const HERO_MP4 = "/videos/hero.mp4";
+const HERO_WEBM = "/videos/hero.webm";
+
+function HeroVideo({ className }: { className?: string }) {
+  return (
+    <video
+      className={className}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      disablePictureInPicture
+      disableRemotePlayback
+      aria-hidden="true"
+      style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
+    >
+      <source src={HERO_WEBM} type="video/webm" />
+      <source src={HERO_MP4} type="video/mp4" />
+    </video>
+  );
+}
 
 const seoulMetroUniversities = [
   "서울대학교", "홍익대학교", "국민대학교", "이화여자대학교", "중앙대학교",
@@ -93,17 +115,14 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* === 모바일 (lg 미만) — 풀스크린 이미지 + 카드 하단 오버레이 === */}
+      {/* === 모바일 (lg 미만) — 풀스크린 비디오 + 카드 하단 오버레이 === */}
       <section
         className="lg:hidden pt-16 relative overflow-hidden"
-        style={{
-          minHeight: '100vh',
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
+        style={{ minHeight: '100vh' }}
       >
+        <div className="absolute inset-0 z-0">
+          <HeroVideo />
+        </div>
         <div className="absolute left-4 right-4 bottom-5 sm:bottom-8 z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
           {card}
         </div>
@@ -115,14 +134,13 @@ export default function HeroSection() {
         style={{
           minHeight: '100vh',
           aspectRatio: '4 / 5',
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
         }}
       >
+        <div className="absolute inset-0 z-0">
+          <HeroVideo />
+        </div>
         <div
-          className="absolute right-8 xl:right-16 animate-in fade-in slide-in-from-right-4 duration-700"
+          className="absolute right-8 xl:right-16 z-10 animate-in fade-in slide-in-from-right-4 duration-700"
           style={{ top: '120px', width: '380px', maxWidth: '380px' }}
         >
           {card}
