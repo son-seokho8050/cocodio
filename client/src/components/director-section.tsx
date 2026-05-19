@@ -8,9 +8,9 @@ export default function DirectorSection() {
       className="relative py-20 sm:py-24 lg:py-32"
       data-testid="section-director"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 컴포지션 컨테이너 — 레퍼런스 비율: 약 460x440 → lg에서 880x560 스케일 */}
-        <div className="relative lg:h-[560px]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 */}
+        <div className="relative lg:h-[520px]">
           {/* ───────────────── 카드 A — 글래스 LOG IN ───────────────── */}
           <div
             className="relative lg:absolute lg:top-0 lg:left-0 lg:w-[440px] lg:h-[360px] p-7 flex flex-col"
@@ -18,7 +18,7 @@ export default function DirectorSection() {
               backgroundColor: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(24px) saturate(180%)",
               WebkitBackdropFilter: "blur(24px) saturate(180%)",
-              borderRadius: "24px",
+              borderRadius: "28px",
               border: "1px solid rgba(255,255,255,0.6)",
               boxShadow: "0 20px 60px -20px rgba(199,121,101,0.25)",
               zIndex: 2,
@@ -122,10 +122,10 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="relative lg:absolute lg:left-0 lg:top-[380px] lg:w-[490px] lg:h-[140px] mt-5 lg:mt-0 px-7 py-6 flex items-end justify-between"
+            className="relative lg:absolute lg:left-0 lg:top-[380px] lg:w-[440px] lg:h-[120px] mt-5 lg:mt-0 px-7 py-5 flex items-end justify-between"
             style={{
               backgroundColor: "#1A1A1A",
-              borderRadius: "24px",
+              borderRadius: "28px",
               boxShadow: "0 20px 60px -20px rgba(0,0,0,0.4)",
               zIndex: 1,
             }}
@@ -161,10 +161,10 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 C — 화이트 톨 ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-[10px] lg:w-[340px] lg:h-[540px] mt-5 lg:mt-0 p-7 flex flex-col"
+            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[320px] lg:h-[500px] mt-5 lg:mt-0 p-7 flex flex-col"
             style={{
               backgroundColor: "#FFFFFF",
-              borderRadius: "24px",
+              borderRadius: "28px",
               boxShadow: "0 30px 80px -25px rgba(199,121,101,0.4)",
               zIndex: 3,
             }}
