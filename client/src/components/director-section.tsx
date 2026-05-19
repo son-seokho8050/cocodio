@@ -9,11 +9,11 @@ export default function DirectorSection() {
       data-testid="section-director"
     >
       <div className="mx-auto px-4 sm:px-6">
-        {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 (460:440 ≈ 880:540), 절대 위치 기준 박스 */}
-        <div className="relative lg:h-[540px] lg:mx-auto" style={{ maxWidth: "880px" }}>
-          {/* ───────────────── 카드 A — 글래스 LOG IN ───────────────── */}
+        {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 (460:440 → 880:840 풀스케일, 절대 위치 컨텍스트) */}
+        <div className="relative lg:h-[720px] lg:mx-auto" style={{ maxWidth: "880px" }}>
+          {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.76) ───────────────── */}
           <div
-            className="relative lg:absolute lg:top-0 lg:left-0 lg:w-[420px] lg:h-[360px] p-7 flex flex-col"
+            className="relative lg:absolute lg:top-0 lg:left-0 lg:w-[430px] lg:h-[480px] p-8 flex flex-col"
             style={{
               backgroundColor: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(24px) saturate(180%)",
@@ -122,7 +122,7 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="relative lg:absolute lg:left-0 lg:top-[365px] lg:w-[470px] lg:h-[175px] mt-5 lg:mt-0 px-7 py-6 flex items-end justify-between"
+            className="relative lg:absolute lg:left-0 lg:top-[490px] lg:w-[490px] lg:h-[230px] mt-5 lg:mt-0 px-8 py-7 flex items-end justify-between"
             style={{
               backgroundColor: "#1A1A1A",
               borderRadius: "28px",
@@ -161,12 +161,12 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 C — 화이트 톨 ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-[10px] lg:w-[380px] lg:h-[525px] mt-5 lg:mt-0 p-7 flex flex-col"
+            className="relative lg:absolute lg:right-0 lg:top-[10px] lg:w-[370px] lg:h-[700px] mt-5 lg:mt-0 p-8 flex flex-col"
             style={{
-              backgroundColor: "rgba(255,255,255,0.72)",
+              backgroundColor: "rgba(255,255,255,0.92)",
               backdropFilter: "blur(24px) saturate(180%)",
               WebkitBackdropFilter: "blur(24px) saturate(180%)",
-              border: "1px solid rgba(255,255,255,0.6)",
+              border: "1px solid rgba(255,255,255,0.7)",
               borderRadius: "28px",
               boxShadow: "0 30px 80px -25px rgba(199,121,101,0.4)",
               zIndex: 3,
