@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
+import DirectorSection from "@/components/director-section";
 import AboutSection from "@/components/about-section";
 import GallerySection from "@/components/gallery-section";
 import AchievementsSection from "@/components/achievements-section";
@@ -33,6 +34,7 @@ export default function Home() {
       />
       <Navigation />
       <HeroSection />
+      <DirectorSection />
       <AboutSection />
       <GallerySection />
       <AchievementsSection />

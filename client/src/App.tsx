@@ -16,6 +16,7 @@ import InfoTuition from "@/pages/info-tuition";
 import InfoTransport from "@/pages/info-transport";
 import InfoTuitionGimhae from "@/pages/info-tuition-gimhae";
 import InfoTransportGimhae from "@/pages/info-transport-gimhae";
+import Director from "@/pages/director";
 
 function Router() {
   return (
@@ -33,6 +34,7 @@ function Router() {
       <Route path="/info/transport" component={InfoTransport} />
       <Route path="/info/tuition/gimhae" component={InfoTuitionGimhae} />
       <Route path="/info/transport/gimhae" component={InfoTransportGimhae} />
+      <Route path="/director" component={Director} />
       <Route component={NotFound} />
     </Switch>
   );
