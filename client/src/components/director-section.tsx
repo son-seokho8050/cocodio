@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, AtSign, Lock } from "lucide-react";
 
 export default function DirectorSection() {
   return (
@@ -8,140 +8,135 @@ export default function DirectorSection() {
       className="relative py-20 sm:py-24 lg:py-32"
       data-testid="section-director"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        {/* 섹션 키커 */}
-        <div className="flex items-center justify-between mb-10 lg:mb-14">
-          <div className="flex items-baseline gap-3">
-            <span
-              className="text-[11px] font-medium"
-              style={{ color: "#C77965", letterSpacing: "0.3em" }}
-            >
-              01
-            </span>
-            <span
-              className="text-[11px] font-medium"
-              style={{ color: "rgba(26,26,26,0.5)", letterSpacing: "0.3em" }}
-            >
-              ─ DIRECTOR
-            </span>
-          </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 컴포지션 컨테이너 — 레퍼런스 비율: 약 460x440 → lg에서 880x560 스케일 */}
+        <div className="relative lg:h-[560px]">
+          {/* ───────────────── 카드 A — 글래스 LOG IN ───────────────── */}
           <div
-            className="text-[11px] font-medium hidden sm:block"
-            style={{ color: "rgba(26,26,26,0.5)", letterSpacing: "0.25em" }}
+            className="relative lg:absolute lg:top-0 lg:left-0 lg:w-[440px] lg:h-[360px] p-7 flex flex-col"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.45)",
+              backdropFilter: "blur(24px) saturate(180%)",
+              WebkitBackdropFilter: "blur(24px) saturate(180%)",
+              borderRadius: "24px",
+              border: "1px solid rgba(255,255,255,0.6)",
+              boxShadow: "0 20px 60px -20px rgba(199,121,101,0.25)",
+              zIndex: 2,
+            }}
+            data-testid="card-director-glass"
           >
-            COCO ART ACADEMY · SINCE 2010
-          </div>
-        </div>
-
-        {/* 데스크탑: 비대칭 3카드 오버랩 그리드 / 모바일: 세로 스택 */}
-        <div className="relative lg:min-h-[560px]">
-          {/* 카드 A — 글래스 프로스트 (좌상단) */}
-          <div
-            className="glass-frost relative lg:absolute lg:left-0 lg:top-0 lg:w-[58%] lg:h-[360px] p-6 sm:p-7 lg:p-8 flex flex-col"
-            style={{ zIndex: 2 }}
-            data-testid="card-director-intro"
-          >
-            {/* 상단 라벨 행 */}
-            <div className="flex items-center justify-between mb-6">
+            {/* 상단 행 */}
+            <div className="flex items-center justify-between">
               <span
-                className="text-sm font-semibold tracking-tight"
-                style={{ color: "#1A1A1A" }}
+                className="text-sm font-medium"
+                style={{ color: "rgba(26,26,26,0.3)" }}
               >
                 Cocodio<span style={{ color: "#C77965" }}>.</span>
               </span>
-              <span
-                className="text-[11px] px-3 py-1.5 rounded-full inline-flex items-center gap-1.5"
+              <Link
+                href="/director"
+                className="text-sm font-medium"
+                style={{ color: "#1A1A1A" }}
+              >
+                Sign up
+              </Link>
+            </div>
+
+            {/* 헤딩 + Pinterest-style 필 */}
+            <div className="mt-4 flex items-center justify-between">
+              <h2
+                className="font-medium leading-none"
                 style={{
-                  backgroundColor: "rgba(26,26,26,0.06)",
+                  fontSize: "clamp(2.25rem, 3.4vw, 2.625rem)",
                   color: "#1A1A1A",
-                  letterSpacing: "0.05em",
+                  letterSpacing: "-0.025em",
+                }}
+                data-testid="text-director-heading"
+              >
+                Director
+              </h2>
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-medium"
+                style={{
+                  backgroundColor: "#FFFFFF",
+                  color: "#1A1A1A",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                 }}
               >
                 <span
-                  className="w-1.5 h-1.5 rounded-full"
+                  className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: "#C77965" }}
                 />
-                Director
+                FOLLOW
               </span>
             </div>
 
-            {/* 메인 — Log in 자리 = 이름 */}
-            <h2
-              className="font-light"
-              style={{
-                fontFamily: "'Noto Serif KR', serif",
-                fontSize: "clamp(2rem, 3.4vw, 2.75rem)",
-                lineHeight: 1.1,
-                color: "#1A1A1A",
-                letterSpacing: "-0.02em",
-                fontWeight: 300,
-              }}
-              data-testid="text-director-name"
-            >
-              유영범
-            </h2>
-            <div
-              className="mt-1 text-sm"
-              style={{
-                color: "rgba(26,26,26,0.55)",
-                fontFamily: "'Noto Serif KR', serif",
-                fontStyle: "italic",
-                fontWeight: 300,
-              }}
-            >
-              Young Bum Ryu
+            {/* 인풋형 필 2줄 */}
+            <div className="mt-5 space-y-2.5">
+              <InputPill
+                icon={<AtSign className="w-3.5 h-3.5" strokeWidth={2} />}
+                value="유영범 Young Bum Ryu"
+              />
+              <InputPill
+                icon={<Lock className="w-3.5 h-3.5" strokeWidth={2} />}
+                value="대표원장 · 마산 · 김해"
+                rightLink="interview"
+              />
             </div>
 
-            {/* 입력 행 자리 = 인포 행 */}
-            <div className="mt-5 space-y-2.5 flex-1">
-              <InfoPill icon="role" value="대표원장 · FOLLOW 설계" />
-              <InfoPill icon="place" value="마산 · 김해 · Since 2010" />
-            </div>
-
-            {/* 하단 행 — 좌측 카피 + 우측 원형 액션 */}
-            <div className="mt-5 flex items-end justify-between gap-4">
+            {/* 하단 — 좌측 이탤릭 + 우측 다크 원형 액션 */}
+            <div className="mt-auto pt-5 flex items-end justify-between gap-4">
               <p
-                className="text-[12px] leading-relaxed max-w-[70%]"
-                style={{ color: "rgba(26,26,26,0.65)" }}
+                className="text-[11px] italic leading-relaxed max-w-[68%]"
+                style={{ color: "rgba(26,26,26,0.55)", fontWeight: 300 }}
               >
-                한 명마다 다른 모양을 먼저 보는 일,
+                다른 모양을 먼저 보는 일,
                 <br />
-                그것이 코코의 시작입니다.{" "}
-                <Link
-                  href="/director"
-                  className="underline underline-offset-2"
-                  style={{ color: "#1A1A1A" }}
-                >
-                  Click here for more info.
-                </Link>
+                그것이 코코의 시작입니다.
+                <br />
+                마산·김해 코코미술학원 대표원장.
               </p>
               <Link
                 href="/director"
-                className="shrink-0 w-12 h-12 rounded-full inline-flex items-center justify-center transition-transform hover:scale-105"
+                className="shrink-0 w-14 h-14 rounded-full inline-flex items-center justify-center transition-transform hover:scale-105"
                 style={{ backgroundColor: "#1A1A1A", color: "#FFFFFF" }}
-                aria-label="원장 상세"
-                data-testid="link-director-detail-arrow"
+                aria-label="원장 상세보기"
+                data-testid="link-director-arrow"
               >
                 <ArrowRight className="w-5 h-5" strokeWidth={2} />
               </Link>
             </div>
+
+            {/* 하단 중앙 — Click here */}
+            <div className="mt-3 text-center">
+              <Link
+                href="/director"
+                className="text-[11px] underline underline-offset-2"
+                style={{ color: "rgba(26,26,26,0.5)" }}
+                data-testid="link-director-more"
+              >
+                Click here for more info.
+              </Link>
+            </div>
           </div>
 
-          {/* 카드 B — 잉크 카드 (좌하단) */}
+          {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="ink-card relative lg:absolute lg:left-0 lg:top-[400px] lg:w-[50%] mt-6 lg:mt-0 px-6 sm:px-7 lg:px-8 py-6 lg:py-7 flex items-end justify-between"
-            style={{ zIndex: 1 }}
+            className="relative lg:absolute lg:left-0 lg:top-[380px] lg:w-[490px] lg:h-[140px] mt-5 lg:mt-0 px-7 py-6 flex items-end justify-between"
+            style={{
+              backgroundColor: "#1A1A1A",
+              borderRadius: "24px",
+              boxShadow: "0 20px 60px -20px rgba(0,0,0,0.4)",
+              zIndex: 1,
+            }}
             data-testid="card-director-references"
           >
             <div>
               <h3
-                className="font-light"
+                className="font-medium leading-tight"
                 style={{
-                  fontFamily: "'Noto Serif KR', serif",
-                  fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-                  lineHeight: 1.1,
+                  fontSize: "clamp(1.75rem, 2.6vw, 2.125rem)",
                   color: "#FFFFFF",
-                  fontWeight: 300,
                   letterSpacing: "-0.02em",
                 }}
               >
@@ -151,175 +146,130 @@ export default function DirectorSection() {
                 className="mt-1 text-xs"
                 style={{ color: "rgba(255,255,255,0.55)" }}
               >
-                서울대 17명 · FOLLOW 15Y · 1:1 케어
+                By Cocodio · Since 2010
               </div>
             </div>
             <Link
               href="/director#records"
-              className="text-xs font-medium group inline-flex items-center gap-1"
-              style={{ color: "#FFFFFF", letterSpacing: "0.05em" }}
-              data-testid="link-director-records"
+              className="text-sm font-medium"
+              style={{ color: "#FFFFFF" }}
+              data-testid="link-director-discover"
             >
               Discover
-              <ArrowRight
-                className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
-                strokeWidth={2}
-              />
             </Link>
           </div>
 
-          {/* 카드 C — 화이트 톨 카드 (우측, 두 카드 오버랩) */}
+          {/* ───────────────── 카드 C — 화이트 톨 ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-[20px] lg:w-[44%] lg:h-[500px] mt-6 lg:mt-0 p-6 sm:p-7 lg:p-9 flex flex-col"
+            className="relative lg:absolute lg:right-0 lg:top-[10px] lg:w-[340px] lg:h-[540px] mt-5 lg:mt-0 p-7 flex flex-col"
             style={{
               backgroundColor: "#FFFFFF",
-              boxShadow: "0 30px 80px -30px rgba(199,121,101,0.35)",
-              borderRadius: "20px",
+              borderRadius: "24px",
+              boxShadow: "0 30px 80px -25px rgba(199,121,101,0.4)",
               zIndex: 3,
             }}
             data-testid="card-director-feature"
           >
-            {/* 상단 행 — 좌측 큰 숫자 + 우측 미니 카피 */}
+            {/* 상단 행 */}
             <div className="flex items-start justify-between">
-              <div>
+              <div className="leading-none">
                 <div
-                  className="text-[11px] mb-1"
+                  className="font-semibold"
                   style={{
-                    color: "rgba(26,26,26,0.45)",
-                    letterSpacing: "0.2em",
-                  }}
-                >
-                  SINCE
-                </div>
-                <div
-                  className="font-light leading-none"
-                  style={{
-                    fontFamily: "'Noto Serif KR', serif",
-                    fontSize: "clamp(3rem, 5.5vw, 4.5rem)",
+                    fontSize: "clamp(2.5rem, 4vw, 3.125rem)",
                     color: "#1A1A1A",
                     letterSpacing: "-0.03em",
-                    fontWeight: 300,
+                    lineHeight: 1,
+                  }}
+                >
+                  Since
+                </div>
+                <div
+                  className="font-light mt-1"
+                  style={{
+                    fontSize: "clamp(2rem, 3.2vw, 2.5rem)",
+                    color: "rgba(26,26,26,0.3)",
+                    letterSpacing: "-0.02em",
+                    lineHeight: 1,
                   }}
                 >
                   2010
                 </div>
               </div>
               <div
-                className="text-right text-[11px] leading-relaxed"
-                style={{
-                  color: "rgba(26,26,26,0.55)",
-                  letterSpacing: "0.02em",
-                }}
+                className="text-right text-[11px] leading-snug"
+                style={{ color: "rgba(26,26,26,0.6)" }}
               >
-                <div>4단계 사고 시스템</div>
-                <div>Typography of Thought</div>
+                <div>Minimalism style</div>
+                <div>Typography</div>
               </div>
             </div>
 
-            {/* 중앙 — 코랄 그라데이션 블롭 (이미지 자리 / 무드) */}
-            <div className="relative flex-1 my-4 lg:my-5 flex items-center justify-center">
+            {/* 거대 핑크 그라데이션 원 */}
+            <div className="relative flex-1 my-4 flex items-center justify-center">
               <div
-                className="absolute"
+                aria-hidden="true"
                 style={{
-                  width: "75%",
+                  width: "92%",
                   aspectRatio: "1 / 1",
                   background:
-                    "radial-gradient(circle at 35% 30%, #F5DDD4 0%, #E8B5A8 35%, #C77965 100%)",
+                    "radial-gradient(circle at 38% 32%, #FBE6DD 0%, #F2C8B8 28%, #E1A693 60%, #C77965 100%)",
                   borderRadius: "50%",
-                  filter: "blur(0.5px)",
-                  boxShadow: "inset -20px -30px 60px rgba(122,61,47,0.35)",
+                  boxShadow:
+                    "inset -28px -42px 70px rgba(122,61,47,0.42), inset 18px 20px 50px rgba(255,255,255,0.4)",
                 }}
-                aria-hidden="true"
-              />
-              {/* 모노그램 'Y' 오버레이 */}
-              <span
-                className="relative select-none"
-                style={{
-                  fontFamily: "'Noto Serif KR', serif",
-                  fontSize: "clamp(6rem, 12vw, 9rem)",
-                  fontWeight: 200,
-                  color: "rgba(255,255,255,0.65)",
-                  lineHeight: 1,
-                  zIndex: 1,
-                }}
-                aria-hidden="true"
-              >
-                유
-              </span>
-              {/* 우상단 십자 마크 */}
-              <Plus
-                aria-hidden="true"
-                className="absolute top-2 right-2 w-4 h-4"
-                style={{ color: "rgba(26,26,26,0.3)" }}
-                strokeWidth={1.5}
-              />
-              <Plus
-                aria-hidden="true"
-                className="absolute bottom-2 left-2 w-4 h-4"
-                style={{ color: "rgba(26,26,26,0.3)" }}
-                strokeWidth={1.5}
               />
             </div>
 
-            {/* 메타 — 날짜식 행 */}
-            <div className="space-y-0.5 mb-4">
+            {/* 미니 로고 마크 + 메타 3줄 */}
+            <div className="text-center space-y-0.5">
+              <div className="inline-flex items-center gap-1 mb-1">
+                <span
+                  className="inline-block w-1.5 h-1.5 rounded-full"
+                  style={{ backgroundColor: "#1A1A1A" }}
+                />
+                <span
+                  className="text-[11px] font-semibold tracking-tight"
+                  style={{ color: "#1A1A1A" }}
+                >
+                  C+
+                </span>
+              </div>
               <div
-                className="text-xs"
+                className="text-[11px]"
                 style={{ color: "rgba(26,26,26,0.85)", fontWeight: 500 }}
               >
-                대표원장 유영범
+                Tuesday 19
               </div>
               <div
-                className="text-xs"
+                className="text-[11px]"
                 style={{ color: "rgba(26,26,26,0.55)" }}
               >
-                마산 · 김해
+                May 2026
               </div>
               <div
-                className="text-xs"
+                className="text-[11px]"
                 style={{ color: "rgba(26,26,26,0.55)" }}
               >
-                COCO ART ACADEMY
+                Cocodio
               </div>
             </div>
 
-            {/* 하단 — 좌측 시그니처 로고 + 우측 블랙 필 CTA */}
-            <div className="flex items-center justify-between pt-4 border-t border-black/[0.06]">
-              <div className="flex items-center gap-2">
-                <div
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold"
-                  style={{
-                    backgroundColor: "#1A1A1A",
-                    color: "#FFFFFF",
-                  }}
-                >
-                  Y
-                </div>
-                <div className="leading-tight">
-                  <div
-                    className="text-[11px] font-semibold"
-                    style={{ color: "#1A1A1A" }}
-                  >
-                    Y.B Ryu
-                  </div>
-                  <div
-                    className="text-[9px]"
-                    style={{
-                      color: "rgba(26,26,26,0.5)",
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    DIRECTOR
-                  </div>
-                </div>
-              </div>
+            {/* 하단 — 좌측 미니 로고 + 우측 블랙 필 CTA */}
+            <div className="mt-5 flex items-center justify-between">
+              <span
+                className="text-[11px] italic"
+                style={{ color: "rgba(26,26,26,0.65)" }}
+              >
+                Cocodio.style
+              </span>
               <Link
                 href="/director"
                 className="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full transition-transform hover:scale-105"
                 style={{ backgroundColor: "#1A1A1A", color: "#FFFFFF" }}
-                data-testid="link-director-cta"
+                data-testid="link-director-click"
               >
-                <span className="text-[11px] font-medium">원장 인터뷰</span>
+                <span className="text-[11px] font-medium">Click Here</span>
                 <span
                   className="w-7 h-7 rounded-full flex items-center justify-center"
                   style={{ backgroundColor: "#FFFFFF", color: "#1A1A1A" }}
@@ -335,33 +285,50 @@ export default function DirectorSection() {
   );
 }
 
-function InfoPill({
+function InputPill({
   icon,
   value,
+  rightLink,
 }: {
-  icon: "role" | "place";
+  icon: React.ReactNode;
   value: string;
+  rightLink?: string;
 }) {
   return (
     <div
-      className="flex items-center gap-3 px-3.5 py-2.5 rounded-full"
+      className="flex items-center gap-3 pl-1.5 pr-4 py-1.5 rounded-full"
       style={{
-        backgroundColor: "rgba(255,255,255,0.6)",
-        border: "1px solid rgba(26,26,26,0.06)",
+        backgroundColor: "rgba(255,255,255,0.65)",
+        border: "1px solid rgba(255,255,255,0.8)",
       }}
     >
       <span
-        className="w-6 h-6 rounded-full flex items-center justify-center text-[10px]"
+        className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
         style={{
-          backgroundColor: "rgba(199,121,101,0.18)",
-          color: "#C77965",
+          backgroundColor: "rgba(26,26,26,0.06)",
+          color: "rgba(26,26,26,0.55)",
         }}
+        aria-hidden="true"
       >
-        {icon === "role" ? "✦" : "◎"}
+        {icon}
       </span>
-      <span className="text-xs" style={{ color: "rgba(26,26,26,0.8)" }}>
+      <span
+        className="flex-1 text-xs"
+        style={{ color: "rgba(26,26,26,0.8)" }}
+      >
         {value}
       </span>
+      {rightLink && (
+        <span
+          className="text-[11px] px-2.5 py-1 rounded-full"
+          style={{
+            backgroundColor: "#FFFFFF",
+            color: "rgba(26,26,26,0.55)",
+          }}
+        >
+          {rightLink}
+        </span>
+      )}
     </div>
   );
 }
