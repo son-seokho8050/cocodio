@@ -33,8 +33,8 @@ export default function Home() {
         aria-hidden="true"
       />
       <Navigation />
-      <HeroSection />
       <DirectorSection />
+      <HeroSection />
       <AboutSection />
       <GallerySection />
       <AchievementsSection />

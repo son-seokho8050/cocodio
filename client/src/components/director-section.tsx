@@ -17,10 +17,10 @@ export default function DirectorSection() {
     >
       <div className="mx-auto px-4 sm:px-6">
         {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 (460:440 → 880:840 풀스케일, 절대 위치 컨텍스트) */}
-        <div className="relative lg:h-[600px] lg:mx-auto" style={{ maxWidth: "685px" }}>
+        <div className="relative lg:h-[600px] lg:mx-auto" style={{ maxWidth: "685px" }} data-testid="composition-director">
           {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.625) ───────────────── */}
           <div
-            className="relative lg:absolute lg:top-[10px] lg:left-0 lg:w-[360px] lg:h-[430px] p-7 flex flex-col"
+            className="relative lg:absolute lg:top-[10px] lg:left-0 lg:w-[360px] lg:h-[290px] p-7 flex flex-col"
             style={{
               backgroundColor: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(24px) saturate(180%)",
@@ -81,61 +81,21 @@ export default function DirectorSection() {
             {/* 인풋형 필 2줄 */}
             <div className="mt-5 space-y-2.5">
               <InputPill
-                icon={<span className="block w-2 h-2 rounded-full" style={{ backgroundColor: "#1A1A1A" }} />}
+                icon={<span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#FFFFFF" }} />}
                 value="유영범 Young Bum Ryu"
               />
               <InputPill
-                icon={<span className="block w-2 h-2 rounded-full" style={{ backgroundColor: "#1A1A1A" }} />}
+                icon={<span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#FFFFFF" }} />}
                 value="대표원장 · 마산 · 김해"
                 rightLink="interview"
               />
             </div>
 
-            {/* 하단 — 좌측 이탤릭 + 우측 다크 원형 액션 */}
-            <div className="mt-auto pt-5 flex items-end justify-between gap-4">
-              <p
-                className="text-[11px] italic leading-relaxed max-w-[68%]"
-                style={{ color: "rgba(26,26,26,0.55)", fontWeight: 300 }}
-              >
-                다른 모양을 먼저 보는 일,
-                <br />
-                그것이 코코의 시작입니다.
-                <br />
-                마산·김해 코코미술학원 대표원장.
-              </p>
-              <Link
-                href="/director"
-                className="shrink-0 inline-flex items-center justify-center transition-transform hover:scale-105"
-                style={{
-                  backgroundColor: "#1A1A1A",
-                  color: "#FFFFFF",
-                  width: "72px",
-                  height: "44px",
-                  borderRadius: "22px",
-                }}
-                aria-label="원장 상세보기"
-                data-testid="link-director-arrow"
-              >
-                <ArrowRight className="w-4 h-4" strokeWidth={2} />
-              </Link>
-            </div>
-
-            {/* 하단 중앙 — Click here */}
-            <div className="mt-3 text-center">
-              <Link
-                href="/director"
-                className="text-[11px] underline underline-offset-2"
-                style={{ color: "rgba(26,26,26,0.5)" }}
-                data-testid="link-director-more"
-              >
-                Click here for more info.
-              </Link>
-            </div>
           </div>
 
           {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="relative lg:absolute lg:left-0 lg:top-[455px] lg:w-[360px] lg:h-[145px] mt-5 lg:mt-0 px-8 py-5 flex items-end justify-between"
+            className="relative lg:absolute lg:left-0 lg:top-[315px] lg:w-[360px] lg:h-[175px] mt-5 lg:mt-0 px-8 py-5 flex items-end justify-between"
             style={{
               backgroundColor: "#1A1A1A",
               borderRadius: "28px",
@@ -144,22 +104,34 @@ export default function DirectorSection() {
             }}
             data-testid="card-director-references"
           >
-            <p
-              className="leading-relaxed"
-              style={{
-                fontSize: "clamp(0.875rem, 1.15vw, 1rem)",
-                color: "#FFFFFF",
-                letterSpacing: "-0.01em",
-                fontWeight: 300,
-              }}
-              data-testid="text-director-references"
-            >
-              다른 모양을 먼저 보는 일,
-              <br />
-              그것이 코코의 시작입니다.
-              <br />
-              마산·김해 코코미술학원 대표원장
-            </p>
+            <div data-testid="text-director-references" className="w-full">
+              <p
+                className="leading-relaxed"
+                style={{
+                  fontFamily: "'Noto Serif KR', 'Nanum Myeongjo', serif",
+                  fontSize: "clamp(0.95rem, 1.25vw, 1.125rem)",
+                  color: "#FFFFFF",
+                  letterSpacing: "-0.005em",
+                  fontWeight: 400,
+                }}
+              >
+                다른 모양을 먼저 보는 일,
+                <br />
+                그것이 코코의 시작입니다.
+              </p>
+              <p
+                className="mt-2"
+                style={{
+                  fontFamily: "'Noto Serif KR', 'Nanum Myeongjo', serif",
+                  fontSize: "clamp(0.7rem, 0.9vw, 0.8rem)",
+                  color: "rgba(255,255,255,0.65)",
+                  letterSpacing: "-0.005em",
+                  fontWeight: 300,
+                }}
+              >
+                마산·김해 코코미술학원 대표원장
+              </p>
+            </div>
           </div>
 
           {/* ───────────────── 카드 C — 베이스 글라스 + 우측 ~55% 솔리드 화이트 오버레이 ───────────────── */}
