@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, AtSign, Lock } from "lucide-react";
+import marsTexture from "@assets/generated_images/mars-texture.png";
 
 export default function DirectorSection() {
   return (
@@ -233,23 +234,49 @@ export default function DirectorSection() {
               </div>
             </div>
 
-            {/* 거대 핑크 그라데이션 원 — 카드 내부 우측 컨테인드 */}
+            {/* 화성 행성 — 텍스처 스크롤로 자전, 라이팅 오버레이로 구체감 */}
             <div className="relative mt-3" style={{ height: "215px" }}>
               <div
                 aria-hidden="true"
-                className="absolute"
+                className="absolute overflow-hidden"
                 style={{
                   top: "0",
                   right: "-8%",
                   width: "92%",
                   aspectRatio: "1 / 1",
-                  background:
-                    "radial-gradient(circle at 38% 32%, #FDE9EC 0%, #F6C2CA 26%, #E693A0 58%, #B96074 100%)",
                   borderRadius: "50%",
                   boxShadow:
-                    "inset -28px -42px 70px rgba(118,46,62,0.4), inset 18px 20px 50px rgba(255,255,255,0.45)",
+                    "0 24px 60px -16px rgba(120,40,30,0.5), 0 0 0 1px rgba(0,0,0,0.05)",
                 }}
-              />
+              >
+                {/* 자전하는 표면 텍스처 */}
+                <div
+                  className="absolute inset-0 animate-mars-rotate"
+                  style={{
+                    backgroundImage: `url(${marsTexture})`,
+                    backgroundSize: "300% 100%",
+                    backgroundRepeat: "repeat-x",
+                  }}
+                />
+                {/* 구체 라이팅 — 좌상단 하이라이트 + 우하단 그림자 */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 32% 28%, rgba(255,220,200,0.35) 0%, rgba(255,180,140,0.12) 22%, rgba(0,0,0,0) 45%), radial-gradient(circle at 70% 75%, rgba(40,10,5,0.55) 0%, rgba(40,10,5,0.25) 40%, rgba(0,0,0,0) 70%)",
+                    borderRadius: "50%",
+                  }}
+                />
+                {/* 림 라이트 (가장자리 어두운 테두리) */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    boxShadow:
+                      "inset -18px -22px 50px rgba(60,15,10,0.55), inset 14px 16px 40px rgba(255,210,180,0.18)",
+                    borderRadius: "50%",
+                  }}
+                />
+              </div>
             </div>
 
             {/* 메타 3줄 — 좌측 정렬 */}

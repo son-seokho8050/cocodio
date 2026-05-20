@@ -100,11 +100,16 @@
   0%, 100% { box-shadow: 0 0 0 0 rgba(110,201,163,0.30); }
   50%       { box-shadow: 0 0 0 8px rgba(110,201,163,0); }
 }
+@keyframes mars-rotate {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: -200% 50%; }
+}
 
 .animate-float-slow   { animation: float-slow   6s ease-in-out infinite; }
 .animate-float-medium { animation: float-medium  5s ease-in-out infinite; }
 .animate-slide-up     { animation: slide-up 0.5s ease both; }
 .animate-fade-in      { animation: fade-in  0.4s ease both; }
+.animate-mars-rotate  { animation: mars-rotate 60s linear infinite; }
 
 /* ── Base ────────────────────────────────────────────────── */
 @layer base {
