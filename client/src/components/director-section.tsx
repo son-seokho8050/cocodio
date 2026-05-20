@@ -11,7 +11,7 @@ export default function DirectorSection() {
     >
       <div className="mx-auto px-4 sm:px-6">
         {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 (460:440 → 880:840 풀스케일, 절대 위치 컨텍스트) */}
-        <div className="relative lg:h-[600px] lg:mx-auto" style={{ maxWidth: "625px" }}>
+        <div className="relative lg:h-[600px] lg:mx-auto" style={{ maxWidth: "685px" }}>
           {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.625) ───────────────── */}
           <div
             className="relative lg:absolute lg:top-[10px] lg:left-0 lg:w-[360px] lg:h-[430px] p-7 flex flex-col"
@@ -175,7 +175,7 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 C — 베이스 글라스 + 우측 ~55% 솔리드 화이트 오버레이 ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[250px] lg:h-[600px] mt-5 lg:mt-0 overflow-hidden"
+            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[310px] lg:h-[600px] mt-5 lg:mt-0 overflow-hidden"
             style={{
               backgroundColor: "rgba(255,255,255,0.38)",
               backdropFilter: "blur(28px) saturate(170%)",
