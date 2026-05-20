@@ -193,13 +193,14 @@ export default function DirectorSection() {
                 rel="noopener noreferrer"
                 aria-label="원장 소개 페이지로 이동"
                 data-testid="link-director-mars"
-                className="overflow-hidden block cursor-pointer transition-transform hover:scale-[1.02] origin-center"
+                className="overflow-hidden block cursor-pointer transition-transform hover:scale-[1.02] origin-center isolate"
                 style={{
                   width: "58%",
                   aspectRatio: "1 / 1",
-                  borderRadius: "50%",
-                  boxShadow:
-                    "0 24px 60px -16px rgba(120,40,30,0.5), 0 0 0 1px rgba(0,0,0,0.05)",
+                  borderRadius: "9999px",
+                  WebkitMaskImage: "radial-gradient(circle, #000 99%, transparent 100%)",
+                  maskImage: "radial-gradient(circle, #000 99%, transparent 100%)",
+                  filter: "drop-shadow(0 18px 28px rgba(120,40,30,0.35))",
                 }}
               >
                 {/* 자전하는 표면 텍스처 */}
@@ -209,6 +210,7 @@ export default function DirectorSection() {
                     backgroundImage: `url(${marsTexture})`,
                     backgroundSize: "300% 100%",
                     backgroundRepeat: "repeat-x",
+                    borderRadius: "9999px",
                   }}
                 />
                 {/* 구체 라이팅 — 좌상단 하이라이트 + 우하단 그림자 */}
