@@ -186,18 +186,16 @@ export default function DirectorSection() {
             </div>
 
             {/* 화성 행성 — 텍스처 스크롤로 자전, 라이팅 오버레이로 구체감 */}
-            <div className="relative mt-3" style={{ height: "215px" }}>
+            <div className="relative mt-3 flex items-center justify-center" style={{ height: "200px" }}>
               <a
                 href="https://cocodio-yb.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="원장 소개 페이지로 이동"
                 data-testid="link-director-mars"
-                className="absolute overflow-hidden block cursor-pointer transition-transform hover:scale-[1.03]"
+                className="overflow-hidden block cursor-pointer transition-transform hover:scale-[1.02] origin-center"
                 style={{
-                  top: "0",
-                  right: "-8%",
-                  width: "92%",
+                  width: "72%",
                   aspectRatio: "1 / 1",
                   borderRadius: "50%",
                   boxShadow:
