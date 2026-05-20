@@ -29,7 +29,11 @@ export default function DirectorSection() {
             <div className="flex items-center justify-between">
               <span
                 className="text-sm font-medium"
-                style={{ color: "rgba(26,26,26,0.3)" }}
+                style={{
+                  color: "rgba(26,26,26,0.3)",
+                  textDecoration: "line-through",
+                  textDecorationThickness: "1px",
+                }}
               >
                 Cocodio<span style={{ color: "#C77965" }}>.</span>
               </span>
@@ -56,7 +60,7 @@ export default function DirectorSection() {
                 Director
               </h2>
               <span
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-medium"
+                className="inline-flex items-center gap-1.5 pl-1 pr-3 py-1 rounded-full text-[12px] font-medium"
                 style={{
                   backgroundColor: "#FFFFFF",
                   color: "#1A1A1A",
@@ -64,9 +68,12 @@ export default function DirectorSection() {
                 }}
               >
                 <span
-                  className="w-2 h-2 rounded-full"
+                  className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white"
                   style={{ backgroundColor: "#C77965" }}
-                />
+                  aria-hidden="true"
+                >
+                  F
+                </span>
                 FOLLOW
               </span>
             </div>
@@ -98,12 +105,18 @@ export default function DirectorSection() {
               </p>
               <Link
                 href="/director"
-                className="shrink-0 w-14 h-14 rounded-full inline-flex items-center justify-center transition-transform hover:scale-105"
-                style={{ backgroundColor: "#1A1A1A", color: "#FFFFFF" }}
+                className="shrink-0 inline-flex items-center justify-center transition-transform hover:scale-105"
+                style={{
+                  backgroundColor: "#1A1A1A",
+                  color: "#FFFFFF",
+                  width: "72px",
+                  height: "44px",
+                  borderRadius: "22px",
+                }}
                 aria-label="원장 상세보기"
                 data-testid="link-director-arrow"
               >
-                <ArrowRight className="w-5 h-5" strokeWidth={2} />
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </Link>
             </div>
 
@@ -161,7 +174,7 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 C — 화이트 톨 ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-[10px] lg:w-[370px] lg:h-[700px] mt-5 lg:mt-0 p-8 flex flex-col"
+            className="relative lg:absolute lg:right-0 lg:top-[10px] lg:w-[370px] lg:h-[700px] mt-5 lg:mt-0 p-8 flex flex-col overflow-hidden"
             style={{
               backgroundColor: "rgba(255,255,255,0.92)",
               backdropFilter: "blur(24px) saturate(180%)",
@@ -177,23 +190,23 @@ export default function DirectorSection() {
             <div className="flex items-start justify-between">
               <div className="leading-none">
                 <div
-                  className="font-semibold"
+                  className="font-bold"
                   style={{
-                    fontSize: "clamp(2.5rem, 4vw, 3.125rem)",
+                    fontSize: "clamp(2.875rem, 4.6vw, 3.625rem)",
                     color: "#1A1A1A",
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1,
+                    letterSpacing: "-0.035em",
+                    lineHeight: 0.95,
                   }}
                 >
                   Since
                 </div>
                 <div
-                  className="font-light mt-1"
+                  className="font-light mt-1.5"
                   style={{
-                    fontSize: "clamp(2rem, 3.2vw, 2.5rem)",
-                    color: "rgba(26,26,26,0.3)",
+                    fontSize: "clamp(1.875rem, 3vw, 2.375rem)",
+                    color: "rgba(26,26,26,0.22)",
                     letterSpacing: "-0.02em",
-                    lineHeight: 1,
+                    lineHeight: 0.95,
                   }}
                 >
                   2010
@@ -208,12 +221,16 @@ export default function DirectorSection() {
               </div>
             </div>
 
-            {/* 거대 핑크 그라데이션 원 */}
-            <div className="relative flex-1 my-4 flex items-center justify-center">
+            {/* 거대 핑크 그라데이션 원 — 카드 좌측 경계를 넘어 클리핑 */}
+            <div className="relative flex-1 my-2">
               <div
                 aria-hidden="true"
+                className="absolute"
                 style={{
-                  width: "92%",
+                  top: "50%",
+                  left: "-18%",
+                  transform: "translateY(-50%)",
+                  width: "118%",
                   aspectRatio: "1 / 1",
                   background:
                     "radial-gradient(circle at 38% 32%, #FBE6DD 0%, #F2C8B8 28%, #E1A693 60%, #C77965 100%)",
@@ -224,48 +241,58 @@ export default function DirectorSection() {
               />
             </div>
 
-            {/* 미니 로고 마크 + 메타 3줄 */}
-            <div className="text-center space-y-0.5">
-              <div className="inline-flex items-center gap-1 mb-1">
-                <span
-                  className="inline-block w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: "#1A1A1A" }}
-                />
-                <span
-                  className="text-[11px] font-semibold tracking-tight"
-                  style={{ color: "#1A1A1A" }}
-                >
-                  C+
-                </span>
-              </div>
+            {/* 메타 3줄 — 좌측 정렬 */}
+            <div className="text-left space-y-0.5">
               <div
-                className="text-[11px]"
-                style={{ color: "rgba(26,26,26,0.85)", fontWeight: 500 }}
+                className="text-[12px]"
+                style={{ color: "rgba(26,26,26,0.9)", fontWeight: 500 }}
               >
                 Tuesday 19
               </div>
               <div
-                className="text-[11px]"
+                className="text-[12px]"
                 style={{ color: "rgba(26,26,26,0.55)" }}
               >
                 May 2026
               </div>
               <div
-                className="text-[11px]"
+                className="text-[12px]"
                 style={{ color: "rgba(26,26,26,0.55)" }}
               >
                 Cocodio
               </div>
             </div>
 
-            {/* 하단 — 좌측 미니 로고 + 우측 블랙 필 CTA */}
-            <div className="mt-5 flex items-center justify-between">
-              <span
-                className="text-[11px] italic"
-                style={{ color: "rgba(26,26,26,0.65)" }}
-              >
-                Cocodio.style
-              </span>
+            {/* 하단 — 좌측 로고 마크 + 텍스트 세로 스택, 우측 블랙 필 CTA */}
+            <div className="mt-5 flex items-end justify-between">
+              <div className="flex flex-col items-start gap-1">
+                <span
+                  className="inline-flex items-center gap-1"
+                  aria-hidden="true"
+                >
+                  <span
+                    className="inline-block"
+                    style={{
+                      width: "16px",
+                      height: "10px",
+                      borderRadius: "999px",
+                      backgroundColor: "#1A1A1A",
+                    }}
+                  />
+                  <span
+                    className="text-[11px] font-bold leading-none"
+                    style={{ color: "#1A1A1A" }}
+                  >
+                    +
+                  </span>
+                </span>
+                <span
+                  className="text-[11px] italic leading-none"
+                  style={{ color: "rgba(26,26,26,0.75)" }}
+                >
+                  Cocodio.style
+                </span>
+              </div>
               <Link
                 href="/director"
                 className="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full transition-transform hover:scale-105"
@@ -308,8 +335,8 @@ function InputPill({
       <span
         className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
         style={{
-          backgroundColor: "rgba(26,26,26,0.06)",
-          color: "rgba(26,26,26,0.55)",
+          backgroundColor: "#1A1A1A",
+          color: "#FFFFFF",
         }}
         aria-hidden="true"
       >
