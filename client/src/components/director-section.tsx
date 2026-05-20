@@ -258,7 +258,7 @@ export default function DirectorSection() {
             </div>
 
             {/* 하단 — 좌측 로고 마크 + 텍스트 세로 스택, 우측 블랙 필 CTA */}
-            <div className="mt-5 flex items-end justify-between">
+            <div className="mt-auto pt-5 flex items-end justify-between">
               <div className="flex flex-col items-start gap-1">
                 <span
                   className="inline-flex items-center gap-1"
