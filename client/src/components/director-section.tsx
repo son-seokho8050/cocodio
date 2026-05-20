@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import marsTexture from "@assets/generated_images/mars-texture.png";
 
@@ -285,8 +284,10 @@ export default function DirectorSection() {
                   Cocodio.style
                 </span>
               </div>
-              <Link
-                href="/director"
+              <a
+                href="https://cocodio-yb.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full transition-transform hover:scale-105"
                 style={{ backgroundColor: "#1A1A1A", color: "#FFFFFF" }}
                 data-testid="link-director-click"
@@ -298,7 +299,7 @@ export default function DirectorSection() {
                 >
                   <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.2} />
                 </span>
-              </Link>
+              </a>
             </div>
             </div>
           </div>
