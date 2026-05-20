@@ -42,7 +42,7 @@ export default function DirectorSection() {
                   textDecorationThickness: "1px",
                 }}
               >
-                COCODIO<span style={{ color: "#C77965" }}>.</span>
+                재능의 출발점<span style={{ color: "#C77965" }}>.</span>
               </span>
             </div>
 
