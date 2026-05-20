@@ -5,15 +5,15 @@ export default function DirectorSection() {
   return (
     <section
       id="director"
-      className="relative py-20 sm:py-24 lg:py-32"
+      className="relative py-16 sm:py-20 lg:py-24"
       data-testid="section-director"
     >
       <div className="mx-auto px-4 sm:px-6">
         {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 (460:440 → 880:840 풀스케일, 절대 위치 컨텍스트) */}
-        <div className="relative lg:h-[840px] lg:mx-auto" style={{ maxWidth: "720px" }}>
+        <div className="relative lg:h-[600px] lg:mx-auto" style={{ maxWidth: "625px" }}>
           {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.625) ───────────────── */}
           <div
-            className="relative lg:absolute lg:top-[15px] lg:left-0 lg:w-[400px] lg:h-[640px] p-8 flex flex-col"
+            className="relative lg:absolute lg:top-[10px] lg:left-0 lg:w-[360px] lg:h-[430px] p-7 flex flex-col"
             style={{
               backgroundColor: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(24px) saturate(180%)",
@@ -135,7 +135,7 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="relative lg:absolute lg:left-0 lg:top-[665px] lg:w-[400px] lg:h-[175px] mt-5 lg:mt-0 px-8 py-7 flex items-end justify-between"
+            className="relative lg:absolute lg:left-0 lg:top-[455px] lg:w-[360px] lg:h-[145px] mt-5 lg:mt-0 px-8 py-5 flex items-end justify-between"
             style={{
               backgroundColor: "#1A1A1A",
               borderRadius: "28px",
@@ -172,12 +172,11 @@ export default function DirectorSection() {
             </Link>
           </div>
 
-          {/* ───────────────── 카드 C — 좌측 ~45% 투명 글라스 / 우측 ~55% 솔리드 화이트 ───────────────── */}
+          {/* ───────────────── 카드 C — 베이스 글라스 + 우측 ~55% 솔리드 화이트 오버레이 ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[300px] lg:h-[840px] mt-5 lg:mt-0 p-7 flex flex-col overflow-hidden"
+            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[250px] lg:h-[600px] mt-5 lg:mt-0 overflow-hidden"
             style={{
-              background:
-                "linear-gradient(to right, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.4) 42%, rgba(255,255,255,0.98) 56%, rgba(255,255,255,1) 100%)",
+              backgroundColor: "rgba(255,255,255,0.38)",
               backdropFilter: "blur(28px) saturate(170%)",
               WebkitBackdropFilter: "blur(28px) saturate(170%)",
               border: "1px solid rgba(255,255,255,0.55)",
@@ -188,6 +187,17 @@ export default function DirectorSection() {
             }}
             data-testid="card-director-feature"
           >
+            {/* 우측 솔리드 화이트 오버레이 패널 (카드 우측 ~55% 덮음) */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-y-0 right-0"
+              style={{
+                width: "56%",
+                backgroundColor: "#FFFFFF",
+              }}
+            />
+            {/* 컨텐츠 레이어 (두 패널 위에 떠 있음) */}
+            <div className="relative z-10 w-full h-full p-6 flex flex-col">
             {/* 상단 행 */}
             <div className="flex items-start justify-between">
               <div className="leading-none">
@@ -224,14 +234,13 @@ export default function DirectorSection() {
             </div>
 
             {/* 거대 핑크 그라데이션 원 — 카드 내부 우측 컨테인드 */}
-            <div className="relative flex-1 my-2">
+            <div className="relative mt-3" style={{ height: "215px" }}>
               <div
                 aria-hidden="true"
                 className="absolute"
                 style={{
-                  top: "50%",
+                  top: "0",
                   right: "-8%",
-                  transform: "translateY(-50%)",
                   width: "92%",
                   aspectRatio: "1 / 1",
                   background:
@@ -309,6 +318,7 @@ export default function DirectorSection() {
                   <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.2} />
                 </span>
               </Link>
+            </div>
             </div>
           </div>
         </div>
