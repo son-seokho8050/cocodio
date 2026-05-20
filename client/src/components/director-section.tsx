@@ -78,8 +78,8 @@ export default function DirectorSection() {
               </span>
             </div>
 
-            {/* 인풋형 필 2줄 */}
-            <div className="mt-5 space-y-2.5">
+            {/* 인풋형 필 2줄 — 카드 하단에 정렬 */}
+            <div className="mt-auto space-y-2.5">
               <InputPill
                 icon={<span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#FFFFFF" }} />}
                 value="유영범 Young Bum Ryu"
