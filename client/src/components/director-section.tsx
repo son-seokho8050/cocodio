@@ -37,9 +37,7 @@ export default function DirectorSection() {
               <span
                 className="text-sm font-medium"
                 style={{
-                  color: "rgba(26,26,26,0.3)",
-                  textDecoration: "line-through",
-                  textDecorationThickness: "1px",
+                  color: "rgba(26,26,26,0.45)",
                 }}
               >
                 재능의 출발점<span style={{ color: "#C77965" }}>.</span>
