@@ -10,10 +10,10 @@ export default function DirectorSection() {
     >
       <div className="mx-auto px-4 sm:px-6">
         {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 (460:440 → 880:840 풀스케일, 절대 위치 컨텍스트) */}
-        <div className="relative lg:h-[790px] lg:mx-auto" style={{ maxWidth: "695px" }}>
-          {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.72) ───────────────── */}
+        <div className="relative lg:h-[770px] lg:mx-auto" style={{ maxWidth: "630px" }}>
+          {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.625) ───────────────── */}
           <div
-            className="relative lg:absolute lg:top-[15px] lg:left-0 lg:w-[400px] lg:h-[555px] p-8 flex flex-col"
+            className="relative lg:absolute lg:top-[10px] lg:left-0 lg:w-[350px] lg:h-[560px] p-7 flex flex-col"
             style={{
               backgroundColor: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(24px) saturate(180%)",
@@ -135,7 +135,7 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="relative lg:absolute lg:left-0 lg:top-[580px] lg:w-[400px] lg:h-[195px] mt-5 lg:mt-0 px-8 py-7 flex items-end justify-between"
+            className="relative lg:absolute lg:left-0 lg:top-[580px] lg:w-[350px] lg:h-[190px] mt-5 lg:mt-0 px-8 py-7 flex items-end justify-between"
             style={{
               backgroundColor: "#1A1A1A",
               borderRadius: "28px",
@@ -174,10 +174,10 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 C — 화이트 톨 (좌측 ~45% 글래스, 우측 ~55% 솔리드) ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[280px] lg:h-[790px] mt-5 lg:mt-0 p-7 flex flex-col overflow-hidden"
+            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[260px] lg:h-[730px] mt-5 lg:mt-0 p-6 flex flex-col overflow-hidden"
             style={{
               background:
-                "linear-gradient(to right, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.58) 38%, rgba(255,255,255,0.97) 56%, rgba(255,255,255,1) 100%)",
+                "linear-gradient(to right, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.82) 40%, rgba(255,255,255,0.99) 58%, rgba(255,255,255,1) 100%)",
               backdropFilter: "blur(24px) saturate(180%)",
               WebkitBackdropFilter: "blur(24px) saturate(180%)",
               border: "1px solid rgba(255,255,255,0.7)",
