@@ -1,8 +1,14 @@
 import { Link } from "wouter";
-import { ArrowRight, AtSign, Lock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import marsTexture from "@assets/generated_images/mars-texture.png";
 
+const WEEKDAY_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const MONTH_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 export default function DirectorSection() {
+  const now = new Date();
+  const todayLine1 = `${WEEKDAY_EN[now.getDay()]} ${now.getDate()}`;
+  const todayLine2 = `${MONTH_EN[now.getMonth()]} ${now.getFullYear()}`;
   return (
     <section
       id="director"
@@ -36,15 +42,8 @@ export default function DirectorSection() {
                   textDecorationThickness: "1px",
                 }}
               >
-                Cocodio<span style={{ color: "#C77965" }}>.</span>
+                COCODIO<span style={{ color: "#C77965" }}>.</span>
               </span>
-              <Link
-                href="/director"
-                className="text-sm font-medium"
-                style={{ color: "#1A1A1A" }}
-              >
-                Sign up
-              </Link>
             </div>
 
             {/* 헤딩 + Pinterest-style 필 */}
@@ -82,11 +81,11 @@ export default function DirectorSection() {
             {/* 인풋형 필 2줄 */}
             <div className="mt-5 space-y-2.5">
               <InputPill
-                icon={<AtSign className="w-3.5 h-3.5" strokeWidth={2} />}
+                icon={<span className="block w-2 h-2 rounded-full" style={{ backgroundColor: "#1A1A1A" }} />}
                 value="유영범 Young Bum Ryu"
               />
               <InputPill
-                icon={<Lock className="w-3.5 h-3.5" strokeWidth={2} />}
+                icon={<span className="block w-2 h-2 rounded-full" style={{ backgroundColor: "#1A1A1A" }} />}
                 value="대표원장 · 마산 · 김해"
                 rightLink="interview"
               />
@@ -145,32 +144,22 @@ export default function DirectorSection() {
             }}
             data-testid="card-director-references"
           >
-            <div>
-              <h3
-                className="font-medium leading-tight"
-                style={{
-                  fontSize: "clamp(1.75rem, 2.6vw, 2.125rem)",
-                  color: "#FFFFFF",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                References
-              </h3>
-              <div
-                className="mt-1 text-xs"
-                style={{ color: "rgba(255,255,255,0.55)" }}
-              >
-                By Cocodio · Since 2010
-              </div>
-            </div>
-            <Link
-              href="/director#records"
-              className="text-sm font-medium"
-              style={{ color: "#FFFFFF" }}
-              data-testid="link-director-discover"
+            <p
+              className="leading-relaxed"
+              style={{
+                fontSize: "clamp(0.875rem, 1.15vw, 1rem)",
+                color: "#FFFFFF",
+                letterSpacing: "-0.01em",
+                fontWeight: 300,
+              }}
+              data-testid="text-director-references"
             >
-              Discover
-            </Link>
+              다른 모양을 먼저 보는 일,
+              <br />
+              그것이 코코의 시작입니다.
+              <br />
+              마산·김해 코코미술학원 대표원장
+            </p>
           </div>
 
           {/* ───────────────── 카드 C — 베이스 글라스 + 우측 ~55% 솔리드 화이트 오버레이 ───────────────── */}
@@ -205,13 +194,13 @@ export default function DirectorSection() {
                 <div
                   className="font-bold"
                   style={{
-                    fontSize: "clamp(2.875rem, 4.6vw, 3.625rem)",
+                    fontSize: "clamp(1.875rem, 3.2vw, 2.5rem)",
                     color: "#1A1A1A",
                     letterSpacing: "-0.035em",
                     lineHeight: 0.95,
                   }}
                 >
-                  Since
+                  COCODIO
                 </div>
                 <div
                   className="font-light mt-1.5"
@@ -224,13 +213,6 @@ export default function DirectorSection() {
                 >
                   2010
                 </div>
-              </div>
-              <div
-                className="text-right text-[11px] leading-snug"
-                style={{ color: "rgba(26,26,26,0.6)" }}
-              >
-                <div>Minimalism style</div>
-                <div>Typography</div>
               </div>
             </div>
 
@@ -284,14 +266,16 @@ export default function DirectorSection() {
               <div
                 className="text-[12px]"
                 style={{ color: "rgba(26,26,26,0.9)", fontWeight: 500 }}
+                data-testid="text-director-today-line1"
               >
-                Tuesday 19
+                {todayLine1}
               </div>
               <div
                 className="text-[12px]"
                 style={{ color: "rgba(26,26,26,0.55)" }}
+                data-testid="text-director-today-line2"
               >
-                May 2026
+                {todayLine2}
               </div>
               <div
                 className="text-[12px]"
