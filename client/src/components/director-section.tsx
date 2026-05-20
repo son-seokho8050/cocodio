@@ -10,10 +10,10 @@ export default function DirectorSection() {
     >
       <div className="mx-auto px-4 sm:px-6">
         {/* 컴포지션 컨테이너 — 레퍼런스 비율 1:1 (460:440 → 880:840 풀스케일, 절대 위치 컨텍스트) */}
-        <div className="relative lg:h-[720px] lg:mx-auto" style={{ maxWidth: "880px" }}>
-          {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.76) ───────────────── */}
+        <div className="relative lg:h-[790px] lg:mx-auto" style={{ maxWidth: "695px" }}>
+          {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.72) ───────────────── */}
           <div
-            className="relative lg:absolute lg:top-0 lg:left-0 lg:w-[430px] lg:h-[480px] p-8 flex flex-col"
+            className="relative lg:absolute lg:top-[15px] lg:left-0 lg:w-[400px] lg:h-[555px] p-8 flex flex-col"
             style={{
               backgroundColor: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(24px) saturate(180%)",
@@ -135,7 +135,7 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="relative lg:absolute lg:left-0 lg:top-[490px] lg:w-[490px] lg:h-[230px] mt-5 lg:mt-0 px-8 py-7 flex items-end justify-between"
+            className="relative lg:absolute lg:left-0 lg:top-[580px] lg:w-[400px] lg:h-[195px] mt-5 lg:mt-0 px-8 py-7 flex items-end justify-between"
             style={{
               backgroundColor: "#1A1A1A",
               borderRadius: "28px",
@@ -172,16 +172,17 @@ export default function DirectorSection() {
             </Link>
           </div>
 
-          {/* ───────────────── 카드 C — 화이트 톨 ───────────────── */}
+          {/* ───────────────── 카드 C — 화이트 톨 (좌측 ~45% 글래스, 우측 ~55% 솔리드) ───────────────── */}
           <div
-            className="relative lg:absolute lg:right-0 lg:top-[10px] lg:w-[370px] lg:h-[700px] mt-5 lg:mt-0 p-8 flex flex-col overflow-hidden"
+            className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[280px] lg:h-[790px] mt-5 lg:mt-0 p-7 flex flex-col overflow-hidden"
             style={{
-              backgroundColor: "rgba(255,255,255,0.92)",
+              background:
+                "linear-gradient(to right, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.58) 38%, rgba(255,255,255,0.97) 56%, rgba(255,255,255,1) 100%)",
               backdropFilter: "blur(24px) saturate(180%)",
               WebkitBackdropFilter: "blur(24px) saturate(180%)",
               border: "1px solid rgba(255,255,255,0.7)",
               borderRadius: "28px",
-              boxShadow: "0 30px 80px -25px rgba(199,121,101,0.4)",
+              boxShadow: "0 30px 80px -25px rgba(220,140,150,0.35)",
               zIndex: 3,
             }}
             data-testid="card-director-feature"
@@ -233,10 +234,10 @@ export default function DirectorSection() {
                   width: "118%",
                   aspectRatio: "1 / 1",
                   background:
-                    "radial-gradient(circle at 38% 32%, #FBE6DD 0%, #F2C8B8 28%, #E1A693 60%, #C77965 100%)",
+                    "radial-gradient(circle at 38% 32%, #FDE9EC 0%, #F6C2CA 26%, #E693A0 58%, #B96074 100%)",
                   borderRadius: "50%",
                   boxShadow:
-                    "inset -28px -42px 70px rgba(122,61,47,0.42), inset 18px 20px 50px rgba(255,255,255,0.4)",
+                    "inset -28px -42px 70px rgba(118,46,62,0.4), inset 18px 20px 50px rgba(255,255,255,0.45)",
                 }}
               />
             </div>
