@@ -172,17 +172,18 @@ export default function DirectorSection() {
             </Link>
           </div>
 
-          {/* ───────────────── 카드 C — 화이트 톨 (좌측 ~45% 글래스, 우측 ~55% 솔리드) ───────────────── */}
+          {/* ───────────────── 카드 C — 유리 글라스 톨 (전체 글라스, 좌측 약간 더 진함) ───────────────── */}
           <div
             className="relative lg:absolute lg:right-0 lg:top-0 lg:w-[260px] lg:h-[730px] mt-5 lg:mt-0 p-6 flex flex-col overflow-hidden"
             style={{
               background:
-                "linear-gradient(to right, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.82) 40%, rgba(255,255,255,0.99) 58%, rgba(255,255,255,1) 100%)",
-              backdropFilter: "blur(24px) saturate(180%)",
-              WebkitBackdropFilter: "blur(24px) saturate(180%)",
-              border: "1px solid rgba(255,255,255,0.7)",
+                "linear-gradient(to right, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.5) 45%, rgba(255,255,255,0.62) 100%)",
+              backdropFilter: "blur(40px) saturate(180%)",
+              WebkitBackdropFilter: "blur(40px) saturate(180%)",
+              border: "1px solid rgba(255,255,255,0.55)",
               borderRadius: "28px",
-              boxShadow: "0 30px 80px -25px rgba(220,140,150,0.35)",
+              boxShadow:
+                "0 30px 80px -25px rgba(220,140,150,0.35), inset 0 1px 0 rgba(255,255,255,0.5)",
               zIndex: 3,
             }}
             data-testid="card-director-feature"
@@ -222,16 +223,16 @@ export default function DirectorSection() {
               </div>
             </div>
 
-            {/* 거대 핑크 그라데이션 원 — 카드 좌측 경계를 넘어 클리핑 */}
+            {/* 거대 핑크 그라데이션 원 — 카드 내부 우측 컨테인드 */}
             <div className="relative flex-1 my-2">
               <div
                 aria-hidden="true"
                 className="absolute"
                 style={{
                   top: "50%",
-                  left: "-18%",
+                  right: "-8%",
                   transform: "translateY(-50%)",
-                  width: "118%",
+                  width: "92%",
                   aspectRatio: "1 / 1",
                   background:
                     "radial-gradient(circle at 38% 32%, #FDE9EC 0%, #F6C2CA 26%, #E693A0 58%, #B96074 100%)",
