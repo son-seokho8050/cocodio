@@ -20,7 +20,7 @@ export default function DirectorSection() {
         <div className="relative lg:h-[600px] lg:mx-auto" style={{ maxWidth: "685px" }} data-testid="composition-director">
           {/* ───────────────── 카드 A — 글래스 LOG IN (포트레이트 0.625) ───────────────── */}
           <div
-            className="relative lg:absolute lg:top-[10px] lg:left-0 lg:w-[360px] lg:h-[290px] p-7 flex flex-col"
+            className="relative lg:absolute lg:top-0 lg:left-0 lg:w-[360px] lg:h-[400px] p-7 flex flex-col"
             style={{
               backgroundColor: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(24px) saturate(180%)",
@@ -95,7 +95,7 @@ export default function DirectorSection() {
 
           {/* ───────────────── 카드 B — 다크 REFERENCES ───────────────── */}
           <div
-            className="relative lg:absolute lg:left-0 lg:top-[315px] lg:w-[360px] lg:h-[175px] mt-5 lg:mt-0 px-8 py-5 flex items-end justify-between"
+            className="relative lg:absolute lg:left-0 lg:top-[415px] lg:w-[360px] lg:h-[185px] mt-5 lg:mt-0 px-8 py-5 flex items-end justify-between"
             style={{
               backgroundColor: "#1A1A1A",
               borderRadius: "28px",
