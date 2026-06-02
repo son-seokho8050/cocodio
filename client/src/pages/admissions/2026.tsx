@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import { GraduationCap, ArrowLeft, Sparkles, Trophy, Star, Play, Volume2 } from "lucide-react";
 import { Link } from "wouter";
 import admissionsVideo2026 from "@assets/2026미대수시합격자_(2)_1765777863775.mp4";
+import admissionsPoster2026 from "@assets/2026미대수시합격자-poster.jpg";
 
 export default function Admissions2026() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -590,12 +591,13 @@ export default function Admissions2026() {
                 <video
                   ref={videoRef}
                   src={admissionsVideo2026}
+                  poster={admissionsPoster2026}
                   className="w-full h-auto"
                   autoPlay
                   loop
                   muted={isMuted}
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                   onCanPlay={() => {
                     if (videoRef.current) {
                       videoRef.current.play().catch(error => {

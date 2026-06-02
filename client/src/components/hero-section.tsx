@@ -3,6 +3,7 @@ import { Calendar, Play } from "lucide-react";
 
 const HERO_MP4 = "/videos/hero.mp4";
 const HERO_WEBM = "/videos/hero.webm";
+import heroPoster from "@assets/optimized/hero-cocodio.webp";
 
 function HeroVideo({ className }: { className?: string }) {
   return (
@@ -12,7 +13,8 @@ function HeroVideo({ className }: { className?: string }) {
       loop
       muted
       playsInline
-      preload="auto"
+      preload="metadata"
+      poster={heroPoster}
       disablePictureInPicture
       disableRemotePlayback
       aria-hidden="true"

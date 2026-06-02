@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import marsTexture from "@assets/generated_images/mars-texture.png";
+import marsTexture from "@assets/generated_images/mars-texture.jpg";
 
 const WEEKDAY_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const MONTH_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

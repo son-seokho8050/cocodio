@@ -1,0 +1,1 @@
+- [Asset optimization](asset-optimization.md) — @assets imports get bundled+served; optimize any new heavy image/video before importing (magick/ffmpeg available, sharp/bc not).

@@ -1,8 +1,8 @@
 import { GraduationCap, Tablet, Palette, Check, ArrowUpRight } from "lucide-react";
 import spaceImage from "@assets/2025 (2)_1751374843932.jpg";
-import digitalDrawingImage from "@assets/KakaoTalk_20230823_211315322_1751375132860.png";
+import digitalDrawingImage from "@assets/KakaoTalk_20230823_211315322_1751375132860.jpg";
 import artExamImage from "@assets/KakaoTalk_20230518_185117628_06_1751375534431.jpg";
-import middleSchoolArtImage from "@assets/doma 사본_1751375955014.png";
+import middleSchoolArtImage from "@assets/doma 사본_1751375955014.jpg";
 
 const courses = [
   {
@@ -55,7 +55,7 @@ export default function CurriculumSection() {
                 className={`${isInk ? 'ink-card lg:-translate-y-4' : 'glass-frost'} overflow-hidden flex flex-col`}
               >
                 <div className="relative overflow-hidden h-32 sm:h-40 lg:h-[180px] flex-shrink-0">
-                  <img src={image} alt={alt} className="w-full h-full object-cover" />
+                  <img src={image} alt={alt} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   {/* 태그 배지 */}
                   <div className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold tracking-wide"
                        style={{

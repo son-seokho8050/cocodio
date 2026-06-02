@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
 import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
 import exhibitionPoster from "@assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg";
-import awards2025Image from "@assets/2 (4)_1764307355547.png";
-import admissions2026Image from "@assets/마산_김해_미술학원__2025_동덕여대_실기대회_2년_연속_동상_수상,_총_28명_수상_1765776501233.png";
+import awards2025Image from "@assets/2 (4)_1764307355547.jpg";
+import admissions2026Image from "@assets/마산_김해_미술학원__2025_동덕여대_실기대회_2년_연속_동상_수상,_총_28명_수상_1765776501233.jpg";
 
 interface PopupModalProps {
   id: string;

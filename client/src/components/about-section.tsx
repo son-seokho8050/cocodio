@@ -1,5 +1,5 @@
 import { GraduationCap, Laptop, Trophy } from "lucide-react";
-import aboutImg from "@assets/제목 없는 디자인 (2).png";
+import aboutImg from "@assets/제목 없는 디자인 (2).jpg";
 
 const steps = [
   { letter: 'F', label: 'Focus (집중)', desc: '대상의 본질을 파악하고 구조적 이해 능력을 체계적으로 향상', color: '#1A1A1A' },
@@ -116,6 +116,8 @@ export default function AboutSection() {
                 src={aboutImg}
                 alt="코코미술학원 학생들"
                 className="w-full"
+                loading="lazy"
+                decoding="async"
                 style={{ borderRadius: '18px', aspectRatio: '4/3', objectFit: 'cover' }}
               />
             </div>
