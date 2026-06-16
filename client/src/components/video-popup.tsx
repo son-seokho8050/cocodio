@@ -17,6 +17,7 @@ export default function VideoPopup({
   const [isAnimating, setIsAnimating] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [volume, setVolume] = useState(1);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -99,6 +100,22 @@ export default function VideoPopup({
     const next = !video.muted;
     video.muted = next;
     setIsMuted(next);
+    // 음소거 해제 시 볼륨이 0이면 적당히 복원
+    if (!next && video.volume === 0) {
+      video.volume = 0.5;
+      setVolume(0.5);
+    }
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const video = videoRef.current;
+    const v = parseFloat(e.target.value);
+    setVolume(v);
+    if (video) {
+      video.volume = v;
+      video.muted = v === 0;
+    }
+    setIsMuted(v === 0);
   };
 
   if (!isVisible) return null;
@@ -167,31 +184,47 @@ export default function VideoPopup({
             </button>
           )}
 
-          {/* 일시정지 버튼 (재생 중 살짝 보이게) */}
+          {/* 하단 컨트롤 (재생 중) - 정지 버튼 + 볼륨 조절 */}
           {isPlaying && (
-            <button
-              onClick={togglePlay}
-              className="absolute bottom-3 left-3 z-10 w-10 h-10 rounded-full flex items-center justify-center bg-black/55 text-white hover:bg-black/70 transition-colors touch-manipulation"
-              aria-label="일시정지"
-              data-testid="button-video-pause"
-            >
-              <Pause className="h-5 w-5" fill="currentColor" />
-            </button>
-          )}
+            <div className="absolute bottom-3 left-3 z-10 flex items-center gap-2">
+              {/* 일시정지 */}
+              <button
+                onClick={togglePlay}
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center border border-white/40 bg-black/25 text-white backdrop-blur-md transition-all duration-300 ease-out hover:bg-black/40 hover:border-white/70 hover:scale-105 touch-manipulation"
+                aria-label="일시정지"
+                data-testid="button-video-pause"
+              >
+                <Pause className="h-[18px] w-[18px] sm:h-5 sm:w-5" fill="currentColor" />
+              </button>
 
-          {/* 음소거 토글 - 미니멀 글래스 아이콘 */}
-          <button
-            onClick={toggleMute}
-            className="group absolute top-3 right-3 z-10 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center border border-white/40 bg-black/25 text-white backdrop-blur-md transition-all duration-300 ease-out hover:bg-black/40 hover:border-white/70 hover:scale-105 touch-manipulation"
-            aria-label={isMuted ? "음소거 해제" : "음소거"}
-            data-testid="button-video-mute"
-          >
-            {isMuted ? (
-              <VolumeX className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={1.5} />
-            ) : (
-              <Volume2 className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={1.5} />
-            )}
-          </button>
+              {/* 볼륨 조절 (음소거 토글 + 슬라이더) */}
+              <div className="flex items-center gap-2 h-10 sm:h-11 pl-2.5 pr-3.5 rounded-full border border-white/40 bg-black/25 backdrop-blur-md">
+                <button
+                  onClick={toggleMute}
+                  className="text-white transition-transform duration-200 hover:scale-110 touch-manipulation"
+                  aria-label={isMuted ? "음소거 해제" : "음소거"}
+                  data-testid="button-video-mute"
+                >
+                  {isMuted || volume === 0 ? (
+                    <VolumeX className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={1.5} />
+                  ) : (
+                    <Volume2 className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={1.5} />
+                  )}
+                </button>
+                <input
+                  type="range"
+                  min={0}
+                  max={1}
+                  step={0.05}
+                  value={isMuted ? 0 : volume}
+                  onChange={handleVolumeChange}
+                  className="w-16 sm:w-20 h-1 cursor-pointer accent-white"
+                  aria-label="볼륨 조절"
+                  data-testid="slider-video-volume"
+                />
+              </div>
+            </div>
+          )}
 
           {/* 오늘 그만보기 */}
           <button
