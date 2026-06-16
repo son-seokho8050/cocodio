@@ -13,6 +13,7 @@ import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import ChatWidget from "@/components/chat-widget";
 import { PopupManager } from "@/components/popup-modal";
+import VideoPopup from "@/components/video-popup";
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
 import pinkDesertBg from "@assets/optimized/pink-desert-bg.webp";
@@ -89,6 +90,9 @@ export default function Home() {
       
       {/* 팝업 매니저 */}
       <PopupManager />
+
+      {/* 영상 팝업 (최상위) */}
+      <VideoPopup />
     </div>
   );
 }

@@ -27,3 +27,11 @@ backed up to `attached_assets/.originals_backup/` fixed it.
 - Tooling: ImageMagick (`magick`) and ffmpeg are available; `sharp` and `bc` are NOT
   (use awk for math).
 - Routes are code-split in `client/src/App.tsx` via `lazy()` + `Suspense` (Home eager).
+
+# Long ffmpeg encodes: run in foreground, not background
+Background ffmpeg (`nohup`/`setsid &`) gets KILLED partway through in this sandbox —
+the bash tool tears down spawned process groups when the call returns, leaving a
+truncated mp4 (no moov atom → "moov atom not found"). **Run ffmpeg in the foreground**
+within one bash call (max 120s timeout). Use a fast-enough preset to finish in time:
+`-preset veryfast -crf 28` encodes a ~110s 720p clip at ~2x realtime (~50s). A clean
+finish prints `kb/s:` / `Qavg:` summary lines; verify with `ffprobe ... format=size`.
