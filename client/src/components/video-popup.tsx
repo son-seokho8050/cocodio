@@ -179,14 +179,18 @@ export default function VideoPopup({
             </button>
           )}
 
-          {/* 음소거 토글 */}
+          {/* 음소거 토글 - 미니멀 글래스 아이콘 */}
           <button
             onClick={toggleMute}
-            className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full flex items-center justify-center bg-black/55 text-white hover:bg-black/70 transition-colors touch-manipulation"
+            className="group absolute top-3 right-3 z-10 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center border border-white/40 bg-black/25 text-white backdrop-blur-md transition-all duration-300 ease-out hover:bg-black/40 hover:border-white/70 hover:scale-105 touch-manipulation"
             aria-label={isMuted ? "음소거 해제" : "음소거"}
             data-testid="button-video-mute"
           >
-            {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+            {isMuted ? (
+              <VolumeX className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={1.5} />
+            ) : (
+              <Volume2 className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={1.5} />
+            )}
           </button>
 
           {/* 오늘 그만보기 */}
