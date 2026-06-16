@@ -149,16 +149,20 @@ export default function VideoPopup({
             onEnded={() => setIsPlaying(false)}
           />
 
-          {/* 재생 버튼 오버레이 (정지 상태일 때) */}
+          {/* 재생 버튼 오버레이 (정지 상태일 때) - 미니멀 글래스 링 */}
           {!isPlaying && (
             <button
               onClick={togglePlay}
-              className="absolute inset-0 z-10 flex items-center justify-center bg-black/25 transition-colors hover:bg-black/35 touch-manipulation"
+              className="group absolute inset-0 z-10 flex items-center justify-center bg-black/20 transition-colors duration-300 hover:bg-black/30 touch-manipulation"
               aria-label="재생"
               data-testid="button-video-play"
             >
-              <span className="flex items-center justify-center w-[68px] h-[68px] sm:w-20 sm:h-20 rounded-full bg-white/95 shadow-xl backdrop-blur-sm">
-                <Play className="h-8 w-8 sm:h-9 sm:w-9 text-black translate-x-[2px]" fill="currentColor" />
+              <span className="flex items-center justify-center w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full border border-white/60 bg-white/10 backdrop-blur-md transition-all duration-300 ease-out group-hover:scale-105 group-hover:bg-white/20 group-hover:border-white/90">
+                <Play
+                  className="h-6 w-6 sm:h-7 sm:w-7 text-white translate-x-[2px]"
+                  fill="currentColor"
+                  strokeWidth={1}
+                />
               </span>
             </button>
           )}
