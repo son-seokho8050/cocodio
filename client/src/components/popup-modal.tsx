@@ -330,27 +330,27 @@ export function PopupManager() {
       isLarge: true,
       position: 'right' as const // 화면 오른쪽에 배치
     },
-    // 수상자·합격자 팝업 - 비활성화 (다시 지시 전까지 내려둠)
-    // {
-    //   id: 'popup-awards-2025', 
-    //   title: '2025 주요미대실기대회 수상 실적',
-    //   imageUrl: awards2025Image,
-    //   type: 'image' as const,
-    //   linkUrl: '/admissions/2026',
-    //   delay: 6,
-    //   isLarge: true,
-    //   position: 'left' as const
-    // },
-    // {
-    //   id: 'popup-admissions-2026', 
-    //   title: '2026학년도 미대수시 합격',
-    //   imageUrl: admissions2026Image,
-    //   type: 'image' as const,
-    //   linkUrl: '/admissions/2026',
-    //   delay: 6,
-    //   isLarge: true,
-    //   position: 'right' as const
-    // },
+    // 수상자·합격자 팝업
+    {
+      id: 'popup-awards-2025', 
+      title: '2025 주요미대실기대회 수상 실적',
+      imageUrl: awards2025Image,
+      type: 'image' as const,
+      linkUrl: '/admissions/2026',
+      delay: 6,
+      isLarge: true,
+      position: 'left' as const
+    },
+    {
+      id: 'popup-admissions-2026', 
+      title: '2026학년도 미대수시 합격',
+      imageUrl: admissions2026Image,
+      type: 'image' as const,
+      linkUrl: '/admissions/2026',
+      delay: 6,
+      isLarge: true,
+      position: 'right' as const
+    },
   ];
 
   return (
