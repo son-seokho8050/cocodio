@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import marsTexture from "@assets/generated_images/mars-texture.jpg";
 import JonghapToggle from "./jonghap-toggle";
+import CocodioLinks from "./cocodio-links";
 
 const WEEKDAY_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const MONTH_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -312,6 +313,9 @@ export default function DirectorSection() {
 
         {/* 학종전형 토글 */}
         <JonghapToggle />
+
+        {/* COCODIO_SPACE / ESSAY_YB 링크 버튼 */}
+        <CocodioLinks />
       </div>
     </section>
   );
