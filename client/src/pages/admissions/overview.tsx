@@ -1,10 +1,8 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Trophy, Users, Star, Calendar } from "lucide-react";
+import { Trophy, Users, Star, Calendar, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import pinkDesertBg from "@assets/optimized/pink-desert-bg.webp";
 
 export default function AdmissionsOverview() {
   const yearlyStats = [
@@ -96,53 +94,37 @@ export default function AdmissionsOverview() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen relative">
+      <div
+        className="page-backdrop"
+        style={{ backgroundImage: `url(${pinkDesertBg})` }}
+        aria-hidden="true"
+      />
       <Navigation />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="hero-gradient text-white py-20 relative overflow-hidden">
-          {/* Animated Background Graphics */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 left-10 w-48 h-48 bg-white/5 rounded-full blur-xl animate-glow-pulse"></div>
-            <div className="absolute top-40 right-20 w-96 h-96 bg-blue-300/15 rounded-full blur-lg animate-float-medium" style={{animationDelay: '2s'}}></div>
-            <div className="absolute bottom-32 left-1/4 w-60 h-60 bg-purple-300/8 rounded-full blur-2xl animate-float-slow" style={{animationDelay: '1s'}}></div>
-            <div className="absolute top-1/3 right-1/3 w-28 h-28 bg-white/8 rounded-full blur-md animate-glow-pulse" style={{animationDelay: '3s'}}></div>
-            <div className="absolute bottom-20 right-10 w-44 h-44 bg-cyan-300/6 rounded-full blur-xl animate-float-medium" style={{animationDelay: '4s'}}></div>
-            
-            {/* Additional large graphics */}
-            <div className="absolute top-10 right-1/4 w-52 h-52 bg-indigo-300/7 rounded-full blur-3xl animate-float-slow" style={{animationDelay: '6s'}}></div>
-            <div className="absolute bottom-10 left-1/3 w-56 h-56 bg-pink-300/6 rounded-full blur-2xl animate-glow-pulse" style={{animationDelay: '7s'}}></div>
-            <div className="absolute top-1/2 left-20 w-40 h-40 bg-emerald-300/8 rounded-full blur-xl animate-float-medium" style={{animationDelay: '8s'}}></div>
-            
-            {/* Floating geometric shapes */}
-            <div className="absolute top-16 left-1/3 w-12 h-12 border-2 border-white/20 animate-float-fast"></div>
-            <div className="absolute bottom-40 left-16 w-8 h-8 bg-white/15 animate-glow-pulse" style={{animationDelay: '2s'}}></div>
-            <div className="absolute top-1/2 right-16 w-16 h-16 border-2 border-blue-300/15 rounded-full animate-float-slow" style={{animationDelay: '5s'}}></div>
-            
-            {/* Additional geometric elements */}
-            <div className="absolute bottom-16 right-1/4 w-10 h-10 border border-purple-300/25 rotate-45 animate-float-fast" style={{animationDelay: '3s'}}></div>
-            <div className="absolute top-24 right-1/2 w-6 h-6 bg-yellow-300/20 rounded-full animate-glow-pulse" style={{animationDelay: '4s'}}></div>
-            <div className="absolute bottom-1/3 left-1/2 w-14 h-14 border-2 border-teal-300/20 rounded-full animate-float-medium" style={{animationDelay: '9s'}}></div>
-          </div>
-          
+        <section className="py-20 lg:py-28 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+              <div className="section-badge-coral mx-auto mb-5">ADMISSIONS</div>
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight" style={{ color: 'var(--text-heading)' }}>
                 합격자 명단
               </h1>
-              <p className="text-xl mb-8 text-blue-100 leading-relaxed max-w-3xl mx-auto">개인 성향별 체계적인 FOLLOW 시스템과 4단계 사고체계를 통한 증명된 결과</p>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/25">
-                  <div className="text-4xl font-bold text-white mb-2">합격</div>
-                  <div className="text-white/90">인서울 대학 진학</div>
+              <p className="text-lg lg:text-xl mb-10 leading-relaxed max-w-3xl mx-auto" style={{ color: 'var(--text-subtle)' }}>
+                개인 성향별 체계적인 FOLLOW 시스템과 4단계 사고체계를 통한 증명된 결과
+              </p>
+              <div className="grid md:grid-cols-3 gap-5 lg:gap-6 max-w-4xl mx-auto">
+                <div className="glass-frost p-7 text-center">
+                  <div className="text-3xl lg:text-4xl font-bold mb-2" style={{ color: 'var(--color-coral-deep)' }}>합격</div>
+                  <div style={{ color: 'var(--text-subtle)' }}>인서울 대학 진학</div>
                 </div>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/25">
-                  <div className="text-4xl font-bold text-white mb-2">진로/ 적성</div>
-                  <div className="text-white/90">개별 맞춤 전공 선택</div>
+                <div className="ink-card p-7 text-center">
+                  <div className="text-3xl lg:text-4xl font-bold mb-2 text-white">진로/ 적성</div>
+                  <div className="text-white/70">개별 맞춤 전공 선택</div>
                 </div>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/25">
-                  <div className="text-4xl font-bold text-white mb-2">수상</div>
-                  <div className="text-white/90">주요미대 실기대회</div>
+                <div className="glass-frost p-7 text-center">
+                  <div className="text-3xl lg:text-4xl font-bold mb-2" style={{ color: 'var(--color-coral-deep)' }}>수상</div>
+                  <div style={{ color: 'var(--text-subtle)' }}>주요미대 실기대회</div>
                 </div>
               </div>
             </div>
@@ -152,114 +134,116 @@ export default function AdmissionsOverview() {
         {/* Yearly Overview */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">주요대학 연도별 합격 현황</h2>
+            <div className="section-badge-coral mx-auto mb-4 w-fit">YEARLY</div>
+            <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: 'var(--text-heading)' }}>주요대학 연도별 합격 현황</h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {yearlyStats.map((yearData, index) => (
-                <Card key={index} className="card-hover">
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-primary-600">
+                <div key={index} className="glass-frost p-6 flex flex-col">
+                  <div className="flex items-baseline justify-between mb-4">
+                    <h3 className="text-2xl font-bold" style={{ color: 'var(--color-coral-deep)' }}>
                       {yearData.year}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {/* University breakdown */}
-                      <div className="space-y-2">
-                        {yearData.universities.map((uni, uniIndex) => (
-                          <div key={uniIndex} className="flex justify-between items-center">
-                            <span className="text-gray-700">{uni.name}</span>
-                            <Badge variant="secondary">{uni.count}명</Badge>
-                          </div>
-                        ))}
+                    </h3>
+                    <span className="text-sm font-semibold" style={{ color: 'var(--text-subtle)' }}>{yearData.total}명</span>
+                  </div>
+
+                  {/* University breakdown */}
+                  <div className="space-y-2">
+                    {yearData.universities.map((uni, uniIndex) => (
+                      <div key={uniIndex} className="flex justify-between items-center text-sm">
+                        <span style={{ color: 'var(--text-heading)' }}>{uni.name}</span>
+                        <span
+                          className="px-2 py-0.5 rounded-full text-xs font-semibold"
+                          style={{ background: 'var(--color-coral-soft)', color: 'var(--color-coral-deep)' }}
+                        >
+                          {uni.count}명
+                        </span>
                       </div>
-                      
-                      {/* Highlights */}
-                      <div className="border-t pt-4">
-                        <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                          <Star className="h-4 w-4 mr-2 text-yellow-500" />
-                          주요 성과
-                        </h4>
-                        <ul className="space-y-1">
-                          {yearData.highlights.map((highlight, hIndex) => (
-                            <li key={hIndex} className="text-xs text-gray-600 flex items-center">
-                              <div className="w-1.5 h-1.5 bg-primary-600 rounded-full mr-2"></div>
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      {/* View Details Button */}
-                      <Link href={`/admissions/${yearData.year.slice(0, 4)}`}>
-                        <Button className="w-full mt-4" variant="outline">
-                          <Calendar className="mr-2 h-4 w-4" />
-                          상세 합격자 명단 보기
-                        </Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                  </Card>
+                    ))}
+                  </div>
+
+                  {/* Highlights */}
+                  <div className="pt-4 mt-4" style={{ borderTop: '1px solid rgba(199,121,101,0.18)' }}>
+                    <h4 className="font-semibold mb-2 flex items-center" style={{ color: 'var(--text-heading)' }}>
+                      <Star className="h-4 w-4 mr-2" style={{ color: 'var(--color-coral-deep)' }} />
+                      주요 성과
+                    </h4>
+                    <ul className="space-y-1">
+                      {yearData.highlights.map((highlight, hIndex) => (
+                        <li key={hIndex} className="text-xs flex items-start" style={{ color: 'var(--text-subtle)' }}>
+                          <div className="w-1.5 h-1.5 rounded-full mr-2 mt-1.5 flex-shrink-0" style={{ background: 'var(--color-coral-deep)' }}></div>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* View Details Button */}
+                  <Link
+                    href={`/admissions/${yearData.year.slice(0, 4)}`}
+                    className="pill-arrow-wide mt-5 w-full justify-between"
+                    data-testid={`link-year-${yearData.year.slice(0, 4)}`}
+                  >
+                    상세 합격자 명단 보기
+                    <span className="arrow-circle">
+                      <ArrowRight className="w-4 h-4" strokeWidth={2.2} />
+                    </span>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-
-
         {/* Achievement Highlights */}
-        <section className="py-16 bg-white">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <div className="section-badge-coral mx-auto mb-4 w-fit">RESULTS</div>
+            <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: 'var(--text-heading)' }}>
               코코미술학원만의 차별화된 성과
             </h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Trophy className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">95%+</div>
-                  <div className="text-gray-600">평균 합격률</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Users className="h-12 w-12 text-primary-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">지역최다 수상</div>
-                  <div className="text-gray-600">주요 실기대회</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Star className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">인서울대학</div>
-                  <div className="text-gray-600">서울/수도권 대학 합격</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <Calendar className="h-12 w-12 text-accent-600 mx-auto mb-4" />
-                  <div className="text-2xl font-bold text-gray-900 mb-2">연속합격</div>
-                  <div className="text-gray-600">지역거점국립대 합격</div>
-                </CardContent>
-              </Card>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="glass-frost p-7 text-center">
+                <Trophy className="h-11 w-11 mx-auto mb-4" style={{ color: 'var(--color-coral-deep)' }} />
+                <div className="text-2xl font-bold mb-2" style={{ color: 'var(--text-heading)' }}>95%+</div>
+                <div style={{ color: 'var(--text-subtle)' }}>평균 합격률</div>
+              </div>
+
+              <div className="ink-card p-7 text-center">
+                <Users className="h-11 w-11 mx-auto mb-4 text-white" />
+                <div className="text-2xl font-bold mb-2 text-white">지역최다 수상</div>
+                <div className="text-white/70">주요 실기대회</div>
+              </div>
+
+              <div className="glass-frost p-7 text-center">
+                <Star className="h-11 w-11 mx-auto mb-4" style={{ color: 'var(--color-coral-deep)' }} />
+                <div className="text-2xl font-bold mb-2" style={{ color: 'var(--text-heading)' }}>인서울대학</div>
+                <div style={{ color: 'var(--text-subtle)' }}>서울/수도권 대학 합격</div>
+              </div>
+
+              <div className="glass-frost p-7 text-center">
+                <Calendar className="h-11 w-11 mx-auto mb-4" style={{ color: 'var(--color-coral-deep)' }} />
+                <div className="text-2xl font-bold mb-2" style={{ color: 'var(--text-heading)' }}>연속합격</div>
+                <div style={{ color: 'var(--text-subtle)' }}>지역거점국립대 합격</div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">재능의 출발점, 코코</h2>
-            <p className="text-xl text-gray-600 mb-8">체계적인 FOLLOW 시스템과 개별 맞춤형 지도로 목표 대학 합격</p>
-            <Link href="/#contact">
-              <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4">
+        <section className="py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="ink-card p-10 lg:p-14 text-center">
+              <h2 className="text-3xl font-bold mb-4 text-white">재능의 출발점, 코코</h2>
+              <p className="text-lg mb-8 text-white/70">체계적인 FOLLOW 시스템과 개별 맞춤형 지도로 목표 대학 합격</p>
+              <Link href="/#contact" className="pill-arrow-wide mx-auto" data-testid="link-contact">
                 무료 상담 신청하기
-              </Button>
-            </Link>
+                <span className="arrow-circle">
+                  <ArrowRight className="w-4 h-4" strokeWidth={2.2} />
+                </span>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
