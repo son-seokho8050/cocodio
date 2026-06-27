@@ -45,6 +45,16 @@ export default function Navigation() {
                 {label}
               </button>
             ))}
+            <Link
+              href="/admissions"
+              className="text-sm font-medium transition-all duration-200 whitespace-nowrap"
+              style={{ color: '#4A4A4A' }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#1A1A1A')}
+              onMouseLeave={e => (e.currentTarget.style.color = '#4A4A4A')}
+              data-testid="nav-admissions"
+            >
+              합격·수상
+            </Link>
           </div>
 
           <div className="flex items-center gap-3 ml-4">
@@ -82,6 +92,17 @@ export default function Navigation() {
                   {label}
                 </button>
               ))}
+              <Link
+                href="/admissions"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-left text-sm py-2 px-2 rounded-lg font-medium transition-colors"
+                style={{ color: '#4A4A4A' }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#1A1A1A'; e.currentTarget.style.background = '#F5F5F5'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#4A4A4A'; e.currentTarget.style.background = 'transparent'; }}
+                data-testid="nav-admissions-mobile"
+              >
+                합격·수상
+              </Link>
               <div className="pt-2">
                 <a href="https://cova-studio-magmaart2238050.replit.app" target="_blank" rel="noopener noreferrer">
                   <button className="btn-gradient text-white text-sm px-5 py-2 w-full">
