@@ -320,6 +320,7 @@ export default function PopupModal({
                           className="inline-block overflow-hidden transition-all duration-500 ease-out"
                           style={{
                             maxWidth: ctaExpanded ? '80px' : '0px',
+                            minWidth: '0px',
                             opacity: ctaExpanded ? 1 : 0,
                             marginLeft: ctaExpanded ? '0.28em' : '0px',
                           }}
