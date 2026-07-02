@@ -151,28 +151,69 @@ export default function CocodioLinks() {
           id="essay-yb-panel"
           aria-hidden={!essayOpen}
           {...(!essayOpen ? { inert: "" as const } : {})}
-          className={`overflow-hidden transition-all duration-400 ease-out flex flex-col gap-2.5 ${
+          className={`overflow-hidden transition-all duration-400 ease-out flex flex-row justify-center gap-4 ${
             essayOpen ? "" : "pointer-events-none"
           }`}
           style={{
-            maxHeight: essayOpen ? "200px" : "0px",
+            maxHeight: essayOpen ? "260px" : "0px",
             opacity: essayOpen ? 1 : 0,
           }}
         >
-          <ExternalLinkButton
-            tag="ESSAY_YB 1"
-            href="https://cocodio-ybessay.netlify.app/"
-            nested
-            testId="link-essay-yb-1"
-            tabIndex={essayOpen ? 0 : -1}
-          />
-          <ExternalLinkButton
-            tag="ESSAY_YB 2"
-            href="https://cocodio-ybessay2.netlify.app/"
-            nested
-            testId="link-essay-yb-2"
-            tabIndex={essayOpen ? 0 : -1}
-          />
+          {[
+            { n: "1", href: "https://cocodio-ybessay.netlify.app/", testId: "link-essay-yb-1" },
+            { n: "2", href: "https://cocodio-ybessay2.netlify.app/", testId: "link-essay-yb-2" },
+          ].map(({ n, href, testId }) => (
+            <a
+              key={n}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={essayOpen ? 0 : -1}
+              className="group relative overflow-hidden flex flex-col items-center justify-center gap-2 aspect-square flex-1 max-w-[150px] transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.55)",
+                backdropFilter: "blur(18px) saturate(160%)",
+                WebkitBackdropFilter: "blur(18px) saturate(160%)",
+                borderRadius: "9999px",
+                border: "1px solid rgba(255,255,255,0.65)",
+                boxShadow: "0 10px 30px -16px rgba(199,121,101,0.22)",
+              }}
+              data-testid={testId}
+            >
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 pointer-events-none"
+                style={{
+                  height: "45%",
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%)",
+                }}
+              />
+              <span className="relative z-10 flex flex-col items-center gap-1.5">
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ backgroundColor: "var(--color-coral-deep)" }}
+                />
+                <span
+                  className="font-bold text-center leading-tight"
+                  style={{ color: "#1A1A1A", letterSpacing: "0.06em", fontSize: "0.82rem" }}
+                >
+                  ESSAY_YB {n}
+                </span>
+              </span>
+              <span
+                className="relative z-10 flex items-center justify-center rounded-full flex-shrink-0"
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  backgroundColor: "#1A1A1A",
+                  color: "#FFFFFF",
+                }}
+              >
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
+              </span>
+            </a>
+          ))}
         </div>
       </div>
     </div>

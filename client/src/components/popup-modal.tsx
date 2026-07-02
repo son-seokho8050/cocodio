@@ -309,27 +309,28 @@ export default function PopupModal({
 
 // 팝업 매니저 컴포넌트
 export function PopupManager() {
-  const popups = [
-    {
-      id: 'popup1',
-      title: '총원장 유영범 소개',
-      imageUrl: directorYoungBeom,
-      type: 'image' as const,
-      linkUrl: 'https://blog.naver.com/coco2238050',
-      delay: 3, // 3초 후 표시
-      isLarge: true, // 큰 크기로 표시
-      position: 'left' as const // 화면 왼쪽에 배치
-    },
-    {
-      id: 'popup2',
-      title: '말랑T X 유준석 강사 소개',
-      imageUrl: directorJunSeok,
-      type: 'image' as const,
-      linkUrl: 'https://blog.naver.com/cocodioart',
-      delay: 3, // 동시에 표시
-      isLarge: true,
-      position: 'right' as const // 화면 오른쪽에 배치
-    },
+  const popups: Array<React.ComponentProps<typeof PopupModal>> = [
+    // 강사 프로필 팝업(popup1, popup2) - 비활성화 (지시에 따라 숨김)
+    // {
+    //   id: 'popup1',
+    //   title: '총원장 유영범 소개',
+    //   imageUrl: directorYoungBeom,
+    //   type: 'image' as const,
+    //   linkUrl: 'https://blog.naver.com/coco2238050',
+    //   delay: 3, // 3초 후 표시
+    //   isLarge: true, // 큰 크기로 표시
+    //   position: 'left' as const // 화면 왼쪽에 배치
+    // },
+    // {
+    //   id: 'popup2',
+    //   title: '말랑T X 유준석 강사 소개',
+    //   imageUrl: directorJunSeok,
+    //   type: 'image' as const,
+    //   linkUrl: 'https://blog.naver.com/cocodioart',
+    //   delay: 3, // 동시에 표시
+    //   isLarge: true,
+    //   position: 'right' as const // 화면 오른쪽에 배치
+    // },
     // 수상자·합격자 팝업 - 비활성화 (다시 지시 전까지 내려둠)
     // {
     //   id: 'popup-awards-2025', 

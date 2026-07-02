@@ -105,17 +105,31 @@ export default function CurriculumSection() {
                     ))}
                   </div>
 
-                  <button
-                    onClick={scrollToContact}
-                    className="pill-arrow-wide w-full justify-between mt-auto"
-                    style={isInk ? { background: '#FFFFFF', color: 'var(--color-ink)' } : {}}
-                  >
-                    <span>신청하기</span>
-                    <span className="arrow-circle"
-                          style={isInk ? { background: 'rgba(0,0,0,0.08)' } : {}}>
-                      <ArrowUpRight className="h-4 w-4" />
-                    </span>
-                  </button>
+                  {isInk ? (
+                    <a
+                      href="https://cocodio-space.netlify.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pill-arrow-wide w-full justify-between mt-auto"
+                      style={{ background: '#FFFFFF', color: 'var(--color-ink)' }}
+                      data-testid="link-space-apply"
+                    >
+                      <span>신청하기</span>
+                      <span className="arrow-circle" style={{ background: 'rgba(0,0,0,0.08)' }}>
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </a>
+                  ) : (
+                    <button
+                      onClick={scrollToContact}
+                      className="pill-arrow-wide w-full justify-between mt-auto"
+                    >
+                      <span>신청하기</span>
+                      <span className="arrow-circle">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
             );
