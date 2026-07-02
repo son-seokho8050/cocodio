@@ -802,17 +802,43 @@
   .shadow-el3       { box-shadow: var(--el-3); }
 }
 
-/* ── 팝업 CTA 버튼 애니메이션 (클릭 유도) ─────────────── */
+/* ── 팝업 CTA 글로시 버튼 (클릭 유도) ─────────────────── */
+.cta-glossy {
+  position: relative;
+  overflow: hidden;
+  color: #1A1A1A;
+  background: linear-gradient(135deg, rgba(255,255,255,0.60), rgba(255,255,255,0.32));
+  border: 1px solid rgba(255,255,255,0.72);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 12px 30px -10px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.85);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.cta-glossy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px -10px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.92);
+}
+.cta-glossy:active { transform: translateY(0) scale(0.98); }
+.cta-sheen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0) 100%);
+  transform: translateX(-160%) skewX(-18deg);
+  animation: ctaSheen 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes ctaSheen {
+  0%        { transform: translateX(-160%) skewX(-18deg); }
+  55%, 100% { transform: translateX(320%) skewX(-18deg); }
+}
 @keyframes ctaArrowNudge {
   0%, 100% { transform: translateX(0); }
   50%      { transform: translateX(5px); }
 }
-@keyframes ctaPulse {
-  0%, 100% { transform: scale(1);    box-shadow: 0 8px 22px -8px rgba(110,201,163,0.55); }
-  50%      { transform: scale(1.05); box-shadow: 0 14px 32px -6px rgba(110,201,163,0.85); }
-}
 .cta-arrow { animation: ctaArrowNudge 1.2s ease-in-out infinite; }
-.cta-pulse { animation: ctaPulse 1.9s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .cta-arrow, .cta-pulse { animation: none; }
+  .cta-arrow, .cta-sheen { animation: none; }
 }

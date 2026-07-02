@@ -40,6 +40,7 @@ export default function PopupModal({
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [mediaDimensions, setMediaDimensions] = useState<{width: number, height: number} | null>(null);
+  const [ctaExpanded, setCtaExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -71,6 +72,7 @@ export default function PopupModal({
 
   const handleClose = () => {
     setIsAnimating(false);
+    setCtaExpanded(false);
     setTimeout(() => {
       setIsVisible(false);
     }, 300);
@@ -78,6 +80,7 @@ export default function PopupModal({
 
   const handleDontShowToday = () => {
     setIsAnimating(false);
+    setCtaExpanded(false);
     setTimeout(() => {
       setIsVisible(false);
       // 오늘 하루 동안 이 팝업을 다시 보지 않도록 설정
@@ -90,6 +93,27 @@ export default function PopupModal({
     if (e.target === e.currentTarget) {
       handleClose();
     }
+  };
+
+  // CTA 버튼: '{...}' 안의 글자는 클릭 시 펼쳐지며 나타나는 부분
+  const ctaSegments = (() => {
+    if (!ctaLabel) return null;
+    const m = ctaLabel.match(/^(.*)\{(.+?)\}(.*)$/);
+    if (m) return { pre: m[1], reveal: m[2], post: m[3] };
+    return { pre: ctaLabel, reveal: '', post: '' };
+  })();
+  const ctaAria = ctaLabel ? ctaLabel.replace('{', ' ').replace('}', '') : undefined;
+
+  const openLink = () => {
+    if (linkUrl) {
+      window.open(linkUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleCtaClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCtaExpanded(true);
+    openLink();
   };
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -258,54 +282,90 @@ export default function PopupModal({
               }}
             />
           ) : linkUrl ? (
-            <a 
-              href={linkUrl} 
-              target={linkUrl.startsWith('http') ? '_blank' : '_self'}
-              rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
-              aria-label={ctaLabel ? `${title} - ${ctaLabel}` : title}
-              className="group block cursor-pointer relative"
-            >
-              <img 
-                src={imageUrl || ''}
-                alt={title}
-                className="w-full h-auto object-contain rounded-2xl transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                style={{ 
-                  filter: 'brightness(1) contrast(1)', 
-                  imageRendering: 'auto',
-                  opacity: 1,
-                  colorAdjust: 'exact',
-                  WebkitColorAdjust: 'exact'
-                } as React.CSSProperties}
-                loading="eager"
-                decoding="async"
-                onLoad={(e) => {
-                  console.log(`Image loaded for ${id}:`, imageUrl);
-                  handleImageLoad(e);
-                }}
-                onError={(e) => {
-                  console.error(`Image failed to load for ${id}:`, imageUrl);
-                }}
-              />
-              {ctaLabel && (
-                <>
-                  <div
-                    className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none rounded-b-2xl"
-                    style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%)' }}
-                  />
-                  <div className="absolute inset-x-0 bottom-6 flex justify-center px-4 pointer-events-none">
-                    <span
-                      className="cta-pulse inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-bold"
-                      style={{ background: '#6EC9A3', color: '#0F2E22' }}
-                    >
-                      {ctaLabel}
-                      <span className="cta-arrow inline-flex">
+            ctaSegments ? (
+              <div className="group relative block cursor-pointer" onClick={openLink}>
+                <img 
+                  src={imageUrl || ''}
+                  alt={title}
+                  className="w-full h-auto object-contain rounded-2xl transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  style={{ 
+                    filter: 'brightness(1) contrast(1)', 
+                    imageRendering: 'auto',
+                    opacity: 1,
+                    colorAdjust: 'exact',
+                    WebkitColorAdjust: 'exact'
+                  } as React.CSSProperties}
+                  loading="eager"
+                  decoding="async"
+                  onLoad={(e) => {
+                    console.log(`Image loaded for ${id}:`, imageUrl);
+                    handleImageLoad(e);
+                  }}
+                  onError={(e) => {
+                    console.error(`Image failed to load for ${id}:`, imageUrl);
+                  }}
+                />
+                <div className="absolute inset-x-0 bottom-6 flex justify-center px-4">
+                  <button
+                    type="button"
+                    onClick={handleCtaClick}
+                    aria-label={ctaAria}
+                    className="cta-glossy inline-flex items-center rounded-full px-6 py-3 text-sm sm:text-base font-bold"
+                  >
+                    <span className="cta-sheen" aria-hidden="true" />
+                    <span className="relative z-10 inline-flex items-center whitespace-nowrap">
+                      <span>{ctaSegments.pre}</span>
+                      {ctaSegments.reveal && (
+                        <span
+                          className="inline-block overflow-hidden transition-all duration-500 ease-out"
+                          style={{
+                            maxWidth: ctaExpanded ? '80px' : '0px',
+                            opacity: ctaExpanded ? 1 : 0,
+                            marginLeft: ctaExpanded ? '0.28em' : '0px',
+                          }}
+                        >
+                          {ctaSegments.reveal}
+                        </span>
+                      )}
+                      <span>{ctaSegments.post}</span>
+                      <span className="cta-arrow inline-flex ml-2">
                         <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.5} />
                       </span>
                     </span>
-                  </div>
-                </>
-              )}
-            </a>
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <a 
+                href={linkUrl} 
+                target={linkUrl.startsWith('http') ? '_blank' : '_self'}
+                rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+                aria-label={title}
+                className="group block cursor-pointer relative"
+              >
+                <img 
+                  src={imageUrl || ''}
+                  alt={title}
+                  className="w-full h-auto object-contain rounded-2xl transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                  style={{ 
+                    filter: 'brightness(1) contrast(1)', 
+                    imageRendering: 'auto',
+                    opacity: 1,
+                    colorAdjust: 'exact',
+                    WebkitColorAdjust: 'exact'
+                  } as React.CSSProperties}
+                  loading="eager"
+                  decoding="async"
+                  onLoad={(e) => {
+                    console.log(`Image loaded for ${id}:`, imageUrl);
+                    handleImageLoad(e);
+                  }}
+                  onError={(e) => {
+                    console.error(`Image failed to load for ${id}:`, imageUrl);
+                  }}
+                />
+              </a>
+            )
           ) : (
             <img 
               src={imageUrl || ''}
@@ -347,7 +407,7 @@ export function PopupManager() {
       imageUrl: summerPopupImage,
       type: 'image' as const,
       linkUrl: 'https://cocodio-2026summer.netlify.app/',
-      ctaLabel: '여름특강 신청하기',
+      ctaLabel: '코코의 여름{특강}, 둘러보기',
       delay: 1.5,
       isLarge: true,
       position: 'center' as const,

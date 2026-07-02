@@ -1,1 +1,2 @@
 - [Asset optimization](asset-optimization.md) — @assets imports get bundled+served; optimize any new heavy image/video before importing (magick/ffmpeg available, sharp/bc not).
+- [Popup system](popup-system.md) — PopupManager array drives time-delayed popups; ctaLabel `{...}` token = click-to-reveal word; screenshots miss delayed popups (fresh nav resets timer) so trust console logs.
