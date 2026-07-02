@@ -20,7 +20,8 @@ interface PopupModalProps {
   isLarge?: boolean; // 큰 크기로 표시할지 여부
   type?: 'image' | 'video'; // 미디어 타입
   position?: 'center' | 'left' | 'right'; // 팝업 위치
-  ctaLabel?: string; // 이미지 위에 표시할 클릭 유도 버튼 문구
+  ctaLabel?: string; // 이미지 위에 표시할 클릭 유도 버튼 문구 (기본 상태)
+  ctaLabelActive?: string; // 클릭 후 바뀔 문구
 }
 
 export default function PopupModal({ 
@@ -35,7 +36,8 @@ export default function PopupModal({
   isLarge = false,
   type = 'image',
   position = 'center',
-  ctaLabel
+  ctaLabel,
+  ctaLabelActive
 }: PopupModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -95,25 +97,18 @@ export default function PopupModal({
     }
   };
 
-  // CTA 버튼: '{...}' 안의 글자는 클릭 시 펼쳐지며 나타나는 부분
-  const ctaSegments = (() => {
-    if (!ctaLabel) return null;
-    const m = ctaLabel.match(/^(.*)\{(.+?)\}(.*)$/);
-    if (m) return { pre: m[1], reveal: m[2], post: m[3] };
-    return { pre: ctaLabel, reveal: '', post: '' };
-  })();
-  const ctaAria = ctaLabel ? ctaLabel.replace('{', ' ').replace('}', '') : undefined;
-
-  const openLink = () => {
+  const navigateToLink = () => {
     if (linkUrl) {
-      window.open(linkUrl, '_blank', 'noopener,noreferrer');
+      window.location.href = linkUrl;
     }
   };
 
+  // 클릭 → 버튼 문구가 '코코 여름특강'으로 바뀐 뒤 URL로 이동
   const handleCtaClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    if (ctaExpanded) return;
     setCtaExpanded(true);
-    openLink();
+    window.setTimeout(navigateToLink, 900);
   };
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -282,8 +277,8 @@ export default function PopupModal({
               }}
             />
           ) : linkUrl ? (
-            ctaSegments ? (
-              <div className="group relative block cursor-pointer" onClick={openLink}>
+            ctaLabel ? (
+              <div className="group relative block cursor-pointer" onClick={handleCtaClick}>
                 <img 
                   src={imageUrl || ''}
                   alt={title}
@@ -309,30 +304,31 @@ export default function PopupModal({
                   <button
                     type="button"
                     onClick={handleCtaClick}
-                    aria-label={ctaAria}
-                    className="cta-glossy inline-flex items-center rounded-full px-6 py-3 text-sm sm:text-base font-bold"
+                    aria-label={ctaExpanded ? (ctaLabelActive || ctaLabel) : ctaLabel}
+                    className="cta-glossy relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm sm:text-base font-bold"
                   >
                     <span className="cta-sheen" aria-hidden="true" />
-                    <span className="relative z-10 inline-flex items-center whitespace-nowrap">
-                      <span>{ctaSegments.pre}</span>
-                      {ctaSegments.reveal && (
-                        <span
-                          className="inline-block overflow-hidden transition-all duration-500 ease-out"
-                          style={{
-                            maxWidth: ctaExpanded ? '80px' : '0px',
-                            minWidth: '0px',
-                            opacity: ctaExpanded ? 1 : 0,
-                            marginLeft: ctaExpanded ? '0.28em' : '0px',
-                          }}
-                        >
-                          {ctaSegments.reveal}
-                        </span>
-                      )}
-                      <span>{ctaSegments.post}</span>
-                      <span className="cta-arrow inline-flex ml-2">
+                    <span
+                      className="relative z-10 inline-flex items-center gap-2 whitespace-nowrap transition-all duration-300 ease-out"
+                      style={{ opacity: ctaExpanded ? 0 : 1, transform: ctaExpanded ? 'scale(0.96)' : 'scale(1)' }}
+                    >
+                      <span>{ctaLabel}</span>
+                      <span className="cta-arrow inline-flex">
                         <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.5} />
                       </span>
                     </span>
+                    {ctaLabelActive && (
+                      <span
+                        className="absolute inset-0 z-10 flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-300 ease-out"
+                        style={{ opacity: ctaExpanded ? 1 : 0, transform: ctaExpanded ? 'scale(1)' : 'scale(0.96)' }}
+                        aria-hidden={!ctaExpanded}
+                      >
+                        <span>{ctaLabelActive}</span>
+                        <span className="cta-arrow inline-flex">
+                          <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.5} />
+                        </span>
+                      </span>
+                    )}
                   </button>
                 </div>
               </div>
@@ -408,7 +404,8 @@ export function PopupManager() {
       imageUrl: summerPopupImage,
       type: 'image' as const,
       linkUrl: 'https://cocodio-2026summer.netlify.app/',
-      ctaLabel: '코코의 여름{특강}, 둘러보기',
+      ctaLabel: '코코의 여름, 둘러보기',
+      ctaLabelActive: '코코 여름특강',
       delay: 1.5,
       isLarge: true,
       position: 'center' as const,

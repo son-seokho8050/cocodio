@@ -1,2 +1,3 @@
 - [Asset optimization](asset-optimization.md) — @assets imports get bundled+served; optimize any new heavy image/video before importing (magick/ffmpeg available, sharp/bc not).
-- [Popup system](popup-system.md) — PopupManager array drives time-delayed popups; ctaLabel `{...}` token = click-to-reveal word; screenshots miss delayed popups (fresh nav resets timer) so trust console logs.
+- [Popup system](popup-system.md) — PopupManager array drives time-delayed popups; CTA crossfades ctaLabel→ctaLabelActive then navigates same-tab; screenshots miss delayed popups (fresh nav resets timer) so trust console logs.
+- [Homepage perf](homepage-perf.md) — a synchronous unused Kakao Maps <script> in index.html <head> was render-blocking; audit head for sync 3rd-party scripts before blaming images.
