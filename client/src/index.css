@@ -801,3 +801,18 @@
   .shadow-el2       { box-shadow: var(--el-2); }
   .shadow-el3       { box-shadow: var(--el-3); }
 }
+
+/* ── 팝업 CTA 버튼 애니메이션 (클릭 유도) ─────────────── */
+@keyframes ctaArrowNudge {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(5px); }
+}
+@keyframes ctaPulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 8px 22px -8px rgba(110,201,163,0.55); }
+  50%      { transform: scale(1.05); box-shadow: 0 14px 32px -6px rgba(110,201,163,0.85); }
+}
+.cta-arrow { animation: ctaArrowNudge 1.2s ease-in-out infinite; }
+.cta-pulse { animation: ctaPulse 1.9s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .cta-arrow, .cta-pulse { animation: none; }
+}

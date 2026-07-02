@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import summerPopupImage from "@assets/optimized/summer-2026-popup.webp";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
 import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
 import exhibitionPoster from "@assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg";
@@ -19,6 +20,7 @@ interface PopupModalProps {
   isLarge?: boolean; // 큰 크기로 표시할지 여부
   type?: 'image' | 'video'; // 미디어 타입
   position?: 'center' | 'left' | 'right'; // 팝업 위치
+  ctaLabel?: string; // 이미지 위에 표시할 클릭 유도 버튼 문구
 }
 
 export default function PopupModal({ 
@@ -32,7 +34,8 @@ export default function PopupModal({
   delay = 0,
   isLarge = false,
   type = 'image',
-  position = 'center'
+  position = 'center',
+  ctaLabel
 }: PopupModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -57,6 +60,14 @@ export default function PopupModal({
       return () => clearTimeout(timer);
     }
   }, [id, delay]);
+
+  // 이미지 사전 로딩 - 팝업이 뜨는 순간 버퍼링/로딩 없이 즉시 표시
+  useEffect(() => {
+    if (type === 'image' && imageUrl) {
+      const preload = new Image();
+      preload.src = imageUrl;
+    }
+  }, [type, imageUrl]);
 
   const handleClose = () => {
     setIsAnimating(false);
@@ -251,12 +262,13 @@ export default function PopupModal({
               href={linkUrl} 
               target={linkUrl.startsWith('http') ? '_blank' : '_self'}
               rel={linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="block cursor-pointer"
+              aria-label={ctaLabel ? `${title} - ${ctaLabel}` : title}
+              className="group block cursor-pointer relative"
             >
               <img 
                 src={imageUrl || ''}
                 alt={title}
-                className="w-full h-auto object-contain rounded-2xl hover:opacity-90 transition-opacity"
+                className="w-full h-auto object-contain rounded-2xl transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                 style={{ 
                   filter: 'brightness(1) contrast(1)', 
                   imageRendering: 'auto',
@@ -274,6 +286,25 @@ export default function PopupModal({
                   console.error(`Image failed to load for ${id}:`, imageUrl);
                 }}
               />
+              {ctaLabel && (
+                <>
+                  <div
+                    className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none rounded-b-2xl"
+                    style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%)' }}
+                  />
+                  <div className="absolute inset-x-0 bottom-6 flex justify-center px-4 pointer-events-none">
+                    <span
+                      className="cta-pulse inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-bold"
+                      style={{ background: '#6EC9A3', color: '#0F2E22' }}
+                    >
+                      {ctaLabel}
+                      <span className="cta-arrow inline-flex">
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.5} />
+                      </span>
+                    </span>
+                  </div>
+                </>
+              )}
             </a>
           ) : (
             <img 
@@ -310,6 +341,17 @@ export default function PopupModal({
 // 팝업 매니저 컴포넌트
 export function PopupManager() {
   const popups: Array<React.ComponentProps<typeof PopupModal>> = [
+    {
+      id: 'popup-summer-2026',
+      title: '코코 여름방학 특강',
+      imageUrl: summerPopupImage,
+      type: 'image' as const,
+      linkUrl: 'https://cocodio-2026summer.netlify.app/',
+      ctaLabel: '여름특강 신청하기',
+      delay: 1.5,
+      isLarge: true,
+      position: 'center' as const,
+    },
     // 강사 프로필 팝업(popup1, popup2) - 비활성화 (지시에 따라 숨김)
     // {
     //   id: 'popup1',
