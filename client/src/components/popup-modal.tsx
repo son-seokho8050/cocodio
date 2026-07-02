@@ -305,7 +305,7 @@ export default function PopupModal({
                     type="button"
                     onClick={handleCtaClick}
                     aria-label={ctaExpanded ? (ctaLabelActive || ctaLabel) : ctaLabel}
-                    className="cta-glossy relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm sm:text-base font-bold"
+                    className={`cta-glossy relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm sm:text-base font-bold ${ctaExpanded ? 'cta-active' : ''}`}
                   >
                     <span className="cta-sheen" aria-hidden="true" />
                     <span

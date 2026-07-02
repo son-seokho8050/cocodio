@@ -839,6 +839,46 @@
   50%      { transform: translateX(5px); }
 }
 .cta-arrow { animation: ctaArrowNudge 1.2s ease-in-out infinite; }
+
+/* 클릭 후 활성 상태 — 버튼 자체가 민트→코랄로 채워지며 통통 튀는 팝 + 링 펄스 */
+.cta-active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #6EC9A3 0%, #E8B5A8 55%, #C77965 100%);
+  background-size: 180% 180%;
+  border-color: rgba(255,255,255,0.9);
+  box-shadow:
+    0 20px 44px -10px rgba(199,121,101,0.55),
+    0 0 26px rgba(110,201,163,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  animation: ctaPop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+             ctaGradShift 0.9s ease-out forwards;
+}
+.cta-active:hover { transform: none; }
+.cta-active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  animation: ctaRing 0.9s ease-out forwards;
+}
+@keyframes ctaPop {
+  0%   { transform: scale(0.96); }
+  35%  { transform: scale(1.14); }
+  62%  { transform: scale(0.98); }
+  100% { transform: scale(1.07); }
+}
+@keyframes ctaGradShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes ctaRing {
+  0%   { box-shadow: 0 0 0 0 rgba(110,201,163,0.6); }
+  100% { box-shadow: 0 0 0 22px rgba(110,201,163,0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cta-arrow, .cta-sheen { animation: none; }
+  .cta-active { animation: none; transform: scale(1.04); }
+  .cta-active::after { animation: none; }
 }
