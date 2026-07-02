@@ -151,17 +151,19 @@ export default function CocodioLinks() {
           id="essay-yb-panel"
           aria-hidden={!essayOpen}
           {...(!essayOpen ? { inert: "" as const } : {})}
-          className={`overflow-hidden transition-all duration-400 ease-out flex flex-row justify-center gap-4 ${
+          className={`overflow-hidden transition-all duration-400 ease-out flex flex-row flex-wrap justify-center gap-4 ${
             essayOpen ? "" : "pointer-events-none"
           }`}
           style={{
-            maxHeight: essayOpen ? "260px" : "0px",
+            maxHeight: essayOpen ? "420px" : "0px",
             opacity: essayOpen ? 1 : 0,
           }}
         >
           {[
             { n: "1", href: "https://cocodio-ybessay.netlify.app/", testId: "link-essay-yb-1" },
             { n: "2", href: "https://cocodio-ybessay2.netlify.app/", testId: "link-essay-yb-2" },
+            { n: "3", href: "https://cocodio-ybessay3.netlify.app/", testId: "link-essay-yb-3" },
+            { n: "4", href: "https://cocodio-ybessay4.netlify.app/", testId: "link-essay-yb-4" },
           ].map(({ n, href, testId }) => (
             <a
               key={n}
