@@ -155,7 +155,7 @@ export default function CocodioLinks() {
             essayOpen ? "" : "pointer-events-none"
           }`}
           style={{
-            maxHeight: essayOpen ? "420px" : "0px",
+            maxHeight: essayOpen ? "340px" : "0px",
             opacity: essayOpen ? 1 : 0,
           }}
         >
@@ -171,7 +171,7 @@ export default function CocodioLinks() {
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={essayOpen ? 0 : -1}
-              className="group relative overflow-hidden flex flex-col items-center justify-center gap-2 aspect-square flex-1 max-w-[150px] transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
+              className="group relative overflow-hidden flex flex-col items-center justify-center gap-1.5 aspect-square flex-1 max-w-[112px] transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
               style={{
                 backgroundColor: "rgba(255,255,255,0.55)",
                 backdropFilter: "blur(18px) saturate(160%)",
