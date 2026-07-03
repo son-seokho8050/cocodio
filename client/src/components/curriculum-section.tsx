@@ -9,6 +9,7 @@ const courses = [
     image: artExamImage, alt: '입시미술', icon: GraduationCap, title: '입시미술', tag: 'Art Exam',
     desc: '디자인과 만화 전공을 위한\n체계적인 입시 준비 과정,\n개인 성향별 커리큘럼으로\n실기시험 대비까지 완벽하게',
     checks: ['디자인/ 만화 실기', '입시미술 기초과정', '실전시험 실전대비', '개별진로 상담 및 지도'],
+    href: 'https://cocodio-design3website.netlify.app/',
   },
   {
     image: spaceImage, alt: 'SPACE', icon: GraduationCap, title: 'SPACE', tag: 'Premium',
@@ -47,7 +48,7 @@ export default function CurriculumSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-          {courses.map(({ image, alt, icon: Icon, title, tag, desc, checks }, idx) => {
+          {courses.map(({ image, alt, icon: Icon, title, tag, desc, checks, href }, idx) => {
             const isInk = idx === 1; // SPACE = 다크 강조 카드
             return (
               <div
@@ -116,6 +117,19 @@ export default function CurriculumSection() {
                     >
                       <span>신청하기</span>
                       <span className="arrow-circle" style={{ background: 'rgba(0,0,0,0.08)' }}>
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </a>
+                  ) : href ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pill-arrow-wide w-full justify-between mt-auto"
+                      data-testid={`link-apply-${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                    >
+                      <span>신청하기</span>
+                      <span className="arrow-circle">
                         <ArrowUpRight className="h-4 w-4" />
                       </span>
                     </a>
