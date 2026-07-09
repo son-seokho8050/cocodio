@@ -151,11 +151,11 @@ export default function CocodioLinks() {
           id="essay-yb-panel"
           aria-hidden={!essayOpen}
           {...(!essayOpen ? { inert: "" as const } : {})}
-          className={`overflow-hidden transition-all duration-400 ease-out flex flex-row flex-wrap justify-center gap-4 ${
+          className={`overflow-hidden transition-all duration-400 ease-out flex flex-row flex-nowrap justify-center gap-1 sm:gap-3 ${
             essayOpen ? "" : "pointer-events-none"
           }`}
           style={{
-            maxHeight: essayOpen ? "340px" : "0px",
+            maxHeight: essayOpen ? "180px" : "0px",
             opacity: essayOpen ? 1 : 0,
           }}
         >
@@ -164,6 +164,8 @@ export default function CocodioLinks() {
             { n: "2", href: "https://cocodio-ybessay2.netlify.app/", testId: "link-essay-yb-2" },
             { n: "3", href: "https://cocodio-ybessay3.netlify.app/", testId: "link-essay-yb-3" },
             { n: "4", href: "https://cocodio-ybessay4.netlify.app/", testId: "link-essay-yb-4" },
+            { n: "5", href: "https://cocodio-ybessay5.netlify.app/", testId: "link-essay-yb-5" },
+            { n: "6", href: "https://cocodio-ybessay6.netlify.app/", testId: "link-essay-yb-6" },
           ].map(({ n, href, testId }) => (
             <a
               key={n}
@@ -171,7 +173,7 @@ export default function CocodioLinks() {
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={essayOpen ? 0 : -1}
-              className="group relative overflow-hidden flex flex-col items-center justify-center gap-1.5 aspect-square flex-1 max-w-[112px] transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
+              className="group relative overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-1.5 aspect-square flex-1 min-w-[44px] max-w-[96px] transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
               style={{
                 backgroundColor: "rgba(255,255,255,0.55)",
                 backdropFilter: "blur(18px) saturate(160%)",
@@ -191,28 +193,27 @@ export default function CocodioLinks() {
                     "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%)",
                 }}
               />
-              <span className="relative z-10 flex flex-col items-center gap-1.5">
+              <span className="relative z-10 flex flex-col items-center gap-0.5 sm:gap-1.5">
                 <span
-                  className="w-1.5 h-1.5 rounded-full"
+                  className="hidden sm:block w-1.5 h-1.5 rounded-full"
                   style={{ backgroundColor: "var(--color-coral-deep)" }}
                 />
                 <span
-                  className="font-bold text-center leading-tight"
-                  style={{ color: "#1A1A1A", letterSpacing: "0.06em", fontSize: "0.82rem" }}
+                  className="font-bold text-center leading-tight text-[9px] sm:text-xs flex flex-col items-center"
+                  style={{ color: "#1A1A1A", letterSpacing: "0.03em" }}
                 >
-                  ESSAY_YB {n}
+                  <span>ESSAY_YB</span>
+                  <span>{n}</span>
                 </span>
               </span>
               <span
-                className="relative z-10 flex items-center justify-center rounded-full flex-shrink-0"
+                className="relative z-10 flex items-center justify-center rounded-full flex-shrink-0 w-4 h-4 sm:w-[26px] sm:h-[26px]"
                 style={{
-                  width: "30px",
-                  height: "30px",
                   backgroundColor: "#1A1A1A",
                   color: "#FFFFFF",
                 }}
               >
-                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.2} />
+                <ArrowUpRight className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" strokeWidth={2.2} />
               </span>
             </a>
           ))}
