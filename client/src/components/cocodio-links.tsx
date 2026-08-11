@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ChevronDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BookOpen } from "lucide-react";
 
 const glossyBar: React.CSSProperties = {
   backgroundColor: "rgba(255,255,255,0.45)",
@@ -14,87 +13,52 @@ const glossyBar: React.CSSProperties = {
 function ExternalLinkButton({
   tag,
   href,
-  nested = false,
   testId,
-  tabIndex,
 }: {
   tag: string;
   href: string;
-  nested?: boolean;
   testId: string;
-  tabIndex?: number;
 }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      tabIndex={tabIndex}
       className="group relative overflow-hidden flex items-center justify-between gap-3 px-5 sm:px-6 py-4 transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
-      style={
-        nested
-          ? {
-              backgroundColor: "rgba(255,255,255,0.55)",
-              backdropFilter: "blur(18px) saturate(160%)",
-              WebkitBackdropFilter: "blur(18px) saturate(160%)",
-              borderRadius: "14px",
-              border: "1px solid rgba(255,255,255,0.65)",
-              boxShadow: "0 10px 30px -16px rgba(199,121,101,0.22)",
-            }
-          : glossyBar
-      }
+      style={glossyBar}
       data-testid={testId}
     >
-      {!nested && (
-        <span
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 pointer-events-none"
-          style={{
-            height: "55%",
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%)",
-          }}
-        />
-      )}
-      <span className="relative z-10 flex items-center gap-2.5">
-        {nested && (
-          <span
-            className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-            style={{ backgroundColor: "var(--color-coral-deep)" }}
-          />
-        )}
-        <span
-          className="font-bold"
-          style={{
-            color: "#1A1A1A",
-            letterSpacing: "0.06em",
-            fontSize: nested ? "0.82rem" : "0.95rem",
-          }}
-        >
-          {tag}
-        </span>
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 pointer-events-none"
+        style={{
+          height: "55%",
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%)",
+        }}
+      />
+      <span
+        className="relative z-10 font-bold"
+        style={{ color: "#1A1A1A", letterSpacing: "0.06em", fontSize: "0.95rem" }}
+      >
+        {tag}
       </span>
       <span
         className="relative z-10 flex items-center justify-center rounded-full flex-shrink-0 transition-all duration-300"
         style={{
-          width: nested ? "30px" : "36px",
-          height: nested ? "30px" : "36px",
+          width: "36px",
+          height: "36px",
           backgroundColor: "#1A1A1A",
           color: "#FFFFFF",
         }}
       >
-        <ArrowUpRight
-          className={nested ? "w-3.5 h-3.5" : "w-4 h-4"}
-          strokeWidth={2.2}
-        />
+        <ArrowUpRight className="w-4 h-4" strokeWidth={2.2} />
       </span>
     </a>
   );
 }
 
 export default function CocodioLinks() {
-  const [essayOpen, setEssayOpen] = useState(false);
-
   return (
     <div
       className="mx-auto mt-3 lg:mt-4 flex flex-col gap-3"
@@ -108,117 +72,90 @@ export default function CocodioLinks() {
         testId="link-cocodio-space"
       />
 
-      {/* 2번 버튼 - ESSAY_YB (펼침형) */}
-      <div className="flex flex-col gap-2.5">
-        <button
-          type="button"
-          onClick={() => setEssayOpen((v) => !v)}
-          aria-expanded={essayOpen}
-          aria-controls="essay-yb-panel"
-          className="group relative overflow-hidden flex items-center justify-between gap-3 px-5 sm:px-6 py-4 transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
-          style={glossyBar}
-          data-testid="button-essay-yb-toggle"
-        >
-          <span
-            aria-hidden="true"
-            className="absolute inset-x-0 top-0 pointer-events-none"
-            style={{
-              height: "55%",
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%)",
-            }}
-          />
-          <span
-            className="relative z-10 font-bold"
-            style={{ color: "#1A1A1A", letterSpacing: "0.06em", fontSize: "0.95rem" }}
-          >
-            ESSAY_YB
-          </span>
-          <span
-            className="relative z-10 flex items-center justify-center w-9 h-9 rounded-full flex-shrink-0 transition-transform duration-300"
-            style={{
-              backgroundColor: "rgba(255,255,255,0.7)",
-              border: "1px solid rgba(255,255,255,0.85)",
-              transform: essayOpen ? "rotate(180deg)" : "rotate(0deg)",
-            }}
-          >
-            <ChevronDown className="w-4 h-4" style={{ color: "#1A1A1A" }} />
-          </span>
-        </button>
-
-        {/* 펼쳐지는 하위 버튼 */}
-        <div
-          id="essay-yb-panel"
-          aria-hidden={!essayOpen}
-          {...(!essayOpen ? { inert: "" as const } : {})}
-          className={`overflow-hidden transition-all duration-400 ease-out flex flex-row flex-nowrap justify-center gap-1 sm:gap-3 ${
-            essayOpen ? "" : "pointer-events-none"
-          }`}
+      {/* 2번 - ESSAY_YB 통합 이미지 카드 */}
+      <a
+        href="https://cocodio-ebook.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="ESSAY_YB E-BOOK 전체 보기 - 새 탭에서 열림"
+        className="group relative overflow-hidden flex items-stretch gap-0 transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
+        style={glossyBar}
+        data-testid="link-essay-yb-ebook"
+      >
+        {/* 상단 글로시 하이라이트 */}
+        <span
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 pointer-events-none z-10"
           style={{
-            maxHeight: essayOpen ? "180px" : "0px",
-            opacity: essayOpen ? 1 : 0,
+            height: "50%",
+            background:
+              "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%)",
+          }}
+        />
+
+        {/* 좌측 비주얼 - 북커버 스택 */}
+        <span
+          aria-hidden="true"
+          className="relative flex items-center justify-center flex-shrink-0 w-[110px] sm:w-[150px] self-stretch overflow-hidden"
+          style={{
+            background:
+              "linear-gradient(135deg, var(--color-coral-deep, #C77965) 0%, #E8A796 55%, #F5D9C8 100%)",
           }}
         >
-          {[
-            { n: "1", href: "https://cocodio-ybessay.netlify.app/", testId: "link-essay-yb-1" },
-            { n: "2", href: "https://cocodio-ybessay2.netlify.app/", testId: "link-essay-yb-2" },
-            { n: "3", href: "https://cocodio-ybessay3.netlify.app/", testId: "link-essay-yb-3" },
-            { n: "4", href: "https://cocodio-ybessay4.netlify.app/", testId: "link-essay-yb-4" },
-            { n: "5", href: "https://cocodio-ybessay5.netlify.app/", testId: "link-essay-yb-5" },
-            { n: "6", href: "https://cocodio-ybessay6.netlify.app/", testId: "link-essay-yb-6" },
-          ].map(({ n, href, testId }) => (
-            <a
-              key={n}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              tabIndex={essayOpen ? 0 : -1}
-              className="group relative overflow-hidden flex flex-col items-center justify-center gap-1 sm:gap-1.5 aspect-square flex-1 min-w-[44px] max-w-[96px] transition-transform duration-300 hover:-translate-y-[2px] touch-manipulation"
-              style={{
-                backgroundColor: "rgba(255,255,255,0.55)",
-                backdropFilter: "blur(18px) saturate(160%)",
-                WebkitBackdropFilter: "blur(18px) saturate(160%)",
-                borderRadius: "9999px",
-                border: "1px solid rgba(255,255,255,0.65)",
-                boxShadow: "0 10px 30px -16px rgba(199,121,101,0.22)",
-              }}
-              data-testid={testId}
+          {/* 뒤 커버 */}
+          <span
+            className="absolute w-[44px] h-[60px] sm:w-[56px] sm:h-[76px] rounded-[6px] rotate-[-10deg] translate-x-[-14px]"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.35)",
+              border: "1px solid rgba(255,255,255,0.5)",
+            }}
+          />
+          {/* 앞 커버 */}
+          <span
+            className="relative flex flex-col items-center justify-center w-[50px] h-[68px] sm:w-[64px] sm:h-[86px] rounded-[7px] rotate-[6deg] translate-x-[8px] transition-transform duration-300 group-hover:rotate-[2deg] group-hover:scale-105"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.92)",
+              boxShadow: "0 10px 24px -8px rgba(90,40,25,0.35)",
+            }}
+          >
+            <BookOpen
+              className="w-5 h-5 sm:w-6 sm:h-6"
+              strokeWidth={1.8}
+              style={{ color: "var(--color-coral-deep, #C77965)" }}
+            />
+            <span
+              className="mt-1 font-bold text-[6px] sm:text-[7px] tracking-widest"
+              style={{ color: "#1A1A1A" }}
             >
-              <span
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 pointer-events-none"
-                style={{
-                  height: "45%",
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 100%)",
-                }}
-              />
-              <span className="relative z-10 flex flex-col items-center gap-0.5 sm:gap-1.5">
-                <span
-                  className="hidden sm:block w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: "var(--color-coral-deep)" }}
-                />
-                <span
-                  className="font-bold text-center leading-tight text-[9px] sm:text-xs flex flex-col items-center"
-                  style={{ color: "#1A1A1A", letterSpacing: "0.03em" }}
-                >
-                  <span>ESSAY_YB</span>
-                  <span>{n}</span>
-                </span>
-              </span>
-              <span
-                className="relative z-10 flex items-center justify-center rounded-full flex-shrink-0 w-4 h-4 sm:w-[26px] sm:h-[26px]"
-                style={{
-                  backgroundColor: "#1A1A1A",
-                  color: "#FFFFFF",
-                }}
-              >
-                <ArrowUpRight className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5" strokeWidth={2.2} />
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
+              ESSAY_YB
+            </span>
+          </span>
+        </span>
+
+        {/* 우측 내용 */}
+        <span className="relative z-10 flex items-center justify-between flex-1 gap-3 px-4 sm:px-6 py-4 sm:py-5 min-w-0">
+          <span className="flex flex-col gap-0.5 min-w-0">
+            <span
+              className="font-bold text-[0.95rem] sm:text-base"
+              style={{ color: "#1A1A1A", letterSpacing: "0.06em" }}
+            >
+              ESSAY_YB E-BOOK
+            </span>
+            <span
+              className="text-[11px] sm:text-xs leading-snug"
+              style={{ color: "rgba(26,26,26,0.55)" }}
+            >
+              에세이 전권을 한 곳에서 — 통합 이북으로 보기
+            </span>
+          </span>
+          <span
+            className="flex items-center justify-center rounded-full flex-shrink-0 w-9 h-9 transition-transform duration-300 group-hover:rotate-45"
+            style={{ backgroundColor: "#1A1A1A", color: "#FFFFFF" }}
+          >
+            <ArrowUpRight className="w-4 h-4" strokeWidth={2.2} />
+          </span>
+        </span>
+      </a>
     </div>
   );
 }
