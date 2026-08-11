@@ -20,6 +20,7 @@ const courses = [
     image: digitalDrawingImage, alt: '디지털 드로잉', icon: Tablet, title: '디지털 드로잉', tag: 'Digital',
     desc: '현직 애니메이터 원장님과 함께,\n웹툰, 일러스트, 게임그래픽 등\n다양한 분야를 제대로',
     checks: ['클립스튜디오(웹툰)', 'ASEPRITE(픽셀아트)', '스파인2D(2.5D게임캐릭터)', '애니메이트CC/ 포토샵'],
+    href: 'https://blog.naver.com/cocodio_ani',
   },
   {
     image: middleSchoolArtImage, alt: '중등미술', icon: Palette, title: '중등미술', tag: 'Middle School',
