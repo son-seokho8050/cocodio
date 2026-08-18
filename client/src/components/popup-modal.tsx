@@ -254,8 +254,8 @@ export default function PopupModal({
       } ${
         isMobile 
           ? `items-center justify-center ${getMobilePosition()}`
-          : position === 'left' ? 'items-center justify-start pl-[4%]' :
-            position === 'right' ? 'items-center justify-end pr-[4%]' :
+          : position === 'left' ? 'items-center justify-center -translate-x-[19%]' :
+            position === 'right' ? 'items-center justify-center translate-x-[19%]' :
             'items-center justify-center'
       }`}
       onClick={handleBackdropClick}
