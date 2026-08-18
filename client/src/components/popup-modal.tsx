@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import summerPopupImage from "@assets/optimized/summer-2026-popup.webp";
+import awards2026PopupImage from "@assets/optimized/awards-2026-popup.webp";
+import bisang8PopupImage from "@assets/optimized/bisang-8-popup.webp";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
 import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
 import exhibitionPoster from "@assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg";
@@ -198,6 +199,8 @@ export default function PopupModal({
     if (id === 'popup-admissions-2026') return 'z-[10001]'; // 2026 합격자 팝업
     if (id === 'popup1') return 'z-[10000]'; // 총원장 유영범 (왼쪽)
     if (id === 'popup2') return 'z-[9999]'; // 말랑T 유준석 (오른쪽)
+    if (id === 'popup-awards-2026') return 'z-[10005]'; // 2026 수상 팝업 (왼쪽)
+    if (id === 'popup-bisang-8') return 'z-[10004]'; // BISANG 8월 팝업 (오른쪽)
     return 'z-[9998]'; // 기본값
   };
   const zIndex = getZIndex();
@@ -212,24 +215,30 @@ export default function PopupModal({
     if (id === 'popup-admissions-2026') return 'translate-y-[20%]'; // 아래로
     if (id === 'popup1') return 'translate-y-[-15%]'; // 위로
     if (id === 'popup2') return 'translate-y-[15%]'; // 아래로
+    if (id === 'popup-awards-2026') return 'translate-y-[-22%]'; // 위로
+    if (id === 'popup-bisang-8') return 'translate-y-[22%]'; // 아래로
     return '';
   };
 
   return (
     <div 
       className={`fixed inset-0 ${zIndex} flex transition-all duration-300 ${
-        isAnimating ? 'bg-black/30' : 'bg-transparent'
+        position === 'left' || position === 'right' ? 'pointer-events-none' : ''
+      } ${
+        isAnimating
+          ? (position === 'left' || position === 'right' ? 'bg-black/15' : 'bg-black/30')
+          : 'bg-transparent'
       } ${
         isMobile 
           ? `items-center justify-center ${getMobilePosition()}`
-          : position === 'left' ? 'items-center justify-center translate-x-[15%]' :
-            position === 'right' ? 'items-center justify-center -translate-x-[15%]' :
+          : position === 'left' ? 'items-center justify-center -translate-x-[15%]' :
+            position === 'right' ? 'items-center justify-center translate-x-[15%]' :
             'items-center justify-center'
       }`}
       onClick={handleBackdropClick}
     >
       <div 
-        className={`relative bg-white rounded-2xl shadow-2xl mx-4 transform transition-all duration-300 ${
+        className={`relative pointer-events-auto bg-white rounded-2xl shadow-2xl mx-4 transform transition-all duration-300 ${
           isAnimating ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
         }`}
         style={getModalStyle()}
@@ -398,17 +407,36 @@ export default function PopupModal({
 // 팝업 매니저 컴포넌트
 export function PopupManager() {
   const popups: Array<React.ComponentProps<typeof PopupModal>> = [
+    // 여름방학 특강 팝업 - 비활성화 (지시에 따라 종료)
+    // {
+    //   id: 'popup-summer-2026',
+    //   title: '코코 여름방학 특강',
+    //   imageUrl: summerPopupImage, // @assets/optimized/summer-2026-popup.webp
+    //   type: 'image' as const,
+    //   linkUrl: 'https://cocodio-2026summer.netlify.app/',
+    //   ctaLabel: '코코의 여름, 둘러보기',
+    //   ctaLabelActive: '코코 여름특강',
+    //   delay: 1.5,
+    //   isLarge: true,
+    //   position: 'center' as const,
+    // },
     {
-      id: 'popup-summer-2026',
-      title: '코코 여름방학 특강',
-      imageUrl: summerPopupImage,
+      id: 'popup-awards-2026',
+      title: '2026 주요미대 실기대회 수상',
+      imageUrl: awards2026PopupImage,
       type: 'image' as const,
-      linkUrl: 'https://cocodio-2026summer.netlify.app/',
-      ctaLabel: '코코의 여름, 둘러보기',
-      ctaLabelActive: '코코 여름특강',
       delay: 1.5,
       isLarge: true,
-      position: 'center' as const,
+      position: 'left' as const,
+    },
+    {
+      id: 'popup-bisang-8',
+      title: 'BISANG 수시대비 실전 교수평가 8월',
+      imageUrl: bisang8PopupImage,
+      type: 'image' as const,
+      delay: 1.5,
+      isLarge: true,
+      position: 'right' as const,
     },
     // 강사 프로필 팝업(popup1, popup2) - 비활성화 (지시에 따라 숨김)
     // {
