@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import awards2026PopupImage from "@assets/optimized/awards-2026-popup.webp";
@@ -23,6 +23,8 @@ interface PopupModalProps {
   position?: 'center' | 'left' | 'right'; // 팝업 위치
   ctaLabel?: string; // 이미지 위에 표시할 클릭 유도 버튼 문구 (기본 상태)
   ctaLabelActive?: string; // 클릭 후 바뀔 문구
+  active?: boolean; // false면 타이머를 시작하지 않음 (순차 표시용)
+  onClosed?: () => void; // 닫힘(또는 오늘 이미 본 경우) 알림 - 순차 표시용
 }
 
 export default function PopupModal({ 
@@ -38,22 +40,37 @@ export default function PopupModal({
   type = 'image',
   position = 'center',
   ctaLabel,
-  ctaLabelActive
+  ctaLabelActive,
+  active = true,
+  onClosed
 }: PopupModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [mediaDimensions, setMediaDimensions] = useState<{width: number, height: number} | null>(null);
   const [ctaExpanded, setCtaExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const closedNotifiedRef = useRef(false); // onClosed 중복 호출 방지 (원샷)
+
+  const notifyClosedOnce = () => {
+    if (closedNotifiedRef.current) return;
+    closedNotifiedRef.current = true;
+    onClosed?.();
+  };
 
   useEffect(() => {
+    if (!active) return;
     // 오늘 하루 동안 이 팝업을 본 적이 있는지 확인
     const today = new Date().toDateString();
     const hasSeenToday = localStorage.getItem(`popup-${id}-seen`) === today;
     
     console.log(`Popup ${id}: hasSeenToday = ${hasSeenToday}, delay = ${delay}`);
     
-    if (!hasSeenToday) {
+    if (hasSeenToday) {
+      // 이미 본 팝업이면 순차 체인을 다음으로 넘김
+      notifyClosedOnce();
+      return;
+    }
+    {
       console.log(`Setting timer for popup ${id} with ${delay} seconds delay`);
       const timer = setTimeout(() => {
         console.log(`Showing popup ${id}`);
@@ -63,7 +80,7 @@ export default function PopupModal({
 
       return () => clearTimeout(timer);
     }
-  }, [id, delay]);
+  }, [id, delay, active, onClosed]);
 
   // 이미지 사전 로딩 - 팝업이 뜨는 순간 버퍼링/로딩 없이 즉시 표시
   useEffect(() => {
@@ -78,6 +95,7 @@ export default function PopupModal({
     setCtaExpanded(false);
     setTimeout(() => {
       setIsVisible(false);
+      notifyClosedOnce();
     }, 300);
   };
 
@@ -89,6 +107,7 @@ export default function PopupModal({
       // 오늘 하루 동안 이 팝업을 다시 보지 않도록 설정
       const today = new Date().toDateString();
       localStorage.setItem(`popup-${id}-seen`, today);
+      notifyClosedOnce();
     }, 300);
   };
 
@@ -151,11 +170,13 @@ export default function PopupModal({
     const isTeacherProfile = id === 'popup1' || id === 'popup2';
     // 2025 수상 실적 팝업(popup-awards-2025)과 2026 합격자 팝업(popup-admissions-2026)
     const isNewAnnouncementPopup = id === 'popup-awards-2025' || id === 'popup-admissions-2026';
+    // 2026 수상 / BISANG 8월 팝업 - 크게 표시
+    const isDualPopup2026 = id === 'popup-awards-2026' || id === 'popup-bisang-8';
     // 영상 팝업(popup4)은 1.2배 크게 표시 (닫기 버튼 접근성 개선)
     const isVideoPopup = id === 'popup4';
     // 전시회 팝업(popup5)은 1.8배 크게 표시 (글자 가독성 개선)
     const isExhibitionPopup = id === 'popup5';
-    const sizeMultiplier = isTeacherProfile ? 1.836 : isNewAnnouncementPopup ? 1.5 : isVideoPopup ? 1.2 : isExhibitionPopup ? 1.8 : 1.0;
+    const sizeMultiplier = isTeacherProfile ? 1.836 : isNewAnnouncementPopup ? 1.5 : isDualPopup2026 ? 1.6 : isVideoPopup ? 1.2 : isExhibitionPopup ? 1.8 : 1.0;
     
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
@@ -166,13 +187,16 @@ export default function PopupModal({
           ? Math.min(550 * sizeMultiplier, window.innerWidth * 0.9) 
           : Math.min(400 * sizeMultiplier, window.innerWidth * 0.85);
         
-    const maxHeight = isMobile
-      ? window.innerHeight * 0.6 * sizeMultiplier  // 모바일에서 높이도 증가
-      : isPositioned
-        ? window.innerHeight * 0.7 * sizeMultiplier  // 좌우 배치시 높이 증가
-        : isLarge 
-          ? window.innerHeight * 0.8 * sizeMultiplier 
-          : window.innerHeight * 0.7 * sizeMultiplier;
+    const maxHeight = Math.min(
+      isMobile
+        ? window.innerHeight * 0.6 * sizeMultiplier  // 모바일에서 높이도 증가
+        : isPositioned
+          ? window.innerHeight * 0.7 * sizeMultiplier  // 좌우 배치시 높이 증가
+          : isLarge 
+            ? window.innerHeight * 0.8 * sizeMultiplier 
+            : window.innerHeight * 0.7 * sizeMultiplier,
+      window.innerHeight * 0.85  // 화면을 넘지 않도록 상한
+    );
     
     let finalWidth = maxWidth;
     let finalHeight = finalWidth / aspectRatio;
@@ -215,8 +239,7 @@ export default function PopupModal({
     if (id === 'popup-admissions-2026') return 'translate-y-[20%]'; // 아래로
     if (id === 'popup1') return 'translate-y-[-15%]'; // 위로
     if (id === 'popup2') return 'translate-y-[15%]'; // 아래로
-    if (id === 'popup-awards-2026') return 'translate-y-[-22%]'; // 위로
-    if (id === 'popup-bisang-8') return 'translate-y-[22%]'; // 아래로
+    // popup-awards-2026 / popup-bisang-8 은 모바일에서 순차 표시라 중앙 배치
     return '';
   };
 
@@ -231,8 +254,8 @@ export default function PopupModal({
       } ${
         isMobile 
           ? `items-center justify-center ${getMobilePosition()}`
-          : position === 'left' ? 'items-center justify-center -translate-x-[15%]' :
-            position === 'right' ? 'items-center justify-center translate-x-[15%]' :
+          : position === 'left' ? 'items-center justify-start pl-[4%]' :
+            position === 'right' ? 'items-center justify-end pr-[4%]' :
             'items-center justify-center'
       }`}
       onClick={handleBackdropClick}
@@ -406,6 +429,12 @@ export default function PopupModal({
 
 // 팝업 매니저 컴포넌트
 export function PopupManager() {
+  // 모바일에서는 두 팝업을 순차 표시 (앞 팝업을 닫으면 다음 팝업 표시)
+  const isMobileSequential =
+    typeof window !== 'undefined' && window.innerWidth <= 768;
+  const [seqIndex, setSeqIndex] = useState(0);
+  const advanceSeq = useCallback(() => setSeqIndex((i) => i + 1), []);
+
   const popups: Array<React.ComponentProps<typeof PopupModal>> = [
     // 여름방학 특강 팝업 - 비활성화 (지시에 따라 종료)
     // {
@@ -428,6 +457,8 @@ export function PopupManager() {
       delay: 1.5,
       isLarge: true,
       position: 'left' as const,
+      active: !isMobileSequential || seqIndex === 0,
+      onClosed: isMobileSequential ? advanceSeq : undefined,
     },
     {
       id: 'popup-bisang-8',
@@ -437,6 +468,7 @@ export function PopupManager() {
       delay: 1.5,
       isLarge: true,
       position: 'right' as const,
+      active: !isMobileSequential || seqIndex === 1,
     },
     // 강사 프로필 팝업(popup1, popup2) - 비활성화 (지시에 따라 숨김)
     // {
