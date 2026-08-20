@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import dongdukAwardPopupImage from "@assets/optimized/dongduk-award-popup.webp";
 import awards2026PopupImage from "@assets/optimized/awards-2026-popup.webp";
 import bisang8PopupImage from "@assets/optimized/bisang-8-popup.webp";
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
@@ -51,11 +52,11 @@ export default function PopupModal({
   const videoRef = useRef<HTMLVideoElement>(null);
   const closedNotifiedRef = useRef(false); // onClosed 중복 호출 방지 (원샷)
 
-  const notifyClosedOnce = () => {
+  const notifyClosedOnce = useCallback(() => {
     if (closedNotifiedRef.current) return;
     closedNotifiedRef.current = true;
     onClosed?.();
-  };
+  }, [onClosed]);
 
   useEffect(() => {
     if (!active) return;
@@ -80,7 +81,7 @@ export default function PopupModal({
 
       return () => clearTimeout(timer);
     }
-  }, [id, delay, active, onClosed]);
+  }, [id, delay, active, notifyClosedOnce]);
 
   // 이미지 사전 로딩 - 팝업이 뜨는 순간 버퍼링/로딩 없이 즉시 표시
   useEffect(() => {
@@ -172,6 +173,8 @@ export default function PopupModal({
     const isNewAnnouncementPopup = id === 'popup-awards-2025' || id === 'popup-admissions-2026';
     // 2026 수상 / BISANG 8월 팝업 - 크게 표시
     const isDualPopup2026 = id === 'popup-awards-2026' || id === 'popup-bisang-8';
+    // 동덕여대 실기대회 수상 팝업 - 모바일에서 화면 폭을 거의 채움
+    const isLeadAwardPopup = id === 'popup-dongduk-award-2026';
     // 영상 팝업(popup4)은 1.2배 크게 표시 (닫기 버튼 접근성 개선)
     const isVideoPopup = id === 'popup4';
     // 전시회 팝업(popup5)은 1.8배 크게 표시 (글자 가독성 개선)
@@ -180,7 +183,9 @@ export default function PopupModal({
     
     // 모바일에서는 더 작게, 좌우 배치일 때는 중간 크기
     const maxWidth = isMobile 
-      ? Math.min(280 * sizeMultiplier, window.innerWidth * 0.9)  // 모바일에서 더 작게
+      ? isLeadAwardPopup
+        ? window.innerWidth * 0.92
+        : Math.min(280 * sizeMultiplier, window.innerWidth * 0.9)  // 모바일에서 더 작게
       : isPositioned
         ? Math.min(350 * sizeMultiplier, window.innerWidth * 0.48)  // 좌우 배치시 크기 증가
         : isLarge 
@@ -189,7 +194,9 @@ export default function PopupModal({
         
     const maxHeight = Math.min(
       isMobile
-        ? window.innerHeight * 0.6 * sizeMultiplier  // 모바일에서 높이도 증가
+        ? isLeadAwardPopup
+          ? window.innerHeight * 0.82
+          : window.innerHeight * 0.6 * sizeMultiplier  // 모바일에서 높이도 증가
         : isPositioned
           ? window.innerHeight * 0.7 * sizeMultiplier  // 좌우 배치시 높이 증가
           : isLarge 
@@ -429,8 +436,8 @@ export default function PopupModal({
 
 // 팝업 매니저 컴포넌트
 export function PopupManager() {
-  // 모바일에서는 두 팝업을 순차 표시 (앞 팝업을 닫으면 다음 팝업 표시)
-  const isMobileSequential =
+  // 첫 수상 팝업이 닫힌 뒤, 데스크톱은 두 팝업을 함께 / 모바일은 차례대로 표시
+  const isMobile =
     typeof window !== 'undefined' && window.innerWidth <= 768;
   const [seqIndex, setSeqIndex] = useState(0);
   const advanceSeq = useCallback(() => setSeqIndex((i) => i + 1), []);
@@ -450,6 +457,17 @@ export function PopupManager() {
     //   position: 'center' as const,
     // },
     {
+      id: 'popup-dongduk-award-2026',
+      title: '2026 동덕여대 실기대회 동상 수상',
+      imageUrl: dongdukAwardPopupImage,
+      type: 'image' as const,
+      delay: 1,
+      isLarge: true,
+      position: 'center' as const,
+      active: seqIndex === 0,
+      onClosed: advanceSeq,
+    },
+    {
       id: 'popup-awards-2026',
       title: '2026 주요미대 실기대회 수상',
       imageUrl: awards2026PopupImage,
@@ -457,8 +475,8 @@ export function PopupManager() {
       delay: 1.5,
       isLarge: true,
       position: 'left' as const,
-      active: !isMobileSequential || seqIndex === 0,
-      onClosed: isMobileSequential ? advanceSeq : undefined,
+      active: seqIndex === 1,
+      onClosed: isMobile ? advanceSeq : undefined,
     },
     {
       id: 'popup-bisang-8',
@@ -468,7 +486,7 @@ export function PopupManager() {
       delay: 1.5,
       isLarge: true,
       position: 'right' as const,
-      active: !isMobileSequential || seqIndex === 1,
+      active: isMobile ? seqIndex === 2 : seqIndex === 1,
     },
     // 강사 프로필 팝업(popup1, popup2) - 비활성화 (지시에 따라 숨김)
     // {
