@@ -62,7 +62,8 @@ export default function HeroSection() {
 
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
-  const card = (
+  // Heading: 문서에 h1이 1개만 존재하도록 모바일 카드만 h1, 데스크톱 카드는 h2 (시각 동일)
+  const card = (Heading: 'h1' | 'h2') => (
     <div
       className="ui-card p-3.5 sm:p-5 lg:p-7"
       style={{
@@ -72,12 +73,12 @@ export default function HeroSection() {
       }}
     >
       <div className="section-badge mb-2 sm:mb-3 inline-flex">재능의 출발점</div>
-      <p
+      <Heading
         className="text-sm sm:text-lg lg:text-2xl font-bold leading-snug mb-2.5 sm:mb-4"
         style={{ color: 'var(--text-heading)' }}
       >
         여러분의 재능은<br /> 어떤 모양인가요?
-      </p>
+      </Heading>
 
       <div className="flex flex-col gap-1.5 sm:gap-2 mb-2.5 sm:mb-4">
         <button
@@ -126,7 +127,7 @@ export default function HeroSection() {
           <HeroVideo />
         </div>
         <div className="absolute left-4 right-4 bottom-5 sm:bottom-8 z-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-          {card}
+          {card('h1')}
         </div>
       </section>
 
@@ -147,7 +148,7 @@ export default function HeroSection() {
             className="sticky animate-in fade-in slide-in-from-right-4 duration-700 pointer-events-auto"
             style={{ top: '120px' }}
           >
-            {card}
+            {card('h2')}
           </div>
         </div>
       </section>

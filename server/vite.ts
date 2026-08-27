@@ -5,6 +5,7 @@ import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
+import { applySeo, isKnownRoute, normalizePath } from "./seo";
 
 const viteLogger = createLogger();
 
@@ -76,10 +77,18 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  // index: false — "/"도 아래 SEO 주입 폴백을 타게 한다
+  app.use(express.static(distPath, { index: false }));
 
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  // SPA 폴백: 알려진 라우트만 200 + 라우트별 SEO 메타 주입,
+  // 그 외 경로는 404로 응답해 소프트 404를 막는다 (2026-08-27 SEO 감사).
+  const template = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
+  app.use("*", (req, res) => {
+    const p = normalizePath(req.originalUrl);
+    const html = applySeo(template, p);
+    res
+      .status(isKnownRoute(p) ? 200 : 404)
+      .set({ "Content-Type": "text/html" })
+      .send(html);
   });
 }
