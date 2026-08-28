@@ -37,7 +37,7 @@
 |---|---|---|
 | 관리자 비밀번호 하드코딩 | **코드 완료(2026-08-28)** — Replit Secrets `ADMIN_PASSWORD` 등록 후 배포하면 종결 | 검증은 `/api/admin/login`(routes.ts)이 담당, 화면 하드코딩 제거됨. 기존 값 `coco2024admin`은 git 이력에 노출됐으므로 **새 비밀번호 필수**. Secrets 미등록 상태로 배포하면 관리자 로그인이 503으로 잠긴다(사이트 다른 기능은 무관) |
 | 네이버 소유확인·fb:app_id·GA 측정ID | 플레이스홀더 방치 | client/index.html — 실제 값 필요 (형님 제공) |
-| SSR/프리렌더 전환 | 미착수 | 원본 HTML에 본문 0자 → 네이버·AI 크롤러가 본문을 못 읽는 최상위 이슈. 별도 대형 작업 |
+| SSR/프리렌더 전환 | **프리렌더 완료(2026-08-28)** | `client/public/prerendered/` 스냅샷 12개를 serveStatic이 서빙(원본 HTML 본문 10~263KB). ⚠️**페이지 내용 수정 시 스냅샷 재캡처 의무**: 배포 후 `claude-seo run render_page.py --mode always <실사이트URL>` 로 해당 라우트 재캡처→커밋 (에셋 해시는 서빙 시 자동 치환·modulepreload 자동 제거라 빌드마다 재캡처는 불필요) |
 | HTTPS 리다이렉트 `:443` 노출 | 수정 불가 | Replit 인프라(Google Frontend) 동작 — 앱 코드 밖 |
 
 ## 관련 자료

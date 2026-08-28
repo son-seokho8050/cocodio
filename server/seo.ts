@@ -70,6 +70,24 @@ const ROUTE_META: Record<string, RouteMeta> = {
   },
 };
 
+// 프리렌더 스냅샷 (2026-08-28): client/public/prerendered/<slug>.html — 본문이 포함된 완성 HTML.
+// 스냅샷의 에셋 참조(/assets/index-*.js·css)는 빌드마다 해시가 바뀌므로 서빙 시 현재 템플릿 값으로 치환한다.
+export function prerenderSlug(path: string): string {
+  return path === "/" ? "root" : path.slice(1).replace(/\//g, "_");
+}
+
+export function rewriteAssets(snapshot: string, template: string): string {
+  const js = template.match(/\/assets\/index-[\w-]+\.js/)?.[0];
+  const css = template.match(/\/assets\/index-[\w-]+\.css/)?.[0];
+  let out = snapshot;
+  if (js) out = out.replace(/\/assets\/index-[\w-]+\.js/g, js);
+  if (css) out = out.replace(/\/assets\/index-[\w-]+\.css/g, css);
+  // 캡처 시점 빌드의 지연 청크를 가리키는 modulepreload 힌트는 해시가 어긋나 404를 내므로 제거
+  // (성능 힌트일 뿐, 실제 청크는 현재 빌드의 import 경로로 정상 로드된다)
+  out = out.replace(/<link[^>]*rel="modulepreload"[^>]*>/g, "");
+  return out;
+}
+
 export function normalizePath(originalUrl: string): string {
   const p = originalUrl.split("?")[0].split("#")[0].replace(/\/+$/, "");
   return p === "" ? "/" : p;

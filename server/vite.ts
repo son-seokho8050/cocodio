@@ -5,7 +5,7 @@ import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
-import { applySeo, isKnownRoute, normalizePath } from "./seo";
+import { applySeo, isKnownRoute, normalizePath, prerenderSlug, rewriteAssets } from "./seo";
 
 const viteLogger = createLogger();
 
@@ -83,11 +83,23 @@ export function serveStatic(app: Express) {
   // SPA 폴백: 알려진 라우트만 200 + 라우트별 SEO 메타 주입,
   // 그 외 경로는 404로 응답해 소프트 404를 막는다 (2026-08-27 SEO 감사).
   const template = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
+  const snapshotCache = new Map<string, string | null>();
   app.use("*", (req, res) => {
     const p = normalizePath(req.originalUrl);
-    const html = applySeo(template, p);
+    const known = isKnownRoute(p);
+
+    // 알려진 라우트는 본문이 담긴 프리렌더 스냅샷 우선 (없으면 SPA 셸 + 메타 주입)
+    if (known && !snapshotCache.has(p)) {
+      const file = path.resolve(distPath, "prerendered", `${prerenderSlug(p)}.html`);
+      snapshotCache.set(
+        p,
+        fs.existsSync(file) ? rewriteAssets(fs.readFileSync(file, "utf-8"), template) : null,
+      );
+    }
+    const snapshot = known ? snapshotCache.get(p) : null;
+    const html = snapshot ?? applySeo(template, p);
     res
-      .status(isKnownRoute(p) ? 200 : 404)
+      .status(known ? 200 : 404)
       .set({ "Content-Type": "text/html" })
       .send(html);
   });
