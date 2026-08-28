@@ -13,8 +13,32 @@ const jonghapInquirySchema = z.object({
   message: z.string().trim().optional().default(""),
 });
 
+// 관리자 로그인 실패 지연용 (무차별 대입 완화)
+let lastFailedLoginAt = 0;
+
 export async function registerRoutes(app: Express): Promise<Server> {
-  
+
+  // 관리자 비밀번호 검증 — 값은 Replit Secrets의 ADMIN_PASSWORD (2026-08-28 하드코딩 제거)
+  app.post("/api/admin/login", async (req, res) => {
+    const adminPassword = process.env.ADMIN_PASSWORD;
+    if (!adminPassword) {
+      res.status(503).json({ ok: false, message: "관리자 비밀번호가 서버에 설정되지 않았습니다. Replit Secrets에 ADMIN_PASSWORD를 등록하세요." });
+      return;
+    }
+    // 직전 실패 후 2초 이내 재시도 거부
+    if (Date.now() - lastFailedLoginAt < 2000) {
+      res.status(429).json({ ok: false, message: "잠시 후 다시 시도해주세요." });
+      return;
+    }
+    const password = typeof req.body?.password === "string" ? req.body.password : "";
+    if (password.length > 0 && password === adminPassword) {
+      res.json({ ok: true });
+    } else {
+      lastFailedLoginAt = Date.now();
+      res.status(401).json({ ok: false, message: "비밀번호가 올바르지 않습니다." });
+    }
+  });
+
   // Get all portfolio items
   app.get("/api/portfolio", async (req, res) => {
     try {

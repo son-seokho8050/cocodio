@@ -35,7 +35,7 @@
 
 | 항목 | 상태 | 비고 |
 |---|---|---|
-| 관리자 비밀번호 하드코딩 | **대기** (형님 지시: 차후 진행) | client/src/components/admin-auth.tsx:18 `"coco2024admin"` — 공개 저장소에 노출됨. 서버 검증으로 이전 예정 |
+| 관리자 비밀번호 하드코딩 | **코드 완료(2026-08-28)** — Replit Secrets `ADMIN_PASSWORD` 등록 후 배포하면 종결 | 검증은 `/api/admin/login`(routes.ts)이 담당, 화면 하드코딩 제거됨. 기존 값 `coco2024admin`은 git 이력에 노출됐으므로 **새 비밀번호 필수**. Secrets 미등록 상태로 배포하면 관리자 로그인이 503으로 잠긴다(사이트 다른 기능은 무관) |
 | 네이버 소유확인·fb:app_id·GA 측정ID | 플레이스홀더 방치 | client/index.html — 실제 값 필요 (형님 제공) |
 | SSR/프리렌더 전환 | 미착수 | 원본 HTML에 본문 0자 → 네이버·AI 크롤러가 본문을 못 읽는 최상위 이슈. 별도 대형 작업 |
 | HTTPS 리다이렉트 `:443` 노출 | 수정 불가 | Replit 인프라(Google Frontend) 동작 — 앱 코드 밖 |

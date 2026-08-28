@@ -14,24 +14,30 @@ export default function AdminAuth({ onAuthenticated }: AdminAuthProps) {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // 간단한 비밀번호 (실제 운영시에는 더 안전한 방법 사용)
-  const ADMIN_PASSWORD = "coco2024admin";
-
-  const handleSubmit = (e: React.FormEvent) => {
+  // 비밀번호는 서버(Replit Secrets의 ADMIN_PASSWORD)가 검증한다 — 코드에 값 보관 금지 (2026-08-28)
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
 
-    // 간단한 지연 효과
-    setTimeout(() => {
-      if (password === ADMIN_PASSWORD) {
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
         localStorage.setItem("adminAuth", "true");
         onAuthenticated();
       } else {
-        setError("비밀번호가 올바르지 않습니다.");
+        setError(data.message ?? "비밀번호가 올바르지 않습니다.");
       }
+    } catch {
+      setError("서버에 연결하지 못했습니다. 잠시 후 다시 시도해주세요.");
+    } finally {
       setIsLoading(false);
-    }, 500);
+    }
   };
 
   return (
