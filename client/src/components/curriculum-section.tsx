@@ -20,12 +20,13 @@ const courses = [
     image: digitalDrawingImage, alt: '디지털 드로잉', icon: Tablet, title: '디지털 드로잉', tag: 'Digital',
     desc: '현직 애니메이터 원장님과 함께,\n웹툰, 일러스트, 게임그래픽 등\n다양한 분야를 제대로',
     checks: ['클립스튜디오(웹툰)', 'ASEPRITE(픽셀아트)', '스파인2D(2.5D게임캐릭터)', '애니메이트CC/ 포토샵'],
-    href: 'https://blog.naver.com/cocodio_ani',
+    href: 'https://cocodio-animation.netlify.app/',
   },
   {
     image: middleSchoolArtImage, alt: '중등미술', icon: Palette, title: '중등미술', tag: 'Middle School',
     desc: '중학생을 위한 기초 미술 교육,\n평면에서 입체까지,\n창의성과 표현력을 탄탄하게',
     checks: ['기초 드로잉 & 색채 감각', '다양한 재료와 기법 체험', '창의적 발상/ 표현력', '미술사와 작품 감상법'],
+    href: 'https://cocodio-jnr.netlify.app/',
   },
 ];
 

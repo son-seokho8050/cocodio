@@ -59,8 +59,8 @@ export default function DirectorVoiceButton() {
     <button
       onClick={toggle}
       aria-label={playing ? "총원장 인사말 정지" : "총원장 유영범 인사말 듣기"}
-      className="fixed bottom-24 left-4 sm:bottom-28 sm:left-6 z-50 group"
-      style={{ width: 0, height: 0, border: "none", background: "transparent", padding: 0 }}
+      className="relative block group"
+      style={{ border: "none", background: "transparent", padding: 0 }}
     >
       <span
         className="block relative rounded-full transition-transform duration-300 group-hover:scale-105"
@@ -104,7 +104,7 @@ export default function DirectorVoiceButton() {
         </span>
         {/* 이름 라벨 — 데스크톱 hover 시 */}
         <span
-          className="hidden sm:block absolute left-full top-1/2 -translate-y-1/2 ml-3 whitespace-nowrap rounded-full px-3 py-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+          className="hidden lg:block absolute right-full top-1/2 -translate-y-1/2 mr-3 whitespace-nowrap rounded-full px-3 py-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
           style={{ background: "rgba(26,26,26,0.85)", color: "#fff" }}
         >
           총원장 유영범 인사말

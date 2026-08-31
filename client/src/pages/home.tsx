@@ -34,7 +34,6 @@ export default function Home() {
         aria-hidden="true"
       />
       <Navigation />
-      <DirectorVoiceButton />
       <HeroSection />
       <DirectorSection />
       <AboutSection />
@@ -49,7 +48,8 @@ export default function Home() {
       <Footer />
       
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+        <DirectorVoiceButton />
         <a
           href="https://blog.naver.com/coco2238050"
           target="_blank"
