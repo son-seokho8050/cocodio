@@ -12,6 +12,7 @@ import InfoSection from "@/components/info-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import ChatWidget from "@/components/chat-widget";
+import DirectorVoiceButton from "@/components/director-voice-button";
 import { PopupManager } from "@/components/popup-modal";
 import { Button } from "@/components/ui/button";
 import { BookOpen } from "lucide-react";
@@ -33,6 +34,7 @@ export default function Home() {
         aria-hidden="true"
       />
       <Navigation />
+      <DirectorVoiceButton />
       <HeroSection />
       <DirectorSection />
       <AboutSection />
