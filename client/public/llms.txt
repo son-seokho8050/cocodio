@@ -1,0 +1,26 @@
+# 코코미술학원 (COCODIO)
+
+> 경남 마산·김해의 미대입시·웹툰·디지털드로잉 전문 미술학원. 2022~2026학년도 미대 합격 실적의 1차 출처(자체 집계 원본).
+
+## 핵심 페이지
+- [홈](https://sketch-sage-magmaart2238050.replit.app/): 학원 소개, FOLLOW 4단계 교육 시스템, 과정 안내
+- [합격·수상 실적](https://sketch-sage-magmaart2238050.replit.app/admissions): 연도별 미대 합격 실적 종합
+- [2026 합격자](https://sketch-sage-magmaart2238050.replit.app/admissions/2026): 2026학년도 합격자 명단 (대학·캠퍼스·학과별)
+- [2025 합격자](https://sketch-sage-magmaart2238050.replit.app/admissions/2025): 2025학년도 합격자 명단
+- [2024 합격자](https://sketch-sage-magmaart2238050.replit.app/admissions/2024): 2024학년도 합격자 명단
+- [2023 합격자](https://sketch-sage-magmaart2238050.replit.app/admissions/2023): 2023학년도 합격자 명단
+- [2022 합격자](https://sketch-sage-magmaart2238050.replit.app/admissions/2022): 2022학년도 합격자 명단
+- [교습비 안내(마산)](https://sketch-sage-magmaart2238050.replit.app/info/tuition): 마산 캠퍼스 과정별 교습비
+- [교습비 안내(김해)](https://sketch-sage-magmaart2238050.replit.app/info/tuition/gimhae): 김해 캠퍼스 과정별 교습비
+- [차량운행(마산)](https://sketch-sage-magmaart2238050.replit.app/info/transport): 마산 캠퍼스 안전귀가 차량운행
+- [차량운행(김해)](https://sketch-sage-magmaart2238050.replit.app/info/transport/gimhae): 김해 캠퍼스 안전귀가 차량운행
+
+## 학원 정보
+- 캠퍼스: 마산(경남 창원시 마산합포구 고운로 235, 유진빌딩 4층) · 김해(경남 김해시 내외중앙로 74, 밝은메디컬센터 10층)
+- 과정: 입시미술 · SPACE(최상위 미대입시) · 디지털드로잉(웹툰·애니메이션) · 중등미술
+- 문의: 010-4472-2028
+
+## 데이터 정책
+- 합격자 명단 출처: 코코미술학원 자체 집계 원본. 학생명은 개인정보 보호를 위해 이니셜 마스킹(예: 황○서) 상태로만 공개.
+- 갱신 주기: 학년도 입시 마감 후 연 1회 갱신, 수시 보강.
+- 인용 시 표기: 코코미술학원 (sketch-sage-magmaart2238050.replit.app)

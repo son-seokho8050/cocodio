@@ -721,6 +721,47 @@ export default function Admissions2026() {
               </Card>
             ))}
           </div>
+
+          {/* 전체 명단 표 — 검색엔진·AI가 행 단위로 읽는 정형 데이터 (2026-09-01, 카드 UI는 불변) */}
+          <section className="mt-16" aria-labelledby="admission-table-heading">
+            <h2 id="admission-table-heading" className="text-2xl font-bold text-slate-800 mb-2">
+              2026학년도 합격자 전체 명단 (표)
+            </h2>
+            <p className="text-sm text-slate-500 mb-6">
+              코코미술학원 자체 집계 원본입니다. 학생명은 개인정보 보호를 위해 이니셜로 표기합니다.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white/70 backdrop-blur-sm shadow-sm">
+              <table className="w-full text-sm text-left">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50/80 text-slate-600">
+                    <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">대학</th>
+                    <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">캠퍼스·지역</th>
+                    <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">권역</th>
+                    <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">학생</th>
+                    <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">출신고</th>
+                    <th scope="col" className="px-4 py-3 font-semibold whitespace-nowrap">합격 학과</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {admissionResults.flatMap((result, ri) =>
+                    result.students.map((student, si) => (
+                      <tr key={`${ri}-${si}`} className="border-b border-slate-100 last:border-0 hover:bg-purple-50/40">
+                        <td className="px-4 py-2.5 font-medium text-slate-800 whitespace-nowrap">{result.university}</td>
+                        <td className="px-4 py-2.5 text-slate-600 whitespace-nowrap">{result.department}</td>
+                        <td className="px-4 py-2.5 text-slate-600 whitespace-nowrap">{result.category}</td>
+                        <td className="px-4 py-2.5 text-slate-800 whitespace-nowrap">{student.name}</td>
+                        <td className="px-4 py-2.5 text-slate-600 whitespace-nowrap">{student.grade}</td>
+                        <td className="px-4 py-2.5 text-slate-700">{student.note}</td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-slate-400 mt-3">
+              출처: 코코미술학원 자체 집계 · 인용 시 "코코미술학원" 표기
+            </p>
+          </section>
         </div>
       </main>
 
