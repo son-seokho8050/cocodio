@@ -76,7 +76,11 @@ export function prerenderSlug(path: string): string {
   return path === "/" ? "root" : path.slice(1).replace(/\//g, "_");
 }
 
-export function rewriteAssets(snapshot: string, template: string): string {
+export function rewriteAssets(
+  snapshot: string,
+  template: string,
+  assetExists?: (urlPath: string) => boolean,
+): string {
   const js = template.match(/\/assets\/index-[\w-]+\.js/)?.[0];
   const css = template.match(/\/assets\/index-[\w-]+\.css/)?.[0];
   let out = snapshot;
@@ -85,13 +89,34 @@ export function rewriteAssets(snapshot: string, template: string): string {
   // 캡처 시점 빌드의 지연 청크를 가리키는 modulepreload 힌트는 해시가 어긋나 404를 내므로 제거
   // (성능 힌트일 뿐, 실제 청크는 현재 빌드의 import 경로로 정상 로드된다)
   out = out.replace(/<link[^>]*rel="modulepreload"[^>]*>/g, "");
-  return stripPopupOverlays(out);
+  const popupImages: string[] = [];
+  out = stripPopupOverlays(out, popupImages);
+  return injectImagePreloads(out, popupImages, assetExists);
+}
+
+// 걷어낸 팝업(첫 팝업)의 이미지는 원래 HTML을 읽는 동안 먼저 받아지던 것이다. 그 조기 다운로드만
+// preload로 되살린다. 없으면 첫 방문에서 앱이 뜬 뒤에야 갤러리 사진들과 대역을 나눠 받느라
+// 첫 팝업이 설정한 1초보다 수 초~20초 늦게 뜬다(2026-09-11 속도 제한 실측).
+function injectImagePreloads(
+  html: string,
+  srcs: string[],
+  assetExists?: (urlPath: string) => boolean,
+): string {
+  const links = Array.from(new Set(srcs))
+    .filter(
+      (s) =>
+        /^\/assets\/[\w-]+(?:\.[\w-]+)*\.(?:webp|avif|png|jpe?g|gif)$/i.test(s) &&
+        (!assetExists || assetExists(s)),
+    )
+    .map((s) => `<link rel="preload" as="image" href="${s}">`)
+    .join("");
+  return links ? html.replace("</head>", `${links}</head>`) : html;
 }
 
 // 팝업은 방문자마다 다른 클라이언트 상태(지연 표시·오늘 그만보기)라 스냅샷에 박제되면
 // 로딩 직후 팝업이 떴다가 앱 시작과 함께 사라지고 다시 뜨는 깜빡임이 생긴다.
 // 팝업 최상위 div의 data-popup-overlay 표지를 찾아 그 div 블록 전체를 걷어낸다.
-export function stripPopupOverlays(html: string): string {
+export function stripPopupOverlays(html: string, foundImages?: string[]): string {
   const divTag = /<\/?div\b(?:[^>"']|"[^"]*"|'[^']*')*>/g;
   let out = html;
   let from = 0;
@@ -118,6 +143,12 @@ export function stripPopupOverlays(html: string): string {
       }
     }
     if (end === -1) return out; // 짝이 안 맞는 비정상 문서는 손대지 않는다
+    if (foundImages) {
+      const block = out.slice(start, end);
+      const imgSrc = /<img\b[^>]*?\bsrc="([^"]+)"/g;
+      let img: RegExpExecArray | null;
+      while ((img = imgSrc.exec(block))) foundImages.push(img[1]);
+    }
     out = out.slice(0, start) + out.slice(end);
     from = start;
   }

@@ -93,7 +93,11 @@ export function serveStatic(app: Express) {
       const file = path.resolve(distPath, "prerendered", `${prerenderSlug(p)}.html`);
       snapshotCache.set(
         p,
-        fs.existsSync(file) ? rewriteAssets(fs.readFileSync(file, "utf-8"), template) : null,
+        fs.existsSync(file)
+          ? rewriteAssets(fs.readFileSync(file, "utf-8"), template, (p) =>
+              fs.existsSync(path.join(distPath, p)),
+            )
+          : null,
       );
     }
     const snapshot = known ? snapshotCache.get(p) : null;
