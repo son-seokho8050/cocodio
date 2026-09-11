@@ -3,7 +3,8 @@ import { X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dongdukAwardPopupImage from "@assets/optimized/dongduk-award-popup.webp";
 import awards2026PopupImage from "@assets/optimized/awards-2026-popup.webp";
-import bisang8PopupImage from "@assets/optimized/bisang-8-popup.webp";
+import cauAward2026PopupImage from "@assets/optimized/cau-award-2026-popup.webp";
+// 비상 교수평가 8월 팝업 이미지(내림): @assets/optimized/bisang-8-popup.webp
 import directorYoungBeom from "@assets/2 (5)_1753939385447.jpg";
 import directorJunSeok from "@assets/c3feaea2-d080-4c2c-9008-7f3de670d16a_1753939390587.jpg";
 import exhibitionPoster from "@assets/관람시간  오전 11시 ~ 오후 7시 장소  창동 상상갤러리 입장료  무료 주차  갤러리 앞 주차가능_1755676342383.jpg";
@@ -51,6 +52,8 @@ export default function PopupModal({
   const [ctaExpanded, setCtaExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const closedNotifiedRef = useRef(false); // onClosed 중복 호출 방지 (원샷)
+  // 이미지 로드+디코딩 결과: 크기(성공) / null(실패). 팝업은 이것이 끝난 뒤에만 뜬다.
+  const preloadRef = useRef<Promise<{ width: number; height: number } | null> | null>(null);
 
   const notifyClosedOnce = useCallback(() => {
     if (closedNotifiedRef.current) return;
@@ -58,14 +61,36 @@ export default function PopupModal({
     onClosed?.();
   }, [onClosed]);
 
+  // 이미지 사전 로딩 - 마운트 즉시(순서가 오기 전부터) 받아 두고 디코딩까지 끝낸다.
+  // 순서 표시 효과보다 먼저 선언해 타이머가 항상 이 결과를 기다리게 한다.
+  useEffect(() => {
+    if (type !== 'image' || !imageUrl) {
+      preloadRef.current = null;
+      return;
+    }
+    const img = new Image();
+    preloadRef.current = new Promise((resolve) => {
+      img.onload = () => {
+        const dims = { width: img.naturalWidth, height: img.naturalHeight };
+        // decode는 숨김(백그라운드) 탭에서 보류되어 끝나지 않을 수 있다(실측 4초+ 미해결).
+        // 그래서 최대 500ms만 기다리고, 미지원·실패여도 로드는 성공이므로 표시를 진행한다.
+        const decoded =
+          typeof img.decode === 'function' ? img.decode().catch(() => undefined) : Promise.resolve();
+        Promise.race([decoded, new Promise((r) => setTimeout(r, 500))]).then(() => resolve(dims));
+      };
+      img.onerror = () => resolve(null);
+    });
+    img.src = imageUrl;
+  }, [type, imageUrl]);
+
   useEffect(() => {
     if (!active) return;
     // 오늘 하루 동안 이 팝업을 본 적이 있는지 확인
     const today = new Date().toDateString();
     const hasSeenToday = localStorage.getItem(`popup-${id}-seen`) === today;
-    
+
     console.log(`Popup ${id}: hasSeenToday = ${hasSeenToday}, delay = ${delay}`);
-    
+
     if (hasSeenToday) {
       // 이미 본 팝업이면 순차 체인을 다음으로 넘김
       notifyClosedOnce();
@@ -73,23 +98,46 @@ export default function PopupModal({
     }
     {
       console.log(`Setting timer for popup ${id} with ${delay} seconds delay`);
-      const timer = setTimeout(() => {
+      let cancelled = false;
+      const timer = setTimeout(async () => {
+        // 지연 시간이 지나도 이미지가 준비될 때까지 기다린다 → 빈 틀·크기 튐 없이 완성본으로 등장
+        const pending = preloadRef.current;
+        const dims = pending ? await pending : undefined;
+        if (cancelled) return;
+        if (pending && dims === null) {
+          console.error(`Popup ${id}: image failed to load, skipping to next popup`);
+          notifyClosedOnce();
+          return;
+        }
+        if (dims) setMediaDimensions(dims); // 첫 프레임부터 최종 크기로 그린다
         console.log(`Showing popup ${id}`);
         setIsVisible(true);
-        setTimeout(() => setIsAnimating(true), 100);
+        // 이미지 팝업의 페이드인은 <img>가 실제로 로드·디코딩된 뒤 onLoad에서 시작한다(흰 빈 틀 방지).
+        // 이미지가 없는 팝업(영상 등)만 기존처럼 100ms 뒤 시작한다.
+        if (!pending) setTimeout(() => setIsAnimating(true), 100);
       }, delay * 1000);
 
-      return () => clearTimeout(timer);
+      return () => {
+        cancelled = true;
+        clearTimeout(timer);
+      };
     }
   }, [id, delay, active, notifyClosedOnce]);
 
-  // 이미지 사전 로딩 - 팝업이 뜨는 순간 버퍼링/로딩 없이 즉시 표시
+  // 안전장치: onLoad가 끝내 오지 않아도 투명한 오버레이가 화면 클릭을 막은 채 남지 않게 1.5초 뒤 드러낸다
   useEffect(() => {
-    if (type === 'image' && imageUrl) {
-      const preload = new Image();
-      preload.src = imageUrl;
-    }
-  }, [type, imageUrl]);
+    if (!isVisible || isAnimating) return;
+    const t = setTimeout(() => setIsAnimating(true), 1500);
+    return () => clearTimeout(t);
+  }, [isVisible, isAnimating]);
+
+  // 화면에 붙은 <img> 자체의 디코딩이 끝난 뒤 페이드인 → 이미지가 채워진 완성본만 보인다.
+  // decode는 숨김 탭에서 끝나지 않을 수 있어 300ms까지만 기다린다.
+  const revealWhenPainted = (img: HTMLImageElement) => {
+    const decoded =
+      typeof img.decode === 'function' ? img.decode().catch(() => undefined) : Promise.resolve();
+    Promise.race([decoded, new Promise((r) => setTimeout(r, 300))]).then(() => setIsAnimating(true));
+  };
 
   const handleClose = () => {
     setIsAnimating(false);
@@ -138,6 +186,7 @@ export default function PopupModal({
       width: img.naturalWidth,
       height: img.naturalHeight
     });
+    revealWhenPainted(img);
   };
 
   const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement>) => {
@@ -171,8 +220,8 @@ export default function PopupModal({
     const isTeacherProfile = id === 'popup1' || id === 'popup2';
     // 2025 수상 실적 팝업(popup-awards-2025)과 2026 합격자 팝업(popup-admissions-2026)
     const isNewAnnouncementPopup = id === 'popup-awards-2025' || id === 'popup-admissions-2026';
-    // 2026 수상 / BISANG 8월 팝업 - 크게 표시
-    const isDualPopup2026 = id === 'popup-awards-2026' || id === 'popup-bisang-8';
+    // 2026 주요미대 수상 / 2026 중앙대 수상 팝업 - 크게 표시 (중앙대는 비상 교수평가 자리 승계)
+    const isDualPopup2026 = id === 'popup-awards-2026' || id === 'popup-cau-award-2026';
     // 동덕여대 실기대회 수상 팝업 - 모바일에서 화면 폭을 거의 채움
     const isLeadAwardPopup = id === 'popup-dongduk-award-2026';
     // 영상 팝업(popup4)은 1.2배 크게 표시 (닫기 버튼 접근성 개선)
@@ -231,7 +280,7 @@ export default function PopupModal({
     if (id === 'popup1') return 'z-[10000]'; // 총원장 유영범 (왼쪽)
     if (id === 'popup2') return 'z-[9999]'; // 말랑T 유준석 (오른쪽)
     if (id === 'popup-awards-2026') return 'z-[10005]'; // 2026 수상 팝업 (왼쪽)
-    if (id === 'popup-bisang-8') return 'z-[10004]'; // BISANG 8월 팝업 (오른쪽)
+    if (id === 'popup-cau-award-2026') return 'z-[10004]'; // 2026 중앙대 수상 팝업 (오른쪽)
     return 'z-[9998]'; // 기본값
   };
   const zIndex = getZIndex();
@@ -246,12 +295,14 @@ export default function PopupModal({
     if (id === 'popup-admissions-2026') return 'translate-y-[20%]'; // 아래로
     if (id === 'popup1') return 'translate-y-[-15%]'; // 위로
     if (id === 'popup2') return 'translate-y-[15%]'; // 아래로
-    // popup-awards-2026 / popup-bisang-8 은 모바일에서 순차 표시라 중앙 배치
+    // popup-awards-2026 / popup-cau-award-2026 은 모바일에서 순차 표시라 중앙 배치
     return '';
   };
 
   return (
-    <div 
+    // data-popup-overlay: 서버가 프리렌더 스냅샷에서 이 블록을 걷어내는 표지 (server/seo.ts) — 지우지 말 것
+    <div
+      data-popup-overlay
       className={`fixed inset-0 ${zIndex} flex transition-all duration-300 ${
         position === 'left' || position === 'right' ? 'pointer-events-none' : ''
       } ${
@@ -279,7 +330,7 @@ export default function PopupModal({
           onClick={handleClose}
           variant="ghost"
           size="sm"
-          className="absolute top-3 right-3 z-10 rounded-full w-8 h-8 p-0 bg-white/80 hover:bg-white touch-manipulation"
+          className="absolute top-3 right-3 z-10 rounded-full w-8 h-8 p-0 bg-white/80 hover:bg-white text-gray-900 hover:text-gray-900 touch-manipulation"
         >
           <X className="h-4 w-4" />
         </Button>
@@ -478,10 +529,21 @@ export function PopupManager() {
       active: seqIndex === 1,
       onClosed: isMobile ? advanceSeq : undefined,
     },
+    // 비상 교수평가 8월 팝업 - 비활성화 (2026-09-11 지시에 따라 내림, 자리·순서는 중앙대 수상 팝업이 승계)
+    // {
+    //   id: 'popup-bisang-8',
+    //   title: 'BISANG 수시대비 실전 교수평가 8월',
+    //   imageUrl: bisang8PopupImage, // @assets/optimized/bisang-8-popup.webp
+    //   type: 'image' as const,
+    //   delay: 1.5,
+    //   isLarge: true,
+    //   position: 'right' as const,
+    //   active: isMobile ? seqIndex === 2 : seqIndex === 1,
+    // },
     {
-      id: 'popup-bisang-8',
-      title: 'BISANG 수시대비 실전 교수평가 8월',
-      imageUrl: bisang8PopupImage,
+      id: 'popup-cau-award-2026',
+      title: '2026 중앙대 미술실기대회 금상·동상 수상',
+      imageUrl: cauAward2026PopupImage,
       type: 'image' as const,
       delay: 1.5,
       isLarge: true,

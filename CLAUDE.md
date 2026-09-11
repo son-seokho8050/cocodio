@@ -31,6 +31,14 @@
 - 구조화 데이터(client/index.html JSON-LD)에 **근거 없는 수치 금지** — aggregateRating(별점 4.9/127)은 실제 리뷰 연동 없이 넣었다가 2026-08-27 제거했다. 재추가는 실리뷰 출처 확보 후에만.
 - 보안 헤더(nosniff·SAMEORIGIN)는 server/index.ts 상단 미들웨어.
 
+## 홈 팝업 규칙 (2026-09-11)
+
+- 팝업 목록은 `client/src/components/popup-modal.tsx`의 `PopupManager` 배열. 순서: 동덕여대(가운데) → 닫으면 데스크톱은 주요미대 명단(왼쪽)+중앙대(오른쪽) 동시, 모바일은 명단 → 중앙대 차례. 내린 팝업은 지우지 않고 주석으로 둔다(파일 관례).
+- 팝업을 바꾸거나 새로 넣을 때 id 기반 조건 3곳(`isDualPopup2026` 크기·`getZIndex` 겹침 순서·`getMobilePosition`)을 같이 옮긴다. id를 새로 만들면 "오늘 그만보기" 기록도 새로 시작된다.
+- 팝업은 이미지 다운로드가 끝난 뒤에만 뜨고 첫 프레임부터 최종 크기로 그린다(디코딩은 최대 0.5초만 기다림 — 숨김 탭에서 디코딩 신호가 오지 않는 것을 실측함). 이미지 로드 실패 시 깨진 팝업 대신 다음 차례로 넘어간다.
+- 팝업 이미지는 `attached_assets/optimized/`에 가로 1200px WebP(글자 이미지 품질 88, 사진 85), 원본은 `.originals_backup/`.
+- 팝업 최상위 div의 `data-popup-overlay` 표지를 지우지 않는다. 프리렌더 스냅샷에 팝업이 열린 채 박제되면 방문자 화면에서 팝업이 떴다 사라졌다 다시 뜨므로, 서버(`server/seo.ts` `stripPopupOverlays`)가 서빙 시 이 표지가 달린 블록을 걷어낸다.
+
 ## 미해결 항목 (착수 전 형님 확인)
 
 | 항목 | 상태 | 비고 |

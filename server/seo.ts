@@ -85,7 +85,42 @@ export function rewriteAssets(snapshot: string, template: string): string {
   // 캡처 시점 빌드의 지연 청크를 가리키는 modulepreload 힌트는 해시가 어긋나 404를 내므로 제거
   // (성능 힌트일 뿐, 실제 청크는 현재 빌드의 import 경로로 정상 로드된다)
   out = out.replace(/<link[^>]*rel="modulepreload"[^>]*>/g, "");
-  return out;
+  return stripPopupOverlays(out);
+}
+
+// 팝업은 방문자마다 다른 클라이언트 상태(지연 표시·오늘 그만보기)라 스냅샷에 박제되면
+// 로딩 직후 팝업이 떴다가 앱 시작과 함께 사라지고 다시 뜨는 깜빡임이 생긴다.
+// 팝업 최상위 div의 data-popup-overlay 표지를 찾아 그 div 블록 전체를 걷어낸다.
+export function stripPopupOverlays(html: string): string {
+  const divTag = /<\/?div\b(?:[^>"']|"[^"]*"|'[^']*')*>/g;
+  let out = html;
+  let from = 0;
+  for (;;) {
+    const marker = out.indexOf("data-popup-overlay", from);
+    if (marker === -1) return out;
+    const start = out.lastIndexOf("<div", marker);
+    divTag.lastIndex = start === -1 ? 0 : start;
+    const open = start === -1 ? null : divTag.exec(out);
+    // 표지가 바로 그 div의 여는 태그 안에 있을 때만 지운다. 본문 글자 등 태그 밖의 같은 문자열을
+    // 표지로 오인하면 상위 블록(최악은 페이지 전체)을 지우게 되므로 건너뛴다.
+    if (!open || open.index !== start || marker >= divTag.lastIndex) {
+      from = marker + 1;
+      continue;
+    }
+    let depth = 1;
+    let end = -1;
+    let m: RegExpExecArray | null;
+    while ((m = divTag.exec(out))) {
+      depth += m[0].startsWith("</") ? -1 : 1;
+      if (depth === 0) {
+        end = divTag.lastIndex;
+        break;
+      }
+    }
+    if (end === -1) return out; // 짝이 안 맞는 비정상 문서는 손대지 않는다
+    out = out.slice(0, start) + out.slice(end);
+    from = start;
+  }
 }
 
 export function normalizePath(originalUrl: string): string {
